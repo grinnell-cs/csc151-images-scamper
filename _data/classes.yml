@@ -1,0 +1,461 @@
+- topic: An introduction to algorithms
+  abbrev: intro
+  summary: |
+    We begin the class by exploring the definition of computer
+    science and by trying to write some basic algorithms.
+
+- topic: Getting started with Scheme
+  abbrev: racket-tech
+  summary: |
+    We consider Scheme, the programming language we will use
+    throughout the course.
+  reading:
+    - page: /readings/mathlan.html
+    - page: /readings/algorithm-building-blocks.html
+    - page: /readings/drracket.html
+    - page: /readings/intro-scheme.html
+  lab:
+    - page: /labs/mathlan.html
+    - page: /labs/racket-intro-mathlan.html
+
+- topic: Reading and writing procedures
+  abbrev: procedures
+  summary: |
+    We consider ways to write your own procedures and why you might do so.
+    We also explore how one interprets the algorithms others write.
+    And we develop some mental models for what happens when we run
+    Scheme/Racket programs.
+  reading:
+    - page: /readings/images.html
+    - page: /readings/decomposition.html
+    - page: /readings/procedures.html
+  lab:
+    - page: /labs/procedures.html
+
+- topic: RGB colors
+  abbrev: rgb-colors
+  summary: |
+    We explore one of the basic color models used by computers.
+  reading:
+    - page: /readings/design-and-color.html
+    - page: /readings/rgb-colors.html
+  lab:
+    - page: /labs/rgb-colors.html
+  todo:
+    - Make sure this works with the new model.
+    - Combine the labs
+
+- topic: Computation via expressions
+  abbrev: expressions
+  summary: |
+    We look at the fundamental building block of computation in functional
+    programming languages, the expression, and build an appropriate model of
+    how expressions "compute".
+  reading:
+    - page: /readings/computation-via-expressions.html
+    - page: /readings/mental-models.html
+  lab:
+    - page: /labs/mental-models-of-computation.html
+
+- topic: Transforming images
+  abbrev: transforming-images
+  summary: |
+    We expand our understanding of RGB transformations to image transformations.
+  reading:
+    - page: /readings/anonymous-procedures.html
+    - page: /readings/transforming-rgb.html
+    - page: /readings/transforming-images.html
+  lab:
+    - page: /labs/transforming-images.html
+  todo:
+    - Incorporate anonymous procedures. (At least that's the plan.)
+
+- topic: Building procedures, revisited
+  abbrev: procedures
+  summary: |
+    We continue our explorations from the previous class.
+  reading:
+    - page: /readings/anonymous-procedures.html
+  lab:
+    - page: /labs/transforming-images.html
+
+- topic: Expressions and types
+  abbrev: exprs-and-types
+  summary: |
+    We explore many of the basic types of values in Scheme, the
+    capabilities Scheme provides for working with those types, and
+    how one builds more complex expressions.  We also continue 
+    building our mental model.
+  reading:
+    - page: /readings/types.html
+    - page: /readings/exprs-and-types.html
+    - page: /readings/numbers.html
+  lab:
+    - page: /labs/numbers.html
+  todo:
+    - Consider which types reading to use (or combine them).
+    - Might do some cleanup; we split numbers and strings in 2024Sp
+
+- topic: Snow day
+  abbrev: snow
+  summary: | 
+    It snows. Sam cancels class.
+
+- topic: Characters and strings
+  abbrev: strings
+  summary: |
+    We explore the ways in which we represent text in Scheme,
+    including both strings and the characters we use to build
+    strings.
+  reading:
+    - page: /readings/strings.html
+    - page: /readings/symbols.html
+  lab:
+    - page: /labs/strings.html
+  todo:
+    - Consider adding symbols to the lab.
+
+- topic: Pair programming
+  abbrev: pair-programming
+  summary: |
+    We explore the whys and hows of working with others.  
+  reading:
+    - title: How Pair Programming Really Works (Wray)
+      resource: /files/PairProgramming.pdf
+    - title: Coping with Hitchhikers and Couch Potatoes on Teams (from B. Oakley et. al (2004).  Turning Student Groups into Effective Teams.  <em>Journal of Student-Centered Learning</em> 2 (1).)
+      resource: /files/OakleyHitchhikers2004.pdf
+    - title: Diverse Teams Feel Less Comfortable -- and That's Why They Perform Better
+      resource: /files/DiverseTeams2016.pdf
+  lab:
+    - (TBA)
+
+- topic: Booleans, predicates, and conditionals
+  abbrev: booleans
+  summary: |
+    We consider how one writes procedures that make decisions.
+  reading:
+    - page: /readings/booleans.html
+    - page: /readings/conditionals.html
+  lab:
+    - page: /labs/conditionals.html
+  todo:
+    - Last semester, we needed two days for this. I'm inserting a pause for breath
+
+- topic: Lists
+  abbrev: lists
+  summary: |
+    We return to Scheme's *list* data structure and some ways to
+    use lists to work with collections of data.
+  reading:
+    - page: /readings/list-basics.html
+    - page: /readings/list-transform.html
+  lab:
+    - page: /labs/list-basics.html
+  todo:
+    - Do we also include `car`, `cdr`, and `cons` here?  Do we
+     perhaps include a separate day?
+
+- topic: Processing lists
+  abbrev: processing-lists
+  summary: |
+    We explore ways to use lists to work with collections of drawings 
+    using "the big three" list procedures: `map`, `reduce`, and `filter`.
+    We also consider other ways of processing lists, particularly how
+    we sort lists and tally individual values in lists.
+  reading:
+    - page: /readings/list-big-three.html
+    - page: /readings/list-more.html
+  lab:
+    - page: /labs/lists-more.html
+  todo:
+    - Incorporate sort and tally.
+    - Consider incorporating the old /labs/drawing-lists.html
+
+- topic: Other ways to build lists
+  abbrev: building-lists
+  summary: |
+    We continue our exploration of lists through some "finer-grained"
+    operations.
+  reading:
+    - page: /readings/list-composition.html
+  lab:
+    - page: /labs/list-composition.html
+  todo:
+    - It's a new lab! Students shouldn't be learning cons, car, and cdr at the same time they are learning recursion.
+
+- topic: Ethical considerations in computing
+  abbrev: ethical
+  summary: |
+    Now that we've spent some time exploring various issues in computing,
+    we take a step back and consider problems of ethical computing
+    with seasoned programmer-eyes. As newly-informed citizens, what
+    must we be aware of with respect to ethics in computing?
+  reading:
+    - link: ACM Code of Ethics and Professional Conduct
+      url: https://www.acm.org/code-of-ethics
+    - link: "Feynman’s Error: On Ethical Thinking and Drifting"
+      url: https://www.danmunro.ca/blog/2018/11/29/feynmans-error-on-ethical-thinking-and-drifting-nbsp 
+
+- topic: Software engineering fundamentals
+  abbrev: software-engineering
+  summary: |
+    We consider the trifecta of software engineering: documentation, testing, and debugging.  That is, we explore why and how you document your code, why and how you test your code, and how you might find errors in your code.
+  reading:
+    - page: /readings/documenting-your-code.html
+    - page: /readings/rackunit.html
+    - page: /readings/hypothesis-driven-debugging.html
+  lab:
+    - page: /labs/rackunit.html
+
+- topic: Introduction to list recursion
+  abbrev: recursion-intro
+  summary: |
+    We begin our exploration of *recursion*, the most general form
+    of repetition available in Scheme.  You can use recursion to
+    both build and iterate over different kinds of values.
+  reading:
+    - page: /readings/recursion-basics.html
+
+- topic: Local bindings
+  abbrev: let
+  summary: |
+    We explore issues of redundacy in code and mechanisms for reducing such reducnancy.
+  reading:
+    - page: /readings/local-bindings.html
+  lab:
+    - page: /labs/local-bindings.html
+
+- topic: Introduction to list recursion, continued
+  summary: |
+    We continue our introductory exploration of recursion in Scheme.
+  reading:
+    - page: /readings/recursion-basics.html
+  lab:
+    - page: /labs/recursion-basics.html
+
+- topic: Recursion practice
+  summary: |
+    We continue to continue our introductory exploration of recursion
+    in Racket.
+  reading:
+    - page: /readings/recursion-magic.html
+  lab:
+    - page: /labs/recursion-practice.html
+
+- topic: Pause for breath
+  abbrev: pause-recursion
+  summary: |
+    We pause to reflect on various recursion issues.
+
+- topic: Recursion over numbers
+  abbrev: number-recursion
+  summary: |
+    We consider a slightly different kind of recursion, numeric
+    recursion.  In this technique, we once again have procedures
+    call themselves.  However, the parameter that we "simplify" at
+    every step is a number, rather than a list.
+  reading:
+    - page: /readings/numeric-recursion.html
+  lab:
+    - page: /labs/numeric-recursion.html
+
+- topic: Pairs
+  abbrev: pairs
+  summary: |
+    We explore pairs, the basic building blocks of lists, and consider
+    other, non-list structures one might build from pairs.
+  reading:
+    - page: /readings/pairs.html
+  lab:
+    - page: /labs/pairs.html
+
+- topic: Vectors
+  abbrev: vectors
+  summary: |
+    We explore vectors, an alternative to lists for storing data.
+    We consider how data are stored in memory.
+  reading:
+    - page: /readings/vectors.html
+  lab:
+    - page: /labs/vectors.html
+
+- topic: Vectors, continued
+  abbrev: vectors
+  summary: |
+    We continue to explore vectors.
+  lab:
+    - page: /labs/vectors-continued.html
+
+- topic: Randomness
+  abbrev: randomness
+  summary: |
+    We consider Scheme's `random` procedure and how one might use
+    that procedure in generating images.
+  reading:
+    - page: /readings/randomness.html
+  lab:
+    - page: /labs/random-language.html
+
+- topic: Dictionaries and hash tables
+  abbrev: dictionaries
+  summary: |
+    We consider structures that allow us to store information for
+    quick retrieval.
+  reading:
+    - page: /readings/hash-tables.html
+  lab:
+    - page: /labs/hash-tables.html
+
+- topic: Data abstraction
+  abbrev: data-abstraction
+  summary: |
+    We build upon the structures we have encountered so far to design
+    our own types and reflect on mechanisms for separating the
+    interface to a type from the implementation of the type.
+  reading: 
+    - page: /readings/data-abstraction.html
+  lab:
+    - page: /labs/data-abstraction.html
+
+- topic: Structured data
+  abbrev: structs
+  summary: |
+    We consider Racket's techniques for creating structured data types.
+  subjects:
+    - Structured data
+    - Using structs
+    - Mutable and immutable structs
+  reading:
+    - page: /readings/preconditions.html
+    - page: /readings/structs.html
+  lab:
+    - page: /labs/structs.html
+
+- topic: Higher-order recursive design
+  abbrev: higher-order-recursive-design
+  summary: |
+    We explore patterns of recursion in the design of programs,
+    particularly with regards to higher-order procedures.
+  reading:
+    - page: /readings/higher-order-recursive-design.html
+  lab:
+    - page: /labs/higher-order-recursion.html
+
+- topic: Tail recursion
+  abbrev: tail-recursion
+  summary: |
+    We continue to stretch our brains with recursive thinking.  In 
+    particular, We consider tail recursion, an advanced version of 
+    recursion that is ubiquitous in functional programming.
+  reading:
+    - page: /readings/tail-recursion.html
+    - page: /readings/list-recursion-revisited.html
+  lab:
+    - page: /labs/tail-recursion.html
+
+- topic: Project kickoff
+  abbrev: final-project
+  summary: |
+    We introduce the final project for the semester.
+  reading:
+    - page: /mps/mp09.html
+
+- topic: Trees
+  abbrev: trees
+  summary: |
+    We consider a common hierarchial mechanism for structuring data
+    and how to realize it in Scheme.
+  reading:
+    - page: /readings/trees-ex.html
+  lab:
+    - page: /labs/binary-trees.html
+  todo:
+    - Don't forget to add code to draw a tree
+
+- topic: Tree recursion
+  abbrev: tree-recursion
+  summary: |
+    We consider how to write recursive programs that process trees
+    and other tree-like structures.
+  reading:
+    - page: /readings/tree-recursion.html
+    - page: /readings/binary-search-trees.html
+  lab:
+    - page: /labs/tree-recursion.html
+
+- topic: Project work day
+  abbrev: project-work-day-2
+  summary: |
+    We provide class time for students to their projects.
+
+- topic: Complexity analysis and binary search
+  abbrev: search
+  summary: |
+    We explore techniques for analyzing the number of calls made
+    in evaluating procedures, particularly recursive procedures.
+    We consider why such analysis is useful.  We then delve into
+    a common problem: That of finding values in a collection.
+  reading:
+    - page: /readings/analysis.html
+    - page: /readings/searching.html
+  lab:
+    - page: /labs/searching.html
+
+- topic: "Case study: Sorting"
+  abbrev: sorting-lab
+  summary: |
+    We ground our exploration of sorting in some details.
+  reading:
+    - page: /readings/sorting.html
+  lab:
+    - page: /labs/sorting.html
+
+- topic: Project presentations
+  abbrev: presentations
+  summary: Students present their projects
+
+- topic: Wrapup
+  abbrev: wrapup
+  summary: |
+    We conclude the course.
+
+- topic: All outstanding mini-project redos and learning assessments due by 5pm
+  abbrev: end-of-semester
+  summary: |
+    The College requires that all work be submitted by 5pm.  The 
+    only work I will accept at this point will be learning assessments
+    from SoLA 5 (none are new) and redos of mini-projects.
+
+- topic: Turtle graphics
+  abbrev: turtle
+  summary: |  
+    We consider "turtle graphics", a model of image making originally
+    popularized by the Logo programming language.  We also review
+    issues of side effects and program state.
+  reading:
+    - page: /readings/side-effects-reviewed.html
+    - page: /readings/turtle-graphics.html
+  lab:
+    - page: /labs/turtle-graphics.html
+  todo:
+    - All new! (or all revised from a few years ago)
+    - Will we ever find time to include this in the new version of the course?
+
+- topic: Sorting out sorting
+  abbrev: sorting
+  summary: |
+    We dive into an important problem: Arranging the values in a list or vector.
+
+- topic: Algorithmic decomposition
+  abbrev: decomposition
+  summary: |
+    We consider a key technique in algorithmic thinking, how one “decomposes” a
+    more complex problem or algorithm into simpler ones.
+  reading:
+    - page: /readings/images.html
+    - page: /readings/decomposition.html
+  lab:
+    - page: /labs/decomposition.html
+  todo:
+    - Check the images reading to make sure it works with the new model.
+
