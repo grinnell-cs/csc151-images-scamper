@@ -1,0 +1,184 @@
+# Jekyll Site settings
+
+# Course title
+title: CSC 151-XX (SEMESTER)
+
+# baseurl is used for redirects on the same server.
+# url is the full path name
+baseurl: /Courses/CSC151/2025Sp
+url: https://INSTRUCTOR.cs.grinnell.edu/Courses/CSC151/2025Sp/
+
+# Where  to find the reference page
+reference: https://rebelsky.cs.grinnell.edu/Courses/CSC151/reference/
+
+# Are we online?  If not, we're in person.  (Some of the lab instructions are
+# affected by this choice.)
+online: false
+
+# Are we in a term (seven weeks)?  If not, we're in a semester
+term: false
+
+# Set the theme color. Options are blue, green, red, orange, purple, and gray
+color: gray
+
+instructor: Prof. Essor
+
+instructor_title: Professor P
+
+instructor_homepage: https://INSTRUCTOR.cs.grinnell.edu
+
+instructor_email: INSTRUCTOR@grinnell.edu
+
+meeting_times: |
+  MWF N:NN&ndash;N:NN MM CT in Science 3813
+
+meeting_start_time: 2:30 PM
+
+evening_due_time: 10:00 PM
+
+office_hours:
+  - TBD
+
+mentors: 
+  - NAME (Section 1)
+  - NAME (Section 2)
+  - NAME (Section 3)
+
+mentor_sessions:
+  - Session 1
+  - Session 2
+
+tutors:
+  - Sundays, 3&ndash;5 PM; Sundays through Thursdays, 7&ndash;10 PM in Science 3813 and 3815
+
+all_work_deadline:  5:00 PM on Friday, DATE
+# final_exam_time: TBD
+
+copyright: |
+  Copyright &copy; Eric Autry, Charlie Curtsinger, Sarah Dahlby
+  Albright, Janet Davis, Nicole Eikmeier, Fahmida Hamid, Priscilla
+  Jiménez, Barbara Johnson, Titus Klinge, Peter-Michael Osera, Leah
+  Perlmutter, Samuel A. Rebelsky, John David Stone, Anya Vostinar,
+  Henry Walker, and Jerod Weinman.
+
+copyright_message: |
+  Unless specified otherwise elsewhere on this page, this work is
+  licensed under a Creative Commons Attribution 3.0 Unported License.
+  To view a copy of this license, visit
+  <http://creativecommons.org/licenses/by-nc/3.0/> or send a letter
+  to Creative Commons, 543 Howard Street, 5th Floor, San Francisco,
+  California, 94105, USA.
+
+# Be picky about front-matter
+strict_front_matter: true
+
+# Set up collections for course content
+collections:
+  admin:
+    output: false
+
+  eboards:
+    output: false
+    permalink: /eboards/:path.html
+
+  handouts:
+    output: true
+    permalink: /handouts/:path.html
+
+  las:
+    output: true
+    permalink: /las/:path.html
+
+  labs:
+    output: true
+    permalink: /labs/:path.html
+
+  links:
+    output: true
+    permalink: /links:path.html
+
+  mps:
+    output: true
+    permalink: /mps/:path.html
+
+  readings:
+    output: true
+    permalink: /readings/:path.html
+
+  sandbox:
+    output: true
+    permalink: /sandbox/:path.html
+
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  
+  - scope:
+      path: ""
+      type: mps
+    values:
+      link: false
+      layout: assigned
+      collaboration: |
+        You must work individually on this assignment.
+        You may discuss this assignment with anyone, provided you
+        cite them appropriately.
+
+  - scope:
+      path: ""
+      type: labs
+    values:
+      link: true
+      section: Lab
+      layout: assigned
+
+  - scope:
+      path: ""
+      type: readings
+    values:
+      link: true
+      layout: assigned
+
+  - scope:
+      path: ""
+      type: sandbox
+    values:
+      link: true
+      layout: assigned
+
+# Build settings
+exclude:
+  - admin
+  - Gemfile
+  - Gemfile.lock
+  - INSTRUCTOR.md
+  - LICENSE
+  - Makefile
+  - README.md
+  - bin
+  - tasks
+  - vault
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    default_lang: drracket
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+
+# Plugin Settings
+plugins:
+  - jekyll-bootstrap-sass
+  - jekyll-include-cache
+
+bootstrap:
+  assets: true
