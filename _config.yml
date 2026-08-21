@@ -34,7 +34,9 @@ meeting_times: |
 
 meeting_start_time: 2:30 PM
 
-evening_due_time: 10:00 PM
+evening_due_time: 10:30 PM
+
+office: Science NNNN
 
 office_hours:
   - TBD
