@@ -132,6 +132,7 @@ This syllabus, like many modern syllabi, is _long_. _**Very** long_. Hence, we b
   * [_**Late work**_](#late-work). You are generally permitted to turn in work up to 48 hours after it is due. However, turning in work late costs you a token.
   * [_**Attendance and absences**_](#attendance-and-absences). You must let me know if you are going to miss class. 
   * [_**Redos**_](#redos). You may redo any mini-project except the final project. You may redo any learning assessment. 
+  * [_**Final exams**_](#final-exams). We don't have final exams. However, you can show up during our final exam times to make up any remaining LAs.
   * [_**Final deadline for all work**_](#final-deadline-for-all-work). The College does not permit me to accept work after {{ site.all_work_deadline }}.
   * [_**Academic alerts**_](#academic-alerts). The [Academic Success Center](https://www.grinnell.edu/about/leadership/offices-services/academic-success-center) asks us to keep them informed about students who are falling behind. I do so.
   * [_**Class software**_](#class-software). It's a CS class. We use software. I assume you're not surprised. The software includes Office 365, Teams, Gradescope, and Scamper.
@@ -517,6 +518,10 @@ Your first redo on a mini-project is generally free. Subsequent redos on mini-pr
 
 You may turn in the redo of a mini-project up to 48 hours after it is due. As with all late work, late redos cost one token.
 
+### Final exams
+
+Our course has scheduled times for final examinations and those appear on [the schedule](../schedule/). However, _this class has no final examination_! You can use our final examination time to make up any of your missing learning assessments. I'll also be available during final exam times to help you with any outstanding mini-projects. You can show up for the final exam time for any of the three sections.
+
 ### Final deadline for all work
 
 Note that *all* work must be submitted by {{ site.all_work_deadline }}.  This is College policy and cannot be waived for any reason. If you find yourself needing to turn in work past this deadline, you must consult with me as soon as possible to submit an *incomplete request* for the course. The Committee on Academic Standing notes that ""An incomplete is generally not appropriate when […] there are multiple assignments to be completed." Hence, if you take an incomplete in the course, the only work you can make up will be one of the mini projects.
@@ -685,3 +690,7 @@ If I ask a question about the course, will it end up here?
 I've heard that CSC-151 is intended as a "weed-out" course. Is that really the case?
 
 > I've always thought of CSC-151 as an opportunity to attract students to CS. While it's a challenging course, we try to have supports in place so that everyone can excel. My goal is that everyone earns an A. (I also hope that the course convinces those of you who were only planning to take one CS course to go on to another CS course.)
+
+I see that our final exam is at the end of the week. I'd like to fly home earlier. Is that possible?
+
+> We don't have a final exam. However, our final exam time is intended as an opportunity for you to make up any missing learning assessments. Since our final exams are at the end of the week, you may also make up learning assessments from 2--4pm on Monday, December 14.
