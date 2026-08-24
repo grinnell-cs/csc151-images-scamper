@@ -690,7 +690,3 @@ If I ask a question about the course, will it end up here?
 I've heard that CSC-151 is intended as a "weed-out" course. Is that really the case?
 
 > I've always thought of CSC-151 as an opportunity to attract students to CS. While it's a challenging course, we try to have supports in place so that everyone can excel. My goal is that everyone earns an A. (I also hope that the course convinces those of you who were only planning to take one CS course to go on to another CS course.)
-
-I see that our final exam is at the end of the week. I'd like to fly home earlier. Is that possible?
-
-> We don't have a final exam. However, our final exam time is intended as an opportunity for you to make up any missing learning assessments. Since our final exams are at the end of the week, you may also make up learning assessments from 2--4pm on Monday, December 14.
