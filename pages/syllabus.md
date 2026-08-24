@@ -540,7 +540,7 @@ There are several software packages we use in this course both for learning how 
 
 * Your [Grinnell Office365 account](https://office365.grinnell.edu) for email and [Microsoft Teams](https://teams.microsoft.com) for discussion and collaboration.
 * [Gradescope](https://gradescope.com) for assignment submission and feedback communication.
-* [Scamper](https://scamper.cs.grinnell.edu) for software development.
+* [Scamper](https://scamper.us.reclaim.cloud) for software development.
 
 Please make sure you can access all of these resources, and please let me know if you have any problems with access.
 
