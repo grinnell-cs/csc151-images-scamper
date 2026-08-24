@@ -1,7 +1,7 @@
 # Jekyll Site settings
 
 # Course title
-title: CSC 151-XX (Fall 2026)
+title: "CSC 151 (Fall 2026)"
 
 # baseurl is used for redirects on the same server.
 # url is the full path name
@@ -41,7 +41,11 @@ evening_due_time: 10:30 PM
 office: Science 2816
 
 office_hours:
-  - TBD
+  - "**Science 2816**"
+  - MW 11:00--11:45 a.m. CT \[_tentative_\]
+  - TuTh 2:00--4:00 p.m. CT \[_tentative_\]
+  - "Please [book meetings](https://bit.ly/book-samr) during office hours"
+  - "I am also available at other times; use Teams Message to arrange a time. See [my schedule](https://rebelsky.cs.grinnell.edu/schedule) for times I might be available."
 
 mentors: 
   - Mina Bakrac (Section 1)
