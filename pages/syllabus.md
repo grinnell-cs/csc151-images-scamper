@@ -19,9 +19,10 @@ permalink: /syllabus/
     </ul>
   </dd>
 
-  <dt>Office Hours ({{ site.office }})</dt>
+  <dt>Office Hours</dt>
   <dd>
     <ul class="list-unstyled">
+      <li><b>{{ site.office }}</b></li>
       {% for item in site.office_hours %}
         <li>{{ item | markdownify | remove: "<p>" | remove: "</p>" }}</li>
       {% endfor %}
