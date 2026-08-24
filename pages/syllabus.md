@@ -113,7 +113,7 @@ This syllabus, like many modern syllabi, is _long_. _**Very** long_. Hence, we b
   * [_**Other accommodations and adjustments**_](#other-accommodations-and-adjustments). Talk to me. I'm here to help.
 
 * [**Evaluation and grading**](#evaluation-and-grading). Part of my job is to assess your work. This is what I assess, how I assess, and how I convert individual grades into a final grade.
-  * [_**Mastery grading**_](#mastery-grading). This class uses **mastery grading**, an approach to grading that emphasizes that you get things right, rather than when you get them right. You will get regular chances for redos.
+  * [_**Mastery grading**_](#mastery-grading). This class uses an approach to grading that emphasizes *that* you get things right, rather than *when* you get them right. In practice, this means you will get regular chances to redo your work.
   * [_**Types of graded work**_](#types-of-graded-work). We have six types of graded work.
     * [_Mini-projects (homework assignments)_](#mini-projects-homework-assignments). Bi-weekly programming exercises, to be completed individually outside of class. You must complete all mini-projects to earn an A.
     * [_Final project_](#final-project).  A somewhat larger project, to be completed individually or in a group. You must complete the final project to pass the class.
@@ -137,11 +137,20 @@ This syllabus, like many modern syllabi, is _long_. _**Very** long_. Hence, we b
   * [_**Class software**_](#class-software). It's a CS class. We use software. I assume you're not surprised. The software includes Office 365, Teams, Gradescope, and Scamper.
 
 * [**Academic integrity**](#academic-integrity). Don't cheat. Cite work you build upon. Cite help you get. Talk to me if stress might lead you to cheat.
-  * [_**Citing**_](#citing). "NAME helped me with TOPIC."
+  * [_**Citing**_](#citing). "NAME helped me with TOPIC." "I used URL for ACTION."
   * [_**Sharing of course materials**_](#sharing-of-course-materials). Please don't post your homework publicly, where others may copy from it (and LLMs may consume it).
   * [_**AI programming assistants**_](#ai-programming-assistants). Don't use them. Cite them if you do.
   * [_**AI writing assistants**_](#ai-writing-assistants). Don't use them. Cite them if you do.
   * [_**Web search**_](#web-search). Try not to do it. Cite your searches if you do.
+
+* [**Disclaimers, advice, and more**](#disclaimers-advice-and-more). Additional thoughts on the course and your experience in the course.
+  * [_**Some short notes**_](#some-short notes). Warnings and suggestions.
+  * [_**Asking questions**_](#asking-questions). I like it when you ask questions. Our Q&A channel on Teams is a great place to do so.
+  * [_**Encountering mastery grading**_](#encountering-mastery-grading). Mastery grading can feel weird. You'll probably come to appreciate it.
+  * [_**Multiple sections**_](#multiple-sections). There are three sections of the course. They are similar.
+  * [_**Feeling overwhelmed**_](#feeling-overwhelmed). The syllabus covers a lot. It's okay; you don't need to memorize everying. It will feel less overwhelming and more familiar as time goes on.
+
+* [**Frequently (and not-so-frequently) asked questions**](#frequently-and-not-so-frequently-asked-questions). Because almost every document needs an FAQ.
 
 ## About this course
 
@@ -365,7 +374,7 @@ You can discuss the metacognitive reflections with anyone. However, you will ben
 </thead>
 <tbody>
 <tr><td>LAs</td> <td>S/N</td> <td>Instructor</td> <td>Free</td> <td>No</td></tr>
-<tr><td>MPs</td> <td>S/N</td> <td>Graders</td> <td>Token</td> <td>Yes</td></tr>
+<tr><td>MPs</td> <td>S/N</td> <td>Graders</td> <td>Tokens</td> <td>Yes</td></tr>
 <tr><td>Reading responses</td> <td>S/N</td> <td>Instructor</td> <td>No</td> <td>Yes</td></tr>
 <tr><td>Lab writeups</td> <td>S/N</td> <td>Graders</td> <td>No</td> <td>Yes</td></tr>
 <tr><td>Metacogs</td> <td>S/N</td> <td>Instructors</td> <td>No</td> <td>Yes</td></tr>
