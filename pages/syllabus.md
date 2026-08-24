@@ -148,9 +148,9 @@ This syllabus, like many modern syllabi, is _long_. _**Very** long_. Hence, we b
   * [_**Asking questions**_](#asking-questions). I like it when you ask questions. Our Q&A channel on Teams is a great place to do so.
   * [_**Encountering mastery grading**_](#encountering-mastery-grading). Mastery grading can feel weird. You'll probably come to appreciate it.
   * [_**Multiple sections**_](#multiple-sections). There are three sections of the course. They are similar.
-  * [_**Feeling overwhelmed**_](#feeling-overwhelmed). The syllabus covers a lot. It's okay; you don't need to memorize everying. It will feel less overwhelming and more familiar as time goes on.
+  * [_**Feeling overwhelmed**_](#feeling-overwhelmed). The syllabus covers a lot. **Don't panic**. It's okay; you don't need to memorize everything. It will feel less overwhelming and more familiar as time goes on.
 
-* [**Frequently (and not-so-frequently) asked questions**](#frequently-and-not-so-frequently-asked-questions). Because almost every document needs an FAQ.
+* [**Frequently (and not-so-frequently) asked questions**](#frequently-and-not-so-frequently-asked-questions). Because almost every document needs an FAQ (or is it "a FAQ"?).
 
 ## About this course
 
