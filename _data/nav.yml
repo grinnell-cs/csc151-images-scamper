@@ -1,0 +1,18 @@
+- title: Syllabus
+  path: /syllabus/
+- title: Schedule
+  path: /schedule/
+- title: LAs
+  path: /las/
+- title: MPs
+  path: /mps/
+- title: Handouts
+  path: /handouts/
+- title: Scamper
+  url: https://scamper.us.reclaim.cloud/
+- title: Teams
+  url: |
+    https://teams.microsoft.com/
+- title: Gradescope
+  url: |
+    https://www.gradescope.com/
