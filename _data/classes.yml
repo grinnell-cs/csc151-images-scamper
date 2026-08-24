@@ -388,6 +388,16 @@
   summary: |
     We provide class time for students to their projects.
 
+- topic: Project work day
+  abbrev: project-work-day-3
+  summary: |
+    More class time to work on projects.
+
+- topic: Pause for breath
+  abbrev: pause-week-13
+  summary: |
+    Perhaps a space for shifting topics. Perhaps a project work day.
+
 - topic: Complexity analysis and binary search
   abbrev: search
   summary: |
@@ -401,6 +411,10 @@
   lab:
     - page: /labs/searching.html
 
+- topic: Project presentations
+  abbrev: presentations
+  summary: Students present their projects
+
 - topic: "Case study: Sorting"
   abbrev: sorting-lab
   summary: |
@@ -409,10 +423,6 @@
     - page: /readings/sorting.html
   lab:
     - page: /labs/sorting.html
-
-- topic: Project presentations
-  abbrev: presentations
-  summary: Students present their projects
 
 - topic: Wrapup
   abbrev: wrapup
