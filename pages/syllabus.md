@@ -136,6 +136,7 @@ This syllabus, like many modern syllabi, is _long_. _**Very** long_. Hence, we b
   * [_**Final deadline for all work**_](#final-deadline-for-all-work). The College does not permit me to accept work after {{ site.all_work_deadline }}.
   * [_**Academic alerts**_](#academic-alerts). The [Academic Success Center](https://www.grinnell.edu/about/leadership/offices-services/academic-success-center) asks us to keep them informed about students who are falling behind. I do so.
   * [_**Class software**_](#class-software). It's a CS class. We use software. I assume you're not surprised. The software includes Office 365, Teams, Gradescope, and Scamper.
+  * [_**Phones**_](#phones). This class has a "no cell phones" policy. Your phones should be silenced and in your bag.
 
 * [**Academic integrity**](#academic-integrity). Don't cheat. Cite work you build upon. Cite help you get. Talk to me if stress might lead you to cheat.
   * [_**Citing**_](#citing). "NAME helped me with TOPIC." "I used URL for ACTION."
@@ -556,6 +557,16 @@ Please make sure you can access all of these resources, and please let me know i
 This may be your first semester learning with Teams.  Things will likely mess up from time to time.  That's okay; it's part of the process.
 
 This may be your first semester using Gradescope.  Gradescope does some things well and some things less well.  Things will likely mess up from time to time.  That's okay; it's part of the process.  I'll make adjustments when you have difficulty.  I hope you'll accept my apologies when I do something wrong (or at least fail to adjust my processes to the way Gradescope thinks they should be done).
+
+### Phones
+
+I have mixed feelings about cell phones in class. On the one hand, they can be useful for looking things up. On the other, they are likely to be distracting; you may find yourself compelled to answer a text, or silence a call, or check your social media status, or ....  They can also be a distraction to other students.
+
+Cell phones also present a risk of apparent or real violations of our academic integrity policies. Again, it's tempting to answer your phone if it dings in class. And the ding can be a distraction to other students.
+
+Hence, we have a *no phone policy* in this class. Please silence your phone at the start of class and put it away in your bag. I'll try to remember to do the same.
+
+Thanks for being understanding!
 
 ## Academic integrity 
 
