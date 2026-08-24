@@ -132,6 +132,7 @@ This syllabus, like many modern syllabi, is _long_. _**Very** long_. Hence, we b
   * [_**Late work**_](#late-work). You are generally permitted to turn in work up to 48 hours after it is due. However, turning in work late costs you a token.
   * [_**Attendance and absences**_](#attendance-and-absences). You must let me know if you are going to miss class. 
   * [_**Redos**_](#redos). You may redo any mini-project except the final project. You may redo any learning assessment. 
+  * [_**Final exams**_](#final-exams). We don't have final exams. However, you can show up during our final exam times to make up any remaining LAs.
   * [_**Final deadline for all work**_](#final-deadline-for-all-work). The College does not permit me to accept work after {{ site.all_work_deadline }}.
   * [_**Academic alerts**_](#academic-alerts). The [Academic Success Center](https://www.grinnell.edu/about/leadership/offices-services/academic-success-center) asks us to keep them informed about students who are falling behind. I do so.
   * [_**Class software**_](#class-software). It's a CS class. We use software. I assume you're not surprised. The software includes Office 365, Teams, Gradescope, and Scamper.
@@ -520,6 +521,10 @@ In contrast, redos on reading responses, lab writeups, and metacognitive reflect
 Your first redo on a mini-project is generally free. Subsequent redos on mini-projects may require tokens; wee [the section on tokens](#tokens) for details. When you receive a graded mini-project, it will generally include a checklist of issues that you must address. Please reproduce the checklist in your re-done project. Where appropriate, you should indicate how you addressed the issues we have described. **When re-doing a project, you may not use new Scheme features that you've learned since the project**; Please see the [handout on redoing mini-projects](../handouts/redos) for more details.
 
 You may turn in the redo of a mini-project up to 48 hours after it is due. As with all late work, late redos cost one token.
+
+### Final exams
+
+Our course has scheduled times for final examinations and those appear on [the schedule](../schedule/). However, _this class has no final examination_! You can use our final examination time to make up any of your missing learning assessments. I'll also be available during final exam times to help you with any outstanding mini-projects. You can show up for the final exam time for any of the three sections.
 
 ### Final deadline for all work
 
