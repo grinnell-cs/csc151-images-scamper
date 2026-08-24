@@ -21,7 +21,7 @@ term: false
 # Set the theme color. Options are blue, green, red, orange, purple, and gray
 color: purple
 
-instructor: Prof. Rebelsky
+instructor: Prof. Samuel A. Rebelsky
 
 instructor_title: SamR
 
@@ -29,7 +29,7 @@ instructor_homepage: https://rebelsky.cs.grinnell.edu
 
 instructor_email: rebelsky@grinnell.edu
 
-meeting_times: |
+meeting_times:
   - MWF 8:00&ndash;9:20 AM CT in Science 3813 (Section 1)
   - MWF 9:30&ndash;10:50 AM CT in Science 3813 (Section 2)
   - MWF 2:30&ndash;4:00 PM CT in Science 3813 (Section 3)
@@ -38,15 +38,15 @@ meeting_start_time: 2:30 PM
 
 evening_due_time: 10:30 PM
 
-office: Science NNNN
+office: Science 2816
 
 office_hours:
   - TBD
 
 mentors: 
-  - NAME (Section 1)
-  - NAME (Section 2)
-  - NAME (Section 3)
+  - Mina Bakrac (Section 1)
+  - Kate Moon (Section 2)
+  - Drillon Qerimi (Section 3)
 
 mentor_sessions:
   - TBD
