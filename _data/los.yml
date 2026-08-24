@@ -1,0 +1,117 @@
+- outcome: Decomposition
+  description: Decompose a computational problem into smaller sub-problems amenable to implementation with procedures.
+  example: /las/decomposition
+  active: true
+
+- outcome: Procedural abstraction
+  description: Take a concrete set of instructions and create a procedure that generalizes that behavior
+  example: /las/procedures
+  active: true
+
+- outcome: Tracing
+  description: Trace the execution of a Racket program using a substitutive model of computation.
+  example: /las/tracing
+  active: true
+
+- outcome: Primitive types
+  description: Express basic computations over primitive values and their associated standard library functions.
+  example: /las/primitive-types
+  active: false
+
+- outcome: Collaboration
+  description: Explain best practices for solving problems in a collaborative setting.
+  example: /las/collaboration
+  active: true
+
+- outcome: Lambda-free anonymous procedures
+  description: Use `cut` and composition to simplify computations.
+  example: /las/hop
+  active: true
+
+- outcome: Conditionals
+  description: Use Boolean expressions and conditional operations to produce conditional behavior.
+  example: /las/conditionals
+  active: true
+
+- outcome: Documentation
+  description: Document programs according to good software engineering principles.
+  example: /las/documentation
+  active: true
+
+- outcome: Testing
+  description: Test programs according to good software engineering principles.
+  example: /las/testing
+  active: true
+
+- outcome: Program style
+  description: Write and structure code in ways that make it easier to understand.
+  example: /las/program-style
+  active: true
+
+- outcome: Lists
+  description: Manipulate lists with fundamental higher-order list functions.
+  example: /las/lists
+  active: true
+
+- outcome: Ethical considerations
+  description: Consider implications of the power of computing.
+  active: false
+
+- outcome: Local bindings
+  description: Refactor redundancy and add clarity in computations with let-bindings.
+  example: /las/local-bindings
+  active: true
+
+- outcome: List recursion
+  description: Design and write recursive functions over lists.
+  example: /las/list-recursion
+  active: true
+
+- outcome: Numeric recursion
+  description: Design and write recursive functions over the natural numbers
+  example: /las/numeric-recursion
+  active: true
+
+- outcome: Vectors
+  description: Design and write functions---potentially, recursive functions---that use vectors.
+  example: /las/vectors
+  active: true
+
+- outcome: Diagramming structures
+  description: Use our mental model of memory to describe or diagram the layout of memory for lists, pairs, and vectors/arrays.
+  active: true
+
+- outcome: Randomness
+  description: Write programs that produce predictably unpredictable output.
+  example: /las/randomness
+  active: true
+
+- outcome: Dictionaries
+  description: Design and write functions that use dictionaries.
+  example: /las/dictionaries
+  active: true
+
+- outcome: Data abstraction
+  description: Design data structures to separate interface from implementation.
+  example: /las/data-abstraction.
+  active: true
+
+- outcome: Higher-order programming
+  description: Write procedures that take other procedures as parameters or return prodedures as results.
+  example: /las/write-hop
+  active: true
+
+- outcome: Tree recursion
+  description: Design and write recursive functions over trees.
+  example: /las/tree-recursion
+  active: true
+
+- outcome: Running time
+  description: Use a mental model of computation to count the relevant number of operations performed by a function.
+  example: /las/running-time
+  active: false
+
+- outcome: Sorting and searching
+  description: Update, modify, or execute fundamental sorting and searching algorithms
+  example: /las/searching
+  active: false

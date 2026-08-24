@@ -93,6 +93,7 @@ This syllabus, like many modern syllabi, is _long_. _**Very** long_. Hence, we b
 
 * [**About this course**](#about-this-course). This is an introductory CS course. 
   * [_**Course goals**_](#course-goals). We want to help you develop knowledge and ability in computational thinking (which is **not** thinking like a computer), a bit of programming, and some broader skills, including problem solving.
+  * [_**Learning objectives*_](#learning-objectives). We can also consider the course goals in a more finely grained (and individually assessible) form.
   * [_**Problem domain**_](#problem-domain).  We'll be using image making and manipulation as our problem domain.
   * [_**Why take CSC-151?**_](#why-take-csc-151). Our marketing materials! In a world dominated by computing, it's good to know a bit about these topics.
 
@@ -125,17 +126,22 @@ This syllabus, like many modern syllabi, is _long_. _**Very** long_. Hence, we b
  
 * [**More policies and practices**](#more-policies-and-practices). Other things you should know.
   * [_**Status reports**_](#status-reports). I send summaries of your grades.
-  * [_**Tokens**_](#tokens).
-  * [_**Late work**_](#late-work).
-  * [_**Attendance and absences**_](#attendance-and-absences).
-  * [_**Redos**_](#redos).
-  * [_**Final deadline for all work**_](#final-deadline-for-all-work)
-  * [_**Academic alerts**_](#academic-alerts)
+  * [_**Tokens**_](#tokens). Tokens are the "class currency". You use them to pay for turning in things late, for unexcused absences, and similar things.
+    * [_Earning tokens_](#earning-tokens). You earn tokens by attending events.
+    * [_Overspending tokens_](#overspending-tokens). If you spend more tokens than you have, it negatively affects your grade.
+  * [_**Late work**_](#late-work). You are generally permitted to turn in work up to 48 hours after it is due. However, turning in work late costs you a token.
+  * [_**Attendance and absences**_](#attendance-and-absences). You must let me know if you are going to miss class. 
+  * [_**Redos**_](#redos). You may redo any mini-project except the final project. You may redo any learning assessment. 
+  * [_**Final deadline for all work**_](#final-deadline-for-all-work). The College does not permit me to accept work after {{ site.all_work_deadline }}.
+  * [_**Academic alerts**_](#academic-alerts). The [Academic Success Center](https://www.grinnell.edu/about/leadership/offices-services/academic-success-center) asks us to keep them informed about students who are falling behind. I do so.
+  * [_**Class software**_](#class-software). It's a CS class. We use software. I assume you're not surprised. The software includes Office 365, Teams, Gradescope, and Scamper.
 
-* [**Class software**](#class-software). It's a CS class. We use software. I assume you're not surprised.
-  * [_**Scamper**_](#scamper). Scamper is our primary programming language and development environment. It was built at Grinnell.
-  * [_**Microsoft Teams**_](#microsoft-teams). Teams is our primary communication platform.
-  * [_**Gradescope**_](#gradescope). Gradescope is our grading platform.
+* [**Academic integrity**](#academic-integrity). Don't cheat. Cite work you build upon. Cite help you get. Talk to me if stress might lead you to cheat.
+  * [_**Citing**_](#citing). "NAME helped me with TOPIC."
+  * [_**Sharing of course materials**_](#sharing-of-course-materials). Please don't post your homework publicly, where others may copy from it (and LLMs may consume it).
+  * [_**AI programming assistants**_](#ai-programming-assistants). Don't use them. Cite them if you do.
+  * [_**AI writing assistants**_](#ai-writing-assistants). Don't use them. Cite them if you do.
+  * [_**Web search**_](#web-search). Try not to do it. Cite your searches if you do.
 
 ## About this course
 
@@ -163,6 +169,17 @@ By the end of this course, you should be able to:
 In addition to these primary outcomes, we also expect you will take away more general skills and knowledge related to the discipline:
 
 * Describe the benefits of collaboration in problem-solving and employ best-practices when working in groups.
+
+### Learning objectives
+
+We break these broader course goals into smaller, somewhat more measurable, "learning objectives" (LOs).  Don't worry if you don't understand all of these terms; you will by the end of the semester!
+
+{% for lo in site.data.los %} {% if lo.active %} 1. **{{ lo.outcome}}**. {{ lo.description }} 
+{% endif %}{% endfor %}
+
+Each learning objective has a corresponding [learning assessment](learning-assessments-quizzes) which we will cover in approximately the order given above.
+
+Unfortunately, the complexities and limitations of assessment mean that we also have some additional learning objectives that we cover but do not explicitly test, including such important issues as ethics, program efficiency, and sorting.
 
 ### Problem domain: Image making and manipulation
 
@@ -214,18 +231,7 @@ Note that the department has limited resources for individual tutors. Hence, we 
 
 ### Your peers
 
-## Time and workload
-
-Grinnell has indicated that a 4-credit course, like this one, should involve approximately 180 hours of work, which matches some guidance from the U.S. government. Across a 14-week term (plus a week of finals), that ends up being approximately 12 hours of work per week. We have not been able to get anyone to answer the question of "180 hours *for whom* and *for what grade*?", but some of us have been given the impression that we should strive for that workload for the "average" student in a course who seeks to earn a B.
-
-In general, the twelve hours should work out to approximately
-
-* four hours per week in class,
-* three hours per week on readings (one hour per day),
-* four hours per week on either mini-projects (homework assignments) or SoLAs (exams), and
-* one hour per week for mentor sessions.
-
-If you find yourself working much more than the expected amount in this course, please let me know ASAP.  It could be that other approaches to your work, or better support resources, can help.  It may also be that I'm assigning too much work.
+In my experience, the best work often involves collaboration with others. Hence, I encourage you to talk about your work in class with other students; they can help clarify confusion and in talking to you about ideas, you will both learn more.  At the same time, pushing through challenging problems helps build skills in thinking and persistence, so you should seek a balance.
 
 ## Inclusion
 
@@ -291,7 +297,7 @@ We rely on six kinds of work to assess your mastery of the material.
 
 #### Learning assessments (quizzes)
 
-Learning assessments (LA) are individually completed problems that directly assess your mastery of the learning goals of the course.  LAs form the core of your course grade. Each LA is a _short_ problem on one of course's learning objectives. You should generally be able to complete each LA in fifteen minutes or less.
+Learning assessments (LA) are individually completed problems that directly assess your mastery of the learning objectives of the course.  LAs form the core of your course grade. Each LA is a _short_ problem on one of course's learning objectives. You should generally be able to complete each LA in fifteen minutes or less.
 
 Learning assessments will be conducted as quizzes given at the start or end of class on Fridays. In most weeks, one or two new LAs will be available each class.
 
@@ -400,27 +406,93 @@ Note: If your LAs and MPs indicate that you should receive a passing grade (C or
 
 ## More policies and practices
 
-It's impossible to cover every aspect of the course in the syllabus, but I try.
+It's impossible to cover every aspect of the course in the syllabus, but I try. Here are some other important issues.
+
+## Time and workload
+
+Grinnell has indicated that a 4-credit course, like this one, should involve approximately 180 hours of work, which matches some guidance from the U.S. government. Across a 14-week term (plus a week of finals), that ends up being approximately 12 hours of work per week. We have not been able to get anyone to answer the question of "180 hours *for whom* and *for what grade*?", but some of us have been given the impression that we should strive for that workload for the "average" student in a course who seeks to earn a B.
+
+In general, the twelve hours should work out to approximately
+
+* four hours per week in class,
+* three hours per week on readings (one hour per class day),
+* three hours per week on mini-projects (homework assignments),
+* one hour per week studying for learning assessments, and
+* one hour per week for mentor sessions.
+
+If you find yourself working much more than the expected amount in this course, please let me know ASAP.  It could be that other approaches to your work, or better support resources, can help.  It may also be that I'm assigning too much work.
 
 ### Status reports
+
+I will do my best to distribute a status report after each mini-project is graded. The status report will list what work you have and have not completed.
 
 ### Tokens
 
 To provide a consistent and clear mechanism for dealing with the issues that regularly come up during the semester (e.g., late work, extra resubmissions, unexcused absences), I rely on a variant of the "[token system](../handouts/tokens)" designed by my colleague Peter-Michael Osera.  In short, you begin the semester with a few tokens and use them up as you turn in work late, show up to class late, or miss class without notifying me. You may earn additional tokens by attending events that I deem appropriate, such as talks related to the course or your colleages' performances and competitions.
 
-The regular status reports will include information on tokens.
+You begin the course with **3 tokens**. You use them as follows.
 
-Please read [the handout on tokens](../handouts/tokens) for more details.
++ _**Late reading**_: Use **1 token** to turn in any reading problem up to 48 hours late.
++ _**Late lab writeup**_: Use **1 token** to turn in any lab writeup problem up to 48 hours late.
+* _**Late metacognitive reflection**_: Use **1 token** to turn in any metacognitive reflection up to 48 hours late.
++ _**Late mini-project**_: Use **1 token** to turn in a mini-project up to 48 hours late.
++ _**No initial submission of a mini-project**_: Use **2 tokens** for the first redo of a mini-project that did not have an initial submission.
++ _**Late redo**_: Use **1 token** to turn in a redo of a mini-project up to 48 hours late.
++ _**Second redo**_: Use **2 tokens** for a second redo on any mini-project.
++ _**Late to class**_:  Use **1 token** to show up to class late (after we take attendance).
++ _**Unexcused absence**_: Use **2 tokens** to miss class without reasonable notification.
+
+#### Earning tokens
+
+You can earn additional tokens on top of your initial three in one of three ways:
+
+* You can attend one of the regular CS department events, such as CS table (lunchtime convesations) or CS extras (talks).
+* You can attend certain other designated campus events, such as Scholars' Convocation.
+* You can support your classmates by attending their performances or competitions.
+
+Token-bearing events will be announced in class. If an event is not announced in class, it will not count. You may certainly suggest events.
+
+To earn tokens by attending events, attend the event and then submit a one-paragraph reflection **within 72 hours** of the event on Gradescope.  You will submit your reflection to the **Tokens** assignment on gradescope. 
+
+Note that a reflection is not the same as a description.  I'm interested in hearing, for example, what you took away from the event or surprising things you observed.
+
+At times, I may also offer tokens for other things, such as all of the class completing a survey.
+
+#### Overspending tokens
+
+In general, you are limited to earning five tokens per week. If you'd like an exemption, please discuss it with me.
+
+At the end of the semester, if you have used more tokens than you possess, those extra "negative tokens" will count against your final grade.
+
++ Overspending of 1--5 tokens will drop your grade by one-third of a letter grade, _e.g._, from a B+ to a B.
++ Overspending of 6--10 tokens will drop your grade by a two-thirds of a letter grade, _e.g._, from a B+ to a B-.
++ Overspending of 11--15 tokens will drop your grade by a full letter grade, _e.g._, from a B+ to a C+.
+
+And so on for every 5 overspent tokens.
+
+Remember that you are allowed to gather excess tokens during the semester to use at later times or allow your tokens to go negative if you replace them before the end of the semester. Tokens will only affect your final grade if, at the end of the semester, you have negative tokens.
+
+The regular status reports will include information on tokens.
 
 ### Late work
 
+I understand that things sometimes come up that make it difficult or impossible to turn work in on time. You can spend a token to turn in almost any work late. Since learning assessments are done in class, you are not permitted to turn those in late; however, you will have an opportunity to try a similar LA again the following week.
+
+If you know in advance that a due date will be particularly stressful (e.g., because you have a lot of other work due then), please chat with me in advance.
+
+Experience suggests that doing your CS homework at the last minute invariably leads to both less-good work and late work. Please do your best to start assignments early.
+
 ### Attendance and absences
 
-You'll learn better if you attend class regularly and keep yourself engaged during class. However, I understand that you may have reasons you want or need to miss class. _I do not grade on attendance_. You are free to miss class for health reasons, for religious observations, for sporting events, for unexpected conflicts, because you need a mental health day, or whatever other reason you.
+You'll learn better if you attend class regularly and keep yourself engaged during class. However, I understand that you may have reasons you want or need to miss class. _I do not grade on attendance_. You are free to miss class for health reasons, to support a friend, for religious observations, for sporting events, for unexpected conflicts, because you need a mental health day, to visit a consulate, or whatever other reason you deem appropriate.
 
-However, **you must send me an email if you are going to miss class** or if you unexpectedly missed class (e.g., because you overslept). You need not explain why you are missing or missed class. Simply let me know. You are adults and I trust you to make appropriate decisions.
+However, **you must send me an email if you are going to miss class** or if you unexpectedly missed class (e.g., because you overslept). You need not explain why you are missing or missed class. Simply let me know. "Dear Sam, I'm sorry, but I can't make it to class today." You are adults and I trust you to make appropriate decisions.
 
-If you miss class, you are responsible for making up the work promptly. If there was a lab in class (and there usually is), you must complete it and turn it in by the end of the next day. You should get notes on discussion from a classmate or check the eboards for details.
+I would prefer that you notify me via email before the class period (or before the end of the class period).  If that is not possible, you should notify me via email by 5 p.m. on the day that you missed class.  With very few exceptions, I will not excuse an absence if you do not notify me of within this time frame.  I expect that you will notify me, even if your absence is unlikely to qualify as an excused absence.  Absences without notification have greater consequence to your grade than absences with notification. In particular, you will be charged tokens for each unexcused absence.
+
+For events in which you have advance notice (e.g., sporting events and religious observations), I would prefer that you notify me as soon as possible.
+
+If you miss class, you are also responsible for making up the work promptly. If there was a lab in class (and there usually is), you must complete it and turn it in by the end of the next day. You should get notes on discussion from a classmate or check the eboards for details.
 
 I strongly encourage you to attend class regularly. In my experience, students who regularly miss class struggle to complete the work and are less likely to pass.
 
@@ -430,93 +502,76 @@ If you miss class more than two days in a row, I will submit an academic alert t
 
 Because I care more that you learn the material than that you learn it by a particular deadline, I permit redos for the major work in this course.  Redos on learning assessments are automatically available. In general, you may try them again on the next set of learning assessments (SoLA).
 
-In contrast, redos on reading responses, lab writeups, and metacognitive reflections are are rarely permitted.  Please speak with me if you would like to redo a reading response or lab writeup. Since metacognitive reflections only work when done with a task, you may not make those up.
+In contrast, redos on reading responses, lab writeups, and metacognitive reflections are rarely, if ever, permitted.  Please speak with me if you would like to redo a reading response or lab writeup. Since metacognitive reflections only work when done with a task, you may not make those up.
 
-Your first redo on a mini-project is generally free. Subsequent redos on mini-projects may require tokens; see [the handout on tokens](../handouts/tokens) for details. When you receive a graded mini-project, it will generally include a checklist of issues that you must address to get a higher grade. Please reproduce the checklist in your re-done project. Where appropriate, you should indicate how you addressed the issues we have described. When re-doing a project, you may not use new Scheme features that you've learned since the project; Please see the [handout on redoing mini-projects](../handouts/redos) for more details.
+Your first redo on a mini-project is generally free. Subsequent redos on mini-projects may require tokens; wee [the section on tokens](#tokens) for details. When you receive a graded mini-project, it will generally include a checklist of issues that you must address. Please reproduce the checklist in your re-done project. Where appropriate, you should indicate how you addressed the issues we have described. **When re-doing a project, you may not use new Scheme features that you've learned since the project**; Please see the [handout on redoing mini-projects](../handouts/redos) for more details.
 
-ADD NOTE ABOUT REDOS AND LATE WORK AND SUCH.
+You may turn in the redo of a mini-project up to 48 hours after it is due. As with all late work, late redos cost one token.
 
 ### Final deadline for all work
 
-Note that *all* work must be submitted by {{ site.all_work_deadline }}.
-This is College policy and cannot be waived for any reason.  If you find yourself needing to turn in work past this deadline, you must consult with me as soon as possible to submit an *incomplete request* for the course.  The Committee on Academic Standing notes that ""An incomplete is generally not appropriate when […] there are multiple assignments to be completed." Hence, if you take an incomplete in the course, the only work you can make up will be one of the mini projects.
+Note that *all* work must be submitted by {{ site.all_work_deadline }}.  This is College policy and cannot be waived for any reason. If you find yourself needing to turn in work past this deadline, you must consult with me as soon as possible to submit an *incomplete request* for the course. The Committee on Academic Standing notes that ""An incomplete is generally not appropriate when […] there are multiple assignments to be completed." Hence, if you take an incomplete in the course, the only work you can make up will be one of the mini projects.
 
-### Academic alearts
+### Academic alerts
 
-Our grading system offers flexibility.  However, it adds a cost of giving the illusion that if you fall behind in your work, there is always an opportunity to catch up. While this is true in theory, in practice, it is difficult to do so in many situations because of personal issues, competing courses, extracurricular obligations, etc. This flexibility also makes it difficult---for both you and me---to determine when you have fallen behind in the course and need external help whether that it is from the course staff, tutors, or academic advising.
+Grinnell asks faculty to submit an academic alert when they find that a student is falling behind in a class or otherwise showing signs of difficulty. Since the mastery grading system includes an expectation that you may struggle on some parts of the course, "falling behind" can be difficult to assess.
 
-We encourage you to also preemptively come to any member of the course staff---the instructor, the course mentor, our Peer Education Coordinator---for help and guidance if you feel like you are falling behind. However, to be more clear about when you might be falling behind in the course, I will do my best to track the following _course breakpoints_ in your progress. In particular, when one of the following situations occurs, I will follow up with you as well as academic advising (via an academic alert) to check in.
+I make it a policy to submit academic alerts for each of the following reasons.
 
-* You miss two or more days of classes in a row (for any reason).
-* You have used all of your tokens.
-* You receive an I on a mini-project.
-* You do not turn in a revision for a mini-project graded as an R.
-* After a SoLA, you have completed less than 60% of the LAs to date.
-* You are otherwise at substantial risk of earning below a C in the course.
+* You miss three or more days of classes in a row (excused or unexcused absences).
+* You receive a Not-yet-satisfactory grade on a mini project.
+* You do not turn in a revision for a mini project graded as N at the revision deadline.
+* You seem to have fallen significantly behind on learning assessments (below 60%).
 
 If any of those issues happen, we should also talk so that I might provide guidance and help you develop a plan for getting back on track, e.g., by assigning an individual tutor.
 
-## Software, textbooks, references, technology, and such
+### Software
 
 There are several software packages we use in this course both for learning how to program as well as conducting learning online.
 
-+ The [DrRacket](https://docs.racket-lang.org/drracket/) programming environment.
-+ Your [Grinnell Office365 account](https://office365.grinnell.edu) for email and [Microsoft Teams](https://teams.microsoft.com) for discussion and collaboration.
-+ [Gradescope](https://gradescope.com) for assignment submission and feedback communication.
+* Your [Grinnell Office365 account](https://office365.grinnell.edu) for email and [Microsoft Teams](https://teams.microsoft.com) for discussion and collaboration.
+* [Gradescope](https://gradescope.com) for assignment submission and feedback communication.
+* [Scamper](https://scamper.cs.grinnell.edu) for software development.
 
 Please make sure you can access all of these resources, and please let me know if you have any problems with access.
 
-### Books
+This may be your first semester learning with Teams.  Things will likely mess up from time to time.  That's okay; it's part of the process.
 
-There is no required textbook for this course, as the material is written by Grinnell faculty and posted on the course website.
-However, there are some useful textbooks and references you may want to bookmark or keep handy.
+This may be your first semester using Gradescope.  Gradescope does some things well and some things less well.  Things will likely mess up from time to time.  That's okay; it's part of the process.  I'll make adjustments when you have difficulty.  I hope you'll accept my apologies when I do something wrong (or at least fail to adjust my processes to the way Gradescope thinks they should be done).
 
-+ [Dybvig, Kent R., _The Scheme Programming Language_ (Third Edition), MIT Press, 2003.](https://www.scheme.com/tspl3)
-  *An effective reference and guide to learning the Scheme programming language.*
-+ [Felleisen, Matthias, Findler, Robert Bruce, Flatt, Matthew and Krishnamurthi, Shriram, _How to Design Programs_ (2nd Edition), MIT Press 2018.](http://www.htdp.org)
-   *A wonderful guide, particularly for later topics in the course like higher-order programming, re-factoring, and recursion.*
+## Academic integrity 
 
-### Installing DrRacket
+We expect you to follow normal standards of academic integrity. Among other things, this means that you must cite resources you use, particularly pre-existing code you adapt (even if it comes from the course website, one of your labs, or one of the course staff). You should also cite the help that you get from others (course staff, evening tutors, your peers).
 
-You should feel free to install DrRacket on your own computer. Note, however, that you will also need to install the library for CSC-151.
-
-* Download DrRacket from [the Racket download site](https://racket-lang.org/download/).
-* Follow the instructions.
-* Start DrRacket.
-* In the **Language** menu, select **Choose Language ...**. In the dialog box that appears, click on the radio button next to **The Racket Language**.
-Then click **OK**.  Finally, click **Run**.
-* From the **File** menu, select **Install Package ...**. In the window that appears, enter [https://github.com/grinnell-cs/csc151.git#main](https://github.com/grinnell-cs/csc151.git). Click **Install**. Eventually, a **Close** button should appear. Click that button. It will be your only notification that the installation succeeded.
-
-## Help, collaboration, academic honesty, and academic integrity
-
-To help expedite your learning, you can rely on me, our class mentor, and your peers as outlets in this course.
-
-### The Instructor, course staff, and other resources
-
-When contacting the course staff, please use direct messages (DM) on Microsoft Teams. While we will generally not respond immediately---we generally check our messages at fixed times throughout the day---we will prioritize responses to student questions over Teams versus queries sent through other means, *e.g.*, email.
-
-
-Finally, if you would like to discuss things in more detail---course content, more general questions about computer science, or other things---feel free to schedule a meeting with me, either [during office hours](https://bit.ly/book-samr) or, if those don't work, by sending me a message with available times.
-
-Note that if I find that you have fallen behind on assignments or are showing difficulty on quizzes or learning assessments, I will invite you to meet with me.  Please accept those invitations; they are intended to be supportive, not punative.
-
-### Peer learning
-
-Utilizing discussion with peers to facilitate your learning is a critical skill for success in computer science.  However, at the same time, you must be aware that getting stuck and pushing through challenging problems is essential for robust learning.  To this end, we allow the following forms of collaboration.
-
-+ You are encouraged to seek help and advice from your peers as you work on reading exercises, labs, and mini-projects. You may also consult the course staff as well as other people and external resources.
-+ You may only discuss learning assessments and quizzes with the course staff.
-+ When completing take-home learning assessments, you may only consult the course website, any additional documentation we provide, and your notes. You may not collaborate with peers, consult external resources beyond the ones mentioned above, or share information about these assignments with others.
-+ When completing in-class learning assessments (e.g., Friday quizzes), you may rely on on sheet of hand-written notes that you have brought to class.
-+ **In all cases, you (or your group in the case of group work) should independently write up your solutions and cite all the resources you used in authoring your work, including other students, your instructor, and our peer educators.**
-
-Keep in mind that *adaptation of pre-existing code* whether it comes from a peer, myself, or the Internet, requires a citation in cases where we allow such adaptation.  Also, whenever you are expected to show your code's output, you are expected to reproduce the output faithfully.  In other words, you should not forge the results of your programs!
-
-In all cases, the work that you produce should be your own.  In general, you should be capable of reproducing any part of your deliverable with minimal effort if it was accidentally deleted.
+As you might expect, **you may not directly copy** work from other students.
 
 If you feel that the stress and pressure of the course or the semester are leading you to consider violating the academic honesty policies of the course and the College as explained in the [student handbook](https://catalog.grinnell.edu/content.php?catoid=32&navoid=5208#Honesty_in_Academic_Work), **please talk to me as soon as possible**.  The course's grading policies are designed to help you manage your time in light of the different stressors in your life.  I will do my best to work with you to figure out how to help you better manage your time relative to your learning goals and desired achievement level for the course.
 
 And just if that wasn't enough, you should check out [my extended statement on academic honesty and integrity](../handouts/academic-integrity).
+
+### Citing
+
+How should you cite help you receive from another person? I care less about the particular details of citation than that you acknowledged such help. Ideally, the citation would include the name of the person (or their role, if you're not sure), the date of the help, and a summary of the help. Those who like more extensive citations might write something like.
+
+> Sam Rebelsky. 22 Sept 2026. Assistance in writing the algorithm for Exercise 2.
+
+However, I find a simple statement just as effective.
+
+> Sam helped me write the algorithm for Exercise 2 on September 22.
+
+If you get help from someone and don't know their name, give their role.
+
+> An evening tutor explained how `cond` works on September 23. I needed `cond` for multiple problems.
+
+> On September 24, one of my fellow CSC-151 students helped me figure out why my solution to exercise 3 didn't work.
+
+What about Web pages? You can use similar approaches.
+
+> Samuel A. Rebelsky. 2026. Syllabus. Online document available at <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2026Fa/syllabus>. Referenced for information on citation practices.
+
+> <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2026Fa/syllabus>. Got info on citation practices.
+
+Remember: **When in doubt, _cite_!**
 
 ### Sharing of course materials
 
@@ -528,15 +583,25 @@ I recognize that there are times where you want to do this, *e.g.*, uploading pr
 
 ### AI programming assistants
 
-You may not use AI-based programming assistants, such as ChatGPT, GitHub Copilot, or Microsoft IntelliCode in this course.
+You may not use AI-based programming assistants, such as Claude Code, ChatGPT, GitHub Copilot, or Microsoft IntelliCode in this course. While such tools can be useful to professionals, at this stage in your careers, it is essential for you to build understanding without relying on these tools.
+
+If you choose to use an AI-based programming assistant, you must cite it. I realize this policy may sound like a contradiction in terms ("Don't use AI; cite it if you do"), but the College asks us to be clear about citation expectations.
 
 ### AI writing assistants
 
 While I would prefer that you not use AI-based writing assistants---such as Grammarly, Google translate, or ChatGPT---I understand that some of you rely on them. If you choose to use such tools, you _must_ cite them.
 
-## Other issues
+### Web search
 
-### Important Notices
+Our goal is to provide all that you need within the course website and the Scamper site. Please do not search the web to find help on or answers to course problems.
+
+If you do a Web search, please disable the AI summary (usually with `-ai`). And, as you might guess, you must cite your Web searches.
+
+## Disclaimers, advice, and more
+
+Not so much policies as thoughts on how the class runs and what may be stressful.
+
+### Some short notes
 
 + Experience shows that CSC-151 exercises different parts of your brain than other courses (even other math and science courses). Expect some challenges, but have confidence that you can work through them and that you'll come out of the course with much more knowledge.
 + Like learning a foreign language, learning in this course is cumulative: new ideas often build on ideas from earlier. If you feel like you've missed something important, please get in touch with the course staff as soon as possible for assistance!
@@ -552,13 +617,7 @@ Feel free to answer each others' questions.
 
 We understand that not all students are comfortable asking questions in public and that not all questions are appropriate for the whole class. Feel free to ask us questions via Teams chat, via email, and in person.
 
-### Technology
-
-This may be your first semester learning with Teams.  Things will likely mess up from time to time.  That's okay; it's part of the process.
-
-This may be your first semester using Gradescope.  Gradescope does some things well and some things less well.  Things will likely mess up from time to time.  That's okay; it's part of the process.  I'll make adjustments when you have difficulty.  I hope you'll accept my apologies when I do something wrong (or at least fail to adjust my processes to the way Gradescope thinks they should be done).
-
-### Mastery grading
+### Encountering mastery grading
 
 This may be your first semester in a class that uses a form of mastery grading. As I note elsewhere, the primary goal of mastery grading is that your grade depends on what you master, not when in the semester you master it. Most students find that the system works well for them, provided they try to keep up with the material. Please try each learning assessment and mini-project the first time it is offered. If you don't succeed, get help and then try again.
 
@@ -580,17 +639,23 @@ I'm confused about the grading scheme. Could you explain more?
 
 > If that's not enough information, feel free to ask questions about particular points.
 
-I plan to leave early for Spring break and won't be in class on Friday, 8 March 2025. What are the penalties for missing that class?
+I plan to leave early for Fall break and won't be in class on Friday, 16 October 2026. What are the penalties for missing that class?
 
 > As long as you let me know in advance, there is no penalty for your absence.
 
 > However, you will not be able to take the quiz that day, which means that you will have to complate that learning assessment in one of the following SoLAs.  In addition, you are responsible for making up the work from class on your own, and you are still responsible for turning in that labs.
 
+I plan to leave early for Thanksgiving break and won't be in class on Wednesday, 25 November 2026. What are the penalties for missing that class?
+
+> As long as you let me know in advance, there is no penalty for your absence.
+
+> However, that is a project day, so you should make sure to be in touch with your group mates to make sure that you can still contribute.
+
 I have an accommodation that gives me extra time on in-class exams. What should I do about the Friday LA quizzes?
 
-> Section 1: I would prefer that you arrive early. Section 2: You can take it immediately after class. Section 3: I would prefer that you arrive early, but you can also take it after class. (Those times are 8:00--8:30, 11:30--12:00, 2:00-2:30, and 4:00-4:30. Folks in any section can use any of those times.)
+> Section 1: I would prefer that you arrive early. Section 2: You can take it immediately after class. Section 3: You can take it after class. (Those times are 7:30--8:00, 11:00--11;30, and 4:00-4:30. Folks in any section can use any of those times.)
 
-I don't have an accommodation taht gives me extra time on in-class exams, but I feel like I need extra time.
+I don't have an accommodation that gives me extra time on in-class exams, but I feel like I need extra time.
 
 > You may use the same times.
 
