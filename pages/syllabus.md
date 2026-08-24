@@ -93,7 +93,7 @@ This syllabus, like many modern syllabi, is _long_. _**Very** long_. Hence, we b
 
 * [**About this course**](#about-this-course). This is an introductory CS course. 
   * [_**Course goals**_](#course-goals). We want to help you develop knowledge and ability in computational thinking (which is **not** thinking like a computer), a bit of programming, and some broader skills, including problem solving.
-  * [_**Learning objectives*_](#learning-objectives). We can also consider the course goals in a more finely grained (and individually assessible) form.
+  * [_**Learning objectives**_](#learning-objectives). We can also consider the course goals in a more finely grained (and individually assessible) form.
   * [_**Problem domain**_](#problem-domain).  We'll be using image making and manipulation as our problem domain.
   * [_**Why take CSC-151?**_](#why-take-csc-151). Our marketing materials! In a world dominated by computing, it's good to know a bit about these topics.
 
