@@ -1,245 +1,142 @@
-- date: 2025-01-22
+- date: 2026-08-28
   assigned:
     - page: /mps/syllabus.html
     - page: /mps/intro-survey.html
 
-- date: 2025-01-24
+- date: 2026-09-01
   due:
     - page: /mps/syllabus.html
     - page: /mps/intro-survey.html
-  assigned:
-    - page: /mps/mp01.html
 
-- date: 2025-01-25
+- date: 2026-09-04
+  due:
+    - LA 1 (Decomposition)
+    - LA 2 (Procedural Abstraction)
+
+- date: 2026-09-09
+  assigned:
+    - MP1
+
+- date: 2026-09-11
   due:
     - MP 1 Pre-reflection
+    - LA 3 ()
+    - LA 4 ()
 
-- date: 2025-01-29
+- date: 2026-09-15
   due:
-    - Quiz 1
+    - MP1
 
-- date: 2025-01-30
-  due:
-    - page: /mps/mp01.html
-
-- date: 2025-01-31
+- date: 2026-09-16
   assigned:
-    - page: /mps/mp02.html
+    - MP2
   due:
-    - MP 1 Post-reflection
+    - MP1 Post-reflection
 
-- date: 2025-02-02
+- date: 2026-09-18
   due:
-    - MP 2 Pre-reflection
+    - MP2 Pre-reflection
+    - LA 5 ()
+    - LA 6 ()
 
-- date: 2025-02-05
+- date: 2026-09-25
   due:
-    - Quiz 2
+    - LA 7 ()
+    - LA 8 ()
 
-- date: 2025-02-06
+- date: 2026-09-29
   due:
-    - page: /mps/mp02.html
+    - MP2
 
-- date: 2025-02-07
+- date: 2026-09-30
   assigned:
-    - page: /mps/mp03.html
-
-- date: 2025-02-09
+    - MP3
   due:
-    - MP 3 Pre-reflection
+    - MP2 Post-reflection
 
-- date: 2025-02-12
+- date: 2026-10-02
   due:
-    - Quiz 3
+    - MP3 Pre-reflection
+    - LA 9 ()
+    - LA 10 ()
 
-- date: 2025-02-13
+- date: 2026-10-09
   due:
-    - page: /mps/mp03.html
+    - LA 11 ()
 
-- date: 2025-02-16
+- date: 2026-10-13
   due:
-    - SoLA 1 Pre-reflection
+    - MP3
 
-- date: 2025-02-17
+- date: 2026-10-14
   assigned:
-    - SoLA 1
-
-- date: 2025-02-19
+    - MP4
   due:
-    - Quiz 4
+    - MP3 Post-reflection
 
-- date: 2025-02-20
+- date: 2026-10-16
   due:
-    - SoLA 1
+    - LA 12 (List recursion)
+    - MP4 Pre-reflection
 
-- date: 2025-02-21
-  assigned:
-    - page: /mps/mp04.html
+- date: 2026-10-30
   due:
-    - SoLA 1 Post-reflection
+    - LA 13 (Numeric recursion)
 
-- date: 2025-02-23
+- date: 2026-11-03
   due:
-    - MP 4 Pre-reflection
+    - MP4
 
-- date: 2025-02-26
+- date: 2026-11-04
+  assigned: 
+    - MP5
   due:
-    - Quiz 5
+    - MP4 Post-reflection
 
-- date: 2025-02-27
+- date: 2026-11-06
   due:
-    - page: /mps/mp04.html
+    - MP5 Pre-reflection
+    - LA 14 (Vectors)
+    - LA 15 (Diagramming structures)
 
-- date: 2025-02-28
+- date: 2026-11-13
+  due: 
+    - LA 16 ()
+    - LA 17 ()
+
+- date: 2026-11-17
+  due: MP5
+
+- date: 2026-11-18
+  assigned: 
+    - MP6 (final project)
   due:
-    - MP 4 Post-reflection
+    - MP5 Post-reflection
 
-- date: 2025-03-02
-  assigned:
-    - page: /mps/mp05.html
+- date: 2026-11-20
   due:
-    - MP 5 Pre-reflection
+    - MP6 Pre-reflection
+    - LA 18 (Randomness)
+    - LA 19 (Data abstraction)
 
-- date: 2025-03-05
+- date: 2026-12-03
   due:
-    - Quiz 6
+    - MP6 (final project)
 
-- date: 2025-03-06
+- date: 2026-12-04
+  due: 
+    - LA 20 (Tree recursion)
+
+- date: 2026-12-11
   due:
-    - page: /mps/mp05.html
+    - MP6 Post-reflection
 
-- date: 2025-03-07
+- date: 2026-12-16
   due:
-    - MP 5 Post-reflection
+    - LA Makeups (2--5pm), Section 1
 
-- date: 2025-03-23
+- date: 2026-12-18
   due:
-    - SoLA 2 Pre-reflection
-
-- date: 2025-03-24
-  assigned:
-    - SoLA 2
-
-- date: 2025-03-26
-  due:
-    - Quiz 7
-
-- date: 2025-03-27
-  due:
-    - SoLA 2
-
-- date: 2025-03-28
-  assigned:
-    - page: /mps/mp06.html
-  due:
-    - SoLA 2 Post-reflection
-
-- date: 2025-03-30
-  due:
-    - MP6 Pre-Reflection
-
-- date: 2025-04-02
-  due:
-    - Quiz 8
-
-- date: 2025-04-03
-  due:
-    - page: /mps/mp06.html
-
-- date: 2025-04-04
-  assigned:
-    - page: /mps/mp07.html
-  due:
-    - MP 6 Post-reflection
-
-- date: 2025-04-06
-  due:
-    - MP 7 Pre-reflection
-
-- date: 2025-04-09
-  due:
-    - Quiz 9
-
-- date: 2025-04-10
-  due:
-    - page: /mps/mp07.html
-
-- date: 2025-04-11
-  due:
-    - MP 7 Post-reflection
-
-- date: 2025-04-13
-  due:
-    - SoLA 3 Pre-reflection
-
-- date: 2025-04-14
-  assigned:
-    - page: SoLA 3
-
-- date: 2025-04-16
-  due:
-    - Quiz 10
-
-- date: 2025-04-17
-  due:
-    - SoLA 3
-    
-- date: 2025-04-18
-  due:
-    - SoLA 3 Post-reflection
-  assigned:
-    - page: /mps/mp08.html
-
-- date: 2025-04-20
-  due:
-    - MP 8 Pre-reflection
-
-- date: 2025-04-23
-  due:
-    - Quiz 11
-
-- date: 2025-04-24
-  due:
-    - page: /mps/mp08.html
-
-- date: 2025-04-25
-  due:
-    - MP 8 Post Reflection
-  assigned:
-    - page: /mps/mp09.html
-
-- date: 2025-04-27
-  due:
-    - MP 9 Pre-reflection
-
-- date: 2025-04-30
-  due:
-    - Quiz 12
-
-- date: 2025-05-04
-  due:
-    - SoLA 4 Pre-reflection
-    - page: /mps/mp09.html
-
-- date: 2025-05-05
-  assigned:
-    - SoLA 4
-
-- date: 2025-05-08
-  due:
-    - MP 9 Post-reflection
-    - SoLA 4
-
-- date: 2025-05-09
-  due:
-    - SoLA 4 Post-reflection
-    - End-of-course evaluation
-
-- date: 2025-05-13
-  assigned:
-    - SoLA 5
-
-- date: 2025-05-16
-  due:
-    - SoLA 5
-
+    - LA Makeups (9am--noon), Section 3
+    - LA Makeups (2--5pm), Section 2
+    - Everything remaining due by 5pm!
