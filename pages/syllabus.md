@@ -313,7 +313,7 @@ We rely on six kinds of work to assess your mastery of the material.
 
 #### Learning assessments (quizzes)
 
-Learning assessments (LA) are individually completed problems that directly assess your mastery of the learning objectives of the course.  LAs form the core of your course grade. Each LA is a _short_ problem on one of course's learning objectives. You should generally be able to complete each LA in fifteen minutes or less.
+Learning assessments (LA) are individually completed problems that directly assess your mastery of the learning objectives of the course.  LAs form the core of your course grade. Each LA is a _short_ problem on one of course's learning objectives. You should generally be able to complete each LA in ten minutes or so. 
 
 Learning assessments will be conducted as quizzes given at the start or end of class on Fridays. In most weeks, one or two new LAs will be available each class.
 
@@ -323,7 +323,7 @@ You may bring and refer to one 8.5x11 or A4 page of _hand written_ notes for eac
 
 In addition, new versions of prior LAs will be available each Friday. So, for example, if you miss one of the LAs in one week, you can try again the next week. (You can also try both again if you miss both.) And, if you miss on your second try, you'll still have a third opportunity, at least until we reach the end of the semester.
 
-For those of you who need or want extra time (e.g., for accommodations, to make up past accommodations), I'll be available in our classroom from 7:30--8:00 a.m., 11:00--11:30 p.m., and 4:00--4:30 p.m. on most Fridays.
+I will allot thirty minutes for each quiz session, most of which will include two new quizzes. For those of you who need or want extra time (e.g., for accommodations, to make up past LAs), I'll be available in our classroom from 7:30--8:00 a.m., 11:00--11:30 p.m., and 4:00--4:30 p.m. on most Fridays.
 
 #### Mini-projects (homework assignments)
 
