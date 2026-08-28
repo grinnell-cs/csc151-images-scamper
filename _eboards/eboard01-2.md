@@ -239,6 +239,12 @@ _Practice writing algorithms!_
 * Ziplock bags for leftovers.
 * Fizzy water, because PB&J sandwiches can be dry.
 
+### Observations
+
+* "Tear open the bag" is surprisingly easy to interpret. Messy,
+  but easy to interpret.
+* Unless you tell Sam to put things down, he won't.
+
 ### Questions
 
 Can we look at the materials?
@@ -250,6 +256,23 @@ What is your dominant hand?
 > I'm left-handed. You can also use the terms "dominant hand" and
   "non-dominant hand" if you want to be more inclusive. I'm also not
   sure it matters for most of what we are doing.
+
+### What did you learn from this activity / what might you have learned?
+
+* Things will go wrong when you try to write instructions. It's okay;
+  it's part of the learning process. No one is harmed (other than Sam).
+    * For this particular activity, we did need to consider dangers.
+* When things go wrong, envision what might have happened if you had
+  said "grab the peanut butter" or "open the jar of peanut butter".
+* It can be important to focus on small (seemingly obvious) details.
+* Precision is often very important.
+* Understand what the person following your instructions knows. [+1]
+* It's hard to transition between sets of instructions.
+* If you need to be overly precise, you'll spend a lot of time writing
+  instructions and won't get as far as you want in the time allotted.
+* Ambiguity leads to failure.
+* We solve problems better together.
+* We solve problems better when we test as we go.
 
 Debrief
 -------
