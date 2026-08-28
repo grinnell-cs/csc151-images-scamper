@@ -9,10 +9,10 @@ link: true
 
 _Approximate overview_
 
-* Lots of administrative stuff, including attendance
+* Lots of administrative stuff, including attendance 
 * What is "computer science"?
 * A group activity, more or less
-* Debrief on activity (possibly continued on Monday)
+* Debrief on activity (continued on Monday)
 
 Administrative stuff
 --------------------
@@ -23,8 +23,9 @@ Administrative stuff
 ### Introductory Notes
 
 * Hi, I'm Sam (or SamR).
-* Our class mentor is NAME
+* Our class mentor is Kate
     * They will introduce themselves
+* Question: How many people are from Smallpop?
 * The class Web site is at 
   <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2026Fa/>. 
     * I will email you the link.
@@ -62,7 +63,7 @@ Administrative stuff
     * Also whiteboards with whiteboard markers and erasers.
 * I prefer to have you book office hours. First priority in any time
   slot goes to those who book. <https:/bit.ly/book-samr>
-    * Office hours are not yet posted,, but they will be next week.
+    * Office hours are not yet posted, but they will be next week.
 * You can also DM me on Teams to arrange office hours (or email me, or
   talk to me after class).
 * You'll learn more introductory stuff when you read the syllabus 
@@ -70,15 +71,18 @@ Administrative stuff
 
 ### Apologies
 
+* The syllabus is long.
 * I am old.  My hearing is not great, even with hearing aids. Please
   try to speak loudly. I may ask you to repeat yourselves. I may ask 
   the people near the front of the room to repeat what you said.
 * Our Web site is not as up to date as I'd like.  But it will be.
 * I am behind on class prep. I expect to catch up over the weekend.
 * I am traditionally bad at names+faces. It will take me some time 
-  to learn your names.
+  to learn your names. It will be worse because I have about seventy
+  students across the three sections of 151.
 * My wife passed away nearly two years ago. As I near the anniversary,
   I am likely to be especially maudlin.
+* I'm a dad. I make dad jokes. Deal.
 * I am snarky/sarcastic.
 * More to come ....
 
@@ -92,7 +96,6 @@ Guidelines
   reflection within three days afterwards**.
 * Only those activities that I list count.
     * You can suggest others.
-* Links might appear in the Announcements channel on MS Teams.
 * Unless otherwise specified, each activity earns one token.  
 
 Scholarly
@@ -113,6 +116,9 @@ Peer
 
 _Musical, theatric, sporting, academic, and similar events involving this 
 section's students are welcome._
+
+* Saturday, 29 August 2026, 1:00--4:00 p.m., Rosenbloom Field.
+  _Football Scrimmage vs. Buena Vista_
 
 Wellness
 
@@ -136,8 +142,6 @@ _These do not earn tokens, but are worth your consideration._
 
 * Saturday, 29 August 2026, 9:00 a.m.--noon, Tennis Courts.
   _Women's Tennis vs. Coe College_
-* Saturday, 29 August 2026, 1:00--4:00 p.m., Rosenbloom Field.
-  _Football Scrimmage vs. Buena Vista_
 * Tuesday, 1 September 2026, 4:30--6:30 p.m., Springer Field.
   _Women's Soccer vs. U. Dubuque_
 * Friday, 4 September 2026, 5:00--7:00 p.m., Darby.
@@ -145,12 +149,12 @@ _These do not earn tokens, but are worth your consideration._
 
 ## Upcoming work
 
-* [Read the Web site and answer questions](../mps/syllabus).
-* [Tell me about yourself](../mps/intro-survey).
+* [Read the Web site and answer questions](../mps/syllabus). [not ready]
+* [Tell me about yourself](../mps/intro-survey). [not ready]
 * Read things in preparation for the second day of class and report on those 
   things.
-    * [Our Linux workstations](../readings/mathlan)
-    * [Algorithm building blocks](../readings/algorithm-building-blocks)
+    * [Our Linux workstations](../readings/mathlan) [ready]
+    * [Algorithm building blocks](../readings/algorithm-building-blocks) [ready]
     * [The Scamper programming environment](../readings/scamper)
     * [An abbreviated introduction to Scamper](../readings/intro-scamper)
     * _Note that readings responses are generally due in the evening
@@ -161,8 +165,8 @@ _These do not earn tokens, but are worth your consideration._
 * Sam will (attempt to) call you by first name.
 * You will respond with 
     * "Hi, my name is FIRST LAST. (PROPER SURNAME)
-    * (Optional pronouns.)
     * I prefer to be called NAME.
+    * (Optional pronouns.)
 * Note: For the first few weeks of class, please say your name each time
   you ask or answer a question.
 
@@ -171,6 +175,12 @@ _These do not earn tokens, but are worth your consideration._
 _You will receive a Friday PSA each week._
 
 * PSA
+* Whatever choices you make, you are still a Grinnellian.
+    * Make the choices that are right for you.
+    * And think in advance about those choices.
+* Consent is essential
+* Consent is difficult/impossible if you are impaired
+* Please take care of yourselves!
 
 What is computer science?
 -------------------------
@@ -195,12 +205,51 @@ What is computer science?
       can be designed to be less ambiguous.  (Also easier for the
       computer to follow.)
 
+Questions
+---------
+
+Is Scheme a low-level or high-level language?
+
+> High level.
+
 Exercise
 --------
 
 _Practice writing algorithms!_
 
-Questions
+### Setup
+
+* Sit with everyone with the same card number.
+* Get a few whiteboards (markers, erasers).
+* Write instructions for me to make a sandwich. (You only need to write
+  them once; you've grabbed multiple boards in case the instructions
+  get too long.)
+* You may not look at the materials. 
+
+### Materials
+
+* One jar of peanut butter.
+* One jar of strawberry spread.
+* One load of bread.
+* One pack of plates.
+* Two knives.
+* Two spoons.
+* Two forks.
+* Some napkins.
+* Ziplock bags for leftovers.
+* Fizzy water, because PB&J sandwiches can be dry.
+
+### Questions
+
+Can we look at the materials?
+
+> No.
+
+What is your dominant hand?
+
+> I'm left-handed. You can also use the terms "dominant hand" and
+  "non-dominant hand" if you want to be more inclusive. I'm also not
+  sure it matters for most of what we are doing.
 
 Debrief
 -------
