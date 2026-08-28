@@ -19,7 +19,6 @@
 
 - date: 2026-09-11
   due:
-    - MP 1 Pre-reflection
     - LA 3 ()
     - LA 4 ()
 
@@ -31,11 +30,9 @@
   assigned:
     - MP2
   due:
-    - MP1 Post-reflection
 
 - date: 2026-09-18
   due:
-    - MP2 Pre-reflection
     - LA 5 ()
     - LA 6 ()
 
@@ -51,12 +48,9 @@
 - date: 2026-09-30
   assigned:
     - MP3
-  due:
-    - MP2 Post-reflection
 
 - date: 2026-10-02
   due:
-    - MP3 Pre-reflection
     - LA 9 ()
     - LA 10 ()
 
@@ -71,13 +65,10 @@
 - date: 2026-10-14
   assigned:
     - MP4
-  due:
-    - MP3 Post-reflection
 
 - date: 2026-10-16
   due:
     - LA 12 (List recursion)
-    - MP4 Pre-reflection
 
 - date: 2026-10-30
   due:
@@ -90,12 +81,9 @@
 - date: 2026-11-04
   assigned: 
     - MP5
-  due:
-    - MP4 Post-reflection
 
 - date: 2026-11-06
   due:
-    - MP5 Pre-reflection
     - LA 14 (Vectors)
     - LA 15 (Diagramming structures)
 
@@ -110,12 +98,9 @@
 - date: 2026-11-18
   assigned: 
     - MP6 (final project)
-  due:
-    - MP5 Post-reflection
 
 - date: 2026-11-20
   due:
-    - MP6 Pre-reflection
     - LA 18 (Randomness)
     - LA 19 (Data abstraction)
 
@@ -126,10 +111,6 @@
 - date: 2026-12-04
   due: 
     - LA 20 (Tree recursion)
-
-- date: 2026-12-11
-  due:
-    - MP6 Post-reflection
 
 - date: 2026-12-16
   due:
