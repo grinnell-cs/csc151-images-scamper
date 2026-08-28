@@ -97,7 +97,6 @@ Guidelines
   reflection within three days afterwards**.
 * Only those activities that I list count.
     * You can suggest others.
-* Links might appear in the Announcements channel on MS Teams.
 * Unless otherwise specified, each activity earns one token.  
 
 Scholarly
@@ -118,6 +117,9 @@ Peer
 
 _Musical, theatric, sporting, academic, and similar events involving this 
 section's students are welcome._
+
+* Saturday, 29 August 2026, 1:00--4:00 p.m., Rosenbloom Field.
+  _Football Scrimmage vs. Buena Vista_
 
 Wellness
 
@@ -141,8 +143,6 @@ _These do not earn tokens, but are worth your consideration._
 
 * Saturday, 29 August 2026, 9:00 a.m.--noon, Tennis Courts.
   _Women's Tennis vs. Coe College_
-* Saturday, 29 August 2026, 1:00--4:00 p.m., Rosenbloom Field.
-  _Football Scrimmage vs. Buena Vista_
 * Tuesday, 1 September 2026, 4:30--6:30 p.m., Springer Field.
   _Women's Soccer vs. U. Dubuque_
 * Friday, 4 September 2026, 5:00--7:00 p.m., Darby.
@@ -150,14 +150,14 @@ _These do not earn tokens, but are worth your consideration._
 
 ## Upcoming work
 
-* [Read the Web site and answer questions](../mps/syllabus).
-* [Tell me about yourself](../mps/intro-survey).
+* [Read the Web site and answer questions](../mps/syllabus). [Not yet ready]
+* [Tell me about yourself](../mps/intro-survey). [Not yet ready]
 * Read things in preparation for the second day of class and report on those 
   things.
-    * [Our Linux workstations](../readings/mathlan)
-    * [Algorithm building blocks](../readings/algorithm-building-blocks)
-    * [The Scamper programming environment](../readings/scamper)
-    * [An abbreviated introduction to Scamper](../readings/intro-scamper)
+    * [Our Linux workstations](../readings/mathlan) [Ready]
+    * [Algorithm building blocks](../readings/algorithm-building-blocks) [Ready]
+    * [The Scamper programming environment](../readings/scamper) [Not yet ready]
+    * [An abbreviated introduction to Scheme](../readings/intro-scamper) [Not yet ready]
     * _Note that readings responses are generally due in the evening
       so that I can review them before class._
 
@@ -176,6 +176,10 @@ _These do not earn tokens, but are worth your consideration._
 _You will receive a Friday PSA each week._
 
 * PSA
+* Student estimates of what the "normal" Grinnellian does are inflated.
+* Whatever you choose, there are Grinnellians who make the same choice.
+* You have people who care about you (I hope).
+* Consent is essential.
 
 What is computer science?
 -------------------------
@@ -199,6 +203,13 @@ What is computer science?
     * We use an artificial language because artificial languages
       can be designed to be less ambiguous.  (Also easier for the
       computer to follow.)
+
+Questions
+---------
+
+Can we vibe code in this class?
+
+> Absolutely not! You need to develop the basic skills, first.
 
 Exercise
 --------
