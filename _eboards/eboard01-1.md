@@ -211,12 +211,82 @@ Can we vibe code in this class?
 
 > Absolutely not! You need to develop the basic skills, first.
 
+Will these updates show up on the Web site?
+
+> Maybe.
+
+What language do we use and why?
+
+> Scheme. Mostly because it teaches good habits and it's elegant.
+
+Do you use the same language in all three courses in the introductory 
+sequence?
+
+> Nope. We move on to C and then Java. 
+
+What is the workload for the class like?
+
+> It's in the syllabus.
+
+> Bi-weekly projects (every two weeks).
+
+> Daily readings.
+
+> Daily labs.
+
+> Weekly quizzes.
+
+> Weekly metacognitive reflections.
+
 Exercise
 --------
 
-_Practice writing algorithms!_
+_Practice writing algorithms!_ In teams.
 
-Questions
+### Getting organized
+
+* Your team is everyone with the same card value as you (ignore suit).
+* Once you've formed your team, grab two or three whiteboards, a marker
+  or two, and an eraser.
+
+### The problem
+
+Given the following things, make a nut butter and fruit bread sandwich.
+
+* loaf of bread
+* jar of nut butter
+* fruit spread
+* two knives
+* two spoons
+* two forks
+* pack o' plates
+* napkins
+* can of fizzy water
+
+You will write instructions that I will attempt to follow.
+
+### Intermission: Sam attempts the first few instructions
+
+* Whoops! We forgot to tell him to open the bag of plates.
+* Whoops! "Open" seems a bit too generic.
+* Whoops! "It" can be confusing.
+* Whoops! We forgot to tell Sam to put things down.
+
+### Trying again
+
+### Questions
+
+Do we have to tell you where/how to place the tablecloth?
+
+> No.
+
+Do we have to tell you to put on the apron?
+
+> No.
+
+Do we have to specify which bread bag?
+
+> No, but I could misunderstand.
 
 Debrief
 -------
