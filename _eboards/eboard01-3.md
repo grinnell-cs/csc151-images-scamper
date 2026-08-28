@@ -23,7 +23,7 @@ Administrative stuff
 ### Introductory Notes
 
 * Hi, I'm Sam (or SamR).
-* Our class mentor is NAME
+* Our class mentor is Drilon
     * They will introduce themselves
 * The class Web site is at 
   <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2026Fa/>. 
@@ -79,6 +79,7 @@ Administrative stuff
   to learn your names.
 * My wife passed away nearly two years ago. As I near the anniversary,
   I am likely to be especially maudlin.
+* I make "Dad jokes"
 * I am snarky/sarcastic.
 * More to come ....
 
@@ -200,7 +201,13 @@ Exercise
 
 _Practice writing algorithms!_
 
-Questions
+### Preparation
+
+### The problem
+
+### Materials
+
+### Questions
 
 Debrief
 -------
