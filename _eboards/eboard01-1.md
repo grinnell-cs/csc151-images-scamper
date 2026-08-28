@@ -23,8 +23,11 @@ Administrative stuff
 ### Introductory Notes
 
 * Hi, I'm Sam (or SamR).
-* Our class mentor is NAME
+* Our class mentor is Alyssa
     * They will introduce themselves
+    * They are here for help.
+    * They answer questions during class.
+    * They run mentor sessions.
 * The class Web site is at 
   <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2026Fa/>. 
     * I will email you the link.
@@ -50,6 +53,8 @@ Administrative stuff
   pointless video) using Teams. You will be able to find the recordings 
   on Teams. Due to technological difficulties, today's class will not
   be recorded.
+* On that note, technology is generally refusing to play nice with me today.
+  Stay tuned.
 
 ### Other introductory stuff
 
