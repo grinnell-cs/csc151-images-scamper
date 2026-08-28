@@ -12,11 +12,11 @@
   reading:
     - page: /readings/mathlan.html
     - page: /readings/algorithm-building-blocks.html
-    - page: /readings/drracket.html
-    - page: /readings/intro-scheme.html
+    - page: /readings/scamper.html
+    - page: /readings/intro-scamper.html
   lab:
     - page: /labs/mathlan.html
-    - page: /labs/racket-intro-mathlan.html
+    - page: /labs/scamper-intro-mathlan.html
 
 - topic: Reading and writing procedures
   abbrev: procedures
