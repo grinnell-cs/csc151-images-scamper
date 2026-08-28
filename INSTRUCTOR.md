@@ -29,6 +29,12 @@ you'll need to build the site.
 
     bundle install
 
+On MathLAN (or other sites where you lack root access), you may have to
+type something like
+
+    bundle config set --local path 'vendor/bundle'
+
+
 Check to see that the site is available with `tasks/serve` (see below
 for more details).
 
