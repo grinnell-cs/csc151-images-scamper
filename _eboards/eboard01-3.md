@@ -18,13 +18,18 @@ Administrative stuff
 --------------------
 
 * _Please take a playing card, if you haven't already._
-* _Sit where you wish (with reason)._
+* _Sit where you wish (withn reason)._
 
 ### Introductory Notes
 
 * Hi, I'm Sam (or SamR).
 * Our class mentor is Drilon
     * They will introduce themselves
+    * Sam will be unable to pronounce Drilon's name
+    * Mentors go beyond TA'ing; they can also provide advice.
+    * Mentors help during class time
+    * Mentors run weekly mentor session - a time to get help, but as
+      a group. Often a time to review. Optional.
 * The class Web site is at 
   <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2026Fa/>. 
     * I will email you the link.
@@ -62,7 +67,7 @@ Administrative stuff
     * Also whiteboards with whiteboard markers and erasers.
 * I prefer to have you book office hours. First priority in any time
   slot goes to those who book. <https:/bit.ly/book-samr>
-    * Office hours are not yet posted,, but they will be next week.
+    * Office hours are not yet posted, but they will be next week.
 * You can also DM me on Teams to arrange office hours (or email me, or
   talk to me after class).
 * You'll learn more introductory stuff when you read the syllabus 
@@ -70,13 +75,14 @@ Administrative stuff
 
 ### Apologies
 
+* The syllabus is long.
 * I am old.  My hearing is not great, even with hearing aids. Please
   try to speak loudly. I may ask you to repeat yourselves. I may ask 
   the people near the front of the room to repeat what you said.
 * Our Web site is not as up to date as I'd like.  But it will be.
 * I am behind on class prep. I expect to catch up over the weekend.
 * I am traditionally bad at names+faces. It will take me some time 
-  to learn your names.
+  to learn your names. I have about 70 students in 151.
 * My wife passed away nearly two years ago. As I near the anniversary,
   I am likely to be especially maudlin.
 * I make "Dad jokes"
@@ -93,7 +99,6 @@ Guidelines
   reflection within three days afterwards**.
 * Only those activities that I list count.
     * You can suggest others.
-* Links might appear in the Announcements channel on MS Teams.
 * Unless otherwise specified, each activity earns one token.  
 
 Scholarly
@@ -146,14 +151,14 @@ _These do not earn tokens, but are worth your consideration._
 
 ## Upcoming work
 
-* [Read the Web site and answer questions](../mps/syllabus).
-* [Tell me about yourself](../mps/intro-survey).
+* [Read the Web site and answer questions](../mps/syllabus). [not yet ready]
+* [Tell me about yourself](../mps/intro-survey). [not yet ready]
 * Read things in preparation for the second day of class and report on those 
   things.
     * [Our Linux workstations](../readings/mathlan)
     * [Algorithm building blocks](../readings/algorithm-building-blocks)
-    * [The Scamper programming environment](../readings/scamper)
-    * [An abbreviated introduction to Scamper](../readings/intro-scamper)
+    * [The Scamper programming environment](../readings/scamper) [not yet ready]
+    * [An abbreviated introduction to Scamper](../readings/intro-scamper) [not yet ready]
     * _Note that readings responses are generally due in the evening
       so that I can review them before class._
 
@@ -171,7 +176,11 @@ _These do not earn tokens, but are worth your consideration._
 
 _You will receive a Friday PSA each week._
 
-* PSA
+* You can make whatever (non-harmful) choices you wish and still be
+  a Grinnellian.
+* Please take of yourselves for the people who care about you.
+* Plan in advance. Know what's right for you.
+* Consent is essential.
 
 What is computer science?
 -------------------------
@@ -193,8 +202,36 @@ What is computer science?
 * Most of this class will be writing and thinking about sets of
   instructions in an artificial language (aka a programming language).
     * We use an artificial language because artificial languages
-      can be designed to be less ambiguous.  (Also easier for the
+      can be designed to be less ambiguous. (Also easier for the
       computer to follow.)
+
+Question
+--------
+
+What language do we use?
+
+> We are using Scheme (Scamper)
+
+Why don't we use Python or Java?
+
+> Python encourages bad habits.
+
+> Java introduces imbalances.
+
+> Scheme can be beautiful. Python and Java can rarely be.
+
+> Scheme introduces a way of thinking (functional thinking) different than 
+  the other languages, one we find valuable.
+
+Are we using Racket, which I've heard the class uses.
+
+> Scheme is the umbrella term. We've used Racket in the past, which is a
+  variant of Scheme. We are using a different variant of Scheme called
+  Scamper. They are all worth.
+
+What if I _am_ better than everyone?
+
+> You're not because you clearly use an inferior set of criteria.
 
 Exercise
 --------
@@ -203,13 +240,64 @@ _Practice writing algorithms!_
 
 ### Preparation
 
+* Form a group with everyone with the same number.
+* Grab a few whiteboards. (plus pens and erasers)
+* Introduce yourselves to each other.
+* You only need to write one copy of the algorithm.
+
 ### The problem
+
+Teach our clueless professor how to make a Wow Butter and Strawberry Spread
+sandwich.
 
 ### Materials
 
+* Jar of wow butter.
+* Jar of strawberry spread.
+* Loaf of bread.
+* Pack of plates.
+* Two knives.
+* Two spoons.
+* Two forks.
+* Plastic bags.
+* Apron.
+* Tablecloth.
+* One Sam
+
 ### Questions
+
+How clueless is Sam?
+
+> Fairly. Significantly. More than we expected.
+
+> Sam does know what hands are and what the various objects are.
+
+> We will try an experiment midway through to try to understand how Sam
+  (fails to) think.
+
+Can we look at the jars and loaf of bread?
+
+> No.
+
+### Observations
+
+* Surprise! Bread can be double wrapped!
+* Whoops. Bread will fall to the ground if unwrapped poorly.
+* "Place face up on table" seems to be a comment about Sam's head.
 
 Debrief
 -------
 
 _What did you learn? Or what might you have learned?_
+
+* We can't predict everything when writing an algorithm. Things will go wrong.
+* When things go wrong, laugh.
+* Make sure to get the details right.
+* English is ambiguous. Perhaps we should find ways to express things
+  in a less ambiguous way.
+* Sam has no sense of self preservation. "Grab knife" should be "Grab
+  knife by handle."
+* Try as you go; you can learn from your mistakes.
+* Know your audience; express in terms they will understand.
+* Try to realize where you're making assumptions.
+* Algorithms have to be specific.
