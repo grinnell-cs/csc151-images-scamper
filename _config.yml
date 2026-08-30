@@ -56,7 +56,7 @@ mentor_sessions:
   - TBD
 
 tutors:
-  - "**Science 3813 and 3815**"
+  - <b>Science 3813 and 3815</b>
   - Sundays, 3--5 PM CT
   - Sundays through Thursdays, 7--10 PM CT
 
@@ -88,6 +88,10 @@ collections:
   eboards:
     output: true
     permalink: /eboards/:path.html
+
+  email:
+    output: true
+    permalink: /email/:path.html
 
   handouts:
     output: true
