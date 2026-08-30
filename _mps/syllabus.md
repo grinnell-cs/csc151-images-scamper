@@ -24,19 +24,10 @@ First, read the following items.
 
 * [The course syllabus]({% link pages/syllabus.md %});
 * [The course schedule]({% link pages/schedule.html %});
-* [My additional notes on grading]({% link _handouts/grading.md %});
-* [Some additional notes on learning assessments]({% link pages/las.md %});
-* [My notes on taking notes]({% link _handouts/taking-notes.md %});
 * [The Computer Science Department's policy on academic honesty](https://www.cs.
 grinnell.edu/academic-honesty-policy);
-* [Some answers to any questions students have already asked about the
-  course]({% link _handouts/faq.md %})
-  (That page will change over the next few days as I start receiving and
-  answering questions for students.  You need not keep returning to it,
-  although you may find it useful to do so.); 
 * [Instructions for using Gradescope]({% link _handouts/gradescope.md %}); and
 * [Instructions for using Teams]({% link _handouts/teams.md %}).
-* [Some tips for working more productively]({% link _handouts/working-tips.md %})
 
 Next, log in to Gradescope and navigate to this class. You can find a link to Gradescope at the top of each course page.
 
