@@ -19,7 +19,7 @@ _The start-of-class algorithm_
 _Approximate overview_
 
 * Lots of administrative stuff, including attendance
-* Debrief from Monday.
+* Debrief from Friday.
 * Q&A from readings.
 * Lab one.
 * Lab two.
