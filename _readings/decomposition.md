@@ -7,7 +7,7 @@ mathjax: true
 ---
 
 _As a reminder, I encourage you not to read this passively; instead, enter the code interactively as you cover it in your reading.
-This will not only help you get used to typing out Racket code but also encourage you to play around and experiment with the language._
+This will not only help you get used to typing out Scamper code but also encourage you to play around and experiment with the language._
 
 ---
 
@@ -22,7 +22,7 @@ For example, the beginning of this paragraph is rendered with the following HTML
 ~~~
 
 The paragraph contains one link corresponding to the text `yesterday's reading`.
-We will eventually learn how to do this in Racket, but even though we can't write a program to do this yet, we can imagine that with proper library support that this is a simple task.
+We will eventually learn how to do this in Scamper, but even though we can't write a program to do this yet, we can imagine that with proper library support that this is a simple task.
 
 In contrast, the task of scraping web pages for links forms the basis of the algorithms that search engines use to rank webpages.
 For example, Google's famous [PageRank](https://en.wikipedia.org/wiki/PageRank) algorithm ranks the relevance of a webpage by the number of webpages that link to it.
@@ -40,22 +40,20 @@ As such, we introduce this concept in this first week of the course to start get
 
 ## Visual decomposition with pictures
 
-While we haven't seen much of the Racket programming language yet, we know enough to introduce the basics of algorithmic decomposition with the image-making procedures.
+While we haven't seen much of the Scamper programming language yet, we know enough to introduce the basics of algorithmic decomposition with the image-making functions.
 
-From last class period's class, recall that we must include a `require` command in our definitions so that Racket knows we're using the appropriate library.
+From last class period's class, recall that we must include a `require` command in our definitions so that Scamper knows we're using the appropriate library.
 
 ~~~racket
-#lang racket
-
-(require csc151)
+(import image)
 ~~~
 
-After pressing **Run**, the interactions pane will now be ready for us to use functions from the `image` library.
+After pressing the REPL button the interactions pane will now be ready for us to use functions from the `image` library.
 
-Our [initial reading on the Racket language]({{ "/readings/intro-scheme.html" | relative_url }}) introduced us to functions for drawing circles and rectangles:
+Our [initial reading on the Scamper language]({{ "/readings/intro-scamper.html" | relative_url }}) introduced us to functions for drawing circles and rectangles:
 
 ~~~racket
-> (outlined-circle 98 "blue" 1)
+> (outlined-circle 98 "blue")
 ![An outline of a blue circle.]({{ "/images/decomposition-circle-example.png" | relative_url }})
 > (solid-rectangle 75 50 "red")
 ![A solid red rectangle.]({{ "/images/decomposition-rectangle-example.png" | relative_url }})
@@ -64,8 +62,8 @@ Our [initial reading on the Racket language]({{ "/readings/intro-scheme.html" | 
 It also introduced functions that permit us to place images above and beside each other.
 
 ~~~racket
-> (above (outlined-circle 70 "blue" 1)
-         (outlined-circle 70 "red" 1))
+> (above (outlined-circle 70 "blue")
+         (outlined-circle 70 "red"))
 ![Outlines of a blue and red circle stacked on top of each other.]({{ "/images/decomposition-above-example.png" | relative_url }})
 > (beside (solid-rectangle 50 50 "blue")
           (solid-rectangle 50 50 "red"))
@@ -124,7 +122,7 @@ Note that this `define` command should go into the *definitions pane* below your
 
 ~~~racket
 (define top-row
-  (beside (outlined-circle 100 "red" 1)
+  (beside (outlined-circle 100 "red")
           (solid-circle 150 "blue")))
 ~~~
 
@@ -140,7 +138,7 @@ Next, we'll define `bottom-row` to be the bottom row of circles in the definitio
 
 ~~~racket
 (define bottom-row
-  (beside (outlined-circle 150 "blue" 1)
+  (beside (outlined-circle 150 "blue")
           (solid-circle 100 "red")))
 ~~~~
 
@@ -160,7 +158,7 @@ As we discussed, the overall picture is obtained by stacking the `top-row` with 
 ~~~
 
 We can check that `circles` is the image that we wanted in the interactions pane.
-(Remember to re-**Run** your program in DrRacket so that `circles` has been defined!)
+(Remember to click the REPL button again so that `circles` has been defined!)
 
 ~~~racket
 > circles
@@ -189,7 +187,7 @@ Of course, when we run this code, we the `Hole encountered!  Fill me in!` error,
 Once we define `top-row` as before:
 
 ~~~racket
-  (beside (outlined-circle 100 "red" 1)
+  (beside (outlined-circle 100 "red")
           (solid-circle 150 "blue")))
 ~~~
 
@@ -227,11 +225,11 @@ Take a look at the complete program that we wrote in the definitions pane:
 (require csc151)
 
 (define top-row
-  (beside (outlined-circle 100 "red" 1)
+  (beside (outlined-circle 100 "red")
           (solid-circle 150 "blue")))
 
 (define bottom-row
-  (beside (outlined-circle 150 "blue" 1)
+  (beside (outlined-circle 150 "blue")
           (solid-circle 100 "red")))
 
 (define circles
@@ -258,13 +256,13 @@ Here is an alternative version of the code to produce the image of this reading.
 #lang racket
 
 (define circles
-  (above (beside (outlined-circle 100 "red" 1)
+  (above (beside (outlined-circle 100 "red")
                  (solid-circle 150 "blue"))
-         (beside (outlined-circle 150 "blue" 1)
+         (beside (outlined-circle 150 "blue")
                  (solid-circle 100 "red"))))
 ~~~
 
-Paste this code into the definitions pane in a fresh DrRacket tab and verify that `circles` produces the same image as before.
+Paste this code into the definitions pane in a fresh Scamper file and verify that `circles` produces the same image as before.
 
 Compare and contrast the final version of the code the reading with this version.
 Answer each of the following questions in a few sentences each.
