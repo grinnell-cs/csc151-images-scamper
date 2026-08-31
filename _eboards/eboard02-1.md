@@ -1,15 +1,28 @@
 ---
-title: "EBoard 02: Getting Started with Scheme and Scamber (Section 1)"
+title: "EBoard 02: Getting Started with Scheme and Scamper (Section 1)"
 number: 2
 section: eboards
 held: 2026-08-31
-link: false
+link: true
 ---
 # {{ page.title }}
+
+_The start-of-class algorithm_
+
+* Grab one of the small cards by the jar.
+* Determine which computer you'll be at and where it is.
+* Put the card in the jar.
+* Navigate to the computer.
+* If you're the first to arrive, log in.
+* When both of you arrive, say hello.
 
 _Approximate overview_
 
 * Lots of administrative stuff, including attendance
+* Debrief from Monday.
+* Q&A from readings.
+* Lab one.
+* Lab two.
 
 Administrative stuff
 --------------------
@@ -17,66 +30,18 @@ Administrative stuff
 **Warning! You are being recorded** (and transcribed) (provided the technology
 is working correctly).
 
-* _Please take a playing card, if you haven't already._
-* _Sit where you wish._
-
 ### Introductory Notes
 
-* Hi, I'm still Sam (or SamR).
-* Our class mentor is NAME
-    * They will introduce themselves
-* The class Web site is at 
-  <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2026Fa/>. 
-    * I will email you the link.
-    * The class Web site is (always) a work in progress. 
-* CSC-151 is *an introductory course in computer science*.
-    * You can succeed (and even excel) with no prior experience.
-    * We approach material differently than many other intro CS courses;
-      prior experience may help, but it may also hinder.  For example,
-      we will not let you re-assign variables.  (Don't worry if you
-      don't know what that means.)
-* CSC-151 is *a community*.  We come from multiple cultures and backgrounds.
-  Treat each other with respect and appreciate what each person can contribute.
-    * We will return to this issue and the associated learning outcomes
-      throughout the semester.
-* I type our online class notes in a format called "markdown".  You should
-  find it relatively readable.  It permits me to make "nice" Web pages.
-    * Isn't this beautiful? (No, not really.)
-    * Sam: Don't forget to show off today's eboard.
-    * **Don't just rely on my notes**; There is good evidence that taking 
-      your own notes helps you learn.
-* I will try to record our class sessions (audio, mediocre transcript, and
-  pointless video) using Teams. You will be able to find the recordings 
-  on Teams.
-
-### Other introductory stuff
-
-* We provide supplies in this classroom to support you in working
-  and learning.
-    * Small cards to serve as flashcards, which are a good learning technique.
-    * Also large post-it pads that are gridded.
-    * And pens.
-    * And masks.
-    * Also whiteboards with whiteboard markers and erasers.
-* I prefer to have you book office hours. First priority in any time
-  slot goes to those who book. <https:/bit.ly/book-samr>
-    * Office hours are not yet posted,, but they will be next week.
-* You can also DM me on Teams to arrange office hours (or email me, or
-  talk to me after class).
-* You'll learn more introductory stuff when you read the syllabus 
-  over the weekend.
-
-### Apologies
-
-* I am old.  My hearing is not great, even with hearing aids. Please
-  try to speak loudly. I may ask you to repeat yourselves. I may ask 
-  the people near the front of the room to repeat what you said.
-* Our Web site is not as up to date as I'd like.  But it will be.
-* I am behind on class prep. I expect to catch up over the weekend.
-* I am traditionally bad at names+faces. It will take me some time 
-  to learn your names.
-* I am snarky/sarcastic.
-* More to come ....
+* Sorry that it took so long to get the readings ready.
+* We have _two_ labs today. Both of you should do the first lab so that you
+  are sure that you can login. You'll do the second lab together.
+* On reading responses, you only need to turn in the double-dagger problems.
+  The others are generally for you to think about, but not turn in.
+* Just so you know, my normal "reading response" process involves looking
+  at the reading responses at about 8pm. If you turn it in later, I may
+  not answer your questions in a timely fashion, but you can always ask
+  in class.
+* Links to readings can be found in the schedule.
 
 ### Upcoming activities
 
@@ -100,7 +65,7 @@ Artistic/Cultural
 
 Multicultural
 
-* Friday, 28 August 2026, 4:10--5:00 p.m., HSSC N1170.
+* Friday, 4 September 2026, 4:10--5:00 p.m., HSSC N1170.
   _Middle of Everywhere_
 
 Peer
@@ -121,17 +86,10 @@ Wellness
 
 Misc
 
-* Saturday, 29 August 2026, 3:00--?? p.m., Roberts Theatre.
-  _PerforMIXER_
-
 ### Other good things
 
 _These do not earn tokens, but are worth your consideration._
 
-* Saturday, 29 August 2026, 9:00 a.m.--noon, Tennis Courts.
-  _Women's Tennis vs. Coe College_
-* Saturday, 29 August 2026, 1:00--4:00 p.m., Rosenbloom Field.
-  _Football Scrimmage vs. Buena Vista_
 * Tuesday, 1 September 2026, 4:30--6:30 p.m., Springer Field.
   _Women's Soccer vs. U. Dubuque_
 * Friday, 4 September 2026, 5:00--7:00 p.m., Darby.
@@ -139,26 +97,31 @@ _These do not earn tokens, but are worth your consideration._
 
 ## Upcoming work
 
-* [Read the Web site and answer questions](../mps/syllabus).
-* [Tell me about yourself](../mps/intro-survey).
-* Read things in preparation for the second day of class and report on those 
-  things.
-    * [Our Linux workstations](../readings/mathlan)
-    * [Algorithm building blocks](../readings/algorithm-building-blocks)
-    * [The Scamper programming environment](../readings/scamper)
-    * [An abbreviated introduction to Scamper](../readings/intro-scamper)
-    * _Note that readings responses are generally due in the evening
-      so that I can review them before class._
+* [Read the Web site and answer questions](../mps/syllabus) (due Tuesday).
+* [Tell me about yourself](../mps/intro-survey) (due Tuesday).
+* Read things in preparation for the third day of class and report on those 
+  things (due Tuesday).
+
+## Q&A
+
+For the handwritten notes allowed on each Learning Assessment, can we make a one-page reference sheet with whatever information we find helpful, similar to a cheat sheet?
+
+> That's the goal.
+
+Where are the readings?
+
+> Linked on the schedule.
 
 ## Attendance
 
 * Sam will (attempt to) call you by first name.
 * You will respond with 
-    * "Hi, my name is FIRST LAST. (PROPER SURNAME)
+    * Hi, my name is FIRST LAST. (PROPER SURNAME)
     * (Optional pronouns.)
     * I prefer to be called NAME.
     * If you must address me by last name, please call me 
       Mr./Ms./Mx./Srta./Sr./etc. LAST NAME san/etc.
+    * What is something you are excited about this semester?
     * _Optionally, ask me a question about the class. You'll also have 
       many more chances in the future._
 * Note: For the first few weeks of class, please say your name each time
@@ -168,43 +131,54 @@ _These do not earn tokens, but are worth your consideration._
 
 ### Q&A
 
-## Friday Public Service Announcement (PSA)
-
-_You will receive a Friday PSA each week._
-
-* PSA
-
-What is computer science?
--------------------------
-
-* Computer science is the study of *algorithms* and *data structures*
-    * Algorithms: Sets of (unambiguous) instructions.
-    * Data Structures: Ways to organize information.
-* We study algorithms by  ...
-    * writing algorithms to accomplish certain tasks.  
-      (E.g., Organizing or searching information.)
-        * identify problems
-        * generalize / simplify 
-        * write instructions that allow "you" to solve them
-    * analyzing their efficacy.
-    * writing systems that implement those instructions (e.g., hardware 
-      or languages).
-    * considering their effects on individuals or society.
-* We study data structures in similar ways.
-* Most of this class will be writing and thinking about sets of
-  instructions in an artificial language (aka a programming language).
-    * We use an artificial language because artificial languages
-      can be designed to be less ambiguous.  (Also easier for the
-      computer to follow.)
-
-Exercise
---------
-
-_Practice writing algorithms!_
-
-Questions
-
 Debrief
 -------
 
-_What did you learn? Or what might you have learned?_
+Q&A from Readings
+-----------------
+
+How many types of vales (e.g. numbers, strings, lists) are there in Scheme? And what are they?
+
+> There are a lot. And programmers can design new ones. For example, while "standard" Scheme does not include images or sounds, we've designed and implemented those types.
+
+Do numbers type in Scheme only include integers, or integers and doubles, or just any number in existence?
+
+> It depends on the variant of Scheme. Racket separates integers and real numbers, as well as exact (arbitrary precision) and inexact (approximated, like in most languages) languages. Racket also supports complex numbers. Scamper treats everything as a real number, but can tell when the real is an integer (at least it usually can).
+
+Can you go over the questions from the Scheme reading?
+
+> We're going to have you go over the questions with your partner, try them on the computer, and then you can ask us questions.
+
+Can you further explain what does this mean: "As we noted, the `string-split` operation returned a _list_, an ordered collection of values. Note that, like expressions, lists are surrounded by parentheses. Scheme distinguishes lists, which should not be evaluated, from expressions, which should be evaluated, by putting the word `list` at the start of the parenthesized expression.
+
+> Parentheses can mean two different things in Scheme: Usually, they mean "Please apply this function to these inputs". However, in the case of lists, they also mean "These are the elements of the list." Does that clarify it?
+
+Is a list of string one parameter or several parameters?
+
+> Just one thing.
+
+How do I write an arithmetic calculation in Scheme involving a negative number?
+
+> Precede the number with a dash (negative sign), as in `(* -2 3)`.
+
+What is the main difference between using the Definitions pane and the Interactions (REPL) pane in Scamper, and when should we use each one?
+
+> I tend to use the definitions pane for things I plan to keep and the interactions pane for quick experiments. YMMV.
+
+I have a question about “string-split”. Could the second argument be a number instead of a string, with the number indicating how many characters to include before splitting the string? For example, could a number specify that the string should be split every 5 characters?
+
+> Nope. I don't recall whether we have a different procedure that does that. If not, we can write one. (Well, I can write one. You'll know how to write such a procedure by the middle of the semester.)
+
+Please elaborate on subroutines. I didn't really understand from the readings. 
+
+> A subroutine (also "procedure" or "function") takes a set of code and puts it together into something we can refer to by name. For example, `string-length` is a subroutine that computes the length of a string. (In this case, we don't know what the underlying instructions are. Starting Wednesday, you'll know how to write your own.)
+
+How useful is it to distinguish procedure/function/parameter/argument especially if going further in CSC? 
+
+> It's useful to distinguish procedure/function from parameter/argument. The first pair are sets of instructions to accomplish a task. The second pair are the inputs to those instructions. Most computer scientists are remarkably casual about the difference between a function and a procedure, as well as between a parameter and an argument, and tend to use the terms interchangeably.
+
+Lab One
+-------
+
+Lab Two
+-------
