@@ -9,12 +9,14 @@ link: true
 
 _The start-of-class algorithm_
 
+* Grab instructions, tent, pen, eraser
 * Grab one of the small cards by the jar.
-* Determine which computer you'll be at and where it is.
-* Put the card in the jar.
-* Navigate to the computer.
+    * Determine which computer you'll be at and where it is.
+    * Put the card in the jar.
+    * Navigate to the computer.
 * If you're the first to arrive, log in.
 * When both of you arrive, say hello.
+* Write your name on both sides of the tent and put it on the computer
 
 _Approximate overview_
 
@@ -42,6 +44,7 @@ is working correctly).
   not answer your questions in a timely fashion, but you can always ask
   in class.
 * Links to readings can be found in the schedule.
+* Meet Mina, our mentor
 
 ### Upcoming activities
 
@@ -129,19 +132,90 @@ Where are the readings?
 
 ### Excited about
 
+* Learn how to code without relying on AI sludge
+* Cats! So many cats!
+* Double majoring!
+* 8am classes
+* Guitar
+* Classes [x2]
+* Learn a new programming language
+* Passing
+* Inflatable bed
+* A new semester (because old semesters are <something>)
+* Club fair
+* [Things Sam forgot to write down.]
+* Orchestra
+* Attending College in the US.
+* End-of-semester performance.
+* Going to Chicago.
+* Leaving Iowa for Christmas break.
+* American Football.
+* Learning Chinese.
+* Fall break.
+* Traveling in the US. 
+* Lying in class.
+
 ### Q&A
+
+Ooh? Can you come back to me later?
+
+> Sure. You should always feel free to say "I don't have an answer right now"
+  and to ask questions at other times.
+
+Why does Sam type eboards?
+
+> So that there is a record in case you forget.
+
+> To support those who aren't here.
+
+> Why not?
+
+Does Sam always write eboards?
+
+> Yes.
+
+Which Linux distribution does the CS department use?
+
+> Debian. I don't know why.
+
+What are the names of these workstations?
+
+> Dead computer scientists.
+
+Will Sam invest in an AI startup?
+
+> Maybe. We can chat.
+
+What was the first thing Sam did when he graduated?
+
+> Hugged my mom.
+
+> Taught at Dartmouth.
+
+Why does Sam teach?
+
+> It's fun! I get to see students learn. I find designing classes intellectually
+  stimulating.
+
+> "I get to make a difference in the lives of awesome young people."
 
 Debrief
 -------
 
+How could you have been faster about getting together in the card groups?
+
+* Someone could have said "fives go _here_, sixes go _here_, etc."  [+1]
+* Lots of shouting.
+* Use the first seven people to say their number, others join them.
+
 Q&A from Readings
 -----------------
 
-How many types of vales (e.g. numbers, strings, lists) are there in Scheme? And what are they?
+How many types of values (e.g. numbers, strings, lists) are there in Scheme? And what are they?
 
 > There are a lot. And programmers can design new ones. For example, while "standard" Scheme does not include images or sounds, we've designed and implemented those types.
 
-Do numbers type in Scheme only include integers, or integers and doubles, or just any number in existence?
+Do numbers type in Scheme only include integers, or integers and reals, or just any number in existence?
 
 > It depends on the variant of Scheme. Racket separates integers and real numbers, as well as exact (arbitrary precision) and inexact (approximated, like in most languages) languages. Racket also supports complex numbers. Scamper treats everything as a real number, but can tell when the real is an integer (at least it usually can).
 
@@ -153,9 +227,11 @@ Can you further explain what does this mean: "As we noted, the `string-split` op
 
 > Parentheses can mean two different things in Scheme: Usually, they mean "Please apply this function to these inputs". However, in the case of lists, they also mean "These are the elements of the list." Does that clarify it?
 
-Is a list of string one parameter or several parameters?
+> `(+ 2 3)` vs. `(list 1 2 3)`.
 
-> Just one thing.
+Is a list of strings one parameter or several parameters?
+
+> One list is just one thing.
 
 How do I write an arithmetic calculation in Scheme involving a negative number?
 
@@ -177,8 +253,17 @@ How useful is it to distinguish procedure/function/parameter/argument especially
 
 > It's useful to distinguish procedure/function from parameter/argument. The first pair are sets of instructions to accomplish a task. The second pair are the inputs to those instructions. Most computer scientists are remarkably casual about the difference between a function and a procedure, as well as between a parameter and an argument, and tend to use the terms interchangeably.
 
+Do you have a favorite project?
+
+> Yes.
+
+Can I suggest homework assignments?
+
+> Maybe. Not today.
+
 Lab One
 -------
 
 Lab Two
 -------
+

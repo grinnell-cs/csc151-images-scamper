@@ -9,10 +9,11 @@ link: true
 
 _The start-of-class algorithm_
 
+* Grab the lab instructions.
 * Grab one of the small cards by the jar.
-* Determine which computer you'll be at and where it is.
-* Put the card in the jar.
-* Navigate to the computer.
+   * Determine which computer you'll be at and where it is.
+   * Put the card in the jar.
+   * Navigate to the computer.
 * If you're the first to arrive, log in.
 * When both of you arrive, say hello.
 
@@ -66,7 +67,7 @@ Artistic/Cultural
 Multicultural
 
 * Friday, 4 September 2026, 4:10--5:00 p.m., HSSC N1170.
-  _Middle of Everywhere_
+  _Middle of Everywhere (from Algeria to America)_
 
 Peer
 
@@ -112,6 +113,11 @@ Where are the readings?
 
 > Linked on the schedule.
 
+Why wouldn't Scamper let me make circles?
+
+> You have to type some extra things to make circles. We'll cover it in
+  lab today.
+
 ## Attendance
 
 * Sam will (attempt to) call you by first name.
@@ -129,33 +135,82 @@ Where are the readings?
 
 ### Excited about
 
+* Finishing a major.
+* Learning a new programming language.
+* Dining hall.
+* Tennis.
+* Meeting host family.
+* Healthy back.
+* Passing all classes.
+* Football.
+* The new Chinese restaurant.
+* Serving the community as a board member of the African Carribian Student Union
+* Meeting new people.
+* Having medical insurance.
+* Hang out with friends.
+* Programming.
+* Getting better in French
+* All my classes.
+* Volleyball
+* Learning new things.
+* Coffee.
+* The College experience.
+* Autumn.
+* Later DHall hours.
+* Pickleball.
+
 ### Q&A
+
+What will the learning assessments look like?
+
+> You will get a problem on a sheet of paper and answer it.
+
+> Examples are posted on the course web site.
+
+Will Sam ever learn to pronounce Drilon's name?
+
+> Odds are against it.
 
 Debrief
 -------
 
+Given a bunch of people, each of whom has a playing card, assemble people
+with the same playing card value.
+
+How could you do that better? (TPS)
+
+* Choose a place for each number (or set of numbers).
+* Use big playing cards so that when you hold them up, others can see.
+* Use fingers instead of playing cards.
+
 Q&A from Readings
 -----------------
 
-How many types of vales (e.g. numbers, strings, lists) are there in Scheme? And what are they?
+How many types of values (e.g. numbers, strings, lists) are there in Scheme? And what are they?
 
 > There are a lot. And programmers can design new ones. For example, while "standard" Scheme does not include images or sounds, we've designed and implemented those types.
 
-Do numbers type in Scheme only include integers, or integers and doubles, or just any number in existence?
+Do numbers type in Scheme only include integers, or integers and real, or just any number in existence?
 
-> It depends on the variant of Scheme. Racket separates integers and real numbers, as well as exact (arbitrary precision) and inexact (approximated, like in most languages) languages. Racket also supports complex numbers. Scamper treats everything as a real number, but can tell when the real is an integer (at least it usually can).
+> It depends on the variant of Scheme. Racket separates integers and real numbers, as well as exact (arbitrary precision) and inexact (approximated, like in most languages). Racket also supports complex numbers. Scamper treats everything as a real number, but can tell when the real is an integer (at least it usually can).
 
 Can you go over the questions from the Scheme reading?
 
 > We're going to have you go over the questions with your partner, try them on the computer, and then you can ask us questions.
 
-Can you further explain what does this mean: "As we noted, the `string-split` operation returned a _list_, an ordered collection of values. Note that, like expressions, lists are surrounded by parentheses. Scheme distinguishes lists, which should not be evaluated, from expressions, which should be evaluated, by putting the word `list` at the start of the parenthesized expression.
+Can you further explain what does this mean: "As we noted, the `string-split` operation returned a _list_, an ordered collection of values. Note that, like expressions, lists are surrounded by parentheses. Scheme distinguishes lists, which should not be evaluated, from expressions, which should be evaluated, by putting the word `list` at the start of the parenthesized expression."
 
 > Parentheses can mean two different things in Scheme: Usually, they mean "Please apply this function to these inputs". However, in the case of lists, they also mean "These are the elements of the list." Does that clarify it?
 
-Is a list of string one parameter or several parameters?
+> `(+ 3 2)` - means apply the operation
 
-> Just one thing.
+> `(list 1 2 3)` - means "this is a list"
+
+> `(list (+ 1 2) (+ 3 4))` - means "evalate all the operands and then make a list"
+
+Is a list of strings one parameter or several parameters?
+
+> Just one thing. It's just a list.
 
 How do I write an arithmetic calculation in Scheme involving a negative number?
 
@@ -180,5 +235,18 @@ How useful is it to distinguish procedure/function/parameter/argument especially
 Lab One
 -------
 
+Each partner should do lab one.
+
+I apologize for the not-quite-right instructions for setting your default
+page.
+
+Ignore the mention of DrRacket in the lab.
+
 Lab Two
 -------
+
+You may not finish. That's okay. There's nothing to turn in.
+
+Please try to finish on your own.
+
+On your way out, throw the lab in the recycling bin.

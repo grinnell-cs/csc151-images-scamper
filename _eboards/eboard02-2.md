@@ -9,12 +9,14 @@ link: true
 
 _The start-of-class algorithm_
 
+* Grab the lab handout.
 * Grab one of the small cards by the jar.
 * Determine which computer you'll be at and where it is.
 * Put the card in the jar.
 * Navigate to the computer.
 * If you're the first to arrive, log in.
 * When both of you arrive, say hello.
+* Write your name on both sides of the whiteboard tent.
 
 _Approximate overview_
 
@@ -33,7 +35,8 @@ is working correctly).
 ### Introductory Notes
 
 * Sorry that it took so long to get the readings ready.
-* We have _two_ labs today. Both of you should do the first lab so that you
+    * No late fee for late reading responses (tis time)
+* We have _two_ labs today. Each of you should do the first lab so that you
   are sure that you can login. You'll do the second lab together.
 * On reading responses, you only need to turn in the double-dagger problems.
   The others are generally for you to think about, but not turn in.
@@ -112,6 +115,7 @@ Where are the readings?
 
 > Linked on the schedule.
 
+
 ## Attendance
 
 * Sam will (attempt to) call you by first name.
@@ -129,19 +133,80 @@ Where are the readings?
 
 ### Excited about
 
+* Learning Scheme.
+* Meeting people and making friends. [x2]
+* Being far from home. (Or surviving being far from home.)
+* Sucking up to my faculty.
+* Being in a new environment.
+* Learn time management. (Sam is worried about this one.)
+* New classes. [x2]
+* Fall break. (in LA or Chicago) [+2]
+* Winter break. (in NYC)
+* Fall.
+* Being independent.
+* Jazz piano.
+* Being back at school (and not at work)
+* Tennis. [x2]
+* Root beer.
+* Orchestra.
+* Learning new things.
+* Seeing friends.
+* Playing football with friends.
+* Please don't force me to be excited.
+* Start of classes.
+
 ### Q&A
+
+Are we going to have a mentor session Wednesday or Thursday night?
+
+> Probably. Stay tuned.
+
+Do we have to finish the lab?
+
+> No. We will generally have you turn in what you've completed. HOwever,
+  you should read the rest to make sure you know what you might have done.
+  (If you don't know how to do it, you should get help.)
+
+Can we work on laptops (outside of class)?
+
+> Yes. Scamper is a Web application, so you can work "anywhere".
+
+> We do recommend that you consider working here when evening tutors are
+  available.
+
+How different is learning Scamper from Java?
+
+> How different is learning English from Georgian?
+
+> Let me know at the end of the semester.
+
+When are we supposed to finish readings?
+
+> The night before class.
+
+What about the homework?
+
+> The homework is due on the date shown on the schedule.
 
 Debrief
 -------
 
+How could you have solved the "join your number group" problem more
+efficiently?
+
+* Assign locations to the numbers. More work for Sam.
+* Pick one of the suits. Everyone with that suit shows their number. People
+  go to that person.
+* Use cards that tell you where to sit rather than cards with numbers.
+
 Q&A from Readings
 -----------------
 
-How many types of vales (e.g. numbers, strings, lists) are there in Scheme? And what are they?
+How many types of values (e.g. numbers, strings, lists) are there in Scheme? And what are they?
 
 > There are a lot. And programmers can design new ones. For example, while "standard" Scheme does not include images or sounds, we've designed and implemented those types.
 
-Do numbers type in Scheme only include integers, or integers and doubles, or just any number in existence?
+Do numbers type in Scheme only include integers, or integers and real numbers, or just any number in existence?
 
 > It depends on the variant of Scheme. Racket separates integers and real numbers, as well as exact (arbitrary precision) and inexact (approximated, like in most languages) languages. Racket also supports complex numbers. Scamper treats everything as a real number, but can tell when the real is an integer (at least it usually can).
 
@@ -149,11 +214,18 @@ Can you go over the questions from the Scheme reading?
 
 > We're going to have you go over the questions with your partner, try them on the computer, and then you can ask us questions.
 
-Can you further explain what does this mean: "As we noted, the `string-split` operation returned a _list_, an ordered collection of values. Note that, like expressions, lists are surrounded by parentheses. Scheme distinguishes lists, which should not be evaluated, from expressions, which should be evaluated, by putting the word `list` at the start of the parenthesized expression.
+Can you further explain what does this mean: "As we noted, the `string-split` operation returned a _list_, an ordered collection of values. Note that, like expressions, lists are surrounded by parentheses. Scheme distinguishes lists, which should not be evaluated, from expressions, which should be evaluated, by putting the word `list` at the start of the parenthesized expression."
 
 > Parentheses can mean two different things in Scheme: Usually, they mean "Please apply this function to these inputs". However, in the case of lists, they also mean "These are the elements of the list." Does that clarify it?
 
-Is a list of string one parameter or several parameters?
+> `(+ 2 3)` - Apply the plus operation to the values 2 and 3.
+
+> `(list 1 2 3)` - "The list 1 2 3"
+
+> `(list (+ 1 3) (+ 5 1) (* 5 2))` - "Evaluate evalute all of the expressions
+  and make them a list."
+
+Is a list of strings one parameter or several parameters?
 
 > Just one thing.
 
@@ -180,5 +252,21 @@ How useful is it to distinguish procedure/function/parameter/argument especially
 Lab One
 -------
 
+Each partner should do lab one.
+
+I apologize for the not-quite-right instructions for setting your default
+page.
+
+Ignore the mention of DrRacket in the lab.
+
 Lab Two
 -------
+
+Do lab two together (on one account).
+
+You may not finish. That's okay. But please try to finish on your own.
+
+Please erase the foldover whiteboards.
+
+Please return instructions, whiteboards, markers, and such to the back
+of the room.
