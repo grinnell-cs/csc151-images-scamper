@@ -92,7 +92,7 @@ What’s happening here? map takes two parameters, a function and a list, and ap
 You've already seen a few of Scheme's basic types. Racket supports numbers, strings (text), and lists of values.  Of course, these are not the only types it supports.  Some additional types are available through separate libraries.  For example, it is comparatively straightforward to get Scheme to draw simple shapes if you add `(import image)` to the top of the interactions pane.
 
 ```racket
-> (require csc151)
+> (import image)
 > (solid-circle 30 "blue")
 ![a solid blue circle with diameter 30](../images/solid-blue-circle-30.png)
 > (outlined-circle 20 "red" 5)
