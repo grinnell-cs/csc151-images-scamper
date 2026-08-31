@@ -239,7 +239,7 @@ first desktop. If you click onto the desktop to the right, you should
 see it there.
 
 In this class, you'll usually need to work with multiple windows: The
-DrRacket window for your programs, a terminal window or two, and a Web
+Scamper window for your programs, a terminal window or two, and a Web
 browser to read the laboratory exercises and reference materials. As
 you get settled in over the next few weeks, consider how you might use
 the switcher to help you organize your workspace efficiently.
@@ -259,8 +259,7 @@ bothers you, you may want to reduce the number of workspaces to just one.
 ## Finishing up and logging out
 
 If you've successfully logged in, started Firefox, selected your home page,
-tried DrRacket, configured your account, and played with multiple desktops,
-you've completed the lab and you can _finally_ stop.
+and played with multiple desktops, you've completed the lab and you can _finally_ stop.
 
 ### Short version
 
@@ -285,7 +284,13 @@ frequently actually shortens their life expectancy. Modern computers use very
 little power when they are sitting idle, so this is not a significant waste of
 resources.
 
-## Moving on to the next lab
+## Moving on
+
+If your partner hasn't done this lab ...
+
+* Have them do the lab.
+
+Otherwise ...
 
 * Log back in. 
 * Navigate to the course web site at <{{ site.url }}>.
