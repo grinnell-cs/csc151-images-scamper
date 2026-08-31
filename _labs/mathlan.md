@@ -285,3 +285,9 @@ frequently actually shortens their life expectancy. Modern computers use very
 little power when they are sitting idle, so this is not a significant waste of
 resources.
 
+## Moving on to the next lab
+
+* Log back in. 
+* Navigate to the course web site at <{{ site.url }}>.
+* Navigate to the schedule.
+* Click on the appropriate lab.
