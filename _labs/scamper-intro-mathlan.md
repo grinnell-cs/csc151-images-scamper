@@ -203,8 +203,6 @@ Let's try using the definitions pane instead.
 1.  Enter the following definitions into that pane. In this case, it's fine to copy and paste.
 
     ```drracket
-    #lang racket
-
     (define trial01 11.2)
     (define trial02 12.5)
     (define trialO3 8.5)

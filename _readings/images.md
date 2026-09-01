@@ -43,7 +43,7 @@ How does one _gain access to_ the type?
 definitions pane.
 
 ```drracket
-(require csc151)
+(import image)
 ```
 
 ## Basic shapes
@@ -220,6 +220,7 @@ The `rgb` procedure has an _optional_ fourth parameter, which is often called th
 Opacity will be especially important as we start to overlay shapes.
 
 ```drracket
+> (import image)
 > (define circles
     (beside
       (solid-circle 20 (rgb 255 0 0 255))

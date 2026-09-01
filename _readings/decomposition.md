@@ -220,9 +220,7 @@ Finally, let's look at the big picture.
 Take a look at the complete program that we wrote in the definitions pane:
 
 ~~~racket
-#lang racket
-
-(require csc151)
+(import image)
 
 (define top-row
   (beside (outlined-circle 100 "red")
@@ -253,7 +251,7 @@ Honing this skill early on in your programming journey will prepare you well for
 Here is an alternative version of the code to produce the image of this reading.
 
 ~~~racket
-#lang racket
+(import image)
 
 (define circles
   (above (beside (outlined-circle 100 "red")
