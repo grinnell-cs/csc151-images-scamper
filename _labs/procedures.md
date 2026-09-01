@@ -1,12 +1,8 @@
 ---
-title: Writing your own procedures
+title: Writing your own functions
 summary: |
-  We explore techniques for writing proceres in Racket.
+  We explore techniques for writing functions in Racket.
 preimg: true
-notes: |
-  In spring 2022, 60 minutes was not quite enough.  The lab may need
-  a bit more shortening.  Push students to go on to the coding problems
-  after about fifteen minutes.
 ---
 
 ## Syntax to remember
@@ -15,7 +11,7 @@ notes: |
 * Function expressions: `(lambda (<parameters>) <expression>)`.
 * Defining functions: `(define <name> (lambda (<parameters>) <expression>))`
 
-## Introducing Pair Programming
+## Pair Programming
 
 For today's exercises, we will continue to try out *pair programming*.  Pair programming is a particular discipline of collaborative programming that we will be using extensively in our lab work.  We'll have more to say in the coming weeks about the nitty-gritty of working in pairs, but we would like you to dive head-first into the experience.
 
@@ -31,30 +27,22 @@ You should begin by copying and opening the file
 
 ## The lab
 
-{% if site.online %}
-As in the previous lab, you will be working with a randomly assigned partner with 
-
-*   [procedures-a.rkt]({{ "/code/labs/procedures-a.rkt" | relative_url }})
-*   [procedures-b.rkt]({{ "/code/labs/procedures-b.rkt" | relative_url }})
-
-One person should download the `a` file and the other person should download the `b` file.
-You can both follow the directions in your respective files which will direct you both when to take driver and navigator roles.
-Note that in addition to the programming components of this lab, there are also discussion questions where you will write your conclusion/results in the provided comment.
-{% else %}
 As in the previous lab (and future labs), you will work with a randomly assigned
-partner using a starter file.
+partner.
 
-* [procedures.rkt](../code/labs/procedures.rkt)
-{% endif %}
+a. Open [Scamper](https://scamper.us.reclaim.cloud/)
 
-## Work
-{% if site.online %}
-**All of the instructions are in the two files!  Switch over to those now.**
-{% else %}
+b. Download the following file
+
+* [procedures.scm](../code/labs/procedures.scm)
+
+c. Upload the file into Scamper. You can use the "Upload" button in the files pane. It's the one with an arrow pointing upwards.
+
+d. All of the remaining instructions are in that file. Switch to it now.
+
 **All of the instructions are in the file.  Switch to that now.**
-{% endif %}
 
-Here's the "Party Person" picture referenced in one of the exercises.
+Here's a version of the "Party Person" picture referenced in one of the exercises.
 
 ![A stick figure with a purple hat and red bowtie](../images/party-person.png).
 
