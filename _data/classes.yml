@@ -45,6 +45,11 @@
     - Make sure this works with the new model.
     - Combine the labs
 
+- topic: Labor Day
+  abbrev: labor-day
+  summary: |
+    We take a day off from class to celebrate the value of union labor.
+
 - topic: Computation via expressions
   abbrev: expressions
   summary: |
