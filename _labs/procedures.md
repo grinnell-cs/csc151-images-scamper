@@ -23,7 +23,7 @@ Between each exercise, you will swap driver and navigator roles so that you and 
 To encourage appropriate swapping, we have labeled each problem as "A" and "B" for pairs.  Whoever is closer to the board is partner "A" Whoever is further from the board is partner "B".  Partner A or Partner B drives as indicated in the lab.  If there is a third partner, ignore the labels and rotate appropriately.
 
 You should begin by copying and opening the file
-[procedures.rkt]({{ "/code/labs/procedures.rkt" | relative_url }}) (click on it) which contains both instructions and spaces for your answers.
+[procedures.scm]({{ "/code/labs/procedures.scm" | relative_url }}) (click on it) which contains both instructions and spaces for your answers.
 
 ## The lab
 
