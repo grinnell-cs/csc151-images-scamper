@@ -31,7 +31,7 @@ Let us now turn to the primary procedures we will use to work with RGB colors.
 
 We build a new color with the `(rgb red-component green-component blue-component`)` procedure.  We can also set the opacity of the color by adding a fourth component, typically referred to as the _alpha channel_ or just _alpha_. With with the other components, the alpha channel is between 0 and 255.
 
-Here are a few colors.
+Here are a few colors. (Note that Scamper now shows these a bit differently.)
 
 ```
 > (rgb 255 0 0)
@@ -93,10 +93,10 @@ If you give `color-name->rgb` something other than a color name, it will return 
 #f
 ```
 
-But what color names are available? The procedure `(all-color-names)`, which takes no parameters, gives you all the valid color names.
+But what color names are available? The procedure `(all-color-names str)` gives  you all the color names. The `str` parameter is unused, so we just use the empty string.
 
 ```
-> (all-color-names)
+> (all-color-names "")
 '("aliceblue"
   "antiquewhite"
   "aqua"
@@ -123,7 +123,7 @@ It returns an empty list when you give it something that's not a color name.
 
 ```
 > (find-colors "ugly")
-'()
+null
 ```
 
 Extracting color components
@@ -144,6 +144,7 @@ Obviously, just seeing a color on the screen doesn't let you compute with it. He
 255
 ```
 
+<!--
 We won't always know which color representation we're using, so there are also similar `color-red`, `color-green`, `color-blue`, and `color-alpha` procedures.
 
 ```
@@ -162,6 +163,7 @@ We won't always know which color representation we're using, so there are also s
 ```
 
 Why would we ever use the procedures with a `rgb-` prefix when we have similar procedures with a `color-` prefix? Because they are fractionally faster. We won't notice when we're using one or two colors. But when we're processing tens of thousands of colors (as we will in manipulating some images), we'll notice a difference. Hence, when we know we're working with an RGB color, we'll use the `rgb` variants.
+-->
 
 [Design detour] Computing with color: Complementary colors
 ----------------------------------------------------------
@@ -215,55 +217,55 @@ How?  The algorithm should be fairly straightforward.
 * We can combine those three newly-computed complements with `rgb`.
 
 ```
-;;; (color-pseudo-complement c) -> color?
-;;;   c : color?
+;;; (rgb-pseudo-complement c) -> color?
+;;;   c : rgb?
 ;;; Compute the pseudo-complement of a color
 (define color-pseudo-complement
   (lambda (c)
-    (rgb (- 255 (color-red c))
-         (- 255 (color-green c))
-         (- 255 (color-blue c)))))
+    (rgb (- 255 (rgb-red c))
+         (- 255 (rgb-green c))
+         (- 255 (rgb-blue c)))))
 ```
 
 Let's give it a try.
 
 ```
-> (color-pseudo-complement (rgb 255 0 255))
+> (rgb-pseudo-complement (rgb 255 0 255))
 ![a swatch of green](../images/colors/rgb-000-255-000-255.png)
-> (rgb-red (color-pseudo-complement (rgb 255 0 255)))
+> (rgb-red (rgb-pseudo-complement (rgb 255 0 255)))
 0
-> (rgb-green (color-pseudo-complement (rgb 255 0 255)))
+> (rgb-green (rgb-pseudo-complement (rgb 255 0 255)))
 255
-> (rgb-blue (color-pseudo-complement (rgb 255 0 255)))
+> (rgb-blue (rgb-pseudo-complement (rgb 255 0 255)))
 0
 ```
 
 We can, of course, write color transformations that do a wide variety of things.  For example, if we want to simulate the experience of people who cannot readily distinguish red and green, we can set both the red and green components to something closer to the average of the red and green components of the original.  (This approach doesn't really give you the experience of red-green color-blind people, but it may give some sense.)
 
 ```
-;;; (color-merge-red-green c) -> color?
+;;; (rgb-merge-red-green c) -> color?
 ;;;   c : color?
 ;;; Make both the red and green components closer to the average of the
 ;;; two components.
-(define color-merge-red-green
+(define rgb-merge-red-green
   (lambda (c)
-    (rgb (quotient (+ (color-red c) (color-red c) (color-green c)) 3)
-         (quotient (+ (color-red c) (color-green c) (color-green c)) 3)
-         (color-blue c))))
+    (rgb (quotient (+ (rgb-red c) (rgb-red c) (rgb-green c)) 3)
+         (quotient (+ (rgb-red c) (rgb-green c) (rgb-green c)) 3)
+         (rgb-blue c))))
 ```
 
 Let's try it out.
 
 ```
-> (color-merge-red-green (rgb 0 0 0))
+> (rgb-merge-red-green (rgb 0 0 0))
 ![a swatch of black](../images/colors/rgb-000-000-000-255.png)
-> (color-merge-red-green (rgb 255 0 0))
+> (rgb-merge-red-green (rgb 255 0 0))
 ![a swatch of approximately saddlebrown](../images/colors/rgb-170-085-000-255.png)
-> (color-merge-red-green (rgb 0 255 0))
+> (rgb-merge-red-green (rgb 0 255 0))
 ![a swatch of approximately medium forest green](../images/colors/rgb-085-170-000-255.png)
 > (color-name->rgb "violet")
 ![a swatch of violet](../images/colors/rgb-238-130-238-255.png)
-> (color-merge-red-green (color-name->rgb "violet"))
+> (rgb-merge-red-green (color-name->rgb "violet"))
 ![a swatch of approximately plum](../images/colors/rgb-202-166-238-255.png)
 ```
 
@@ -271,6 +273,8 @@ It certainly did _something_.  We probably need more context to see if it achiev
 
 From color transformations to image transformations
 ---------------------------------------------------
+
+_Warning_: `image-load` and `image-map` are currently undefined. We've included the example because we hope to have them working soon. Stay tuned.
 
 One way to get more context is to use the color transformations on complete images.  The procedure `(pixel-map color-transformation image)` does just that.
 
@@ -293,7 +297,7 @@ Sure, that looks a bit like a color negative, right?  (Have you ever seen a colo
 How about our other procedure?
 
 ```
-> (image-map color-merge-red-green kitten)
+> (pixel-map color-merge-red-green kitten)
 ![A kitten](../images/rgb/kitten-merge-red-green.jpg)
 ```
 
