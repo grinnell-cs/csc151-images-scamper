@@ -311,11 +311,11 @@ Self checks
 What value do you expect for each of these expressions?
 
 
-a. `(color-red (rgb 200 100 50))`
+a. `(rgb-red (rgb 200 100 50))`
 
-b. `(color-green (rgb 200 100 50))`
+b. `(rgb-green (rgb 200 100 50))`
 
-c. `(color-blue (rgb 200 100 50))`
+c. `(rgb-blue (rgb 200 100 50))`
 
 d. Check your answers experimentally.
 
@@ -323,17 +323,17 @@ d. Check your answers experimentally.
 
 What value do you expect for each of these expressions?  (Please guess about the components on a-f; it's fine if you are not quite right.)
 
-a. `(color-red (color-name->rgb "red"))`
+a. `(rgb-red (color-name->rgb "red"))`
 
-b. `(color-green (color-name->rgb "red"))`
+b. `(rgb-green (color-name->rgb "red"))`
 
-c. `(color-blue (color-name->rgb "red"))`
+c. `(rgb-blue (color-name->rgb "red"))`
 
-d. `(color-red (color-name->rgb "darksalmon"))`
+d. `(rgb-red (color-name->rgb "darksalmon"))`
 
-e. `(color-green (color-name->rgb "darksalmon"))`
+e. `(rgb-green (color-name->rgb "darksalmon"))`
 
-f. `(color-blue (color-name->rgb "darksalmon"))`
+f. `(rgb-blue (color-name->rgb "darksalmon"))`
 
 g. Check your answers experimentally.
 
