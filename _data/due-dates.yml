@@ -19,8 +19,7 @@
 
 - date: 2026-09-11
   due:
-    - LA 3 ()
-    - LA 4 ()
+    - LA 3 (Tracing)
 
 - date: 2026-09-15
   due:
@@ -33,13 +32,12 @@
 
 - date: 2026-09-18
   due:
-    - LA 5 ()
-    - LA 6 ()
+    - LA 4 (Lambda-free anonymous procedures)
 
 - date: 2026-09-25
   due:
-    - LA 7 ()
-    - LA 8 ()
+    - LA 5 (Collaboration)
+    - LA 6 (Conditionals)
 
 - date: 2026-09-29
   due:
@@ -51,12 +49,13 @@
 
 - date: 2026-10-02
   due:
-    - LA 9 ()
-    - LA 10 ()
+    - LA 7 (Lists)
+    - LA 8 (Program style)
 
 - date: 2026-10-09
   due:
-    - LA 11 ()
+    - LA 9 (Documentation)
+    - LA 10 (Testing)
 
 - date: 2026-10-13
   due:
@@ -68,7 +67,8 @@
 
 - date: 2026-10-16
   due:
-    - LA 12 (List recursion)
+    - LA 11 (List recursion)
+    - LA 12 (Local bindings)
 
 - date: 2026-10-30
   due:
@@ -89,8 +89,8 @@
 
 - date: 2026-11-13
   due: 
-    - LA 16 ()
-    - LA 17 ()
+    - LA 16 (Randomness)
+    - LA 17 (Dictionaries)
 
 - date: 2026-11-17
   due: MP5
