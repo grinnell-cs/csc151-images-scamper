@@ -19,6 +19,12 @@ _Approximate overview_
 * Q&A from readings
 * Lab
 
+Quiz
+----
+
+If you finish early, feel free to meditate, read a book, or play silently
+on your phone.
+
 Administrative stuff
 --------------------
 
@@ -80,11 +86,26 @@ _These do not earn tokens, but are worth your consideration._
 ## Upcoming work
 
 * Due Tuesday, 2026-09-08:
+    * [Today's lab]()
+        * Submit what you have at the end of class.
+    * [Reading responses]()
 * On Friday, 2026-09-11:
-    * Quiz/LA on decomposition.
-    * Quiz/LA on procedures.
+    * Quiz/LA on tracing (next Wednesday's class).
+    * REDO Quiz/LA on decomposition.
+    * REDO Quiz/LA on procedures.
 
 ## Administrative Q&A
+
+Can I get a token for attending _event_?
+
+> Tokens are only available for the events I mention in class (or on Teams).
+
+> If you think an event falls within the broad guidelines, suggest it to
+  me (preferably before class) and I'll add it if I agree.
+
+Friday PSA
+
+* 
 
 Q&A from Readings
 -----------------
