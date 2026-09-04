@@ -3,7 +3,7 @@ title: "EBoard 04: RGB Colors (Section 2)"
 number: 4
 section: eboards
 held: 2026-09-04
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -64,6 +64,10 @@ section's students are welcome._
 
 * Saturday, 5 September 2026, 1:00 p.m.--4:00 p.m., Rosenbloom Field
   _Men's American Football vs. Mount Mercy_
+* Saturday, 5 September 2026, 1:00--3:00 p.m., Springer Field.
+  _Men's Unamerican Football vs. Hamline_
+* Saturday, 12 September 2026, Grinnell Track.
+  _Les Duke Invitational (Cross Country)_
 
 Wellness
 
@@ -93,16 +97,12 @@ _These do not earn tokens, but are worth your consideration._
   _Volleyball vs St. Benedict_ (UPDATED)
 * Saturday, 5 September 2026, 11:00 a.m.--1:00 p.m., Darby.
   _Volleyball vs. St. Catherine_
-* Saturday, 5 September 2026, 1:00--3:00 p.m., Springer Field.
-  _Men's Unamerican Football vs. Hamline_
 * Saturday, 5 September 2026, 3:00--5:00 p.m., Darby.
   _Volleyball vs. Simpson College_
 * Sunday, 6 September 2026, 11:00 a.m.--1:00 p.m., Springer Field.
   _Women's Unamerican Football vs. St. Mary's_
 * Wednesday, 9 September 2026, 4:30--6:00 p.m., Springer Field.
   _Women's Unamerican Football vs. Coe_
-* Saturday, 12 September 2026, Grinnell Track.
-  _Les Duke Invitational (Track and Field)_
 
 ## Upcoming work
 
@@ -129,7 +129,13 @@ Can I get a token for attending _event_?
 
 Friday PSA
 
-* 
+* Choose what is right for you, not what you think others expect of you
+  (or what you need to do to "fit in").
+* Moderation!
+* Please take of yourselves, if not for you, then for the people who care
+  about you (or will care about you).
+* Consent is essential! (Consent is also nearly impossible if either party
+  is impaired.)
 
 Q&A from Readings
 -----------------
@@ -163,6 +169,10 @@ What is an alpha value?
         (overlay (solid-circle 100 (rgb 255 0 0 0))
                  (solid-square 100 (rgb 0 0 255)))
 
+What happens if we go above 255?
+
+> It complains that it's not a valid RGB component.
+
 Lab
 ---
 
@@ -184,3 +194,5 @@ Quiz
 
 If you finish early, you can leave. Have a great day!
 
+I would recommend that you stop at 10:50, unless you are close.
+"Cut your losses", as it were.

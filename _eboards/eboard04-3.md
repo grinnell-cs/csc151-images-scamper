@@ -184,3 +184,4 @@ Quiz
 
 If you finish early, you can leave. Have a great weekend!
 
+At 4pm, you should stop unless you are very close to finishing.
