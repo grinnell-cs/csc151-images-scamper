@@ -13,9 +13,6 @@ Basic color procedures
 * `(rgb-red c)` - extract the red component of an rgb color.
 * `(rgb-green c)` - extract the green component of an rgb color.
 * `(rgb-blue c)` - extract the blue component of an rgb color.
-* `(color-red c)` - extract the red component of a color.
-* `(color-green c)` - extract the green component of a color.
-* `(color-blue c)` - extract the blue component of a color.
 
 Working with color names
 
@@ -23,7 +20,7 @@ Working with color names
 * `(color-name->rgb name)` - convert a color name to an RGB color.
 * `(find-colors name)` - find all the colors that include name.
 
-Working with images
+Working with images (_these may not be working_)
 
 * `(image-load name)` - load an image.
 * `(pixel-map color-transformation image)` 
@@ -31,8 +28,8 @@ Working with images
 The lab
 -------
 
-* Use the file [rgb-colors.rkt](../code/labs/rgb-colors.rkt)
-* You should also download a copy of [the kitten image](../images/kitten.jpg) to your desktop.
+* Use the file [rgb-colors.scm](../code/labs/rgb-colors.scm)
+* You should also download a copy of [the kitten image](../images/kitten.jpg) to your desktop and then upload it to Scamper.
 
 Acknowledgements
 ----------------
