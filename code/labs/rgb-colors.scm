@@ -20,6 +20,9 @@
 ;;;   n : real?
 ;;; If n is zero or greater, returns n.
 ;;; otherwise, returns zero.
+(define no-less-than-zero
+  (lambda (n)
+    (max 0 n)))
 
 ; +-----------------------------+------------------------------------
 ; | Procedures from the reading |
