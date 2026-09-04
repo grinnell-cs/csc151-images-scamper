@@ -30,7 +30,8 @@ Administrative stuff
 
 ### Introductory Notes
 
-* We're all getting used to the Scamper environment.
+* We're all getting used to the Scamper environment (including me).
+    * There will be some unexpected infelicities.
     * Don't worry, it will get smoother and more natural.
     * The developers are happy to make changes, so let me know what changes
       you'd like to see.
