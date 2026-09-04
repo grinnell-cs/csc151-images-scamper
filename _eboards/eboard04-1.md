@@ -3,7 +3,7 @@ title: "EBoard 04: RGB Colors (Section 1)"
 number: 4
 section: eboards
 held: 2026-09-04
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -21,6 +21,8 @@ _Approximate overview_
 
 Quiz
 ----
+
+There are TWO quizzes.
 
 If you finish early, feel free to meditate, read a book, or play silently
 on your phone.
@@ -72,6 +74,8 @@ section's students are welcome._
 
 * Saturday, 5 September 2026, 1:00 p.m.--4:00 p.m., Rosenbloom Field
   _Men's American Football vs. Mount Mercy_
+* Saturday, 12 September 2026, Grinnell Track.
+  _Les Duke Invitational (Cross Country)_
 
 Wellness
 
@@ -109,8 +113,6 @@ _These do not earn tokens, but are worth your consideration._
   _Women's Unamerican Football vs. St. Mary's_
 * Wednesday, 9 September 2026, 4:30--6:00 p.m., Springer Field.
   _Women's Unamerican Football vs. Coe_
-* Saturday, 12 September 2026, Grinnell Track.
-  _Les Duke Invitational (Track and Field)_
 
 ## Upcoming work
 
@@ -137,7 +139,11 @@ Can I get a token for attending _event_?
 
 Friday PSA
 
-* 
+* Please choose what is right for you; don't attempt to match what you
+  think others are doing just for the sake of fitting in.
+* Moderation is good!
+* Take care of yourself for the people who care about you.
+* Consent is essential! (And nearly impossible if either party is impaired.)
 
 Q&A from Readings
 -----------------
@@ -148,7 +154,8 @@ Will we be tested on the terminology in the reading Design & Color?
 
 What would LAs look like for problems related to color?
 
-> Color is not an explicit LA topic. Colors will only be used as part of other topics.
+> Color is not an explicit LA topic. Colors will only be used as part 
+of other topics.
 
 Can we go over `remove-blue`?
 
@@ -185,4 +192,5 @@ At the end, follow the "end of lab" algorithm.
 * Upload it to Gradescope
 * Wait for the autograder. (Today's just says it ran; future ones will
   say more.)
+* Add your partner
 * Email it to your partner.
