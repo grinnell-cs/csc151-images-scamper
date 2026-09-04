@@ -149,7 +149,7 @@ As you may recall, Scheme evaluates nested expressions from the inside out.
 So, it first computes `(square-number 2)`.
 Substituting `2` in for `x`, it arrives at `(* 2 2)`.
 The multiplication gives a value of `4`.  The `(square-number 2)` is then replaced by `4`.
-The interperter is then left to evaluate `(square-number 4)`.
+The intreperter is then left to evaluate `(square-number 4)`.
 This time, it substitutes `4` in for the `x`, giving it `(* 4 4)`.
 It does the multiplication to arrive at a result of `16`.
 
@@ -372,6 +372,19 @@ What would be the difference between a zero parameter procedure and defined vari
 > Right now, the biggest difference between a zero-parameter procedure and a defined variable are that you use them differently.  The variable you use with its name; the procedure you put in parentheses.
 
 > Later in the semester, we'll see some differences.  One difference is when the associated code is executed.
+
+In the fancier house example, I don't understand how the `overlay/align`
+doesn’t apply to both the door and the roof of the house. Only the
+door is aligned at the bottom center of the house, while the roof
+is above it. But both of their commands come after `(overlay/align
+"bottom" "center" ...)`.
+
+> `overlay-align` aligns images.  It does not delve into the pieces
+or components of the individual images.
+
+> In this case, the outermost `overlay-align` aligns the door (itself
+built with an `overlay/align`) and the house with roof (built with
+the `above`).
 
 ## Acknowledgements
 
