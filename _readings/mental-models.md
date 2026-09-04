@@ -97,7 +97,7 @@ Before reading on, come up with a hypothesis.
 Did you do so?
 
 Great.
-Try it in your Scheme interpreter (DrRacket or Scamper or ...).
+Try it in your Scheme interpreter (Scamper or DrRacket or ...).
 You may also want to look at our notes at the end.
 
 (_Pause inserted in document so that you can check your answer by entering it in a Scheme interpreter, looking at the notes, or both._)
@@ -123,7 +123,7 @@ Note that the mental model does not completely follow the implementation used in
 However, it will help you understand most small programs.
 And we will extend the model throughout the semester.
 
-## Expressions
+### Expressions
 
 As we've seen, _expressions_ lie at the core of Scheme.
 Expressions are syntactic constructs that evaluate to values.
@@ -153,7 +153,7 @@ This extends to Scheme code that doesn't involve numbers at all!
 
 Here the expression produces a string as output---the upper-case version of the string resulting from gluing `"hello world"` and `"!!!"` together.
 
-## A substitutive model of evaluation
+### A substitutive model of evaluation
 
 The process of determining the value that an expression produces is called *evaluation*.
 The evaluation of expressions is the primary way that we perform computation in Scheme!
@@ -237,7 +237,7 @@ But it turns out that we can't guarantee that in all programming languages.
 Nonetheless, for the time being, you can assume that the order in which we evaluate arguments does not matter, provided you evaluate arguments before you apply a procedure.
 And, even though the order does not matter, we will generally evaluate arguments left to right.
 
-## Definitions
+### Definitions
 
 We have a starting point.
 We know how to evaluate expressions.
@@ -298,7 +298,7 @@ What happens if we write an expression that involves a variable not in the table
 Note that these tables are mostly a notational convenience, designed to make it easier for us to figure out the value of expressions when we're tracing.
 However, most programming languages, including Scheme, also have a hidden form of table which basically does the same thing (that is, that associates values with variables names).
 
-## Procedures and the substitutive model
+### Procedures and the substitutive model
 
 When we evaluate procedures, we have implicitly "carried out the behavior of the procedures" in our head and replaced the procedure call with the value.
 For example
@@ -356,10 +356,11 @@ So the complete evaluation of our original expression is:
 --> 10
 ```
 
-While this rule is simple, it covers almost *all occurrences* of procedures we'll see in Scheme!
+While this rule is simple, it covers almost all occurrences of procedures we'll see in Scheme!
 This is the beauty of a programming language at its core: a small set of rules governs a near, unimaginable set of behavior we can author in a computer program!
 
-## Definitions, tables, and procedures
+Definitions, tables, and procedures
+-----------------------------------
 
 We've separately considered models for the definitions that let us evaluate variables for procedures.
 Let's also consider them together.
@@ -373,7 +374,8 @@ Then, and only then, does it do what we described above: We substitute it in for
 It turns out that these model of operation means we can use lambdas without defining them.
 We'll leave that issue for a bit later in your education.
 
-## Self-checks
+Self-checks
+-----------
 
 ### Check 1: Code tracing (‡)
 
@@ -400,7 +402,8 @@ Make sure to write down *all* steps of evaluation as required by our substitutiv
 
 Make sure to check your work by entering these expressions into your Scheme interpreter!
 
-## Appendices
+Appendices
+----------
 
 ### Appendix A: `eff` and `gee`
 
@@ -421,7 +424,8 @@ But what happens when we try `(gee 10)`?  In that case, `y` gets the value 10.  
  cannot reference an identifier before its definition
 ```
 
-## Q&A
+Q&A
+---
 
 _These questions have been gathered from reading responses._
 
@@ -453,19 +457,6 @@ Could you explain how to define/use `add-3`?
 	--> (+ (+ 2 3) 4)
 	--> (+ 5 4)
 	--> 9
-
-In the fancier house example, I don't understand how the `overlay/align`
-doesn’t apply to both the door and the roof of the house. Only the
-door is aligned at the bottom center of the house, while the roof
-is above it. But both of their commands come after `(overlay/align
-"bottom" "center" ...)`.
-
-> `overlay-align` aligns images.  It does not delve into the pieces
-or components of the individual images.
-
-> In this case, the outermost `overlay-align` aligns the door (itself
-built with an `overlay/align`) and the house with roof (built with
-the `above`).
 
 I'm confused by what we call variables.  In `(define x 5)`, is the `x` the
 variable or the `5`?

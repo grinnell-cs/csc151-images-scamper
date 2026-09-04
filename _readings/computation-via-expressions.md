@@ -15,7 +15,8 @@ This work in building a _mental model of computation_ of how Scheme programs ope
 
 We'll be using a simple model of Scheme programs this semester; it won't cover every program, but it will cover most.
 
-# Syntax and grammar
+Syntax and grammar
+------------------
 
 Consider the following two sequences of English words.
 
@@ -34,11 +35,12 @@ When words don't appear in the appropriate order, then it is at best, difficult,
 
 The _syntax_ of a language is its rules that govern whether a sequence of words is well-formed.  You may have learned the syntax of English explicitly sometime during your prior education, or you may have picked it up experientially by observing others.  Regardless, you adhere to the syntax of English so that others understand what you are saying.
 
-# The syntax of Scheme programs
+The syntax of Scheme programs
+-----------------------------
 
 While the second sequence of words above was in random order, you may have been able to understand the meaning of the words to some degree.  This is because you are equipped with all sorts of cues and heuristics for infusing such sequences with meaning.  Unfortunately, as we saw during our first day of class, computers are not natively equipped with such skills.
 
-Recall that Computers will do _exactly_ what you tell them to do and nothing more!
+Recall that computers will do _exactly_ what you tell them to do and nothing more!
 
 Thus, we don't have the luxury of being lax in how we form programs.  Our programs _must_ adhere to the syntax of the programming language we are writing precisely!
 
@@ -71,7 +73,7 @@ Note that there are sequences of numbers and operators that we would not conside
 
 Note also that parentheses are used help disambuate how the different operators and operands associate.  For example, the expression $$1 + 1 - 3 \times\ 2$$ suggests at least three ways of evaluating, depending on which operation you do first.  (As you know there are additional rules  that help us determine that.)  If we wanted to be explicit, we could write $$(1 + 1) - (3 - 2)$$.
 
-As you saw in the last class's reading, Scheme's expression forms are different than traditional arithmetic expressions.  Rather than writing the operator between expressions in _infix_ style, with the operation in-between the operands, we write the operator for Scheme expressions in _prefix_ style, with the operation before the operands:
+As you saw in an earlier reading, Scheme's expression forms are different than traditional arithmetic expressions.  Rather than writing the operator between expressions in _infix_ style, with the operation in-between the operands, we write the operator for Scheme expressions in _prefix_ style, with the operation before the operands:
 
 + `(+ 1 1)` is a Scheme expression that computes the same value as the mathematical expression $$1 + 1$$.
 + `(* 3 (+ (- 5 2) 1))` is a Scheme expression that computes the same value as the mathematical expression $$3 \times\ (5 - 2 + 1)$$.
@@ -81,7 +83,7 @@ Note that unlike arithmetic, we _always_ surround our non-number expressions wit
 
 This infix versus prefix distinction is the primary difference between Scheme and arithmetic expressions.  The rules or syntax of valid Scheme expressions are as concise as their arithmetic variants.  An arithmetic Scheme expression is either:
 
-* A number or
+* A number _or_
 * An open parenthesis, an arithmetic operator, two (or more) Scheme expressions, and a close parenthesis.
 
 It might be difficult to follow the language of the second bullet precisely, so it is useful to write out a sort of "template" that captures what the rule is conveying:
@@ -95,7 +97,7 @@ We call `<expr1>` and `<expr2>` _sub-expressions_ of the overall expression.
 
 ## Beyond arithmetic expressions
 
-Of course, our last reading quickly moved from arithmetic to drawings, so we need our rules for Scheme expressions to generalize accordingly.  Let's look at one of these expressions from our previous reading:
+Of course, we quickly moved from arithmetic to drawings, so we need our rules for Scheme expressions to generalize accordingly.  Let's look at one of these expressions from a previous reading:
 
 ```racket
 (solid-circle 60 "blue")
@@ -136,7 +138,8 @@ Putting everything together, we can write down the syntax of well-formed Scheme 
 
 While those three rules are all we'll cover right now, they are not all there is to well-formed Scheme expressions.  We have much more to learn about Scheme, and we will revisit this definition and add and modify it as needed.
 
-# A mental model of computation for Scheme expression
+A mental model of computation for Scheme expression
+---------------------------------------------------
 
 It is one thing to form a syntactically valid English sentence.  It is another thing to form a coherent, meaningful sentence!
 For example, the sentence:
@@ -187,7 +190,7 @@ Let's see how the equivalent Scheme expression evaluates:
 --> 12
 ```
 
-Substitutive evaluation is our primary _mental model of computation_ for Scheme expressions.
+Substitutive evaluation is our primary _mental model of computation_ for Scheme expressions. We will consider more about substitutive evaluation in [the next reading](mental-models.html).
 
 In summary:
 
@@ -198,7 +201,8 @@ A step of evaluation consists of:
 2. _Evaluating_ that subexpression to a value.
 3. _Substituting_ the value for the subexpression that produced it in the overall expression.
 
-# Self-Checks
+Self-Checks
+-----------
 
 ## Check 1: Syntax (‡)
 
