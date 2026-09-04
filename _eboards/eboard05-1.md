@@ -23,6 +23,10 @@ Administrative stuff
 
 ### Introductory Notes
 
+* Please remember to return your blue cards to jar immediately after
+  determining where you are.
+* During class, please work on our workstations, not your laptops.
+
 ### Upcoming activities
 
 Scholarly

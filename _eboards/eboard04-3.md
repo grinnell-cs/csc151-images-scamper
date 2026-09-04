@@ -3,7 +3,7 @@ title: "EBoard 04: RGB Colors (Section 3)"
 number: 4
 section: eboards
 held: 2026-09-04
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -12,9 +12,11 @@ is working correctly).
 
 _You should know the start-of-class algorithm_
 
+Please return your card to the jar after you grab it.
+
 _Approximate overview_
 
-* Administration
+* Administrative stuff
 * Q&A from readings
 * Lab
 * Quiz
@@ -38,6 +40,8 @@ Administrative stuff
   (for today's reading; the others are forthcoming).
 * When you book meetings, I'd prefer that you book 15-minute sessions
   rather than 30-minute session.
+* Monday is labor day, where we celebrate the wonder of unions and
+  working people. There is no class.
 
 ### Upcoming activities
 
@@ -102,7 +106,7 @@ _These do not earn tokens, but are worth your consideration._
 * Wednesday, 9 September 2026, 4:30--6:00 p.m., Springer Field.
   _Women's Unamerican Football vs. Coe_
 * Saturday, 12 September 2026, Grinnell Track.
-  _Les Duke Invitational (Track and Field)_
+  _Les Duke Invitational (Cross Country)_
 
 ## Upcoming work
 
@@ -129,7 +133,13 @@ Can I get a token for attending _event_?
 
 Friday PSA
 
-* 
+* Don't feel like you have to do what others are doing (or seem to want
+  you to do). Decide what's right for you.
+* People care about you, so please take care of yourself, if not for you,
+  then for them.
+* Moderation!
+* Consent is essential. (Consent is also difficult/impossible to assess
+  if either party is impaired.)
 
 Q&A from Readings
 -----------------
@@ -145,6 +155,16 @@ What would LAs look like for problems related to color?
 Can we go over `remove-blue`?
 
 > Sure.
+
+Can I have two functions with the same name and a different number of parameters?
+
+> No. Not in Scheme. (Yes in Java.)
+
+How do you make optional parameters?
+
+> For now, you don't.
+
+> I'm not sure in Scamper.
 
 What is an alpha value?
 
@@ -162,6 +182,10 @@ What is an alpha value?
                  (solid-square 100 (rgb 0 0 255)))
         (overlay (solid-circle 100 (rgb 255 0 0 0))
                  (solid-square 100 (rgb 0 0 255)))
+
+What happens if we don't add the alpha in creating an RGB color?
+
+> 255 is the default.
 
 Lab
 ---
