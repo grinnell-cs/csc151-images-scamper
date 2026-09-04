@@ -1,5 +1,5 @@
 ---
-title: "EBoard 04: RGB Colors (Section 1)"
+title: "EBoard 04: RGB Colors (Section 3)"
 number: 4
 section: eboards
 held: 2026-09-04
@@ -14,18 +14,10 @@ _You should know the start-of-class algorithm_
 
 _Approximate overview_
 
-* Quiz
 * Administration
 * Q&A from readings
 * Lab
-
-Quiz
-----
-
-If you finish early, feel free to meditate, read a book, or play silently
-on your phone.
-
-We will start class at 8:30 or when everyone finishes, whichever comes first.
+* Quiz
 
 Administrative stuff
 --------------------
@@ -186,3 +178,9 @@ At the end, follow the "end of lab" algorithm.
 * Wait for the autograder. (Today's just says it ran; future ones will
   say more.)
 * Email it to your partner.
+
+Quiz
+----
+
+If you finish early, you can leave. Have a great weekend!
+

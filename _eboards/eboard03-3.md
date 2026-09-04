@@ -2,7 +2,7 @@
 title: "EBoard 03: Writing Functions (Section 3)"
 number: 3
 section: eboards
-held: 2026-09-01
+held: 2026-09-02
 link: true
 ---
 # {{ page.title }}
