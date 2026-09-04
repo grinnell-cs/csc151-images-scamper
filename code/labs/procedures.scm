@@ -189,6 +189,8 @@
 ; f. Wait for the autograder results to make sure that you met the
 ; basic goals.
 
+; g. Email the file to your partner in case they need it later.
+
 ; +---------------------------+--------------------------------------
 ; | For those with extra time |
 ; +---------------------------+
