@@ -38,7 +38,7 @@
 ;;;   c : rgb?
 ;;; Make both the red and green components closer to the average of the
 ;;; two components.
-gdefine color-merge-red-green
+(define color-merge-red-green
   (lambda (c)
     (rgb (quotient (+ (rgb-red c) (rgb-red c) (rgb-green c)) 3)
          (quotient (+ (rgb-red c) (rgb-green c) (rgb-green c)) 3)
