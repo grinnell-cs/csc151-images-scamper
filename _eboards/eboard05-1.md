@@ -15,6 +15,7 @@ _You should know the start-of-class algorithm_
 _Approximate overview_
 
 * Administration
+* The layers game
 * Q&A from readings
 * Lab
 
@@ -26,6 +27,7 @@ Administrative stuff
 * Please remember to return your blue cards to jar immediately after
   determining where you are.
 * During class, please work on our workstations, not your laptops.
+* Congratulations to our football team for their season-opening victory!
 
 ### Upcoming activities
 
@@ -35,8 +37,14 @@ Scholarly
   _Scholar's Convocation: Ruth Feingold_
 * Thursday, 10 September 2026, 4:00--5:00 p.m., JRC 101.
   _The Department of Revenge_ (NY Times Reporter)
+* Thursday, 10 September 2026, 4:15--5:00 p.m., Science 3821.
+  _Study Away for CS Majors_
+    * Refreshments in the CS commons at 4:00 p.m.
 
 Artistic/Cultural
+
+* Saturday, 12 September 2026, 8:00 p.m., Garnder.
+  _The Spine Stealers and Babehoven_.
 
 Multicultural
 
@@ -83,13 +91,19 @@ _These do not earn tokens, but are worth your consideration._
 ## Upcoming work
 
 * Due Thursday, 2026-09-10:
-    * [Today's lab]()
-        * Submit what you have at the end of class.
+    * [Today's lab](../labs/mental-models-of-computing)
+        * Today's lab involves a [Gradescope Form](https://www.gradescope.com/courses/1370413/assignments/8584066)
     * [Reading responses]()
+        * [Anonymous procedures](../readings/anonymous-procedures.html)
+        * [Transforming RGB colors](../readings/transforming-rgb.html)
+        * [Transforming images](..//readings/transforming-images.html)
+
 * On Friday, 2026-09-11:
-    * Quiz/LA on tracing (next Wednesday's class).
+    * Quiz/LA on tracing (quite similar to the end of today's lab)
     * REDO Quiz/LA on decomposition.
     * REDO Quiz/LA on procedures.
+* Due Tueday, 2026-09-15:
+    * [Mini-project 1](../mps/mp01)
 
 ## Administrative Q&A
 
@@ -105,21 +119,25 @@ When can I make up an LA?
 > There are makeups every Friday. There are also extra makeup times
   available. 7:30--8:00, 11:00--11:30, 4:00--4:30.
 
+Do I have to write reflections for mentor sessions?
+
+> Yes.
+
+What happens if I turn in a reflection more than 72 hours after the event?
+
+> I'll be slower in grading it.
+
+Did my lab partner turn in the lab and included me?
+
+> You can check on Gradescope. If you see an entry for your name, they did.
+  If not, they either didn't turn it in or forgot to include you.
+
+> Note that the two of you should turn in the lab together at the end of
+  class.
+
 Q&A from Readings
 -----------------
 
 Lab
 ---
 
-If you finish early, do some of the extra problems.
-
-It's also okay if you don't finish! 
-
-At the end, follow the "end of lab" algorithm.
-
-* Save the file to disk.
-* Upload it to Gradescope
-* Wait for the autograder. (Today's just says it ran; future ones will
-  say more.)
-* Add your partner
-* Email it to your partner.
