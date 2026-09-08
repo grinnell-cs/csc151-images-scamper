@@ -20,6 +20,9 @@
 ;;;   n : real?
 ;;; If n is zero or greater, returns n.
 ;;; otherwise, returns zero.
+(define no-less-than-zero
+  (lambda (n)
+    (max 0 n)))
 
 ; +-----------------------------+------------------------------------
 ; | Procedures from the reading |
@@ -38,7 +41,7 @@
 ;;;   c : rgb?
 ;;; Make both the red and green components closer to the average of the
 ;;; two components.
-gdefine color-merge-red-green
+(define color-merge-red-green
   (lambda (c)
     (rgb (quotient (+ (rgb-red c) (rgb-red c) (rgb-green c)) 3)
          (quotient (+ (rgb-red c) (rgb-green c) (rgb-green c)) 3)
