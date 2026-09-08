@@ -14,8 +14,6 @@ You will do most labs on the computer.  You will submit those labs on Gradescope
 
 Other labs, such as this one, you will do some/most of your work on paper and submit the paper at the end of class.
 
-Whether electronic or paper, labs are due before the next class.  You can use a token to submit a lab late, but it must be in before before the subsequent class.
-
 While we would prefer that you finish the lab with your partner, if you decide to finish the lab separately, you may do so.  Please make sure to cite your partner when submitting the lab.
 
 In most labs, we will have distinguished driver/navigator roles where:
@@ -30,23 +28,30 @@ Each exercise will designate person A or person B to be the driver.  Person A sh
 
 a. Introduce yourself to your partner.
 
-b. Grab a piece of paper from the back of of the room.  If you don't have your own pen, feel free to grab a pen, too.
+b. Log into the computer.
 
-c. One partner should log in to the computer and start DrRacket.
+c. Log into Gradescope and open the entry associated with this lab.
 
-d. Update the CSC151 library using the following steps.
+d. Start Scamper.
 
-* Go to `File` → `Package Manager...` in the menu.
-* Enter the following URL into the "Package Source" textbox: <https://github.com/grinnell-cs/csc151.git#main>
-* If you see "Install", click that button.
-* If you see "Update", click that button.
-* Wait for the package to install or update.  You can tell that it's done when 
-  the "Close" button becomes available.
-* Click the "Close" button.
+e. If you were already logged in to Scamper, reload the page so that you get the most recent version of Scamper.
+
+## Notes
+
+As you may recall from [the reading](../readings/mental-models), in our mental model of computation, we trace simple expressions by evaluating all the arguments to each function and then applying the function to them. Here's an example from the reading.
+
+```
+    (* (+ 1 2) (+ 4 1))
+--> (* 3 (+ 4 1))
+--> (* 3 5)
+--> 15
+```
 
 ## Exercises
 
-### Exercise 1: Tracing Scheme expressions (A drives, B navigates)
+### Exercise 1: Tracing Scheme expressions
+
+**Driver: _A_**
 
 Consider the following Scheme expression.
 
@@ -54,112 +59,39 @@ Consider the following Scheme expression.
 (* (+ 1 2) (- (* 3 4) (* 2 (+ 1 1 1))))
 ```
 
-a. Write down a step-by-step evaluation of this expression (we call
-this a _trace_ or _evaluation trace_).  If you're not sure what
-we're asking for, grab one of the course staff (professor or mentors).
+a. Enter a step-by-step evaluation of this expression (we call this a _trace_ or _evaluation trace_) like the one above, assuming that we evaluate arguments from left to right.  If you're not sure what we're asking for, grab one of the course staff (professor or mentors).
 
-b. The `csc151` library has a simple tool that permits you to trace some
-kinds of code.  (Warning: Ithas some bugs.)  Let's try it.  In DrRacket, 
+b. Scamper includes a tool that permits you to trace some kinds of code. (Warning: It may have some bugs.)  Let's try it. 
 
-i. Add `(require csc151/trace)` to the definitions pane.
+i. Enter that expression in the definitions pane.
 
-ii. Click "Run"
+ii. Click somewhere within the expression.
 
-iii. In the interactions pane, type
+iii. Click on the footsteps between the Run button and the REPL button. You should see a new pane appear, something like the following.
 
-```
-> (trace (* (+ 1 2) (- (* 3 4) (* 2 (+ 1 1 1)))))
-```
+![A window pane labeled 'Step'. The expression '(* (+ 1 2) (- (* 3 4) (* 2 (+ 1 1 1))))' appears highlighed at the top of the pane, along with another copy immediately below it. At the bottom of the pane are controls for rewind, back, forward, and fast forward. There is also a progress bar that reports 1/7.](../images/step-pane.png).
 
-You should see something like
+iv. As you might expect, you can use the controls at the bottom of the pane to step through the evaluation. Do so now, verifying that your steps matched those that Scamper shows.
 
-```
-Use (step) to step through the trace.
+### Exercise 2: From Math to Scheme 
 
-    (*
-      (+ 1 2)
-      (- (* 3 4) (* 2 (+ 1 1 1))))
-```
+**Driver: _B_**
 
-iv. As the instructions suggest, you can use `(step)` to step through the trace.
-Try doing so.
+Consider the following arithmetic expression.
 
-### Exercise 2: From Math to Scheme (alternating drivers)
-
-**For this exercise, alternate drivers between each expression.**
-
-Consider the following arithmetic expressions.
-
-{:type="a"}
-1.  $$3 * (4 - \frac{1}{7})$$. (Driver A)
-2.  $$1 + (-2 + (3 + (4 + -5)))$$. (Driver B)
-
-For each of these arithmetic expressions.
+$$1 + (-2 + (3 + (4 + -5)))$$. (Driver B)
 
 a. Translate the expression into an equivalent Scheme expression.
 
-b. Give the step-by-step evaluation of that Scheme expression to a final value.
+b. Give the step-by-step evaluation of that Scheme expression to a final value.  (Do this by hand; do not use the Scamper tracing tool.)
 
-c. Check your work by entering in DrRacket.
+c. Check your work in Scamper.
 
-### Exercise 3: Tracing `map`
+### Exercise 3: Making a statement
 
-We briefly explored the `map` procedure in the introductory reading. 
+**Driver: _A_**
 
-a. Trace the evaluation of `(map sqr (list 1 2 3 4))` using DrRacket.
-
-b. Trace the evaluation of `(map string-length (string-split "this and that"))` using DrRacket.
-
-c. Explain, in your own word, what `map` seems to be doing.
-
-### Exercise 4: Parts of Expressions
-
-**For this problem, alternate drivers between each expression.**
-
-In the reading, we introduced the _syntax of expressions_.
-It is easy to think of program constructs as fixed elements that must appear exactly as-presented in our programs.
-However, these program constructs are far more like _highly-composable building blocks_ that, provided we understand how they connect, we can put together however we would like in order to express our computations.
-
-In this problem, we'll take a look at identifying the various parts of expressions of significant complexity.
-For each of the following expressions, identify:
-
-+ The non-trivial sub-expressions of the overall expression.
-+ The identifiers of the overall expression.
-+ All of the numbers of the overall expression.
-+ All of the strings of the overall expression.
-
-In addition to this information, try to "read" the expression and in a sentence, describe what you believe the expression evaluates to.
-Check your work in DrRacket.
-
-Note that `(expt a b)` computes `a` to the `b`th power.
-
-```racket
-; (a) (Driver B)
-(string-length
-  (string-append "hello"
-                 " "
-                 "world!"))
-```
-
-```racket
-; (b) (Driver A)
-(+ 32 (* 8 60) (* (/ 1 2) 4 (expt 60 2)))
-```
-
-```
-; (c) (Driver B)
-(odd? (length (string-split "4,9,10,11,2,3" ",")))
-```
-
-Finally, with your partner, review your results for parts (a) and (c) and consider this statement:
-
-> When reading Scheme expressions, read them "inside-out" or "right-to-left."
-
-Explain why this statement makes sense given what you know about how expressions evaluate and how they are syntactically formed.
-
-### Exercise 5: Making a Statement (Driver A)
-
-In our first Scheme work, we learned that `define` is a construct that allowed us to introduce _identifiers_ or _named values_ into our programs.  Each identifier/name is associated with ("bound to") a value.  (Some people call these "variables"; since they don't vary, we will try to avoid that name.)
+In our initial Scheme work, we learned that `define` is a construct that allowed us to introduce _identifiers_ or _named values_ into our programs.  Each identifier/name is associated with ("bound to") a value.  (Some people call these "variables"; since they don't vary, we will try to avoid that name.)
 
 ```racket
 > (define x 10) ; binds the identifier/name x to the value 10
@@ -173,131 +105,148 @@ Note that this problem is a microcosm of the language-learning experience.
 As you learn new constructs and techniques, you'll find that your current understanding of how program works does not account for these things, and you will evolve your learning.
 Usually this evolution amounts to _abstracting_ your understanding so that it applies to more scenarios than before!
 
-At first glance the `define` construct above looks similar to the operator form or _function call_ form of expressions we identified in the reading:
+At first glance the `define` construct above looks similar to _function call_ form of expressions:
 
 ```racket
 (<identifier> <expr1> ... <exprk>)
 ```
 
-If this was the case, this implies that we can use `define` anywhere an expression is considered.
+If a `define` construct is an expression, we should be able to use use `define` anywhere an expression is accepted.
 For example, perhaps we can get the same effect as the code above by _inlining_ the `define` into the addition:
 
 ```racket
 > (+ (define x 10) 1)
 ```
 
-{:type="i"}
-1.  Try this example out in DrRacket.
-    What is the output that you receive or what errors are produced if the code is invalid?
-2.  Develop _two_ other examples of trying to use `define` as an expression, similar to the give example case.  (You should write these down on the piece of paper.)
-    For inspiration, try replacing a value in an expression you've written already with `(define x <value>)`.
-3.  Write down the output or errors that you get in each case.
-4.  Answer the following question based on your experience: **Is the `define` form an expression?**
+Try this example out in Scamper.  What is the output that you receive or what errors are produced if the code is invalid? (Enter your answers to these questions on Gradescope.)
 
-### Exercise 6: The syntax of `define` (Driver B)
+After you've finished, read [the notes on definitions](notes-on-definitions) at the end of the lab.
 
-From the previous exercise , you should have concluded that `define` is _not_ an expression!
-We certainly do not seem to be able to put a `define` form anywhere an expression is expected.
-Consequently, we must ask ourselves: what syntactic category is a `define` and how does it relate to expressions?
+### Exercise 4: Sequencing definitions
+
+**Driver: _B_**
+
+Does order of definition matter? Let's try some experiments to see.
+
+a. Consider the following sequence of definitions, which we might enter in the definitions pane.
+
+```
+(define x 10)
+(define y (* 3 x))
+(list x y)
+```
+
+i. What output do you expect to see when we click "Run"? (Enter your answer on Gradescope.)
+
+ii. Check your answer experimentally and record the results.
+
+b. Does the order matter? That is, can we define `y` in terms of `x` without first defining `x`? Let's see. Consider this modification to the sequence.
+
+```
+(define y (* 3 x))
+(define x 10)
+(list x y)
+```
+
+i. What do you expect to happen when we click "Run"? (Enter your answer on Gradescope.)
+
+ii. Check your answer experimentally and record your results.
+
+c. What happens if we attempt to redefine a variable? Let's check that expermenally, too.
+
+```
+(define x 10)
+(define y (* 3 x))
+(list x y)
+(define x 5)
+(list x y)
+```
+
+i. What do you expect to happen when we click "Run"? (Enter your answer on Gradescope.)
+
+ii. Check your answer experimentally and record your results.
+
+### Exercise 5: Tracing procedure calls
+
+**Driver: _A_**
+
+As you may recall from the reading, we can also trace function calls, at least for functions we define. Here's the standard tracing strategy for function calls.
+
+i. Evaluate all the argument expressions from left to right.
+
+ii. In the body of the function, replace all the named parameters with the corresponding argument.
+
+iii. Substitute this new expression for the function call.
+
+Consider the following definition.
+
+```
+(define sqr
+  (lambda (x)
+    (* x x)))
+```
+
+Here's a simple trace of a call to `(sqr (+ 1 1))`.
+
+```
+    (sqr (+ 1 1))
+--> (sqr 2)
+--> (* 2 2)
+--> 4
+```
+
+a. Trace the following expression.
+
+```
+(sqr (* 2 (+ 1 3)))
+```
+
+b. Confirm your trace with Scamper.
+
+c. Trace the following expression.
+
+```
+(sqr (sqr (sqr 2)))
+```
+
+d. Confirm your trace with Scamper.
+
+### Exercise 6: Tracing procedure calls, revisited
+
+**Driver: _B_**
+
+Consider the following definitions.
+
+```
+(define x 5)
+(define y (+ 1 9))
+(define fun
+  (lambda (x y)
+    (+ (* 2 x) (* 3 y))))
+```
+
+a. Trace the call `(f 2 3)`.
+
+b. Check your answer in Scamper. If Scamper gives a different sequence, take some notes as to why.
+
+c. Trace the call`(f y x)`
+
+d. Check your answer in Scamper. If Scamper gives a different sequence, take some notes as to why.
+
+Submitting your work
+--------------------
+
+Make sure to add your partner!
+
+Notes on definitions
+--------------------
+
+As you may have noted, Scamper does not permit you to use a `define` structure as an expression. Hence, we should conclude that that `define` is _not_ a function and that a `define` structure is _not_ an expression, even though it looks exactly like one.  Consequently, we must ask ourselves: what syntactic category is a `define` and how does it relate to expressions?
 
 It turns out that `define` is an example of a syntactic category distinct from expressions; it is a _statement_!
 
 > A _statement_ is a construct that produces an _effect_ in our program.
 
-We'll have more to say about "effects" in our programs later in the course.
-For now, we'll say that the "effect" of a `define` statement is simple: it binds a value to an identifier.
-In the example that started this problem, we bound `10` to the identifier `x`.
-Consequently, whenever we mention `x` in our program, we really mean the value that is bound to that identifier, `10` in this case.
+We'll have more to say about "effects" in our programs later in the course.  For now, we'll say that the "effect" of a `define` statement is simple: it binds a value to an identifier.  In the example that started this problem, we bound `10` to the identifier `x`.  Consequently, whenever we mention `x` in our program, we really mean the value that is bound to that identifier, `10` in this case.
 
-First let's address the syntax of a `define`.
-So we far, we have seen that `define` takes the following form:
-
-```racket
-(define <??> <??>)
-```
-
-Where we haven't quite defined what goes in either `<??>` yet.
-We assumed that a `define` statements binds an identifier, so it stands to reason that the first placeholder should be an identifier:
-
-```racket
-(define <identifier> <??>)
-```
-
-With your partner, try out `define` statements with different potential identifiers and different things in the last position.
-You should try out various constructs that you've learned in the reading so far, in particular, the different forms of expressions.
-From your experimentation, describe in a sentence what can appear in the final position of a `define` statement and complete the syntax rule with the syntactic category allowed in that position.
-
-### Exercise 7: Potential complexities (alternating Drivers)
-
-Now let's think about how `define` statements execute.
-In short, we execute statements in our program in sequential fashion.
-However, subtleties may arise in this execution model that we should consider.
-
-For each of the following programs:
-
-* Write down how you expect the following programs evaluate, step-by-step.
-* Test your answers in DrRacket.
-* In a sentence or two, describe how the program executes and why the program ultimately behaves in the way that it does.
-
-Note that some of these programs produce errors; that is intentional!
-
-```racket
-; (i) (Driver A)
-(define x 5)
-(define y (* 5 8))
-(define z (+ 1 1))
-
-(+ x y z)
-```
-
-```racket
-; (ii) (Driver B)
-(define x 20)
-(define y (* x 20))
-(define z (* y y))
-
-(+ x y z)
-```
-
-```racket
-; (iii) (Driver A)
-(define x 10)
-(define y (+ x z))
-(define z (* x 2))
-
-(+ x y z)
-```
-
-```racket
-; (iv) (Driver B)
-(define x 10)
-(define y (+ x 1))
-(define x (* y 2))
-
-(+ x y)
-```
-
-### Exercise 8: Explaining `define`
-
-In your own words, explain how our Scheme interpreter deals with a sequence of (interleaved expressions and define statements).  
-That is, what does the Scheme interpreter do if you write some define statements and some expressions and some more define statements and some more expressions and so on and so forth?
-
-For example, consider what it does with the following.
-
-```racket
-(define x 10)   ; define statement
-(+ x x)         ; expression
-(define y 11)   ; define statement
-(sqr y)         ; expression
-(sqr x)         ; expression
-(define z 12)   ; define statement
-(define a 1)    ; define statement
-(+ x y z)       ; expression
-```
-
-## Submitting your work
-
-Write your names at the top of the page.
-
-Hand the page to one of the course staff.
-
+We will eventually encounter other things that can appear immediately after an open parenthesis that are not quite functions, but that behave somewhat like functions.
