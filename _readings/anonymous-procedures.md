@@ -41,7 +41,7 @@ How are these two definitions similar?  Both use the `define` keyword to associa
 (define x 6)
 ```
 
-The Lisp family of languages (including Scheme and Racket) set themselves apart from many programming languages by permitting you to use a variety of kinds of expressions to define procedures.  You've already seen two: lambda expressions and existing procedures.  In this reading, we'll explore two more: composition and partial expressions.  Just as an arithmetic operation, like `+`, creates a numeric value, the composition and partial-expression operations create a procedural value.
+The Lisp family of languages (including Scheme, Racket, and Scamper) set themselves apart from many programming languages by permitting you to use a variety of kinds of expressions to define procedures.  You've already seen two: lambda expressions and existing procedures.  In this reading, we'll explore two more: composition and partial expressions.  Just as an arithmetic operation, like `+`, creates a numeric value, the composition and partial-expression operations create a procedural value.
 
 ## Building new procedures through composition
 
@@ -54,23 +54,17 @@ In the CSC 151 Racket library, we use `o` (a lowercase "oh") to represent functi
 9
 > (define quad (o sqr sqr))
 > quad
-#<procedure:quad>
+(lambda (x) ...)
 > (quad 3)
 81
-> (add1 3)
-4
-> (define add2 (o add1 add1))
-> add2
-#<procedure:add2>
-> (add2 3)
-5
 ```
 
-As these examples suggest, both `quad` and `add2` are procedures.  We've created these procedures in a new way, without a `lambda`.  The `quad` procedure squares its parameter and then squares it again (3x3 is 9, 9x9 is 81).  The `add2` procedure adds one to its parameter and then adds another one.
+As this examples suggests, `quad` is a procedure.  We've created this procedure in a new way, without a `lambda`.  The `quad` procedure squares its parameter and then squares it again (3x3 is 9, 9x9 is 81).  
 
 What happens if we compose two different procedures?  Let's check.
 
 ```drracket
+> (define add1 (lambda (x) (+ 1 x)))
 > (define f1 (o sqr add1))
 > (f1 4)
 25
@@ -90,7 +84,7 @@ As these examples suggest, the composed procedure applies the other procedures f
 17
 ```
 
-Some programmers find this right-to-left behavior perfectly natural since it mimics both mathematics and the way we write things in Racket.  That is, if we want to add1 and then square, we write `(sqr (add1 5))`, with the first operation on the right. Others find the right-to-left behavior backwards, since we speak of the operations from left to write ("add then square").  For now, we'll stick with the right-to-left behavior.  Later in the semester, we may explore some variants of the composition operation.
+Some programmers find this right-to-left behavior perfectly natural since it mimics both mathematics and the way we write things in Scheme.  That is, if we want to add1 and then square, we write `(sqr (add1 5))`, with the first operation on the right. Others find the right-to-left behavior backwards, since we speak of the operations from left to write ("add then square").  For now, we'll stick with the right-to-left behavior.  Later in the semester, we may explore some variants of the composition operation.
 
 You can also compose more than two procedures.  For example, we might write the following silly procedure, which adds one to its parameter, squares it, and then adds another 1..
 
@@ -120,56 +114,48 @@ As you might guess, there are some things we cannot easily do with composition. 
 
 However, that seems like a lot of work.  If we were describing `half` to another person, we might say something like "The `half` procedure divides by 2" or, if we were a little bit more formal, "The `half` procedure is division with a divisor of 2".
 
-If we tried to rexpress that in Racket, we might try to write something like the following expression, where the `?` is intended to represent the dividend.
+If we tried to rexpress that in Scheme, we might try to write something like the following expression, where the `?` is intended to represent the dividend.
 
 ```drracket
 > (define half (/ ? 2))
 ```
 
-Unfortunately, we can't write that expression because as soon as DrRacket sees `(/ ...)`, it says to itself "I'm supposed to do division right now.  So I need to divide `?` by `2` and, um, I don't know what `?` represents." What we're really trying to do is tell Racket "We want *a procedure* that divides something by 2."
+Unfortunately, we can't write that expression because as soon as Scheme sees `(/ ...)`, it says to itself "I'm supposed to do division right now.  So I need to divide `?` by `2` and, um, I don't know what `?` represents." What we're really trying to do is tell Racket "We want *a procedure* that divides something by 2."
 
-The `csc151` library, which we designed for this course, provides a procedure called `cut` that lets you build a new procedure by filling in *some* of the parameters in an expression.  (Like `define` and some other keywords, it's a special form that does not immediately evaluate it's arguments.)  Instead of writing `(/ ? 2)`, we write `(cut (/ <> 2))`.  In effect, we're cutting a hole in the expression, leaving a paraemter.
-
-As you might have guessed, the `<>`, which we tend to call "diamond", is supposed to represent "here's the input to our function"; we think it was originally designed to represent an empty space in a clearer way than `_`.
+Scamper provides a special syntax that lets you build a new function by filling in *some* of the values in a function call.  Instead of writing `(/ ? 2)`, we write `#(/ %1 2)`. The `%1` represents "parameter 1". 
 
 Let's try it.
 
 ```drracket
-> (define half (cut (/ <> 2)))
+> (define half #(/ %1 2))
 > (half 10)
 5
 > (half 7)
-3 1/2
+3.5
 > (half 8.4)
 4.2
-> (half 4+5i)
-2+5/2i
-> (half 0+6i)
-0+3i
 ```
 
-That looks pretty good, doesn't it?  Note, however, that the placement of the `<>` is important.  Since `(/ a b)` computes `a` divided by `b`, and we want to divide by 2, the `<>` comes immediately after the `/`.  We call that the "left section" of a binary procedure.
+That looks pretty good, doesn't it?  Note, however, that the placement of the `%1` is important.  Since `(/ a b)` computes `a` divided by `b`, and we want to divide by 2, the `%1` comes immediately after the `/`.  We call that the "left section" of a binary procedure.
 
-What happens if we make the `<>` the second parameter of `/`?  Let's see
+What happens if we make the `%1` the second parameter of `/`?  Let's see
 
 ```drracket
-> (define flah (cut (/ 2 <>)))
-> (flah 7)
-2/7
+> (define flah #(/ 2 %1))
 > (flah 10)
-1/5
-> (flah 0+6i)
-0-1/3i
+0.2
+> (flah 7)
+0.2857142857142857
 > (flah 0)
 . . /: division by zero
 ```
 
 As these examples suggest, `flah` divides 2 by whatever number you give it.
 
-We can also use multiple `<>`'s in a `section` when we have a procedure that takes more than two parameters.
+We can also use multiple `%#`'s in a `section` when we have a procedure that takes more than two parameters.
 
 ```racket
-> (define this-and-that (cut (string-append <> " and " <>)))
+> (define this-and-that #(string-append %1 " and " %2))
 > (this-and-that "ham" "eggs")                                    
 "ham and eggs"                                                    
 > (this-and-that "self gov" "the individually advised curriculum")
@@ -182,18 +168,17 @@ We can also use multiple `<>`'s in a `section` when we have a procedure that tak
 "gyre and gimble"
 ```
 
-Unfortunately, the design of `cut` only permits holes at the top level. 
+We can also build this to take the parameters in reverse order.
 
 ```
-> (define fun (cut (+ 1 (* 2 <>))))
-> (fun 3)
-. . fun: arity mismatch;
- the expected number of arguments does not match the given number
-  expected: 0
-  given: 1
+> (define that-and-this #(string-append %2 " and " %1))
+> (that-and-thjis "ham" "eggs")
+"eggs and ham"
 ```
 
-Perhaps someday someone will rewrite `cut` to permit deeper holes.
+Wasn't that fascinating?
+
+Why do we Schemers call this "cutting"? Because they envision building new procedures by cutting a hole for input in an expression.
 
 ## Combining cutting and composition
 
@@ -231,7 +216,7 @@ However, we can also use composition and sectioning to define it
 somewhat more concisely.
 
 ```drracket
-> (define numwords (o length (cut (string-split <> " "))))
+> (define numwords (o length #(string-split %1 " ")))
 > (numwords "Jack and Jill went up the hill")
 7
 ```
@@ -255,22 +240,22 @@ Before this reading, you might have written something like the following.
 After what you've seen in this reading, you might now be tempted to write something like this, which is shorter (and perhaps simpler).
 
 ```drracket
-(define addtwo (cut (+ <> 2)))
+(define addtwo #(+ %1 2)))
 (map addtwo (list ...))
 ```
 
-But you can do something even shorter!  As you may recall, the Racket evaluator, upon encountering a named value, substitutes the value for the name.  So it converts the second of the prior two expressions to
+But you can do something even shorter!  As you may recall, the Scheme evaluator, upon encountering a named value, substitutes the value for the name.  So it converts the second of the prior two expressions to
 
 ```drracket
-(map (cut (+ <> 2)) (list ...))
+(map #(+ %1 2)) (list ...))
 ```
 
 There's no reason you can't do the same.  Here are a few examples.
 
 ```drracket
-> (map (cut (+ <> 2)) (list 3 1 4 1 5 9))
+> (map #(+ %1 2) (list 3 1 4 1 5 9))
 '(5 3 6 3 7 11)
-> (map (cut (+ <> 4)) (list 3 1 4 1 5 9))
+> (map #(+ %1 4) (list 3 1 4 1 5 9))
 '(7 5 8 5 9 13)
 > (map (o list->string reverse string->list)
        (string-split "Once upon a time" " "))
@@ -281,7 +266,7 @@ That's right.  We've created new procedures---one that adds two, one that adds f
 
 You'll find that you use anonymous procedures regularly throughout this course (and whenever you use languages that permit them).  As these examples suggest, they go particularly well with the procedures used with lsits.
 
-You can also create anonymous procedures in other ways.  You've seen that the compose operation (`o`) and `cut` create procedures.  What else does?  That's right.  `lambda`!  We can build anonymous procedures with `lambda`, too.
+You can also create anonymous procedures in other ways.  You've seen that the compose operation (`o`) and cut create procedures.  What else does?  That's right.  `lambda`!  We can build anonymous procedures with `lambda`, too.
 
 ```drracket
 > (map (lambda (x) (+ 1 (sqr x))) 
@@ -291,14 +276,6 @@ You can also create anonymous procedures in other ways.  You've seen that the co
 
 You can read this as "map (a function that takes one parameter, x, squares x and then adds 1) to the list ...".  What's the name of that function?  It doesn't have one.  it's _anonymous_.
 
-## Sectioning: An alternative to cutting
-
-Some readers find it confusing to see something like `(cut (+ 3 <>))`.  After all, aren't we supposed to evaluate the parameters to our procedures?  Shouldn't we evaluate the `(+ 3 <>)`?  As we noted, `cut` is a syntactic form that embraces a different evaluation strategy.
-
-For those who prefer a different approach, the csc151 library also includes a procedure, `(section proc params-or-diamonds)`, that works much like `cut`, but without the inner parentheses.  Instead of writing `(cut (+ 3 <>))`, one can write `(section + 3 <>)`.  We will generally use `cut`, rather than `section`, because most readers find it clearer.
-
-Note that the `cut` form is a relatively new addition to the csc151 libary, added in Fall 2023.  It was added because students in prior semesters suggested that they found the `reduce` form a bit confusing.
-
 ## Self checks
 
 ### Check 1: Subtracting three (‡)
@@ -306,12 +283,12 @@ Note that the `cut` form is a relatively new addition to the csc151 libary, adde
 Give three ways to define a procedure, `subtract3`, that takes a number as input and subtracts 3 from that number.
 
 * Using the composition operation, `o`. Note that you can use `sub1`,
-  which subtracts one from its parameter.
-* Using `cut`.
+  which subtracts one from its parameter. (You may have to copy our definition.)
+* Using the cut operation.
 * Using `lambda`.
 
 Which of the three do you prefer?  Why?
 
 ## Acknowledgements
 
-This reading is closely based on an earlier one on higher-order procedures.  I've added a section on anonymous procedures.  It was updated for 2023 Fall with a bit of cleanup and replacing `section` with the new `cut` procedure.
+This reading is closely based on an earlier one on higher-order procedures.  I've added a section on anonymous procedures.  It was updated for 2023 Fall with a bit of cleanup and replacing `section` with the new `cut` procedure. It was updated again in Fall 2026 using the new Scamper syntax for cut.

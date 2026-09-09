@@ -19,7 +19,7 @@ In readings and labs, we will consider filters that are constructed by transform
 Some basic transformations
 --------------------------
 
-Rather than writing every transformation from scratch, we will start with a few basic transformations in the `csc151` library.
+Rather than writing every transformation from scratch, we will start with a few basic transformations in the image library.
 
 ### Making colors lighter and darker
 
@@ -90,7 +90,7 @@ As the examples suggest, for some people, making a color slightly redder, greene
 
 ### Other simple transformations 
 
-The `rgb-rotate` procedure rotates the red, green, and blue components of a color, setting red to green, green to blue, and blue to red. It is intended mostly for fun, but it can also help us think about the use of these components.
+The `rgb-rotate-components` procedure rotates the red, green, and blue components of a color, setting red to green, green to blue, and blue to red. It is intended mostly for fun, but it can also help us think about the use of these components.
 
 ```
 > (color-name->rgb "blueviolet")

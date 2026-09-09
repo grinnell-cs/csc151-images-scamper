@@ -11,7 +11,7 @@ preimg: true
 
 You may have been asking why we have been focusing on transforming individual colors, other than that using the transformations helps us better understand the underlying representation. Here's one reason: Many image filters are written by applying a transformation to each color in the image.
 
-So, how do we write image filters? That is, how do we generalize color transformations to image filters? The `csc151` library includes a helpful procedure, `(pixel-map colortrans image)`, that builds a new image by setting the color at each position in the new image to the result of applying the given color transformation to the color at the corresponding position in the original image.
+So, how do we write image filters? That is, how do we generalize color transformations to image filters? The Scamper image library includes a helpful procedure, `(pixel-map colortrans image)`, that builds a new image by setting the color at each position in the new image to the result of applying the given color transformation to the color at the corresponding position in the original image.
 
 Using `pixel-map` and the color transformations we learned in [the previous reading](../readings/transforming-rgb), we can now transform images in a few basic ways: we can lighten images, darken images, complement images (and perhaps even compliment the resulting images), and so on and so forth.
 
@@ -67,23 +67,7 @@ Let's try this on our kitten.
 
 What's the difference between this instruction and the nested calls to `pixel-map`? In effect, we've changed the way you sequence operations. That is, rather than having to write multiple instructions, in sequence, to get something done, we can instead insert information about the sequencing into a single instruction. By using composition, along with nesting, we can then express our algorithms more concisely and often more clearly. It is also likely to be a bit more efficient, since we make one new image, rather than two.
 
-## Detour: Saving images
-
-It's useful to be able to load images so that we can manipulate them.  It's even more useful to be able to save images that we've created.  The procedure `(image-save image filename)` saves an image to a specified file. You should provide the full path name to the file, surrounding it by double-quotation marks. For example, you might use something like `"/home/student/images/masterpiece.png"`. The suffix you give to the file name determines the type of file that is saved - jpg, gif, png, and so forth.
-
-Here's a simple sequence of operations to make and save a strange version of our kitten.
-
-```
-> (define pic (image-load "/home/rebelsky/Desktop/kitten.jpg"))
-> pic
-> (define strange (pixel-map pic (compose rgb-complement rgb-rotate)))
-> strange
-> (image-save strange "/home/student/Desktop/strange-kitten.png")
-```
-
-Note that you can use `image-save` with any image we make, whether it's created with `image-load`, `pixel-map`, the varous drawing tools, or any of the other image-making and image-modifying commands we will learn.
-
-## Mapping binary color procedures with `cut`
+## Mapping binary color procedures while cutting
 
 So far, so good. We know how to load images with `image-load`. We know how to make new versions of existing images using `pixel-map`. We know how to save the result using `image-save`. Are we missing anything?
 
@@ -92,21 +76,17 @@ It turns out that we're missing a few things. Right now, the only way we can mak
 It doesn't make sense to write `(rgb-subtract pic (rgb 0 0 255))`, since `picture` is not an RGB color. Hopefully, we'll get an error message if we try.
 
 ```
-> (define pic (image-load "/home/rebelsky/Desktop/kitten.jpg"))
+> (define pic (image-load "kitten.jpg"))
 > (rgb-subtract pic (rgb 0 0 255))
-> (rgb-subtract pic (rgb 0 0 255))
-. . rgb-subtract: expects rgb? for parameter 1 (c1), received #(struct:object:image% ... ...)
+⚠ expected a rgb, received object
 ```
 
 It also doesn't make sense to use `rgb-subtract` as the first parameter to `pixel-map`, as in `(pixel-map rgb-subtract pic)`, because we don't have a place to specify the color we are subtracting. Once again, the Scheme interpreter should issue an error message.
 
 ```
-> (define pic (image-load "/home/rebelsky/Desktop/kitten.jpg"))
+> (define pic (image-load "kitten.jpg"))
 > (pixel-map rgb-subtract pic)
-. . rgb-subtract: arity mismatch;
- the expected number of arguments does not match the given number
-  expected: 2
-  given: 1
+⚠ Arity mismatch in function call: expected 2 arguments, got 1
 ```
 
 Not the most helpful error message, but an error message nonetheless.
@@ -115,34 +95,31 @@ We might be tempted to write something like `(pixel-map pic (rgb-subtract (rgb 0
 
 ```
 > (pixel-map (rgb-subtract (rgb 0 0 255)) pic)
-. . rgb-subtract: arity mismatch;
- the expected number of arguments does not match the given number
-  expected: 2
-  given: 1
+⚠ Arity mismatch in function call: expected 2 arguments, got 1
 ```
 
 It's probably good that we get an error message here, since it's not clear whether `(rgb 0 0 255)` is supposed to be the first or second parameter to `rgb-subtract`---are we subtracting `(rgb 0 0 255)` from each color, or are we subtracting each color from `(rgb 0 0 255)`?
 
-To handle situations like this, the `csc151` library includes a special procedure, `cut`, that lets you fill in some parameters to a function. It takes the form `(cut (procedure param-info ...))`. When we want to fill in a particular parameter, we write the value we want.  When we want to leave a parameter blank, we write the special symbol `<>`. For example, here's a function that subtracts the blue component from every color.
+To handle situations like this, Scamper includes a special procedure form  that lets you fill in some parameters to a function. It takes the form `#(procedure param-info ...)`. When we want to fill in a particular parameter, we write the value we want.  When we want to leave a parameter blank, we write the special symbol `%1` (or %2 or %3 or ...). For example, here's a function that subtracts the blue component from every color.
 
 ```
-> (define rgb-subtract-blue (cut (rgb-subtract <> (rgb 0 0 255))))
-> (pixel-map rgb-subtract-blue pic))
+> (define rgb-subtract-blue #(rgb-subtract %1 (rgb 0 0 255)))
+> (pixel-map rgb-subtract-blue pic)
 ![the kidden image, in shades of yellow and green](../images/kitten-no-blue.jpg)
 ```
 
 If, instead, we want to subtract the current color from white (which is how we computed the pseudo-complement), we can swap the place that we put the special symbol.
 
 ```
-> (define rgb-sub-from-white (section rgb-subtract (rgb 255 255 255) <>))
+> (define rgb-sub-from-white #(rgb-subtract (rgb 255 255 255) %1))
 > (pixel-map rgb-sub-from-white pic)
-![the kidden image, with colors inverted](../images/kitten-negative.jpg)
+![the kitten image, with colors inverted](../images/kitten-negative.jpg)
 ```
 
 As in the case of unary functions created with `compose`, we don't have to name the function we create. Here's an instruction that will make a somewhat bluer version of the kitten.
 
 ```
-> (pixel-map (section rgb-average (rgb 0 0 255) <>) pic)
+> (pixel-map #(rgb-average (rgb 0 0 255) %1) pic)
 ![a much bluer version of the kitten image](../images/kitten-much-bluer.jpg)
 ```
 
@@ -150,9 +127,9 @@ As in the case of unary functions created with `compose`, we don't have to name 
 
 ### Brief preparation 
 
-a. If you have not already done so, update your `csc151` library.
+a. Make sure you're running the current version of Scamper by reloading your Scamper page.
 
-b. Load the kitten image from the reading.
+b. If you have not done so prevously, upload the kitten image from the reading.
 
 ### Check 1: Fade to grey
 
