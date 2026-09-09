@@ -51,7 +51,7 @@ Multicultural
 * Friday, 11 September 2026, 4:00--6:00 p.m., Ward Field.
   _DEI Kickback._
 * Friday, 11 September 2026, 4:10--5:00 p.m., HSSC N1170.
-  _Middle of Everywhere (???)_
+  _Middle of Everywhere (Taiwan)_
 
 Peer
 

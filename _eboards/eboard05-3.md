@@ -3,7 +3,7 @@ title: "EBoard 05: Mental Models (Section 3)"
 number: 5
 section: eboards
 held: 2026-09-09
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -25,6 +25,8 @@ Administrative stuff
 
 * Please remember to return your blue cards to jar immediately after
   determining where you are.
+* We hve lots of computers down because of the network problems. Start
+  at the dead computers and then move to a working one once the lab starts.
 * During class, please work on our workstations, not your laptops.
 * Congratulations to our football team for their season-opening victory!
 
@@ -50,7 +52,7 @@ Multicultural
 * Friday, 11 September 2026, 4:00--6:00 p.m., Ward Field.
   _DEI Kickback._
 * Friday, 11 September 2026, 4:10--5:00 p.m., HSSC N1170.
-  _Middle of Everywhere (???)_
+  _Middle of Everywhere (Taiwan)_
 
 Peer
 
@@ -93,7 +95,7 @@ _These do not earn tokens, but are worth your consideration._
     * [Reading response](https://www.gradescope.com/courses/1370413/assignments/8593785)
         * [Anonymous procedures](../readings/anonymous-procedures.html)
         * [Transforming RGB colors](../readings/transforming-rgb.html)
-        * [Transforming images](..//readings/transforming-images.html)
+        * [Transforming images](../readings/transforming-images.html)
 * On Friday, 2026-09-11:
     * Quiz/LA on tracing (quite similar to the end of today's lab)
     * REDO Quiz/LA on decomposition.
@@ -131,17 +133,29 @@ Did my lab partner turn in the lab and include me?
 > Note that the two of you should turn in the lab together at the end of
   class.
 
+Did Sam grade the quizzes?
+
+> Whoops! Yes. They are on Gradescope.
+
 Quiz notes: Decomposition
 -------------------------
 
 Key idea: Break a complex set of instructions into smaller parts and
-name the parts.
+name the parts (perhaps with a clear name).
 
 Why? (TPS)
 
-* 
-* 
-* 
+* It can be easier to figure what went wrong because we can try each
+  component separately.
+* Readability: The names can make things easier to understand, not only 
+  for you, but also for others. [+1]
+* We tend to be better at remembering smaller things, and this lets
+  us build smaller things.
+* When we need multiple copies of the same thing, we can refer to the
+  same name again and again, rather than writing long pieces of code
+  again and again. (Reuse) (Condense the code) [+1]
+* Also makes you easier to change things. For example, if you're unsatisfied
+  with how an eye looks, you can change only one definition.
 
 ### Demo solution
 
@@ -149,18 +163,44 @@ _Not included in eboard._
 
 ### Grading notes
 
+* If you left the eye unnamed: Not-yet-satisfactory because you should
+  be eliminating repeated code.
+* If you left the bow unnamed: Could still be satisfactory.
+* If you chose bad names, like "black-square", Not-yet-satisfactory
+* If you put parenthesis around a named value, like `(eye)`, I wrote something
+  on your quiz, but it did not affect your grade.
+* If you wrote your own procedures, you got a Not-yet-satisfactory because
+  it explicitly said not to write procedures.
+
 ### Questions
+
+When can we make it up?
+
+> The quiz time for this class starts at 3:30 p.m. and runs until the
+  end of class at 4:00. You can also stay until 4:30 p.m.
+
+Will the questions be the same?
+
+> Nope. Different questions about the same topics.
 
 Quiz: Procedures
 ----------------
 
-Key idea: Parameterize and name sets of code.
+Key idea: Name and parameterize sets of code.
 
-Why?
+Why? (TPS)
 
-*
-*
-*
+* Can make our code shorter because we can call upon the procedure again
+  and again.
+* It generalizes our code, which lets us use it in more situations.
+* It lets you build variants of the original computation without copying
+  and pasting large amounts of code.
+* It makes it easier to change things. Rather than worrying "Which of
+  these colors should I change", you can just change one paramter.
+* UM: It helps you use math
+* Naming things adds clarity/resolves ambiguity.
+    * Naming the function
+    * Naming the various parameters/values
 
 ### Demo solution
 
@@ -168,7 +208,10 @@ _Not included in eboard._
 
 ### Grading notes
 
-* 
+* Three procedures is more than I should ask for. I gave you credit for
+  a decent window procedure plus a decent building procedure.
+* Don't forget to write the lambda when creating a procedure.
+* You can't nest `define` statements. (Sorry.)
 
 ### Questions
 
