@@ -120,7 +120,7 @@ For example, perhaps we can get the same effect as the code above by _inlining_ 
 
 Try this example out in Scamper.  What is the output that you receive or what errors are produced if the code is invalid? (Enter your answers to these questions on Gradescope.)
 
-After you've finished, read [the notes on definitions](notes-on-definitions) at the end of the lab.
+After you've finished, read [the notes on definitions](#notes-on-definitions) at the end of the lab.
 
 ### Exercise 4: Sequencing definitions
 
@@ -250,3 +250,5 @@ It turns out that `define` is an example of a syntactic category distinct from e
 We'll have more to say about "effects" in our programs later in the course.  For now, we'll say that the "effect" of a `define` statement is simple: it binds a value to an identifier.  In the example that started this problem, we bound `10` to the identifier `x`.  Consequently, whenever we mention `x` in our program, we really mean the value that is bound to that identifier, `10` in this case.
 
 We will eventually encounter other things that can appear immediately after an open parenthesis that are not quite functions, but that behave somewhat like functions.
+
+[Return to exercise 4](#exercise-4-sequencing-definitions)
