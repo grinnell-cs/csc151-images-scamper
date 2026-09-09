@@ -15,7 +15,8 @@ _You should know the start-of-class algorithm_
 _Approximate overview_
 
 * Administration
-* The layers game
+* Quiz notes
+* MP1 and the layers game
 * Q&A from readings
 * Lab
 
@@ -36,7 +37,7 @@ Scholarly
 * Thursday, 10 September 2026, 11:00 a.m.--noon, JRC 101.
   _Scholar's Convocation: Ruth Feingold_
 * Thursday, 10 September 2026, 4:00--5:00 p.m., JRC 101.
-  _The Department of Revenge_ (NY Times Reporter)
+  _The Department of Revenge_ (NY Times Reporter; four-time Pulitzer winner)
 * Thursday, 10 September 2026, 4:15--5:00 p.m., Science 3821.
   _Study Away for CS Majors_
     * Refreshments in the CS commons at 4:00 p.m.
@@ -48,8 +49,8 @@ Artistic/Cultural
 
 Multicultural
 
-* Tuesday, 8 September 2026, Black Cultural Center (10th and Park).
-  _BCC Bridge: First Year Connections_
+* Friday, 11 September 2026, 4:00--6:00 p.m., Ward Field.
+  _DEI Kickback._
 * Friday, 11 September 2026, 4:10--5:00 p.m., HSSC N1170.
   _Middle of Everywhere (???)_
 
@@ -63,16 +64,14 @@ section's students are welcome._
 
 Wellness
 
-* Tuesday, 8 September 2026, 4:30--6:00 p.m., Bear P103.
-  _Wellness Yoga_
-* Tuesday, 8 September 2026, 5:00--8:00 p.m., HSSC North Atrium.
-  _Therapy Dogs_
 * Wednesday, 9 September 2026, 6:30--8:00 p.m., Bear Dance Studio.
   _Brazilian Jiu-Jitsu_
 * Monday, 14 September 2026, 6:30--8:00 p.m., Bear Dance Studio.
   _Brazilian Jiu-Jitsu_
 * Monday, 14 September 2026, 8:00--9:00 p.m., Prayer Garage.
   _Meditation Group_
+* Tuesday, 15 September 2026, 4:30--6:00 p.m., Bear P103.
+  _Wellness Yoga_
 
 Misc
 
@@ -93,11 +92,10 @@ _These do not earn tokens, but are worth your consideration._
 * Due Thursday, 2026-09-10:
     * [Today's lab](../labs/mental-models-of-computing)
         * Today's lab involves a [Gradescope Form](https://www.gradescope.com/courses/1370413/assignments/8584066)
-    * [Reading responses]()
+    * [Reading response](https://www.gradescope.com/courses/1370413/assignments/8593785)
         * [Anonymous procedures](../readings/anonymous-procedures.html)
         * [Transforming RGB colors](../readings/transforming-rgb.html)
         * [Transforming images](..//readings/transforming-images.html)
-
 * On Friday, 2026-09-11:
     * Quiz/LA on tracing (quite similar to the end of today's lab)
     * REDO Quiz/LA on decomposition.
@@ -127,13 +125,50 @@ What happens if I turn in a reflection more than 72 hours after the event?
 
 > I'll be slower in grading it.
 
-Did my lab partner turn in the lab and included me?
+Did my lab partner turn in the lab and include me?
 
 > You can check on Gradescope. If you see an entry for your name, they did.
   If not, they either didn't turn it in or forgot to include you.
 
 > Note that the two of you should turn in the lab together at the end of
   class.
+
+Quiz notes
+----------
+
+### Decomposition
+
+Key idea: Break a complex set of instructions into smaller parts and
+name the parts.
+
+Why? (TPS)
+
+* 
+* 
+* 
+
+#### Demo solution
+
+_Not included in eboard._
+
+#### Grading notes
+
+* If 
+
+### Procedures
+
+Key idea: Parameterize and name sets of code to make them more adaptable.
+
+#### Demo solution
+
+_Not included in eboard._
+
+#### Grading notes
+
+* 
+
+MP1 and the Layers game
+-----------------------
 
 Q&A from Readings
 -----------------
