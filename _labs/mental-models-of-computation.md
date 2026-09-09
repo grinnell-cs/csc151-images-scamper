@@ -225,11 +225,11 @@ Consider the following definitions.
     (+ (* 2 x) (* 3 y))))
 ```
 
-a. Trace the call `(f 2 3)`.
+a. Trace the call `(fun 2 3)`.
 
 b. Check your answer in Scamper. If Scamper gives a different sequence, take some notes as to why.
 
-c. Trace the call`(f y x)`
+c. Trace the call `(fun y x)`
 
 d. Check your answer in Scamper. If Scamper gives a different sequence, take some notes as to why.
 
