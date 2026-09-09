@@ -7,9 +7,9 @@ collaboration: |
   Each student should submit their own responses to this project. You may
   consult other students in the class as you develop your solution.  If you
   receive help from anyone, make sure to cite them in your responses. 
-link: false
+link: true
 ---
-In the first few days of class, you have received a crash-course introduction to programming in Racket, in particular with images.
+In the first few days of class, you have received a crash-course introduction to programming in Scheme, with an emphasis on images.
 Furthermore, you also learned about *algorithmic decomposition* and its importance in computer programming.
 In this project, we'll practice these techniques further by playing around with images.
 
@@ -38,7 +38,7 @@ As we may have discussed previously, *programming is not a spectator sport* (rea
 You need to write programs to learn how to program.
 You often need to write programs to learn to think computationally.
 The labs and projects will be you primary vehicle for this sort of practice. 
-This alone may be enough for some of you to master Racket programming.
+This alone may be enough for some of you to master Scheme programming.
 But for many people, you will need additional practice to truly master these concepts.
 
 One way to do this is through "playing around."
@@ -56,11 +56,18 @@ Its the attitude that's important: one of exploration and asking and answering q
 
 ## Turn-in details
 
-For this mini project, you will create three files: `spaceship.rkt`, `freestyle.rkt`, and `my-image-utils.rkt`.
-The particular contents of each are detailed below.
+For this mini project, you will create one file: `[mp01.scm](../code/mps/mp01.scm)`.
 For additional details on turning on this assignment and interpreting your feedback from it, please consult the [Gradescope page]({{ "/handouts/gradescope" | relative_url }}).
 
-## Part the first: Rainbow spaceship
+## Preparation
+
+Download [the starter code](../code/mps/mp01.scm).
+
+Upload it to Scamper.
+
+Fill in your information at the top of the file.
+
+## Part the first: A rainbow spaceship
 
 For this first part of the demo, your goal is to `define` an image called `rainbow-spaceship` that looks like this:
 
@@ -68,10 +75,10 @@ For this first part of the demo, your goal is to `define` an image called `rainb
 
 Here are the details of the `rainbow-spaceship` image:
 
-+   The spaceship composed of a collection of colored stripes, each of which are 100 pixels wide and 25 pixels tall.
-+   As the spaceship grows in height from left to right, a new colored stripe is added in *rainbow order* from top to bottom.
+*   The spaceship composed of a collection of colored stripes, each of which are 100 pixels wide and 25 pixels tall.
+*   As the spaceship grows in height from left to right, a new colored stripe is added in *rainbow order* from top to bottom.
     The order of colors of the rainbow are **red, orange, yellow, green, blue, and violet**.
-+   The spaceship then shrinks in height past its center-point, losing a stripe from bottom-to-top order.
+*   The spaceship then shrinks in height past its center-point, losing a stripe from bottom-to-top order.
 
 The "horizontal pyramid" effect is due to how the image library places sub-images with `beside` when they are different heights.
 Smaller images are automatically *centered* vertically relative to the taller images.
@@ -82,8 +89,6 @@ Also pay special attention to *remove redundancy from your code* using `define` 
 We do not yet have the machinery to elegantly capture the growing, symmetric nature of the columns of the spaceship.
 However, note the *relationship between the stripes of each successive column*.
 How can you capture this relationship in code?
-
-Please put your definition in the file `spaceship.rkt`
 
 ## Part the second: Freestyle
 
@@ -103,35 +108,13 @@ To encourage you to practice algorithmic decomposition, your program must follow
 +   Your image should employ at least **one user-defined function** that has at least one parameter that is employed in cutting down the code redundancy of your image in some way.
 +   The names you `define` should be evocative of *what* the image is.
     It should be pithy, a few words at most, but at the same time descriptive.
-    Racket programming conventions say that these names should be in all lowercase with dashes between words, *e.g.*, `names-like-this`.
+    Scheme programming conventions say that these names should be in all lowercase with dashes between words, *e.g.*, `names-like-this`.
 +   Your program should include a `define` that is the overall image, which you should call `my-image`.
-+   Your program should include introductory documentation, as below.  (All of your Racket files should include similar documentation.)
-
-    ~~~racket
-    # lang racket
-    (require csc151)
-
-    ; freestyle.rkt
-    ;
-    ; An amazing image of <....> I've created.
-    ;
-    ; CSC-151 SPring 2024
-    ; Mini Project 1, Part 2
-    ; Author: Stu Dent
-    ; Date: 2024-01-31
-    ; Acknowledgements: ...
-
-    ; (...code below here...)
-    ;
-    (define my-image...)
-    ~~~
 
 Other than this, there are no minimum requirements regarding limits, code size, or complexity.
 Have fun with it!
 
-Please put your definitions in the file `freestyle.rkt`.
-
-## Part three: Your own library functions
+## Part the third: Your own library functions
 
 As you have likely noted, as your images and programs grow in complexity, it is helpful to write procedures (functions, subroutines) that encapsulate and parameterize a piece of code.
 For example, you may find that you regularly want to build "blocks" by overlaying an outline on a solid figure.
@@ -157,9 +140,7 @@ Create a list of five images, one build from each procedure, and call that list 
 
 Once again, there are no minimum requirements regarding limits, code size, or complexity.
 
-Please put our procedures and the `examples` list in the file `my-image-utils.rkt`
-
-## Part four: Generalizing images
+## Part the fourth: Generalizing your image
 
 Take the image you generated in part two and turn it into a procedure, `generate-my-image`, with at least two parameters (e.g., color and size) so that someone can easily make variants of that image.
 
@@ -175,13 +156,11 @@ Provide a call to your procedure that generates a substantially different image.
 (define my-other-image (generate-my-image ...))
 ``` 
 
-All three new new definitions (for `generate-my-image`, `my-image-alt`, and `my-other-image`) should go in the file `freestyle.rkt`.
-
 ## A note on additional complexity
 
-You are under no obligation to use additional functions or language features beyond what we have introduced in the first week or so of the class.
+You are under no obligation to use additional functions or language features beyond what we have introduced in the first week or two of the class.
 However, You may feel limited by the functions we have discussed so far.
-If so, you are free to reference the documentation for the `csc151` library for some of the functions available (see the "Reference" link at the top of the page). Note that that both the library and the documentation are "in process". If there's something you'd like, you might ask Prof. Rebelsky about it.
+If so, you are free to reference the documentation for the `image` library for some of the functions available.
 
 Note that this documentation may not be entirely comprehensible to you yet!
 That is fine.
@@ -193,7 +172,7 @@ Remember, if you adapt any code from this library's documentation, you should ci
 ### Part two
 
 Can I use procedures we haven't covered yet that I find in the reference 
-pages or in the Racket documentation or elsewhere?
+pages or in the Scheme documentation or elsewhere?
 
 > Yes, provided you cite them.
 
@@ -201,7 +180,7 @@ pages or in the Racket documentation or elsewhere?
 
 What exactly does the `generate-my-image` function do?
 
-> `generate-my-image` takes some parameters (colors, numbers) and generates an image similar to the freestyle image you created in part two. It is intended to be a generalized version of that image.
+> `generate-my-image` takes some parameters (e.g., colors, numbers) and generates an image similar to the freestyle image you created in part two. It is intended to be a generalized version of that image.
 
 I would like to know a little more about `(define my-image ...)`, `(define my-image-alt ...)`, etc and what those terms mean and do.
 
@@ -304,19 +283,15 @@ We may also identify other characteristics that move your work between levels.
 
 **You should read through the rubric and verify that your submission meets the rubric.**
 
-### Redo or above
-
-Submissions that lack any of these characteristics will get an I.
+### A few basics
 
 ```
-[ ] Includes the three specified files (correctly named).
-[ ] Includes an appropriate header on each file that indicates the course, author, etc.
-[ ] Code runs in DrRacket.
+[ ] Includes the specified file (correctly named).
+[ ] Includes an appropriate header on the file that indicates the course, author, etc.
+[ ] Code runs in Scamper.
 ```
 
-### Meets expectations or above
-
-Submissions that lack any of these characteristics will get an R or below.
+### Core expectations
 
 ```
 [ ] In Part 1, creates the correct spaceship.
@@ -332,9 +307,9 @@ Submissions that lack any of these characteristics will get an R or below.
 [ ] In Part 4, there is a call to generate `my-other-image`.
 ```
 
-### Exemplary / Exceeds expectations
+### Going beyond
 
-Submissions that lack any of these characteristics will get an M or below.
+_None of these are strictly necessary, but we encourage you try to meet them to stretch yourself._
 
 ```
 [ ] In Part 1, code is concise and avoids repetition.
