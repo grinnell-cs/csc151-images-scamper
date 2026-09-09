@@ -15,7 +15,7 @@
 
 - date: 2026-09-09
   assigned:
-    - MP1
+    - page: /mps/mp01.html
 
 - date: 2026-09-11
   due:
@@ -23,7 +23,7 @@
 
 - date: 2026-09-15
   due:
-    - MP1
+    - page: /mps/mp01.html
 
 - date: 2026-09-16
   assigned:
