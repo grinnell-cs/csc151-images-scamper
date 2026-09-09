@@ -16,8 +16,6 @@ _Approximate overview_
 
 * Administration
 * Quiz notes
-* MP1
-* Q&A from readings
 * Lab
 
 Administrative stuff
@@ -222,17 +220,11 @@ Will you post the code to the Web site?
 > No. I don't like to keep answers to quizzes on the Web. However, I can
   probably post it to teams.
 
-MP1
----
-
-Q&A from Readings
------------------
-
-_Skipping this for time._
-
 Lab
 ---
 
 Do the lab on Gradescope.
 
 I'd encourage you to finish the lab on your own to prepare for Friday's quiz.
+
+For #6, `f` should be `fun`.

@@ -16,8 +16,6 @@ _Approximate overview_
 
 * Administration
 * Quiz notes
-* MP1
-* Q&A from readings
 * Lab
 
 Administrative stuff
@@ -232,14 +230,6 @@ _Not included in eboard._
 Will the mentors go over practice problems in the mentor sessions?
 
 > Definitely! That's the main purpose of mentor sessions.
-
-MP1
----
-
-Q&A from Readings
------------------
-
-_Whoops. Forgot this._
 
 Lab
 ---

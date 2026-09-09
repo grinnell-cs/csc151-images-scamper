@@ -16,8 +16,6 @@ _Approximate overview_
 
 * Administration
 * Quiz notes
-* MP1
-* Q&A from readings
 * Lab
 
 Administrative stuff
@@ -173,14 +171,6 @@ _Not included in eboard._
 * 
 
 ### Questions
-
-MP1
----
-
-Q&A from Readings
------------------
-
-_Skipping this for time._
 
 Lab
 ---
