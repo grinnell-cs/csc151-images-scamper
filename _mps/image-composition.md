@@ -56,7 +56,7 @@ Its the attitude that's important: one of exploration and asking and answering q
 
 ## Turn-in details
 
-For this mini project, you will create one file: `[mp01.scm](../code/mps/mp01.scm)`.
+For this mini project, you will create one file: [`mp01.scm`](../code/mps/mp01.scm).
 For additional details on turning on this assignment and interpreting your feedback from it, please consult the [Gradescope page]({{ "/handouts/gradescope" | relative_url }}).
 
 ## Preparation
