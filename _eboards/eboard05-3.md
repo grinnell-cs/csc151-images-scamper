@@ -16,7 +16,7 @@ _Approximate overview_
 
 * Administration
 * Quiz notes
-* MP1 and the layers game
+* MP1
 * Q&A from readings
 * Lab
 
@@ -44,7 +44,7 @@ Scholarly
 
 Artistic/Cultural
 
-* Saturday, 12 September 2026, 8:00 p.m., Garnder.
+* Saturday, 12 September 2026, 8:00 p.m., Gardner.
   _The Spine Stealers and Babehoven_.
 
 Multicultural
@@ -100,7 +100,7 @@ _These do not earn tokens, but are worth your consideration._
     * Quiz/LA on tracing (quite similar to the end of today's lab)
     * REDO Quiz/LA on decomposition.
     * REDO Quiz/LA on procedures.
-* Due Tueday, 2026-09-15:
+* Due Tuesday, 2026-09-15:
     * [Mini-project 1](../mps/mp01)
 
 ## Administrative Q&A
@@ -117,7 +117,7 @@ When can I make up an LA?
 > There are makeups every Friday. There are also extra makeup times
   available. 7:30--8:00, 11:00--11:30, 4:00--4:30.
 
-Do I have to write reflections for mentor sessions?
+Do I have to write reflections to earn a token for mentor sessions?
 
 > Yes.
 
@@ -180,8 +180,11 @@ MP1
 Q&A from Readings
 -----------------
 
-_Whoops. Forgot this. Please ask questions._
+_Skipping this for time._
 
 Lab
 ---
 
+Do the lab on Gradescope.
+
+I'd encourage you to finish the lab on your own to prepare for Friday's quiz.

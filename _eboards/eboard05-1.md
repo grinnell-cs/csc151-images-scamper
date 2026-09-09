@@ -239,8 +239,11 @@ MP1
 Q&A from Readings
 -----------------
 
-_Whoops. Forgot this. Please ask questions._
+_Whoops. Forgot this._
 
 Lab
 ---
 
+Do the lab on Gradescope.
+
+I'd encourage you to finish the lab on your own to prepare for Friday's quiz.
