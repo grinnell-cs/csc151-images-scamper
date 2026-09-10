@@ -3,7 +3,7 @@ title: Anonymous procedures
 summary: |
   While lambda expressions are the most common way to write procedures,
   there are also a variety of others.  We consider how to use composition
-  and sectioning to build new procedures from old.
+  and cutting to build new procedures from old.
 prereqs: |
   [An abbreviated introduction to Racket](../readings/racket-intro).
   [Data types](../readings/data-types).
@@ -152,7 +152,7 @@ What happens if we make the `%1` the second parameter of `/`?  Let's see
 
 As these examples suggest, `flah` divides 2 by whatever number you give it.
 
-We can also use multiple `%#`'s in a `section` when we have a procedure that takes more than two parameters.
+We can also use multiple percent-placeholders (e.g., `%1` and `%2`) when we have a procedure that takes more than two parameters.
 
 ```racket
 > (define this-and-that #(string-append %1 " and " %2))
@@ -182,7 +182,7 @@ Why do we Schemers call this "cutting"? Because they envision building new proce
 
 ## Combining cutting and composition
 
-Composition and partial functions provide concise sysntax for defining certain kinds of procedures.  However, composition works only for one-parameter procedurs and partial-functions only work when you're filling in some parameters of a multi-parameter procedure.  What if you want to do both?  For example, consider the problem of counting the number of words in a string.  While we haven't explored all of hte component parts in close details, we have seen all of them.
+Composition and partial functions provide concise sysntax for defining certain kinds of procedures.  However, composition works only for one-parameter procedurs and partial-functions only work when you're filling in some parameters of a multi-parameter procedure.  What if you want to do both?  For example, consider the problem of counting the number of words in a string.  While we haven't explored all of the component parts in close details, we have seen all of them.
 
 You may recall from early examples that `string-split` converts a string into a list by dividing the string at a particular character sequence.
 
@@ -212,7 +212,7 @@ So, to count the number of words in a string, we might split that string into a 
 7
 ```
 
-However, we can also use composition and sectioning to define it
+However, we can also use composition and cutting to define it
 somewhat more concisely.
 
 ```drracket
