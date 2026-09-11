@@ -3,7 +3,7 @@ title: "EBoard 06: Transforming colors (Section 3)"
 number: 6
 section: eboards
 held: 2026-09-11
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -14,11 +14,11 @@ _You should know the start-of-class algorithm_
 
 _Approximate overview_
 
-* Quiz
 * Administrative stuff
 * MP1
 * Reading questions
 * Lab
+* Quiz
 
 Administrative stuff
 --------------------
@@ -59,7 +59,7 @@ Multicultural
 
 * Friday, 11 September 2026, 4:00--6:00 p.m., Ward Field.
   _DEI Kickback._
-* Friday, 11 September 2026, 4:10--5:00 p.m., HSSC N1170.
+* Friday, 11 September 2026, 4:10--5:00 p.m., The Kernel (aka Multipurpose).
   _Middle of Everywhere (Taiwan)_
 
 Peer
@@ -108,16 +108,13 @@ _These do not earn tokens, but are worth your consideration._
 ## Upcoming work
 
 * Due Sunday, 2026-09-13:
-    * Submit [today's lab](../labs/transforming-rgb) 
-      on [Gradescope](https://www.gradescope.com/courses/1370413/assignments/8614305)
-        * Please submit whatever you've completed by the end of class.
     * You may want to reread [Anonymous procedures](../readings/anonymous-procedures.html)
 * Due Tuesday, 2026-09-15:
     * [Mini-project 1](../mps/mp01)
     * Monday's Lab
     * Wednesday's Reading Responses
 * On Friday, 2026-09-18:
-    * REDO of Quiz/LA on tracing
+    * REDO of Quiz/LA on tracing.
     * REDO of Quiz/LA on decomposition.
     * REDO of Quiz/LA on procedures.
     * New Quiz/LA
@@ -190,9 +187,9 @@ here instead of lambda, and how the order of the procedures inside
 > It's also a different way of thinking. We're building new functions
   from old without worrying about a lot of cruft.
 
-Don't forget to explain how the order of procedures affects the result.
+Don't forget to explain how the order of functions affects the result.
 
-> It depends on the procedures you're using. Let's look at this one from
+> It depends on the functions you're using. Let's look at this one from
   the self checks.
 
 > `(define rgb-dl (o rgb-darker rgb-lighter))`
@@ -203,17 +200,19 @@ Don't forget to explain how the order of procedures affects the result.
 
 > `rgb-dl` makes the color lighter and then darker. 
 
-> If we started with white, we can't make it any lighter, so the color
-  stays the same, and then we make it darker, giving a very light gray.
+> Remember that the functions are applied right-to-left.
 
-> `rgb-ld` makes the color darker and then lighter, so white gets a
-  bit darker and then goes back to white.
+> Are there colors for which `(rgb-dl color)` does not return the same color?
+
+> Sure. There are no colors that are lighter than white, so `rgb-lighter`
+  will return white. Then we make it darker.
 
 Since `rgb-redder` decreases the blue component and `rgb-bluer` decreases the
-red component, won't this have no effect on the components?
+red component (and increases blue), won't this have no effect on the components?
 
-> The decrease in blue in `rgb-redder` is smaller than the increase in blue
-  in `rgb-bluer`.
+> `rgb-bluer` adds a large number to the blue component. `rgb-redder`
+  subtracts a smaller number. The net result is to increase the blue
+  component (except at the boundaries).
 
 Did the `rgb-purpler` and `rgb-much-darker` procedures need to
 specifically include parameter `c`?
