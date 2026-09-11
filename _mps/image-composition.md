@@ -126,8 +126,8 @@ For example, you may find that you regularly want to build "blocks" by overlayin
 ;;; Create a square block of the specified size and color
 (define block
   (lambda (size color)
-    (overlay (square size 'outline 'black)
-             (square size 'solid color))))
+    (overlay (outlined-square size "black" 6)
+             (solid-square size color))))
 ```
 
 Write five (5) procedures that you think will be useful in building more complex images.
