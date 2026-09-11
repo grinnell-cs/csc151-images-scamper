@@ -62,8 +62,8 @@
   lab:
     - page: /labs/mental-models-of-computation.html
 
-- topic: Transforming images
-  abbrev: transforming-images
+- topic: Function composition and image transformation
+  abbrev: function-composition
   summary: |
     We expand our understanding of RGB transformations to image transformations.
   reading:
@@ -71,12 +71,12 @@
     - page: /readings/transforming-rgb.html
     - page: /readings/transforming-images.html
   lab:
-    - page: /labs/transforming-images.html
+    - page: /labs/transforming-rgb.html
   todo:
     - Incorporate anonymous procedures. (At least that's the plan.)
 
-- topic: Building procedures, revisited
-  abbrev: procedures
+- topic: Transforming images, revisited
+  abbrev: transforming-images
   summary: |
     We continue our explorations from the previous class.
   reading:

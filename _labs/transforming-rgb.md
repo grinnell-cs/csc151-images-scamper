@@ -1,8 +1,8 @@
 ---
-title: Transforming images
+title: Transforming RGB colors
 summary: |
-  We explore techniques for transforming images, focusing on the use
-  of anonymous procedures.
+  We ground our understanding of the procedures for transfomring colors
+  as well as the composition operation. 
 ---
 
 Procedures to remember
@@ -59,9 +59,8 @@ i* `(lambda (params) body)` - Build a new procedure with the given parameters an
 The lab
 -------
 
-* Use the file [transforming-images.scm](../code/labs/transforming-images.scm).
+* Use the file [transforming-rgb.scm](../code/labs/transforming-rgb.scm).
 * You should also download a copy of [the kitten image](../images/kitten.jpg) and upload it to Scamper.
-* Find one other image you like, such as your campus directory picture (or President Harris' directory picture, or your instructor's directory picture) and add it to Scamper. Note that image transformations or slow, so you should use a relatively small image.
 
 Acknowledgements
 ----------------
