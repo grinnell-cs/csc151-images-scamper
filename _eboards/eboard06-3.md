@@ -1,5 +1,5 @@
 ---
-title: "EBoard 06: Transforming colors (Section 1)"
+title: "EBoard 06: Transforming colors (Section 3)"
 number: 6
 section: eboards
 held: 2026-09-11
@@ -41,6 +41,7 @@ Administrative stuff
     * I hope no one drops.
 * These readings took many of you much longer than I expected. I'm
   sorry.
+* Please reload the schedule page before beginning the lab.
 
 ### Upcoming activities
 
@@ -73,10 +74,6 @@ Wellness
 
 * Friday, 11 September 2026, 6:30--8:00 p.m., Bear Dance Studio.
   _Brazilian Jiu-Jitsu_
-* Saturday, 12 September 2026, All Day, Somewhere.
-  _Mental Health Training_.
-    * Sign up on Handshake.
-    * It's all day, so you will earn 3 tokens.
 * Monday, 14 September 2026, 6:30--8:00 p.m., Bear Dance Studio.
   _Brazilian Jiu-Jitsu_
 * Monday, 14 September 2026, 8:00--9:00 p.m., Prayer Garage.
@@ -87,6 +84,10 @@ Wellness
   _Brazilian Jiu-Jitsu_
 * Wednesday, 16 September 2026, 4:15--5:45 p.m., Undisclosed Location.
   _Forest Bathing_
+* Saturday, 10 October 2026, All Day, Somewhere.
+  _Mental Health Training_.
+    * Sign up on Handshake.
+    * It's all day, so you will earn 3 tokens.
 
 Misc
 
@@ -113,20 +114,36 @@ _These do not earn tokens, but are worth your consideration._
     * You may want to reread [Anonymous procedures](../readings/anonymous-procedures.html)
 * Due Tuesday, 2026-09-15:
     * [Mini-project 1](../mps/mp01)
-    * Lab
-    * Readings
+    * Monday's Lab
+    * Wednesday's Reading Responses
 * On Friday, 2026-09-18:
     * REDO of Quiz/LA on tracing
     * REDO of Quiz/LA on decomposition.
     * REDO of Quiz/LA on procedures.
+    * New Quiz/LA
+    * New Quiz/LA
 
 ### Administrative Q&A
 
 Where do I submit mini-project 1?
 
-> I should have a locatioin on Gradescope ready by Sunday night.
+> I should have a location on Gradescope ready by Sunday night.
+
+Can I take a makeup for last week's quizzes?
+
+> The one labeled "Decomposition" makes up for the face quiz.
+
+> The one labled "Procedures" makes up for the evil building quiz.
 
 ### Friday PSA
+
+* You seem to be awesome. Please stay that way.
+* Also stay that way for people who care about you.
+* Be moderate over the weekend.
+* Don't succumb to (often imagined) peer pressure; do what is right 
+  for you.
+* Consent is essential (also not quite sufficient); it is hard to
+  give or receive consent if you are intoxicated.
 
 Mini-Project 1
 --------------
@@ -136,14 +153,15 @@ Goals: Explore. Practice writing functions. Practice generalizing.
 Reading questions
 -----------------
 
-Which version did people prefer?
+Which version of `sub3` did people prefer?
 
 > It varied. (I also didn't keep careful count.)
 
 Is there a difference between `#(rgb-darker %1)` and `rgb-darker`?
 
 > Nope. The first as a longer way to write the second. You should only
-  use cut when you're filling in some parameters to a procedure.
+  use cut when you're filling in some parameters in an expression in
+  order to create a procedure.
 
 Can you go over Check 4 from the Transforming RGB colors reading
 in more depth? I'd like a clearer explanation of why we use composition
@@ -158,24 +176,75 @@ here instead of lambda, and how the order of the procedures inside
 > > b. Without using `lambda`, write a procedure, `(rgb-much-darker c)`, 
    that applies `rgb-darker` three times in sequence to `c`.
 
+> Using lambda, we'd solve the first as
+  `(define rgb-purpler (lambda (c) (rgb-bluer (rgb-redder c))))`
+
+> Using `o`, we'd solve the first as
+  `(define rgb-purpler (o rgb-bluer rgb-redder))`
+
+> The composition solution to the first problem does not explictly name the
+  parameter. That can be confusing at first. (You'll get used to it.)
+
+> However, it's much more concise.
+
+> It's also a different way of thinking. We're building new functions
+  from old without worrying about a lot of cruft.
+
+Don't forget to explain how the order of procedures affects the result.
+
+> It depends on the procedures you're using. Let's look at this one from
+  the self checks.
+
+> `(define rgb-dl (o rgb-darker rgb-lighter))`
+
+> Compare that to
+
+> `(define rgb-ld (o rgb-lighter rgb-darker))`
+
+> `rgb-dl` makes the color lighter and then darker. 
+
+> If we started with white, we can't make it any lighter, so the color
+  stays the same, and then we make it darker, giving a very light gray.
+
+> `rgb-ld` makes the color darker and then lighter, so white gets a
+  bit darker and then goes back to white.
+
+Since `rgb-redder` decreases the blue component and `rgb-bluer` decreases the
+red component, won't this have no effect on the components?
+
+> The decrease in blue in `rgb-redder` is smaller than the increase in blue
+  in `rgb-bluer`.
+
 Did the `rgb-purpler` and `rgb-much-darker` procedures need to
 specifically include parameter `c`?
 
 > Nope. One of the key ideas of composition is that you don't explicitly
-  mention the prameters.
+  mention the parameters.
 
 Can you explain in more details about the color transformations
 that are not that easy to build?
 
 > Some transformations are not naturally built from the existing
   procedures, such as "add two to red, subtract three from green, and
-  double blue". Even cut doesn't do a good job with those.
+  double blue". 
 
 Why doesn't this work?  `#(o sub1 (o sub1(o sub1 %1)))`
 
 > Because ...
 
+> There are multiple `o` calls; we should be able to get by with one.
+
+> However, `(o sub1 (o sub1 sub1))` would work.
+
+> We'd prefer `(o sub1 sub1 sub1)`
+
+> The `%1` will get filled in. We then try to compose `sub1` and the thing
+  that is filled in. We compose only _functions_. The intent was to 
+  fill in a number. You can't compose a function and a number.
+
 I still dont quite understand cutting method.
+
+_skipped_
 
 > The primary idea is that we are "cutting" some values out of an expression,
   leaving room to fill them in.
@@ -198,3 +267,25 @@ I still dont quite understand cutting method.
 Lab
 ---
 
+Please reload the schedule page before begining the lab.
+
+Make sure that you're doing "Transforming RGB colors". If not, reload
+the schedule page and try again.
+
+Whoops! Not a lot of time. We'll cope.
+
+Don't turn anything in today. Plan to do meet with the same partner on
+Monday to finish this lab and do the next one. (Same place, same partner.)
+
+Quiz
+----
+
+We will distribute the tracing quiz.
+
+When you are done, give it to Sam and take any makeup quizzes you want.
+
+When you are done, give them to Sam and leave.
+
+Sam will be here until about 4:30 p.m.
+
+Have a great weekend!

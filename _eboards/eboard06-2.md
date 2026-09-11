@@ -1,9 +1,9 @@
 ---
-title: "EBoard 06: Transforming colors (Section 1)"
+title: "EBoard 06: Transforming colors (Section 2)"
 number: 6
 section: eboards
 held: 2026-09-11
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -14,11 +14,11 @@ _You should know the start-of-class algorithm_
 
 _Approximate overview_
 
-* Quiz
 * Administrative stuff
 * MP1
-* Reading questions
-* Lab
+* Reading questions (lots)
+* Lab (short, to be continued)
+* Quiz
 
 Administrative stuff
 --------------------
@@ -41,6 +41,7 @@ Administrative stuff
     * I hope no one drops.
 * These readings took many of you much longer than I expected. I'm
   sorry.
+* Please reload the schedule page before beginning the lab.
 
 ### Upcoming activities
 
@@ -68,15 +69,13 @@ section's students are welcome._
 
 * Saturday, 12 September 2026, Grinnell Track.
   _Les Duke Invitational (Cross Country)_
+* Wednesday, 16 September 2026, 5:00--7:00 p.m., Springer Field.
+  _Men's Soccer vs. Central_
 
 Wellness
 
 * Friday, 11 September 2026, 6:30--8:00 p.m., Bear Dance Studio.
   _Brazilian Jiu-Jitsu_
-* Saturday, 12 September 2026, All Day, Somewhere.
-  _Mental Health Training_.
-    * Sign up on Handshake.
-    * It's all day, so you will earn 3 tokens.
 * Monday, 14 September 2026, 6:30--8:00 p.m., Bear Dance Studio.
   _Brazilian Jiu-Jitsu_
 * Monday, 14 September 2026, 8:00--9:00 p.m., Prayer Garage.
@@ -87,6 +86,10 @@ Wellness
   _Brazilian Jiu-Jitsu_
 * Wednesday, 16 September 2026, 4:15--5:45 p.m., Undisclosed Location.
   _Forest Bathing_
+* Saturday, 10 October 2026, All Day, Somewhere.
+  _Mental Health Training_.
+    * Sign up on Handshake.
+    * It's all day, so you will earn 3 tokens.
 
 Misc
 
@@ -101,9 +104,6 @@ Misc
 
 _These do not earn tokens, but are worth your consideration._
 
-* Wednesday, 16 September 2026, 5:00--7:00 p.m., Springer Field.
-  _Men's Soccer vs. Central_
-
 ## Upcoming work
 
 * Due Sunday, 2026-09-13:
@@ -113,37 +113,63 @@ _These do not earn tokens, but are worth your consideration._
     * You may want to reread [Anonymous procedures](../readings/anonymous-procedures.html)
 * Due Tuesday, 2026-09-15:
     * [Mini-project 1](../mps/mp01)
-    * Lab
-    * Readings
+    * Monday's Lab
+    * Wednesday's Reading Responses
 * On Friday, 2026-09-18:
     * REDO of Quiz/LA on tracing
     * REDO of Quiz/LA on decomposition.
     * REDO of Quiz/LA on procedures.
+    * New Quiz/LA
+    * New Quiz/LA
 
 ### Administrative Q&A
 
 Where do I submit mini-project 1?
 
-> I should have a locatioin on Gradescope ready by Sunday night.
+> I should have a location on Gradescope ready by Sunday night.
+
+Can I take a makeup for last week's quizzes?
+
+> The one labeled "Decomposition" makes up for the face quiz.
+
+> The one labled "Procedures" makes up for the evil building quiz.
+
+Do I need permission to leave to go to the bathroom?
+
+> No.
 
 ### Friday PSA
+
+* You are awesome, please remain awesome. That is, take care of yourselves
+  this weekend (and every weekend). Do so for yourselves; do so for those
+  who care about you.
+* Pay attention to what is appropriate for you if you engage in the "normal"
+  weekend activities. (Note that they are not normal for everyone.)
+* Consent is essential! (Also insufficient.) (Also difficult if impaired)
 
 Mini-Project 1
 --------------
 
 Goals: Explore. Practice writing functions. Practice generalizing.
 
+What is a "subimage"?
+
+> It's something you've named and used in the image.
+
+> For example, in building a face, you might write `(define nose ...)`.
+
 Reading questions
 -----------------
 
-Which version did people prefer?
+Which version of `sub3` did people prefer?
 
 > It varied. (I also didn't keep careful count.)
 
 Is there a difference between `#(rgb-darker %1)` and `rgb-darker`?
 
 > Nope. The first as a longer way to write the second. You should only
-  use cut when you're filling in some parameters to a procedure.
+  use cut when you're filling in some parameters in an expression in
+  order to create a function.
 
 Can you go over Check 4 from the Transforming RGB colors reading
 in more depth? I'd like a clearer explanation of why we use composition
@@ -158,24 +184,78 @@ here instead of lambda, and how the order of the procedures inside
 > > b. Without using `lambda`, write a procedure, `(rgb-much-darker c)`, 
    that applies `rgb-darker` three times in sequence to `c`.
 
+> Using lambda, we'd solve the first as
+  `(define rgb-purpler (lambda (c) (rgb-bluer (rgb-redder c))))`
+
+> Using `o`, we'd solve the first as
+  `(define rgb-purpler (o rgb-bluer rgb-redder))`
+
+> The composition solution to the first problem does not explictly name the
+  parameter. That can be confusing at first. (You'll get used to it.)
+
+> However, it's much more concise.
+
+> It's also a different way of thinking. We're building new functions
+  from old without worrying about a lot of cruft.
+
+Don't forget to explain how the order of procedures affects the result.
+
+> It depends on the procedures you're using. Let's look at this one from
+  the self checks.
+
+> `(define rgb-dl (o rgb-darker rgb-lighter))`
+
+> Compare that to
+
+> `(define rgb-ld (o rgb-lighter rgb-darker))`
+
+> `rgb-dl` makes the color lighter and then darker. 
+
+> Are there colors for which `(rgb-dl color)` does not return the same color?
+
+> Perhaps "black" `(rgb 0 0 0)` and "white" `(rgb 255 255 255)`
+
+> Black stays the same, but white doesn't.
+
+Since `rgb-redder` decreases the blue component and `rgb-bluer` decreases the
+red component, won't `rgb-purpler` have no effect on the components?
+
+> The decrease in blue in `rgb-redder` is smaller than the increase in blue
+  in `rgb-bluer`.
+
 Did the `rgb-purpler` and `rgb-much-darker` procedures need to
 specifically include parameter `c`?
 
 > Nope. One of the key ideas of composition is that you don't explicitly
-  mention the prameters.
+  mention the parameters.
 
 Can you explain in more details about the color transformations
 that are not that easy to build?
 
 > Some transformations are not naturally built from the existing
   procedures, such as "add two to red, subtract three from green, and
-  double blue". Even cut doesn't do a good job with those.
+  double blue". 
 
 Why doesn't this work?  `#(o sub1 (o sub1(o sub1 %1)))`
 
 > Because ...
 
+> Usually we use only one `o`, such as `(o sub1 sub1 sub1)`
+
+> Of course, we could also write `(o sub1 (o sub1 sub1))`. It's just longer.
+
+> But what about that cut (hashtag, octothorpe, pound)?
+
+> Compose is supposed to take two functions as parameters. If we call
+  this on a number, we get an error.
+
+Does compose get more parameters?
+
+> Nope. Just the one implicit parameter.
+
 I still dont quite understand cutting method.
+
+_skipped_
 
 > The primary idea is that we are "cutting" some values out of an expression,
   leaving room to fill them in.
@@ -198,3 +278,19 @@ I still dont quite understand cutting method.
 Lab
 ---
 
+Please reload the schedule page before begining the lab.
+
+Make sure that you're doing "Transforming RGB colors". If not, reload
+the schedule page and try again.
+
+Don't turn anything in today. Plan to do meet with the same partner on
+Monday to finish this lab and do the next one. (Same place, same partner.)
+
+Quiz
+----
+
+We will distribute the tracing quiz.
+
+When you are done, give it to Sam and take any makeup quizzes you want.
+
+When you are done, give them to Sam and leave.
