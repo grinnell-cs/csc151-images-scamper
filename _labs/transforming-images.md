@@ -48,13 +48,15 @@ Working with images
 
 * `(image-load filename)` - load an image.
 * `(pixel-map color-transformation image)`  - apply a color transformation to each pixel in an image.
-* `(image-save img filename) - save an image to a file. _May not exist yet._
+* `(image-save! img filename) - save an image to a file. _May not exist yet._
 
-Working with procedures
+Combining functions
 
-* `#(expression-with-percents` - Build a new procedure that takes one parameter for each percent thing in `expression-with-percent`.
-* `(o fun1 fun2 fun3 ... funn)` - Build a new procedure that applies `funn` then ... then `fun3` then `fun2` then `fun1` to its parameter.
-i* `(lambda (params) body)` - Build a new procedure with the given parameters and instructions.
+* `(lambda (params) body)` - Build a new function with the given parameters and instructions.
+* `(o fun1 fun2 fun3 ... funn)` - Build a new function that applies `funn` then ... then `fun3` then `fun2` then `fun1` to its parameter.
+* `(l-s fun left)` - Build a new procedure of the form `(lambda (x) (fun left x))`.
+* `(r-s fun right)` - Build a new procedure of the form `(lambda (x) (fun x right))`.
+* `#(expression-with-percents` - Build a new function that takes one parameter for each percent thing in `expression-with-percent`.
 
 The lab
 -------
