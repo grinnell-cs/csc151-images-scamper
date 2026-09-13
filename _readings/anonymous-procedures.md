@@ -180,7 +180,52 @@ Wasn't that fascinating?
 
 Why do we Schemers call this "cutting"? Because they envision building new procedures by cutting a hole for input in an expression.
 
-## Combining cutting and composition
+## Simple sectioning
+
+The cut operation has a somewhat strange syntax. It is also very powerful. Many functional programmers prefer a simpler version, which we'll call "sectioning". Like cutting, sectioning fills in some parameters of a function. Unlike cutting, sectioning does not have a special syntax; it looks like any function call. (Later in the semester, we'll even learn how to write the section functions.) Andunlike cutting but like composition, sectioning leaves the parameter unspecified.
+
+The left-section function, written `l-s`, takes two parameters: a two-parameter function, `f`, and a value, `left` (or an expression that produces a value). It returns a new function that takes one parameter. `l-s` then returns a new function of one parameter. When you call the new function to a value, `x`, it applies `f` to `left` and `x`: `(f left x)`. Alternately, you can think of `(l-s f left)` as another way to write `#(f left %1)`. That is, `(l-s f left)` fills in the _left_ parameter of `f`.
+
+```
+> (define add1 (l-s + 1)) ; f is +, left is 1
+> (add1 5) ; x is 5
+6 ; (+ 1 5)
+> (add1 0) ; x is 0
+1 ; (+ 1 0)
+> (add1 1.5) ; x is 1.5
+2.5 ; (+ 1 1.5)
+> (add1 -2) ; r is -2
+-1  (+ 1 -2)
+```
+
+Wasn't that exciting?
+
+As you might guess, right-section (`r-s`) is much like left-section except that it fills in the second (right) parameter of `f`. Once again, we get back a one-parameter function that takes one input. That is, `(r-s f right)` returns a new function that corresponds to `#(f %1 right)`. When we apply the new function to a value, `x`, it applies the original function to `x` and `right`, computing `(f x right)`. 
+
+```
+> (define sub1 (r-s - 1) ; f is -, right is 1.
+> (sub1 5) ; x is 5
+4 ; (- 5 1)
+> (sub1 0) ; x is 0
+-1 ; (- 0 1)
+```
+
+If both `l-s` and `r-s` build a new, one-parameter, procedure, does it matter which we use? Yes! Well, sometimes. As you've seen, many binary operations behave differently depending on what's on the left and what's on the right. `(- 1 4)` is not the same as `(- 4 1)`.
+
+```
+> (define subfrom1 (l-s - 1)) ; (f is -, left is 1)
+> (subfrom1 5)
+> -4 ; (- 1 5)
+
+> (define andthat (l-s string-append " and "))
+> (define thisand (r-s string-append " and "))
+> (andthat "eggs")
+" and eggs" ; (string-append " and " "eggs")
+> (thisand "eggs")
+"eggs and " ; (string-append "eggs" " and ")
+```
+
+## Combining cutting (or sectioning) and composition
 
 Composition and partial functions provide concise sysntax for defining certain kinds of procedures.  However, composition works only for one-parameter procedurs and partial-functions only work when you're filling in some parameters of a multi-parameter procedure.  What if you want to do both?  For example, consider the problem of counting the number of words in a string.  While we haven't explored all of the component parts in close details, we have seen all of them.
 
@@ -221,12 +266,19 @@ somewhat more concisely.
 7
 ```
 
-What are the advantages of the latter definition?  It fits on one line.  However, we could probably put the `lambda` expression on one line.  It cuts a few characters (eight, if we count correctly), but that's not a big difference.  Rather, we choose the latter definition because many people find it clearer.  What does
-`numwords` do?  It splits a string at space and then takes the length.
+Using `r-s`, we could also write,
+
+```drracket
+> (define numwords (o length (r-s string-split " ")))
+> (numwords "Jack and Jill went up the hill")
+7
+```
+
+What are the advantages of the latter definitions?  The each fit on one line.  However, we could probably put the `lambda` expression on one line.  Each cuts a few characters (eight, if we count correctly), but that's not a big difference.  Rather, we choose the latter definitions because many people find it clearer.  What does `numwords` do?  It splits a string at space and then takes the length.
 
 ## Composition, cutting, and mapping
 
-Composition becomes even more useful (powerful?) when you combine it with other tools, particularly with procedures like `map`.  (We know that you haven't learned many such procedures, but you'll learn more soon.)  Consider, for example, the problem of adding two to each number in a list.
+The procedures become even more useful (powerful?) when you combine them with other tools, particularly with procedures like `map`.  (We know that you haven't learned many such procedures, but you'll learn more soon.)  Consider, for example, the problem of adding two to each number in a list.
 
 Before this reading, you might have written something like the following.
 
@@ -240,14 +292,14 @@ Before this reading, you might have written something like the following.
 After what you've seen in this reading, you might now be tempted to write something like this, which is shorter (and perhaps simpler).
 
 ```drracket
-(define addtwo #(+ %1 2)))
+(define addtwo #(+ %1 2))) ; or (define addtwo (r-s + 2))
 (map addtwo (list ...))
 ```
 
 But you can do something even shorter!  As you may recall, the Scheme evaluator, upon encountering a named value, substitutes the value for the name.  So it converts the second of the prior two expressions to
 
 ```drracket
-(map #(+ %1 2)) (list ...))
+(map #(+ %1 2)) (list ...)) ; or (map (r-s + 2) (list ...))
 ```
 
 There's no reason you can't do the same.  Here are a few examples.
@@ -291,4 +343,4 @@ Which of the three do you prefer?  Why?
 
 ## Acknowledgements
 
-This reading is closely based on an earlier one on higher-order procedures.  I've added a section on anonymous procedures.  It was updated for 2023 Fall with a bit of cleanup and replacing `section` with the new `cut` procedure. It was updated again in Fall 2026 using the new Scamper syntax for cut.
+This reading is closely based on an earlier one on higher-order procedures.  I've added a section on anonymous procedures.  It was updated for 2023 Fall with a bit of cleanup and replacing `section` with the new `cut` procedure. It was updated again in Fall 2026 using the new Scamper syntax for cut. A bit later, the `l-s` and `r-s` procedures were added.
