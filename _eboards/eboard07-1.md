@@ -7,16 +7,14 @@ link: false
 ---
 # {{ page.title }}
 
+**_Please sit with your partner from Friday's class._**
+
 **Warning! You are being recorded** (and transcribed) (provided the technology
 is working correctly).
-
-_You should know the start-of-class algorithm_
 
 _Approximate overview_
 
 * Administrative stuff
-* MP1
-* Reading questions
 * Lab 1: Transforming RGB colors (from Friday)
 * Lab 2: Transforming images (from Today)
 
@@ -107,14 +105,22 @@ _These do not earn tokens, but are worth your consideration._
 
 * Due Tuesday, 2026-09-15:
     * [Mini-project 1](../mps/mp01)
-    * Monday's Lab
+    * [Friday's lab](../labs/transforming-rgb)
+        * [Submit Friday's lab on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8614305)
+        * Please submit today!
+    * [Monday's lab](../labs/transforming-images)
+        * [Submit Monday's lab on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8629342)
+        * Please submit today!
     * Wednesday's Reading Responses
+        * [Data types](../readings/types)
+        * [Expressions and types](../readings/exprs-and-types)
+        * [Numeric values](../readings/numbers)
+        * [Submit reading responses on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8629360)
 * On Friday, 2026-09-18:
     * REDO of Quiz/LA on tracing
     * REDO of Quiz/LA on decomposition.
     * REDO of Quiz/LA on procedures.
-    * New Quiz/LA
-    * New Quiz/LA
+    * New Quiz/LA on compose, cut, and section.
 
 ### Administrative Q&A
 
@@ -135,9 +141,8 @@ Can I try the same quiz a second time in the same day?
 
 > No. That's not equitable.
 
-Reading questions
------------------
+Lab: Transforming RGB colors
+----------------------------
 
-Lab
----
-
+Lab: Transforming images
+------------------------
