@@ -3,6 +3,9 @@ title: Transforming RGB colors
 summary: |
   We ground our understanding of the procedures for transfomring colors
   as well as the composition operation. 
+note: |
+  This lab took students over thirty minutes. I intended it to be shorter.
+  I may have to cut a bit.
 ---
 
 Procedures to remember
