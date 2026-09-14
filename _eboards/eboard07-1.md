@@ -266,3 +266,6 @@ Lab: Transforming RGB colors
 Lab: Transforming images
 ------------------------
 
+If you have `image-subtract` in your supplied code, please change it
+to `rgb-subtract`. Sorry about that!
+
