@@ -1,9 +1,9 @@
 ---
-title: "EBoard 07: Transforming images (Section 1)"
+title: "EBoard 07: Transforming images (Section 2)"
 number: 7
 section: eboards
 held: 2026-09-14
-link: true
+link: false
 ---
 # {{ page.title }}
 
@@ -27,8 +27,7 @@ Administrative stuff
 
 ### Quiz Notes
 
-* I have returned Friday's quizzes. At least I will by the end of class;
-  I just need to enter them on Gradescope.
+* I have returned Friday's quizzes. At least I hope I have.
 * Please do not write your name on the front of quizzes. I would prefer
   to grade without knowing your identity.
 * Please write first and last name on the back (print, don't sign).
@@ -121,7 +120,6 @@ _These do not earn tokens, but are worth your consideration._
 
 * Due Tuesday, 2026-09-15:
     * [Mini-project 1](../mps/mp01)
-        * [Submit mini-project 1 on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8632002)
     * [Friday's lab](../labs/transforming-rgb)
         * [Submit Friday's lab on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8614305)
         * Started Friday, completed today
