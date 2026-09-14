@@ -319,17 +319,17 @@
 
 (define transform-image-5a
   (lambda (img)
-    (pixel-map #(rgb-subtract %1 (rgb 100 0 100)) img)))
+    (pixel-map (r-s rgb-subtract (rgb 100 0 100)) img)))
 
 ;; d. Answer for `transform-image-5a`
 ;; Hypothesis: 
 ;; Check: 
 
-(define transform-image-4e
+(define transform-image-5b
   (lambda (img)
-    (pixel-map #(rgb-subtract (rgb 255 255 255) %1) img)))
+    (pixel-map (l-s rgb-subtract (rgb 255 255 255)) img)))
 
-;; e. Answer for `transform-image-4e`
+;; e. Answer for `transform-image-5b
 ;; Hypothesis: 
 ;; Check: 
 
