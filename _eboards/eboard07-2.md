@@ -27,13 +27,13 @@ Administrative stuff
 
 ### Quiz Notes
 
-* I have returned Friday's quizzes. At least I hope I have.
+* I have returned Friday's quizzes. 
 * Please do not write your name on the front of quizzes. I would prefer
   to grade without knowing your identity.
 * Please write first and last name on the back (print, don't sign).
 * I will not be going over Friday's quizzes in class. Please schedule
-  office hours (https://bit.ly/book-samr), visit with evening tutors,
-  or attend the mentor sessions for details on the solutions.
+  office hours (https://bit.ly/book-samr), email Sam, TM Sam, visit with 
+  evening tutors, or attend the mentor sessions for details on the solutions.
 * Please don't discuss how easy or difficult you find a quiz; others may
   have different experiences and your comment is unlikely to be useful
   to them.
@@ -45,7 +45,7 @@ Administrative stuff
 
 Scholarly
 
-* Tuesday, 15 September 2026, Noon, CS Commons.
+* Tuesday, 15 September 2026, Noon--1:00 p.m., CS Commons.
   _CS Table: Opening Discussion_
 * Thursday, 17 September 2026, 11:00 a.m., JRC 101.
   _Scholars' Convocation: Melissa Murray_ (Constitution Day Convo)
@@ -72,6 +72,9 @@ Peer
 
 _Musical, theatric, sporting, academic, and similar events involving this 
 section's students are welcome._
+
+* Wednesday, 16 September 2026, 7:00--9:00 p.m., Bob's.
+  _Open Mic Night_
 
 Wellness
 
@@ -107,8 +110,6 @@ _These do not earn tokens, but are worth your consideration._
 
 * Wednesday, 16 September 2026, 5:00--7:00 p.m., Springer Field.
   _Men's Soccer vs. Central_
-* Wednesday, 16 September 2026, 7:00--9:00 p.m., Bob's.
-  _Open Mic Night_
 * Saturday, 19 September 2026, 8:00 a.m--4:00 p.m., Mac and Ward Fields.
   _Grinnelleanore Roosevelts Ultimate Tournament_
 * Saturday, 19 September 2026, 9:00 a.m.--Noon, Tennis Courts.
@@ -120,6 +121,7 @@ _These do not earn tokens, but are worth your consideration._
 
 * Due Tuesday, 2026-09-15:
     * [Mini-project 1](../mps/mp01)
+        * [Submit mini-project 1 on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8632002)
     * [Friday's lab](../labs/transforming-rgb)
         * [Submit Friday's lab on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8614305)
         * Started Friday, completed today
@@ -165,12 +167,39 @@ How do I know how I'm doing in the class?
 
 > Mastery grading makes that a bit more difficult. If you have 2/3 of the
   LAs done correctly, you're fine. If not? You may still be fine. I've seen
-  lots of people get 0 for the first four weeks and then something clics
+  lots of people get 0 for the first four weeks and then something clicks
   and they do well the rest of the semester.
 
 > I'd suggest looking at your percentage of LAs completed after week six.
 
 > I'll send out grading checklists within the next few days.
+
+How many trials do we have on the LAs?
+
+> LAs 1 & 2: Up to 15 (I think)
+
+> LA 3: Up to 14
+
+> Etc.
+
+> Always at least two.
+
+Do we get more time for LAs throughout the semester?
+
+> No. Just 30 minutes each class. Plus the extra 30 minutes available at
+  7:30, 11:00, and 4:00.
+
+Will I fail if I'm regularly late to class?
+
+> No. You'll just make everyone sad.
+
+How do we spend tokens?
+
+> Sam charges you tokens when appropriate.
+
+How do we know how many tokens we have left?
+
+> It appears on the grading report.
 
 ### MP1 Q&A
 
@@ -184,6 +213,27 @@ How do I know if my image for part 2 is interesting enough?
 > If so, your image is interesting enough.
 
 > Demo
+
+```
+```
+
+What happens if I get an N on MP1?
+
+> You'll have a chance to redo it. MP redos are identical! Just fix the
+  things that are not satisfactory and resubmit.
+
+> Redo date is tbd.
+
+What happens if I get an N on an MP1 redo?
+
+> You'll get another chance to redo it? This time, it costs you a token.
+
+> Re-Redo date is tbd.
+
+Can I spend a token to turn in MP1 before Thursday night, but after
+Tuesday?
+
+> Yes.
 
 Lab: Transforming RGB colors
 ----------------------------
