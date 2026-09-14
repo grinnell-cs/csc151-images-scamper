@@ -19,13 +19,13 @@ How do you *express* values of the type?  For example, integers are simply writt
 How does the computer *respond* when it computes a value of the type.  In general, the way you express values to the computer is the same as the way it expresses them to you.  But there are times that you will find that the computer chooses a different representation.  Here's an example.
 
 ```
-> 100000000000000000000.0
-1e+20
+> 23.0000000000000001
+23
 ```
 
 What *operations* are available for values in the type?  For example, you expect to be able to add, subtract, multiply, and divide integers.  You might expect to be able to concatenate strings or to extract parts of strings.  Learning what you can do with different types is both challenging and empowering.
 
-As we start the course, you will learn a variety of key types, including [a range of numeric types](numbers), [characters and strings](strings), and [a strange type that Schemers refer to as "symbols"](symbols).
+As we start the course, you will learn a variety of key types, including [a range of numeric types](numbers) as well as [characters and strings](strings).
 
 ## Self Checks
 
