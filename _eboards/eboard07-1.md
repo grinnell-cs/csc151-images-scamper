@@ -23,10 +23,23 @@ Administrative stuff
 
 ### Introductory Notes
 
-* I will not be going over Friday's quizzes in class. Please visit with
-  evening tutors or attend the mentor sessions for details on the sol'ns.
+* Happy new year!
+
+### Quiz Notes
+
+* I have returned Friday's quizzes. At least I hope I have.
 * Please do not write your name on the front of quizzes. I would prefer
   to grade without knowing your identity.
+* Please write first and last name on the back (print, don't sign).
+* I will not be going over Friday's quizzes in class. Please schedule
+  office hours (https://bit.ly/book-samr), visit with evening tutors,
+  or attend the mentor sessions for details on the solutions.
+* Please don't discuss how easy or difficult you find a quiz; others may
+  have different experiences and your comment is unlikely to be useful
+  to them.
+* This Friday, I would recommend you grab any quizzes you have not
+  passed. Even if you leave them blank, that ensures you have a copy
+  to study from.
 
 ### Upcoming activities
 
@@ -107,15 +120,16 @@ _These do not earn tokens, but are worth your consideration._
     * [Mini-project 1](../mps/mp01)
     * [Friday's lab](../labs/transforming-rgb)
         * [Submit Friday's lab on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8614305)
+        * Started Friday, completed today
         * Please submit today!
-    * [Monday's lab](../labs/transforming-images)
-        * [Submit Monday's lab on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8629342)
+    * [Today's lab](../labs/transforming-images)
+        * [Submit today's lab on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8629342)
         * Please submit today!
-    * Wednesday's Reading Responses
+    * Wednesday's Readings
         * [Data types](../readings/types)
         * [Expressions and types](../readings/exprs-and-types)
         * [Numeric values](../readings/numbers)
-        * [Submit reading responses on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8629360)
+        * NO READING RESPONSE!
 * On Friday, 2026-09-18:
     * REDO of Quiz/LA on tracing
     * REDO of Quiz/LA on decomposition.
@@ -146,3 +160,4 @@ Lab: Transforming RGB colors
 
 Lab: Transforming images
 ------------------------
+
