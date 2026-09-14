@@ -1,8 +1,8 @@
 ---
 title: Expressions and types
 summary: |
-  We have learned that a Racket program consists of a collection of expressions, program fragments that evaluate to values.
-  In this reading, we focus on the different kinds of *primitive values* that we can manipulate in our Racket programs.
+  We have learned that a Scheme program consists of a collection of expressions, program fragments that evaluate to values.
+  In this reading, we focus on the different kinds of *primitive values* that we can manipulate in our Scheme programs.
 preimg: true
 ---
 
@@ -36,7 +36,7 @@ What are the different categories of data we might operate over and how are they
 
 In computer programming, we can categorize the wide-range of data into two sorts:
 
-+   **Compound data**: data that is made up of other, smaller pieces of data.
++   **Compound data**: data that are made up of other, smaller pieces of data.
 +   **Primitive data**: "indivisible" data, *i.e.*, data that cannot be broken up into smaller pieces.
 
 For example, consider representing a student in a computer program.
@@ -104,7 +104,7 @@ Here, `+` expects to be given at least one argument, all of which must be number
 
 ~~~racket
 > +
-#<procedure:+>
+(lambda (& v1) ...)
 > (+ 1 3 5 7 9)
 25
 > (+ 42)
@@ -116,14 +116,10 @@ For example:
 
 ~~~racket
 > (+ 1 "hello")
-+: contract violation
-  expected: number?
-  given: "hello"
-  argument position: 2nd
-  other arguments...:
+⚠ expected every value of v1 to be a number, but at least one was not
 ~~~
 
-Racket realizes these type errors as *contract violations* when trying to execute the function.
+The Scheme interpreter realizes these type errors as *contract violations* when trying to execute the function.
 Intuitively, we can think of `+` as specifying the following contract:
 
 > If you provide me with values that are *all* numbers, I will give you back a number that is the sum of those input numbers.
@@ -134,24 +130,24 @@ For `+` the expected types of the inputs as numbers and the expected type of the
 For function types, the types of the inputs and outputs don't have to be the same, *e.g.*,
 
 +   `(string-length "hello world")` evaluates to `11`.
-    The type of the input to `string-length` is a string and the output is a number (exact integer).
+    The type of the input to `string-length` is a string and the output is a number.
 +   `(substring "hello world" 2 5)` evaluates to "llo"---`substring` returns the portion of the string starting with the character at the index (inclusive) denoted by the first argument and ends with the character at the index (exclusive) denoted by the last argument. 
     `substring` takes a string and two numbers as input and produces a string as output.
     (*Note*: the indices of a string start at 0, so `l` is indeed the character at index 2!)
 
 As you have likely noticed, keeping the type of a function in mind is *really important* for debugging your code.
-For example, consider the following erroneous call to `circle`:
+For example, consider the following erroneous call to `solid-circle`:
 
 ~~~racket
 > (solid-circle "red" 500)
-. . solid-circle: expects nonnegative-real? for parameter 1 (diameter), received red
+⚠ expected a number, received string
 ~~~
 
-If we recall that the type of `solid-circle` is:
+If we recall that the type of `solid-circle` is as follows:
 
-+   `solid-circle` is a function that takes a number (the radius) and a color as input and produces an image as output.
++   `solid-circle` is a function that takes a number (the diameter ) and a color as input and produces an image as output.
 
-We'll note that the problem with the code is that we've incorrectly interchanged the radius and the color!
+We'll note that the problem with the code is that we've incorrectly interchanged the diameter and the color!
 
 Type mismatches of this sort are a common error in programming, especially when you start out.
 Whenever you write code, try to keep in mind:
