@@ -30,11 +30,11 @@
 ;; | Provided code |
 ;; +---------------+
 
-;; These should eventually end up in Scamper.
+;; These should eventually end up in Scamper. They are not in 4.4.0.
 
-;;; (l-s fun left) -> function?
-;;;   fun : function?
-;;;   left : any?
+;;; (l-s fun left) -> procedure?
+;;;   fun : procedure?
+;;;   left : any
 ;;; Produce a new function that takes one parameter, `right`, and 
 ;;; applies `fun` to `left` and `right`.
 (define l-s
@@ -42,9 +42,9 @@
     (lambda (right)
       (fun left right))))
 
-;;; (r-s fun right) -> function?
-;;;   fun : function?
-;;;   right : any?
+;;; (r-s fun right) -> procedure?
+;;;   fun : procedure?
+;;;   right : any
 ;;; Produce a new function that takes one parameter, `left`, and
 ;;; applies `fun` to `left` and `right`.
 (define r-s 
@@ -239,7 +239,7 @@
 
 (define transform-image-4d
   (lambda (img)
-    (pixel-map #(image-subtract %1 (rgb 100 0 100))) img)))
+    (pixel-map #(image-subtract %1 (rgb 100 0 100)) img)))
 
 ;; d. Answer for `transform-image-4d`
 ;; Hypothesis: 
@@ -247,7 +247,7 @@
 
 (define transform-image-4e
   (lambda (img)
-    (pixel-map #(image-subtract (rgb 255 255 255) %1)) img)))
+    (pixel-map #(image-subtract (rgb 255 255 255) %1) img)))
 
 ;; e. Answer for `transform-image-4e`
 ;; Hypothesis: 
@@ -319,7 +319,7 @@
 
 (define transform-image-5a
   (lambda (img)
-    (pixel-map #(image-subtract %1 (rgb 100 0 100))) img)))
+    (pixel-map #(image-subtract %1 (rgb 100 0 100)) img)))
 
 ;; d. Answer for `transform-image-5a`
 ;; Hypothesis: 
@@ -327,15 +327,15 @@
 
 (define transform-image-4e
   (lambda (img)
-    (pixel-map #(image-subtract (rgb 255 255 255) %1)) img)))
+    (pixel-map #(image-subtract (rgb 255 255 255) %1) img)))
 
 ;; e. Answer for `transform-image-4e`
 ;; Hypothesis: 
 ;; Check: 
 
-;; +----------------------------------------------+-------------------
-;; | Exercise 5: Image transformations, revisited |
-;; +----------------------------------------------+
+;; +-------------------------------------------------+----------------
+;; | Exercise 6: Image transformations, re-revisited |
+;; +-------------------------------------------------+
 
 ;; DRIVER: B
 
@@ -343,28 +343,28 @@
 ;; then check in Scamper. Note that you'll likely want to think about
 ;; the input type as a starting point.
 
-(define transform-image-5a
+(define transform-image-6a
   (l-s pixel-map rgb-bluer))
 
-;; a. Answer for `transform-image-5a`
+;; a. Answer for `transform-image-6a`
 ;; Hypothesis: 
 ;; Check: 
 
-(define transform-image-5b
-  (l-s pixel-map (o rgb-darker rgb-darker rgb-darker))
+(define transform-image-6b
+  (l-s pixel-map (o rgb-darker rgb-darker rgb-darker)))
 
-;; b. Answer for `transform-image-5b`
+;; b. Answer for `transform-image-6b`
 ;; Hypothesis: 
 ;; Check: 
 
-(define transform-image-5c
+(define transform-image-6c
   (l-s pixel-map (l-s rgb-add (rgb 64 0 64))))
 
 ;; c. Answer for `transform-image-5c`
 ;; Hypothesis: 
 ;; Check: 
 
-(define transform-image-5d
+(define transform-image-6d
   (l-s pixel-map (o rgb-darker
                     rgb-darker
                     (l-s rgb-add (rgb 64 0 64)))))
