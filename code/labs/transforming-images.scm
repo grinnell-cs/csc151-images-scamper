@@ -239,7 +239,7 @@
 
 (define transform-image-4d
   (lambda (img)
-    (pixel-map #(image-subtract %1 (rgb 100 0 100)) img)))
+    (pixel-map #(rgb-subtract %1 (rgb 100 0 100)) img)))
 
 ;; d. Answer for `transform-image-4d`
 ;; Hypothesis: 
@@ -247,7 +247,7 @@
 
 (define transform-image-4e
   (lambda (img)
-    (pixel-map #(image-subtract (rgb 255 255 255) %1) img)))
+    (pixel-map #(rgb-subtract (rgb 255 255 255) %1) img)))
 
 ;; e. Answer for `transform-image-4e`
 ;; Hypothesis: 
@@ -319,7 +319,7 @@
 
 (define transform-image-5a
   (lambda (img)
-    (pixel-map #(image-subtract %1 (rgb 100 0 100)) img)))
+    (pixel-map #(rgb-subtract %1 (rgb 100 0 100)) img)))
 
 ;; d. Answer for `transform-image-5a`
 ;; Hypothesis: 
@@ -327,7 +327,7 @@
 
 (define transform-image-4e
   (lambda (img)
-    (pixel-map #(image-subtract (rgb 255 255 255) %1) img)))
+    (pixel-map #(rgb-subtract (rgb 255 255 255) %1) img)))
 
 ;; e. Answer for `transform-image-4e`
 ;; Hypothesis: 
