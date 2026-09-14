@@ -3,7 +3,7 @@ title: "EBoard 07: Transforming images (Section 3)"
 number: 7
 section: eboards
 held: 2026-09-14
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -59,22 +59,19 @@ Artistic/Cultural
 * Thursday, 17 September 2026, 4:00--5:00 p.m., HSSC S1325.
   _Writers@Grinnell Roundtable with Ananda Lina_
 * Thursday, 17 September 2026, 5:00--7:00 p.m., GCMOA.
-  _Opening Reception: Abstraction Impressionists, the Women_
+  _Opening Reception: Abstract Impressionists, the Women_
 * Thursday, 17 September 2026, 8:00--9:30 p.m., Herrick Chapel.
   _Writers@Grinnell Ananda Lina Reading_
 
 Multicultural
 
 * Friday, 18 September 2026, 4:10--5:00 p.m., HSSC N1170.
-  _Middle of Everywhere (???)_
+  _Middle of Everywhere (Philipines)_
 
 Peer
 
 _Musical, theatric, sporting, academic, and similar events involving this 
 section's students are welcome._
-
-* Wednesday, 16 September 2026, 7:00--9:00 p.m., Bob's.
-  _Open Mic Night_
 
 Wellness
 
@@ -110,6 +107,8 @@ _These do not earn tokens, but are worth your consideration._
 
 * Wednesday, 16 September 2026, 5:00--7:00 p.m., Springer Field.
   _Men's Soccer vs. Central_
+* Wednesday, 16 September 2026, 7:00--9:00 p.m., Bob's.
+  _Open Mic Night_
 * Saturday, 19 September 2026, 8:00 a.m--4:00 p.m., Mac and Ward Fields.
   _Grinnelleanore Roosevelts Ultimate Tournament_
 * Saturday, 19 September 2026, 9:00 a.m.--Noon, Tennis Courts.
@@ -135,10 +134,10 @@ _These do not earn tokens, but are worth your consideration._
         * [Numeric values](../readings/numbers)
         * NO READING RESPONSE!
 * On Friday, 2026-09-18:
+    * New Quiz/LA on compose, cut, and section.
     * REDO of Quiz/LA on tracing
     * REDO of Quiz/LA on decomposition.
     * REDO of Quiz/LA on procedures.
-    * New Quiz/LA on compose, cut, and section.
 
 ### Administrative Q&A
 
@@ -182,7 +181,7 @@ How many trials do we have on the LAs?
 
 > Etc.
 
-> Always at least two.
+> Always at least three.
 
 Do we get more time for LAs throughout the semester?
 
@@ -215,6 +214,34 @@ How do I know if my image for part 2 is interesting enough?
 > Demo
 
 ```
+; _sandbox.scm
+(import image)
+
+(define make-thing
+  (lambda (color size)
+    (overlay (solid-triangle size color)
+             (solid-square size "black"))))
+
+(define top
+  (make-thing "red" 30))
+
+(define middle-one
+  (make-thing "orange" 20))
+
+(define middle-two
+  (make-thing "yellow" 20))
+
+(define bottom
+  (make-thing "green" 50))
+
+(define background
+  (solid-rectangle 200 200 "gray"))
+
+(define my-image
+  (overlay (above top
+                  (beside middle-one middle-two)
+                  bottom)
+           background))
 ```
 
 What happens if I get an N on MP1?
@@ -226,7 +253,7 @@ What happens if I get an N on MP1?
 
 What happens if I get an N on an MP1 redo?
 
-> You'll get another chance to redo it? This time, it costs you a token.
+> You'll get another chance to redo it. This time, it costs you a token.
 
 > Re-Redo date is tbd.
 
@@ -238,6 +265,27 @@ Tuesday?
 Lab: Transforming RGB colors
 ----------------------------
 
+Please don't spend more than twenty minutes or so on this lab.
+
+Note: While you should spend some time on the initial problems that
+help you understand the various transformations, it's more important
+that you understand how `pixel-map` works (or is supposed to work).
+
 Lab: Transforming images
 ------------------------
 
+Please reload the page with the Scheme before dowloading it.
+
+`(remainder a b)` is "how much is left over after we divide `a` by `b`"
+
+For example `(remainder 11 3)` is 2 because 11 is 3*3 + 2.
+
+To transform the kitten image, use something like the following, preferably
+in the REPL.
+
+```
+> (define kitten (image-load "kitten.jpg"))
+> (pixel-map rgb-bluer kitten)
+```
+
+Then count to ten.

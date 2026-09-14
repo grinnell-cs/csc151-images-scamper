@@ -3,7 +3,7 @@ title: "EBoard 07: Transforming images (Section 2)"
 number: 7
 section: eboards
 held: 2026-09-14
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -27,10 +27,11 @@ Administrative stuff
 
 ### Quiz Notes
 
-* I have returned Friday's quizzes. 
+* I have returned Friday's quizzes on Gradescope.
 * Please do not write your name on the front of quizzes. I would prefer
   to grade without knowing your identity.
 * Please write first and last name on the back (print, don't sign).
+* I'll be sending out notes on the quizzes after class.
 * I will not be going over Friday's quizzes in class. Please schedule
   office hours (https://bit.ly/book-samr), email Sam, TM Sam, visit with 
   evening tutors, or attend the mentor sessions for details on the solutions.
@@ -59,7 +60,7 @@ Artistic/Cultural
 * Thursday, 17 September 2026, 4:00--5:00 p.m., HSSC S1325.
   _Writers@Grinnell Roundtable with Ananda Lina_
 * Thursday, 17 September 2026, 5:00--7:00 p.m., GCMOA.
-  _Opening Reception: Abstraction Impressionists, the Women_
+  _Opening Reception: Abstract Impressionists, the Women_
 * Thursday, 17 September 2026, 8:00--9:30 p.m., Herrick Chapel.
   _Writers@Grinnell Ananda Lina Reading_
 
@@ -73,8 +74,8 @@ Peer
 _Musical, theatric, sporting, academic, and similar events involving this 
 section's students are welcome._
 
-* Wednesday, 16 September 2026, 7:00--9:00 p.m., Bob's.
-  _Open Mic Night_
+* Wednesday, 16 September 2026, 5:00--7:00 p.m., Springer Field.
+  _Men's Soccer vs. Central_
 
 Wellness
 
@@ -108,8 +109,8 @@ Misc
 
 _These do not earn tokens, but are worth your consideration._
 
-* Wednesday, 16 September 2026, 5:00--7:00 p.m., Springer Field.
-  _Men's Soccer vs. Central_
+* Wednesday, 16 September 2026, 7:00--9:00 p.m., Bob's.
+  _Open Mic Night_
 * Saturday, 19 September 2026, 8:00 a.m--4:00 p.m., Mac and Ward Fields.
   _Grinnelleanore Roosevelts Ultimate Tournament_
 * Saturday, 19 September 2026, 9:00 a.m.--Noon, Tennis Courts.
@@ -135,10 +136,10 @@ _These do not earn tokens, but are worth your consideration._
         * [Numeric values](../readings/numbers)
         * NO READING RESPONSE!
 * On Friday, 2026-09-18:
+    * New Quiz/LA on compose, cut, and section.
     * REDO of Quiz/LA on tracing
     * REDO of Quiz/LA on decomposition.
     * REDO of Quiz/LA on procedures.
-    * New Quiz/LA on compose, cut, and section.
 
 ### Administrative Q&A
 
@@ -154,6 +155,8 @@ thirty minutes. What should I do?
 > I'd suggest that you start with the new one to see what it's like, then
   pick one or two of the others that you think you are most likely to finish.
   You should be able to catch up.
+
+> We also have the extra times.
 
 Can I try the same quiz a second time in the same day?
 
@@ -182,12 +185,12 @@ How many trials do we have on the LAs?
 
 > Etc.
 
-> Always at least two.
+> Always at least three.
 
 Do we get more time for LAs throughout the semester?
 
 > No. Just 30 minutes each class. Plus the extra 30 minutes available at
-  7:30, 11:00, and 4:00.
+  7:30, 11:00, and 4:00 on Fridays.
 
 Will I fail if I'm regularly late to class?
 
@@ -215,6 +218,35 @@ How do I know if my image for part 2 is interesting enough?
 > Demo
 
 ```
+; _sandbox.scm
+(import image)
+
+(define make-component
+  (lambda (color)
+    (overlay (solid-ellipse 50 30 color)
+             (solid-ellipse 30 50 color))))
+
+(define first-component
+  (make-component "red"))
+
+(define second-component
+  (make-component "orange"))
+
+(define third-component
+  (make-component "yellow"))
+
+(define fourth-component
+  (make-component "green"))
+
+(define background
+  (solid-rectangle 300 100 "purple"))
+
+(define my-image
+  (overlay (beside first-component second-component
+                 third-component fourth-component)
+         background))
+
+my-image
 ```
 
 What happens if I get an N on MP1?
@@ -226,7 +258,7 @@ What happens if I get an N on MP1?
 
 What happens if I get an N on an MP1 redo?
 
-> You'll get another chance to redo it? This time, it costs you a token.
+> You'll get another chance to redo it. This time, it costs you a token.
 
 > Re-Redo date is tbd.
 
@@ -238,6 +270,18 @@ Tuesday?
 Lab: Transforming RGB colors
 ----------------------------
 
+Please don't spend more than twenty minutes or so on this lab.
+
 Lab: Transforming images
 ------------------------
 
+Please reload the page with the Scheme before dowloading it.
+
+`(remainder a b)` is "how much is left over after we divide `a` by `b`"
+
+For example `(remainder 11 3)` is 2 because 11 is 3*3 + 2.
+
+Can we really nest lambdas?
+
+> Yup. Often, the internal lambda is being used for a procedure that
+  needs another procedure as an argument (e.g., `pixel-map`).
