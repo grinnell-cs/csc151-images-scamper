@@ -36,8 +36,7 @@
 
 - date: 2026-09-25
   due:
-    - LA 5 (Collaboration)
-    - LA 6 (Conditionals)
+    - LA 5 (Conditionals)
 
 - date: 2026-09-29
   due:
@@ -49,13 +48,13 @@
 
 - date: 2026-10-02
   due:
+    - LA 6 (Collaboration)
     - LA 7 (Lists)
-    - LA 8 (Program style)
 
 - date: 2026-10-09
   due:
-    - LA 9 (Documentation)
-    - LA 10 (Testing)
+    - LA 8 (Documentation)
+    - LA 9 (Testing)
 
 - date: 2026-10-13
   due:
@@ -67,11 +66,12 @@
 
 - date: 2026-10-16
   due:
-    - LA 11 (List recursion)
-    - LA 12 (Local bindings)
+    - LA 10 (Program style)
+    - LA 11 (Local bindings)
 
 - date: 2026-10-30
   due:
+    - LA 12 (List recursion)
     - LA 13 (Numeric recursion)
 
 - date: 2026-11-03
