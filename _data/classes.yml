@@ -115,6 +115,23 @@
   todo:
     - Consider adding symbols to the lab.
 
+- topic: Booleans, predicates, and conditionals
+  abbrev: booleans
+  summary: |
+    We consider how one writes procedures that make decisions.
+  reading:
+    - page: /readings/booleans.html
+    - page: /readings/conditionals.html
+  lab:
+    - page: /labs/conditionals.html
+  todo:
+    - Last semester, we needed two days for this. I should insert a pause for breath
+
+- topic: Pause for breath
+  abbrev: pause-recursion
+  summary: |
+    We pause to reflect on various issues.
+
 - topic: Pair programming
   abbrev: pair-programming
   summary: |
@@ -128,18 +145,6 @@
       resource: /files/DiverseTeams2016.pdf
   lab:
     - (TBA)
-
-- topic: Booleans, predicates, and conditionals
-  abbrev: booleans
-  summary: |
-    We consider how one writes procedures that make decisions.
-  reading:
-    - page: /readings/booleans.html
-    - page: /readings/conditionals.html
-  lab:
-    - page: /labs/conditionals.html
-  todo:
-    - Last semester, we needed two days for this. I'm inserting a pause for breath
 
 - topic: Lists
   abbrev: lists
@@ -171,18 +176,6 @@
     - Incorporate sort and tally.
     - Consider incorporating the old /labs/drawing-lists.html
 
-- topic: Other ways to build lists
-  abbrev: building-lists
-  summary: |
-    We continue our exploration of lists through some "finer-grained"
-    operations.
-  reading:
-    - page: /readings/list-composition.html
-  lab:
-    - page: /labs/list-composition.html
-  todo:
-    - It's a new lab! Students shouldn't be learning cons, car, and cdr at the same time they are learning recursion.
-
 - topic: Ethical considerations in computing
   abbrev: ethical
   summary: |
@@ -195,6 +188,18 @@
       url: https://www.acm.org/code-of-ethics
     - link: "Feynman’s Error: On Ethical Thinking and Drifting"
       url: https://www.danmunro.ca/blog/2018/11/29/feynmans-error-on-ethical-thinking-and-drifting-nbsp 
+
+- topic: Other ways to build lists
+  abbrev: building-lists
+  summary: |
+    We continue our exploration of lists through some "finer-grained"
+    operations.
+  reading:
+    - page: /readings/list-composition.html
+  lab:
+    - page: /labs/list-composition.html
+  todo:
+    - It's a new lab! Students shouldn't be learning cons, car, and cdr at the same time they are learning recursion.
 
 - topic: Software engineering fundamentals
   abbrev: software-engineering
@@ -241,11 +246,6 @@
     - page: /readings/recursion-magic.html
   lab:
     - page: /labs/recursion-practice.html
-
-- topic: Pause for breath
-  abbrev: pause-recursion
-  summary: |
-    We pause to reflect on various recursion issues.
 
 - topic: Recursion over numbers
   abbrev: number-recursion
