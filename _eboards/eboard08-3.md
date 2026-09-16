@@ -1,5 +1,5 @@
 ---
-title: "EBoard 08: Numbers (Section 2)"
+title: "EBoard 08: Numbers (Section 3)"
 number: 8
 section: eboards
 held: 2026-09-16
@@ -40,7 +40,7 @@ Administrative stuff
 
 Scholarly
 
-* Thursday, 17 September 2026, 11:00 a.m., JRC 101.
+* Thursday, 17 September 2026, 11:00 a.m., Herrick Chapel.
   _Scholars' Convocation: Melissa Murray_ (Constitution Day Convo)
 * Thursday, 17 September 2026, 4:15--5:00 p.m., HSSC A1231.
   _Melissa Murray Constitution Day Discussion_
@@ -155,7 +155,7 @@ Will MP2 be ready soon?
 
 Will you give us candy if we ask questions?
 
-> Perhaps.
+> Perhaps. Lolipops and gummi-bears.
 
 Do we get feedback on our mini-projects?
 
@@ -191,87 +191,79 @@ for multiple inputs and then checked the output.
 
 Why might I have structured the lab like that? (TPS)
 
-> Hypothesizing before doing helps us think more carefully about Scheme.
+> To encourage us to learn about these procedures through exploration,
+  rather than just reading.
 
-> To explore patterns (or to see if we see patterns). For example,
-  `rgb-darker` decreases every value by 16 (unless it's below 16).
+> The ordering may have been carefully structured because darker and
+  lighter modify all three components in the same way, but redder,
+  greener, and bluer modify the components in different ways
 
-> To understand the various functions better.
+> Model: "Don't just type stuff in, think about it." You will likely learn
+  the functions better if you try them thoughtfully (hypothesize then
+  run) rather than just running them. [+2]
 
-> To have an opportunity to explore functions in which you can more
-  readily "see" the results. This also lets us better understand
-  the relationship between the RGB (three number) representation
-  and the colors we see.
+> Practicing with moderately simple Scheme expressions better prepares
+  you for the more complex things we'll soon get to.
 
-> To be more efficient in how we use this in the future because
-  we understand them well.
+> UM - Use math
 
-> UM - An opportunity to use math.
+> Permitted us to think in a bit more detail about the likely processes.
 
-> To get more familiar with using functions and variables.
+> Also encouraged us to think about the relationship between the RGB
+  values and the colors we see on the screen.
 
-> Model: Hypothesize then try is a good approach to understanding.
-  We learn more when we compare rather than just look at answers.
-  That gives you the opportunity to think more about the function
-  (and learn it better).
+> We learn the vocabulary well enough to use the functions in the 
+  future. (Hint: They should be in your notes and/or on your cheat
+  sheets and/or flash cards.)
 
-> Model: When experimenting with a function, you should try a variety
-  of inputs.
+> Knowing the functions early helped us better understand composition
+  and octothorpe-percent cutting. `#(rgb-average (rgb 255 255 255) %1)`
+  
+> Side note: `#hashtag` is a hashtag, `#` is a hash (or mesh, or pound,
+  or number sign, or octothorpe)
 
-> "Reverse engineering" functions can help you better understand them.
+> As in every lab, it's an opportunity to put what you've read about
+  in practice. (Part of the theory of the course: You learn better by
+  doing than (just) reading or listening to lecture.)
 
-> The particular functions we explored encouraged us to learn that
-  "order matters".
+> Model: Trying different different colors gave us a deeper understanding of
+  what the functions did. Generally: When you're exploring a new procedure,
+  you should try it on more than one or two inputs, and you should think
+  about "difficult" inputs. For example, what happens when we make white
+  or black lighter?
 
-> We learned particular functions (vocabulary).
+> Reminds us that there are a _lot_ of functions.
 
-> Since you were learning vocabulary, you may/should have thought about
-  taking notes, putting them on your cheat sheat, etc.
+> Learned about manipulating colors and images.
+
+> Learned about making functions in different ways.
+
+> Identified patterns in output. Identifying patterns is one of the
+  important skills in computational thinking.
 
 Numbers
 -------
 
-The reading had four procedures that convert real numbers to integers.
+Four important functions for converting decimal (real) numbers to integers.
+`round`, `floor`, `ceiling`, `truncate`.
 
-What are they?
+What do they do?
 
-> `round`, `ceiling`, `floor`, and `truncate`.
+> `round` - takes a real number and returns the closest integer.
+  At .5, it will return the larger of the two equally close integers.
 
-_Please try to understand what they do._
+> `floor` - take a real number and returns the closest integer that
+  is less than or equal to that number. (rounds down)
 
-> `round` rounds to the nearest integer. If the decimal portion is
-  less than .5, rounds down; if the decimal portion is greater than
-  .5 rounds up; if the decimal portion is .5 it seems to round up.
+> `ceiling` - opposite of floor: returns the closest integer that's
+  larger or equal to than it
 
-Examples
+> `truncate` - removes everything after the decimal point
 
-> `(round 4.3)` -> 4
+What is the difference between `truncate` and `floor`? Is there a number,
+`x`, for which `(truncate x)` and `(floor x)` are different?
 
-> `(round 8.7777)` -> 9
-
-> `(round 2.5)` -> 3
-
-> `(round 3.5)` -> 4 ; seems to always round up
-
-> `(round 7.4999999999999999999999)` -> 
-
-> `ceiling` Rounds up to the next integer.
-
-> `floor` Rounds down to the nearest integer
-
-> `truncate` Throws away the decimal portion
-
-Is there a number for which `truncate` and `floor` return different values?
-
-> "I can't think of one."
-
-> Negative integers Nope.
-
-> Negative decimals. Yes.
-
-> `(floor -1.2)` is -2
-
-> `(truncate -1.2)` is -1
+> Yes, negative numbers.
 
 Back to Monday's lab
 --------------------
@@ -284,18 +276,20 @@ Back to Monday's lab
                img)))
 ```
 
-Why are there two lambdas in this function?
+Why are there two lambdas in this function? (TPS)
 
-> You're defining a function that takes only one parameter, which
-  we get with the `lambda (img)`.
+> `transform-image` is supposed to take an image as input. The
+  `lambda (img)` is our normal starting point for things that
+  take an image as input.
 
-> `pixel-map` takes a function as a parameter. Hence, the next
-  thing should be a function. One way to define functions is with
-  a `lambda`.
+> The `(lambda (c) (rgb ...))` transforms a color by removing
+  the green.
 
-What does this function do?
+> `transform-image` needs a function that converts a color to another
+  color (more precisely, and RGB to another RGB), and we build functions
+  with `lambda`.
 
-> Takes an image as input and removes the green component.
+> The color transformation is "anonymous" (unknown) not named
 
 ```
 (define transform-image-4b
@@ -303,15 +297,15 @@ What does this function do?
     (pixel-map (o rgb-bluer rgb-redder) img)))
 ```
 
-What does this function do?
+> This is a procedure that takes image as input and makes each pixel
+  redder and then bluer.
 
-> Takes each pixel in the image and makes it redder then bluer.
+Does it matter whether we do `(o rgb-bluer rgb-redder)` or
+`(o rgb-redder rgb-bluer)`?
 
-Does it matter whether we think of it as "redder then bluer" or
-"bluer then redder"?
-
-> Yes. (We may not see it here.) When you're near the maximum and
-  minimum of blue and red, you'll see an effect.
+> Most of the time, no, but if the red or blue component was large or
+  small, there would be a small difference (which we might or might
+  not see).
 
 ```
 (define transform-image-4c
@@ -319,32 +313,33 @@ Does it matter whether we think of it as "redder then bluer" or
     (pixel-map (o rgb-pseudo-complement rgb-greener rgb-pseudo-complement) img)))
 ```
 
-What does this procedure do?
+What does this do?
 
-> For each pixel, compute the pseudo complement, make it greener, then
-  take the pseudo complement again.
+> `transform-image-4c` takes an image as input and for each pixel,
+  computes the pseudo-complement, makes it greener, and computes the
+  pseudocomplement again.
 
-> Conceptually, this will make it less green.
+> Because we're complementing it twice, this makes it less green /
+  more purple.
 
 ```
 (define transform-image-4d
   (lambda (img)
     (pixel-map #(rgb-subtract %1 (rgb 100 0 100)) img)))
-```
 
-What does 4d do?
-
-> Make the image greener by subtracting 100 from the red and blue compoennts.
-
-
-```
 (define transform-image-4e
   (lambda (img)
     (pixel-map #(rgb-subtract (rgb 255 255 255) %1) img)))
 ```
 
-> 4b seems to subtract each component from 255, computing the "inverse".
-  `rgb-pseudo-complement`
+> `4d` takes an image as input and subtracts 100 from the red compoent
+  of each pixel and 100 from the blue component of each pixel
+
+> This will make it appear more green.
+
+> `4e` takes an image as input and subtracts each component from 255
+
+> This computes the pseudo complement
 
 ```
 (define transform-image-4f
@@ -352,22 +347,21 @@ What does 4d do?
     (pixel-map #(rgb-subtract %1 (rgb 255 255 255)) img)))
 ```
 
-> 4b seems to subtract 255 from each component. Note: If we are subtracting
-  255 from each component, we will get an all-black picture. 
+> This subtracts 255 from each component, making all the components 0, 
+`(rgb 0 0 0)` is black.
 
-Detour: Sectioning
-------------------
-
-Some of us don't like the octothorpe-percent syntax for cut, so we have
-an alternate for the most common case: Filling in one parameter of a
-two parameter procedure.
-
-`(l-s PROC LEFT)` is an alternative to `#(PROC LEFT %1)`
-
-`(r-s PROC RIGHT)` is an alternative to `#(PROC %1 RIGHT)`
-
-Back to the lab
+Detour: Section
 ---------------
+
+Not everyone likes the new #% syntax, so we're also providing an alternative
+for the most common uses: Filling in one parameter of a two parameter function.
+
+`(l-s FUN LEFT)` is the same as `#(FUN LEFT %1)`
+
+`(r-s FUN RIGHT)` is the same as `#(FUN %1 RIGHT)`
+
+Problem 5
+---------
 
 ```
 (define transform-image-5a
@@ -375,53 +369,13 @@ Back to the lab
     (pixel-map (r-s rgb-subtract (rgb 100 0 100)) img)))
 ```
 
+> A different way to write "take an image and subtract 100 from the red
+  and blue components of each pixel"
+
 ```
 (define transform-image-5b
   (lambda (img)
     (pixel-map (l-s rgb-subtract (rgb 255 255 255)) img)))
 ```
 
-What do these do?
-
-> 5a makes it greener because it subtracts 100 from the red and blue
-  components.  5a is the same as 4d, just written slightly differently.
-
-> 5b makes it black or computes the pseudo-complement [p-c]
-
-```
-(define transform-image-5c
-  (lambda (img)
-    (pixel-map (r-s rgb-subtract (rgb 128 128 128)) img)))
-```
-
-> 5c subtracts 128 from every component in the image
-
-> Makes the image "somewhat" darker
-
-```
-(define transform-image-5d
-  (lambda (img)
-    (pixel-map (l-s rgb-subtract (rgb 128 128 128)) img)))
-```
-
-> 5d subtracts each component from 128. I'm not sure what that will
-  look like. Probably darker pseudo-complement
-
-
-```
-(define transform-image-6a
-  (l-s pixel-map rgb-bluer))
-```
-
-What is `transform-image-6a`?
-
-> function that takes an image as input and outputs an image 
-  (a bluer version of the image)
-
-```
-(define transform-image-6c
-  (l-s pixel-map (l-s rgb-add (rgb 64 0 64))))
-```
-
-What is `transform-image-6c`?
-
+> A different wa to write `image-pseudo-complement`
