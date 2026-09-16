@@ -109,11 +109,8 @@
     strings.
   reading:
     - page: /readings/strings.html
-    - page: /readings/symbols.html
   lab:
     - page: /labs/strings.html
-  todo:
-    - Consider adding symbols to the lab.
 
 - topic: Booleans, predicates, and conditionals
   abbrev: booleans
@@ -130,7 +127,7 @@
 - topic: Pause for breath
   abbrev: pause-recursion
   summary: |
-    We pause to reflect on various issues.
+    We pause to reflect on various issues (primarily conditionals).
 
 - topic: Pair programming
   abbrev: pair-programming
