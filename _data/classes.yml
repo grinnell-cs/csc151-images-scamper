@@ -95,7 +95,7 @@
     - page: /readings/types.html
     - page: /readings/exprs-and-types.html
     - page: /readings/numbers.html
-  lab:
+  nolab:
     - page: /labs/numbers.html
   todo:
     - Consider which types reading to use (or combine them).
