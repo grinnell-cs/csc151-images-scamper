@@ -30,8 +30,8 @@ In case you couldn't tell, the `solid-polygon` procedure takes two primary param
 Here's a somewhat more complex polygon.
 
 ```
-(solid-polygon (list (pt 0 0) (pt 100 0) (pt 50 20) (pt 50 80) (pt 100 100)
-                     (pt 0 100) (pt 50 80) (pt 50 20))
+(solid-polygon (list (pair 0 0) (pair 100 0) (pair 50 20) (pair 50 80) 
+                     (pair 100 100) (pair 0 100) (pair 50 80) (pair 50 20))
                "blue")
 ```
 
