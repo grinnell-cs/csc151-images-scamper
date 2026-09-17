@@ -1,5 +1,5 @@
 ---
-title: Mini-Project 3
+title: Mini-Project 2
 subtitle: Transforming images
 summary: |
   In this mini-project, you will explore color types and some novel 
@@ -107,7 +107,7 @@ Here's its effect on the kitten.
 
 ![The kitten, once again. This time, the fur is a bit redder and the green rug looks much bluer.](../images/transforming-images/kitten-decrease-green.jpg)
 
-We can also use the `cut` operation along with some multi-parameter RGB operations to achieve some transformations. For example, here's one that sets the green component of an image to the maximum value.
+We can also use the cut or section operations along with some multi-parameter RGB operations to achieve some transformations. For example, here's one that sets the green component of an image to the maximum value.
 
 ```
 ;;; (maximize-green img) -> image?
@@ -116,7 +116,7 @@ We can also use the `cut` operation along with some multi-parameter RGB operatio
 ;;; to the maximum value.
 (define maximize-green
   (lambda (img)
-    (pixel-map (cut (rgb-add (rgb 0 255 0) <>)) img)))
+    (pixel-map (l-s rgb-add (rgb 0 255 0)) img)))
 ```
 
 And here's the effect on our kitten.
@@ -557,46 +557,41 @@ Submit `image-transformations.rkt` and your six `jpg` files on Gradescope.
 Grading rubric
 --------------
 
-### Redo or above
+### Basic expectations
 
-Submissions that lack any of these characteristics will get an I.
+You should make sure to do all of the things (or these types of things)
+when submitting any assignment.
 
 ```
-[ ] Passes all of the **R** autograder tests.
+[ ] Passes all of the basic autograder tests. (Forthcoming.)
 [ ] Includes the specified file, `image-transformations.rkt`.
 [ ] Includes an appropriate header on the file that indicates the
     course, author, etc.
 [ ] Acknowledges appropriately.
-[ ] Code runs in DrRacket.
+[ ] Code runs in Scamper.
 [ ] The question marks in the documentation have been filled in.
-```
-
-### Meets expectations or above
-
-Submissions that lack any of these characteristics but have all of the
-prior characteristics will get an R.
-
-```
-[ ] Passes all of the **M** autograder tests.
-[ ] Code is well-formatted with appropriate names and indentation.
 [ ] Code has been reformatted with Ctrl-I before submitting.
 [ ] Code generally follows style guidelines, including limiting the
     length of lines to about 80 characters.
+[ ] Code is well-formatted with appropriate names and indentation.
+```
+
+### Core expectations
+
+```
+[ ] Passes all of the core autograder tests. (Forthcoming.)
 [ ] Documentation for all core procedures is correct / has the correct form.
-[ ] Includes all the images.
 ```
 
-### Exemplary / Exceeds expectations
+### Going beyond
 
-Submissions that lack any of these characteristics but have all of the
-prior characteristics will get an M.
+There are otherissues you might conider.
 
 ```
-[ ] Passes all of the **E** autograder tests.
 [ ] Style is impeccable (or nearly so).
 [ ] All helper procedures are documented.
 [ ] Avoids repeated work.
-[ ] Uses `cut` and composition when appropriate.
+[ ] Uses cut, sectioning, and/or composition when appropriate.
 ```
 
 Q&A
@@ -610,15 +605,18 @@ For certain parts of the mini-project such as 1c-flattening, are we allowed to c
 
 > But please document them.
 
-Can you explain when it is appropriate to use `cut` and composition?
+Can you explain when it is appropriate to use cut/section vs. composition?
 
-> You should use `cut` primarily when you're defining a one-parameter procedure by filling in one or more parameters of another procedure.
+> You should use cut primarily when you're defining a one-parameter procedure by filling in one or more parameters of another procedure.
+
+> In the special case of filling in one parameter to a two-parameter procedure,
+  you should use `l-s` or `r-s`.
 
 > You should use composition primarily when you're defining a one-parameter procedure that only applies a sequence of one parameter procedures.
 
-> You also use cut and composition when you have a procedure---like `pixel-map` or `map`---that applies a procedure (often of the prior form) to a large number of values.
+> You also use cut/section and composition when you have a procedure---like `pixel-map` or `map`---that applies a procedure (often of the prior form) to a large number of values.
 
-> In each of these cases, `cut` and composition make your code more concise. You should not use `cut` or composition when it makes your code longer.
+> In each of these cases, cut/section and composition make your code more concise. You should not use cut/section or composition when it makes your code longer.
 
 > One place your instructors used composition in solving this assignment was when they needed to convert an RGB color to an HSV color, manipulate the HSV values, and then convert back to an RGB color.
 
@@ -630,7 +628,7 @@ Why are we finding the remainder in `cyclic-add-90`?
 
 I've tried using 36 and 37 as the even distribution values for the 3-bit components of the 8-bit color. Neither seems to work (as in they don't meet the tests).
 
-> You should probably use 255/7, which lets you precisely distribute the components. It may require a bit more care in rounding.
+> You should probably use '(/ 255 7), which lets you precisely distribute the components. It may require a bit more care in rounding.
 
 Can you explain a bit more about gamma correction?
 
@@ -648,7 +646,7 @@ Can you explain a bit more about gamma correction?
 
 ### Part two
 
-I can write `hsv-rotate-hue`, which rotates the hue of a single HSV color. However, for some reason, I am unable to extend that to an image using `pixel-map. Any ideas?
+I can write `hsv-rotate-hue`, which rotates the hue of a single HSV color. However, for some reason, I am unable to extend that to an image using `pixel-map`. Any ideas?
 
 > Don't forget that `pixel-map` expects a procedure that takes an RGB color as an input and returns an RGB color. If your procedure expects an HSV color, you'll need to do some conversions.
 
