@@ -3,6 +3,8 @@ title: "Sample LA: Use higher-order procedures"
 ---
 # {{ page.title }}
 
+**This is also "lambda-free anonymous procedures".**
+
 _Use sectioning, cut, and/or composition to simplify computation._
 
 ## An image problem
@@ -21,7 +23,7 @@ Consider the following procedures.
     (r-s rgb-subtract (rgb n n n))))
 
 (define something
-  (o (r-s image-map (image-load "kitten.jpg"))
+  (o (r-s pixel-map (image-load "kitten.jpg"))
      darken-by))
 ```
 
