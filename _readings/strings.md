@@ -127,9 +127,8 @@ The `(string->list str)`{:.signature} procedure converts a string into a list of
 (#\H #\e #\l #\l #\o)
 > (list->string (list #\a #\b #\c))
 "abc"
-> (list->string (list 'a 'b))
-Error! list->string: expects argument of type <list of character>; given (a b)
-Error! Interactions:1:0: (list->string (list (quote a) (quote b)))
+> (list->string (list "a" "b"))
+⚠ list->string: list contains non-character element: string```
 ```
 
 The `(string-length str)`{:.signature} procedure takes any string as argument and returns the number of characters in that string. For instance, the value of `(string-length "magenta")` is 7 and the value of `(string-length "a\\b")` is 3.
@@ -303,9 +302,9 @@ Why are collating sequences useful?
 
 > We use collating sequences when we have to put things in order, such as organizing books by title or author.  Computers are much better at comparing numbers, so a comparison of collating sequence numbers is usually at the core of any character or string comparison.
 
-Why does `(char-lower-case? #\ñ)` return true (#t)?
+Why does `(char-lower-case? #\ñ)` return true (`#t`)?
 
-> Because it's a lowercase n with a tilde, as opposed to #\Ñ.
+> Because it's a lowercase n with a tilde, as opposed to `#\Ñ`.
 
 What do you call ǝ?
 
@@ -313,19 +312,4 @@ What do you call ǝ?
 
 Why isn't there a `#\schwa`?
 
-> Because the designers of Racket didn't think it important enough to provide it.
-
-Why does (expt 4 1/2) lead to an exact result?
-
-> It leads to an exact result because expt gives exact results when (a) the first parameter is exact, (b) the second parameter is 1/2, and (c) the first parameter has an exact square root.
-
-Why doesn't `(expt 8 1/3)` give an exact result?
-
-> That's puzzling, isn't it?  I'm pretty sure that `expt` uses a different algorithm when the parameter is 1/2 than when it's any other exponent.  For 1/2, it does the right thing for perfect squares.
-
-Why does `(expt 1.0+i 4)` return a different result from (expt 1+i 4)?
-
-> It appears we're seeing an effect of approximation.  `-4.0+4.898587196589413e-16i` is `-4.0 + 0.0000000000000004898587196589413i`.  That last thing is fairly close to zero.
-
-> That suggests to me that DrRacket is doing something other than just multiplying to compute exponents, at least when we have inexact complex bases.
-
+> Because the designers of Scamper didn't think it important enough to provide it.
