@@ -55,7 +55,7 @@ Artistic/Cultural
 Multicultural
 
 * Friday, 18 September 2026, 4:10--5:00 p.m., HSSC N1170.
-  _Middle of Everywhere (Phillipines)_
+  _Middle of Everywhere (Philippines)_
 
 Peer
 
