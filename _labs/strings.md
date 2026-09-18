@@ -59,7 +59,6 @@ Download the appropriate code.
 **After you've downloaded the code, follow the instructions in the file.**
 
 When you are done, upload your `strings.scm` file to Gradescope.
-{% endif %}
 
 ## Acknowledgements
 
