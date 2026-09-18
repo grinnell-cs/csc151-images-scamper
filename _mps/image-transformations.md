@@ -13,7 +13,7 @@ collaboration: |
 link: true
 preimg: true
 ---
-You will create only one file for this mini-project, [`image-transformations.rkt`](../code/mps/image-transformations.rkt). You should begin your project with [this starter code](../code/mps/image-transformations.rkt).
+You will create only one file for this mini-project, [`image-transformations.scm`](../code/mps/image-transformations.scm). You should begin your project with [this starter code](../code/mps/image-transformations.scm).
 
 You will submit both that file and some images you create in part three.
 
@@ -552,7 +552,7 @@ you created each image.
 What to submit
 --------------
 
-Submit `image-transformations.rkt` and your six `jpg` files on Gradescope.
+Submit `image-transformations.scm` and your six `jpg` files on Gradescope.
 
 Grading rubric
 --------------
@@ -564,7 +564,7 @@ when submitting any assignment.
 
 ```
 [ ] Passes all of the basic autograder tests. (Forthcoming.)
-[ ] Includes the specified file, `image-transformations.rkt`.
+[ ] Includes the specified file, `image-transformations.scm`.
 [ ] Includes an appropriate header on the file that indicates the
     course, author, etc.
 [ ] Acknowledges appropriately.
