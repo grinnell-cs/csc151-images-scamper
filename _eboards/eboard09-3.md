@@ -1,5 +1,5 @@
 ---
-title: "EBoard 09: Strings (Section 1)"
+title: "EBoard 09: Strings (Section 3)"
 number: 9
 section: eboards
 held: 2026-09-18
@@ -14,21 +14,23 @@ _Please follow the traditional start-of-class approach._
 
 _Approximate overview_
 
-* Quiz
 * Administrative stuff
 * Lab
+* Quiz
 
 Administrative stuff
 --------------------
 
 ### Introductory Notes
 
-* I sent out email on Wednesday and Thursday evenings. If you did not 
-  receive that email, please let me know.
+* I sent out email messages on Wednesday and Thursday evenings. If you did 
+  not receive those messages, please let me know.
 * Don't forget to turn in reading responses! I've responded to all of the
   ones that I received on strings, but seem to be missing about 15.
 * Currently, Monday's readings don't show the output of the Scheme functions.
   (Don't ask why.) That should be fixed by the end of the day.
+* We will not be doing reading Q&A today. Please look at the questions with 
+  your partner.
 
 ### Upcoming activities
 
@@ -41,14 +43,12 @@ Scholarly
 * Thursday, 24 September 2026, 11:00 a.m.--noon, Herrick Chapel.
   _Scholars' Convocation: 
   The Story of Our Founding: America at 250 with Annette Gordon-Reed_
-  **New**
 
 Artistic/Cultural
 
 * Any day. Visit the GCMOA for at least 30 minutes.
 * Friday, 25 September 2026, 7:30--9:00 p.m., Sebring Lewis.
   _Jazz Ensemble: Terry Riley's "In C"_
-  **New**
 
 Multicultural
 
@@ -89,7 +89,7 @@ Misc
   _Mentor Session_
 * Thursday, 24 September 2026, 8:00--9:00 p.m., Science 3820.
   _Mentor Session_
-* Friday, 25 September 2026, 5:00 p.m.--???, Merrill Park East.
+* Friday, 25 September 2026, 5:00 p.m.--???, Merrill Park West
   _CS Picnic_ **New**
 
 ### Other good things
@@ -98,9 +98,9 @@ _These do not earn tokens, but are worth your consideration._
 
 * Saturday, 19 September 2026, 8:00 a.m--4:00 p.m., Mac and Ward Fields.
   _Grinnelleanore Roosevelts Ultimate Tournament_
-* Saturday, 19 September 2026, 9:00 a.m.--Noon, Tennis Courts.
+* Saturday, 19 September 2026, 9:00 a.m.--Noon, Tennis Courts or Field House.
   _Women's Tennis vs. Ripon_
-* Saturday, 19 September 2026, 3:00--6:00 p.m., Tennis Courts.
+* Saturday, 19 September 2026, 3:00--6:00 p.m., Tennis Courts or Field House.
   _Women's Tennis vs. Luther_ 
 
 ## Upcoming work
@@ -116,7 +116,7 @@ _These do not earn tokens, but are worth your consideration._
 * On Friday, 2026-09-25:
     * New Quiz/LA on conditionals.
     * MAKEUP Quiz/LA on compose, cut, and section.
-    * MAKEUP Quiz/LA on tracing
+    * MAKEUP Quiz/LA on tracing.
     * MAKEUP Quiz/LA on decomposition.
     * MAKEUP Quiz/LA on procedures.
 * Due Tuesday, 2026-09-29
@@ -136,7 +136,7 @@ we learn all of them?
 > Don't forget that we have flashcards (and that you have notebooks and
   cheat sheets).
 
-I couldn't make it to class Friday. Can I take the quizzes on another day?
+I couldn't make it to class today. Can I take the quizzes on another day?
 
 > You can take the makeups next week. One of the consequences of mastery
   grading is that I will generally push you to the next week rather than
@@ -145,10 +145,10 @@ I couldn't make it to class Friday. Can I take the quizzes on another day?
 
 ### Friday PSA
 
-* You are awesome, so please take care of yourselves.
-* Do what is right for you, not what you think others are doing (or what
-  others expect you to do).
-* Consent is essential (but insufficient).
+* You are awesome. Please keep yourself that way by taking care of yourselves
+  this weekend.
+* Be moderate. Don't give in to perceived norms or peer pressure.
+* Consent is essential (and insufficient) (and impossible while impaired)
 
 Questions on the readings
 -------------------------
@@ -170,34 +170,48 @@ Why does `char-lower-case?` turn characters into diffferent characters?
 
 > `char-lower-case?` checks whether or not a character is lowercase. It returns either true (`#t`) or false (`#f`). That will make more sense once you read Monday's readings.
 
-You mention there is a way to implement alphabetic to the letter characters, but how? Is it the `#/a #/n #/z` example that became `#t`?
+You mention there is a way to implement alphabetic to the letter
+characters, but how? Is it the `#/a #/n #/z` example that became `#t`?
 
 > Yes, it's that example.
 
-Was #f being placed in the "more character predicates" section also mean it was false?
+Was `#f` being placed in the "more character predicates" section also
+mean it was false?
 
 > Yes.
 
 What do the special chars represent?
 
-> It depends on the character. The ones less than 32 often represent special information we'd use in transferring data from computer to computer or keys on old-fashioned keyboards (like "bell").
+> It depends on the character. The ones less than 32 often represent
+special information we'd use in transferring data from computer to
+computer or keys on old-fashioned keyboards (like "bell").
 
-> The ones over 128 are "unamerican" characters.
+> The ones over 128 are "unamerican" characters (not part of the standard
+  US alphabet).
 
 Why would we need to use this code?
 
 > To build and understand functions that work with text.
 
-I would like to request, if possible, a demonstration or more clear example on how and why you would use these functions like `char<`
+I would like to request, if possible, a demonstration or more clear
+example on how and why you would use these functions like `char<`
 
-> Next week
+> Next week.
 
 Lab
 ---
 
-Questions ...
+Use `(list->string (list ...))` to make a string from a list. For example,
+`(list->string (list #\S #\a #\m #\R))` makes my name.
 
-Use `(list->string (list ...))` to build a string from a list of characters.
+_Sorry about the false alarm. I have no idea why my computer/watch went
+off like that._
 
-For example `(list->string (list #\S #\a #\m #\R))` makes my name.
+Note: `(string #\a #\" #\b)` gives `"a\"b"`. The backslash in the middle of
+the string indicates "do not treat the double-quote immediately following
+me as an end-of-string mark", so the `\"` represents a single character.
 
+Quiz
+----
+
+Don't forget to print both first and last name on the back of the quiz.
