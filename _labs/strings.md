@@ -50,34 +50,15 @@ String analysis: `string-length`
 
 String comparison: `string<?`, `string<=?`, `string=?`, `string>=?`, `string>?`, `string-ci<?`, `string-ci<=?`, `string-ci=?`, `string-ci>=?`, `string-ci>?`
 
-### Lists
-
-Constant notation: `'(val val val)`
-
-List operations: `take`, `drop`, `list-ref`, `length`
-
 ## The lab
-
-{% if site.online %}
-Your team should decide who will take the A-side and B-sides of the lab.
-Each member should download the appropriate code:
-
-+ [strings-a.rkt]({{ "/code/labs/strings-a.rkt" | relative_url }})
-+ [strings-b.rkt]({{ "/code/labs/strings-b.rkt" | relative_url }})
-
-**After you've downloaded the code, follow the instructions in your respective files!**
-
-When you are done, combine the files, rename the result to `strings.rkt`, and upload the completed lab to Gradescope.
-{% else %}
-The person closer to the board is the B-side.  The person further from the board is the A-side.
 
 Download the appropriate code.
 
-+ [strings.rkt]({{ "/code/labs/strings.rkt" | relative_url }})
++ [strings.scm]({{ "/code/labs/strings.scm" | relative_url }})
 
 **After you've downloaded the code, follow the instructions in the file.**
 
-When you are done, upload your `strings.rkt` file to Gradescope.
+When you are done, upload your `strings.scm` file to Gradescope.
 {% endif %}
 
 ## Acknowledgements
@@ -86,4 +67,6 @@ This laboratory is based on [a similar laboratory from a prior version of CSC 15
 At some point, it included problems on lists and files.  It no longer does.
 
 In Spring 2024, we split the numeric problems and the string problems into separate labs.
+
+In Fall 2026, we updated the problems fro Scamper.
 
