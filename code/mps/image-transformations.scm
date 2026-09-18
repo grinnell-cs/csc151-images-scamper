@@ -1,9 +1,5 @@
-#lang racket
-
-(require csc151)
-
-;;; image-transformations.rkt
-;;;   A variety of procedures that transform images, created for MP3 in
+;;; image-transformations.scm
+;;;   A variety of procedures that transform images, created for MP2 in
 ;;;   CSC-151-XX SEMESTER.
 ;;;
 ;;; Author: Your Name Here
@@ -11,10 +7,11 @@
 ;;;
 ;;; Acknowledgements:
 ;;;
-;;; * Starter code provided by SamR and Leah.  That code includes
-;;;   this header, the "provided code" section below, and a bit of
-;;;   other material.
+;;; * Starter code provided by SamR.  That code includes this header, 
+;;;   the "provided code" section below, and a bit of other material.
 ;;; * ...
+
+(import image)
 
 ; +---------------+--------------------------------------------------
 ; | Provided code |
@@ -61,6 +58,30 @@
   (lambda (val)
     (remainder (+ val 90) 256)))
 
+;;; (l-s func left) -> function?
+;;;   func : function?
+;;;   left : any
+;;; Create a new function that takes one input, `right`, and
+;;; computes `(func left right)`
+(define l-s
+  (lambda (func left)
+    (lambda (right)
+      (func left right))))
+
+;;; (r-s func left) -> function?
+;;;   func : function?
+;;;   left : any
+;;; Create a new function that takes one input, `left`, and
+;;; computes `(func left right)`
+(define r-s
+  (lambda (func right)
+    (lambda (left)
+      (func left right))))
+
+;;; ??? : value?
+;;; A default value
+(define ??? "Not yet defined")
+
 ; +-------------------------------------+----------------------------
 ; | Part one: RGB-based transformations |
 ; +-------------------------------------+
@@ -75,7 +96,7 @@
 ;;;   img : image?
 ;;; ???
 (define extreme
-  (cut (pixel-map rgb-extreme <>)))
+  (l-s pixel-map rgb-extreme))
 
 ;;; (rgb-enhance-dominance color) -> rgb?
 ;;;   color : rgb?
@@ -87,7 +108,7 @@
 ;;;   img : image?
 ;;; ???
 (define enhance-dominance
-  (cut (pixel-map rgb-enhance-dominance <>)))
+  (l-s pixel-map rgb-enhance-dominance))
 
 ;;; (image-flatten-32 img) -> image?
 ;;;   img : image?
@@ -95,10 +116,10 @@
 (define image-flatten
   ???)
 
-;;; (8bit img) -> image?
+;;; (eight-bit img) -> image?
 ;;;   img : image?
 ;;; ???
-(define 8bit
+(define eight-bit
   ???)
 
 ;;; (rgb-cyclic-add c1 c2) -> rgb?
@@ -210,29 +231,25 @@
 (define my-hsv-transformation
   ???)
 
-#|
-I created `kitten-rgb-transformed-01.jpg` using the following instructions:
-
->
-
-I created `kitten-rgb-transformed-02.jpg` using the following instructions:
-
->
-I created `kitten-rgb-transformed-03.jpg` using the following instructions:
-
->
-
-I created `kitten-hsv-transformed-01.jpg` using the following instructions:
-
->
-
-I created `kitten-hsv-transformed-02.jpg` using the following instructions:
-
->
-
-I created `kitten-hsv-transformed-03.jpg` using the following instructions:
-
->
-
-|#
-
+;; I created `kitten-rgb-transformed-01.jpg` using the following instructions:
+;;
+;; >
+;;
+;; I created `kitten-rgb-transformed-02.jpg` using the following instructions:
+;;
+;; >
+;; I created `kitten-rgb-transformed-03.jpg` using the following instructions:
+;;
+;; >
+;;
+;; I created `kitten-hsv-transformed-01.jpg` using the following instructions:
+;;
+;; >
+;;
+;; I created `kitten-hsv-transformed-02.jpg` using the following instructions:
+;;
+;; >
+;;
+;; I created `kitten-hsv-transformed-03.jpg` using the following instructions:
+;;
+;; >
