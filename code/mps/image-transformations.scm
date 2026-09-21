@@ -175,17 +175,17 @@
 ; | Part two: HSV-based transformations |
 ; +-------------------------------------+
 
-;;; (hsv->string c) -> string?
+;;; (hsv-to-string c) -> string?
 ;;;   c : hsv?
 ;;; Convert `c` to a string of the form `"hue-saturation-value"`.
-(define hsv->string
+(define hsv-to-string
   (lambda (c)
     ???))
 
-;;; (string->hsv str) -> hsv?
+;;; (string-to-hsv str) -> hsv?
 ;;;   str : a string of the form "hue-saturation-value"
 ;;; Convert a string of the given form to an HSV color.
-(define string->hsv
+(define string-to-hsv
   (lambda (str)
     ???))
 
