@@ -474,14 +474,14 @@ In the examples above, we used the `rgb->string` procedure to quickly give ourse
 "255/128/128"
 ```
 
-Write a procedure, `hsv->string`, that takes an HSV value as input and produces a string of the form `"hue-saturation-value"`.
+Write a procedure, `hsv-to-string`, that takes an HSV value as input and produces a string of the form `"hue-saturation-value"`. You may not use the supplied `hsv->string` procedure.
 
 ```
-> (hsv->string (hsv 100 50 75))
+> (hsv-to-string (hsv 100 50 75))
 "100-50-75"
-> (hsv->string (hsv 240 100 1))
+> (hsv-to-string (hsv 240 100 1))
 "240-100-1"
-> (hsv->string (rgb->hsv (rgb 128 16 255)))
+> (hsv-to-string (rgb->hsv (rgb 128 16 255)))
 "268-94-100"
 ```
 
@@ -489,14 +489,14 @@ Write a procedure, `hsv->string`, that takes an HSV value as input and produces 
 
 We might also find it useful to do the reverse calculation.
 
-Write a procedure `string->hsv`, that takes a string of the form produced by `hsv->string` and returns the corresponding HSV color.
+Write a procedure `string-to-hsv`, that takes a string of the form produced by `hsv->string` and returns the corresponding HSV color.
 
 Note: You can use `string-split` to break the string apart and `list-ref` to get each of the three parts.
 
 ```
-> (string->hsv "0-100-100")
+> (string-to-hsv "0-100-100")
 ![a swatch of red](../images/colors/rgb-255-000-000-255.png)
-> (string->hsv "310-50-100")
+> (string-to-hsv "310-50-100")
 ![a swatch of approximately violet](../images/colors/rgb-255-128-234-255.png)
 ```
 
