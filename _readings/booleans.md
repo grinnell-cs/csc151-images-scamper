@@ -138,7 +138,7 @@ Here are some of the more common ones.
 * `char-ci>=?` tests whether its arguments, which must all be characters,
   are in descending alphabetical order, ignoring case.
 
-<pre class="scamper source">
+<pre class="scamper-transcript">
 (char<? #\a #\a)
 (char<=? #\a #\a)
 (char<? #\a #\b)
@@ -173,14 +173,14 @@ one argument and returns `#t` if the argument is `#f` and `#f` if the
 argument is anything else. For example, one can test whether `picture`
 is not an image with:
 
-<pre class="scamper source">
+<pre class="scamper-transcript">
 (import image)
-(define picture (square 100 "solid" "black"))
-(not (image? picture))
+(define my-color "alphabetical")
+(not (color? my-color))
 </pre>
 
-If Scheme says that the value of this expression is `#t`, then `picture`
-is not an image.
+If Scheme says that the value of the last expression is `#t`, then `color`
+is not a color.
 
 ## Combining Boolean values with `and` and `or`
 
@@ -190,7 +190,7 @@ false if any value is false, the *or* of a collection of Boolean values
 is true if any of the values is true and false if all the values are
 false. For example,
 
-<pre class="scamper source">
+<pre class="scamper-transcript">
 (and #t #t #t)
 (and (< 1 2) (< 2 3))
 (and (odd? 1) (odd? 3) (odd? 5) (odd? 6))
@@ -210,14 +210,21 @@ procedures, all the parameters are evaluated and then the procedure is
 applied. For keywords, not all parameters need be evaluated, and custom
 orders of evaluation are possible.
 
+<!--
 If `and` and `or` were procedures, we could not guarantee their control
 behavior. We'd also get some ugly errors. For example, consider the
 extended version of the `even?` predicate below:
 
-<pre class="scamper source">
+
+<pre class="scamper-transcript">
 (define new-even?
   (lambda (val)
     (and (integer? val) (even? val))))
+
+(even? 4.3)
+(new-even? 4.3)
+(even? 3.4)
+(new-even 3.4)
 </pre>
 
 Suppose `new-even?` is called with 2.3 as a parameter. In the keyword
@@ -225,6 +232,7 @@ implementation of `and`, the first test, `(integer? ...)`{:.signature},
 fails, and `new-even?` returns false. If `and` were a procedure, we
 would still evaluate the `(even? ...)`{:.signature}, and that test would
 generate an error, since `even?` can only be called on integers.
+-->
 
 ## Writing our own predicates and comparators
 
@@ -232,16 +240,21 @@ We can, of course, write our own predicates.  For example, here is a
 predicate that determines whether its input, a real number, is between
 0 and 100, inclusive.
 
-<pre class="scamper source">
+<pre class="scamper-transcript">
 (define valid-grade?
   (lambda (val)
-    (<= 0 val 100)))
+    (and (<= 0 val) (<= val 100))))
+
+(valid-grade? 45)
+(valid-grade? -2)
+(valid-grade? 0)
+(valid-grade? 100.1)
 </pre>
 
 We can also write our own comparators.  For example, here's a somewhat
 pointless comparator that orders words based on their second letter.
 
-<pre class="scamper source">
+<pre class="scamper-transcript">
 ;;; (second-letter<? str1 str2) -> boolean?
 ;;;   str1 : string?
 ;;;   str2 : string?
@@ -251,6 +264,9 @@ pointless comparator that orders words based on their second letter.
   (lambda (str1 str2)
     (char-ci<? (string-ref str1 1) 
                (string-ref str2 1))))
+
+(second-letter<? "alpha" "beta")
+(second-letter<? "aaaa" "bbbb")
 </pre>
 
 ## Mental models: Tracing `and` and `or`

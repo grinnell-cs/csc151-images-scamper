@@ -256,11 +256,11 @@ The entire `cond` then evaluates to the consequent associated with that guard.
 For example, let's call `type-of` on a string and see what we get:
 
 ~~~racket
-    (type-of "my-symbol")
+    (type-of "something")
 --> (cond 
-      [(number? "my-symbol")
+      [(number? "something")
        "number"]
-      [(string? "my-symbol")
+      [(string? "something")
        "string"]
       [else
        "some-other-type"]
@@ -268,13 +268,13 @@ For example, let's call `type-of` on a string and see what we get:
 --> (cond 
       [#f
        "number"]
-      [(string? "my-symbol")
+      [(string? "something")
        "string"]
       [else
        "some-other-type"]
     ; The first guard is false; drop the first clause
 --> (cond 
-      [(string? "my-symbol")
+      [(string? "something")
        "string"]
       [else
        "some-other-type"]
@@ -298,23 +298,23 @@ can use square brackets rather than parenthesis to indicate structure.
 That is, they do not surround an expression to evaluate (a procedure
 followed by its parameters). Instead, they serve only to group things. In
 this case, the parentheses group the guard and consequents for each
-`cond` clause. The square brackets are just a notational convenience;
-parenthesis will work just as well, and you'll see a lot of Scheme code
-that uses parentheses rather than square brackets. Scheme, like most
-modern Scheme implementations, allows both because the square brackets
-add a bit of clarity.
+`cond` clause. In most versions of Scheme, the square brackets are
+just a notational convenience; parenthesis will work just as well,
+and you'll see a lot of Scheme code that uses parentheses rather
+than square brackets. To ensure readability, Scampera enforces the
+use of square brackeerts.
 
 When writing `cond` clauses, you should take the time to verify that
 you've used the right number of parentheses and square brackets. Each
-clause has its own open and close square brackets (or open and close
-parenthesis). Typically, the guard has parentheses, unless it's the
-`else` clause. Make sure to include both sets.
+clause has its own open and close square brackets. Typically, the
+guard has parentheses, unless it's the `else` clause. Make sure to
+include both sets.
 
-Remember that Scamper's "reindent" feature (<kbd>Ctrl</kbd>-<kbd>I</kbd>)
-helps you see if you've matched your parenthesis correctly.  If the
-indentation looks correct, the parentheses are likely correct.  If
-the indentation does not look correct, you should have a clue about
-missing parentheses.
+Remember that Scamper's "reindent" feature (a few repetitions of
+<kbd>Ctrl</kbd>-<kbd>I</kbd>) helps you see if you've matched your
+parenthesis correctly.  If the indentation looks correct, the
+parentheses are likely correct.  If the indentation does not look
+correct, you should have a clue about missing parentheses.
 
 ## Expressing conditional computation with `and` and `or`
 
@@ -388,9 +388,9 @@ that produces double the value of `num` if it is odd, and half the
 value otherwise.
 
 b. Write a `cond` expression that takes a real number, `num`, as
-input and produces the symbol `positive` if `num` is greater than
-zero, the symbol `negative` if `num` is less than zero, and the
-symbol `neither` otherwise.
+input and produces the string `"positive"` if `num` is greater than
+zero, the string `"negative"` if `num` is less than zero, and the
+string `"neither"` otherwise.
 
 ### Check 2: Choosing a kind of conditional
 
