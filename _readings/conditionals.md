@@ -256,11 +256,11 @@ The entire `cond` then evaluates to the consequent associated with that guard.
 For example, let's call `type-of` on a string and see what we get:
 
 ~~~racket
-    (type-of "my-symbol")
+    (type-of "something")
 --> (cond 
-      [(number? "my-symbol")
+      [(number? "something")
        "number"]
-      [(string? "my-symbol")
+      [(string? "something")
        "string"]
       [else
        "some-other-type"]
@@ -268,13 +268,13 @@ For example, let's call `type-of` on a string and see what we get:
 --> (cond 
       [#f
        "number"]
-      [(string? "my-symbol")
+      [(string? "something")
        "string"]
       [else
        "some-other-type"]
     ; The first guard is false; drop the first clause
 --> (cond 
-      [(string? "my-symbol")
+      [(string? "something")
        "string"]
       [else
        "some-other-type"]
@@ -388,9 +388,9 @@ that produces double the value of `num` if it is odd, and half the
 value otherwise.
 
 b. Write a `cond` expression that takes a real number, `num`, as
-input and produces the symbol `positive` if `num` is greater than
-zero, the symbol `negative` if `num` is less than zero, and the
-symbol `neither` otherwise.
+input and produces the string `"positive"` if `num` is greater than
+zero, the string `"negative"` if `num` is less than zero, and the
+string `"neither"` otherwise.
 
 ### Check 2: Choosing a kind of conditional
 
