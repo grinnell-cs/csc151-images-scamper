@@ -1,0 +1,75 @@
+CSC151 2026Fa Grade report for Samuel Rebelsky (rebelsky)
+=========================================================
+
+Grades as of 2026-09-23
+
+This is an experimental grade report.  Grades are not yet intended
+to be completely accurate; nonetheless, the report should give you
+a general sense as to where you stand in the course.  Feel free to
+send me comments, corrections, and questions.
+
+Note that lab writeups 6 and 9 are not completed and that tokens are
+not yet up to date. Stay tuned for an update.
+
+Notation:
+  [ ]: Not yet completed to an acceptable level
+  [.]: Not yet completed to an acceptable level
+  [I]: Not yet completed to an acceptable level
+  [X]: Completed satisfactorily
+  [x]: Completed satisfactorily
+  [S]: Completed satisfactorily
+  [?]: Under review
+
+Readings (5 of 7)
+-----------------
+
+[X] Readings for class 02: Getting started
+[ ] Readings for class 03: Introduction to functions
+[X] Readings for class 04: RGB colors
+[X] Readings for class 05: Computation via expressions
+[X] Readings for class 06: Transforming images
+[ ] Readings for class 09: Characters and strings
+[X] Readings for class 10: Conditionals
+
+Labs (3 of 6)
+-------------
+
+[ ] Lab writeup from class 03: Introduction to Functions
+[X] Lab writeup from class 04: RGB colors
+[X] Lab writeup from class 05: Mental models
+[ ] Lab writeup from class 06: Transforming RGB colors
+[X] Lab writeup from class 07: Transforming images
+[ ] Lab writeup from class 09: Strings
+
+Mini-Projects (0 of 1)
+----------------------
+
+[.] Mini-Project 1 (Original): Image composition and decomposition
+
+Learning Assessments (2 of 4)
+-----------------------------
+
+[S] LA: Procedural abstraction (Week 2)
+[S] LA: Decomposition (Week 2)
+[ ] LA: Tracing (Week 2)
+[ ] LA: Anonymous procedures (Week 3)
+
+Tokens (3 remaining) (details on Gradescope)
+--------------------------------------------
+
+Initial tokens: 3
+Tokens earned:  0
+Tokens spent:   0
+
+Final Computations
+------------------
+
+Readings:    (4 / 7)
+Labs:        (3 / 6)
+
+MPs:         (0 / 1)
+LAs:         (2 / 4)
+
+Missed:      6 (3 readings, 3 labs)
+Tokens:      3
+

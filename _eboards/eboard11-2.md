@@ -1,5 +1,5 @@
 ---
-title: "EBoard 11: Conditionals, Part 2 (Section 1)"
+title: "EBoard 11: Conditionals, Part 2 (Section 2)"
 number: 11
 section: eboards
 held: 2026-09-23
@@ -22,7 +22,7 @@ Administrative stuff
 
 ### Introductory Notes
 
-* Warning!
+* Warning! Computers hate me! I hate them, too.
 * Grade reports were distributed last night.
     * Let's take a look at one.
 * As I mentioned in the course syllabus and email, I will be turning 
@@ -48,7 +48,7 @@ Administrative stuff
   Hopefully, those will be easy to fix.
 * You can submit redos on [Gradescope](https://www.gradescope.com/courses/1370413/assignments/8707061)
 * Some students turned in nearly-identical solutions.
-    * You should feel free to consult each other, but YOU MUST CITE.
+    * You should feel free to consult each other, but YOU MUST CITE/ACKNOWLEDGE.
     * I'll treat this first instance as a failure to understand that policy.
     * In the future, I'll need to report apparent collaboration that lacks
       citation.
@@ -152,7 +152,7 @@ _These do not earn tokens, but are worth your consideration._
     * [Today's Lab](../labs/conditionals)
         * [Submit lab on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8700850)
         * Please submit at the end of today's class.
-    * Readings (forthcoming)
+    * Readings (see schedule)
 * On Friday, 2026-09-25:
     * New Quiz/LA on conditionals.
     * MAKEUP Quiz/LA on compose, cut, and section.
@@ -182,6 +182,8 @@ Can I submit a lab writeup or reading response that is missing?
   48 hours after they are due. The "the first six don't count"
   rule is intended to accommodate missing ones.
 
+> If you are already missing six or more, we should talk.
+
 How many chances to I get to make up MP1?
 
 > First redo is free.
@@ -195,6 +197,10 @@ How do I sign up for the CS picnic?
 > Deadline was Monday. We provide the food. (There's probably enough if
   a few of you show up without having RSVP'd.)
 
+Is there a separate place to submit MP1 redo?
+
+> Yes.
+
 ### Questions on MP2
 
 I tried running the code in part 1c of the mini project following
@@ -204,6 +210,13 @@ do I fix this?
 
 > It's a problem with how the `rgb` function works in some versions of 
   Scamper. You may have to use `(min 255 (* 32 (round (/ 255 32))))`> 
+
+The starter code has `cut`. What should I do about that?
+
+> Option 1: Grab new starter code.
+
+> Option 2: Let me know where the problem is and I'll send you the
+  replacement code.
 
 _Post additional questions on Teams._
 
@@ -221,7 +234,7 @@ Can we still use cut operation and composition with conditionals?
   functions. However, you can use the cut operation (with `#` and `%`)
   with conditionals. I'd prefer that you didn't.
 
-Why does `(and)` with no parameters give `#t`, and `(or)` with no parameters
+Why does `(and)` with no arguments give `#t`, and `(or)` with no arguments
 give `#f`?
 
 > Answer 1 :`and` returns `#f` if any of its arguments are `#f`. In

@@ -1,5 +1,5 @@
 ---
-title: "EBoard 11: Conditionals, Part 2 (Section 1)"
+title: "EBoard 11: Conditionals, Part 2 (Section 3)"
 number: 11
 section: eboards
 held: 2026-09-23
@@ -22,7 +22,7 @@ Administrative stuff
 
 ### Introductory Notes
 
-* Warning!
+* Warning! Computers hate me! I hate them, too.
 * Grade reports were distributed last night.
     * Let's take a look at one.
 * As I mentioned in the course syllabus and email, I will be turning 
@@ -37,8 +37,8 @@ Administrative stuff
     * If you have fewer than two LAs completed, you should also be making
       sure to use mentor sessions and/or asking evening tutors for help.
 * Additional times available for meetings this week.
-    * Wednesday: 1:15--2:30 p.m.
     * Thursday: 8:00--9:30 a.m. and 4:30--5:00 p.m.
+* I have one unnamed procedures quiz. Please let me know.
 
 ### Notes on Mini-Project 1
 
@@ -48,7 +48,7 @@ Administrative stuff
   Hopefully, those will be easy to fix.
 * You can submit redos on [Gradescope](https://www.gradescope.com/courses/1370413/assignments/8707061)
 * Some students turned in nearly-identical solutions.
-    * You should feel free to consult each other, but YOU MUST CITE.
+    * You should feel free to consult each other, but YOU MUST CITE/ACKNOWLEDGE.
     * I'll treat this first instance as a failure to understand that policy.
     * In the future, I'll need to report apparent collaboration that lacks
       citation.
@@ -152,7 +152,7 @@ _These do not earn tokens, but are worth your consideration._
     * [Today's Lab](../labs/conditionals)
         * [Submit lab on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8700850)
         * Please submit at the end of today's class.
-    * Readings (forthcoming)
+    * Readings (see schedule)
 * On Friday, 2026-09-25:
     * New Quiz/LA on conditionals.
     * MAKEUP Quiz/LA on compose, cut, and section.
@@ -182,18 +182,91 @@ Can I submit a lab writeup or reading response that is missing?
   48 hours after they are due. The "the first six don't count"
   rule is intended to accommodate missing ones.
 
+> If you are already missing six or more, we should talk.
+
+Does it cost a token to submit a reading response up to 48 hours late?
+
+> Yes. Also a lab or mini-project.
+
 How many chances to I get to make up MP1?
 
-> First redo is free.
+> First redo is free. (For all mini-projects.)
 
 > Second redo costs a token.
 
-> I hope we won't need a third redo.
+> I hope we won't need a third redo. It will cost you a token.
+
+How many tokens do we start with?
+
+> Three.
+
+How much do I have to get done on a lab to get credit?
+
+> You must change the header to include your name and your partner's
+  name, as well as the date.
+
+> Of course, doing more will help you learn and better prepare you for
+  the LAs and MPs and other two-letter abbreviations.
+
+Which labs are not completed graded?
+
+> 5, 6, and 9.
+
+How much should I do if I'm making up a lab because I blew off class?
+
+> Spend about an hour.
+
+What if my partner doesn't add me until after a lab is due?
+
+> I don't think it shows up as late. If it does, let me know.
+
+Do we need to let you know if we submit something late?
+
+> No!
+
+How many times should I click submit for a reading reflection?
+
+> As many times as you'd like; I'll look at the time of the last submission.
+
+Can I do such a bad job on a reading reflection that I get no credit?
+
+> You can do the wrong reading reflection.
+
+> You can leave it blank.
+
+If I write badly in the token reflection will I still get the token?
+
+> Probably. 
 
 How do I sign up for the CS picnic?
 
 > Deadline was Monday. We provide the food. (There's probably enough if
   a few of you show up without having RSVP'd.)
+
+Is there a separate place to submit MP1 redo?
+
+> Yes.
+
+Do I get tokens for supporting myself (e.g., by singing at singers
+or catching a ball / blocking well at football)?
+
+> No.
+
+How long do I have to submit a reflection?
+
+> I would prefer that you submit a reflection with 72 hours.
+
+Do we have to submit reflections for mentor sessions?
+
+> Yes.
+
+Will we consider user input?
+
+> Only if we can convince Peter-Michael to implement user input in Scamper.
+
+Are we your favorite section for asking such good questions?
+
+> Almost certainly.
 
 ### Questions on MP2
 
@@ -204,6 +277,13 @@ do I fix this?
 
 > It's a problem with how the `rgb` function works in some versions of 
   Scamper. You may have to use `(min 255 (* 32 (round (/ 255 32))))`> 
+
+The starter code has `cut`. What should I do about that?
+
+> Option 1: Grab new starter code.
+
+> Option 2: Let me know where the problem is and I'll send you the
+  replacement code.
 
 _Post additional questions on Teams._
 
@@ -221,7 +301,7 @@ Can we still use cut operation and composition with conditionals?
   functions. However, you can use the cut operation (with `#` and `%`)
   with conditionals. I'd prefer that you didn't.
 
-Why does `(and)` with no parameters give `#t`, and `(or)` with no parameters
+Why does `(and)` with no arguments give `#t`, and `(or)` with no arguments
 give `#f`?
 
 > Answer 1 :`and` returns `#f` if any of its arguments are `#f`. In
