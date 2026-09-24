@@ -13,6 +13,8 @@ Write a procedure, `(status terms)`, that, given the number of terms a student h
 
 _Utilize boolean expressions and values in a program to produce conditional behavior._
 
+**Warning**: This problem stems from the days of Racket. Scamper does not currently support the variety of numeric types described in this problem. Still, it gives you the sense of something we might request. (You'll also learn about testing soon.)
+
 Write a procedure, `(numeric-type num)`, that takes a number as input and produces the most specific description of the number it can: "exact" or "inexact" followed by "integer", "real", or "complex".  Do not use "rational".
 
 You'll find a simple test suite immediately after the answer box.  Make sure to check your procedure in DrRacket before submitting it! 
