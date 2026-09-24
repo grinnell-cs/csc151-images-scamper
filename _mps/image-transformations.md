@@ -185,7 +185,30 @@ How do we convert each component to the appropriate multiple? Consider the case 
 256
 ```
 
-As the last example suggests, we may sometimes get a number outside of the range 0..255. Fortunately, the `rgb` function treats 256 (and any reasonable number greater than 256) the same as 255. (In some versions of Scamper, the `rgb` function won't treat numbers greater than 255 as 255. You may have to use `(min 255 (* 32 (round / 255 32)))`.)
+As the last example suggests, we may sometimes get a number outside of the range 0..255. Here's a variant of the `rgb` function treats 256 (and any reasonable number greater than 256) the same as 255. (In some versions of Scamper, the `rgb` function won't treat numbers greater than 255 as 255. That's why we provide a variant.)
+
+```
+;;; (component n) -> integer?
+;;;   n : number?
+;;; Restricts a number to an RGB component
+;;; (that is, an integer between 0 and 255)
+(define component
+  (lambda (n)
+    (round (max 0 (min 255 n)))))
+
+;;; (rgb2 r g b) -> rgb?
+;;;   r : number?
+;;;   g : number?
+;;;   b : number?
+;;; Creates an RGB color.  If any of the components
+;;; are outside the valid range, caps them below at
+;;; zero and above at 255.
+(define rgb2
+  (lambda (r g b)
+    (rgb (component r)
+         (component g)
+         (component b))))
+```
 
 Write a procedure, `(image-flatten-32 img)`, that flattens an image by converting each component to the nearest multiple of 32
 
