@@ -14,7 +14,8 @@
   box-sizing: border-box;
   margin: 1em 0;
   border: 1px solid rgb(0 0 0 / 15%);
-  border-radius: 4px;
+  border-left: 5px solid rgb(0 0 0 / 90%);
+  border-radius: 8px;
   /* Sized to its contents unless the author sets data-height, which adds an
      explicit height and overflow-y. */
   overflow-x: auto;
