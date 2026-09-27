@@ -1,5 +1,5 @@
 ---
-title: "EBoard 12: Pair programming (Section 1)"
+title: "EBoard 12: Pair programming (Section 3)"
 number: 12
 section: eboards
 held: 2026-09-25
@@ -14,11 +14,11 @@ is working correctly).
 
 _Approximate overview_
 
-* Quiz
 * Administrative stuff
 * Background on today's class
 * An Exercise
 * Debrief of readings
+* Quiz
 
 Administrative stuff
 --------------------
@@ -47,7 +47,7 @@ Scholarly
 
 * Tuesday, 29 September 2026, Noon--1:00 p.m., JRC 224C (I think).
   _CS Table: Open-source software_ **New**
-    * Sam will forward email with readings.
+    * Sam forwarded email with readings.
 * Wednesday, 30 September 2026, 8:00--9:30 p.m., HSSC A2231.
   _Reading as a Way of Life_ **New**
 * Thursday, 1 October 2026, 11:00 a.m.--Noon, JRC 101.
@@ -71,7 +71,7 @@ Artistic/Cultural
   _Writers@Grinnell presents a conversation with Poet Maggie Millner_ **New**
 * Thursday, 1 October 2026, 4:15--5:30 p.m., GCMOA.
   _Johnnie Chatman: The Artist as Researcher_ **New**
-* Thursday, 1 October 2026, 4:00--5:30 p.m., HSSC A2231. 
+* Thursday, 1 October 2026, 8:00--9:30 p.m., HSSC A2231. 
   _Writers@Grinnell presents a reading by Poet Maggie Millner_ **New**
 * Friday, 2 October 2026, 7:00 p.m., Wall Theatre.
   _Neverland Players_ **New**
@@ -85,7 +85,7 @@ Artistic/Cultural
 Multicultural
 
 * Friday, 25 September 2026, 4:10--5:00 p.m., HSSC N1170.
-  _Middle of Everywhere (Singapore)_
+  _Middle of Everywhere (IPOP mentors)_ 
 * Friday, 2 October 2026, 4:10--5:00 p.m., HSSC N1170
   _Middle of Everywhere (Somewhere)_
 
@@ -122,7 +122,8 @@ Misc
 
 * Friday, 25 September 2026, 5:00 p.m.--???, Merrill Park West.
   _CS Picnic_  
-    * I don't know about the rain plans.
+    * I don't know about the rain plans. It sounds like it will
+      still be outside.
 * Wednesday, 30 September 2026, 8:00--9:00 p.m., Science 3820.
   _Mentor Session_
 * Thursday, 1 October 2026, 8:00--9:00 p.m., Science 3820.
@@ -173,9 +174,9 @@ Questions
 
 When else can I take a quiz?
 
-> Section 2 takes quizzes from 10:30--11:30.
+> Section 1 takes quizzes from 7:30--8:30.
 
-> Section 3 takes quizzes from 3:30--4:30.
+> Section 2 takes quizzes from 10:30--11:30.
 
 Was the Web site down at 3 a.m.?
 
@@ -197,13 +198,20 @@ of Scheme, like DrRacket?
 > We appreciate the opportunity to add features to Scamper, such as the
   tracer. (More are coming in the future.)
 
+Can you overspend tokens?
+
+> Yes, but Sam is worse than Mastercard. Each two overspent tokens reduce
+  your grade by 1/3 of a letter. However, you can catch up by the end of
+  the semester.
+
 ### MP2 questions
 
 Why is Scamper complaining that `l-s` and `r-s` are re-defined?
 
 > They weren't in Scamper 4.4.0, so I added them to the starter code.
 
-> They are now in Scamper 4.5.0, so it complains. You can remove them.
+> They are now in Scamper 4.5.0, so it complains. You can remove them
+  from the starter code.
 
 There are some claims that `rgb` can take numbers outside the range
 0..255. Is that really the case?
@@ -251,6 +259,8 @@ An exercise
 
 _I do not record the initial steps of the exercise._
 
+_I also turn off the recording._
+
 TPS: 
 
 * 1 min: Think to yourself for a minute. What did you hear? What would
@@ -261,30 +271,24 @@ TPS:
 
 What do you want to talk about?
 
-* There are people who come in to the class very confident with their
-  abilities, which can make others much less confident.
-    * Remember that it's a new language for everyone.
-    * Modify the curriculum to make it hard for everyone
-      (Welcome to cut, compose, and section.)
-    * If you have prior experience, please be humble about it. We are
-      all learning.
-    * If you don't have prior experience, accept that it may take you
-      a bit longer to learn things.
-* It can be socially hard to find a new partner. (It doesn't feel
-  socially right to ask people to switch partners.)
-    * Note: Reading #3 suggests that partnering with your friends often
-      creates less success.
-    * It can be hard to tell someone that they are being disrespectful
-      and rude. (Tell your mentor or Sam; we'll chat with them.)
-        * Self-Gov suggests you have a responsibility to help them become
-          better.
-* There are things that make us happy: The professor and mentor are there
-  to support us and are aware that things happen.
-* Stealing the keyboard seems to have been very impactful. Why?
-    * Implies a lack of ability.
-    * People can be very aggressive these days.
-    * Be helpful; don't just snatch things away
-* Remember that your goal is to be helpful.
+* Many of the cards were negative. Is that representative?
+    * They aren't representative; most people have a positive
+      experience. Still, it's helpful to think about and talk
+      through some of the negative experiences.
+    * There also many positive experiences, especially when you
+      have a more experienced (or more successful) partner who
+      understands the value of helping.
+* Pair programming (or group work) is new to some of us 
+    * Talking exercises a different part of your brain than just
+      reading and writing (or coding), so you are often more
+      successful working in a pair.
+    * Working with people who are different than you helps you
+      learn differently.
+    * When you work with someone too long, you start to develop
+      blind spots. (One of the reasons Sam rotates partners.)
+* A positive: It's nice to meet new people and work with them. (See
+  above.)
+* 
 
 Reading Reflections
 -------------------
@@ -293,13 +297,14 @@ _What are the key points from the readings?_ (TPS)
 
 ### Pair Programming
 
-* The rubber plant / rubber duck / plast squirrel effect: Explain what
-  you're doing to others also helps you. Explaining to a real person
-  is even more helpful.
+* Talking about problems exercises different parts of your brain.
+  Talking about coding challenges with humans is better.
 
 ### Couch Potatoes and Hitchhikers
 
-
 ### Diverse Teams
 
-* Value of having groups with different skills.
+Quizzes
+-------
+
+

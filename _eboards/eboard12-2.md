@@ -1,5 +1,5 @@
 ---
-title: "EBoard 12: Pair programming (Section 1)"
+title: "EBoard 12: Pair programming (Section 2)"
 number: 12
 section: eboards
 held: 2026-09-25
@@ -14,11 +14,11 @@ is working correctly).
 
 _Approximate overview_
 
-* Quiz
 * Administrative stuff
 * Background on today's class
 * An Exercise
-* Debrief of readings
+* Debrief on readings
+* Quiz
 
 Administrative stuff
 --------------------
@@ -71,7 +71,7 @@ Artistic/Cultural
   _Writers@Grinnell presents a conversation with Poet Maggie Millner_ **New**
 * Thursday, 1 October 2026, 4:15--5:30 p.m., GCMOA.
   _Johnnie Chatman: The Artist as Researcher_ **New**
-* Thursday, 1 October 2026, 4:00--5:30 p.m., HSSC A2231. 
+* Thursday, 1 October 2026, 8:00--9:30 p.m., HSSC A2231. 
   _Writers@Grinnell presents a reading by Poet Maggie Millner_ **New**
 * Friday, 2 October 2026, 7:00 p.m., Wall Theatre.
   _Neverland Players_ **New**
@@ -95,9 +95,11 @@ _Musical, theatric, sporting, academic, and similar events involving this
 section's students are welcome._
 
 * Saturday, 26 September 2026, 11:00 a.m.--1:00 p.m., Springer Field.
-  _Soccer vs. Ripon_
+  _Men's Soccer vs. Ripon_
 * Saturday, 26 September 2026, 1:00--4:00 p.m., Rosenbloom Field.
   _Football vs. Beloit_
+* Wednesday, 30 September 2026, 4:00--6:00 p.m., Springer Field.
+  _Men's Soccer vs. Luther College_ **New**
 
 Wellness
 
@@ -136,8 +138,6 @@ _These do not earn tokens, but are worth your consideration._
 
 * Tuesday, 29 September 2026, 4:00--6:00 p.m., Springer Field.
   _Women's Soccer vs. ???_ **New**
-* Wednesday, 30 September 2026, 4:00--6:00 p.m., Springer Field.
-  _Men's Soccer vs. Luther College_ **New**
 
 ### Upcoming work
 
@@ -173,7 +173,7 @@ Questions
 
 When else can I take a quiz?
 
-> Section 2 takes quizzes from 10:30--11:30.
+> Section 1 takes quizzes from 7:30--8:30.
 
 > Section 3 takes quizzes from 3:30--4:30.
 
@@ -251,6 +251,8 @@ An exercise
 
 _I do not record the initial steps of the exercise._
 
+_I also turn off the recording._
+
 TPS: 
 
 * 1 min: Think to yourself for a minute. What did you hear? What would
@@ -261,30 +263,28 @@ TPS:
 
 What do you want to talk about?
 
-* There are people who come in to the class very confident with their
-  abilities, which can make others much less confident.
-    * Remember that it's a new language for everyone.
-    * Modify the curriculum to make it hard for everyone
-      (Welcome to cut, compose, and section.)
-    * If you have prior experience, please be humble about it. We are
-      all learning.
-    * If you don't have prior experience, accept that it may take you
-      a bit longer to learn things.
-* It can be socially hard to find a new partner. (It doesn't feel
-  socially right to ask people to switch partners.)
-    * Note: Reading #3 suggests that partnering with your friends often
-      creates less success.
-    * It can be hard to tell someone that they are being disrespectful
-      and rude. (Tell your mentor or Sam; we'll chat with them.)
-        * Self-Gov suggests you have a responsibility to help them become
-          better.
-* There are things that make us happy: The professor and mentor are there
-  to support us and are aware that things happen.
-* Stealing the keyboard seems to have been very impactful. Why?
-    * Implies a lack of ability.
-    * People can be very aggressive these days.
-    * Be helpful; don't just snatch things away
-* Remember that your goal is to be helpful.
+* "I still work with people I worked with in 151."
+    * Positive: Gives you an understanding of how other people work
+      and who you work with.
+    * Observation: It's good to challenge yourself to work with people
+      you don't know.
+* Most people benefit from pair programming whether or not they are at
+  the same skill level.
+* If you feel you know more than your partner, please cooperate with them.
+    * You could be wrong.
+    * You have a responsibility to treat them well (Self Gov).
+    * You will learn by helping.
+* Concerns about bad partners.
+    * It's nice that the CS department knows and cares.
+    * One kind of bad partner doesn't show up, but it's not the only kind.
+    * "I should talk to my faculty member or mentor."
+    * Self gov suggests that you have a responsibility to talk to them
+      about their behavior.
+    * You don't know what's going on in their lives; be kind.
+    * If they are being aggressively uncooperative, call them out (or grab
+      Sam or mentor).
+* Some of those cases seemed very extreme. 
+* There are many good parts of pair programming.
 
 Reading Reflections
 -------------------
@@ -293,13 +293,19 @@ _What are the key points from the readings?_ (TPS)
 
 ### Pair Programming
 
-* The rubber plant / rubber duck / plast squirrel effect: Explain what
-  you're doing to others also helps you. Explaining to a real person
-  is even more helpful.
+* Pair programming tends to produce better results 
+* Vocalizing ideas is important
+    * It's helpful to talk through things with someone (or something).
+    * People are better than things, but things are still a good fallback.
 
 ### Couch Potatoes and Hitchhikers
 
+* You can deal with the hitchhikers (by talking to the Prof.)
+    * But encourage them first.
+* Try to include everyone; if they aren't participating, encourage them
+  to do so.
 
 ### Diverse Teams
 
-* Value of having groups with different skills.
+* Don't just work with your friends; by working with people different than
+  you you get different perspectives.
