@@ -61,6 +61,10 @@
 
 ;; > (list 2 1)
 ;; REPLACE THIS TEXT WITH YOUR ANSWER
+;; > (list (- 2 1) (+ 1 1))
+;; REPLACE THIS TEXT WITH YOUR ANSWER
+;; > (make-list 2 1)
+;; REPLACE THIS TEXT WITH YOUR ANSWER
 ;; > (make-list 1 2)
 ;; REPLACE THIS TEXT WITH YOUR ANSWER
 ;; > (make-list -1 2)
