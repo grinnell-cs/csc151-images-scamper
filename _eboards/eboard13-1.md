@@ -210,3 +210,7 @@ old version of the lab.
 
 Apologies! `(string->digits "0")` should return 0. The test is wrong.
 I'm not that evil.
+
+;(test-case "Edge case: One digit (9)" equal? (list 9)
+;           (lambda () (string->digits "9")))
+

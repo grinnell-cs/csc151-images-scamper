@@ -1,9 +1,9 @@
 ---
-title: "EBoard 13: Lists (Section 2)"
-number: 13
+title: "EBoard 14: Lists, continued (Section 1)"
+number: 14
 section: eboards
-held: 2026-09-28
-link: true
+held: 2026-09-30
+link: false
 ---
 # {{ page.title }}
 
@@ -23,51 +23,44 @@ Administrative stuff
 
 ### Introductory Notes
 
-* Happy lucky class 13!
 * Note that Scamper is now at 4.6.0. 
-* LAs and grade reports to be distributed later today.
-* Expect email from me if you're behind on LAs.
-* Congratulations to our football team for another victory!
-* Apologies: I was not able to get the autograder working for this mini-project.
-* There are a few of you who have already missed more than six readings. I'm
-  considering the best way to deal with that issue. I would welcome suggestions
-  via email.
-* I've made two minor changes to the grading policies.
-    * 20 LAs now earns you an A+, rather than an A. Grinnell doesn't let
-      me award A+'s, but this makes some of the other grades more
-      achievable.
-    * You now start with four tokens rather than three.
-* The pictorial class rosters are available at the back of the classroom.
-  You may **not** use them as a cheat sheet for Friday's quiz, but you
-  can use them as a study sheet.
+
+### Monday's lab
+
+Many of you wrote 
+
+```
+(define char->digit
+  (lambda (char)
+    (- (char->integer char) 48)))
+```
+
+I'd prefer that you write
+
+```
+(define char->digit
+  (lambda (char)
+    (- (char->integer char) (char->integer #\0))))
+```
+
+Can you tell why?
+
+I might even prefer
+
+```
+(define char->digit
+  (o (r-s - (char->integer #\0)) 
+     char->integer))
+```
 
 ### Attendance
 
 * Practice for Friday's quiz.
 
-### Some notes from the quizzes
-
-* There was some confusion on `substring`, even though you used it in
-  the strings lab. 
-    * We number characters starting at 0.
-    * The second number in substring is the index of the first character
-      _not_ included in the result.
-    * `(substring "Television" 1 4)` -> `"ele"`
-    * Don't forget to record information about procedures in your notebook
-      (and on your cheat sheets).
-* Remember that `o` applies procedures right to left. That is,
-  `(o f g h)`, the resulting procedure applies `h`, then `g`, then `f`.
-* At this point, I expect something close to correct Scheme syntax on
-  LAs, particularly if unclear syntax leaves open the question as to
-  whether or not you understand the material.
-
 ### Upcoming activities
 
 Scholarly
 
-* Tuesday, 29 September 2026, Noon--1:00 p.m., JRC 224C (I think).
-  _CS Table: Open-source software_ 
-    * Sam forwarded email with readings.
 * Wednesday, 30 September 2026, 8:00--9:30 p.m., HSSC A2231.
   _Reading as a Way of Life_ 
 * Thursday, 1 October 2026, 11:00 a.m.--Noon, JRC 101.
@@ -77,6 +70,8 @@ Scholarly
    Gerymandering and Voting Rights_ 
 * Friday, 2 October 2026, 5:30--7:30 p.m., Weingart Pavilion.
   _Pioneer Weekend Kickoff_ 
+* Tuesday, 6 October 2026, Noon--1:00 p.m., JRC 224C (I think).
+  _CS Table: ???_ 
 
 Artistic/Cultural
 
@@ -106,12 +101,8 @@ Peer
 _Musical, theatric, sporting, academic, and similar events involving this 
 section's students are welcome._
 
-* Wednesday, 30 September 2026, 4:00--6:00 p.m., Springer Field.
-  _Men's Soccer vs. Luther College_ 
-* Saturday, 3 October 2026, 1:00--3:00 p.m., Springer Field.
-  _Men's Soccer vs. U. Dubuque_. **New**
 * Saturday, 3 October 2026, 1:00--4:00 p.m., Rosenbloom Field.
-  _Football vs. Knox_ **New**
+  _Football vs. Knox_
 
 Wellness
 
@@ -145,6 +136,10 @@ _These do not earn tokens, but are worth your consideration._
 
 * Tuesday, 29 September 2026, 4:00--6:00 p.m., Springer Field.
   _Women's Soccer vs. Luther College_ 
+* Wednesday, 30 September 2026, 4:00--6:00 p.m., Springer Field.
+  _Men's Soccer vs. Luther College_ 
+* Saturday, 3 October 2026, 1:00--3:00 p.m., Springer Field.
+  _Men's Soccer vs. U. Dubuque_. **New**
 * Saturday, 3 October 2026, 3:30--5:30 p.m., Springer Field.
   _Women's Soccer vs. U. Dubuque_. **New**
 
@@ -153,7 +148,6 @@ _These do not earn tokens, but are worth your consideration._
 * Due Tuesday, 2026-09-29
     * Today's lab: [List basics](../labs/list-basics)
         * [Submit lab writeup on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8750145)
-        * Please submit today
     * Readings:
         * Reading: [The "big three" list operations](../readings/list-big-tree)
         * Reading: [More list operations](../readings/list-more)
@@ -194,11 +188,6 @@ What do I do if I'm missing a lot of quizzes?
 
 > Get help! Sign up for times with Sam, visit with the evening tutors,
   go to mentor sessions, etc.
-
-I haven't been paying attention to the token activities, can I turn
-them in more than 72 hours after the event?
-
-> Sure.
 
 ### MP2 questions
 
