@@ -10,14 +10,7 @@ summary: |
 
 ### Standard list notation
 
-`'(val1 val2 ... valn)` - a list of `n` values.  Note that the
-single-quote mark (`'`, also called "tick") means "take this
-verbatim", which means that no expressions inside the parentheses
-will be evaluated.
-
-`(list val1 val2 ... valn)` - another way that DrRacket sometimes 
-shows lists. (We don't know why it sometimes chooses one notation
-and other times another; we'll alo use both.)
+`(list val1 val2 ... valn)` - the way that Scamper usually shows lists. 
 
 ### Creating lists
 
