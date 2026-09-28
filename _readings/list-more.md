@@ -2,8 +2,7 @@
 title: More list operations
 summary: |
   We continue our exploration Racket's _list_ data type, focusing on
-  other important list processing operations, including `sort`,
-  `tally`, `andmap`, and `ormap`.
+  other important list processing operations, including `sort`.
 prereqs: |
   [An abbreviated introduction to Racket](../readings/intro-scheme).
   [Data types](../readings/types).
