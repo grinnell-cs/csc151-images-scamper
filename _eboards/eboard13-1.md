@@ -207,3 +207,6 @@ Don't forget to reload Scamper.
 
 Remember: If you're asked to load a Racket file, you probably have the
 old version of the lab.
+
+Apologies! `(string->digits "0")` should return 0. The test is wrong.
+I'm not that evil.
