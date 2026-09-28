@@ -61,6 +61,10 @@
 
 ;; > (list 2 1)
 ;; REPLACE THIS TEXT WITH YOUR ANSWER
+;; > (list (- 2 1) (+ 1 1))
+;; REPLACE THIS TEXT WITH YOUR ANSWER
+;; > (make-list 2 1)
+;; REPLACE THIS TEXT WITH YOUR ANSWER
 ;; > (make-list 1 2)
 ;; REPLACE THIS TEXT WITH YOUR ANSWER
 ;; > (make-list -1 2)
@@ -179,19 +183,19 @@
 ;; You can uncomment the next few lines to have it quickly test
 ;; all of the options..
 
-;(test-case "zero " = (char->digit #\0) (lambda () 0))
-;(test-case "one"   = (char->digit #\1) (lambda () 1))
-;(test-case "two"   = (char->digit #\2) (lambda () 2))
-;(test-case "three" = (char->digit #\3) (lambda () 3))
-;(test-case "four"  = (char->digit #\4) (lambda () 4))
-;(test-case "five"  = (char->digit #\5) (lambda () 5))
-;(test-case "six"   = (char->digit #\6) (lambda () 6))
-;(test-case "seven" = (char->digit #\7) (lambda () 7))
-;(test-case "eight" = (char->digit #\8) (lambda () 8))
-;(test-case "nine"  = (char->digit #\9) (lambda () 9))
+;(test-case "zero"  = 0 (lambda () (char->digit #\0)))
+;(test-case "one"   = 1 (lambda () (char->digit #\1)))
+;(test-case "two"   = 2 (lambda () (char->digit #\2)))
+;(test-case "three" = 3 (lambda () (char->digit #\3)))
+;(test-case "four"  = 4 (lambda () (char->digit #\4)))
+;(test-case "five"  = 5 (lambda () (char->digit #\5)))
+;(test-case "six"   = 6 (lambda () (char->digit #\6)))
+;(test-case "seven" = 7 (lambda () (char->digit #\7)))
+;(test-case "eight" = 8 (lambda () (char->digit #\8)))
+;(test-case "nine"  = 9 (lambda () (char->digit #\9)))
 
 ;; c. Write a procedure, `(string->digits str)` that takes a string
-;; consisting of only digits as an integer and returns a list of the 
+;; consisting of only digits as an input and returns a list of the 
 ;; corresponding integers.  
 
 ;;    > (string->digits "123")
@@ -218,7 +222,7 @@
 ;(test-case "Edge case: One digit (0)" equal? (list 0) 
 ;           (lambda () (string->digits "0")))
 ;(test-case "Edge case: One digit (9)" equal? (list 9) 
-;           (lambda () (string->digits "0")))
+;           (lambda () (string->digits "9")))
 ;(test-case "Normal case: 123" equal? (list 1 2 3) 
 ;           (lambda () (string->digits "123")))
 ;(test-case "Edge case: Leading zeroes" equal?  (list 0 0 1 2 3) 
