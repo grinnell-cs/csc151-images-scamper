@@ -218,7 +218,7 @@
 ;(test-case "Edge case: One digit (0)" equal? (list 0) 
 ;           (lambda () (string->digits "0")))
 ;(test-case "Edge case: One digit (9)" equal? (list 9) 
-;           (lambda () (string->digits "0")))
+;           (lambda () (string->digits "9")))
 ;(test-case "Normal case: 123" equal? (list 1 2 3) 
 ;           (lambda () (string->digits "123")))
 ;(test-case "Edge case: Leading zeroes" equal?  (list 0 0 1 2 3) 
