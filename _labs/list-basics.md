@@ -75,21 +75,15 @@ from `lst` to reach `val`.)
 
 ## Preparation
 
-a. Review the list of procedures above.
+a. Introduce yourself to your partner and discuss work habits.
 
-b. If you have not done so already, you may want to open a separate tab or window in your browser for [the reading on list basics](../readings/list-basics) and [the reading on transforming lists](../readings/list-transform).
+b. Review the list of procedures above.
 
-{% if site.online %}
-c. Decide who will do the Side A problems and who will do the Side B problems.
-Then load the two halves of the lab.
+c. If you have not done so already, you may want to open a separate tab or window in your browser for [the reading on list basics](../readings/list-basics) and [the reading on transforming lists](../readings/list-transform).
 
-* [list-basics-a.rkt](../code/labs/list-basics-a.rkt)
-* [list-basics-b.rkt](../code/labs/list-basics-b.rkt)
-{% else %}
-c. Load the lab.  Remember that the person closer to the board is Side A and the person further from the board is Side B.
+d. Load the lab.  Remember that the person closer to the board is Side A and the person further from the board is Side B.
 
-* [list-basics.rkt](../code/labs/list-basics.rkt)
-{% endif %}
+* [list-basics.scm](../code/labs/list-basics.scm)
 
-d. Get started!
+e. Get started!
 

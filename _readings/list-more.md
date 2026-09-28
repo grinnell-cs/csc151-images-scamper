@@ -27,22 +27,18 @@ Many implementations of Scheme comes with another useful procedure, `(sort lst c
 
 For example,
 
-```drracket
-> (sort (list 5 1 4 2 3) <)
-'(1 2 3 4 5)
-> (sort (list 5 1 4 2 3) >)
-'(5 4 3 2 1)
-> (sort (list "Computers" "are" "sentient" "and" "malicious") string-ci<?)
-'("and" "are" "Computers" "malicious" "sentient")
-> (sort (list "Computers" "are" "sentient" "and" "malicious") string-ci>?)
-'("sentient" "malicious" "Computers" "are" "and")
-```
+<pre class="scamper-transcript">
+(sort (list 5 1 4 2 3) <)
+(sort (list 5 1 4 2 3) >)
+(sort (list "Computers" "are" "sentient" "and" "malicious") string-ci<?)
+(sort (list "Computers" "are" "sentient" "and" "malicious") string-ci>?)
+</pre>
 
+<!--
 ## Counting values
 
 There's one more important set of list procedures for us to consider as we explore the utility of lists.  You've seen that the `length` procedure tells us how many values appear in a list.  But what if we only want to count some of the values in a list?  We can use the `(tally-value lst val)` procedure.
 
-```drracket
 > (tally-value (list "one" "and" "two" "and" "three") "and")
 2
 > (tally-value (list "one" "and" "two" "and" "three") "three")
@@ -80,6 +76,7 @@ Error! odd?: contract violation
 Error!  expected: integer
 Error!  given: "four"
 ```
+-->
 
 ### Extending predicates to lists
 
@@ -87,90 +84,67 @@ Many of you have been looking for a way to extend predicates to lists.
 For example, you may have wanted to check if a string contains only
 digits and decided to try something like the following.
 
-```drracket
-> (reduce and (map char-numeric? (string->list str)))
-```
+<pre>
+(reduce and (map char-numeric? (string->list str)))
+</pre>
 
 It looks good, doesn't it?  Except there's one problem.  `reduce` expects a procedure as its first parameter and `and` is a *keyword* rather than a procedure.  (Yup, there's a difference.)  
 
-```drracket
-> (reduce and (map char-numeric? (string->list "926")))
-. and: bad syntax in: and
-```
+<pre class="scamper-transcript">
+; Parser error [1:1-1:53]: Malformed function application.
+</pre>
 
 Nope.  What can you do?  There are a variety of possibilities.
 
-First, you could write a binary procedure that gives the same result as `and` if not the same evaluation strategy.
+You might write a binary procedure that gives the same result as `and` if not the same evaluation strategy.
 
-```drracket
+
+<pre class="scamper-transcript">
 (define my-and
   (lambda (x y)
     (and x y)))
-> (define my-and
-    (lambda (x y)
-      (and x y)))
-> (my-and #t #f)
-#f
-> (my-and #t #t)
-#t
-> (my-and #f #t)
-#f
-> (my-and #f #f)
-#f
-> (my-and #f (error "Whoops"))
-. . Whoops
-> (and #f (error "Whoops"))
-#f
-```
+(my-and #t #f)
+(my-and #t #t)
+(my-and #f #t)
+(my-and #f #f)
+(my-and #f (error "Whoops"))
+(and #f (error "Whoops"))
+</pre>
 
 That's right; it doesn't do the short-circuit evaluation strategy that `and` uses.  But that's okay, we don't need short-circuit evaluation here, since we're planning on evaluating all of the list elements.  So let's try reducing using it.
 
-```drracket
-> (reduce my-and (map char-numeric? (string->list "926")))
-#t
-> (reduce my-and (map char-numeric? (string->list "926x")))
-#f
-> (reduce my-and (map char-numeric? (string->list "1")))
-#t
-> (reduce my-and (map char-numeric? (string->list "")))
-. . ../Library/Racket/7.7/pkgs/csc151/lists.rkt:143:14: cdr: contract violation
-  expected: pair?
-  given: '()
-> (reduce my-and (map char-numeric? (string->list "a926")))
-#f
-```
+<pre class="scamper-transcript">
+(reduce my-and (map char-numeric? (string->list "926")))
+(reduce my-and (map char-numeric? (string->list "926x")))
+(reduce my-and (map char-numeric? (string->list "1")))
+(reduce my-and (map char-numeric? (string->list "")))
+(reduce my-and (map char-numeric? (string->list "a926")))
+</pre>
 
-Okay.  That works.  Or mostly works. What else could we do?  Well, we could could rely on the built-in (or at least standard) `(string->number str)` procedure, which returns false if `str` does not represent a number.
+Okay.  That works.  Or mostly works. 
 
-```drracket
-> (string->number "926")
-926
-> (string->number "926a")
-#f
-> (string->number "")
-#f
-> (string->number "1")
-1
-> (string->number "a926")
-#f
-```
+What else could we do?  Well, we could could rely on the built-in (or at least standard) `(string->number str)` procedure, which returns false if `str` does not represent a number.
+
+<pre class="scamper-transcript">
+(string->number "926")
+(string->number "926a")
+(string->number "")
+(string->number "1")
+(string->number "a926")
+</pre>
 
 Of course, we need to do a bit more than that.  Why?  Because `string->number` also works with negative numbers, decimal numbers, and complex numbers, all of which contain non-digits.
 
-```drracket
-> (string->number "-52")
--52
-> (string->number "3.1415")
-3.1415
-> (string->number "+11")
+<pre class="scamper-transcript">
+(string->number "-52")
+(string->number "3.1415")
+(string->number "+11")
 11
-> (string->number "4+2i")
-4+2i
-> (string->number "7/11")
-7/11
-```
+</pre>
 
 We'll leave dealing with those issues as an exercise for the reader, not least because they may be part of a recent assignment.
+
+<!--
 
 ## Extending predicates to lists, revisited
 
@@ -198,7 +172,13 @@ If we have a list-based relative of `and`, we probably want want a list-based re
 #t
 ```
 
+-->
+
 ## Self-checks
+
+This reading has no self checks.
+
+<!--
 
 ### Check 1: Special cases
 
@@ -216,3 +196,4 @@ e. Check your answer experimentally.
 
 f. Give a rationale for that result.
 
+-->
