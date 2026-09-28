@@ -24,7 +24,7 @@ Administrative stuff
 ### Introductory Notes
 
 * Happy lucky class 13!
-* Note that Scamper is now at 4.5.0. 
+* Note that Scamper is now at 4.6.0. 
 * LAs and grade reports to be distributed later today.
 * Expect email from me if you're behind on LAs.
 * Congratulations to our football team for another victory!
@@ -48,7 +48,7 @@ Administrative stuff
 ### Some notes from the quizzes
 
 * There was some confusion on `substring`, even though you used it in
-  the strings lab. 
+  the strings lab. `(substring str start end)`
     * We number characters starting at 0.
     * The second number in substring is the index of the first character
       _not_ included in the result.
@@ -99,7 +99,7 @@ Artistic/Cultural
 Multicultural
 
 * Friday, 2 October 2026, 4:10--5:00 p.m., HSSC N1170
-  _Middle of Everywhere (Somewhere)_
+  _Middle of Everywhere (Turkeye)_
 
 Peer
 
@@ -128,9 +128,9 @@ Wellness
 
 Misc
 
-* Wednesday, 30 September 2026, 8:00--9:00 p.m., Science 3820.
+* Wednesday, 30 September 2026, 8:00--9:00 p.m., Science 3820. (D&M)
   _Mentor Session_
-* Thursday, 1 October 2026, 8:00--9:00 p.m., Science 3820.
+* Thursday, 1 October 2026, 8:00--9:00 p.m., Science 3820. (K)
   _Mentor Session_
 * Thursday, 1 October 2026, 4:00--5:30 p.m., CS Commons.
   _Matcha and Milk Study Break_ 
@@ -150,9 +150,10 @@ _These do not earn tokens, but are worth your consideration._
 
 ### Upcoming work
 
-* Due Tuesday, 2026-09-29
+* Due Tuesday, 2026-09-29 at 10:30 p.m.
     * Today's lab: [List basics](../labs/list-basics)
         * [Submit lab writeup on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8750145)
+        * Submit at the end of class.
     * Readings:
         * Reading: [The "big three" list operations](../readings/list-big-tree)
         * Reading: [More list operations](../readings/list-more)
@@ -193,6 +194,13 @@ What do I do if I'm missing a lot of quizzes?
 
 > Get help! Sign up for times with Sam, visit with the evening tutors,
   go to mentor sessions, etc.
+
+What should the `CHANGES.txt` file have?
+
+> A summary of what you've changed. E.g.,
+
+> * I forgot to write a procedure for part 2. My new procedure is called
+    `make-eye` and it gets used in making the face that is `my-image`.
 
 ### MP2 questions
 
