@@ -42,14 +42,12 @@
   due:
     - MP2
 
-- date: 2026-09-30
-  assigned:
-    - MP3
-
 - date: 2026-10-02
   due:
     - LA 6 (Collaboration)
     - LA 7 (Lists)
+  assigned:
+    - MP3
 
 - date: 2026-10-09
   due:
