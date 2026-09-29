@@ -25,52 +25,6 @@ Administrative stuff
 
 * Note that Scamper is now at 4.6.0. 
 
-### Some notes on Monday's lab
-
-#### `char->digit`
-
-Many of you wrote 
-
-```
-(define char->digit
-  (lambda (char)
-    (- (char->integer char) 48)))
-```
-
-I'd prefer that you write
-
-```
-(define char->digit
-  (lambda (char)
-    (- (char->integer char) (char->integer #\0))))
-```
-
-Can you tell why?
-
-I might even prefer
-
-```
-(define char->digit
-  (o (r-s - (char->integer #\0)) 
-     char->integer))
-```
-
-#### `string->integer`
-
-* I hope this served as a useful example of decomposition and/or
-  bottom-up design.
-
-#### Sectioning and `map`
-
-"I have to add 1 to each element of a list."
-
-    (map (l-s + 1) lst)
-
-"I have to add 1 to each element of a list and then multiply each element
-by 10."
-
-    (map (o (l-s * 10) (l-s + 1)) lst)
-
 ### Attendance
 
 * More practice for Friday's quiz.
@@ -178,6 +132,58 @@ _These do not earn tokens, but are worth your consideration._
          called `CHANGES.txt` that describes what you've changed.
     * [Mini-project 3](../mps/mp03)
         * [Submit on gradescope](https://www.gradescope.com/courses/1370413/assignments/8749564/)
+
+Some notes on Monday's lab
+--------------------------
+
+### `char->digit`
+
+Many of you wrote 
+
+```
+(define char->digit
+  (lambda (char)
+    (- (char->integer char) 48)))
+```
+
+I'd prefer that you write
+
+```
+(define char->digit
+  (lambda (char)
+    (- (char->integer char) (char->integer #\0))))
+```
+
+Can you tell why?
+
+I might even prefer
+
+```
+(define char->digit
+  (o (r-s - (char->integer #\0)) 
+     char->integer))
+```
+
+### `string->integer`
+
+* I hope this served as a useful example of decomposition and/or
+  bottom-up design.
+
+### Sectioning and `map`
+
+"I have to add 1 to each element of a list."
+
+    (map (l-s + 1) lst)
+
+"I have to add 1 to each element of a list and then multiply each element
+by 10."
+
+    (map (o (l-s * 10) (l-s + 1)) lst)
+
+### Making a concentric palette
+
+Some of you asked that we go over the last question from the lab.
+
 
 Questions
 ---------
