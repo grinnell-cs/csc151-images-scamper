@@ -2,7 +2,8 @@
 title: More list operations
 summary: |
   We continue our exploration Racket's _list_ data type, focusing on
-  other important list processing operations, including `sort`.
+  other important list processing operations, including `sort`, `tally`,
+  and `reduce`.
 prereqs: |
   [An abbreviated introduction to Racket](../readings/intro-scheme).
   [Data types](../readings/types).
@@ -33,49 +34,38 @@ For example,
 (sort (list "Computers" "are" "sentient" "and" "malicious") string-ci>?)
 </pre>
 
-<!--
 ## Counting values
 
 There's one more important set of list procedures for us to consider as we explore the utility of lists.  You've seen that the `length` procedure tells us how many values appear in a list.  But what if we only want to count some of the values in a list?  We can use the `(tally-value lst val)` procedure.
 
-> (tally-value (list "one" "and" "two" "and" "three") "and")
-2
-> (tally-value (list "one" "and" "two" "and" "three") "three")
-1
-> (tally-value (list "one" "and" "two" "and" "three") "five")
-0
-```
+<pre class="scamper-transcript">
+(tally-value (list "one" "and" "two" "and" "three") "and")
+(tally-value (list "one" "and" "two" "and" "three") "three")
+(tally-value (list "one" "and" "two" "and" "three") "five")
+</pre>
 
 There's also a procedure, `(tally pred? lst)`, that takes a predicate (a procedure that returns true/false) as its first parameter and counts how many values meet that procedure.
 
-```drracket
-> (tally odd? (list 3 1 4 1 5 9 2))
-5
-> (tally even? (list 3 1 4 1 5 9 2))
-2
-> (tally integer? (list 3 1 "four" "one" 5 9 2))
-5
-> (tally string? (list 3 1 "four" "one" 5 9 2))
-2
-```
+<pre class="scamper-transcript">
+(tally odd? (list 3 1 4 1 5 9 2))
+(tally even? (list 3 1 4 1 5 9 2))
+(tally integer? (list 3 1 "four" "one" 5 9 2))
+(tally string? (list 3 1 "four" "one" 5 9 2))
+</pre>
 
 As you might guess, we can write `tally-value` in terms of the more general `tally`.
 
-```drracket
+<pre class="scamper-transcript">
 (define tally-value
   (lambda (lst val)
-    (tally (cut (equal? <> val)) lst)))
-```
+    (tally (l-s equal? val) lst)))
+</pre>
 
 Note that the predicate must be something we can apply to all elements of the list.
 
-```drracket
-> (tally odd? (list 3 1 "four" "one" 5 9 2))
-Error! odd?: contract violation
-Error!  expected: integer
-Error!  given: "four"
-```
--->
+<pre class="scamper-transcript">
+(tally odd? (list 3 1 "four" "one" 5 9 2))
+</pre>
 
 ### Extending predicates to lists
 
@@ -143,41 +133,27 @@ Of course, we need to do a bit more than that.  Why?  Because `string->number` a
 
 We'll leave dealing with those issues as an exercise for the reader, not least because they may be part of a recent assignment.
 
-<!--
-
 ## Extending predicates to lists, revisited
 
 That gives us a few ways to deal with the problem at hand.  But the more general problem (extending a predicate to a list) seems general enough that we should have a general solution.  And, fortunately, there is one.  (Or at least many versions of Scheme include one.)  The `(andmap pred? lst)` procedure determines if a predicate holds for all of the elements of a list.
 
-```drracket
-> (andmap char-numeric? (string->list "213"))
-#t
-> (andmap char-numeric? (string->list "213x"))
-#f
-> (andmap char-numeric? (string->list "3.14"))
-#f
-```
+<pre class="scamper-transcript">
+(andmap char-numeric? (string->list "213"))
+(andmap char-numeric? (string->list "213x"))
+(andmap char-numeric? (string->list "3.14"))
+</pre>
 
 In effect, `andmap` is a bit like `and`, although with lists and with a particular test.  So maybe it's not like `and`, except that it only returns `#t` when the predicate holds on all of the elements of the list, just as `and` only returns `#t` when all of its parameters hold.
 
 If we have a list-based relative of `and`, we probably want want a list-based relative of `or`, too.  As you might expect, `(ormap pred? lst)` holds when the predicate holds on *any* element of the list.
 
-```drracket
-> (ormap char-numeric? (string->list "213x"))
-#t
+<pre class="scamper-transcript">
+(ormap char-numeric? (string->list "213x"))
 > (ormap char-numeric? (string->list "abcd"))
-#f
 > (ormap char-numeric? (string->list "abcde1"))
-#t
-```
-
--->
+</pre>
 
 ## Self-checks
-
-This reading has no self checks.
-
-<!--
 
 ### Check 1: Special cases
 
@@ -194,5 +170,3 @@ to give?
 e. Check your answer experimentally.
 
 f. Give a rationale for that result.
-
--->
