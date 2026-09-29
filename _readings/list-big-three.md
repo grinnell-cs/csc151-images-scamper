@@ -173,16 +173,16 @@ But let's also try working from right to left.
 > **4 - -2** =
 > **6**
 
-To support these different situations, Scamper provides `reduce` for the left-associative version and `reduce-right` for the right-associative version.
+To support these different situations, Scamper provides `reduce-left` for the left-associative version and `reduce-right` for the right-associative version.
 
 
 <pre class="scamper-transcript">
 <script type="text/scamper-preamble">(define numbers (list 4 1 6 3 2 10 8))</script>
-(reduce - numbers)
+(reduce-left - numbers)
 (reduce-right - numbers)
 </pre>
 
-While these two procedures achieve the goal of systematically reducing a list of values by applying a binary procedure, they cannot be easily parallelized because we have chosen a particular sequence of operations.
+While these two procedures achieve the goal of systematically reducing a list of values by applying a binary procedure, they cannot be easily parallelized because we have chosen a particular sequence of operations. The `reduce` procedure may choose a more efficient evaluation strategy, so you should not rely on it reducing from left to right or right to left.
 
 ## The filter procedure
 
