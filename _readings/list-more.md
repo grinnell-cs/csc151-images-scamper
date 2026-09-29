@@ -3,7 +3,7 @@ title: More list operations
 summary: |
   We continue our exploration Racket's _list_ data type, focusing on
   other important list processing operations, including `sort`, `tally`,
-  and `reduce`.
+  and list-based versions of `and` and `or`.
 prereqs: |
   [An abbreviated introduction to Racket](../readings/intro-scheme).
   [Data types](../readings/types).
@@ -44,13 +44,14 @@ There's one more important set of list procedures for us to consider as we explo
 (tally-value (list "one" "and" "two" "and" "three") "five")
 </pre>
 
-There's also a procedure, `(tally pred? lst)`, that takes a predicate (a procedure that returns true/false) as its first parameter and counts how many values meet that procedure.
+There's also a procedure, `(tally lst pred?)`, that takes a predicate (a procedure that returns true/false) as its second parameter and counts how many values meet that procedure.
 
 <pre class="scamper-transcript">
-(tally odd? (list 3 1 4 1 5 9 2))
-(tally even? (list 3 1 4 1 5 9 2))
-(tally integer? (list 3 1 "four" "one" 5 9 2))
-(tally string? (list 3 1 "four" "one" 5 9 2))
+(tally (list 3 1 4 1 5 9 2) odd?)
+(tally (list 3 1 4 1 5 9 2) even?)
+(tally (list 3 1 "four" "one" 5 9 2 2.5) integer?)
+(tally (list 3 1 "four" "one" 5 9 2 2.5) number?)
+(tally (list 3 1 "four" "one" 5 9 2 2.5) string?)
 </pre>
 
 As you might guess, we can write `tally-value` in terms of the more general `tally`.
@@ -58,13 +59,13 @@ As you might guess, we can write `tally-value` in terms of the more general `tal
 <pre class="scamper-transcript">
 (define tally-value
   (lambda (lst val)
-    (tally (l-s equal? val) lst)))
+    (tally lst (l-s equal? val))))
 </pre>
 
 Note that the predicate must be something we can apply to all elements of the list.
 
 <pre class="scamper-transcript">
-(tally odd? (list 3 1 "four" "one" 5 9 2))
+(tally (list 3 1 "four" "one" 5 9 2) odd?)
 </pre>
 
 ### Extending predicates to lists
@@ -79,7 +80,7 @@ digits and decided to try something like the following.
 
 It looks good, doesn't it?  Except there's one problem.  `reduce` expects a procedure as its first parameter and `and` is a *keyword* rather than a procedure.  (Yup, there's a difference.)  
 
-<pre class="scamper-transcript">
+<pre>
 ; Parser error [1:1-1:53]: Malformed function application.
 </pre>
 
@@ -102,7 +103,7 @@ You might write a binary procedure that gives the same result as `and` if not th
 
 That's right; it doesn't do the short-circuit evaluation strategy that `and` uses.  But that's okay, we don't need short-circuit evaluation here, since we're planning on evaluating all of the list elements.  So let's try reducing using it.
 
-<pre class="scamper-transcript">
+<pre class="scamper-transcript" data-continues>
 (reduce my-and (map char-numeric? (string->list "926")))
 (reduce my-and (map char-numeric? (string->list "926x")))
 (reduce my-and (map char-numeric? (string->list "1")))
@@ -128,7 +129,6 @@ Of course, we need to do a bit more than that.  Why?  Because `string->number` a
 (string->number "-52")
 (string->number "3.1415")
 (string->number "+11")
-11
 </pre>
 
 We'll leave dealing with those issues as an exercise for the reader, not least because they may be part of a recent assignment.
@@ -149,8 +149,8 @@ If we have a list-based relative of `and`, we probably want want a list-based re
 
 <pre class="scamper-transcript">
 (ormap char-numeric? (string->list "213x"))
-> (ormap char-numeric? (string->list "abcd"))
-> (ormap char-numeric? (string->list "abcde1"))
+(ormap char-numeric? (string->list "abcd"))
+(ormap char-numeric? (string->list "abcde1"))
 </pre>
 
 ## Self-checks
