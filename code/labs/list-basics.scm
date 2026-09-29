@@ -125,16 +125,16 @@
 ;; What procedures do you know (other than those listed) that create a
 ;; list of strings?
 
+;; 1.
+
+;; 2.
+
 ;; What procedures do you know (other than those listed) that create a
 ;; list of characters?
 
 ;; 1.
 
 ;; 2.
-
-;; 3.
-
-;; 4.
 
 ; +---------------------------------+--------------------------------
 ; | Exercise 3: Translating numbers |
