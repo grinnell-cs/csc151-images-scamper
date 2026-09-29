@@ -262,7 +262,7 @@ As you might expect, cyclic-add-90 can be written in a variety of ways, combinin
 Here's another.
 
 ```
-(define cyclic-add-90 (o (cut (remainder <> 256)) (cut (+ <> 90))))
+(define cyclic-add-90 (o (r-s remainder 256) (r-s + 90)))
 ```
 
 Write a procedure, `(rgb-cyclic-add c1 c2)`, that takes two RGB colors as input and produces a new color formed by the cyclic addition of the corresponding components of the two colors.
@@ -275,7 +275,7 @@ Write a procedure, `(rgb-cyclic-add c1 c2)`, that takes two RGB colors as input 
 ```
 
 ```
-> (pixel-map (cut (rgb-cyclic-add (rgb 192 192 192) <>)) kitten)
+> (pixel-map (l-s rgb-cyclic-add (rgb 192 192 192)) kitten)
 ![A strange variant of our kitten. The kitten is darker, but its eyes are strange colors and the carpet is now black and red.](../images/transforming-images/kitten-cyclic-add-192.jpg)
 ```
 
@@ -291,11 +291,11 @@ Write a procedure, `(rgb-cyclic-subtract c1 c2)`, that behaves much like `rgb-su
 ```
 
 ```
-> (pixel-map (cut (rgb-cyclic-subtract <> (rgb 32 32 32))) kitten)
+> (pixel-map (r-s rgb-cyclic-subtract (rgb 32 32 32)) kitten)
 ![The kitten, looking a bit darker, with some ragged edges to the left and its eyes terrifyingly black.](../images/transforming-images/kitten-cyclic-subtract-32.jpg)
-> (pixel-map (cut (rgb-cyclic-subtract <> (rgb 128 128 128))) kitten)
+> (pixel-map (r-s rgb-cyclic-subtract (rgb 128 128 128)) kitten)
 ![The kitten, I suppose. The carpet is now a very pale green. Most of the kitten seems inverted into shades of grey. The cat is green and blue for some unknown reason.](../images/transforming-images/kitten-cyclic-subtract-128.jpg)
-> (pixel-map (cut (rgb-cyclic-add <> (rgb 128 128 128))) kitten)
+> (pixel-map (r-s rgb-cyclic-add (rgb 128 128 128)) kitten)
 ![The same image as the immediate previous one.](../images/transforming-images/kitten-cyclic-add-128.jpg)
 ```
 
