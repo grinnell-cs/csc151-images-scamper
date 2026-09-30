@@ -173,18 +173,13 @@
     - Incorporate sort and tally.
     - Consider incorporating the old /labs/drawing-lists.html
 
-- topic: Ethical considerations in computing
-  abbrev: ethical
+- topic: Processing lists, continued
+  abbrev: processing-lists, continued
   summary: |
-    Now that we've spent some time exploring various issues in computing,
-    we take a step back and consider problems of ethical computing
-    with seasoned programmer-eyes. As newly-informed citizens, what
-    must we be aware of with respect to ethics in computing?
-  reading:
-    - link: ACM Code of Ethics and Professional Conduct
-      url: https://www.acm.org/code-of-ethics
-    - link: "Feynman’s Error: On Ethical Thinking and Drifting"
-      url: https://www.danmunro.ca/blog/2018/11/29/feynmans-error-on-ethical-thinking-and-drifting-nbsp 
+    We continue to explore ways "the big three" and other procedures
+    for manipulating lists of values.
+  lab:
+    - page: /labs/list-more.html
 
 - topic: Other ways to build lists
   abbrev: building-lists
@@ -209,14 +204,18 @@
   lab:
     - page: /labs/rackunit.html
 
-- topic: Introduction to list recursion
-  abbrev: recursion-intro
+- topic: Ethical considerations in computing
+  abbrev: ethical
   summary: |
-    We begin our exploration of *recursion*, the most general form
-    of repetition available in Scheme.  You can use recursion to
-    both build and iterate over different kinds of values.
+    Now that we've spent some time exploring various issues in computing,
+    we take a step back and consider problems of ethical computing
+    with seasoned programmer-eyes. As newly-informed citizens, what
+    must we be aware of with respect to ethics in computing?
   reading:
-    - page: /readings/recursion-basics.html
+    - link: ACM Code of Ethics and Professional Conduct
+      url: https://www.acm.org/code-of-ethics
+    - link: "Feynman’s Error: On Ethical Thinking and Drifting"
+      url: https://www.danmunro.ca/blog/2018/11/29/feynmans-error-on-ethical-thinking-and-drifting-nbsp 
 
 - topic: Local bindings
   abbrev: let
@@ -227,22 +226,23 @@
   lab:
     - page: /labs/local-bindings.html
 
+- topic: Introduction to list recursion
+  abbrev: recursion-intro
+  summary: |
+    We begin our exploration of *recursion*, the most general form
+    of repetition available in Scheme.  You can use recursion to
+    both build and iterate over different kinds of values.
+  reading:
+    - page: /readings/recursion-basics.html
+
 - topic: Introduction to list recursion, continued
   summary: |
     We continue our introductory exploration of recursion in Scheme.
   reading:
     - page: /readings/recursion-basics.html
-  lab:
-    - page: /labs/recursion-basics.html
-
-- topic: Recursion practice
-  summary: |
-    We continue to continue our introductory exploration of recursion
-    in Racket.
-  reading:
     - page: /readings/recursion-magic.html
   lab:
-    - page: /labs/recursion-practice.html
+    - page: /labs/recursion-basics.html
 
 - topic: Recursion over numbers
   abbrev: number-recursion
