@@ -1,5 +1,5 @@
 ---
-title: "EBoard 14: Lists, continued (Section 1)"
+title: "EBoard 14: Lists, continued (Section 2)"
 number: 14
 section: eboards
 held: 2026-09-30
@@ -94,6 +94,10 @@ Peer
 _Musical, theatric, sporting, academic, and similar events involving this 
 section's students are welcome._
 
+* Wednesday, 30 September 2026, 4:00--6:00 p.m., Springer Field.
+  _Men's Soccer vs. Luther College_ 
+* Saturday, 3 October 2026, 1:00--3:00 p.m., Springer Field.
+  _Men's Soccer vs. U. Dubuque_
 * Saturday, 3 October 2026, 1:00--4:00 p.m., Rosenbloom Field.
   _Football vs. Knox_
 
@@ -139,10 +143,6 @@ Misc
 
 _These do not earn tokens, but are worth your consideration._
 
-* Wednesday, 30 September 2026, 4:00--6:00 p.m., Springer Field.
-  _Men's Soccer vs. Luther College_ 
-* Saturday, 3 October 2026, 1:00--3:00 p.m., Springer Field.
-  _Men's Soccer vs. U. Dubuque_
 * Saturday, 3 October 2026, 3:30--5:30 p.m., Springer Field.
   _Women's Soccer vs. U. Dubuque_
 * Friday, 9 October 2026, 7:00--9:00 p.m., Darby.
@@ -216,12 +216,14 @@ I'd prefer that you write
 
 Can you tell why?
 
-> 48 is a "magic number". That is, it's a number in your code that the
-  reader may not necessarily understand. A reader can tell what's happening
-  better in the second version than the first. [+2]
+> Conceptually, we are subtracting the value of the zero character.
 
-> It will also work no matter what the collating sequence is, provided
-  the collating sequence numbers the digits in order.
+> It means the same thing; the second one is clearer. (Perhaps slightly
+  less efficient, but clearer.)
+
+> We might end up working in a different collating sequence. Our code will
+  continue to work in a different collating sequence as long as it makes
+  the sensible decision to collate digit characters in order.
 
 I might even prefer
 
@@ -233,9 +235,12 @@ I might even prefer
 
 ### `string->integer`
 
-* I hope this served as a useful example of decomposition and/or
-  bottom-up design.
-* I'll need to convert each character at some point.
+_I hope this served as a useful example of decomposition and/or
+bottom-up design._
+
+A sample thought process.
+
+* I'll need to convert each character to a digit at some point.
 * Once I convert one, I'll need many.
 * Whoops! I have only single digits. I'll need to multiply by their place
   values.
@@ -253,60 +258,95 @@ Some of you asked that we go over the last question from the lab.
 We should decompose the problem a bit. I'll try to ask the kinds of questions
 one might ask in developing a solution to the problem. YMMV.
 
-I need to make a square. How do I do that?
+How do I make a square?
 
-> `(solid-square size color)`
+> `(solid-rectangle width height color)`.
 
-If I wanted to make squares of the same size (20), what procedure would
-I use to make such squares?
+> `(solid-square size color)` - the size represents both width and height
 
-> `(define square-20 (lambda (color) (solid-square 20 color)))`
+Suppose I wanted a list of squares of size 20 (instead of varying sizes).
+How do I write a procedure that takes a color and makes a single square
+of size 20? 
 
-How can I use that to make a size-20 square for each color in the list?
+> `(define square20 (lambda (color) (solid-square 20 color)))`
 
-> `(map square-20 (list "red" "orange" "yellow" "green" "blue"))`
+Next, suppose I wanted a list of squares of size 20. We'll use
+`colors` as the list we're working with.
 
-Do I have a shorter way to write the lambda expression?
+> We could use `list` and do it individually 
 
->  `(map (l-s solid-square 20) (list "red" "orange" "yellow" "green" "blue"))`
+> `(list (square20 (list-ref colors 0)) (square20 (list-ref colors 1)))`
 
-However, we need the sizes to vary, too. How can we get a list of the sizes?
-`(list 20 30 40 ....)` What procedure gets us a range of numbers?
+We could make this more concise with
 
-> `range`.
+> `(map square20 colors)`
 
-We might start with `(range (length colors))`
+Can we do this without separately defining `square20`?
 
-How do I go from `(list 0 1 2 3 ...)` to `(list 20 30 40 ...)`?
+> We could replace `square20` by its definition.
 
-> Multiply each by 10 and add 20.
+> `(map (lambda (color) (solid-square 20 color)) colors)`
 
-How do I write a procedure that multiplies by 10 and adds 20?
+> `(map (l-s solid-square 20) colors)`
 
-> `(o (r-s + 20) (l-s * 10))`
+How can we get the squares to vary in size?
 
-Putting stuff together, we get
+> Use `map` with two lists: One of sizes and one of colors.
+
+> `(map solid-square (list 20 30 40 50 60) colors)`
+
+We need to build the number list programatically. What function might help?
+
+> `make-list` can make a list of numbers. It takes two inputs: a number
+  that represents the desired size of the list and a second value which
+  represents the element. It then makes a list of that many copies of the
+  same element.
+
+> `range` will be useful for making a list of non-identical elements.
+
+> `(range (length colors))` -> `(list 0 1 2 3 4)`
+
+How do I convert `(list 0 1 2 3 4)` to `(list 20 30 40 50 60)`?
+
+> Use `map` of a function that adds 2 and multiple by 10
+
+> `(define fun (lambda (n) (* 10 (+ 2 n))))`
+
+> `(map fun (range (length colors)))`
+
+Can we do this without defining `fun` separately?
+
+> We could put in the lambda, or we could use cut.
+
+> `(map #(* 10 (+ 2 %1)) (range (length colors)))`
+
+If we preferred section to cut?
+
+> `(map (o (l-s * 10) (l-s + 2)) (range (length colors)))` 
+
+Let's put it together
 
 ```
 (define palette
   (lambda (colors)
-    (map solid-square 
-         (map (o (r-s + 20) (l-s * 10)) 
-              (range (length colors)))
+    (map solid-square
+         (map #(* 10 (+ 2 %1)) (range (length colors)))
          colors)))
-```
+``` 
 
-We need to stack them, so we can use `apply overlay`.
+This is close, but we still have a list of squares rather than a single
+square. What next?
+
+> Use `overlay`
 
 ```
 (define palette
   (lambda (colors)
-    (apply overlay
-           (map solid-square 
-                (map (o (r-s + 20) (l-s * 10)) 
-                     (range (length colors)))
+    (apply overlay 
+           (map solid-square
+                (map #(* 10 (+ 2 %1)) (range (length colors)))
                 colors))))
-```
+``` 
 
 ### Sectioning and `map`
 
@@ -339,7 +379,7 @@ Can we trace `(map (o (l-s * 10) (l-s + 2)) lst)`
           ((o (l-s * 10) (l-s + 2)) 1)
           ((o (l-s * 10) (l-s + 2)) 2)
           ((o (l-s * 10) (l-s + 2)) 3))
-; Note ((o f g) val) --> (f (g (val)))
+; Note ((o f g) val) --> (f (g val))
 --> (list ((l-s * 10) ((l-s + 2) 0))
           ((o (l-s * 10) (l-s + 2)) 1)
           ((o (l-s * 10) (l-s + 2)) 2)
@@ -382,17 +422,26 @@ tokens for missing those classes?
 
 What determines how many semicolons you use at the start of a line?
 
-> We use three semicolons to mark the documentation for individual procedures
+> We use three semicolons to mark the documentation for individual function
   or values.
 
 > We use two semicolons for broader comments for the reader.
 
 > We use one semicolon either to "comment out" code that is not yet ready
-  to run or to insert comments in the middle of a procedure.
+  to run or to insert comments in the middle of a function.
+
+Can we see traces of `reduce`?
+
+> Not currently, but perhaps in the future.
+
+Can I take quizzes tomorrow because I'll be unavailable on Friday?
+
+> Yes, during office hours. You need not book a slot. I'll hand you a
+  quiz.
 
 ### Reading questions
 
-Why is `and` a keyword and not a procedure? I didn't follow along
+Why is `and` a keyword and not a function? I didn't follow along
 well with the given example.
 
 > We have a standard approach to evaluating procedure calls (function
@@ -446,15 +495,13 @@ Can you go over self-check 2b from Monday?
 
 ```
 (define rainbow-colors (list "red" "orange" "yellow" "green" "indigo" "violet"))
-(map color-name->rgb rainbow-color) ; gives a list of color names
-(map rgb-darker (map rgb-darker (map color-name->rgb rainbow-color)))
 (define thickly-outlined-circle
   (lambda (color)
     (overlay (outlined-circle 20 "black" 5)
              (solid-circle 20 color))))
-(map thickly-outlined-circle (map rgb-darker (map rgb-darker (map color-name->rgb rainbow-color))))
-(map (o thickly-outlined-circle rgb-darker rgb-darker color-name->rgb)
-     rainbow-colors)
+(map thickly-outlined-circle
+     (map (o rgb-darker rgb-darker) (map color-name->rgb rainbow-colors)))
+(map (o thickly-outlined-circle rgb-darker rgb-darker color-name->rgb) rainbow-colors)
 ```
 
 Lab

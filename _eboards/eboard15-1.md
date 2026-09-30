@@ -1,9 +1,9 @@
 ---
-title: "EBoard 14: Lists, continued (Section 1)"
-number: 14
+title: "EBoard 15: Lists, continued, continued (Section 1)"
+number: 15
 section: eboards
-held: 2026-09-30
-link: true
+held: 2026-10-02
+link: false
 ---
 # {{ page.title }}
 
@@ -15,8 +15,8 @@ is working correctly).
 _Approximate overview_
 
 * Administrative stuff
-* Some notes on MP redos
 * Some notes on Monday's lab
+* Some notes on MP redos
 * Q&A
 * Lab
 
@@ -28,10 +28,8 @@ Administrative stuff
 * Note that Scamper is now at 4.7.0! Please reload before starting the lab.
 * When the readings rely on Scamper updates, they may sometimes show errors
   for unknown reasons. Try Shift-Reload.
-* Today is another "Continue the lab next class" day.
-* Please make use of the evening tutors. If you make use of an evening 
-  tutor, I'd appreciate it if you'd drop me a note with their name and 
-  how the meeting went.
+* If you make use of an evening tutor, I'd appreciate it if you'd drop me
+  a note with their name and how it went.
 * Some of you were asking the evening tutors for clarification on part 3
   of MP2. You should really ask such questions earlier than the night a
   project is due.
@@ -153,8 +151,14 @@ _These do not earn tokens, but are worth your consideration._
 ### Upcoming work
 
 * Due Thursday, 2026-10-01
-    * _Nothing_
-* On Friday, 2026-10-02
+    * Today's lab: [More list operations](../labs/lists-more)
+        * [Submit lab writeup on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8770203)
+        * This lab will continue on Friday.
+    * Readings:
+        * [The ACM Code of Ethics and Professional Conduct](https://www.acm.org/code-of-ethics)
+        * ["Feynman’s Error: On Ethical Thinking and Drifting"](https://www.danmunro.ca/blog/2018/11/29/feynmans-error-on-ethical-thinking-and-drifting-nbsp)
+        * [Submit reading responses on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8750028)
+* On Friday, 2026-09-02
     * NEW Quiz/LA on collaboration (identify your classmates; just first name)
     * NEW Quiz/LA on lists and list operations.
     * MAKEUP Quiz/LA on conditionals.
@@ -162,10 +166,6 @@ _These do not earn tokens, but are worth your consideration._
     * MAKEUP Quiz/LA on tracing.
     * MAKEUP Quiz/LA on decomposition.
     * MAKEUP Quiz/LA on procedures.
-* Due Sunday, 2026-10-04
-    * Today's lab: [More list operations](../labs/lists-more)
-        * [Submit lab writeup on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8770203)
-        * This lab will continue on Friday.
 * Due Tuesday, 2026-10-06
     * [Mini-project 1 redo](https://www.gradescope.com/courses/1370413/assignments/8707061)
        * When submitting a mini-project redo, please include a file
@@ -462,5 +462,4 @@ Lab
 
 Don't forget to reload Scamper to ensure that you are using 4.7.0.
 
-The Scheme file should be called `list-more.scm`. If it's not, go back to
-the schedule, reload, click on the lab link, and cross your fingers.
+The Scheme file should be called `list-more.scm`.
