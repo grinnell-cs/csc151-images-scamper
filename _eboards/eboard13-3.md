@@ -3,7 +3,7 @@ title: "EBoard 13: Lists (Section 3)"
 number: 13
 section: eboards
 held: 2026-09-28
-link: false
+link: true
 ---
 # {{ page.title }}
 
