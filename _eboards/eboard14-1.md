@@ -44,11 +44,16 @@ Scholarly
   _Reading as a Way of Life_ 
 * Thursday, 1 October 2026, 11:00 a.m.--Noon, JRC 101.
   _Scholars' Convocation: Christian Flemm: Medium Intimacy_ 
+* Thursday, 1 October 2026, 4:15 p.m., HSSC S3325. 
+  _John Aerni-Flessner ’01: "White Gold and Thirsty Communities: The 
+  Cold War, Apartheid, and the Lesotho Highlands Water Project._ **New**
 * Friday, 2 October 2026, 4:15--4:45 p.m., HSSC A1231 (the Kernel).
   _Cory McCarten '19: What Math and Data Can (and Cannot) Tell us about
    Gerymandering and Voting Rights_ 
 * Friday, 2 October 2026, 5:30--7:30 p.m., Weingart Pavilion.
   _Pioneer Weekend Kickoff_ 
+* Monday, 5 October 2026, 4:15--5:15 p.m., HSSC 1325.
+  _AI and the Future of Democracy_ **New**
 * Tuesday, 6 October 2026, Noon--1:00 p.m., JRC 224C (I think).
   _CS Table: ???_ 
 
@@ -74,6 +79,10 @@ Multicultural
 
 * Friday, 2 October 2026, 4:10--5:00 p.m., HSSC N1170
   _Middle of Everywhere (Turkiye)_
+* Friday, 9 October 2026, 4:10--5:00 p.m., HSSC N1170
+  _Middle of Everywhere (Somewhere)_
+* Saturday, 10 October 2026, 3:00--5:00 p.m., JRC 101.
+  _Walking Tacos with SOL_ **New**
 
 Peer
 
@@ -93,6 +102,16 @@ Wellness
   _Meditation Group_
 * Tuesday, 6 October 2026, 4:30--6:00 p.m., Bear P103.
   _Wellness Yoga_
+* Tuesday, 6 October 2026, 5:00--8:00 p.m., HSSC North Atrium.
+  _Therapy Dogs_ **New**
+* Wednesday, 7 October 2026, 11:00 a.m.--1:00 p.m., JRC 1st Floor Lobby.
+  _The return of Mom Hugs_ **New**
+* Thursday, 8 October 2026, 11:00 a.m.--3:00 p.m., Goodnow 2nd.
+  _Visit the Ombuds for Ombuds Day_ **New**
+    * Get swag.
+    * Tell Deborah that I sent you.
+* Thursday, 8 October 2026, 11:00 a.m.--noon, JRC 101.
+  _Scholars' Convocation: Alan Schrift: From the Origins of the Grinnell College Center for the Humanities to the Past and Current Crises of the Humanities_ **New**
 * Saturday, 10 October 2026, All Day, Somewhere.
   _Mental Health Training_
     * Sign up on Handshake.
@@ -106,6 +125,12 @@ Misc
   _Mentor Session_
 * Thursday, 1 October 2026, 4:00--5:30 p.m., CS Commons.
   _Matcha and Milk Study Break_ 
+* Tuesday, 6 October 2026, 4:15--5:15 p.m., HSSC 1231.
+  _Semester at CERA information program_ **New**
+* Thursday, 8 October 2026, 4:15--5:15 p.m., Noyce 3821.  
+  _CS Major Information Session_ **New**
+    * I'm not completely certain about when/where this one is.
+    * We should have snacks beforehand.
 
 ### Other good things
 
@@ -117,6 +142,10 @@ _These do not earn tokens, but are worth your consideration._
   _Men's Soccer vs. U. Dubuque_
 * Saturday, 3 October 2026, 3:30--5:30 p.m., Springer Field.
   _Women's Soccer vs. U. Dubuque_
+* Friday, 9 October 2026, 7:00--9:00 p.m., Darby.
+  _Volleyball vs. Knox_ **New**
+* Saturday, 10 October 2026, 1:00--3:00 p.m., Darby.
+  _Volleyball vs. Illinois._  **New**
 
 ### Upcoming work
 
@@ -237,6 +266,17 @@ Questions
 ---------
 
 ### Administrative questions
+
+Will redos be available for the LAs that I'm still missing?
+
+> Yes. Redos for each LA will be available until everyone has passed that
+  LA or we reach the end of the semester.
+
+There's an estimate of the number of classes I missed. Will I be charged
+tokens for missing those classes?
+
+> If I've charged you tokens for missing classes, you'll see them under
+  "Attendance" in the tokens section.
 
 What determines how many semicolons you use at the start of a line?
 
