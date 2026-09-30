@@ -168,7 +168,7 @@
     - page: /readings/list-big-three.html
     - page: /readings/list-more.html
   lab:
-    - page: /labs/lists-more.html
+    - page: /labs/list-more.html
   todo:
     - Incorporate sort and tally.
     - Consider incorporating the old /labs/drawing-lists.html
