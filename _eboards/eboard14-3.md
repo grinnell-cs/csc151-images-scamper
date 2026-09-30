@@ -1,9 +1,9 @@
 ---
-title: "EBoard 14: Lists, continued (Section 1)"
+title: "EBoard 14: Lists, continued (Section 2)"
 number: 14
 section: eboards
 held: 2026-09-30
-link: true
+link: false
 ---
 # {{ page.title }}
 
@@ -233,8 +233,11 @@ I might even prefer
 
 ### `string->integer`
 
-* I hope this served as a useful example of decomposition and/or
-  bottom-up design.
+_I hope this served as a useful example of decomposition and/or
+bottom-up design._
+
+A sample thought process.
+
 * I'll need to convert each character at some point.
 * Once I convert one, I'll need many.
 * Whoops! I have only single digits. I'll need to multiply by their place
@@ -252,61 +255,6 @@ Some of you asked that we go over the last question from the lab.
 
 We should decompose the problem a bit. I'll try to ask the kinds of questions
 one might ask in developing a solution to the problem. YMMV.
-
-I need to make a square. How do I do that?
-
-> `(solid-square size color)`
-
-If I wanted to make squares of the same size (20), what procedure would
-I use to make such squares?
-
-> `(define square-20 (lambda (color) (solid-square 20 color)))`
-
-How can I use that to make a size-20 square for each color in the list?
-
-> `(map square-20 (list "red" "orange" "yellow" "green" "blue"))`
-
-Do I have a shorter way to write the lambda expression?
-
->  `(map (l-s solid-square 20) (list "red" "orange" "yellow" "green" "blue"))`
-
-However, we need the sizes to vary, too. How can we get a list of the sizes?
-`(list 20 30 40 ....)` What procedure gets us a range of numbers?
-
-> `range`.
-
-We might start with `(range (length colors))`
-
-How do I go from `(list 0 1 2 3 ...)` to `(list 20 30 40 ...)`?
-
-> Multiply each by 10 and add 20.
-
-How do I write a procedure that multiplies by 10 and adds 20?
-
-> `(o (r-s + 20) (l-s * 10))`
-
-Putting stuff together, we get
-
-```
-(define palette
-  (lambda (colors)
-    (map solid-square 
-         (map (o (r-s + 20) (l-s * 10)) 
-              (range (length colors)))
-         colors)))
-```
-
-We need to stack them, so we can use `apply overlay`.
-
-```
-(define palette
-  (lambda (colors)
-    (apply overlay
-           (map solid-square 
-                (map (o (r-s + 20) (l-s * 10)) 
-                     (range (length colors)))
-                colors))))
-```
 
 ### Sectioning and `map`
 
@@ -390,6 +338,10 @@ What determines how many semicolons you use at the start of a line?
 > We use one semicolon either to "comment out" code that is not yet ready
   to run or to insert comments in the middle of a procedure.
 
+Can we see traces of `reduce`?
+
+> Not currently, but perhaps in the future.
+
 ### Reading questions
 
 Why is `and` a keyword and not a procedure? I didn't follow along
@@ -446,15 +398,10 @@ Can you go over self-check 2b from Monday?
 
 ```
 (define rainbow-colors (list "red" "orange" "yellow" "green" "indigo" "violet"))
-(map color-name->rgb rainbow-color) ; gives a list of color names
-(map rgb-darker (map rgb-darker (map color-name->rgb rainbow-color)))
 (define thickly-outlined-circle
   (lambda (color)
     (overlay (outlined-circle 20 "black" 5)
              (solid-circle 20 color))))
-(map thickly-outlined-circle (map rgb-darker (map rgb-darker (map color-name->rgb rainbow-color))))
-(map (o thickly-outlined-circle rgb-darker rgb-darker color-name->rgb)
-     rainbow-colors)
 ```
 
 Lab
