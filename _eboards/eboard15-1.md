@@ -14,28 +14,24 @@ is working correctly).
 
 _Approximate overview_
 
+* Quiz - collaboration, many makeups
 * Administrative stuff
-* Some notes on Monday's lab
-* Some notes on MP redos
+* About MP3
 * Q&A
-* Lab
+* Lab wrapup
+* Quiz - any remaining
 
 Administrative stuff
 --------------------
 
 ### Introductory Notes
 
-* Note that Scamper is now at 4.7.0! Please reload before starting the lab.
+* Today's lab has a bunch of tests. You can uncomment them by selecting the
+  lines and hitting Ctrl-/. You can re-commend them using the same keypress.
+     * Ctrl-; also adds semicolons; Shift-Ctrl-; removes them
+     * We'll be covering testing next Wednesday
 * When the readings rely on Scamper updates, they may sometimes show errors
   for unknown reasons. Try Shift-Reload.
-* If you make use of an evening tutor, I'd appreciate it if you'd drop me
-  a note with their name and how it went.
-* Some of you were asking the evening tutors for clarification on part 3
-  of MP2. You should really ask such questions earlier than the night a
-  project is due.
-* Time on readings continues to vary significantly. Here are the results
-  from the first 25 submissions on the latest reading.
-  15min, 20min, ~20min, 30min, 30min, 30min, 30min, 30min, 30min, ~30min, ~30min, ~30min, 35min, 40min, ~40min, 42min, 45min, 45--60min, 1hr, 1hr, 1hr, 1.25hrs, 1.5hrs, 1.5hrs, 2hrs
 
 ### Upcoming activities
 

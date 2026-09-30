@@ -1,9 +1,9 @@
 ---
-title: "EBoard 14: Lists, continued (Section 2)"
+title: "EBoard 14: Lists, continued (Section 3)"
 number: 14
 section: eboards
 held: 2026-09-30
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -28,7 +28,7 @@ Administrative stuff
 * Note that Scamper is now at 4.7.0! Please reload before starting the lab.
 * When the readings rely on Scamper updates, they may sometimes show errors
   for unknown reasons. Try Shift-Reload.
-* Today is another "Continue the lab next class" day.
+* Today is another "Talk a lot today; continue the lab next class" day.
 * Please make use of the evening tutors. If you make use of an evening 
   tutor, I'd appreciate it if you'd drop me a note with their name and 
   how the meeting went.
@@ -130,7 +130,7 @@ Misc
   _Matcha and Milk Study Break_ 
 * Tuesday, 6 October 2026, 4:15--5:15 p.m., HSSC 1231.
   _Semester at CERA information program_ **New**
-* Thursday, 8 October 2026, 4:15--5:15 p.m., Noyce 3821.  
+* Thursday, 8 October 2026, 4:15--5:15 p.m., Noyce 3821.
   _CS Major Information Session_ **New**
     * I'm not completely certain about when/where this one is.
     * We should have snacks beforehand.
@@ -216,12 +216,17 @@ I'd prefer that you write
 
 Can you tell why?
 
-> 48 is a "magic number". That is, it's a number in your code that the
-  reader may not necessarily understand. A reader can tell what's happening
-  better in the second version than the first. [+2]
+> The second seems a bit more consistent; instead of subtract some number
+  from `(char->integer char)`, we are computing `char->integer` to 
+  produce the thing we are subtracting.
 
-> It will also work no matter what the collating sequence is, provided
-  the collating sequence numbers the digits in order.
+> Easier to understand. 48 is a "magic number"; it represents something,
+  but many readers will not know what that is. (In this case, it's the
+  collating value of #\0 in ASCII.)
+
+> If we were using a different collating sequence, the second is more
+  likely to continue working correctly (provided the different collating
+  sequence put the digits in order).
 
 I might even prefer
 
@@ -238,23 +243,90 @@ bottom-up design._
 
 A sample thought process.
 
-* I'll need to convert each character at some point.
+* I'll need to convert each character to a digit at some point.
 * Once I convert one, I'll need many.
 * Whoops! I have only single digits. I'll need to multiply by their place
   values.
 * How do I get a list of place values?
-* How do I get an individual place value.
+* How do I get an individual place value?
 
 ### Making a concentric palette
 
 Some of you asked that we go over the last question from the lab.
 
 > b. Write a procedure, `(concentric-palette colors)`, that takes a list of
-  colors as a parameter and makes an image of concentric squares of sizes
+  colors as an input and makes an image of concentric squares of sizes
   20, 30, 40, ... (* 10 (length colors)).
 
 We should decompose the problem a bit. I'll try to ask the kinds of questions
 one might ask in developing a solution to the problem. YMMV.
+
+How do I make the squares?
+
+> `(solid-square side-length color)`
+
+Making a list of different size squares sounds hard. Maybe I can make a
+list of all the same size square first. Let's write procedure, `square20`,
+that takes a color as input and builds a square of side-length 20 and
+the given color.
+
+> `(define square20 (lambda (color) (solid-square 20 color)))`
+
+That's one square. Given a list of colors, how might we make a square
+for each color in the list?
+
+> `(map square20 colors)`
+
+Yay! We have lots of squares. But we really want them different sizes.
+We may recall that we can use `map` with multiple lists.
+
+> `(map solid-square (list 20 30 40 ...) colors)`
+
+We need to figure out how to make the list `(list 20 30 40 ...)`.
+
+What tool(s) (function(s)) do we have for making lists of numbers?
+
+> `(make-list size-of-result value)` - make a list of the given size,
+  with the specified number of copies of `value`.
+
+> `(range n)` - make a list of the numbers 0, 1, 2, ... n-1.
+
+Yay! `(range (length colors))` gives us 0 1 2 3 .... But we want 20 30 40 50 ...
+Can we convert the first list to the second using `map`?
+
+> Is there a pattern? How do I convert 0 to 20, 1 to 30, 2 to 40, 3 to 50 ...
+  Multiply by 10 and add 20. (Add 2 and multiply by 10.)
+
+> `(map (r-s * 10) (map (r-s + 2) (range (length colors))))`
+
+> Or `(define something (lambda (num) (* 10 (+ num 2))))`
+
+> `(map something (range (length colors)))`
+
+> `(map (o (r-s * 10) (r-s + 2)) (range (length colors)))`
+
+> `(map #(* 10 (+ 2 %1)) (range (length colors)))`
+
+We are close!
+
+```
+(define palette
+  (lambda (colors)
+    (map solid-square 
+         (map #(* 10 (+ 2 %1)) (range (length colors))) ; sizes
+         colors)))
+```
+
+This looks good. I have a list of squares. I just need to combine them.
+
+```
+(define palette
+  (lambda (colors)
+    (apply overlay 
+           (map solid-square 
+                (map #(* 10 (+ 2 %1)) (range (length colors))) ; sizes
+                colors))))
+```
 
 ### Sectioning and `map`
 
@@ -283,11 +355,13 @@ Can we trace `(map (o (l-s * 10) (l-s + 2)) lst)`
 
 ```
     (map (o (l-s * 10) (l-s + 2)) (list 0 1 2 3))
+    ; Apply the function to each element of the list, putting the results
+    ; in a list
 --> (list ((o (l-s * 10) (l-s + 2)) 0)
           ((o (l-s * 10) (l-s + 2)) 1)
           ((o (l-s * 10) (l-s + 2)) 2)
           ((o (l-s * 10) (l-s + 2)) 3))
-; Note ((o f g) val) --> (f (g (val)))
+; Note ((o f g) val) --> (f (g val))
 --> (list ((l-s * 10) ((l-s + 2) 0))
           ((o (l-s * 10) (l-s + 2)) 1)
           ((o (l-s * 10) (l-s + 2)) 2)
@@ -328,23 +402,32 @@ tokens for missing those classes?
 > If I've charged you tokens for missing classes, you'll see them under
   "Attendance" in the tokens section.
 
+If I have an excused absence, does that count as an absence?
+
+> Yes. But it doesn't cost you any tokens.
+
 What determines how many semicolons you use at the start of a line?
 
-> We use three semicolons to mark the documentation for individual procedures
+> We use three semicolons to mark the documentation for individual function
   or values.
 
 > We use two semicolons for broader comments for the reader.
 
 > We use one semicolon either to "comment out" code that is not yet ready
-  to run or to insert comments in the middle of a procedure.
+  to run or to insert comments in the middle of a function.
 
 Can we see traces of `reduce`?
 
 > Not currently, but perhaps in the future.
 
+Can I take quizzes tomorrow because I'll be unavailable on Friday?
+
+> Yes, during office hours. You need not book a slot. I'll hand you a
+  quiz.
+
 ### Reading questions
 
-Why is `and` a keyword and not a procedure? I didn't follow along
+Why is `and` a keyword and not a function? I didn't follow along
 well with the given example.
 
 > We have a standard approach to evaluating procedure calls (function
@@ -402,6 +485,8 @@ Can you go over self-check 2b from Monday?
   (lambda (color)
     (overlay (outlined-circle 20 "black" 5)
              (solid-circle 20 color))))
+(map thickly-outlined-circle (map rgb-darker (map rgb-darker (map color-name->rgb rainbow-colors))))
+(map (o thickly-outlined-circle rgb-darker rgb-darker color-name->rgb) rainbow-colors)
 ```
 
 Lab
@@ -411,3 +496,5 @@ Don't forget to reload Scamper to ensure that you are using 4.7.0.
 
 The Scheme file should be called `list-more.scm`. If it's not, go back to
 the schedule, reload, click on the lab link, and cross your fingers.
+
+We will continue this lab next class.
