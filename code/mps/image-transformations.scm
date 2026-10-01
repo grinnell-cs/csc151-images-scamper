@@ -113,7 +113,7 @@
 ;;; (image-flatten-32 img) -> image?
 ;;;   img : image?
 ;;; ???
-(define image-flatten
+(define image-flatten-32
   ???)
 
 ;;; (eight-bit img) -> image?

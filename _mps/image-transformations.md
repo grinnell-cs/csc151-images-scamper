@@ -310,19 +310,19 @@ In this problem, you will implement a series of steps to do this gamma correctio
 i. Write a procedure, `(gamma-correct-component component gamma)`, that takes a color component value (i.e., a single number in the range 0-255), and applies the gamma correction described above. Note that you’ll need to rescale the component to the range 0-1 (by dividing) before you exponentiate and rescale it back to 0-255 (by multiplying) afterward.
 
 ```
-> (gamma-correct-component 128 1/2)
+> (gamma-correct-component 128 0.5)
 181.0
 > (gamma-correct-component 128 2)
 64
-> (gamma-correct-component 64 1/2)
+> (gamma-correct-component 64 0.5)
 128.0
-> (gamma-correct-component 64 1/4)
+> (gamma-correct-component 64 0.25)
 180.0
 > (gamma-correct-component 64 2)
 16
 > (gamma-correct-component 64 3)
 4
-> (gamma-correct-component 255 1/4)
+> (gamma-correct-component 255 0.25)
 255
 ```
 
@@ -331,9 +331,9 @@ ii. Write a procedure, (gamma-correct-color c gamma)`, that gamma corrects `c` b
 ```
 > (rgb 128 0 0)
 ![a swatch of approximately darkred](../images/colors/rgb-128-000-000-255.png)
-> (gamma-correct-color (rgb 128 0 0) 1/2)
+> (gamma-correct-color (rgb 128 0 0) 0.5)
 ![a darker swatch of approximately darkred](../images/colors/rgb-181-000-000-255.png)
-> (rgb->string (gamma-correct-color (rgb 128 0 0) 1/2))
+> (rgb->string (gamma-correct-color (rgb 128 0 0) 0.5))
 "181/0/0"
 > (gamma-correct-color (rgb 128 0 0) 3)
 ![a swatch of approximately black](../images/colors/rgb-032-000-000-255.png)
@@ -348,7 +348,7 @@ iii. Write a procedure, `(gamma-correct-two img)`, that darkens the image by gam
 ![a darker version of our kitten image](../images/transforming-images/kitten-gamma-two.jpg)
 ```
 
-iv. Write a procedure, `(gamma-correct-half img)`, that lightens the image by gamma-correcting each pixel with a gamma of 1/2.
+iv. Write a procedure, `(gamma-correct-half img)`, that lightens the image by gamma-correcting each pixel with a gamma of 0.5.
 
 ```
 > (gamma-correct-half kitten)
