@@ -36,6 +36,7 @@ Administrative stuff
   for all reading responses to this Sunday (10/4, good buddy) at 10:30 p.m.
   I'd encourage you to get those in.
 * I've rearranged the intoductory material slightly.
+* I'm behind on getting MP3 out. Expect it sometime Saturday.
 
 ### Upcoming work
 
@@ -73,11 +74,24 @@ Scholarly
 * Friday, 2 October 2026, 5:30--7:30 p.m., Weingart Pavilion.
   _Pioneer Weekend Kickoff_ 
 * Monday, 5 October 2026, 4:15--5:15 p.m., HSSC 1325.
-  _AI and the Future of Democracy_ **(**Highest Recommendation)
+  _AI and the Future of Democracy_ **(Highest Recommendation)**
 * Tuesday, 6 October 2026, Noon--1:00 p.m., JRC 224C (I think).
-  _CS Table: ???_ 
+  _CS Table: Google Zero_ **Updated**
 * Thursday, 8 October 2026, 11:00 a.m.--noon, JRC 101.
   _Scholars' Convocation: Alan Schrift: From the Origins of the Grinnell College Center for the Humanities to the Past and Current Crises of the Humanities_ 
+
+> CS Table next week will meet in the CS commons, not the dining hall room. The department will provide food (likely Jimmy John's) so you don't have to bring food this time.
+
+> At our next CS table we will discuss the phenomenon Nilay Patel at The Verge calls Google Zero: when changes to Google Search mean that users make fewer and fewer visits to actual websites, instead relying on AI output or extracted text from Google's web crawl. We'll also talk about Google's recent effort to manage this issue by paying sites for the content they scrape. To prepare for our discussion, please read the two articles linked below:
+
+> Kate Conger. Google Is Building an A.I. Fence Around the Internet It Once Championed. The New York Times. July 20, 2026. <https://www.nytimes.com/2026/07/20/technology/google-ai-open-web.html?unlocked_article_code=1.zVA.L7zf._L5VDoBJCS4f>
+
+> Ryan Whitwam. Google’s early attempt to pay websites for AI answers is struggling. Ars Technica. September 30, 2026. <https://arstechnica.com/google/2026/09/google-is-paying-100-websites-for-contributions-to-ai-overviews-but-the-amounts-are-tiny/>
+
+> If you are interested, you can read an account of what this looks like for a small business at <https://housefresh.com/david-vs-digital-goliaths/>.
+
+> Join us at noon in the CS Commons for our weekly discussion of computing and its impact on society. All students, faculty, and staff are welcome to attend.
+
 
 Artistic/Cultural
 
