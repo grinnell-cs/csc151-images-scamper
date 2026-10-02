@@ -35,6 +35,33 @@ Administrative stuff
 * For those who have missing reading responses: I set the late due date
   for all reading responses to this Sunday (10/4, good buddy) at 10:30 p.m.
   I'd encourage you to get those in.
+* I've rearranged the intoductory material slightly.
+
+### Upcoming work
+
+* Due Sunday, 2026-10-04
+    * Today's lab: [More list operations](../labs/lists-more)
+        * [Submit lab writeup on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8770203)
+        * Please submit at the end of lab today.
+    * Readings:
+        * [Documenting your code](../readings/documenting-your-code.html)
+        * [Unit testing](../readings/unit-testing.html)
+        * [Hypothesis-driven debugging](../readings/hypothesis-driven-debugging.html)
+        * [Submit reading response on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8789234)
+* Due Tuesday, 2026-10-06
+    * [Mini-project 1 redo](https://www.gradescope.com/courses/1370413/assignments/8707061)
+       * When submitting a mini-project redo, please include a file
+         called `CHANGES.txt` that describes what you've changed.
+* On Friday, 2026-10-09
+    * NEW Quiz/LA on documentation (Monday's topic)
+    * NEW Quiz/LA on testing (Monday's topic)
+    * Makeup Quiz/LA on collaboration
+    * Makeup Quiz/LA on lists and list operations
+    * Makeup Quiz/LA on conditionals
+    * Makeup Quiz/LA on compose, cut, and section
+    * Makeup Quiz/LA on tracing
+    * Makeup Quiz/LA on decomposition
+    * Makeup Quiz/LA on procedures
 
 ### Upcoming activities
 
@@ -127,32 +154,6 @@ _These do not earn tokens, but are worth your consideration._
   _Volleyball vs. Knox_ 
 * Saturday, 10 October 2026, 1:00--3:00 p.m., Darby.
   _Volleyball vs. Illinois_ 
-
-### Upcoming work
-
-* Due Sunday, 2026-10-04
-    * Today's lab: [More list operations](../labs/lists-more)
-        * [Submit lab writeup on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8770203)
-        * Please submit at the end of lab today.
-    * Readings:
-        * [Documenting your code](../readings/documenting-your-code.html)
-        * [Unit testing](../readings/unit-testing.html)
-        * [Hypothesis-driven debugging](../readings/hypothesis-driven-debugging.html)
-        * [Submit reading response on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8789234)
-* Due Tuesday, 2026-10-06
-    * [Mini-project 1 redo](https://www.gradescope.com/courses/1370413/assignments/8707061)
-       * When submitting a mini-project redo, please include a file
-         called `CHANGES.txt` that describes what you've changed.
-* On Friday, 2026-10-09
-    * NEW Quiz/LA on documentation (Monday's topic)
-    * NEW Quiz/LA on testing (Monday's topic)
-    * Makeup Quiz/LA on collaboration
-    * Makeup Quiz/LA on lists and list operations
-    * Makeup Quiz/LA on conditionals
-    * Makeup Quiz/LA on compose, cut, and section
-    * Makeup Quiz/LA on tracing
-    * Makeup Quiz/LA on decomposition
-    * Makeup Quiz/LA on procedures
 
 ### Friday PSA
 
