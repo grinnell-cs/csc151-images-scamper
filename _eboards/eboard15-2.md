@@ -1,5 +1,5 @@
 ---
-title: "EBoard 15: Lists, continued, continued (Section 1)"
+title: "EBoard 15: Lists, continued, continued (Section 2)"
 number: 15
 section: eboards
 held: 2026-10-02
@@ -14,10 +14,9 @@ is working correctly).
 
 _Approximate overview_
 
-* Quiz - collaboration, many makeups
 * Administrative stuff
 * Lab wrapup
-* Quiz - any remaining
+* Quiz
 
 Administrative stuff
 --------------------
@@ -91,6 +90,7 @@ Scholarly
 
 > Join us at noon in the CS Commons for our weekly discussion of computing and its impact on society. All students, faculty, and staff are welcome to attend.
 
+
 Artistic/Cultural
 
 * Any day. Visit the GCMOA for at least 30 minutes.
@@ -119,6 +119,8 @@ section's students are welcome._
 
 * Saturday, 3 October 2026, 1:00--4:00 p.m., Rosenbloom Field.
   _Football vs. Knox_
+* Saturday, 3 October 2026, 1:00--3:00 p.m., Springer Field.
+  _Men's Soccer vs. U. Dubuque_
 
 Wellness
 
@@ -158,8 +160,6 @@ Misc
 
 _These do not earn tokens, but are worth your consideration._
 
-* Saturday, 3 October 2026, 1:00--3:00 p.m., Springer Field.
-  _Men's Soccer vs. U. Dubuque_
 * Saturday, 3 October 2026, 3:30--5:30 p.m., Springer Field.
   _Women's Soccer vs. U. Dubuque_
 * Friday, 9 October 2026, 7:00--9:00 p.m., Darby.
@@ -181,11 +181,19 @@ Don't forget to reload Scamper to ensure that you are using 4.7.0.
 
 The Scheme file should be called `list-more.scm`.
 
-Please ignore the problem that requires `string-titlecase`. That's not
-yet implemented in Scamper.
+Note: For some of the problems, you'll be better off writing a helper
+function (at least to start). For example, you might want to write a
+procedure that determines if a string starts with the character s
+(`#\s`) or a procedure that checks whether one string is shorter than
+than another.
+
+Skip the problem that uses `string-titlecase`.
+
+There's a problem with exercise 5. More precisely, there's a problem with
+the implementation of `reduce-left`. Use `reduce` instead.
 
 Quiz
 ----
 
-* We'll hand out the lists quiz.
+* We'll hand out the lists quiz and the pictures quiz.
 * You can grab any others you want from the back of the room.

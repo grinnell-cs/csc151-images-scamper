@@ -1,5 +1,5 @@
 ---
-title: "EBoard 15: Lists, continued, continued (Section 1)"
+title: "EBoard 15: Lists, continued, continued (Section 3)"
 number: 15
 section: eboards
 held: 2026-10-02
@@ -14,10 +14,9 @@ is working correctly).
 
 _Approximate overview_
 
-* Quiz - collaboration, many makeups
 * Administrative stuff
 * Lab wrapup
-* Quiz - any remaining
+* Quiz
 
 Administrative stuff
 --------------------
@@ -181,11 +180,20 @@ Don't forget to reload Scamper to ensure that you are using 4.7.0.
 
 The Scheme file should be called `list-more.scm`.
 
+Note: For some of the problems, you'll be better off writing a helper
+function (at least to start). For example, you might want to write a
+procedure that determines if a string starts with the character s
+(`#\s`), a procedure that checks whether one string is shorter than
+than another, or a procedure that checks whether a string is long/short.
+
 Please ignore the problem that requires `string-titlecase`. That's not
 yet implemented in Scamper.
+
+There's a problem with exercise 5. More precisely, there's a problem with
+the implementation of `reduce-left`. Use `reduce` instead.
 
 Quiz
 ----
 
-* We'll hand out the lists quiz.
+* We'll hand out the lists quiz and the pictures quiz.
 * You can grab any others you want from the back of the room.
