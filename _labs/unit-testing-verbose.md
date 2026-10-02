@@ -1,16 +1,16 @@
 ---
-title: Unit testing with RackUnit
+title: Unit testing
 summary: |
   In the laboratory, you will explore the ways in which small tests can help you develop and update code.
   You will also familiarize yourself with the RackUnit unit testing library.
   You will also have the opportunity to think more broadly about testing.
 ---
+_This lab is in the process of being rewritten_
 
-In this lab, you will work collaboratively to explore testing and the `rackunit` library.  You will be responsible for gathering up the code you write into a file called `testing.rkt` and turning that file in to Gradescope on behalf of the group.  Make sure that `testing.rkt` includes `require` declarations for the appropriate libraries:
+In this lab, you will work collaboratively to explore testing and the `rackunit` library.  You will be responsible for gathering up the code you write into a file called `testing.scm` and turning that file in to Gradescope on behalf of the group.  Make sure that `testing.scm` includes an `import` declaration for the appropriate library:
 
 ```drracket
-(require csc151)
-(require rackunit)
+(import test)
 ```
 
 Throughout this lab, we will provide procedure examples that may use language features we have not yet introduced in this course.  That is fine!  The purpose of this lab is to *test* code rather than write new code, so focus on the *intended behavior* of the function rather than its implementation.  (Although we will briefly explore that it is sometimes helpful to know the implementation!)
@@ -33,19 +33,17 @@ The driver should open up DrRacket, `require` both the `csc151`, `rackunit`, and
 
 Define a series of tests for this procedure, each of which you write explicitly in the definitions pane.  For example,
 
-~~~racket
-(test-equal? "A very small range" (range1 1) (list 1))
-~~~
+<pre>
+(test-case "A very small range" equal? (range1 1) #(list 1))
+</pre>
 
 This is a good practice as you are developing your program so you can quickly know if your code meets the current set of tests.
 
-Note: Do not use the `test-suite` procedure!  While that can be useful, we will use direct tests for the time being.
-
-As this example suggests, your tests should be defined using the `test-*` functions described in [the RackUnit api](https://docs.racket-lang.org/rackunit/api.html).
+As this example suggests, your tests should be defined using the `test-case` keyword described in [the corresponding reading](../readings/unit-testing).
 
 To develop the tests, you should alternate volunteering test cases which the driver then transcribes in the definitions pane.  Continue identifying test cases until your group is satisfied withthe the set of tests.  You should agree on when you all feel that you have reasonably validated the function's behavior.
 
-Make sure that the procedure passes all the tests.  Then "comment-out" the tests by placing `#|` before the tests and `|#` after the tests so that we do not run the tests in the auto-grader.
+Make sure that the procedure passes all the tests.  Then "comment-out" the tests by placing a semicolon before each line. (Select the lines and hit Ctrl-/ or Ctrl-;.)
 
 ## Exercise 2: Positive and negative cases
 
@@ -53,7 +51,7 @@ Make sure that the procedure passes all the tests.  Then "comment-out" the tests
 
 One way to organize our tests is by exploring *positive* and *negative* test cases.  A _positive test case_ is an example that exercises when the function reports "yes"---*e.g.*, returns true, computes a result---when the inputs are "good".  A _negative test case_ is an example that exercises when the function reports "no"---*e.g.*, returns false, returns an error value, does not modify the input---when the inputs are "bad".  (For the time being, you can't test for error values, so stick to the other kinds of negative tests.) Follow the same process as in the prior exercise.
 
-~~~racket
+```
 ;;; (palindrome? str) -> boolean?
 ;;;   str : string?
 ;;; Returns true iff the string s is a palindrome, i.e., the letters
@@ -66,9 +64,9 @@ One way to organize our tests is by exploring *positive* and *negative* test cas
                                    (string->list str)))])
            (string=? (list->string stuff)
                      (list->string (reverse stuff)))))))
-~~~
+```
 
-As in the previous exercise, collaboratively develop a set of tests for this procedure.  For this exercise, make sure to keep in mind the idea of positive and negative test cases.  You'll use `test-true` for positive tests and `test-false` for negative tests.
+As in the previous exercise, collaboratively develop a set of tests for this procedure.  For this exercise, make sure to keep in mind the idea of positive and negative test cases. That is, you should run some tests in which you expect `palindrome?` to return true and others in which you expect `palindrome?` to return false.
 
 When you are done, the driver should make sure that the completed function and its test suite are in the file and then comment out the code.
 
