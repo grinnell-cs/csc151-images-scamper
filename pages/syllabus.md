@@ -394,16 +394,16 @@ _I reserve the right to make updates to this policy as necessary. Updates will p
 
 Your grade depends primarily on the number of learning assessments you successfully complete across the semester according to the following table.
 
-* **A+**: 20
-* **A**: 19
-* **A-**: 18
-* **B+**: 17
-* **B**: 16
-* **B-**: 15
-* **C+**: 14
-* **C**: 13
-* **D**: 11--12
-* **F**: &lt; 11
+* **A+**: 18
+* **A**: 17
+* **A-**: 16
+* **B+**: 15
+* **B**: 14
+* **B-**: 13
+* **C+**: 12
+* **C**: 11
+* **D**: 9--10
+* **F**: &lt; 9
 
 In addition, if you fail to successfully complete the final project, you will not pass the class.
 
