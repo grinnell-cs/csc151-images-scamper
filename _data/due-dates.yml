@@ -51,8 +51,6 @@
 
 - date: 2026-10-09
   due:
-    - LA 8 (Documentation)
-    - LA 9 (Testing)
 
 - date: 2026-10-13
   due:
@@ -64,13 +62,12 @@
 
 - date: 2026-10-16
   due:
-    - LA 10 (Program style)
-    - LA 11 (Local bindings)
+    - LA 8 (Testing)
 
 - date: 2026-10-30
   due:
-    - LA 12 (List recursion)
-    - LA 13 (Numeric recursion)
+    - LA 9 (Local bindings)
+    - LA 10 (List recursion)
 
 - date: 2026-11-03
   due:
@@ -82,13 +79,13 @@
 
 - date: 2026-11-06
   due:
-    - LA 14 (Vectors)
-    - LA 15 (Diagramming structures)
+    - LA 11 (Numeric recursion)
+    - LA 12 (Diagramming structures)
 
 - date: 2026-11-13
   due: 
-    - LA 16 (Randomness)
-    - LA 17 (Dictionaries)
+    - LA 13 (Vectors)
+    - LA 14 (Dictionaries)
 
 - date: 2026-11-17
   due: MP5
@@ -99,8 +96,8 @@
 
 - date: 2026-11-20
   due:
-    - LA 18 (Randomness)
-    - LA 19 (Data abstraction)
+    - LA 15 (Randomness)
+    - LA 16 (Data abstraction)
 
 - date: 2026-12-03
   due:
@@ -108,7 +105,8 @@
 
 - date: 2026-12-04
   due: 
-    - LA 20 (Tree recursion)
+    - LA 17 (Higher-order programming)
+    - LA 18 (Tree recursion)
 
 - date: 2026-12-16
   due:

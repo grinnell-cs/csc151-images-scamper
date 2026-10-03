@@ -181,6 +181,27 @@
   lab:
     - page: /labs/list-more.html
 
+- topic: Review of functions, tracing, shapes, colors, shapes, and beyond
+  abbrev: review-functions
+  summary: |
+    We pause to improve our understanding what we've covered in the first 
+    five weeks of class, focusing on the basics of creating functions.
+    
+- topic: Review of list operations, anonymous functions, and beyond
+  abbrev: review-hop
+  summary: |
+    We pause to improve our understanding what we've covered in the first 
+    five weeks of class, focusing on the "higher order" list functions,
+    like `map`, `apply`, `filter`, and `reduce`. We also consider the
+    interplay between these functions and anonymous functions.
+
+- topic: Review of additional topics
+  abbrev: review-additional
+  summary: |
+    We pause to improve our understanding of what we've covered in the
+    first five weeks of class, catching up on any topics left from the
+    previous two review days.
+    
 - topic: Software engineering fundamentals
   abbrev: software-engineering
   summary: |
@@ -203,19 +224,6 @@
     - page: /labs/list-composition.html
   todo:
     - It's a new lab! Students shouldn't be learning cons, car, and cdr at the same time they are learning recursion.
-
-- topic: Ethical considerations in computing
-  abbrev: ethical
-  summary: |
-    Now that we've spent some time exploring various issues in computing,
-    we take a step back and consider problems of ethical computing
-    with seasoned programmer-eyes. As newly-informed citizens, what
-    must we be aware of with respect to ethics in computing?
-  reading:
-    - link: ACM Code of Ethics and Professional Conduct
-      url: https://www.acm.org/code-of-ethics
-    - link: "Feynman’s Error: On Ethical Thinking and Drifting"
-      url: https://www.danmunro.ca/blog/2018/11/29/feynmans-error-on-ethical-thinking-and-drifting-nbsp 
 
 - topic: Local bindings
   abbrev: let
@@ -243,6 +251,18 @@
     - page: /readings/recursion-magic.html
   lab:
     - page: /labs/recursion-basics.html
+
+- topic: Tail recursion
+  abbrev: tail-recursion
+  summary: |
+    We continue to stretch our brains with recursive thinking.  In 
+    particular, We consider tail recursion, an advanced version of 
+    recursion that is ubiquitous in functional programming.
+  reading:
+    - page: /readings/tail-recursion.html
+    - page: /readings/list-recursion-revisited.html
+  lab:
+    - page: /labs/tail-recursion.html
 
 - topic: Recursion over numbers
   abbrev: number-recursion
@@ -283,16 +303,6 @@
   lab:
     - page: /labs/vectors-continued.html
 
-- topic: Randomness
-  abbrev: randomness
-  summary: |
-    We consider Scheme's `random` procedure and how one might use
-    that procedure in generating images.
-  reading:
-    - page: /readings/randomness.html
-  lab:
-    - page: /labs/random-language.html
-
 - topic: Dictionaries and hash tables
   abbrev: dictionaries
   summary: |
@@ -302,6 +312,16 @@
     - page: /readings/hash-tables.html
   lab:
     - page: /labs/hash-tables.html
+
+- topic: Randomness
+  abbrev: randomness
+  summary: |
+    We consider Scheme's `random` procedure and how one might use
+    that procedure in generating images.
+  reading:
+    - page: /readings/randomness.html
+  lab:
+    - page: /labs/random-language.html
 
 - topic: Data abstraction
   abbrev: data-abstraction
@@ -328,6 +348,13 @@
   lab:
     - page: /labs/structs.html
 
+- topic: Project kickoff
+  abbrev: final-project
+  summary: |
+    We introduce the final project for the semester.
+  reading:
+    - page: /mps/mp09.html
+
 - topic: Higher-order recursive design
   abbrev: higher-order-recursive-design
   summary: |
@@ -337,25 +364,6 @@
     - page: /readings/higher-order-recursive-design.html
   lab:
     - page: /labs/higher-order-recursion.html
-
-- topic: Tail recursion
-  abbrev: tail-recursion
-  summary: |
-    We continue to stretch our brains with recursive thinking.  In 
-    particular, We consider tail recursion, an advanced version of 
-    recursion that is ubiquitous in functional programming.
-  reading:
-    - page: /readings/tail-recursion.html
-    - page: /readings/list-recursion-revisited.html
-  lab:
-    - page: /labs/tail-recursion.html
-
-- topic: Project kickoff
-  abbrev: final-project
-  summary: |
-    We introduce the final project for the semester.
-  reading:
-    - page: /mps/mp09.html
 
 - topic: Trees
   abbrev: trees
@@ -381,19 +389,9 @@
     - page: /labs/tree-recursion.html
 
 - topic: Project work day
-  abbrev: project-work-day-2
+  abbrev: project-work-day-1
   summary: |
     We provide class time for students to their projects.
-
-- topic: Project work day
-  abbrev: project-work-day-3
-  summary: |
-    More class time to work on projects.
-
-- topic: Pause for breath
-  abbrev: pause-week-13
-  summary: |
-    Perhaps a space for shifting topics. Perhaps a project work day.
 
 - topic: Complexity analysis and binary search
   abbrev: search
@@ -412,14 +410,18 @@
   abbrev: presentations
   summary: Students present their projects
 
-- topic: "Case study: Sorting"
-  abbrev: sorting-lab
+- topic: Ethical considerations in computing
+  abbrev: ethical
   summary: |
-    We ground our exploration of sorting in some details.
+    Now that we've spent some time exploring various issues in computing,
+    we take a step back and consider problems of ethical computing
+    with seasoned programmer-eyes. As newly-informed citizens, what
+    must we be aware of with respect to ethics in computing?
   reading:
-    - page: /readings/sorting.html
-  lab:
-    - page: /labs/sorting.html
+    - link: ACM Code of Ethics and Professional Conduct
+      url: https://www.acm.org/code-of-ethics
+    - link: "Feynman’s Error: On Ethical Thinking and Drifting"
+      url: https://www.danmunro.ca/blog/2018/11/29/feynmans-error-on-ethical-thinking-and-drifting-nbsp 
 
 - topic: Wrapup
   abbrev: wrapup
@@ -465,4 +467,23 @@
     - page: /labs/decomposition.html
   todo:
     - Check the images reading to make sure it works with the new model.
+
+- topic: Project work day
+  abbrev: project-work-day-3
+  summary: |
+    More class time to work on projects.
+
+- topic: Pause for breath
+  abbrev: pause-week-13
+  summary: |
+    Perhaps a space for shifting topics. Perhaps a project work day.
+
+- topic: "Case study: Sorting"
+  abbrev: sorting-lab
+  summary: |
+    We ground our exploration of sorting in some details.
+  reading:
+    - page: /readings/sorting.html
+  lab:
+    - page: /labs/sorting.html
 

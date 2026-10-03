@@ -36,7 +36,7 @@
 - outcome: Documentation
   description: Document programs according to good software engineering principles.
   example: /las/documentation
-  active: true
+  active: false
 
 - outcome: Testing
   description: Test programs according to good software engineering principles.
@@ -46,7 +46,7 @@
 - outcome: Program style
   description: Write and structure code in ways that make it easier to understand.
   example: /las/program-style
-  active: true
+  active: false
 
 - outcome: Lists
   description: Manipulate lists with fundamental higher-order list functions.
