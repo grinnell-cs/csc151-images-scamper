@@ -1,5 +1,5 @@
 ---
-title: "EBoard 16: I have no idea (Section 1)"
+title: "EBoard 16: Pause for breath (review of functions)"
 number: 16
 section: eboards
 held: 2026-10-05
@@ -16,12 +16,29 @@ _Approximate overview_
 
 * Administrative stuff
 * Q&A
-* Lab
+* Review
 
 Administrative stuff
 --------------------
 
 ### Introductory Notes
+
+* As I indicated in email, I am using this week for review (for some students)
+  and a project (for others). I hope this helps everyone get caught up in
+  the class.
+* Making this change meant that I needed to cut two learning assessments.
+  We will still cover the topics (documentation and program style), but I
+  won't test you on them.
+* There are no new LA topics this week!
+* LA times this Friday (across all sections). Feel free to take LAs
+  during any of these tims. (You may attempt each of this week's LAs 
+  only once.)
+    * 7:30--8:00, 8:50--9:20, 10:20--11:30, 3:30--4:30.
+* For section 1 only: This Friday will approximately follow last Friday's 
+  model. That is, you may take LAs from 7:30--8:00, we'll meet at 8:00
+  to go over administrative materials. We'll then split up between those
+  who are doing review and those who are working on projects. At 8:50,
+  we'll break for quizzes.
 
 ### Peer educators
 
@@ -45,12 +62,6 @@ their roles and responsibilities, and the names we associate with each.
 ### Upcoming work
 
 * Due Tuesday, 2026-10-06
-    * Today's lab: [Unit testing](../labs/unit-testing)
-        * [Submit lab writeup on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8789451)
-        * Please submit today.
-    * Readings:
-        * [List composition and decomposition](../readings/list-composition)
-        * [Submit reading response on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8789469)
     * [Mini-project 1 redo](https://www.gradescope.com/courses/1370413/assignments/8707061)
        * When submitting a mini-project redo, please include a file
          called `CHANGES.txt` that describes what you've changed.
@@ -64,8 +75,18 @@ their roles and responsibilities, and the names we associate with each.
     * Makeup Quiz/LA on tracing
     * Makeup Quiz/LA on decomposition
     * Makeup Quiz/LA on procedures
+* Due Sunday, 2026-10-11
+    * Readings:
+        * [Documenting your code](../readings/documenting-your-code.html)
+        * [Unit testing](../readings/unit-testing.html)
+        * [Hypothesis-driven debugging](../readings/hypothesis-driven-debugging.html)
+        * [Submit reading response on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8789234)
 * Due Tuesday, 2026-10-13
-    * MP3
+    * [Mini-project 3](../mps/mp03)
+        * Gradescope not yet ready
+    * Readings:
+        * [List composition and decomposition](../readings/list-composition)
+        * [Submit reading response on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8789469)
 
 ### Upcoming activities
 
@@ -76,7 +97,5 @@ Questions
 
 ### Questions on MP3
 
-### Questions on the readings
-
-Lab
----
+Review
+------
