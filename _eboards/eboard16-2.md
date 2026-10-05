@@ -1,5 +1,5 @@
 ---
-title: "EBoard 16: Pause for breath - review of basics and functions (Section 1)"
+title: "EBoard 16: Pause for breath - review of basics and functions (Section 2)"
 number: 16
 section: eboards
 held: 2026-10-05
