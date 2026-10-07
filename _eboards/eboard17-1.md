@@ -3,7 +3,7 @@ title: "EBoard 17: Pause for breath - lots of topics (Section 1)"
 number: 17
 section: eboards
 held: 2026-10-07
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -71,6 +71,7 @@ Administrative stuff
     * Readings:
         * [List composition and decomposition](../readings/list-composition)
         * [Submit reading response on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8789469)
+* Due Thursday, 2026-10-15
     * [Mini-project 3](../mps/mp03)
         * Gradescope not yet ready
 * Due Tuesday, 2026-10-27
@@ -86,7 +87,7 @@ Administrative stuff
 Scholarly
 
 * Wednesday, 7 October 2026, 4:30--5:30 p.m., GCMoA.
-  _Robert Gehorsam: The Transformation of Art and Technology:  How They Feed Each Other’s Creativity_. **New**
+  _Robert Gehorsam: The Transformation of Art and Technology:  How They Feed Each Other’s Creativity_. 
 * Thursday, 8 October 2026, 11:00 a.m.--noon, JRC 101.
   _Scholars' Convocation: Alan Schrift: From the Origins of the Grinnell College Center for the Humanities to the Past and Current Crises of the Humanities_ 
 * Tuesday, 13 October 2026, Noon--1:00 p.m., CS Commons.
@@ -101,7 +102,7 @@ Artistic/Cultural
 Multicultural
 
 * Friday, 9 October 2026, 4:10--5:00 p.m., HSSC N1170
-  _Middle of Everywhere (Somewhere)_
+  _Middle of Everywhere (Uganda)_
 * Saturday, 10 October 2026, 3:00--5:00 p.m., JRC 101.
   _Walking Tacos with SOL_ 
 
@@ -122,14 +123,10 @@ Wellness
 * Friday, 9 October 2026, 11 a.m.--noon, Kington Plaza or JRC 101.
   _Mental Health & Wellness Resource Fair_ **New**
     * Stop by for as long as you think is appropriate.
-* Saturday, 10 October 2026, All Day, Somewhere.
-  _Mental Health Training_
-    * Sign up on Handshake.
-    * It's all day, so you will earn 3 tokens.
 * Saturday, 10 October 2026, Evening.
   _Participate in 10/10 with moderation._ **New**
     * Moderation: No more than two normal-size alcoholic drinks. (E.g., one 
-      shot, 12 oz of beer, 5 oz of wine.)
+      shot, 12/16 oz of beer, 5 oz of wine.)
 * Monday, 12 October 2026, 8:00--9:00 p.m., Prayer Garage in the CRSSJ.
   _Meditation Group_
 * Tuesday, 13 October 2026, 4:30--6:00 p.m., Bear P103.
@@ -147,7 +144,7 @@ Misc
   _Mentor Session_
 * Thursday, 8 October 2026, 8:00--9:00 p.m., Science 3820.
   _Mentor Session_
-* Thursday, 8 October 2026, 4:00--5:15 p.m., Noyce 3821.  
+* Thursday, 8 October 2026, 4:00--5:15 p.m., Noyce 3821.
   _CS Major Information Session_
     * We should have snacks beforehand.
 
@@ -160,22 +157,213 @@ _These do not earn tokens, but are worth your consideration._
 * Saturday, 10 October 2026, 1:00--3:00 p.m., Darby.
   _Volleyball vs. Illinois_ 
 
-Questions
----------
-
-### Administrative questions
-
 Tracing rules
 -------------
+
+Key idea of tracing: Try to figure out/understand how the computer evaluates
+the expressions you give it.
+
+* Helps solidify our understanding of Scheme. We can't write instructions
+  for doing things unless we know how the instructions will work.
+* When things go wrong, gives you a tool for trying to figure out why.
+
+Three key rules for basic tracing with function calls.
+
+* Before starting the next two rules, make sure to substitute any 
+  the value for any variable you've defined with `define`.
+* Evaluate arguments to a procedure before you apply the procedure.
+  ("Innermost first.") 
+    * Given a choice, we normally evaluate arguments left to right.
+        * Ideally, we'll get the same answer whether we evaluate
+          left to right or right to left or "randomly"
+        * This is one of the benefits of the way we write programs
+          in Scheme.
+    * Do only one argument at a time.
+* When applying a user-defined function, substitute each argument in
+  the function call for the corresponding parameter in the function
+  body.
+    * Evaluate predefined functions "as expected"
 
 Tracing
 -------
 
+```
+(define sqr (lambda (x) (* x x)))
+(define p (lambda (x y) (+ (f x) (g y))))
+(define f (lambda (y) (sqr (+ y 1))))
+(define g (lambda (a) (+ a a)))
+(define a 2)
+(define b 3)
+
+    (p (- 10 (* a 4)) (+ (* a b) 2))
+--> (p (- 10 (* 2 4)) (+ (* 2 3) 2))
+--> (p (- 10 8) (+ (* 2 3) 2))
+--> (p 2 (+ (* 2 3) 2))
+--> (p 2 (+ 6 2))
+--> (p 2 8)
+  ;    x y
+--> (+ (f 2) (g 8))
+  ;       y
+--> (+ (sqr (+ 2 1)) (g 8))
+--> (+ (sqr 3) (g 8))
+  ;         x
+--> (+ (* 3 3) (g 8))
+--> (+ 9 (g 8))
+  ;         a
+--> (+ 9 (+ 8 8))
+--> (+ 9 16)
+--> 25
+```
+
 Conditionals
 ------------
 
-Lambda-free procedures
-----------------------
+To write programs/algorithms, we need a variety of tools.
+
+* Predefined values and operations. (See our notes on types from Monday.)
+* Ways to name things -- `(define NAME EXP)`
+* Ways to sequence operations.
+    * "Evaluate arguments before applying a function" `(spread bread (remove-contents (open-jar pb)))`
+    * We evaluate define statements in order.
+        * `(define opened (open-jar pb))`
+        * `(define stuff (remove-contents opened))`
+        * `(define half-sandwich (spread bread stuff))`
+    * We use `o` -- `(o spread-on-bread remove-contents open-jar)`
+* Ways to define subroutines (functions, procedures, operations): Take
+  some inputs, do some operations, and return a value.
+    * `(lambda (INPUTS) OPERATIONS)`
+* Ways to make choices. (conditionals)
+    * "If the bag has a twisty tie ..."
+    * `(if TEST CONSEQUENT ALTERNATE)` 
+        * Not quite a function call
+        * Evaluate the `TEST`
+        * If the `TEST` evaluates to true (`#t`), evaluate the `CONSEQUENT`
+        * If the `TEST` evaluates to false (`#f`), evaluate the `ALTERNATE`
+    * `(cond [TEST1 CONSEQUENT1] [TEST2 CONSEQUENT2] ... [else ALTERNATE])`
+        * Evaluate each `TEST` in sequence. As soon as one holds, evaluate
+          the corresponding consequent and return its value, ignoring the
+          rest. If no `TEST` holds, evaluate and return the `ALTERNATE`.
+    * Associated things
+        * Predicates - Functions that return true or false. `char-upcase?`,
+          `odd?`, `positive?`, `<=`, `string<=?`, `square?`
+        * `not` - "Reverse" a boolean value. (#t -> #f, #f -> #t)
+        * `(or EXP1 EXP2 ... EXPn)` - evaluate each expression in turn,
+          returning true when it hits one that evaluates to true, returning
+          false if none evaluates to true.
+        * `(and EXP1 EXP2 ... EXPn)` - evaluate each expression in turn,
+          returning false when it hits one that evaluates to false, returning
+          true if none evaluates to false.
+
+Example: 
+
+Write a procedure that determines how many days there are in a month
+(represented as an integer), assuming it's not a leap year. Have it
+return false if given an integer that is not a valid month. Have it
+return whatever you wish (or crash) if given a non-integer.
+
+```
+(define days-in-month
+  (lambda (month)
+    (cond
+      [(= month 2)
+       28]
+      [(or (= month 9) (= month 4) (= month 6) (= month 11))
+       30]
+      [(and (<= 1 month) (<= month 12))
+       31]
+      [else 
+       #f])))
+```
+
+We could also use `(<= 1 month 12)`
+
+Returning to the list of things necessary for algorithms: Repetition.
+You need to be able to do an action again and again and again, perhaps
+a fixed of times, perhaps until some condition is achieved. 
+* In Scheme
+    * `map` - do someting to the first element, then the second, then
+      the third
+    * `pixel-map` - do something to the first pixel, then the second, ...
+    * We will learn a general techniqure for repetition after break.
+
+Lambda-free functions
+---------------------
+
+Functions are one of the key parts of writing algorithms. 
+
+* We started with one way to write functions: `(lambda (INPUTS) COMPUTATION)`
+* It can be useful to think about writing functions in other ways, mostly
+  for concision.
+
+Composition: `(o FUN1 FUN2 ... FUNn)`: A function that takes one input,
+applies `FUNn` ... then `FUN2` then `FUN1`. (Sequencing!)
+
+```
+(define F (o f g h))
+(define F
+  (lambda (x)
+    (f (g (h x)))))
+```
+
+Sectioning: `(l-s FUN ARG1)`: A function that takes one input (`ARG2`)
+computes `(FUN ARG1 ARG2)`.
+
+```
+(define add5 (l-s + 5))
+(define add5
+  (lambda (arg2)
+    (+ 5 arg2)))
+```
+
+`(r-s FUN ARG2)`: A function that takes one input (`ARG1`) and computes
+`(FUN ARG1 ARG2)`.
+
+```
+(define appendBang (r-s string-append "!"))
+(define appendBang
+  (lambda (str)
+    (string-append str "!")))
+```
+
+We use `o`, `l-s`, and `r-s` when we need a procedure and they seem
+like appropriate tools. (Or when we're told to do so.)
+
+* `o` - When we need to apply a sequence of functions to a value.
+* `l-s` and `r-s` - When we have a two-input procedure and we want
+  to fix one of the two inputs.
+
+There are also times when we want a function and don't want to bother
+naming it. These are useful because the are concise.
+
+Sam likes them because they give you a different way of thinking about
+functions.
+
+* Lambda makes you think about functions in terms of expressions.
+* These make you think about building functions from other functions.
+  (This is a powerful way of thinking about building functions.)
+
+_Can we trace using `l-s` with pixel map._ (Next class.)
+
+Lists
+-----
+
+Lists are a type. We have a few questions we normally ask about types.
+
+* Why do have this type? We often use lists to collect/group values.
+* How does Scheme/Scamper show us values in the type?  `(list val1 val2 ...)`
+* How do we create values in the type?
+    * `(make-list n val)` - Make a list consisting of `n` copies of `val`.
+    * `(list exp1 exp2 ... expn)`
+    * `(range start finish)` - Make a list of numbers from `start` (inclusive)
+      to `finish` (exclusive).
+    * `(range finish)` - Make a list of numbers from 0 to `finish` (exclusive).
+    * `(range start finish increment)` - Make a list of numbers from `start` to `finish`, incrementing by `increment` at each step.
+    * `(BLAH->list BLAH)`
+* What can we do with them? 
+    * `(string->list str)`
+    * `(map fun lst)`
 
 Using lambda-free procedures with lists
 ---------------------------------------
+
+_Next class._
