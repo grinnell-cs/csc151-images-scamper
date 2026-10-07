@@ -89,6 +89,10 @@ Scholarly
   _Robert Gehorsam: The Transformation of Art and Technology:  How They Feed Each Other’s Creativity_. **New**
 * Thursday, 8 October 2026, 11:00 a.m.--noon, JRC 101.
   _Scholars' Convocation: Alan Schrift: From the Origins of the Grinnell College Center for the Humanities to the Past and Current Crises of the Humanities_ 
+* Tuesday, 13 October 2026, Noon--1:00 p.m., CS Commons.
+  _CS Table_
+* Thursday, 15 October 2026, 11:00 a.m.--noon, JRC 101.
+  _Scholars' Convocation: Unknown Topic_
 
 Artistic/Cultural
 
@@ -115,10 +119,17 @@ Wellness
     * Get swag.
     * Bring a question for better swag. 
     * Tell Deborah that I sent you.
+* Friday, 9 October 2026, 11 a.m.--noon, Kington Plaza or JRC 101.
+  _Mental Health & Wellness Resource Fair_ **New**
+    * Stop by for as long as you think is appropriate.
 * Saturday, 10 October 2026, All Day, Somewhere.
   _Mental Health Training_
     * Sign up on Handshake.
     * It's all day, so you will earn 3 tokens.
+* Saturday, 10 October 2026, Evening.
+  _Participate in 10/10 with moderation._ **New**
+    * Moderation: No more than two normal-size alcoholic drinks. (E.g., one 
+      shot, 12 oz of beer, 5 oz of wine.)
 * Monday, 12 October 2026, 8:00--9:00 p.m., Prayer Garage in the CRSSJ.
   _Meditation Group_
 * Tuesday, 13 October 2026, 4:30--6:00 p.m., Bear P103.
@@ -129,7 +140,7 @@ Wellness
 Misc
 
 * Wednesday, 7 October 2026, 4:00--4:15 p.m., JRC 101.
-  _Town Hall with Rob Sands_.
+  _Town Hall with Rob Sands_. **New**
      * If Zach Lahn visits campus, I'll also offer a token for attending
        his town hall.
 * Wednesday, 7 October 2026, 8:00--9:00 p.m., Science 3820.
