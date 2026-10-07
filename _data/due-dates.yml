@@ -52,17 +52,15 @@
 - date: 2026-10-09
   due:
 
-- date: 2026-10-13
+- date: 2026-10-15
   due:
     - MP3
-
-- date: 2026-10-14
-  assigned:
-    - MP4
 
 - date: 2026-10-16
   due:
     - LA 8 (Testing)
+  assigned:
+    - MP4
 
 - date: 2026-10-30
   due:
