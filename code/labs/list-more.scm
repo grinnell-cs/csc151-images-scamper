@@ -144,8 +144,8 @@
 ;; REPLACE THIS TEXT WITH YOUR ANSWER
 
 ;; b. As we hope you've learned, you can use `l-s` or `r-s` to help with 
-;; this problem.  Write an expression using `cut` that adds five to each
-;; element of `numbers`.
+;; this problem.  Write an expression using either `l-s` or `r-s` that adds 
+;; five to each element of `numbers`.
 
 (define numbers (list 3 1 4 1 5 9 2 6))
 (define numbers-plus-five-b ???)
@@ -156,7 +156,7 @@
 ;           (thunk numbers-plus-five-b))
 
 ;; c. Suppose you had not learned `l-s` or `r-s`.  There are still at least
-;; two other ways to to add five to each element of a list, perhaps by
+;; three other ways to to add five to each element of a list, perhaps by
 ;; taking advantage of `add1`.  Come up with two, at least one of which uses 
 ;; the three-parameter `map`.
 
@@ -195,16 +195,16 @@
 (define ex3-list
   (list "someone" "suggests" "that" "something" "may" "be" "smart" "&" "snarky"))
 
-;; a. Uses `string-titlecase` to convert each word to title case
+;; a. Uses `string-upcase` to convert each word to title case
 
 (define ex3-title-case ???)
 
 ;(test-case "Titlecasing elements"
 ;           equal?
-;           (list "Someone" "Suggests" "That" "Something" "May" "Be" "Smart" "&" "Snarky")
+;           (list "SOMEONE" "SUGGESTS" "THAT" "SOMETHING" "MAY" "BE" "SMART" "&" "SNARKY")
 ;           (thunk ex3-title-case))
 
-;; b. Keeps only the elements of the list that start with s
+;; b. Keeps only the elements of the list that start with the letter s.
 
 (define ex3-s-words ???)
 
