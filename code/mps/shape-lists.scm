@@ -70,6 +70,12 @@
 (define ushape->rectangle
   (l-s apply solid-rectangle))
 
+;;; (ushape->triangle us) -> triangle?
+;;;   us : ushape?
+;;; Convert `us` to a solid triangle.
+(define ushape->triangle
+  (l-s apply solid-isosceles-triangle))
+
 ;;; (thickly-outlined-ellipse width height color) -> drawing?
 ;;;   width : positive-integer?
 ;;;   height : positive-integer?
@@ -86,12 +92,12 @@
 (define ushape->thickly-outlined-ellipse
   (l-s apply thickly-outlined-ellipse))
 
-;;; (five-variants us) -> (list-of drawing?)
+;;; (five-variants us) -> (list-of ushape?)
 ;;;   us : ushape?
 ;;; Create a list of five shapes based on the original shape.
 ;;;
 ;;; * The first shape is 1/3 the width and much darker.
-;;; * The second shape is 1/3 the width and slightly darker.
+;;; * The second shape is 2/3 the width and slightly darker.
 ;;; * The third shape is the same.
 ;;; * The fourth shape is 4/3 the width and slightly lighter.
 ;;; * The fifth shape is 5/3 the width and much lighter.
@@ -99,7 +105,7 @@
   (lambda (us)
     (apply five-variants/helper us)))
 
-;;; (five-variants/helper width height color) -> (list-of shape?)
+;;; (five-variants/helper width height color) -> (list-of ushape?)
 ;;;   width : nonnegative-integer?
 ;;;   height : nonnegative-integer?
 ;;;   color : rgb?
@@ -115,14 +121,14 @@
 
 ;;; (drawing-list? val) -> boolean?
 ;;;   val : any?
-;;; Determines whether `val` is a list of shapes.
+;;; Determines whether `val` is a list of drawings.
 (define drawing-list?
  (list-of drawing?))
 
 ;;; (slightly-nested-drawing-list? val) -> boolean?
 ;;;   val : any? 
 ;;; Determines whether `val` is a slightly-nested drawing list. That is,
-;;; a list of values that are either shapes or drawing lists.
+;;; a list of values that are either drawings or drawing lists.
 (define slightly-nested-drawing-list?
   (list-of (any-of drawing? (list-of drawing?))))
 
