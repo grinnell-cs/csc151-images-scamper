@@ -3,7 +3,7 @@ title: "EBoard 18: Pause for breath - MP3 and MP2 (Section 3)"
 number: 18
 section: eboards
 held: 2026-10-07
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -92,7 +92,7 @@ Multicultural
 * Friday, 9 October 2026, 4:10--5:00 p.m., HSSC N1170
   _Middle of Everywhere (Uganda)_
 * Saturday, 10 October 2026, 3:00--5:00 p.m., JRC 101.
-  _Walking Tacos with SOL_ 
+  _Walking Tacos with SOL_
 
 Peer
 
@@ -101,9 +101,6 @@ section's students are welcome._
 
 Wellness
 
-* Friday, 9 October 2026, 11 a.m.--1 p.m., Kington Plaza or JRC 101.
-  _Mental Health & Wellness Resource Fair_ 
-    * Stop by for as long as you think is appropriate.
 * Saturday, 10 October 2026, Evening.
   _Participate in 10/10 with moderation._ 
     * Moderation: No more than two normal-size alcoholic drinks. (E.g., one 
@@ -133,10 +130,9 @@ _These do not earn tokens, but are worth your consideration._
 
 ### Friday PSA
 
-* Please be moderate in the choices you make.
-* Don't give in to STUPID AND UNHEALTHY EXPECTATIONS.
-* If you cohabit, consent is essential, insufficient, impossible when
-  impaired.
+* Please be moderate this weekend.
+* Do not succumb to STUPID EXPECTATIONS this weekend.
+* Consent essential, it is insufficient, it is impossible while impaired.
 
 Questions
 ---------
@@ -185,6 +181,24 @@ Central themes
 * Building non-representational images by combining lots and lots and lots
   of shapes that we build "systematically"
 
+### Questions
+
+I can use multiple lists with `map`, why can't I use multiple lists with
+`apply`?
+
+> Meaning of `map` with multiple lists
+
+> `(map fun (list v1 v2 ... vn) (list w1 w2 ... wn))`
+
+> That becomes `(list (fun v1 w1) (fun v2 w2) ... (fun vn wn))`
+
+> There's a natural meaning to `map` with multiple lists.
+
+> On the other hand, consider `(apply fun (list v1 v2 ... vn))`
+
+> That means `(fun v1 v2 ... vn)`. How would a second list fit into that
+  meaning?
+
 A question from MP2
 -------------------
 
@@ -209,7 +223,78 @@ think it will help me better understand section and compose.
 ;;; Gamma correct each of the pixels in `canvas` by 2
 ```
 
+* To write `gamma-correct-half`, I need to do something to each pixel
+  of an image. I know that I can use `pixel-map` to do so.
+* The form of `pixel-map` is `(pixel-map colorfun image)`, where
+  `colorfun` takes an RGB color as input and returns a new RGB color.
+* Problem! `gamma-correct` is NOT a function of one input.
+* What's the solution? Write specific versions of `gamma-correct-color`
+  that correct by 0.5 and 2.
+
+```
+(define gcc-half
+  (lambda (color)
+    (gamma-correct-color color 0.5)))
+(define gcc-double
+  (lambda (color)
+    (gamma-correct-color color 2.0)))
+```
+
+I can now use `pixel-map` with those.
+
+```
+(define gamma-correct-half
+  (lambda (image)
+    (pixel-map gcc-half image)))
+(define gamma-correct-double
+  (lambda (image)
+    (pixel-map gcc-double image)))
+```
+
+When you write a procedure by filling in one parameter of a two-parameter
+procedure with a constant value, you can also use `l-s` or `r-s`.
+
+```
+(define gcc-half
+  (r-s gamma-correct-color 0.5))
+(define gcc-double
+  (r-s gamma-correct-color 2.0))
+```
+
+Remember that we can always replace a named value with the value.
+
+```
+(define gamma-correct-half
+  (lambda (image)
+    (pixel-map (r-s gamma-correct-color 0.5) image)))
+(define gamma-correct-double
+  (lambda (image)
+    (pixel-map (r-s gamma-correct-color 2.0) image)))
+```
+
+When we have two procedures that look nearly identical, factor out the
+common portion.
+
+```
+(define gamma-correct-image
+  (lambda (image amt)
+    (pixel-map (r-s gamma-correct-color amt) image)))
+(define gamma-correct-half
+  (lambda (image)
+    (gamma-correct-image image 0.5)))
+(define gamma-correct-double
+  (lambda (image)
+    (gamma-correct-image image 2.0)))
+```
+
+Important lessons for the quiz:
+
+* If you're buildng a one-parameter procedure from a two parameter procedure,
+  you can just use `l-s` or `r-s`. [Useful for thinking about section/compose]
+* When you want to use `map` or `filter` or `reduce`, it's often helpful
+  to build a separate procedure. [Think about this for the lists quiz.]
+
 LAs and Quizzes
 ---------------
 
-Fun!
+Have Fun!
