@@ -213,6 +213,15 @@
   lab:
     - page: /labs/unit-testing.html
 
+- topic: Local bindings
+  abbrev: let
+  summary: |
+    We explore issues of redundacy in code and mechanisms for reducing such reducnancy.
+  reading:
+    - page: /readings/local-bindings.html
+  lab:
+    - page: /labs/local-bindings.html
+
 - topic: Other ways to build lists
   abbrev: building-lists
   summary: |
@@ -222,17 +231,6 @@
     - page: /readings/list-composition.html
   lab:
     - page: /labs/list-composition.html
-  todo:
-    - It's a new lab! Students shouldn't be learning cons, car, and cdr at the same time they are learning recursion.
-
-- topic: Local bindings
-  abbrev: let
-  summary: |
-    We explore issues of redundacy in code and mechanisms for reducing such reducnancy.
-  reading:
-    - page: /readings/local-bindings.html
-  lab:
-    - page: /labs/local-bindings.html
 
 - topic: Introduction to list recursion
   abbrev: recursion-intro

@@ -59,12 +59,12 @@
 - date: 2026-10-16
   due:
     - LA 8 (Testing)
+    - LA 9 (Local bindings)
   assigned:
     - MP4
 
 - date: 2026-10-30
   due:
-    - LA 9 (Local bindings)
     - LA 10 (List recursion)
 
 - date: 2026-11-03
