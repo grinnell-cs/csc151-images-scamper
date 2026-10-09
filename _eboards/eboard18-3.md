@@ -1,9 +1,9 @@
 ---
-title: "EBoard 18: Pause for breath - Lists and MP3 (Section 1)"
+title: "EBoard 18: Pause for breath - MP3 and MP2 (Section 3)"
 number: 18
 section: eboards
 held: 2026-10-07
-link: true
+link: false
 ---
 # {{ page.title }}
 
@@ -14,15 +14,11 @@ is working correctly).
 
 _Approximate overview_
 
-* LAs
 * Administrative stuff
 * Q&A
 * About MP3
-* Review
-    * A question from MP2
-    * Using lambda-free procedures with lists
-* Time to work on MP3
-* More LAs
+* A question from MP2
+* LAs
 
 Administrative stuff
 --------------------
@@ -35,6 +31,7 @@ Administrative stuff
 * I will be unavailable next Thursday. Tuesday is my primary day for office
   hours, but I can try to find times between classes on Monday, Wednesday,
   and Friday.
+* In case you couldn't tell, it's another "talk day" in CSC-151.
 
 ### Upcoming work
 
@@ -104,7 +101,7 @@ section's students are welcome._
 
 Wellness
 
-* Friday, 9 October 2026, 11 a.m.--noon, Kington Plaza or JRC 101.
+* Friday, 9 October 2026, 11 a.m.--1 p.m., Kington Plaza or JRC 101.
   _Mental Health & Wellness Resource Fair_ 
     * Stop by for as long as you think is appropriate.
 * Saturday, 10 October 2026, Evening.
@@ -136,9 +133,9 @@ _These do not earn tokens, but are worth your consideration._
 
 ### Friday PSA
 
-* Please be moderate this weekend.
-* Do not feel you have to follow DAMN STUPID EXPECTATIONS.
-* Consent is essential. It is also insufficient. And impossible when
+* Please be moderate in the choices you make.
+* Don't give in to STUPID AND UNHEALTHY EXPECTATIONS.
+* If you cohabit, consent is essential, insufficient, impossible when
   impaired.
 
 Questions
@@ -212,106 +209,7 @@ think it will help me better understand section and compose.
 ;;; Gamma correct each of the pixels in `canvas` by 2
 ```
 
-* Hmmm. `pixel-map` needs a one-parameter function as its first
-  parameter, but `gamma-correct` expects two.
-* I know! I'll write a one-parameter variant that gamma corrects by 1/2
-
-```
-(define gch
-  (lambda (color)
-    (gamma-correct color 0.5)))
-
-(define gamma-correct-half
-  (lambda (image)
-    (pixel-map gch image)))
-```
-
-This is not much different than defining `rgb-bluer` ourselves and then
-using it with `pixel-map`.
-
-```
-(define image-bluer
-  (lambda (image)
-    (pixel-map rgb-bluer image)))
-```
-
-```
-(define gcdouble
-  (lambda (color)
-    (gamma-correct color 2)))
-
-(define gamma-correct-double
-  (lambda (image)
-    (pixel-map gcdouble image)))
-```
-
-At some point, you get used to using `l-s` and `r-s` (not necessarily
-on this assignment).
-
-`gch` is taking a two-parameter procedure (`gamma-correct`) and filling in one of the parameters (the second/right) with a constant (`0.5`). We can use `r-s` to do the same thing.
-
-```
-(define gch
-  (r-s gamma-correct 0.5))
-```
-
-We know that Scamper often just does substitution for defined values.
-
-```
-(define gamma-correct-half
-  (lambda (image)
-    (pixel-map (r-s gamma-correct 0.5) image)))
-```
-
-If we prefer `lambda`, we cold also write.
-
-```
-(define gamma-correct-half
-  (lambda (image)
-    (pixel-map (lambda (color) (gamma-correct color 0.5)) image)))
-```
-
-We can write `gamma-correct-double` similarly.
-
-```
-(define gamma-correct-double
-  (lambda (image)
-    (pixel-map (r-s gamma-correct 2.0) image)))
-```
-
-Wow. I have two nearly identical procedures. I want to "factor out" the
-commonality.
-
-```
-(define gamma-correct-image
-  (lambda (image amt)
-    (pixel-map (r-s gamma-correct amt) image)))
-```
-
-```
-(define gamma-correct-half
-  (lambda (image)
-    (gamma-correct-image image 0.5)))
-
-(define gamma-correct-double
-  (lambda (image)
-    (gamma-correct-image image 2.0)))
-```
-
-Taking one more step ...
-
-```
-(define gamma-correct-half
-  (r-s gamma-correct-image 0.5))
-(define gamma-correct-double
-  (r-s gamma-correct-image 2.0))
-```
-
-Lists, "the big three", and anonymous procedures
-------------------------------------------------
-
-Time to work on MP3
--------------------
-
 LAs and Quizzes
 ---------------
+
+Fun!
