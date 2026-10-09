@@ -224,7 +224,7 @@ Note: As in the previous procedures, you may not use conditionals.
 
 Old-school video games did not provide nearly as many color options as we now have. To save memory, they used "eight bits" for a color, three for the red component, three for the green component, and two for the blue component. If you don't know about bits, that's okay. It means that there are only eight different values for the red component, eight different values for the green component, and four different values for the blue component.
 
-Write a procedure, `(8bit img)`, that converts an image to the equivalent of 8-bit color.
+Write a procedure, `(eight-bit img)`, that converts an image to the equivalent of 8-bit color.
 
 ![A similar kitten to the previous image](../images/transforming-images/kitten-8bit.jpg)
 
