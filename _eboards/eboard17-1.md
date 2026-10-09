@@ -52,7 +52,7 @@ Administrative stuff
     * [Mini-project 1 redo](https://www.gradescope.com/courses/1370413/assignments/8707061)
        * When submitting a mini-project redo, please include a file
          called `CHANGES.txt` that describes what you've changed.
-    * Due date exstended because this is a review week.
+    * Due date extended because this is a review week.
 * On Friday, 2026-09-09
     * Makeup Quiz/LA on collaboration 
     * Makeup Quiz/LA on lists and list operations
