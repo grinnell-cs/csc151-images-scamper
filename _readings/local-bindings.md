@@ -6,6 +6,8 @@ summary: |
   values that are only available within a procedure.
 ---
 
+**This reading has not yet been updated for Scamper. Stay tuned!**
+
 ## Introduction
 
 When writing programs and algorithms, it is useful to *name* values

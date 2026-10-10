@@ -213,18 +213,6 @@
   lab:
     - page: /labs/unit-testing.html
 
-- topic: Other ways to build lists
-  abbrev: building-lists
-  summary: |
-    We continue our exploration of lists through some "finer-grained"
-    operations.
-  reading:
-    - page: /readings/list-composition.html
-  lab:
-    - page: /labs/list-composition.html
-  todo:
-    - It's a new lab! Students shouldn't be learning cons, car, and cdr at the same time they are learning recursion.
-
 - topic: Local bindings
   abbrev: let
   summary: |
@@ -234,14 +222,22 @@
   lab:
     - page: /labs/local-bindings.html
 
+- topic: Other ways to build lists
+  abbrev: building-lists
+  summary: |
+    We continue our exploration of lists through some "finer-grained"
+    operations.
+  reading:
+    - page: /readings/list-composition.html
+  lab:
+    - page: /labs/list-composition.html
+
 - topic: Introduction to list recursion
   abbrev: recursion-intro
   summary: |
     We begin our exploration of *recursion*, the most general form
     of repetition available in Scheme.  You can use recursion to
     both build and iterate over different kinds of values.
-  reading:
-    - page: /readings/recursion-basics.html
 
 - topic: Introduction to list recursion, continued
   summary: |

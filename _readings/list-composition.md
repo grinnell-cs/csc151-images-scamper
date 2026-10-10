@@ -1,6 +1,9 @@
 ---
 title: Composing and decomposing lists
 ---
+
+**Warning! This reading has not yet been upated for Scamper!**
+
 *Summary:* We delve more deeply into Scheme's list data type. We consider, in particular, how we work with the individual elements of lists and not just with the list as a whole.
 
 ## Introduction: Representing data
@@ -234,31 +237,31 @@ If the value does not appear in the list, `indexes-of` returns the empty list.
 '()
 ```
 
-### `drop` and `take`: Extracting sublists
+### `list-drop` and `list-take`: Extracting sublists
 
-The `(drop lst n)` procedure removes ("drops") the first `n` elements of `lst`.
+The `(list-drop lst n)` procedure removes ("drops") the first `n` elements of `lst`.
 
 ```
-> (drop (list "a" "b" "c" "d" "e") 3)
+> (list-drop (list "a" "b" "c" "d" "e") 3)
 '("d" "e")
-> (drop (list "a" "b" "c" "d" "e") 2)
+> (list-drop (list "a" "b" "c" "d" "e") 2)
 '("c" "d" "e")
-> (drop (list "a" "b" "c" "d" "e") 5)
+> (list-drop (list "a" "b" "c" "d" "e") 5)
 '()
 ```
 
-In contrast, the `(take lst n)` procedure takes the first `n` elements of `lst`, dropping all remaining elements.
+In contrast, the `(list-take lst n)` procedure takes the first `n` elements of `lst`, dropping all remaining elements.
 
 ```
-> (take (list "a" "b" "c" "d" "e") 1)
+> (list-take (list "a" "b" "c" "d" "e") 1)
 '("a")
-> (take (list "a" "b" "c" "d" "e") 2)
+> (list-take (list "a" "b" "c" "d" "e") 2)
 '("a" "b")
-> (take (list "a" "b" "c" "d" "e") 3)
+> (list-take (list "a" "b" "c" "d" "e") 3)
 '("a" "b" "c")
-> (take (list "a" "b" "c" "d" "e") 4)
+> (list-take (list "a" "b" "c" "d" "e") 4)
 '("a" "b" "c" "d")
-> (take (list "a" "b" "c" "d" "e") 6)
+> (list-take (list "a" "b" "c" "d" "e") 6)
 . . take: contract violation
   expected: a list with at least 6 elements
   given: '("a" "b" "c" "d" "e")
@@ -322,10 +325,10 @@ In working with the `c*r` procedures, we find it easiest to read them from right
 `(indexes-of lst val)`{:.signature} *Standard list procedure.*
 :   Find all the indices of `val` in `lst`.  If `val` does not appear in `lst`, returns the empty list.
 
-`(drop lst n)`{:.signature} *Standard list procedure.*
+`(list-drop lst n)`{:.signature} *Standard list procedure.*
 : Remove the first `n` elements of `lst`.
 
-`(take lst n)`{:.signature} *Standard list procedure.*
+`(list-take lst n)`{:.signature} *Standard list procedure.*
 : Grab the first `n` elements of `lst`.
 
 `(caar lst)`{:.signature} *Standard list procedure.*

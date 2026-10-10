@@ -97,14 +97,20 @@ And, since we're filling in one parameter of a two-parameter function (`apply`) 
   (l-s apply solid-ellipse))
 ```
 
-We can define `ushape->rectangle` similarly.
+We can define `ushape->rectangle` and `ushape->triangle` similarly.
 
 ```
 ;;; (ushape->rectangle us) -> rectangle?
 ;;;   us : ushape?
-;;; Convert shape to a solid rectangle.
+;;; Convert `us` to a solid rectangle.
 (define ushape->rectangle
   (l-s apply solid-rectangle))
+
+;;; (ushape->triangle us) -> triangle?
+;;;   us : ushape?
+;;; Convert `us` to a solid triangle.
+(define ushape->triangle
+  (l-s apply solid-isosceles-triangle))
 ```
 
 We can now use those functions to build some shapes from generic shape descriptions.
@@ -187,6 +193,8 @@ We can now use those functions to build some shapes from generic shape descripti
   (l-s apply solid-ellipse))
 (define ushape->rectangle
   (l-s apply solid-rectangle))
+(define ushape->triangle
+  (l-s apply solid-isosceles-triangle))
 (define red-narrow
   (ushape 10 20 "red"))
 (define red-medium
@@ -212,6 +220,7 @@ We can now use those functions to build some shapes from generic shape descripti
 (ushape->ellipse red-medium)
 (ushape->ellipse red-wide)
 (ushape->rectangle red-wide)
+(ushape->triangle red-wide)
 </pre>
 
 
@@ -221,6 +230,7 @@ Using `map`, we can make lists of different kinds of shapes and quickly combine 
 (map ushape->ellipse red-shapes)
 (apply above (map ushape->ellipse red-shapes))
 (apply beside (map ushape->rectangle narrow-shapes))
+(apply beside (map ushape->triangle narrow-shapes))
 </pre>
 
 We can even make somewhat slightly more complex shapes using that information.
@@ -258,12 +268,12 @@ We can even make somewhat slightly more complex shapes using that information.
 Of course, rather than creating lists like these on our own, we can write functions that do so.  Here's one that takes a shape and creates five variants of varying widths and "shades". 
 
 ```
-;;; (five-variants us) -> (list-of drawing?)
+;;; (five-variants us) -> (list-of ushape?)
 ;;;   us : ushape?
 ;;; Create a list of five shapes based on the original shape.
 ;;;
 ;;; * The first shape is 1/3 the width and much darker.
-;;; * The second shape is 1/3 the width and slightly darker.
+;;; * The second shape is 2/3 the width and slightly darker.
 ;;; * The third shape is the same.
 ;;; * The fourth shape is 4/3 the width and slightly lighter.
 ;;; * The fifth shape is 5/3 the width and much lighter.
@@ -271,7 +281,7 @@ Of course, rather than creating lists like these on our own, we can write functi
   (lambda (us)
     (apply five-variants/helper us)))
 
-;;; (five-variants/helper width height color) -> (list-of shape?)
+;;; (five-variants/helper width height color) -> (list-of ushape?)
 ;;;   width : nonnegative-integer?
 ;;;   height : nonnegative-integer?
 ;;;   color : rgb?
@@ -532,7 +542,7 @@ Just in case you weren't sure, the `2` here represents "up to two levels of nest
 
 g. As you might guess, it would be useful to support other shapes, too. 
 
-**Document and write functions, `(ushapes2->rectangles shapes)` and `(ushapes2->triangles shapes), that takes a doubly nested ushape list as a parameter and converts all of the ushapes in the list to rectangles or isosceles triangles, as appropriate.** 
+**Document and write functions, `(ushapes2->rectangles shapes)` and `(ushapes2->triangles shapes)`, that take a doubly nested ushape list as a parameter and convert all of the ushapes in the list to rectangles or isosceles triangles, as appropriate.** 
 
 ---
 
@@ -566,8 +576,8 @@ You should use `rgb-redder`, `rgb-greener`, and `rgb-bluer` to change the colors
   (lambda (width height color)
     (list (ushape width height color)
           (ushape width height (rgb-redder color))
-          (ushape width height (rgb-bluer color))
-          (ushape width height (rgb-greener color)))))
+          (ushape width height (rgb-greener color))
+          (ushape width height (rgb-bluer color)))))
 </script>
 (map ushape->rectangle (color-variants-0 (ushape 20 20 (rgb 128 128 128))))
 (map ushape->ellipse (color-variants-0 (ushape 20 40 (rgb 64 128 192))))
@@ -644,6 +654,28 @@ c. **Document <!--, write two tests for,--> and write a function`(color-variants
   (color-variants-1x (list (ushape 20 30 (rgb 192 128 128)) 
                            (ushape 30 30 (rgb 128 192 128))
                            (ushape 30 20 (rgb 128 128 192)))))
+(apply above 
+       (map (l-s apply beside) 
+            (ushapes1x->ellipses 
+              (color-variants-1x (list (ushape 20 30 (rgb 192 128 128)) 
+                                       (ushape 30 30 (rgb 128 192 128))
+                                       (ushape 30 20 (rgb 128 128 192)))))))
+(apply beside
+       (map (l-s apply above) 
+            (ushapes1x->ellipses 
+              (color-variants-1x (list (ushape 20 30 (rgb 192 128 128)) 
+                                       (ushape 30 30 (rgb 128 192 128))
+                                       (ushape 30 20 (rgb 128 128 192)))))))
+(ushapes1->ellipses 
+  (color-variants-1x 
+    (color-variants-0
+      (ushape 20 30 (rgb 128 128 128)))))
+(apply above 
+       (map (l-s apply beside) 
+            (ushapes1->ellipses 
+              (color-variants-1x 
+                (color-variants-0
+                  (ushape 20 30 (rgb 128 128 128)))))))
 </pre>
 
 You may assume that `color-variants-1x` receives either a ushape or list of ushapes as a parameter. That is, if its parameter is not a ushape, it must be a ushape list.
