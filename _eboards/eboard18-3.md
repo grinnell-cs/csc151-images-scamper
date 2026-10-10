@@ -2,7 +2,7 @@
 title: "EBoard 18: Pause for breath - MP3 and MP2 (Section 3)"
 number: 18
 section: eboards
-held: 2026-10-07
+held: 2026-10-09
 link: true
 ---
 # {{ page.title }}
