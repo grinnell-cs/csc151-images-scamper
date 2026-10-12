@@ -3,7 +3,7 @@ title: "EBoard 19: Software engineering basics (Section 2)"
 number: 19
 section: eboards
 held: 2026-10-12
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -27,7 +27,7 @@ Administrative stuff
   in my office. For many students, that seems to be the thing that gets
   them through.
 * It looks like few of you are reviewing the comments on your readings
-  and such. Please take a moment or two to check.
+  and such. Please take a moment or two to check comments.
 * I'm going to try an experiment today. Rather than going through all of
   the administrative stuff, I'm going to trust you to read most of it on 
   your own.  (Use Teams if you have questions.)
@@ -48,7 +48,7 @@ Administrative stuff
 * I will be unavailable most of Thursday. Tuesday is my primary day 
   for regular office hours, but I found some times between classes
   on Monday, Wednesday, and Friday.  Email me to claim them: Monday
-  1:30-2:30, Tuesday 8:00-10:00, Wednesday 1:30-2:30, and Thursday
+  1:30-2:30, Tuesday 8:00-11:00, Wednesday 1:30-2:30, and Thursday
   9:00-11:00
 
 If you feel like you are struggling, even if you have an M or S, you
@@ -157,3 +157,17 @@ Lab
 
 Make sure the Scheme file has the semester in it (2026Fa). Reload if 
 it doesn't.
+
+Palindrome tests
+
+* Odd-length palindrome. (#t)
+* Even-length palindrome. (#t)
+* Odd-length non-palindrome (#f)
+* Even-length non-palindrome (#f)
+* One-letter word (#t)
+* Empty string (#t)
+* Non-string (#f) - optional
+* Longest known valid English-language palindrome
+* Mixed case
+
+
