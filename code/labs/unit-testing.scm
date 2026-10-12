@@ -1,4 +1,4 @@
-;; CSC-151-NN (SEMESTER)
+;; CSC-151-NN (2026Fa)
 ;; Lab: Unit Testing (unit-testing.scm)
 ;; Authors: YOUR NAMES HERE
 ;; Date: THE DATE HERE
