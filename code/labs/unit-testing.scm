@@ -6,6 +6,7 @@
 ;;   ACKNOWLEDGEMENTS HERE
 
 (import test)
+(import image)
 
 ;; +-------------+----------------------------------------------------
 ;; | Preparation |
@@ -159,8 +160,8 @@
 ;             [c2 (car (cdr l))]
 ;             [rest (cdr (cdr l))])
 ;         (if (equal? c1 c2)
-;             (bad-dedup-adjacent (cons c2 rest))
-;             (cons c1 (cons c2 (bad-dedup-adjacent rest)))))]))) 
+;             (dedup-adjacent (cons c2 rest))
+;             (cons c1 (cons c2 (dedup-adjacent rest)))))]))) 
 
 ;; TODO: write your tests here
 
@@ -234,3 +235,87 @@
 ;       "scalene"])))
 
 ;; d. Ask a nearby group for their tests and run them on your function.
+
+;; +------------------+-----------------------------------------------
+;; | Submit your work |
+;; +------------------+
+
+;; Please submit your work on Gradescope.
+
+;; +---------------------------+--------------------------------------
+;; | For those with extra time |
+;; +---------------------------+
+
+;; If you find you have extra time, please attempt the following.
+
+;; +--------------------------+---------------------------------------
+;; | Extra 1: What's up, Doc? |
+;; +--------------------------+
+
+;; A and B sides switch driver-navigator roles for each function.
+
+;; Consider each of the following function definitions that are
+;; undocumented and poorly named. Note that these functions use
+;; techniques and libraries that we may not have introduced or used
+;; yet; that is fine! The purpose of this exercise is to get us to
+;; think about the _contract_ of these functions rather than how they
+;; work precisely.
+
+; For each function:
+;
+; (a) Explore how the function works by experimenting with a variety
+;    of inputs.  You can determine what types of inputs the program
+;    expects by inspecting the code or by trying out different
+;    values to see if they work.
+
+; (b) Based on your results, write down a doc comment for each function
+;     as described in the reading. Make sure to include a function
+;     signature describing any preconditions on the function's parameters
+;     (e.g., their types) as well as postconditions on the output of
+;     the function.
+
+;;; (func-1 s n) -> ???
+;;;   s : ???
+;;;   n : ???
+;;; ???
+(define func-1
+  (lambda (s n)
+    (string-append (substring s n (string-length s))
+                   (substring s 0 n))))
+
+;;; (func-2 s k) -> ???
+;;;   s : ???
+;;;   k : ???
+;;; ???
+(define func-2
+  (lambda (s k)
+    (string-map (lambda (c)
+                  (if (char-numeric? c) k c))
+                s)))
+
+;;; (func-3 l) -> ???
+;;;   l : ???
+;;; ???
+(define func-3
+  (lambda (l)
+    (if (< (length l) 2)
+        l
+        (let ([h1 (car l)]
+              [h2 (car (cdr l))]
+              [t (cdr (cdr l))])
+          (cons h2 (cons h1 (func-4 t)))))))
+
+;;; (func-4 n r e x y) -> ???
+;;;   n : (any-of zero? positive-integer?)
+;;;   r : ???
+;;;   e : ???
+;;;   x : ???
+;;;   y : ???
+;;; ???
+(define func-4
+  (lambda (n r e x y)
+    (if (zero? n)
+        (outlined-square 0 "black")
+        (overlay 
+          (func-4 (- n 1) r e x y)
+          (outlined-square (* n r) (rgb e x y) 2)))))
