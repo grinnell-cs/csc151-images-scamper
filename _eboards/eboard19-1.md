@@ -157,3 +157,20 @@ Lab
 
 Make sure the Scheme file has the semester in it (2026Fa). Reload if 
 it doesn't.
+
+### Notes on palindromes
+
+I would expect that you include the following tests
+
+* An odd-length palindrome
+* An even-length palindrome
+* A non-palindrome (perhaps both even and odd lengths)
+* A single-character strng
+* An empty string
+* Mixed upper and lower
+
+When you hit the second dedup-adjacent, change the calls to
+`bad-dedup-adjacent` to `dedup-adjacent`. Sorry about that!
+
+If you finish, look at the online version of the lab for some "if you 
+have extra time" problems.
