@@ -51,6 +51,7 @@ Administrative stuff
     * Readings:
         * [List composition and decomposition](../readings/list-composition)
         * [Submit reading response on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8789469)
+    * [Submit today's lab on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8868470/)
     * [Mini-project 3](../mps/mp03)
         * [Submit on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8868131)
 * On Friday, 2026-09-16
