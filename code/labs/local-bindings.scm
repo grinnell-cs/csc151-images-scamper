@@ -68,7 +68,7 @@
 ;;   (list alpha beta gamma delta epsilon))
 
 (define nested-let-new
-  "TODO: write the nested let* here")
+  "TODO: write the nested let here")
 
 (test-case "nested-let-new"
   equal?
@@ -78,7 +78,7 @@
 ; d. It is likely that you came up with a solution to part b that
 ; looks something like the following.
 
-; (let* ([alpha (/ 1 3)]
+; (let ([alpha (/ 1 3)]
 ;        [beta (* 2 alpha)]
 ;        [gamma (* 2 beta)]
 ;        ...)
