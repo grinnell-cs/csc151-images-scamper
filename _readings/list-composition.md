@@ -2,8 +2,6 @@
 title: Composing and decomposing lists
 ---
 
-**Warning! This reading has not yet been upated for Scamper!**
-
 *Summary:* We delve more deeply into Scheme's list data type. We consider, in particular, how we work with the individual elements of lists and not just with the list as a whole.
 
 ## Introduction: Representing data
@@ -32,7 +30,7 @@ Here's one example of a heterogeneous list.  Consider the list of UFO sightings 
 For example, here's what we might see for one entry.
 
 ```
-'(1969 "The Russian Crash - Sverdlovsky" "Mar, 1969" "Russia" #t #t #t #f)
+(list 1969 "The Russian Crash - Sverdlovsky" "Mar, 1969" "Russia" #t #t #t #f)
 ```
 
 Why did we start with zero, rather than one?  Because lists, like strings, are "zero indexed".  The index represents the number of items that come before the element.
@@ -41,50 +39,38 @@ While most of the list procedures we've examined so far---procedures like `reduc
 
 How do we extract the different elements from the list, either to display them or compare them?  The most straightforward is to use `list-ref`, a two-parameter procedure that takes a list and an index as inputs and returns the item at that index.
 
-```
-> (define sverdlovsky
-    '(1969 "The Russian Crash - Sverdlovsky" "Mar, 1969" "Russia" #t #t #t #f))
-> (list-ref sverdlovsky 0)
-1969
-> (list-ref sverdlovsky 1)
-"The Russian Crash - Sverdlovsky"
-> (list-ref sverdlovsky 2)
-"Mar, 1969"
-> (list-ref sverdlovsky 3)
-"Russia"
-> (list-ref sverdlovsky 4)
+<pre class="scamper-transcript">
+(define sverdlovsky
+  (list 1969 "The Russian Crash - Sverdlovsky" "Mar, 1969" "Russia" #t #t #t #f))
+(list-ref sverdlovsky 0)
+(list-ref sverdlovsky 1)
+(list-ref sverdlovsky 2)
+(list-ref sverdlovsky 3)
+(list-ref sverdlovsky 4)
 #t
-```
+</pre>
 
 Scheme also provides two other operations to extract values from lists: `car` extracts the first element (element zero) and `cdr` returns a list containing all but the first element.
 
-```
-> (car sverdlovsky)
-1969
-> (cdr sverdlovsky)
-'("The Russian Crash - Sverdlovsky" "Mar, 1969" "Russia" #t #t #t #f)
-> (car (cdr sverdlovsky))
-"The Russian Crash - Sverdlovsky"
-```
+<pre class="scamper-transcript" data-continues>
+(car sverdlovsky)
+(cdr sverdlovsky)
+(car (cdr sverdlovsky))
+</pre>
 
 ## Building lists
 
 We've been building new lists using `list`, `make-list`, or the quote operation.
-But what if we have an existing list and we want to add an element to the front?  Say, suppose we want to add a unique identifier to each sighting, such as `'ufo023`.  Scheme provides an operation called `cons` that builds a *new* list by adding a value to the front of the list.
+But what if we have an existing list and we want to add an element to the front?  Say, suppose we want to add a unique identifier to each sighting, such as `"ufo023"`.  Scheme provides an operation called `cons` that builds a *new* list by adding a value to the front of the list.
 
-```
-> (cons 'ufo023 sverdlovsky)
-'(ufo023 1969 "The Russian Crash - Sverdlovsky" "Mar, 1969" "Russia" #t #t #t #f)
-> (car sverdlovsky)
-1969
-> sverdlovsky
-'(1969 "The Russian Crash - Sverdlovsky" "Mar, 1969" "Russia" #t #t #t #f)
-> (define sample (cons 'ufo023 sverdlovsky))
-> sample
-'(ufo023 1969 "The Russian Crash - Sverdlovsky" "Mar, 1969" "Russia" #t #t #t #f)
-> (car sample)
-'ufo023
-```
+<pre class="scamper-transcript" data-continues>
+(cons "ufo023" sverdlovsky)
+(car sverdlovsky)
+sverdlovsky
+(define sample (cons "ufo023" sverdlovsky))
+sample
+(car sample)
+</pre>
 
 Why is the operation called `cons` instead of `list-prepend` or something similar?
 Well, `cons` is the name John McCarthy, the designer of Lisp, chose over sixty years ago.
@@ -97,7 +83,7 @@ Some people use `head` and `tail` instead of `car` and `cdr`. We prefer to stick
 
 ## Nested lists
 
-What if you want to have more than one list, such as when we want to study all of the UFO sightings?  We can make a list of lists.
+What if you want to have more than one list, such as when we want to study all of the UFO sightings?  We can make a list of lists. We'll explore this issue further in upcoming labs and assignments.
 
 ## Building lists, revisited
 
@@ -111,35 +97,26 @@ Suppose you prefer to build lists with `cons`.
 How can you get started, given that `cons` expects a list as one of its parameters?
 You start with the empty list.
 
-Scheme's name for the empty list is a pair of parentheses with nothing between them: `'()`.
+Scheme's name for the empty list is a pair of parentheses with nothing between them: `()`.
 Most implementations of Scheme permit you to refer to that list as `null`.
 You can also create it with `(list)`.
-All permit you to describe the empty list by putting a single quote before the pair of parentheses.
 
-```
-> '()
-'()
-> null
-'()
-> (list)
-'()
-```
+<pre class="scamper-transcript" data-continues>
+null
+(list)
+</pre>
 
 Note that by using `cons` and `null`, we can build up a list of any length by starting with the empty list and repeatedly prepending a value.
 
-```
-> (define singleton (cons "Russia" null))
-> singleton
-'("Russia")
-> (define doubleton (cons "Mar, 1969" singleton))
-> doubleton
-'("Mar, 1969" "Russia")
-> (define tripleton (cons "The Russian Crash - Sverdlovsky" doubleton))
-> tripleton
-'("The Russian Crash - Sverdlovsky" "Mar, 1969" "Russia")
-> (cons "senior" (cons "third-year" (cons "second-year" (cons "freshling" null))))
-'("senior" "third-year" "second-year" "freshling")
-```
+<pre class="scamper-transcript" data-continues>
+(define singleton (cons "Russia" null))
+singleton
+(define doubleton (cons "Mar, 1969" singleton))
+doubleton
+(define tripleton (cons "The Russian Crash - Sverdlovsky" doubleton))
+tripleton
+(cons "senior" (cons "third-year" (cons "second-year" (cons "freshling" null))))
+</pre>
 
 You may note that lists built in this way seem a bit "backwards". 
 That is, the value we add last appears at the front, rather than at the back. 
@@ -151,20 +128,14 @@ Scheme provides two basic predicates for checking whether a value is a list.
 The `null?` predicate checks whether a value is the empty list.
 The `list?` predicate checks whether a value is a list (empty or nonempty).
 
-```
-> (null? null)
-#t
-> (list? null)
-#t
-> (null? (list 1 2 3))
-#f
-> (list? (list 1 2 3))
-#t
-> (null? 5)
-#f
-> (list? 5)
-#f
-```
+<pre class="scamper-transcript" data-continues>
+(null? null)
+(list? null)
+(null? (list 1 2 3))
+(list? (list 1 2 3))
+(null? 5)
+(list? 5)
+</pre>
 
 ## Other common list procedures
 
@@ -181,91 +152,68 @@ computes the number of elements in the list. (An element that happens to
 be itself a list nevertheless contributes 1 to the total that `length`
 computes, regardless of how many elements it happens to contain.)
 
-```
-> (length null)
-0
-> (length (list 1 2 3))
-3
-> (length (list (list 1 2 3)))
-1
-```
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+</script>
+(length null)
+(length (list 1 2 3))
+(length (list (list 1 2 3)))
+</pre>
 
 ### `append`
 
 The `append` procedure takes any number of arguments, each of which is a list, and returns a new list formed by stringing together all of the elements of the argument lists, in order, to form one long list.
 
-```
-> (append (list "red" "green") (list "blue" "yellow"))
-'("red" "green" "blue" "yellow")
-```
+<pre class="scamper-transcript" data-continues>
+(append (list "red" "green") (list "blue" "yellow"))
+</pre>
 
 The empty list acts as the identity for `append`.
 
-```
-> (append null (list "blue" "yellow"))
-'("blue" "yellow")
-> (append (list "red" "green") null)
-'("red" "green")
-> (append null null)
-'()
-```
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+</script>
+(append null (list "blue" "yellow"))
+(append (list "red" "green") null)
+(append null null)
+</pre>
 
-### `index-of` and `indexes-of`
+### `index-of` 
 
-THe `index-of` procedure takes a list and a value and returns the index of the first instance of the value in the list.
-If the value is not in the list, `index-of` returns false.
+The `index-of` procedure takes a list and a value and returns the index of the first instance of the value in the list.
+If the value is not in the list, `index-of` returns -1
 
-```
-> (index-of (string->list "alphabetical") #\b)
-5
-> (index-of (string->list "alphabetical") #\a)
-0
-> (index-of (string->list "alphabetical") #\z)
-#f
-```
-
-The `indexes-of` procedure (which we think should be called `indices-of`) also takes a list and a value as parameters.
-In contrast to `index-of`, `indexes-of` returns a list of all the indices at which the value is found.
-If the value does not appear in the list, `indexes-of` returns the empty list.
-
-```
-> (indexes-of (string->list "alphabetical") #\b)
-'(5)
-> (indexes-of (string->list "alphabetical") #\a)
-'(0 4 10)
-> (indexes-of (string->list "alphabetical") #\z)
-'()
-```
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+</script>
+(index-of #\b (string->list "alphabetical"))
+(index-of #\a (string->list "alphabetical"))
+(index-of #\z (string->list "alphabetical"))
+</pre>
 
 ### `list-drop` and `list-take`: Extracting sublists
 
 The `(list-drop lst n)` procedure removes ("drops") the first `n` elements of `lst`.
 
-```
-> (list-drop (list "a" "b" "c" "d" "e") 3)
-'("d" "e")
-> (list-drop (list "a" "b" "c" "d" "e") 2)
-'("c" "d" "e")
-> (list-drop (list "a" "b" "c" "d" "e") 5)
-'()
-```
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+</script>
+(list-drop (list "a" "b" "c" "d" "e") 3)
+(list-drop (list "a" "b" "c" "d" "e") 2)
+(list-drop (list "a" "b" "c" "d" "e") 5)
+</pre>
 
 In contrast, the `(list-take lst n)` procedure takes the first `n` elements of `lst`, dropping all remaining elements.
 
-```
-> (list-take (list "a" "b" "c" "d" "e") 1)
-'("a")
-> (list-take (list "a" "b" "c" "d" "e") 2)
-'("a" "b")
-> (list-take (list "a" "b" "c" "d" "e") 3)
-'("a" "b" "c")
-> (list-take (list "a" "b" "c" "d" "e") 4)
-'("a" "b" "c" "d")
-> (list-take (list "a" "b" "c" "d" "e") 6)
-. . take: contract violation
-  expected: a list with at least 6 elements
-  given: '("a" "b" "c" "d" "e")
-```
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+</script>
+(list-take (list "a" "b" "c" "d" "e") 1)
+(list-take (list "a" "b" "c" "d" "e") 2)
+(list-take (list "a" "b" "c" "d" "e") 3)
+(list-take (list "a" "b" "c" "d" "e") 4)
+(list-take (list "a" "b" "c" "d" "e") 6)
+</pre>
 
 ### `cadr` and company: Combining `car` and `cdr`
 
@@ -279,17 +227,15 @@ cdr of a list (the second element), `cddr` computes the cdr of the cdr
 of a list (all but the first two elements), and `caar` computes the car
 of the car of a list (applicable only to nested lists).
 
-```
-> (define rainbow (list "red" "orange" "yellow" "green" "blue" "indigo" "violet"))
-> (cadr rainbow)
-"orange"
-> (cddr rainbow)
-'("yellow" "green" "blue" "indigo" "violet")
-> (caddr rainbow)
-"yellow"
-> (cdddr rainbow)
-'("green" "blue" "indigo" "violet")
-```
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+</script>
+(define rainbow (list "red" "orange" "yellow" "green" "blue" "indigo" "violet"))
+(cadr rainbow)
+(cddr rainbow)
+(caddr rainbow)
+(cdddr rainbow)
+</pre>
 
 In working with the `c*r` procedures, we find it easiest to read them from right to left (as if often the case in Scheme) and to treat `d` as "drop" and `a` as "access". So, for example `cdddr` means "drop three elements" and `cadddr` means drp three elements and then access the first element".
 
@@ -321,9 +267,6 @@ In working with the `c*r` procedures, we find it easiest to read them from right
 
 `(index-of lst val)`{:.signature} *Standard list procedure.*
 :   Find the index of `val` in `lst`.  If `val` does not appear in `lst`, returns false (`#f`).
-
-`(indexes-of lst val)`{:.signature} *Standard list procedure.*
-:   Find all the indices of `val` in `lst`.  If `val` does not appear in `lst`, returns the empty list.
 
 `(list-drop lst n)`{:.signature} *Standard list procedure.*
 : Remove the first `n` elements of `lst`.
@@ -362,6 +305,6 @@ Predict the results of evaluating the following expressions.
 (cons (range 2) null)
 ```
 
-You may verify your predictions using DrRacket, but be sure you understand
+You may verify your predictions using Scamper, but be sure you understand
 the results.
 
