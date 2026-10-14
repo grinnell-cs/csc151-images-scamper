@@ -3,7 +3,7 @@ title: "EBoard 19: Software engineering basics (Section 3)"
 number: 19
 section: eboards
 held: 2026-10-12
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -47,9 +47,8 @@ Administrative stuff
   me this week or immediately after break.
 * I will be unavailable most of Thursday. Tuesday is my primary day 
   for regular office hours, but I found some times between classes
-  on Monday, Wednesday, and Friday.  Email me to claim them: Monday
-  1:30-2:30, Tuesday 8:00-10:00, Wednesday 1:30-2:30, and Thursday
-  9:00-11:00
+  on Monday, Wednesday, and Friday.  Email me to claim them:
+  Tuesday 8:00-10:45, Wednesday 2:00-2:30, and Thursday 9:00-11:00
 
 If you feel like you are struggling, even if you have an M or S, you
 might consider the following questions.
@@ -157,3 +156,14 @@ Lab
 
 Make sure the Scheme file has the semester in it (2026Fa). Reload if 
 it doesn't.
+
+On testing palindromes (and testing in general).
+
+* Even length palindromes
+* Odd length palindromes
+* Even length non-palindromes
+* Odd length non-palindromes
+* Empty string (#t)
+* Single-character string (#t)
+* Non-letters
+* Mixed lower and upper case.
