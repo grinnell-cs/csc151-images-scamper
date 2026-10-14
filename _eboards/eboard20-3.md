@@ -3,7 +3,7 @@ title: "EBoard 20: Local bindings (Section 3)"
 number: 20
 section: eboards
 held: 2026-10-14
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -35,8 +35,7 @@ Administrative stuff
       and ask you to rewrite it with local bindings to get less/no
       repetition.
 * Sorry about the confusion on the MP2 redo and the MP3 posting.
-  I was experimenting with autograders (and failing). They'll be up
-  and ready by the end of class.
+  I was experimenting with autograders (and failing). 
 * To encourage folks to memorize procedures (which you should be doing), 
   I'm going to give a "pop quiz" on each Monday and Wednesday. You'll get
   five questions (e.g., "What are three procedures that make lists?") and
@@ -139,11 +138,18 @@ Pop quiz!
 
 Here are today's questions ...
 
-Note: Please don't tell your friends in the other sections that we had a
-pop quiz today.
+- Lists: List four procedures (other than the big three) that you can 
+  use with lists.
+- Anonymous functions: Rewrite `(lambda (x) (string-append x "X"))` 
+  with `l-s` or `r-s`.
+- Lists: What should `(range 5 -3 -1)` return?
+- Lists: What function do you use to get the first `n` elements of a list?
+- Numbers: What's the difference between `/` and `quotient`?
 
 Lab
 ---
 
 Make sure the Scheme file has the semester in it (2026Fa). Reload if 
 it doesn't.
+
+
