@@ -3,7 +3,7 @@ title: "EBoard 20: Local bindings (Section 1)"
 number: 20
 section: eboards
 held: 2026-10-13
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -29,19 +29,19 @@ Administrative stuff
   of break anyway, so I'll be happy to meet during office hours (and,
   perhaps, other times).
 * Quick notes on Friday's new quizzes:
-    * Testing: I'll give you the description of a procedure and ask
+    * Testing: I'll give you the description of a function and ask
       you to write ~3 "normal" tests and ~3 "edge" tests.
-    * Local bindings: I'll give you a procedure with repeated code
+    * Local bindings: I'll give you a function with repeated code
       and ask you to rewrite it with local bindings to get less/no
       repetition.
 * Sorry about the confusion on the MP2 redo and the MP3 posting.
   I was experimenting with autograders (and failing). They'll be up
   and ready by the end of class.
-* To encourage folks to memorize procedures (which you should be doing), I'm
-  going to give a "pop quiz" on each Monday and Wednesday. You'll get five
-  questions (e.g., "What are three procedures that make lists?") and five 
-  minutes to answer the questions. Every ten correct answers earn you an
-  extra token.
+* To encourage folks to memorize procedures (which you should be doing), 
+  I'm going to give a "pop quiz" on each Monday and Wednesday. You'll get
+  five questions (e.g., "What are three procedures that make lists?") and
+  five minutes to answer the questions. Every ten correct answers earn
+  you an extra token.
     * If you didn't grab a sheet from the back of the room, raise your
       hand and the mentor will bring you one.
 
@@ -52,7 +52,7 @@ Administrative stuff
         * [List composition and decomposition](../readings/list-composition)
         * [Submit reading response on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8789469)
     * [Mini-project 3](../mps/mp03)
-        * [Submit on Gradescope]()
+        * [Submit on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8868131)
 * On Friday, 2026-09-16
     * NEW Quiz/LA on testing (Monday's topic)
     * NEW Quiz/LA on local bindings (todays's topic)
@@ -67,7 +67,7 @@ Administrative stuff
     * _Nothing!_
 * Due Tuesday, 2026-10-27
     * [Mini-project 2](../mps/mp02) redo
-       * [Submit redo on Gradescope]()
+       * [Submit redo on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8868136)
        * When submitting a mini-project redo, please include a file
          called `CHANGES.txt` that describes what you've changed.
        * If you don't submit the `CHANGES.txt` file, they won't grade it.
@@ -136,9 +136,16 @@ _These do not earn tokens, but are worth your consideration._
 Pop quiz!
 ---------
 
-
 Here are today's questions ...
 
+- Anonymous procedures: What does `(o (r-s / 2) (l-s + 2))` do?
+- Anonymous procedures: Rewrite `(l-s - 2)` with `lambda`.
+- Drawings: What are the parameters to `outlined-rectangle`? (You need not get the order right.)
+- Anonymous procedures: Rewrite `(lambda (x) (string-append x "X"))` with `l-s` or `r-s`.
+- Strings: What are three procedures that make strings?
+
+Note: Please don't tell your friends in the other sections that we had a
+pop quiz today.
 
 Lab
 ---
@@ -146,3 +153,62 @@ Lab
 Make sure the Scheme file has the semester in it (2026Fa). Reload if 
 it doesn't.
 
+If you finish early, please copy the following from the eboard and add it
+to your lab.
+
+```
+;; +------------------------------------------+-----------------------
+;; | Exercise 6: Alternate binding mechanisms |
+;; +------------------------------------------+
+
+;; Driver: B
+
+;; As you may have noted, we have other approches than `let` and
+;; `define` for assigning names to values. For example, consider the
+;; following procedure.
+
+(define rings
+  (lambda (size color)
+    (above (outlined-circle size color 2)
+           (beside (outlined-circle size color 2)
+                   (outlined-circle size color 2))
+           (beside (outlined-circle size color 2)
+                   (outlined-circle size color 2)
+                   (outlined-circle size color 2)))))
+
+;; a. Rewrite rings with a `let` to remove redundancy. (Comment out
+;; the previous version and put the new version here.)
+
+;; b. Consider the following procedure.
+
+(define rings-new
+  (lambda (size color)
+    (rings-new/helper (outlined-circle size color 2))))
+
+(define rings-new/helper
+  (lambda (shape)
+    (above shape
+           (beside shape shape)
+           (beside shape shape shape))))
+
+;; How does the result of `rings-new` differ from that of `rings`?
+
+;; REPLACE WITH YOUR ANSWER.
+
+;; c. How is `rings-new` similar to your rewritten `rings`?
+
+;; REPLACE WITH YOUR ANSWER.
+
+;; d. How does `rings-new` differ from your rewritten `rings`?
+
+;; REPLACE WITH YOUR ANSWER.
+
+;; e. Why might someone prefer the `let` version?
+
+;; REPLACE WITH YOUR ANSWER.
+
+;; f. Why might someone prefer the `rings-new` version?
+
+;; REPLACE WITH YOUR ANSWER.
+
+```
