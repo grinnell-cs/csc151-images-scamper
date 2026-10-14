@@ -2,7 +2,7 @@
 title: "EBoard 20: Local bindings (Section 1)"
 number: 20
 section: eboards
-held: 2026-10-13
+held: 2026-10-14
 link: true
 ---
 # {{ page.title }}
