@@ -276,9 +276,9 @@
 ;; If you find that you have extra time, attempt one or more of the
 ;; following exercises.
 
-;; +-----------------------------------------+------------------------
-;; | Extra 1: Removing redundancy, revisited |
-;; +-----------------------------------------+
+;; +--------------------------------------------+---------------------
+;; | Extra 1: Removing redundancy, re-revisited |
+;; +--------------------------------------------+
 
 ;; Remove the redundancy in the following procedure.
 
@@ -295,3 +295,13 @@
   equal?
   7.5
   (lambda () (adjusted-diff-of-extremes (list -5 4 8 2 6 1 10))))
+
+;; +------------------------------------+-----------------------------
+;; | Extra 2: Alternate binding methods |
+;; +------------------------------------+
+
+;; As you may have noted, we have other approches than `let` and
+;; design for assigning names to values. For example, consider the
+;; following pair of procedures.
+
+;; More forthcoming!
