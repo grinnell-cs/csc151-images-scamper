@@ -3,7 +3,7 @@ title: "EBoard 20: Local bindings (Section 2)"
 number: 20
 section: eboards
 held: 2026-10-14
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -35,8 +35,7 @@ Administrative stuff
       and ask you to rewrite it with local bindings to get less/no
       repetition.
 * Sorry about the confusion on the MP2 redo and the MP3 posting.
-  I was experimenting with autograders (and failing). They'll be up
-  and ready by the end of class.
+  I was experimenting with autograders (and failing). 
 * To encourage folks to memorize procedures (which you should be doing), 
   I'm going to give a "pop quiz" on each Monday and Wednesday. You'll get
   five questions (e.g., "What are three procedures that make lists?") and
@@ -138,6 +137,13 @@ Pop quiz!
 ---------
 
 Here are today's questions ...
+
+- Lists: `lst` contains a mixture of numbers and strings. 
+  How would you extract just the numbers from that list?
+- Lists: What's the difference between `apply` and `map`?
+- Numbers: What's the difference between `floor` and `truncate`?
+- Lists: What are two functions that you can use to make lists?
+- Drawings: What function puts one drawing vertically over another?
 
 Note: Please don't tell your friends in the other sections that we had a
 pop quiz today.
