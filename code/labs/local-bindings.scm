@@ -11,10 +11,6 @@
 ;; In this lab, you and your partner will write some more complicated
 ;; code than previous labs and manage that complexity with let-bindings.
 
-;; +---------------+--------------------------------------------------
-;; | Provided code |
-;; +---------------+
-
 ;; +-------------------------------------+----------------------------
 ;; | Exercise 1: Nesting let expressions |
 ;; +-------------------------------------+
@@ -260,6 +256,60 @@
 
 ;; b. Rewrite the procedure to be less redundant using `let` bindings.
 
+;; +------------------------------------------+-----------------------
+;; | Exercise 6: Alternate binding mechanisms |
+;; +------------------------------------------+
+
+;; Driver: B
+
+;; As you may have noted, we have other approches than `let` and
+;; `define` for assigning names to values. For example, consider the
+;; following procedure.
+
+(define rings
+  (lambda (size color)
+    (above (outlined-circle size color 2)
+           (beside (outlined-circle size color 2)
+                   (outlined-circle size color 2))
+           (beside (outlined-circle size color 2)
+                   (outlined-circle size color 2)
+                   (outlined-circle size color 2)))))
+
+;; a. Rewrite rings with a `let` to remove redundancy. (Comment out
+;; the previous version and put the new version here.)
+
+;; b. Consider the following procedure.
+
+(define rings-new
+  (lambda (size color)
+    (rings-new/helper (outlined-circle size color 2))))
+
+(define rings-new/helper
+  (lambda (shape)
+    (above shape
+           (beside shape shape)
+           (beside shape shape shape))))
+
+;; How does the result of `rings-new` differ from that of `rings`?
+
+;; REPLACE WITH YOUR ANSWER.
+
+;; c. How is `rings-new` similar to your rewritten `rings`?
+
+;; REPLACE WITH YOUR ANSWER.
+
+;; d. How does `rings-new` differ from your rewritten `rings`?
+
+;; REPLACE WITH YOUR ANSWER.
+
+;; e. Why might someone prefer the `let` version?
+
+;; REPLACE WITH YOUR ANSWER.
+
+;; f. Why might someone prefer the `rings-new` version?
+
+;; REPLACE WITH YOUR ANSWER.
+
 ;; +-------------+----------------------------------------------------
 ;; | Wrapping up |
 ;; +-------------+
@@ -296,12 +346,3 @@
   7.5
   (lambda () (adjusted-diff-of-extremes (list -5 4 8 2 6 1 10))))
 
-;; +------------------------------------+-----------------------------
-;; | Extra 2: Alternate binding methods |
-;; +------------------------------------+
-
-;; As you may have noted, we have other approches than `let` and
-;; design for assigning names to values. For example, consider the
-;; following pair of procedures.
-
-;; More forthcoming!
