@@ -16,12 +16,12 @@
 ;; | Preparation |
 ;; +-------------+
 
-;; There are five exercises; here's the division.
+;; There are five exercises; here's the division of labor.
 
 ;; Exercise 1: A-Side
 ;; Exercise 2: B-Side
-;; Exercise 3: A-Side
-;; Exercise 4: B-Side
+;; Exercise 3: B-Side
+;; Exercise 4: A-Side
 ;; Exericse 5: B-Side
 
 ;; The partner closest to the board is the A partner. The partner
@@ -129,7 +129,7 @@
 ;; | Exercise 3: Nested lists |
 ;; +--------------------------+
 
-;; Driver: A
+;; Driver: B
 
 ;; Consider the following lists.
 
@@ -144,7 +144,7 @@
 ;; > ex3
 ;; ???
 
-;; b. What is the length of `ex6`?
+;; b. What is the length of `ex3`?
 
 ;; ???
 
@@ -166,7 +166,7 @@
 ;; | Exercise 4: Extracting list elements |
 ;; +--------------------------------------+
 
-;; Driver: B
+;; Driver: A
 
 ;; We currently use the `list-ref` procedure to extract elements. But
 ;; what if we didn't have that procedure? We might have to write our own
@@ -175,7 +175,6 @@
 
 ;; a. Here's a sample procedure that purports to find the third element
 ;; of a list (the element at index 2).
-;;
 
 (define element-two
   (lambda (lst)
@@ -296,7 +295,7 @@
            #(at-least-two? (list 2 1)))
 (test-case "at-least-two: three-element list"
            equal? #t
-           #(singleton? (list "three" 2 1)))
+           #(at-least-two? (list "three" 2 1)))
 
 ;; c. Write a predicate `(dyad? lst)`, that determines whether `lst` contains 
 ;; exactly two elements. You may not use `length` in writing `dyad`.
@@ -319,7 +318,7 @@
            #(dyad? (list 2 1)))
 (test-case "dyad: three-element list"
            equal? #t
-           #(singleton? (list "three" 2 1)))
+           #(dyad? (list "three" 2 1)))
 
 ;; d. Write a predicate `(at-least-three? lst)`, that determines whether 
 ;; `lst` contains at least three elements. You may not use `length` in 
@@ -349,7 +348,7 @@
            #(at-least-three? (list "uno" "dos" "tres" "quatro")))
 (test-case "at-least-three: stupid song reference"
            equal? #f
-           #(at-lest-three? (list "wooly" "bully")))
+           #(at-least-three? (list "wooly" "bully")))
 
 ;; e. Write a predicate `(short? lst)`, that determines whether `lst` 
 ;; contains fewer than three elements. You may not use `length` in 
@@ -363,22 +362,22 @@
     "???"))
 
 (test-case "short: zero-element list"
-           equal? #f
+           equal? #t
            #(short? (list)))
 (test-case "short: one-element list"
-           equal? #f
+           equal? #t
            #(short? (list "one")))
 (test-case "short: two-element list"
-           equal? #f
+           equal? #t
            #(short? (list 2 1)))
 (test-case "short: three-element list"
-           equal? #t
+           equal? #f
            #(short? (list "three" 2 1)))
 (test-case "short: four-element list"
-           equal? #t
+           equal? #f
            #(short? (list "uno" "dos" "tres" "quatro")))
 (test-case "short: stupid song reference"
-           equal? #f
+           equal? #t
            #(short? (list "wooly" "bully")))
 
 ;; +----------------------+-------------------------------------------
