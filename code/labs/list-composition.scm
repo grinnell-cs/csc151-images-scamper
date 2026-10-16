@@ -16,12 +16,12 @@
 ;; | Preparation |
 ;; +-------------+
 
-;; There are five exercises; here's the division.
+;; There are five exercises; here's the division of labor.
 
 ;; Exercise 1: A-Side
 ;; Exercise 2: B-Side
-;; Exercise 3: A-Side
-;; Exercise 4: B-Side
+;; Exercise 3: B-Side
+;; Exercise 4: A-Side
 ;; Exericse 5: B-Side
 
 ;; The partner closest to the board is the A partner. The partner
@@ -129,7 +129,7 @@
 ;; | Exercise 3: Nested lists |
 ;; +--------------------------+
 
-;; Driver: A
+;; Driver: B
 
 ;; Consider the following lists.
 
@@ -144,7 +144,7 @@
 ;; > ex3
 ;; ???
 
-;; b. What is the length of `ex6`?
+;; b. What is the length of `ex3`?
 
 ;; ???
 
@@ -166,7 +166,7 @@
 ;; | Exercise 4: Extracting list elements |
 ;; +--------------------------------------+
 
-;; Driver: B
+;; Driver: A
 
 ;; We currently use the `list-ref` procedure to extract elements. But
 ;; what if we didn't have that procedure? We might have to write our own
@@ -175,7 +175,6 @@
 
 ;; a. Here's a sample procedure that purports to find the third element
 ;; of a list (the element at index 2).
-;;
 
 (define element-two
   (lambda (lst)
