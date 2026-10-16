@@ -295,7 +295,7 @@
            #(at-least-two? (list 2 1)))
 (test-case "at-least-two: three-element list"
            equal? #t
-           #(singleton? (list "three" 2 1)))
+           #(at-least-two? (list "three" 2 1)))
 
 ;; c. Write a predicate `(dyad? lst)`, that determines whether `lst` contains 
 ;; exactly two elements. You may not use `length` in writing `dyad`.
@@ -318,7 +318,7 @@
            #(dyad? (list 2 1)))
 (test-case "dyad: three-element list"
            equal? #t
-           #(singleton? (list "three" 2 1)))
+           #(dyad? (list "three" 2 1)))
 
 ;; d. Write a predicate `(at-least-three? lst)`, that determines whether 
 ;; `lst` contains at least three elements. You may not use `length` in 
