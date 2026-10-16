@@ -348,7 +348,7 @@
            #(at-least-three? (list "uno" "dos" "tres" "quatro")))
 (test-case "at-least-three: stupid song reference"
            equal? #f
-           #(at-lest-three? (list "wooly" "bully")))
+           #(at-least-three? (list "wooly" "bully")))
 
 ;; e. Write a predicate `(short? lst)`, that determines whether `lst` 
 ;; contains fewer than three elements. You may not use `length` in 
@@ -362,22 +362,22 @@
     "???"))
 
 (test-case "short: zero-element list"
-           equal? #f
+           equal? #t
            #(short? (list)))
 (test-case "short: one-element list"
-           equal? #f
+           equal? #t
            #(short? (list "one")))
 (test-case "short: two-element list"
-           equal? #f
+           equal? #t
            #(short? (list 2 1)))
 (test-case "short: three-element list"
-           equal? #t
+           equal? #f
            #(short? (list "three" 2 1)))
 (test-case "short: four-element list"
-           equal? #t
+           equal? #f
            #(short? (list "uno" "dos" "tres" "quatro")))
 (test-case "short: stupid song reference"
-           equal? #f
+           equal? #t
            #(short? (list "wooly" "bully")))
 
 ;; +----------------------+-------------------------------------------
