@@ -1,5 +1,5 @@
 ;;; shape-lists.rkt
-;;;   A variety of procedures that transform images, created for MP5 in
+;;;   A variety of procedures that transform images, created for MP3 in
 ;;;   CSC-151-XX SEMESTER.
 ;;;
 ;;; Author: YOUR NAME HERE
