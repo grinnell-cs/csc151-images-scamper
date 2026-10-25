@@ -15,12 +15,14 @@ procedures others have written, like `map` and `filter` and `reduce`.
 
 However, those who seem most successful at employing the vast power
 of recursion as a tool for solving problems embrace a bit of magic.
-They start by solving the base case, an input whose result is so
-obvious that even a cs prof could solve it. Then they assume that
-the procedure they are currently working on already works, albeit
-only for "smaller" inputs.  "_Suppose I could use this procedure_", they
-ask, "_but only if I tweak the input a little bit. How does that
-help me solve the problem?_"
+They start by solving the base case, an input where the result is
+so obvious that even a cs prof could solve it. (Note: "an input
+where the result is so obvious that even a cs prof could solve it"
+is our slightly snarky way of saying "an input for which the answer
+is obvious".) Then they assume that the procedure they are currently
+working on already works, albeit only for "smaller" inputs.  "_Suppose
+I could use this procedure_", they ask, "_but only if I simplify the
+input a little bit. How does that help me solve the problem?_"
 
 Consider the problem of finding the longest string in a list.  If
 you had never done this before, you might ask yourself or your
@@ -55,7 +57,7 @@ the car to the recursive result.  We'll invent a procedure,
 ```
 
 Of course, they also have to handle the base case: The longest string
-in a one-element list is that element.
+in a one-element list is that one element.
 
 ```
 (define longest-string
@@ -65,7 +67,7 @@ in a one-element list is that element.
         (longer-string (car lst) (longest-string (cdr lst))))))
 ```
 
-And, well, they also need to write the `longer-string` procedure.
+All that's left is to write the `longer-string` procedure.
 
 
 ```
@@ -80,11 +82,11 @@ Starting by assuming that the recursive call worked led them (or
 us) to the answers.  And that might be familiar.  We often design
 procedures by decomposing them into "smaller" helper procedures
 which we assume we can implement.  It's just that in this case, the
-smaller procedure is the one we are writing.
+smaller procedure is also the one we are writing.
 
 "_**But how does it work**_?", some ask. The recursive programmer
 doesn’t care. They trust the magic of recursion to make everything
-work (we often refer to this as _the magic recursion fairy_). Deep
+work (we often refer to effect as _the magic recursion fairy_). Deep
 in their hearts, recursive programmers believe that there’s an underlying 
 mathematcal proof that ensures that recursion works; they just can't
 prove it themselves. However, they also know that any sufficiently
@@ -109,7 +111,7 @@ How does that help us find how many times `val` appears in `lst`?
 
 d. This one is a little bit different.  Suppose we want to drop
 the first `n` values from `lst`.  How many values should we drop
-from `(cdr lst)`?
+from `(cdr lst)`? (Assume that `list-drop` is not yet defined.)
 
 ### Check 2: Some base cases (‡)
 
@@ -132,7 +134,8 @@ f. And how many times does `val` appear in the list?
 
 g. Suppose we want to take the drop the first `n` elements of a list.
 What's a value of `n` that's so simple that even a cs prof can figure
-out how to drop `n` elements?
+out how to drop `n` elements? (Once again, assume that `list-drop` is
+not yet defined.)
 
 h. And how do they drop those `n` elements?
 
