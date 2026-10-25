@@ -6,7 +6,7 @@ summary: |
 
 In this course, we focus on the idea of *algorithmic decomposition*---solving a problem by solving relevant sub-problems.
 And we realize a particular decomposition through functions.
-For example, consider a familiar image from a previous reading:
+For example, consider an image that may be familiar from a previous reading:
 
 ![A cottage in a forest.]({{ "/images/decomposition-forest.png" | relative_url }}).
 
@@ -22,7 +22,7 @@ However, what about this image?
 ![Nested blue triangle outlines.]({{ "/images/nested-triangles.png" | relative_url }})
 
 How can we decompose this image?
-The way that we might decompose this problem now is to recast it as a list transformation problem, transforming the list `'(0 1 2 3 4)` into a collection of blue triangles that are combined with `overlay`.
+The way that we might decompose this problem now is to recast it as a list transformation problem, transforming the list `(list 0 1 2 3 4)` into a collection of blue triangles that are combined with `overlay`.
 
 Let's consider an alternative decomposition.
 
@@ -50,13 +50,13 @@ However, recognizing that a problem can be decomposed using recursion requires s
 ## Interpreting lists recursively
 
 We introduced *lists* as a fundamental data structure earlier in the course.
-For example, here is a picture that represents the list `'(1 2 3 4 5)`.
+For example, here is a picture that represents the list `(list 1 2 3 4 5)`.
 
 ![A list of the numbers 1 through 5.]({{ "/images/list-of-5-example.png" | relative_url }})
 
 A *recursive interpretation* of a data structure involves being able to express that data structure in terms of a smaller version of itself.
 In other words, where in this overall list do we see a small list lurking?
-The interpretation that we use in Racket is the following:
+The interpretation that we use in Scheme is the following:
 
 ![A list with the head element as 1 and the rest of the list unknown.]({{ "/images/list-of-5-example-head.png" | relative_url }})
 
@@ -68,31 +68,27 @@ We can also think of lists in the opposite way, building up from the empty list 
 * The empty list is a list.
 * The result of putting any value at the front of a list is a list.
 
-In Racket, the `car` and `cdr` functions (pronounced "car" and "could-er", respectively) allow us to decompose a list in this manner, respectively:
+In Scheme, the `car` and `cdr` functions (pronounced "car" and "could-er", respectively) allow us to decompose a list in this manner, respectively:
 
-~~~racket
-> (car (list 1 2 3 4 5))
-1
-> (cdr (list 1 2 3 4 5))
-(list 2 3 4 5)
-~~~
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+</script>
+(car (list 1 2 3 4 5))
+(cdr (list 1 2 3 4 5))
+</pre>
 
 Note that these functions only "make sense" when the list in question is non-empty.
-If we try calling these functions with empty lists (`null`, `(list)`, or `'()`), we receive errors:
+If we try calling these functions with empty lists (`null`, `(list)`, or `null`), we receive errors:
 
-~~~racket
-> (car null)
-car: contract violation
-    expected: pair?
-    given: '()
-> (cdr null)
-cdr: contract violation
-    expected: pair?
-    given: '()
-~~~
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+</script>
+(car null)
+(cdr null)
+</pre>
 
-Note that these errors say that `pair` is expected instead of a `list`.
-There's a specific reason why the error says this, but for now, just note that if you call `car` and `cdr` on empty lists, you'll receive these errors.
+Note that these errors say that `pair` or a non-empty list is expected.
+There's a specific reason why the error mentions pairs; for now, just note that if you call `car` and `cdr` on empty lists, you'll receive these errors.
 
 To ensure that we don't call `car` and `cdr` on an empty list, we can use the `null?` function which takes a list as input and returns `#t` if and only if the list is empty, *i.e.*, *null*.
 As an example, here is a use of `car`, `cdr`, and `null?` in combination to define a function `singleton?` that returns `#t` if the input list contains exactly one element.
@@ -121,6 +117,23 @@ Those who have embraced [the Zen of Booleans](../handouts/zen-of-booleans) might
          (null? (cdr lst)))))
 ```
 
+Here's the procedure in action.
+
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+(define singleton?
+  (lambda (lst)
+    (and (not (null? lst))
+         (null? (cdr lst)))))
+</script>
+(singleton? null)
+(singleton? (list))
+(singleton? (list "one"))
+(singleton? (cons "two" null))
+(singleton? (list "one" "two"))
+(singleton? (make-list 5 "one"))
+</pre>
+
 Both versions align with our *recursive definition of a list*:
 
 > A list is either:
@@ -132,40 +145,44 @@ Both versions align with our *recursive definition of a list*:
 We can *build* lists using this head-tail distinction with the `cons` function.
 `(cons x xs)` creates a new list by appending the element `x` to the front of the list `xs`.
 
-~~~racket
-> (cons 1 (list 2 3 4 5))
-'(1 2 3 4 5)
-~~~
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+</script>
+(cons 1 (list 2 3 4 5))
+</pre>
 
 Because the second argument to `cons` is a smaller list, we can use `cons` repeatedly to obtain the same effect as our list literal syntax:
 
-~~~racket
-> (list 1 2 3 4 5)
-'(1 2 3 4 5)
-> (cons 1
-    (cons 2
-      (cons 3
-        (cons 4
-          (cons 5 null)))))
-'(1 2 3 4 5)
-~~~
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+</script>
+(list 1 2 3 4 5)
+(cons 1
+  (cons 2
+    (cons 3
+      (cons 4
+        (cons 5 null)))))
+</pre>
 
-`null` here is another way to write `'()`, the empty list.
+`null` here is another way to write `(list)`, the empty list.
 
 ## An example: summation
 
 With our new list functions, let's define a procedure called `sum` that takes one argument, a list of numbers, and returns the result of adding all of the elements of the list together:
 
-```
-> (sum (list 91 85 96 82 89))
-443
-> (sum (list -17 17 12 -4))
-8
-> (sum (list 9.3))
-9.3
-> (sum null)
-0
-```
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+(define sum
+  (lambda (numbers)
+    (if (null? numbers)
+        0
+        (+ (car numbers) (sum (cdr numbers))))))
+</script>
+(sum (list 91 85 96 82 89))
+(sum (list -17 17 12 -4))
+(sum (list 9.3))
+(sum null)
+</pre>
 
 You already know one way to compute `sum`: You just `reduce` the list with the `+` function.
 But let's try to implement `sum` not with `reduce` but recursive decomposition instead!
@@ -194,7 +211,7 @@ Let's revisit the concrete list from before: a list containing `1` at the head w
 
 ![A list with the head element as 1 and the rest of the list unknown.]({{ "/images/list-of-5-example-head.png" | relative_url }})
 
-If this list is `numbers` then `(car numbers)` produces `1` and `(cdr numbers)` produces the tail of the list (filled in to represent the fact that we don't immediately know its contents).
+If this list is `numbers` then `(car numbers)` produces `1` and `(cdr numbers)` produces the tail of the list (hidden to indicate that we don't immediately know its contents).
 
 How can we decompose the sum of `numbers` in terms of these components?
 If we had a way to sum up the tail of the list, we could simply add the head of the list to the result.
@@ -302,33 +319,33 @@ Let's consider a simple example: `(sum (list 5 8 2))`.
     ```racket
         (+ 5 (+ 8 (sum (list 2))))
     --> ...
-    --> (+ 5 (+ 8 (+ 2 (sum '()))))
+    --> (+ 5 (+ 8 (+ 2 (sum null))))
     ```
 
     But what happens now when `sum` is passed the empty list?
     Let's substitute one more time and find out:
 
     ```racket
-        (+ 5 (+ 8 (sum '())))
+        (+ 5 (+ 8 (sum null)))
     --> ...
-    --> (+ 5 (+ 8 (+ 2 (if (null? '())
+    --> (+ 5 (+ 8 (+ 2 (if (null? null)
                            0
-                           (+ (car '()) (sum (cdr '())))))))
+                           (+ (car null) (sum (cdr null)))))))
     ```
 
 7.  Finally, the input list is the empty list, so our conditional goes into the if-branch:
 
     ```racket
-        (+ 5 (+ 8 (+ 2 (if (null? '())
+        (+ 5 (+ 8 (+ 2 (if (null? null)
                            0
-                           (+ (car '()) (sum (cdr '())))))))
+                           (+ (car null) (sum (cdr null)))))))
         (+ 5 (+ 8 (+ 2 (if #t
                            0
-                           (+ (car '()) (sum (cdr '())))))))
+                           (+ (car null) (sum (cdr null)))))))
     --> (+ 5 (+ 8 (+ 2 0)))
     ```
 
-    You may have been worried that `(car '())` and `(cdr '())` are invalid expressions.  Fortunately, `if` does not behave like most procedure and only evaluates its final parameter (the false part) when the guard is false.
+    You may have been worried that `(car null)` and `(cdr null)` are invalid expressions.  Fortunately, `if` does not behave like most procedure and only evaluates its final parameter (the false part) when the guard is false.
     In this case, the guard was true, and so we never got to the invalid expressions.
 
 8.  We see that the final call to `sum` yields 0.
@@ -350,7 +367,7 @@ Fill in the missing steps of the derivation from step 6 above:
 ```racket
     (+ 5 (+ 8 (sum (list 2))))
 --> ...
---> (+ 5 (+ 8 (+ 2 (sum '()))))
+--> (+ 5 (+ 8 (+ 2 (sum null))))
 ```
 
 ### Check 2: To infinity and beyond (‡)
@@ -368,7 +385,7 @@ Consider the following erroneous definition of `sum`:
 The only difference between `awesum` and `sum` is that we passed `lst` rather than `(cdr lst)` to the recursive call.
 
 What happens if we call `(awesum (list 5 2))`?
-Use your mental model to predict the result, and then check your result in DrRacket.
+Use your mental model to predict the result, and then check your result in Scamper.
 **Make sure to save your work before checking!**
 Explain your findings in a few sentences!
 
