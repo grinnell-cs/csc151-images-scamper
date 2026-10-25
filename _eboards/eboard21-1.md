@@ -3,7 +3,7 @@ title: "EBoard 21: Lists (Section 1)"
 number: 21
 section: eboards
 held: 2026-10-16
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -18,9 +18,6 @@ _Approximate overview_
 * Administrative stuff
 * Lab
 * Quizzes
-
-Quizzes
--------
 
 Administrative stuff
 --------------------
@@ -43,12 +40,12 @@ Administrative stuff
        * When submitting a mini-project redo, please include a file
          called `CHANGES.txt` that describes what you've changed.
        * If you don't submit the `CHANGES.txt` file, they won't grade it.
-* Due THursday, 2026-10-29
+* Due Thursday, 2026-10-29
     * [Mini-project 1](../mps/mp01) second redo
        * [Submit redo on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8882970/)
        * When submitting a mini-project redo, please include a file
          called `CHANGES.txt` that describes what you've changed.
-* On Friday, 2026-09-30
+* On Friday, 2026-10-30
     * NEW Quiz/LA on list recursion (post-break topic)
     * Makeup Quiz/LA on testing
     * Makeup Quiz/LA on local bindings
@@ -117,13 +114,24 @@ _These do not earn tokens, but are worth your consideration._
 
 * Fall break is a time to decompress from your work
 * Take care of yourselves!
-* Try not to forget things!
 * Be moderate!
-* Cohabitation requires consent. Consent is insufficient. Consent
+* Try not to forget things from 151!
+* Consent is essential. Consent is also insufficient. Consent
   is impossible when impaired.
 
 Lab
 ---
+
+Core vocabulary
+
+* `(cons val lst)` - create a new list by putting `val` at the front of `lst`
+* `(car lst)` - grab the first element of `lst`
+* `(cdr lst)` - grab all but the first element of `lst`
+
+Observation
+
+* `(car (cons val lst))` is `val`
+* `(cdr (cons val lst))` is `lst`
 
 Quizzes
 -------
