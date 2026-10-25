@@ -144,7 +144,7 @@ defaults:
       type: readings
     values:
       link: true
-      layout: assigned
+      layout: reading
 
   - scope:
       path: ""
