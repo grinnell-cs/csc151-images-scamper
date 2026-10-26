@@ -34,6 +34,11 @@ Administrative stuff
   consider taking CSC-161.
 * I sent out answers to most of the October 16 quizzes over the weekend.
   Let me know if you didn't receive them.
+* One of you wrote the following on your MP1 redo.
+  "ChatGPT helped revise the code and documentation using the assignment 
+   instructions and grader feedback."
+     * **You may not use AI-based programming tools in this course!**
+     * If you did, make an appointment to chat with me.
 
 ### Upcoming work
 
