@@ -256,7 +256,6 @@
     recursion that is ubiquitous in functional programming.
   reading:
     - page: /readings/tail-recursion.html
-    - page: /readings/list-recursion-revisited.html
   lab:
     - page: /labs/tail-recursion.html
 
@@ -357,6 +356,7 @@
     We explore patterns of recursion in the design of programs,
     particularly with regards to higher-order procedures.
   reading:
+    - page: /readings/list-recursion-revisited.html
     - page: /readings/higher-order-recursive-design.html
   lab:
     - page: /labs/higher-order-recursion.html
