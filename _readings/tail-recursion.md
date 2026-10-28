@@ -6,40 +6,32 @@ summary: |
 
 Consider the humble `length` function we analyzed several times in our previous discussions on recursive design.  Here, we define the function as `my-length` to avoid shadowing the standard library list `length` function.
 
-```racket
+<pre class="scamper-transcript">
 (define my-length
   (lambda (lst)
     (if (null? lst)
         0
         (+ 1 (my-length (cdr lst))))))
-```
+</pre>
 
-We can observe that this function behaves like `length` pretty easily, *e.g.*, with Charles Dickens's [*A Tale of Two Cities*](https://www.gutenberg.org/files/98/98-0.txt):
+This seems to work fine for smaller lists.
 
-```racket
-> (length (file->words "98-0.txt"))
-141606
-> (my-length (file->words "98-0.txt"))
-141606
-```
+<pre class="scamper-transcript" data-continues>
+(length (list "eh" "bee" "see" "d" "eeeeee"))
+(my-length (list "eh" "bee" "see" "d" "eeeeee"))
+</pre>
 
-Not too bad! But what if the book is larger than A Tale of Two Cities?  Let's try faking a larger list using `range`:
+But what about bigger lists?
 
-```racket
-> (define big-list (range 0 1000000))   ; might take a minute or two to execute!
-```
+<pre class="scamper-transcript" data-continues>
+(define big-list (range 100000))
+(length big-list)
+(my-length big-list)
+</pre>
 
-Now `length` works fine.  But on my machine at least, `my-length` takes noticeably longer to run.
+In Scamper, you can't build up more than a certain number of recursive calls (10,000, at last check). In other implementations of Scheme, you'll find that `my-length` is significantly slower, if it works at all.
 
-
-```racket
-> (length big-list)     ; returns instantaneously
-1000000
-> (my-length big-list)  ; takes a solid couple of seconds to return
-1000000
-```
-
-When you try this example out on your own, you might find that your machine chokes on both `length` and `my-length` or is able to handle both fine.  Try varying the size of `big-list` by factors of 10, *i.e.*, add/remove `0`s from `range` until you see this difference in behavior!
+We need another approach.
 
 Recursion and memory usage
 --------------------------
@@ -48,9 +40,9 @@ Why is `my-length` slow whereas `length` is not slow?  It isn't because `length`
 
 ```racket
     (my-length big-list)
---> (+ 1 (my-length '(0 ... 999999)))
---> (+ 1 (+ 1 (my-length '(0 ... 999998))))
---> (+ 1 (+ 1 (+ 1 (my-length '(0 ... 999997)))))
+--> (+ 1 (my-length (list 0 ... 99999)))
+--> (+ 1 (+ 1 (my-length (list 0 ... 99998))))
+--> (+ 1 (+ 1 (+ 1 (my-length (list 0 ... 99997)))))
 --> ...
 ```
 
@@ -59,7 +51,7 @@ We see that to evaluate `(my-length big-list)`, the resulting expression will fi
 ```
 (+ 1 (+ 1 (+ 1 (+ 1 (+ 1 ... (+ 1 0))))))
    \___________________________/
-          1000000 times!
+          100000 times!
 ```
 
 Only after resolving all of these calls will we begin to collapse the repeated additions into the final result.  However, Racket must still *remember* to perform all of these additions while it is carrying out the recursive `my-length` calls!  This is where the inefficiency of the function lies: Racket needs to remember `1000000` `(+ 1 ...)` expressions, one for each `my-length` call made, so that they can be resolved after the last `my-length` call that returns `0` resolves.
@@ -100,22 +92,22 @@ Our goal is to *update* this parameter on every recursive call so that we don't 
 * In the base case, because `so-far` is assumed to be the result of the computation.  Therefore, we return it as the final result since we've hit the base case.
 * In the recursive case, rather than updating the result of the recursive call (`(+ 1 (my-length/helper tail))`), we update `so-far` as it is *passed in* to the recursive call.
 
-Does `my-length/helper` behave as we'd like?  Let's consider how it executes, *e.g.*, `(my-length/helper '(1 2 3) 8)`:
+Does `my-length/helper` behave as we'd like?  Let's consider how it executes, *e.g.*, `(my-length/helper (list 1 2 3) 8)`:
 
 ```racket
-    (my-length/helper '(1 2 3) 8)
---> (my-length/helper '(2 3) (+ 1 8))
---> (my-length/helper '(2 3) 9)
---> (my-length/helper '(3) (+ 1 9))
---> (my-length/helper '(3) 10)
---> (my-length '() (+ 1 10))
---> (my-length '() 11)
+    (my-length/helper (list 1 2 3) 8)
+--> (my-length/helper (list 2 3) (+ 1 8))
+--> (my-length/helper (list 2 3) 9)
+--> (my-length/helper (list 3) (+ 1 9))
+--> (my-length/helper (list 3) 10)
+--> (my-length/helper null (+ 1 10))
+--> (my-length/helper null 11)
 --> 11
 ```
 
 Note how the function executes: we *eagerly* evaluate the repeated additions rather than waiting for them to resolve after all the recursive function calls have made.  As a result, `my-length/helper` consumes far less memory than our original `my-length` function!
 
-There's only one catch---`my-length/helper` isn't the function we wanted to write!  We wanted to write `(my-length l)` which reports the length of `l`.
+There's only one catch---`my-length/helper` isn't the function we wanted to write!  We wanted to write `(my-length lst)` which reports the length of `lst`.
 Is there a way that we can write `my-length` in terms of `my-length/helper`?
 Certainly, we just need to provide an appropriate initial value for `so-far`!
 
@@ -126,21 +118,26 @@ To come up with such a value, we can answer the following question:
 In this particular case, `0` is a reasonable value to return if we haven't seen any elements of the list yet---as far as we know, the list has no elements so far!
 This leads to a final, efficient implementation of `my-length` in terms of `my-length/helper`:
 
-```racket
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+(define my-length/helper
+  (lambda (lst so-far)
+    (if (null? lst)
+        so-far
+        (my-length/helper (cdr lst) (+ 1 so-far)))))
+</script>
 (define my-length
-  (lambda (lst)                 ; or (r-s my-length/helper 0)!
+  (lambda (lst)
     (my-length/helper lst 0)))
-```
+</pre>
 
-With this implementation, we can see that `my-length` is now as efficient as the standard library `length` function!
+With this implementation, we can see that `my-length` is now more efficient.
 
-```racket
-> (define big-list (range 0 1000000))
-> (length big-list)
-1000000
-> (my-length big-list)  ; just as fast as `length`!
-1000000
-```
+<pre class="scamper-transcript" data-continues>
+(define big-list (range 100000))
+(length big-list)
+(my-length big-list)
+</pre>
 
 Tail-recursive functions
 ------------------------
@@ -156,7 +153,7 @@ As another example consider a naive recursive implementation of the `replicate` 
 (define replicate
   (lambda (n x)
     (if (zero? n)
-        '()
+        null
         (cons n (replicate (- n 1) x)))))
 ```
 
@@ -200,9 +197,9 @@ Local bindings for recursive helpers
 
 In making our functions tail-recursive, we introduce a helper function, `replicate/helper` that was called exclusively by `replicate`.  It is highly unlikely that `replicate/helper` would ever be used any other function other than `replicate`.  So we would like to make `replicatee-helper` *local* to `replicate` reduce to avoid polluting the global namespace.
 
-Our tool for introducing local bindings is `let`.  However, we encounter an issue if we use `let` to make `replicate/helper` local to `replicate`:
+Our tool for introducing local bindings is `let`.  
 
-```racket
+<pre class="scamper-transcript">
 (define replicate
   (lambda (n x)
     (let ([replicate/helper
@@ -210,51 +207,13 @@ Our tool for introducing local bindings is `let`.  However, we encounter an issu
              (if (zero? n)
                  so-far
                  (replicate/helper (- n 1) x (cons x so-far))))])
-      (replicate/helper n x '()))))
+      (replicate/helper n x null))))
+(replicate 5 "!")
+</pre>
 
-Error: replicate/helper: unbound identifier in: replicate/helper
-```
+In Scamper, we can use `let` for recursive helpers. In most other implementations of Scheme, you should use `letrec` ("let for recursive functions") instead. Because they are local, you also choose a pithier name for the helper so you less to type!  My personal preference is to call my local helper function `kernel` or `helper`:
 
-Recall that `let` introduced its bindings *simultaneously* so that a later binding could not refer to an earlier binding.
-
-```racket
-> (let ([x 1]
-        [y (+ x 1)])
-    (+ y 1))
-Error x: undefined;
- cannot reference an identifier before its definition
-```
-
-To solve this issue, we introduced `let*` which introduces its bindings sequentially:
-
-```racket
-> (let* ([x 1]
-         [y (+ x 1)])
-    (+ y 1))
-3
-```
-
-A similar issue occurs here but with *recursive identifiers*.  `let` does not make the identifier `replicate/helper` visible inside the definition of `replicate/helper`!
-
-To fix this issue, we use yet another variant of `let`, `letrec` which acts like `let*` but also allows for recursive identifiers:
-
-```racket
-(define replicate
-  (lambda (n x)
-    (letrec ([replicate/helper
-              (lambda (n x so-far)
-                (if (zero? n)
-                    so-far
-                    (replicate/helper (- n 1) x (cons x so-far))))])
-      (replicate/helper n x '()))))
-
-> (replicate 5 "!")
-'("!" "!" "!" "!" "!")
-```
-
-When defining tail-recursive functions, make sure to use `letrec` to make your helper functions local to the main function.  Because they are local, you also choose a pithier name for the helper so you less to type!  My personal preference is to call my local helper function `kernel` or `helper`:
-
-```racket
+<pre class="scamper-transcript">
 (define replicate
   (lambda (n x)
     (letrec ([kernel
@@ -262,65 +221,64 @@ When defining tail-recursive functions, make sure to use `letrec` to make your h
                 (if (zero? n)
                     so-far
                     (kernel (- n 1) x (cons x so-far))))])
-      (kernel n x '()))))
+      (kernel n x null))))
 
-> (replicate 5 "!")
-'("!" "!" "!" "!" "!")
-```
+(replicate 7 "?")
+</pre>
 
-## Top-down Versus Bottom-up Processing
+Top-down versus bottom-up processing
+------------------------------------
 
 Up to this point, our recursive functions have computed in a *bottom-up* function by operating on the results of recursive calls.  With tail-recursion, we *invert* the order of computation by operating on the accumulator parameter in a *top-down* pattern.  For `length` and `replicate`, this didn't seem to change how the functions behaves.  But sometimes, the direction matters!
 
 For example, let's consider the `append` function which appends two lists together.  Here is the naive implementation:
 
-```racket
+<pre class="scamper-transcript" data-continues>
 (define append
   (lambda (l1 l2)
     (if (null? l1)
         l2
         (cons (car l1)
               (append (cdr l1) l2)))))
-```
+</pre>
 
 Now that we've introduced the notion of an accumulator parameter, you might notice that `l2` seems to almost serve this purpose in `append`!  It is returned as the result of the base case.  The only difference is that we do not modify it when calling `append`.  That seems easy enough to fix, so let's try it:
 
-```racket
+<pre class="scamper-transcript" data-continues>
 (define append-tail
   (lambda (l1 l2)
     (if (null? l1)
         l2
         (append-tail (cdr l1) (cons (car l1) l2)))))
-```
+</pre>
 
 `append-tail` is tail-recursive because the recursive case returns the result of `append` directly now, instead of consing an element onto that result before returning.  However, how does this version of the function behave?
 
-```racket
-> (append-tail (list 1 2 3) (list 4 5 6))
-'(3 2 1 4 5 6)
-```
+<pre class="scamper-transcript" data-continues>
+(append-tail (list 1 2 3) (list 4 5 6))
+</pre>
 
-Whoops!  What is going on here?  Let's trace the execution of this expression:
+Whoops!  What is going on here?  Let's trace the execution of this expression. (We're using a somewhat condensed trace.)
 
 ```racket
     (append-tail (list 1 2 3) (list 4 5 6))
---> (append-tail '(2 3) (cons 1 '(4 5 6)))
---> (append-tail '(2 3) '(1 4 5 6))
---> (append-tail '(3) '(2 1 4 5 6))
---> (append-tail '() '(3 2 1 4 5 6))
---> '(3 2 1 4 5 6)
+--> (append-tail (list 2 3) (cons 1 (list 4 5 6)))
+--> (append-tail (list 2 3) (list 1 4 5 6))
+--> (append-tail (list 3) (list 2 1 4 5 6))
+--> (append-tail (list) (list 3 2 1 4 5 6))
+--> (list 3 2 1 4 5 6)
 ```
 
-By consing the elements in a top-down fashion rather than bottom-up fashion, we've reversed the order of `l1` in the appended list!
+By cons'ing the elements in a top-down fashion rather than bottom-up fashion, we've reversed the order of `l1` in the appended list!
 This occurred for `append` because `cons` is not a symmetric operator, that is:
 
 ```racket
-(cons 3 (cons 2 (cons 1 '(4 5 6)))) ≠ (cons 1 (cons 2 (cons 3 '(4 5 6))))
+(cons 3 (cons 2 (cons 1 (list 4 5 6)))) ≠ (cons 1 (cons 2 (cons 3 (list 4 5 6))))
 ```
 
-The left-hand expression arises in the tail-recursive variant of append.  The right-hand expression arises with the naive version.
+The left-hand expression arises in the tail-recursive variant of `append`.  The right-hand expression arises with the naive version.
 
-You might think "well, duh; of course the order matters", but it didn't for `length`!  This is because `+` is a symmetric operator.  Suppose we ran `(length '(1 2 3))` on the tail-recursive and non-tail-recursive versions of `length`.  We find that:
+You might think "well, duh; of course the order matters", but it didn't for `length`!  This is because `+` is a symmetric operator.  Suppose we ran `(length (list 1 2 3))` on the tail-recursive and non-tail-recursive versions of `length`.  We find that:
 
 ```racket
 (+ 3 (+ 2 (+ 1 0))) = (+ 1 (+ 2 (+ 3 0)))
@@ -330,45 +288,40 @@ The left-hand expression comes from the tail-call version (we start by summing `
 
 How can we write a tail-call version of `append`?  We have do something a bit counter-intuitive if performance is our goal: we need to reverse `l1` before feeding it to `append`'s local helper!  Here's a complete implementation:
 
-```racket
+<pre class="scamper-transcript">
 (define append
   (lambda (l1 l2)
-    (letrec ([kernel (lambda (l1 l2)
-                       (if (null? l1)
-                           l2
-                           (kernel (cdr l1) (cons (car l1) l2))))])
+    (let ([kernel (lambda (l1 l2)
+                    (if (null? l1)
+                        l2
+                        (kernel (cdr l1) (cons (car l1) l2))))])
       (kernel (reverse l1) l2))))
-```
+</pre>
 
-Where `reverse` is the standard library implementation of `reverse`.  Now `append` is tail-recursive and behaves as we would like:
+Here `reverse` is the standard library implementation of `reverse`.  Now `append` is tail-recursive and behaves as we would like:
 
-```racket
-> (append '(1 2 3) '(4 5 6))
-'(1 2 3 4 5 6)
-```
+<pre class="scamper-transcript" data-continues>
+(append (list 1 2 3) (list 4 5 6))
+</pre>
 
 However, we need to be careful.  This implementation only works if `reverse` is tail-recursive!  Otherwise, if `l1` is really big, we run into all the same issues as before.  Luckily, we can use the fact that `cons` employed in a top-down fashion reverses a list to implement `reverse` in a tail-recursive manner!
 
-```racket
-;;; (reverse lst) -> list?
-;;;   lst : list?
-;;; Returns lst but reversed.
-(define reverse
+<pre class="scamper-transcript" data-continues>
+(define my-reverse
   (lambda (lst)
-    (letrec ([kernel
-              (lambda (lst so-far)
-                (if (null? lst)
-                    so-far
-                    (kernel (cdr lst) (cons (car lst) so-far))))])
-      (kernel lst '()))))
+    (let ([kernel
+           (lambda (lst so-far)
+             (if (null? lst)
+                 so-far
+                 (kernel (cdr lst) (cons (car lst) so-far))))])
+      (kernel lst null))))
 
-> (reverse '(1 2 3 4 5))
-'(5 4 3 2 1)
-```
+(my-reverse (list 1 2 3 4 5))
+</pre>
 
 And indeed the standard library implementation of `reverse` takes this approach, so we are safe!
 
-## A lesson on dptimization
+## A lesson on optimization
 
 While our final version of `append` from the previous section is tail-recursive, that transformation came at a price:
 
@@ -398,17 +351,17 @@ Imagine that we are defining a recursive function `func`.  Determine whether the
 
 ### Check 2: Tail tracing
 
-Give an execution trace for the following expression involving `reverse` using your mental model of computation.  You may assume that the execution trace steps from the initial call to `reverse` to the first step after the initial call to `go` is evaluated:
+Give an execution trace for the following expression involving `my-reverse` using your mental model of computation.  You may assume that the execution trace steps from the initial call to `my-reverse` to the first step after the initial call to `go` is evaluated:
 
 ```racket
-    (reverse '(1 2 3 4 5))
---> (kernel '(1 2 3 4 5) '())
+    (my-reverse (list 1 2 3 4 5))
+--> (kernel (list 1 2 3 4 5) null)
 --> ...
 ```
 
 ### Check 3: Making tails (‡)
 
-Transform the following recursive definition of `factorial` so that it is tail-recursive.  Make sure to use `letrec` to ensure `factorial`'s helper function is local relative to `factorial`'s definition.
+Transform the following recursive definition of `factorial` so that it is tail-recursive.  Make sure to use `let` to ensure `factorial`'s helper function is local relative to `factorial`'s definition.
 
 ```racket
 (define factorial
