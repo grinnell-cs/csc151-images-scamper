@@ -3,7 +3,7 @@ title: "EBoard 23: Recursion (Section 1)"
 number: 23
 section: eboards
 held: 2026-10-28
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -23,9 +23,15 @@ Administrative stuff
 
 ### Introductory Notes
 
+* Feel free to grab a duck if you didn't already.
 * We're back to the "Sam talks less" experiment.
 * I'm also continuing the "pop quiz" experiment.
 * Today's lab is likely too long, even with "Sam talks less".
+* The second redo of MP1 is now due a week from tomorrow. The first redo
+  should be returned by Sunday.
+* MP4 will be ready tonight. It involves writing lots and lots of recursive
+  functions that process lists of colors. (Getting all the details right
+  is taking a bit more time than I'd been able to allocate.)
 
 ### Upcoming work
 
@@ -57,9 +63,11 @@ Administrative stuff
 
 Scholarly
 
-* Thursday, 29 October 2025, 11:00 a.m.--Noon, JRC 101.
+* Thursday, 29 October 2026, 11:00 a.m.--Noon, JRC 101.
   _Scholars’ Convocation: Dan Reynolds on
    Are We There Yet? The Humanities as a Journey_
+* Thursday, 29 October 2026, 4:15--5:15 p.m., Noyce 3821.
+  _CS Extras: Student presentations_
 * Tuesday, 3 October 2026, Noon--1:00 p.m., JRC 224C (I think).
   _CS Table_
 
@@ -130,6 +138,12 @@ _These do not earn tokens, but are worth your consideration._
 
 Pop quiz
 --------
+
+* Colors: How do you extract the blue component from an RGB color?
+* Predicates: List three unary (one-parameter) predicates we can use with numbers.
+* Drawings: What are the parameters to `outlined-rectangle`? (You need not get the order right.)
+* Predicates: What's the difference between `=` and `equal?`?
+* Anonymous functions: Write two versions of `add3`, one using `o` (and `add1`) and one using `l-s` or `r-s`.
 
 Lab
 ---
