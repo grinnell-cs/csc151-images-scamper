@@ -153,10 +153,10 @@
 ;; that computes the length of a list.
 
 (define my-length
-  (lambda (l)
-    (if (null? l)
-        1
-        (my-length (cdr l)))))
+  (lambda (lst)
+    (if (null? lst)
+        1st
+        (my-length (cdr lst)))))
 
 ;; a. Build a small test suite for this function in the space below.
 ;;   What tests do you need to ensure that you "cover all the cases" of 
@@ -166,7 +166,7 @@
 
 ; (test-case "sample test" equal? 3 #(my-length (list 1 2 3)))
 
-;; <TODO: write your additional rackunit tests for my-length here>
+;; <TODO: write your additional tests for my-length here>
 
 ;; b. In your testing, you should have noted that the function doesn't
 ;;    behave as expected! Using the debugging techniques we've developed
@@ -218,9 +218,9 @@
 ;;    function passes all of your tests. Describe the problem and your
 ;;    fix in the space below.
 
-;; The problem:
+;; Explanation:
 
-;; The solution:
+;; Solution:
 
 
 ;; +--------------------------------------+---------------------------
