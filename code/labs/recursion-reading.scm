@@ -1,10 +1,5 @@
-#lang racket
-
-(require csc151)
-(require rackunit)
-
-;; CSC 151-NN (SEMESTER)
-;; Lab: Recursion basics (recursion-basics.rkt)
+;; CSC 151-NN (2026Fa)
+;; Lab: Recursion basics (recursion-basics.scm)
 ;; Authors: YOUR NAMES HERE
 ;; Date: THE DATE HERE
 ;; Acknowledgements:
@@ -27,7 +22,7 @@ a. If you have not done so already, be sure to discuss work habits
 and such with your partner.  Perhaps mention things that have worked
 less well, so that you can avoid them.
 
-b. Make sure to save this as `recursion-basics.rkt`.
+b. Make sure to save this as `recursion-basics.scm`.
 |#
 
 #| AB |#
