@@ -3,7 +3,7 @@ title: "EBoard 22: Recursion (Section 1)"
 number: 22
 section: eboards
 held: 2026-10-26
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -26,7 +26,7 @@ Administrative stuff
 ### Introductory Notes
 
 * There's no lab today, so I'm going to announce all the token events
-  today. 
+  today. I will return to the "Sam talks less" experiment.
 * I'm also continuing the "pop quiz" experiment.
 * Congratulations to our football team for another two victories!
     * We have one more home game, on November 14.
@@ -39,6 +39,12 @@ Administrative stuff
    instructions and grader feedback."
      * **You may not use AI-based programming tools in this course!**
      * If you did, make an appointment to chat with me.
+* "I'm not going to make our 8am class. Can I show up at 9:30 or 2:40?"
+     * I'd prefer that you were not awake at 2am. You need sleep!
+     * I'd prefer that you made it to the section you are registered for,
+       but I understand needing sleep.
+     * It's better to make it to one section than none.
+* Don't forget to use the cards to figure out where you sit each day.
 
 ### Upcoming work
 
@@ -60,7 +66,7 @@ Administrative stuff
        * When submitting a mini-project redo, please include a file
          called `CHANGES.txt` that describes what you've changed.
 * On Friday, 2026-10-30
-    * NEW Quiz/LA on list recursion (today and Wednesday)
+    * NEW Quiz/LA on list recursion (today, Wednesday, and Friday)
     * Makeup Quiz/LA on testing
     * Makeup Quiz/LA on local bindings
     * Makeup Quiz/LA on collaboration 
@@ -153,13 +159,135 @@ _These do not earn tokens, but are worth your consideration._
   _Women's Soccer vs. Cornell College_
 
 Pop quiz
---------
+
+* What is decomposition?
+* Numbers: What does `remainder` do?
+* Drawings: List three functions to make shapes.
+* Strings: How do we convert all the characters in a string to uppercase?
+* Drawings: What function puts one drawing vertically over another?
+
+```
+  +-----+
+  | One |
+  +-----+
++---------+
+|   Two   |
++---------+
+```
 
 Recursion basics
 ----------------
 
+* Recursion is one of the core mechanisms for achieving repetition.
+* Has some similarity to decomposition.
+     * Decomposition: Break a complex problem down into smaller problems
+       and combine the solutions to the smaller problems into the solution
+       to the big problem.
+     * Recursion: Solve a complex problem by solving a simpler version
+       of **the same problem** and then using that solution to solve
+       our more complex.
+* At some point, we have a problem so simple that we can solve it directly.
+
 Examples!
 ---------
 
+Yay! Role playing.
+
+Assumptions:
+
+* The president wants to do as little work as possible.
+* However, our contract with the UGSDW suggests that the no person at
+  Grinnell can delegate the same task they received, they must make it
+  "simpler"
+
+Problem one: Count the cards
+
+* Remove one, pass the rest to your assistant
+* Ask your assistant to count the rest
+* Add 1 to that result
+
+In solving problems this way, we have to think about a few things
+
+* "How do we simplify the problem?" For lists, it's almost always
+  "Take the cdr"
+* When is the problem simple enough that we can solve it without additional
+  help? For lists, "If the list is empty ..."; "If the list has one
+  element ..."
+* What do we do with the solution to the simpler problem. Varies
+  significantly.
+
+Problem two: Sum the cards
+
+* Make the problem simpler: Take one out
+* Ask the assistant to sum the dollar amounts
+* Add the assistant's answer to your number, return the result
+* Note: When there's only one card, you can just read the number on the card.
+* Note: If you get no cards, you could return zero. [Sam likes this, 
+  when possible]
+
+Problem three: Find the largest card
+
+* Make the problem simpler: Take away one card
+* Ask your problem to find the largest card in the rest
+* This time, we stop with one card left, rather than zero
+* In that case the largest card is that one card.
+* When you hear the result, you take the larger of your card and the
+  other person's card.
+
+How would you change this to find the name on the largest card.
+
+* You need to pass back the value and the name.
+
+Scheme thoughts
+
+* How do we find the larger of two cards? `max`
+* How do we decide if there's only one card?
+* How do we pass back two values? 
+
 Converting our solutions to Scheme
 ----------------------------------
+
+```
+;;; (count lst) -> integer?
+;;;   lst : list?
+;;; Counts how many elements are in the list.
+(define count
+  (lambda (lst)
+    (if (null? lst)
+        0
+        (+ 1 (count (cdr lst)))))) ; remove 1, count the rest, add 1 to the result
+```
+
+```
+;;; (sum lst) -> real?
+;;;   lst : (list-of real?)
+;;; Add up all the elements in the list.
+(define sum
+  (lambda (lst)
+    (if (null? lst)
+        0
+        (+ (car lst) (sum (cdr lst))))))
+        ; remove an element, sum the rest; add the one we removed
+```
+
+```
+    (sum (list 5 1 2 6))
+--> (+ (car (list 5 1 2 6)) (sum (cdr (list 5 1 2 6))))
+--> (+ 5 (sum (cdr (list 5 1 2 6))))
+--> (+ 5 (sum (list 1 2 6)))
+--> (+ 5 (+ (car (list 1 2 6)) (sum (cdr (list 1 2 6)))))
+--> (+ 5 (+ 1 (sum (cdr (list 1 2 6)))))
+--> (+ 5 (+ 1 (sum (list 2 6))))
+--> (+ 5 (+ 1 (+ (car (list 2 6)) (sum (cdr (list 2 6))))))
+--> (+ 5 (+ 1 (+ 2 (sum (cdr (list 2 6))))))
+--> (+ 5 (+ 1 (+ 2 (sum (list 6)))))
+--> (+ 5 (+ 1 (+ 2 (+ (car (list 6)) (sum (cdr (list 6)))))))
+--> (+ 5 (+ 1 (+ 2 (+ 6 (sum (cdr (list 6)))))))
+--> (+ 5 (+ 1 (+ 2 (+ 6 (sum null)))))
+--> (+ 5 (+ 1 (+ 2 (+ 6 0))))
+--> (+ 5 (+ 1 8))
+--> (+ 5 9)
+--> 14
+```
+
+
