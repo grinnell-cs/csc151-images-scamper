@@ -3,11 +3,11 @@ title: "EBoard 23: Recursion (Section 3)"
 number: 23
 section: eboards
 held: 2026-10-28
-link: false
+link: true
 ---
 # {{ page.title }}
 
-_Please follow the standard start-of-class routine. 
+_Please follow the standard start-of-class routine._
 
 **Warning! You are being recorded** (and transcribed) (provided the technology
 is working correctly).
@@ -25,7 +25,7 @@ Administrative stuff
 
 * If you haven't done so already, feel free to grab a duck from the back
   of the room.
-* We're back to the "Sam talks less" experiment.
+* We're returning to the "Sam talks less" experiment.
 * I'm also continuing the "pop quiz" experiment.
 * Today's lab is likely too long, even with "Sam talks less".
 * The second redo of MP1 is now due a week from tomorrow. The first redo
@@ -41,7 +41,7 @@ Administrative stuff
        * [Submit reading response on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8956364)
     * [Submit lab writeup on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8956670)
 * On Friday, 2026-10-30
-    * NEW Quiz/LA on list recursion (today, Wednesday, and Friday)
+    * NEW Quiz/LA on list recursion (today and Friday)
     * Makeup Quiz/LA on testing
     * Makeup Quiz/LA on local bindings
     * Makeup Quiz/LA on collaboration 
@@ -131,14 +131,22 @@ _These do not earn tokens, but are worth your consideration._
 * Friday, 30 October 2026, 7:00--9:00 p.m. Darby Gym.
   _Volleyball vs. Beloit_
 * Saturday, 31 October 2026, 11:00 a.m.--1:00 p.m., Springer Field.
-  _Men's Soccer vs. Cornell College_ (last home meet of the season)
+  _Men's Soccer vs. Cornell College_ (last home match of the season)
 * Saturday, 31 October 2026, 1:00--3:00 p.m. Darby Gym.
   _Volleyball vs. Lake Forest_ (senior day)
 * Saturday, 31 October 2026, 1:30--3:30 p.m., Springer Field.
-  _Women's Soccer vs. Cornell College_ (last home meet of the season)
+  _Women's Soccer vs. Cornell College_ (last home match of the season)
 
 Pop quiz
 --------
+
+* Testing: What are the parameters to `test-case`? 
+  (You need not get them in the correct order.)
+* Anonymous functions: Rewrite `(lambda (x) (- 2 x))` with `l-s` or `r-s`.
+* Characters: What is `(integer->char (+ 3 (char->integer #\a)))`?
+* Lists: What is `(cdr (cons 1 (list 4 5 6)))`?
+* Lists: What should you get from 
+  `(map + (list 1 2 3) (list 4 4 4))`?
 
 Lab
 ---
@@ -151,3 +159,15 @@ you do things in that order.
 * Evidence suggests we are more likely to write correct code if we've
   thought about what the procedure should do before we implement the 
   procedure. (Overall, we're more efficient.)
+
+Thinking about `alphabetically-first`
+
+* Example 1: `(alphabetically-first (list "eh" "bee" "see"))` 
+    * Recursive call will be `(alphabetically-first (list "bee" "see"))`
+    * Recursive result will be "bee". (Trust the MRF)
+    * We return ??? because ....
+* Example 2: `(alphabetically-first (list "a" "c" "b"))`
+    * Recursive call will be `(alphabetically-first (list "c" "b"))`
+    * Recursive result will be "b". (Trust the MRF)
+    * We return ??? because ....
+

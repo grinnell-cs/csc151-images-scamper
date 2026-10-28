@@ -7,7 +7,7 @@ link: true
 ---
 # {{ page.title }}
 
-_Please follow the standard start-of-class routine. 
+_Please follow the standard start-of-class routine._
 
 **Warning! You are being recorded** (and transcribed) (provided the technology
 is working correctly).
@@ -161,3 +161,14 @@ you do things in that order.
   procedure. (Overall, we're more efficient.)
 
 Note: `my-length` should use `lst` not `1st`.
+
+Thinking about `alphabetically-first`
+
+* Example 1: `(alphabetically-first (list "eh" "bee" "see"))` 
+    * Recursive call will be `(alphabetically-first (list "bee" "see"))`
+    * Recursive result will be "bee". (Trust the MRF)
+    * We return ??? because ....
+* Example 2: `(alphabetically-first (list "a" "c" "b"))`
+    * Recursive call will be `(alphabetically-first (list "c" "b"))`
+    * Recursive result will be "b". (Trust the MRF)
+    * We return ??? because ....

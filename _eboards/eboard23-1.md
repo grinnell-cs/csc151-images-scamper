@@ -7,7 +7,7 @@ link: true
 ---
 # {{ page.title }}
 
-_Please follow the standard start-of-class routine. 
+_Please follow the standard start-of-class routine._
 
 **Warning! You are being recorded** (and transcribed) (provided the technology
 is working correctly).

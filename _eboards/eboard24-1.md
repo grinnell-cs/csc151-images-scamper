@@ -7,7 +7,7 @@ link: false
 ---
 # {{ page.title }}
 
-_Please follow the standard start-of-class routine. 
+_Please follow the standard start-of-class routine._
 
 **Warning! You are being recorded** (and transcribed) (provided the technology
 is working correctly).
@@ -24,13 +24,21 @@ Administrative stuff
 
 ### Introductory Notes
 
-* Happy halloween!
+* Happy (almost) halloween!
 * We're back to the "Sam talks less" experiment.
 * Today's lab is likely too long, even with "Sam talks less".
+* Don't forget that clocks stop for one hour at 2:00 a.m. Sunday 
+* Observation: It is good practice to have a list of procedures you've
+  written or seen so that when you get a similar problem, you can base
+  your solution to the new problem on your solution to the earlier problem.
+    * `product` is a lot like `sum`
+    * `tally-odd` is a lot like `tally-value`
 
 ### Upcoming work
 
 * Due Sunday, 2026-11-01
+    * Lab writeup
+    * New reading
 * On Friday, 2026-11-06
     * NEW Quiz/LA on list recursion (today, Wednesday, and Friday)
     * Makeup Quiz/LA on testing
@@ -55,32 +63,20 @@ Administrative stuff
 
 Scholarly
 
-* Thursday, 29 October 2026, 11:00 a.m.--Noon, JRC 101.
-  _Scholars’ Convocation: Dan Reynolds on
-   Are We There Yet? The Humanities as a Journey_
 * Thursday, 29 October 2026, 4:15--5:15 p.m., Noyce 3821.
   _CS Extras: Student presentations_
 * Tuesday, 3 October 2026, Noon--1:00 p.m., JRC 224C (I think).
   _CS Table_
+* Thursday, 5 October 2026, 11:00 a.m.--Noon, JRC 101.
+  _Scholars’ Convocation: _
 
 Artistic/Cultural
 
 * Any day. Visit the GCMOA for at least 30 minutes.
-* Thursday, 29 October 2026, Noon--1:00 p.m. Bucksbaum 263 - Fitzgibbons Music Seminar.
-  _Total Immolation: Gamelan Towards the Collapse of the Sun_.
-* Thursday, 29 October 2026, 4:00--5:30 p.m., Wall Theatre.
-  _Acting Through Musical Song Workshop with Rachel Kelsey_
-* Saturday, 31 October 2026, 7:30--10:30 p.m., Harris Cinema.
-  _RHPS_
-* Saturday, 31 October 2026, 8:00--9:00 p.m., Gardner.
-  _James Ivy and Band_
-* Saturday, 31 October 2026, 8:00--9:30 p.m., Herrick.
-  _Halloween "Spooktacular" Organ Concert_ (I'm not sure which
-  organs they are playing; perhaps hearts and lungs.)
 
 Multicultural
 
-* Friday, 30 October 2026, 4:10--5:00 p.m., HSSC N1170.
+* Friday, 6 November 2026, 4:10--5:00 p.m., HSSC N1170.
   _Middle of Everywhere (Chinese Ghosts)_
 
 Peer
@@ -131,20 +127,8 @@ _These do not earn tokens, but are worth your consideration._
 Pop quiz
 --------
 
-* Colors: How do you extract the blue component from an RGB color?
-* Predicates: List three unary (one-parameter) predicates we can use with numbers.
-* Drawings: What are the parameters to `outlined-rectangle`? (You need not get the order right.)
-* Predicates: What's the difference between `=` and `equal?`?
-* Anonymous functions: Write two versions of `add3`, one using `o` (and `add1`) and one using `l-s` or `r-s`.
+* What is your favorite kind of (soda) pop?
 
 Lab
 ---
 
-When it says "Document, write tests for, and implement", we'd prefer that
-you do things in that order. Why?
-
-* Documenting helps you make sure you know what the procedure should do.
-* Writing tests helps you think even more carefully about such issues.
-* Evidence suggests we are more likely to write correct code if we've
-  thought about what the procedure should do before we implement the 
-  procedure. (Overall, we're more efficient.)
