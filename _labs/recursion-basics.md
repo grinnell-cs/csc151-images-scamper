@@ -1,35 +1,45 @@
 ---
 title: Recursion basics
 summary: |
-  In this laboratory, you will explore the basics of recursion over lists
-  by reading and interpreting some recursive procedures.
-todo: |
-  For the in-person lab, most groups barely make it through problem 2
-  in fifty minutes.  How do we make the lab shorter?  The traces are
-  helpful.
+  In this laboratory, you will practice writing recursive procedures.
+todo: 
+  - TBD
 ---
 
-In this lab, we'll gain some intuition about the *mechanics* of recursion by practicing reading and interpreting recursive code using our mental model of computation.
+In this lab, we'll gain some intuition about the mechanics of recursion by practicing reading, rewriting, and writing recursive code.
 
 ## Important procedures
 
+* `(car lst)` - grab the first element of a list
+* `(cdr lst)` - remove the first element of a list
+* `(cons val lst)` - add a value to the front of a list
+* `(null? lst)` - determine if a list is empty?
+* `(null? (cdr lst))` - determine if a list has one element
+
 ## Preparation
 
-a. Introduce yourself to your partner, discuss your preferred work processes, your stengths, and other issues you deem important.
-
 <!--
+a. Introduce yourself to your partner, discuss work procedures, who
+will submit the lab.
+
 b. Decide who is side A and who is side B.  
 
-A side: [recursion-basics-a.rkt](../code/labs/recursion-basics-a.rkt)
+A side: [recursion-practice-a.rkt](../code/labs/recursion-practice-a.rkt)
 
-B side: [recursion-basics-b.rkt](../code/labs/recursion-basics-b.rkt)
--->
-
-b. Grab the code from the following link.  As usual, side A will be 
-the person closer to the board.
-
-* [recursion-basics.rkt](../code/labs/recursion-basics.rkt)
+B side: [recursion-practice-b.rkt](../code/labs/recursion-practice-b.rkt)
 
 c. Review the procedures included in the lab to make sure you
 understand what they are intended to do.
+-->
 
+a. Introduce yourself to your partner, discuss strengths and weaknesses,
+decide upon work procedures, etc.
+
+b. Load the lab.
+
+* [recursion-basics.scm](../code/labs/recursion-basics.scm)
+
+c. Review the procedures included in the lab to make sure that you
+know what they are intended to do.
+
+d. Follow the instructions!
