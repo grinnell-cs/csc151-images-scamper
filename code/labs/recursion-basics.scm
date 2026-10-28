@@ -155,7 +155,7 @@
 (define my-length
   (lambda (lst)
     (if (null? lst)
-        1st
+        lst
         (my-length (cdr lst)))))
 
 ;; a. Build a small test suite for this function in the space below.
