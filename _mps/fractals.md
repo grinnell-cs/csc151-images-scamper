@@ -1,5 +1,5 @@
 ---
-title: Mini-Project 6
+title: Mini-Project 4
 subtitle: Fractals and other self-similar images
 summary: |
   We explore fractals, images that are similar at different scales, as well
@@ -13,11 +13,11 @@ link: false
 ---
 **Summary**: {{ page.summary }}
 
-**Starter code**: [`fractals.rkt`](../code/mps/fractals.rkt).
+**Starter code**: [`fractals.scm`](../code/mps/fractals.scm).
 
-Please save your code for this assignment as [`fractals.rkt`](../code/mps/fractals.rkt).  
+Please save your code for this assignment as [`fractals.scm`](../code/mps/fractals.scm).  
 
-In addition to submitting `fractals.rkt`, submit at least three image from your procedure in part 4, named `my-fractal-01.png`, `my-fractal-02.png`, and `my-fractal-03.png`.
+In addition to submitting `fractals.scm`, submit at least three image from your procedure in part 4, named `my-fractal-01.png`, `my-fractal-02.png`, and `my-fractal-03.png`.
 
 ## Background: Building Sierpinski triangles 
 
@@ -105,10 +105,10 @@ Somewhere along the way, I think we said that these techniques might help us mak
 a. Write a procedure, `fractal-triangle`, that makes the basic fractal triangle described above.
 
 ```
-;;; (fractal-triangle side color n) -> image?
-;;;   side : positive-real?
+;;; (fractal-triangle side color n) -> drawing?
+;;;   side : positive-integer?
 ;;;   color : rgb?
-;;;   n : non-negative integer
+;;;   n : non-negative-integer?
 ;;; Make a fractal triangle of the given side length using `color` as 
 ;;; the primary color.
 ```
@@ -118,10 +118,10 @@ a. Write a procedure, `fractal-triangle`, that makes the basic fractal triangle 
 b. Write a procedure, `rgb-fractal-triangle`, that makes a fractal triangle in which the top triangle is "redder" than the basic color, the lower-left triangle is "greener" than the basic color, and the lower-right triangle is "bluer" than the basic color.
 
 ```
-;;; (rgb-fractal-triangle side color n) -> image?
-;;;   side : positive-real?
+;;; (rgb-fractal-triangle side color n) -> drawing?
+;;;   side : positive-integer?
 ;;;   color : rgb?
-;;;   n : non-negative integer
+;;;   n : non-negative-integer?
 ;;; Make a fractal equilateral triangle of the given side length using
 ;;; `color` as the primary color.  In the recursive steps, the base
 ;;; color of the top triangle is `(rgb-redder color)`, the base color
@@ -135,8 +135,8 @@ to "fill in" the center triangle with the original color.  You will find it easi
 Write a procedure, `(new-rgb-fractal-triangle side color n)`, that does just that.
 
 ```
-;;; (new-rgb-fractal-triangle side color n) -> image?
-;;;   side : positive-real?
+;;; (new-rgb-fractal-triangle side color n) -> drawing?
+;;;   side : positive-integer?
 ;;;   color : rgb?
 ;;;   n : non-negative integer
 ;;; Make a fractal equilateral triangle of the given side length using
@@ -150,9 +150,9 @@ Write a procedure, `(new-rgb-fractal-triangle side color n)`, that does just tha
 d. Write a procedure, `(fractal-right-triangle height width color n)`, that builds a right triangle using the fractal approach.  
 
 ```
-;;; (fractal-right-triangle height width color n) -> image?
-;;;   height : positive-real?
-;;;   width : positive-real?
+;;; (fractal-right-triangle height width color n) -> drawing?
+;;;   height : positive-integer?
+;;;   width : positive-integer?
 ;;;   color : color?
 ;;;   n : non-negative integer
 ;;; Make a fractal right triangle using `color` as the primary color.
@@ -169,7 +169,7 @@ No, the limit of this is not a "Sierpinski square".  However, it is normally ref
 **a. Write a procedure, `(carpet-a size color-x color-y n)` that makes an image like those above.**
 
 ```
-;;; (carpet-a size color-x color-y n) -> image?
+;;; (carpet-a size color-x color-y n) -> drawing?
 ;;;   size : positive real?
 ;;;   color-x : color?
 ;;;   color-y : color?
@@ -188,7 +188,7 @@ _Here and elsewhere, we are seeing some strange artifacts from how DrRacket deal
 **Write a procedure, `(carpet-b size color-x color-y n)`, that makes images like this latest set.**
 
 ```
-;;; (carpet-b size color-x color-y n) -> image?
+;;; (carpet-b size color-x color-y n) -> drawing?
 ;;;   size : positive real?
 ;;;   color-x : color?
 ;;;   color-y : color?
@@ -213,7 +213,7 @@ the primary and secondary colors.  Here are the first few versions with that mod
 **Write a procedure, `(carpet-c size color-x color-y n)`, that makes images like the latest set.**
 
 ```
-;;; (carpet-c size color-x color-y n) -> image?
+;;; (carpet-c size color-x color-y n) -> drawing?
 ;;;   size : positive real?
 ;;;   color-x : color?
 ;;;   color-y : color?
@@ -237,7 +237,7 @@ d. Just as we can recurse on the secondary squares, we can choose not to recurse
 **Write a procedure, `(carpet-d size color-x color-y n)`, that makes images like the latest set.**
 
 ```
-;;; (carpet-d size color-x color-y n) -> image?
+;;; (carpet-d size color-x color-y n) -> drawing?
 ;;;   size : positive real?
 ;;;   color-x : color?
 ;;;   color-y : color?
@@ -263,7 +263,7 @@ e. At this point, you may feel like you want to experiment with different patter
 _This procedure is only required for an E._
 
 ```
-;;; (carpet pattern size color-x color-y n) -> image?
+;;; (carpet pattern size color-x color-y n) -> drawing?
 ;;;   pattern ; string? (length 9, composed only of x, X, y, and Y)
 ;;;   size : positive real?
 ;;;   color-x : color?
@@ -299,7 +299,7 @@ Here's a sequence of the first few spirals, using a base color of green and an a
 ![A sequence of images of groups of squares.  The first has a single, outlined, green square.  The second has two green squares, with the top one rotated 15 degrees clockwise from the first.  The third has a third green square, with the top one rotated 30 degrees.  And so on.](../images/fractals/green-spiral-squares.png)
 
 ```
-;;; (spiral-squares-a side color angle n) -> image?
+;;; (spiral-squares-a side color angle n) -> drawing?
 ;;;   side : positive-real?
 ;;;   color : color?
 ;;;   angle : real?
@@ -313,7 +313,7 @@ Here's a sequence of the first few spirals, using a base color of green and an a
 You can use `thinly-outlined-square` to make each outlined square.
 
 ```
-;;; (thinly-outlined-square size color) -> image?
+;;; (thinly-outlined-square size color) -> drawing?
 ;;;   size : non-negative-integer?
 ;;;   color : color?
 ;;; Create an onlined square.
@@ -330,7 +330,7 @@ b. Let's do something similar, changing the color a little bit each time.  Let's
 **Write a procedure, `(spiral-squares-b side color angle n)`, that makes a similar spiral square.**
 
 ```
-;;; (spiral-squares-b side color angle n) -> image?
+;;; (spiral-squares-b side color angle n) -> drawing?
 ;;;   side : positive-real?
 ;;;   color : color?
 ;;;   angle : real?
@@ -371,7 +371,7 @@ c. Let's try another version, this time changing not only the color, but also th
 **Write a procedure, `(spiral-squares-c side color angle ratio n)`, that makes a similar spiral square, with each subsequent square shrinking by the specified ratio.**
 
 ```
-;;; (spiral-squares-c side color angle ratio n) -> image?
+;;; (spiral-squares-c side color angle ratio n) -> drawing?
 ;;;   side : positive-real?
 ;;;   color : color?
 ;;;   angle : real?
@@ -393,7 +393,7 @@ d. If we are shrinking the square each time, we might use a different metric to 
 **Write a procedure, `(spiral-squares-d side color angle ratio)`, that makes a spiral of squares of shriking side length and lightening color, stopping when the side length reaches 10 or below.**
 
 ```
-;;; (spiral-squares-d side color angle ratio) -> image?
+;;; (spiral-squares-d side color angle ratio) -> drawing?
 ;;;   side : positive-real?
 ;;;   color : color?
 ;;;   angle : real?
@@ -430,11 +430,11 @@ e. Are there other things we might change or generalize?  Since we may want to c
 **Write a procedure, `(spiral-squares-e side color angle ratio color-transform)`, that makes a spiral of squares of shriking side length and with `color-transform` applied to the color at each step, stopping when the side length reaches 10 or below.**
 
 ```
-;;; (spiral-squares-e side color angle ratio color-transform) -> image?
-;;;   side : positive-real?
+;;; (spiral-squares-e side color angle ratio color-transform) -> drawing?
+;;;   side : positive-integer?
 ;;;   color : color?
 ;;;   angle : real?
-;;;   ratio : positive-real? (usually less-than 1)
+;;;   ratio : positive-integer? (usually less-than 1)
 ;;;   color-transform : procedure? (from color to color)
 ;;; Create an image many outlined squares.  The bottom square is in the
 ;;; normal orientation, has side-length `side`, and is colored `color`.
@@ -463,7 +463,7 @@ Using variants of the fractal approaches from parts 1 and 2, along with anything
 Use your procedure to create three images that you'd like to share.  Save them as `my-fractal-01.png`, `my-fractal-02.png`, and `my-fractal-03.png`.  Your commands will look something like the following.
 
 ```
-> (image-save (my-fractal 128 (rgb 255 0 255) 8) "my-fractal-01.png")
+> (image-save! (my-fractal 128 (rgb 255 0 255) 8) "my-fractal-01.png")
 ```
 
 Include a comment in your code file that explains how you generated
@@ -474,35 +474,27 @@ Please check the rubric for other expectations.
 Grading rubric
 --------------
 
-### Redo or above
-
-Submissions that lack any of these characteristics will get an I.
+### Basics
 
 ```
-[ ] Passes all of the "R" autograder tests.
-[ ] Includes the specified file, `fractals.rkt`.
+[ ] Includes the specified file, `fractals.scm`.
 [ ] Includes an appropriate header on the file that indicates the
     course, author, etc.
 [ ] Acknowledges appropriately.
-[ ] Code runs in DrRacket.
-[ ] `my-fractal` creates an image when given appropriate parameters.
-    (Note that for an R, you need not make a fractal.)
+[ ] Code runs in Scamper.
+[ ] Code is well-formatted with appropriate names and indentation.
+[ ] Code has been reformatted with Ctrl-I before submitting.
 [ ] Includes `my-fractal-01.png`, which seems to be generated by `my-fractal`.
 [ ] Includes `my-fractal-02.png`, which seems to be generated by `my-fractal`.
 [ ] Includes `my-fractal-03.png`, which seems to be generated by `my-fractal`.
 ```
 
-### Meets expectations or above
-
-Submissions that lack any of these characteristics but have all of the
-prior characteristics will get an R.
+### Core expectations
 
 ```
-[ ] Passes all of the "M" autograder tests.
+[ ] Passes all of the core autograder tests.
 [ ] Used the starter code.  (Identifiable by the section separators
     and such.)
-[ ] Code is well-formatted with appropriate names and indentation.
-[ ] Code has been reformatted with Ctrl-I before submitting.
 [ ] Code generally follows style guidelines.
 [ ] `my-fractal` involves explicit or implicit recursion other than
     from invoking procedures in parts 1--3.
@@ -510,13 +502,10 @@ prior characteristics will get an R.
     the parameters to `my-fractal`).
 ```
 
-### Exemplary / Exceeds expectations
-
-Submissions that lack any of these characteristics but have all of the
-prior characteristics will get an M.
+### Going beyonnd
 
 ```
-[ ] Passes all of the E star autograder tests.
+[ ] Passes all of the bonus autograder tests.
 [ ] Includes a working version of `carpet` (2e).
 [ ] Style is impeccable (or nearly so).
 [ ] Avoids repeated work.  In particular, avoids identical recursive calls.
