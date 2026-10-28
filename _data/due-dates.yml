@@ -60,8 +60,10 @@
   due:
     - LA 8 (Testing)
     - LA 9 (Local bindings)
+
+- date: 2026-10-28
   assigned:
-    - MP4
+    - page: /mps/mp04.html
 
 - date: 2026-10-30
   due:
@@ -69,7 +71,7 @@
 
 - date: 2026-11-03
   due:
-    - MP4
+    - page: /mps/mp04.html
 
 - date: 2026-11-04
   assigned: 
