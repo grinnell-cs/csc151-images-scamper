@@ -59,13 +59,15 @@
     - MP3
 
 - date: 2026-10-14
-  assigned:
-    - MP4
 
 - date: 2026-10-16
   due:
     - LA 10 (Program style)
     - LA 11 (Local bindings)
+
+- date: 2026-10-28
+  assigned:
+    - page: /mps/mp04.html
 
 - date: 2026-10-30
   due:
@@ -74,7 +76,7 @@
 
 - date: 2026-11-03
   due:
-    - MP4
+    - page: /mps/mp04.html
 
 - date: 2026-11-04
   assigned: 
