@@ -147,3 +147,12 @@ Pop quiz
 
 Lab
 ---
+
+When it says "Document, write tests for, and implement", we'd prefer that
+you do things in that order. Why?
+
+* Documenting helps you make sure you know what the procedure should do.
+* Writing tests helps you think even more carefully about such issues.
+* Evidence suggests we are more likely to write correct code if we've
+  thought about what the procedure should do before we implement the 
+  procedure. (Overall, we're more efficient.)
