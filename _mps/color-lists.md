@@ -299,6 +299,8 @@ Grading rubric
 [ ] Code is well-formatted with appropriate names and indentation.
 [ ] Code generally follows style guidelines.
 [ ] Documentation for all core functions is correct / has the correct form.
+[ ] Includes at least one edge case test for each procedure.
+[ ] Includes at least one normal case test for each procedure.
 [ ] Part five: Includes one function from part 1, 2, 3, or 4 implemented 
     without explicit recursion.
 [ ] Part five: Includes another function from a different part implemented 
@@ -321,6 +323,11 @@ Q&A
 Are you likely to provide examples and tests for the functions that lack examples and tests?
 
 > I hope so.
+
+Should we write test-cases for all questions in MP-4?
+
+> Yes, you should write tests cases for all of the questions and
+  you should leave them in the file.
 
 ### Part one
 
