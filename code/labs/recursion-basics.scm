@@ -152,6 +152,9 @@
 ;; Consider the following attempt at a recursive definition of a function
 ;; that computes the length of a list.
 
+;;; (my-length lst) -> integer?
+;;;   lst : list?
+;;; Find out how many values appear in `lst`.
 (define my-length
   (lambda (lst)
     (if (null? lst)
@@ -200,8 +203,8 @@
         0
         (my-product (cdr lst)))))
 
-;; a. Build a small test suite for this function using `rackunit` in the
-;;    space below. What tests do you need to ensure that you "cover all
+;; a. Build a small test suite for this function using in the space
+;;    below. What tests do you need to ensure that you "cover all
 ;;    the cases" of this program's execution?
 
 ;; Here are two tests to get you started.  Uncomment them when you're ready.
@@ -221,7 +224,6 @@
 ;; Explanation:
 
 ;; Solution:
-
 
 ;; +--------------------------------------+---------------------------
 ;; | Exercise 4: Counting with predicates |
