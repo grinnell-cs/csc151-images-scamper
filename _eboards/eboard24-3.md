@@ -3,7 +3,7 @@ title: "EBoard 24: Tail recursion (Section 3)"
 number: 24
 section: eboards
 held: 2026-10-30
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -26,12 +26,13 @@ Administrative stuff
 ### Introductory Notes
 
 * Happy (almost) Halloween! There's candy at the back of the room. 
-    * Obligatory Sam Halloween joke.
+    * Obligatory Sam Halloween "joke(s)".
 * We're still on the "Sam talks less" experiment.
     * We'll check in about it on Monday.
     * I won't record today since the "Sam talks less" doesn't seem to
       require recording.
-* Today's lab is likely too long, even with "Sam talks less".
+* Today's lab is much too long, even with "Sam talks less". We will
+  continue it on Monday, but with different partners.
 * Don't forget that clocks stop for one hour at 2:00 a.m. Sunday 
     * That is, we "fall back" to move from Daylight Savings Time to
       Standard Time.
@@ -45,8 +46,16 @@ Administrative stuff
 ### Upcoming work
 
 * Due Sunday, 2026-11-01
-    * Lab writeup
     * New reading
+* Due Tuesday, 2026-11-03
+    * [Mini-project 4](../mps/mp04)
+        * [Submit MP4 on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8956645/)
+        * Don't forget to send in questions!
+* Due Thursday, 2026-11-05
+    * [Mini-project 1](../mps/mp01) second redo
+       * [Submit redo on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8882970/)
+       * When submitting a mini-project redo, please include a file
+         called `CHANGES.txt` that describes what you've changed.
 * On Friday, 2026-11-06
     * NEW Quiz/LA on tail recursion (today)
     * NEW Quiz/LA on numeric recursion (Monday)
@@ -60,15 +69,6 @@ Administrative stuff
     * Makeup Quiz/LA on tracing
     * Makeup Quiz/LA on decomposition
     * Makeup Quiz/LA on procedures
-* Due Tuesday, 2026-11-03
-    * [Mini-project 4](../mps/mp04)
-        * [Submit MP4 on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8956645/)
-        * Don't forget to send in questions!
-* Due Thursday, 2026-11-05
-    * [Mini-project 1](../mps/mp01) second redo
-       * [Submit redo on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8882970/)
-       * When submitting a mini-project redo, please include a file
-         called `CHANGES.txt` that describes what you've changed.
 
 ### Upcoming activities
 
@@ -100,6 +100,9 @@ Peer
 _Musical, theatric, sporting, academic, and similar events involving this 
 section's students are welcome._
 
+* Saturday, 31 October 2026, 6:30--6:35 p.m., Global living room.
+  _Jafar Shawarma_
+
 Wellness
 
 * Monday, 2 November 2026, 8:00--9:00 p.m., Prayer Garage in the CRSSJ.
@@ -116,8 +119,6 @@ Misc
 * Fill out the College AI survey at <https://bit.ly/ACM-AI-Survey>.
   There's no need to submit evidence; just a reflection. 
     * Friday deadline.
-* Friday, 30 October 2026, 11:00 a.m.--1:00 p.m. Noyce.
-  _Noyce Trick or Treat Day_. Reflection: Best three faculty costumes.
 * Wednesday, 4 November 2026, 8:00--9:00 p.m., Science 3820.
   _Mentor Session_
 * Thursday, 5 November 2026, 8:00--9:00 p.m., Science 3820.
