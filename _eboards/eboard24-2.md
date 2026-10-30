@@ -3,7 +3,7 @@ title: "EBoard 24: Tail recursion (Section 2)"
 number: 24
 section: eboards
 held: 2026-10-30
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -45,7 +45,6 @@ Administrative stuff
 ### Upcoming work
 
 * Due Sunday, 2026-11-01
-    * Lab writeup
     * New reading
 * On Friday, 2026-11-06
     * NEW Quiz/LA on tail recursion (today)
@@ -82,16 +81,32 @@ Scholarly
 Artistic/Cultural
 
 * Any day. Visit the GCMOA for at least 30 minutes.
+* Saturday, 31 October 2026, 7:30--10:30 p.m., Harris Cinema.
+  _RHPS_
+* Saturday, 31 October 2026, 8:00--9:00 p.m., Gardner.
+  _James Ivy and Band_
+* Saturday, 31 October 2026, 8:00--9:30 p.m., Herrick.
+  _Halloween "Spooktacular" Organ Concert_ (I'm not sure which
+  organs they are playing; perhaps hearts and lungs.)
 
 Multicultural
 
 * Friday, 30 October 2026, 4:10--5:00 p.m., HSSC N1170.
   _Middle of Everywhere (Chinese Ghosts)_
+* Friday, 6 November 2026, 4:10--5:00 p.m., HSSC N1170.
+  _Middle of Everywhere (Somewhere)_
 
 Peer
 
 _Musical, theatric, sporting, academic, and similar events involving this 
 section's students are welcome._
+
+* Friday, 30 October 2026, 11:00 a.m.--2:00 p.m., JRC 101.
+  SAM trick-or-treat event.
+* Saturday, 31 October 2026, 11:00 a.m.--1:00 p.m., Springer Field.
+  _Men's Soccer vs. Cornell College_ (last home meet of the season)
+* Sunday, 1 November 2026, 4:00--6:00 p.m., JRC 101.
+  _CU in Konbini_
 
 Wellness
 
@@ -122,8 +137,6 @@ _These do not earn tokens, but are worth your consideration._
 
 * Friday, 30 October 2026, 7:00--9:00 p.m. Darby Gym.
   _Volleyball vs. Beloit_
-* Saturday, 31 October 2026, 11:00 a.m.--1:00 p.m., Springer Field.
-  _Men's Soccer vs. Cornell College_ (last home meet of the season)
 * Saturday, 31 October 2026, 1:00--3:00 p.m. Darby Gym.
   _Volleyball vs. Lake Forest_ (senior day)
 * Saturday, 31 October 2026, 1:30--3:30 p.m., Springer Field.
@@ -142,6 +155,9 @@ _These do not earn tokens, but are worth your consideration._
 
 Lab
 ---
+
+We'll be continuing the lab on Monday (probably starting with exercise 4),
+but with new partners.
 
 Quiz
 ----

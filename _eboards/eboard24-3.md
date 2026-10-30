@@ -82,6 +82,13 @@ Scholarly
 Artistic/Cultural
 
 * Any day. Visit the GCMOA for at least 30 minutes.
+* Saturday, 31 October 2026, 7:30--10:30 p.m., Harris Cinema.
+  _RHPS_
+* Saturday, 31 October 2026, 8:00--9:00 p.m., Gardner.
+  _James Ivy and Band_
+* Saturday, 31 October 2026, 8:00--9:30 p.m., Herrick.
+  _Halloween "Spooktacular" Organ Concert_ (I'm not sure which
+  organs they are playing; perhaps hearts and lungs.)
 
 Multicultural
 
@@ -142,6 +149,9 @@ _These do not earn tokens, but are worth your consideration._
 
 Lab
 ---
+
+We'll be continuing the lab on Monday (probably starting with exercise 4),
+but with new partners.
 
 Quiz
 ----
