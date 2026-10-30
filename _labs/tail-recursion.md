@@ -7,11 +7,9 @@ summary: |
   conjunction with a program structure in which the recursive result
   is returned directly (without accumulated actions to perform), this
   technique supports *tail recursion*.
-todo: |  
-  Consider rewriting the maxima problem to use strings.
 ---
 
-In this lab, we'll further expand our understanding of recursion, considering how patterns (both pattern matching and patterns of recursion) and helper procedures improve our ability to recurse.
+In this lab, we'll further expand our understanding of recursion, considering how patterns of recursion and helper procedures improve our ability to recurse.
 
 ## Preparation
 
@@ -21,12 +19,8 @@ b. Go over your answers to the self checks.
 
 c. Grab the code.
 
-* [tail-recursion.rkt](../code/labs/tail-recursion.rkt)
-
-d. Review the provided procedures.
+* [tail-recursion.scm](../code/labs/tail-recursion.scm)
 
 ## Acknowledgements
 
-This lab was rewritten in Fall 2021.  It is based relatively closely
-on [a similar lab from Spring 2019](https://rebelsky.cs.grinnell.edu/~rebelsky/Courses/CSC151/2019S/labs/helper-recursion.html).  It looks like
-that one was based on a long series of earlier labs.
+This lab was significantly rewritten in Fall 2026. Before that, it had the last significant rewrite in Fall 2021. 
