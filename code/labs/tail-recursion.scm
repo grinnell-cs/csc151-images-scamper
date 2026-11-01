@@ -20,217 +20,11 @@
 
 ;; c. Discuss the self checks with your partner.
 
-;; +--------------------------------------------+---------------------
-;; | Exercise 1: Alphabetically first, explored |
-;; +--------------------------------------------+
-
-;; Driver: A
-
-;; As you may recall, in the previous lab you documented, wrote
-;; tests for, and implemented a function, `alphabetically-first`
-;; that takes a nonempty list of strings as input and returns the 
-;; alphabetically first string in the list.
-
-;; Here is a standard solution to that problem (you can look
-;; below for the tests).
-
-;;; (alphabetically-first words) -> string?
-;;;   words : (all-of (list-of string?) nonempty?)
-;;; Find the alphabetically first string in a list of strings.
-(define alphabetically-first
-  (lambda (words)
-    (if (null? (cdr words))
-        (car words)
-        (if (string-ci<=? (car words)
-                          (alphabetically-first (cdr words)))
-            (car words)
-            (alphabetically-first (cdr words))))))
-
-;; a. Review the code for `alphabetically-first` to see if it looks like
-;; it should work correctly. If not, summarize any concerns you have.
-
-;; Concerns:
-
-;; b. Uncomment the tests below exercise 3 and click "Run" to see if 
-;; `alphabetically-first` appears to work correctly. If not, summarize
-;; the issues you discover and then correct the code.
-
-;; Issues:
-
-;; c. Find out how many steps are in the traces of each of the following.
-
-; (alphabetically-first (list "a"))
-;; Steps: 
-; (alphabetically-first (list "a" "b"))
-;; Steps: 
-; (alphabetically-first (list "a" "b" "c"))
-;; Steps: 
-; (alphabetically-first (list "a" "b" "c" "d"))
-;; Steps: 
-; (alphabetically-first (list "a" "b" "c" "d" "e"))
-;; Steps: 
-
-;; d. Predict how many steps will be in the trace of the following.
-
-; (alphabetically-first (list "a" "b" "c" "d" "e" "f" "g" "h" "i" "j"))
-;; Steps: 
-
-;; e. Check your answer experimentally.
-
-;; Steps: 
-
-;; f. Check how many steps are in the traces of each of the following.
-
-; (alphabetically-first (list "a"))
-;; Steps: 
-; (alphabetically-first (list "b" "a"))
-;; Steps: 
-; (alphabetically-first (list "c" "b" "a"))
-;; Steps: 
-; (alphabetically-first (list "d" "c" "b" "a"))
-;; Steps: 
-; (alphabetically-first (list "e" "d" "c" "b" "a"))
-;; Steps: 
-
-;; g. Predict approximately how many steps will be in the trace of the following.
-
-; (alphabetically-first (reverse (list "a" "b" "c" "d" "e" "f" "g" "h" "i" "j")))
-;; Steps: 
-
-;; h. Check your answer experimentally.
-
-;; Steps: 
-
-;; i. Step through the traces of (alphabetically-first (list "a" "b" "c"))
-;; and (alphabetically-first (list "c" "b" "a")) and, to the best of your ability
-;; explain why they don't take the same number of steps.
-
-;; Explanation:
-
-;; +---------------------------------------------+--------------------
-;; | Exercise 2: Alphabetically first, revisited |
-;; +---------------------------------------------+
-
-;; Driver: B
-
-;; As you may have discovered, that definition of `alphabetically-first`
-;; is not ideal. Why? Well, we hope you figured that out. How should we
-;; address the problem?
-
-;; a. You may recall that we solved a similar problem in one of the readings
-;; on recursion (other than the reading on tail recursion). Find that
-;; solution and rewrite `alphabetically-first` using the strategy from
-;; that reading. (Comment out the old version.)
-
-;; If you can't figure out what the similar problem is after a few minutes,
-;; consult one of the course staff.
-
-;; YOUR NEW IMPLEMENTATION OF `alphabetically-first` belongs here.
-
-;; b. Check how many steps are in the traces of each of the following.
-
-; (alphabetically-first (list "a" "b" "c" "d" "e"))
-;; Steps: 
-; (alphabetically-first (list "e" "d" "c" "b" "a"))
-;; Steps: 
-; (alphabetically-first (list "e" "a" "c" "d" "b"))
-;; Steps: 
-; (alphabetically-first (list "d" "e" "c" "a" "b"))
-;; Steps: 
-
-;; c. What have you learned from writing this solution?
-
-;; Answer: 
-
-;; +------------------------------------------------+-----------------
-;; | Exercise 3: Alphabetically first, re-revisited |
-;; +------------------------------------------------+
-
-;; Driver: A
-
-;; Here's another implementation of `alphabetically-first` that also
-;; attempts to address the issues of the version in exercise 1.
-
-; (define alphabetically-first
-;   (lambda (words)
-;     (if (null? (cdr words))
-;         (car words)
-;         (let ([recursive-result (alphabetically-first (cdr words))])
-;           (if (string-ci<=? (car words) recursive-result)
-;               (car words)
-;               recursive-result)))))
-
-;; a. Explain how this version differs from the version in exercise 1.
-
-;; Explanation:
-
-;; b. Do you expect this version to work correctly? Why or why not?
-
-;; Answer:
-
-;; c. Comment out your answer from exercise 2 and uncomment this
-;; version. Explain any issues you discover and then fix them.
-
-;; Issues:
-
-;; Fixes: 
-
-;; d. Check how many steps are in the traces of each of the following.
-
-; (alphabetically-first (list "a" "b" "c" "d" "e"))
-;; Steps: 
-; (alphabetically-first (list "e" "d" "c" "b" "a"))
-;; Steps: 
-; (alphabetically-first (list "e" "a" "c" "d" "b"))
-;; Steps: 
-; (alphabetically-first (list "d" "e" "c" "a" "b"))
-;; Steps: 
-
-;; e. What have you learned from exploring this solution?
-
-;; Answer: 
-
-;; +--------------------------------+---------------------------------
-;; | Tests for alphabetically first |
-;; +--------------------------------+
-
-; (test-case "singleton list"
-;            equal?
-;            "singleton"
-;            #(alphabetically-first (list "singleton")))
-
-; (test-case "two elements in alphabetical order"
-;            equal?
-;            "alpha"
-;            #(alphabetically-first (list "alpha" "beta")))
-
-; (test-case "two elements in reverse alphabetical order"
-;            equal?
-;            "delta"
-;            #(alphabetically-first (list "gamma" "delta")))
-
-; (test-case "many elements in no particlar order"
-;            equal?
-;            "elements"
-;            #(alphabetically-first 
-;               (string-split "many elements in no particular order"
-;                             " ")))
-
-; (test-case "many elements with smallest at front"
-;            equal?
-;            "a"
-;            #(alphabetically-first (string-split "amazing" "")))
-
-; (test-case "many elements with smallest at end"
-;            equal?
-;            "e"
-;            #(alphabetically-first (string-split "xylophone" "")))
-
 ;; +------------------------------+-----------------------------------
-;; | Exercise 4: Tallying strings |
+;; | Exercise 1: Tallying strings |
 ;; +------------------------------+
 
-;; Driver: B
+;; Driver: A
 
 ;; Consider the following procedure `(tally-strings` lst)`, that takes
 ;; as input a list of mixed values (both strings and other types of
@@ -313,20 +107,20 @@
 ;            #(tally-strings (list 1 "two" "three" 4 "five" 6 7 "eight" 9)))
 
 ;; +---------------------------------------------------+--------------
-;; | Exercise 5: Alphabetically first, re-re-revisited |
+;; | Exercise 2: Alphabetically first, re-re-revisited |
 ;; +---------------------------------------------------+
 
-;; Driver: A
+;; Driver: B
 
 ;; Rewrite `alphabetically-first` using helper recursion. This time, 
 ;; rather than keeping track of the count of strings, you should keep
 ;; track of the alphabetically-first string you've seen so far.
 
 ;; +-------------------------------+----------------------------------
-;; | Exercise 6: Selecting numbers |
+;; | Exercise 3: Selecting numbers |
 ;; +-------------------------------+
 
-;; Driver: B
+;; Driver: A
 
 ;; a. You may recall that in the not-so-distant past, we wrote a function,
 ;; `select-numbers`, that, given a list of values, returns a list with
@@ -379,7 +173,7 @@
 ;; REPLACE WITH THE INFO FROM THE REPL
 
 ;; +------------------------------------------+-----------------------
-;; | Exercise 7: Selecting numbers, revisited |
+;; | Exercise 4: Selecting numbers, revisited |
 ;; +------------------------------------------+
 
 ;; Driver: B
