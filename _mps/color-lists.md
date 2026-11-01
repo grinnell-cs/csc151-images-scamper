@@ -16,8 +16,6 @@ preimg: true
 ---
 **Warning!** This mini-project is new this semester. It may have some infelicities. Ask questions if things don't make sense!
 
-**Warning!** This mini-project will not be ready until the evening of October 28, 2026. Stay tuned for an email message from Sam.
-
 ---
 
 Please start with the [template code](../code/mps/color-lists.scm). You'll note that the code has many sets of question marks. You should replace those with text or code, as appropriate. 
@@ -145,7 +143,68 @@ b. Document, write tests for, and implement a recursive function, `(split-colors
 (palette (split-colors (list (rgb 255 0 255) (rgb 128 0 128) (rgb 0 0 0))))
 </pre>
 
-c. Document, write tests for, and implement a recursive function, `(double-bright colors amt)`, that takes a potentially empty list of RGB colors as input and makes two copies whose brightness is greater than `amt`.
+c. Document, write tests for, and implement a recursive function, `(double-bright colors amt)`, that takes a potentially empty list of RGB colors as input and makes two copies whose brightness is greater than `amt`. Keep single copies of colors whose brightness is not greater than `amt`.
+
+```
+(test-case "double-bright: 3 grays, 20%"
+           equal?
+           (list (rgb 64 64 64) (rgb 64 64 64)
+                 (rgb 128 128 128) (rgb 128 128 128)
+                 (rgb 192 192 192) (rgb 192 192 192))
+           #(double-bright (list (rgb 64 64 64)
+                                 (rgb 128 128 128)
+                                 (rgb 192 192 192))
+                          20))
+(test-case "double-bright: 3 grays, 40%"
+           equal?
+           (list (rgb 64 64 64) 
+                 (rgb 128 128 128) (rgb 128 128 128)
+                 (rgb 192 192 192) (rgb 192 192 192))
+           #(double-bright (list (rgb 64 64 64)
+                                 (rgb 128 128 128)
+                                 (rgb 192 192 192))
+                          40))
+(test-case "double-bright: 3 grays, 60%"
+           equal?
+           (list (rgb 64 64 64) 
+                 (rgb 128 128 128) 
+                 (rgb 192 192 192) (rgb 192 192 192))
+           #(double-bright (list (rgb 64 64 64)
+                                 (rgb 128 128 128)
+                                 (rgb 192 192 192) (rgb 192 192))
+                          60))
+(test-case "double-bright: 3 grays, 80%"
+           equal?
+           (list (rgb 64 64 64) 
+                 (rgb 128 128 128) 
+                 (rgb 192 192 192))
+           #(double-bright (list (rgb 64 64 64)
+                                 (rgb 128 128 128)
+                                 (rgb 192 192 192))
+                          80))
+```
+
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+(define double-bright
+  (lambda (colors amt)
+    (cond
+      [(null? colors)
+       null]
+      [(> (rgb-brightness (car colors)) amt)
+       (cons (car colors)
+             (cons (car colors)
+                   (double-bright (cdr colors) amt)))]
+      [else
+       (cons (car colors)
+             (double-bright (cdr colors) amt))])))
+</script>
+(palette (list (rgb 128 128 128) (rgb 64 64 64) (rgb 192 192 192)))
+(palette (double-bright (list (rgb 128 128 128) (rgb 64 64 64) (rgb 192 192 192)) 10))
+(palette (double-bright (list (rgb 128 128 128) (rgb 64 64 64) (rgb 192 192 192)) 40))
+(palette (double-bright (list (rgb 128 128 128) (rgb 64 64 64) (rgb 192 192 192)) 60))
+(palette (double-bright (list (rgb 128 128 128) (rgb 64 64 64) (rgb 192 192 192)) 90))
+</pre>
 
 d. Document, write tests for, and implement a recursive function, `(double-brighter colors)`, that takes a nonempty list of RGB colors as input and makes two copies of any color that is brighter than the next color in the list. You will not duplicate the last color in the list because it has no next color.
 
@@ -153,16 +212,16 @@ d. Document, write tests for, and implement a recursive function, `(double-brigh
 (test-case "double-brighter: two elements, first is brighter"
            rgb-lists-similar?
            (list (rgb 255 0 0) (rgb 255 0 0) (rgb 0 0 255))
-           #(double-bright (list (rgb 255 0 0) (rgb 0 0 255))))
+           #(double-brighter (list (rgb 255 0 0) (rgb 0 0 255))))
 (test-case "double-brighter: two elements, first is darker"
            rgb-lists-similar?
            (list (rgb 255 0 0) (rgb 0 255 0))
-           #(double-bright (list (rgb 255 0 0) (rgb 0 255 0))))
+           #(double-brighter (list (rgb 255 0 0) (rgb 0 255 0))))
 ```
 
 <pre class="scamper-transcript" data-continues>
 <script type="text/scamper-preamble">
-(define double-bright
+(define double-brighter
   (lambda (lst)
     (if (null? (cdr lst))
         lst
@@ -171,11 +230,11 @@ d. Document, write tests for, and implement a recursive function, `(double-brigh
                   (cons (car lst)
                         (double-bright (cdr lst))))
             (cons (car lst)
-                  (double-bright (cdr lst)))))))
+                  (double-brighter (cdr lst)))))))
 </script>
-(palette (double-bright (list (rgb 255 0 0) (rgb 0 0 255))))
-(palette (double-bright (list (rgb 0 0 255) (rgb 255 0 0))))
-(palette (double-bright (list (rgb 0 255 0) (rgb 255 0 0) (rgb 0 0 255))))
+(palette (double-brighter (list (rgb 255 0 0) (rgb 0 0 255))))
+(palette (double-brighter (list (rgb 0 0 255) (rgb 255 0 0))))
+(palette (double-brighter (list (rgb 0 255 0) (rgb 255 0 0) (rgb 0 0 255))))
 </pre>
 
 Part two: Removing elements
@@ -331,7 +390,15 @@ Should we write test-cases for all questions in MP-4?
 
 ### Part one
 
+Were the test and examples under `double-brighter` supposed to read `double-brighter` rather than `double-bright`?
+
+> Yes! I'd originally included only `double-bright` before deciding that we should have two related procedures.
+
 ### Part two
+
+How do we decide if a collection of colors are similar? Should they be mutually similar or is it just all those similar to the first one?
+
+> Anything reasonable you choose, as long as you explain.
 
 ### Part three
 
