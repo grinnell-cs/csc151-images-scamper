@@ -11,6 +11,7 @@ summary: |
   reading, we consider what is happening behind the scenes when you call
   `cons`. We also use `cons` to build structures other than lists.
 ---
+**Warning! This reading has not yet been updated for Scamper!**
 
 ## Detour: Symbols
 
