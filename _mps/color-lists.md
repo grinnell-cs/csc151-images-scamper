@@ -143,7 +143,68 @@ b. Document, write tests for, and implement a recursive function, `(split-colors
 (palette (split-colors (list (rgb 255 0 255) (rgb 128 0 128) (rgb 0 0 0))))
 </pre>
 
-c. Document, write tests for, and implement a recursive function, `(double-bright colors amt)`, that takes a potentially empty list of RGB colors as input and makes two copies whose brightness is greater than `amt`.
+c. Document, write tests for, and implement a recursive function, `(double-bright colors amt)`, that takes a potentially empty list of RGB colors as input and makes two copies whose brightness is greater than `amt`. Keep single copies of colors whose brightness is not greater than `amt`.
+
+```
+(test-case "double-bright: 3 grays, 20%"
+           equal?
+           (list (rgb 64 64 64) (rgb 64 64 64)
+                 (rgb 128 128 128) (rgb 128 128 128)
+                 (rgb 192 192 192) (rgb 192 192 192))
+           #(double-bright (list (rgb 64 64 64)
+                                 (rgb 128 128 128)
+                                 (rgb 192 192 192))
+                          20))
+(test-case "double-bright: 3 grays, 40%"
+           equal?
+           (list (rgb 64 64 64) 
+                 (rgb 128 128 128) (rgb 128 128 128)
+                 (rgb 192 192 192) (rgb 192 192 192))
+           #(double-bright (list (rgb 64 64 64)
+                                 (rgb 128 128 128)
+                                 (rgb 192 192 192))
+                          40))
+(test-case "double-bright: 3 grays, 60%"
+           equal?
+           (list (rgb 64 64 64) 
+                 (rgb 128 128 128) 
+                 (rgb 192 192 192) (rgb 192 192 192))
+           #(double-bright (list (rgb 64 64 64)
+                                 (rgb 128 128 128)
+                                 (rgb 192 192 192) (rgb 192 192))
+                          60))
+(test-case "double-bright: 3 grays, 80%"
+           equal?
+           (list (rgb 64 64 64) 
+                 (rgb 128 128 128) 
+                 (rgb 192 192 192))
+           #(double-bright (list (rgb 64 64 64)
+                                 (rgb 128 128 128)
+                                 (rgb 192 192 192))
+                          80))
+```
+
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+(define double-bright
+  (lambda (colors amt)
+    (cond
+      [(null? colors)
+       null]
+      [(> (rgb-brightness (car colors)) amt)
+       (cons (car colors)
+             (cons (car colors)
+                   (double-bright (cdr colors) amt)))]
+      [else
+       (cons (car colors)
+             (double-bright (cdr colors) amt))])))
+</script>
+(palette (list (rgb 128 128 128) (rgb 64 64 64) (rgb 192 192 192)))
+(palette (double-bright (list (rgb 128 128 128) (rgb 64 64 64) (rgb 192 192 192)) 10))
+(palette (double-bright (list (rgb 128 128 128) (rgb 64 64 64) (rgb 192 192 192)) 40))
+(palette (double-bright (list (rgb 128 128 128) (rgb 64 64 64) (rgb 192 192 192)) 60))
+(palette (double-bright (list (rgb 128 128 128) (rgb 64 64 64) (rgb 192 192 192)) 90))
+</pre>
 
 d. Document, write tests for, and implement a recursive function, `(double-brighter colors)`, that takes a nonempty list of RGB colors as input and makes two copies of any color that is brighter than the next color in the list. You will not duplicate the last color in the list because it has no next color.
 
