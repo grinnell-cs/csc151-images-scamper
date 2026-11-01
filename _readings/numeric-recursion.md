@@ -237,7 +237,7 @@ For example, here's one way we might write `make-list` if it did not already exi
 
 ### Check 1: Recursive Forms (‡)
 
-The reading shows you how the basic [patterns of recursion]({{ "/readings/list-recursion-revisited.html" | relative_url }}) we have seen apply to numbers just as well as lists.
+The reading shows you how the basic patterns of recursion we have seen apply to numbers just as well as lists.
 Identify the standard pieces of the recursive procedure `sum-between` by filling in the blanks below.
 
 -   The *base case check* is \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_, which checks whether \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.
