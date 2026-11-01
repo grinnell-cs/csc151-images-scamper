@@ -80,12 +80,12 @@
 - date: 2026-11-06
   due:
     - LA 11 (Numeric recursion)
-    - LA 12 (Diagramming structures)
+    - LA 12 (Tail recursion)
 
 - date: 2026-11-13
   due: 
-    - LA 13 (Vectors)
-    - LA 14 (Dictionaries)
+    - LA 13 (Diagramming structures)
+    - LA 14 (Vectors)
 
 - date: 2026-11-17
   due: MP5
@@ -96,7 +96,7 @@
 
 - date: 2026-11-20
   due:
-    - LA 15 (Randomness)
+    - LA 15 (Dictionaries)
     - LA 16 (Data abstraction)
 
 - date: 2026-12-03
