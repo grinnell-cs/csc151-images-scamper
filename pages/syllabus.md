@@ -562,7 +562,7 @@ I have mixed feelings about cell phones in class. On the one hand, they can be u
 
 Cell phones also present a risk of apparent or real violations of our academic integrity policies. Again, it's tempting to answer your phone if it dings in class. And the ding can be a distraction to other students.
 
-Hence, we have a modified *no phone policy* in this class. Please silence your phone at the start of class. I'll try to remember to do the same. I would prefer that you then put your phone away (e.g., in your bag). However, I realize that some of you like taking pictures of the screen or phone. You may use your phone for that purpose, but only that purpose.
+Hence, we have a modified *no phone policy* in this class. Please silence your phone at the start of class. I'll try to remember to do the same. I would prefer that you then put your phone away (e.g., in your bag). However, I realize that some of you like taking pictures of the screen. You may use your phone for that purpose, but only that purpose.
 
 Thanks for being understanding!
 
