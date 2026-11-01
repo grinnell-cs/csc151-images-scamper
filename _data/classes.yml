@@ -257,6 +257,7 @@
   reading:
     - page: /readings/tail-recursion.html
   lab:
+    - page: /labs/recursion-patterns.html
     - page: /labs/tail-recursion.html
 
 - topic: Recursion over numbers
@@ -269,9 +270,19 @@
   reading:
     - page: /readings/numeric-recursion.html
   lab:
+    - page: /labs/tail-recursion.html
     - page: /labs/numeric-recursion.html
 
-- topic: Pairs
+- topic: Numeric recursion, continued
+  abbrev: number-recursion-continued
+  summary: |
+    We continue our exploration of numeric recursion.
+  reading:
+    - page: /readings/numeric-recursion.html
+  lab:
+    - page: /labs/numeric-recursion.html
+
+- topic: Pairs and pair structures
   abbrev: pairs
   summary: |
     We explore pairs, the basic building blocks of lists, and consider
@@ -290,13 +301,6 @@
     - page: /readings/vectors.html
   lab:
     - page: /labs/vectors.html
-
-- topic: Vectors, continued
-  abbrev: vectors
-  summary: |
-    We continue to explore vectors.
-  lab:
-    - page: /labs/vectors-continued.html
 
 - topic: Dictionaries and hash tables
   abbrev: dictionaries
