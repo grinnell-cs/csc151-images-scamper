@@ -3,7 +3,7 @@ title: "EBoard 25: Numeric recursion (Section 1)"
 number: 25
 section: eboards
 held: 2026-11-02
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -22,12 +22,22 @@ _Approximate overview_
 Administrative stuff
 --------------------
 
+### Announcement about Computing Peers United (CPU) Buddies Program
+
+* A mentorship program that pairs less experienced students ("mentees")
+  with more experienced students ("mentors").
+* As 151 students, you are considered less experienced. 
+* Lots of advice: Conferences, hack-a-thons, courses, internships.
+* Get connected with the broader CS community.
+* Posters will be up soon with QR codes and URLs.
+* November 10 at 8pm opening event. More dead trees!
+
 ### Introductory Notes
 
 * I had a non-productive weekend, so I'm a bit behind on grading. Stay
   tuned! I'll also be spending the first few minutes of lab getting some
   important things updated.
-    * Tokens
+    * Token events
     * Lab 2
 * Thank you to all the folks who asked and answered questions on MP4.
 * We had a problem in class on Friday: A student was observed taking
@@ -61,8 +71,8 @@ Administrative stuff
         * When submitting a mini-project redo, please include a file
          called `CHANGES.txt` that describes what you've changed.
 * On Friday, 2026-11-06
-    * NEW Quiz/LA on numeric recursion (Monday)
-    * NEW Quiz/LA on tail recursion (today)
+    * NEW Quiz/LA on numeric recursion (today and Wednesday)
+    * NEW Quiz/LA on tail recursion 
     * Makeup Quiz/LA on list recursion 
     * Makeup Quiz/LA on testing
     * Makeup Quiz/LA on local bindings
@@ -78,7 +88,7 @@ Administrative stuff
 
 Scholarly
 
-* Tuesday, 3 October 2026, Noon--1:00 p.m., JRC 224C (I think).
+* Tuesday, 3 October 2026, Noon--1:00 p.m., CS Commons (I think).
   _CS Table_
 * Thursday, 5 October 2026, 11:00 a.m.--Noon, JRC 101.
   _Scholars’ Convocation: More Humanities_
@@ -89,8 +99,8 @@ Artistic/Cultural
 
 Multicultural
 
-* Friday, 30 October 2026, 4:10--5:00 p.m., HSSC N1170.
-  _Middle of Everywhere (Chinese Ghosts)_
+* Friday, 6 November 2026, 4:10--5:00 p.m., HSSC N1170.
+  _Middle of Everywhere ()_
 
 Peer
 
@@ -122,31 +132,58 @@ _These do not earn tokens, but are worth your consideration._
 ### Check in on the "Sam talks less" experiment
 
 * Do you want me to go over the upcoming work?
-    * Yes: 
-    * No:
-    * Abstain: 
+    * Yes: 7
+    * No: 8
+    * Abstain: 1
 * Do you want me to go over the token events?
-    * Yes: 
-    * No:
-    * Abstain: 
+    * Yes: 6
+    * No: 7
+    * Abstain: 5
 * Do you want Q&A time?
-    * Yes: 
-    * No:
-    * Abstain: 
-* Do you want me to go over problems from the previous lab that people struggled on?
-    * Yes: 
-    * No:
-    * Abstain: 
+    * Yes: 13
+    * No: 1
+    * Abstain: 5
+* Do you want me to go over problems from the previous lab that people 
+  struggled on?
+    * Yes: 16
+    * No: 1
+    * Abstain: 3
+* Would you prefer that I send out notes about problems from the previous
+  lab that people struggled on or talk about them in class or both?
+    * Email: 6
+    * In-class: 3
+    * Both: 8
+    * I don't care: 2
 * Do you want me to record class?
-    * Yes: 
-    * No:
-    * Abstain: 
+    * Yes: 8
+    * No: 0
+    * Abstain: 12
 * Do you want to discuss any of the issues above?
+
+Q&A
+---
+
+### MP4
+
+Could you explain more about similar colors?
+
+> Bad decision on Sam's part?
+
+> Bad writing on Sam's part?
+
+> Go through the list. For each color, remove any remaining elements that
+  are similar to it.
+
+### Administrative
 
 Pop quiz
 --------
 
 * What is your favorite kind of (soda) pop?
+* Strings: What are the two forms of `substring` and what do they do?
+* Colors: How do you extract the blue component from an RGB color?
+* Anonymous functions: Rewrite `(l-s - 3)` with `lambda`.
+* Drawings: List three functions that make shapes.
 
 Lab
 ---
