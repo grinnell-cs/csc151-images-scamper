@@ -191,7 +191,52 @@ Lab
 * There are two labs today. You'll start the second one after you finish
   the first (assuming you finish the first).
 * You will continue partners on Wednesday.
-* Exercise 1 on today's first lab should be "Tallying strings"
-* The second lab should be called `numeric-recursion.scm`.
+* First lab: `tail-recursion.scm`.
+    * Exercise 1 on today's first lab should be "Tallying strings"
+    * Refresh if it's not
+    * Rename the previous `tail-recursion.scm` lab to `recursion-patterns.scm`
+
+### Exercise 1: Tallying strings
+
+;;         tally-so-far                    remaining
+;;         ------------                    ---------
+;;         0                               (list 5 "a" "b" 1 "c" 2 3 "b" 4)
+;;         0                               (list "a" "b" 1 "c" 2 3 "b" 4)
+;;         1                               (list "b" 1 "c" 2 3 "b" 4)
+;;         2                               (list 1 "c" 2 3 "b" 4)
+;;         2                               (list "c" 2 3 "b" 4)
+;;         3                               (list 2 3 "b" 4)
+;;         3                               (list 3 "b" 4)
+;;         3                               (list "b" 4)
+;;         4                               (list 4)
+;;         4                               null
+```
+
+* When should we stop? When we have a null list.
+* What should we return when we are done? `tally-so-far`
+* How do we "simplify" `remaining`? `(cdr remaining)`
+* What should the recursive call look like?
+    * What should we do to `tally-so-far`? If the car of remaining
+      is a string, add 1 to `tally-so-far`. If not, add 0.
+    * We already know that we take `(cdr remaining)`
+    * `(tally-strings/helper ??? (cdr remaining))`
+
+```
+(define tally-strings/helper
+  (lambda (tally-so-far remaining)
+    (if (null? remaining)
+        tally-so-far
+        (tally-strings/helper 
+          (+ (if (string? (car remaining)) 1 0) tally-so-far)
+          (cdr remaining)))))
+
+    0))
+
+(define tally-strings
+  (lambda (lst)
+    (tally-strings/helper 0 lst)))
+```
+
+* Second lab: `numeric-recursion.scm`
 
 ### Notes during lab
