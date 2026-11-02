@@ -14,7 +14,7 @@ b. Go over your answers to the self checks.
 
 c. Grab the code.
 
-* [patterns-of-recursion.scm](../code/labs/patterns-of-recursion.scm)
+* [recursion-patterns.scm](../code/labs/recursion-patterns.scm)
 
 ## Acknowledgements
 
