@@ -265,7 +265,7 @@ c. Document, write tests for, and implement a recursive function, `(remove-simil
 
 d. Document, write tests for, and implement a recursive function `(remove-similar color colors)`, that removes a colors similar to `color` from `colors`.
 
-e. Document, write tests for, and implement a recursive function, `(remove-similar-colors colors)`, that keeps all but the first copy of a collection of similar colors.
+e. Document, write tests for, and implement a recursive function, `(remove-similar-colors colors)`, that removes all but the first copy of a collection of similar colors.
 
 Part three: Extended mapping
 ----------------------------
@@ -399,6 +399,10 @@ Were the test and examples under `double-brighter` supposed to read `double-brig
 How do we decide if a collection of colors are similar? Should they be mutually similar or is it just all those similar to the first one?
 
 > Anything reasonable you choose, as long as you explain.
+
+In 2e (`remove-similar-colors`) did you want us to keep the first copy of a set of colors or remove the first copy?
+
+> Whoops. Keep. That is, you should step through the list, looking at each color and removing any colors from the rest of the list that are similar. Stay tuned for a test.
 
 ### Part three
 
