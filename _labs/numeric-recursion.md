@@ -26,7 +26,7 @@ B side: [numeric-recursion-b.rkt](../code/labs/numeric-recursion-b.rkt)
 b. The person nearest the board is Side A.  The other person is Side B.
 Grab the code from 
 
-* [numeric-recursion.rkt](../code/labs/numeric-recursion.rkt)
+* [numeric-recursion.scm](../code/labs/numeric-recursion.scm)
 
 c. Review the procedures included in the lab to make sure you
 understand what they are intended to do.
