@@ -30,6 +30,23 @@ Administrative stuff
 
 ### Upcoming work
 
+* Due Tuesday, 2026-11-03
+    * No reading!
+    * Today's lab: [Tail recursion](../labs/tail-recursion) [new version]
+        * [Submit today's lab on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8983165)
+    * [Mini-project 4](../mps/mp04)
+        * [Submit MP4 on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8956645/)
+* Due Thursday, 2026-11-05
+    * Wednesday's lab: [Numeric recursion](../labs/numeric-recursion)
+        * Starts today! (Perhaps)
+        * [Submit numeric recursion lab on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8983167)
+    * Reading: [Pairs and pair structures](../readings/pairs)
+        * _This reading is not yet updated for Scamper._
+        * [Submit reading on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8983358)
+    * [Mini-project 1](../mps/mp01) second redo
+        * [Submit redo on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8882970/)
+        * When submitting a mini-project redo, please include a file
+         called `CHANGES.txt` that describes what you've changed.
 * On Friday, 2026-11-06
     * NEW Quiz/LA on numeric recursion (Monday)
     * NEW Quiz/LA on tail recursion (today)
@@ -43,15 +60,6 @@ Administrative stuff
     * Makeup Quiz/LA on tracing
     * Makeup Quiz/LA on decomposition
     * Makeup Quiz/LA on procedures
-* Due Tuesday, 2026-11-03
-    * [Mini-project 4](../mps/mp04)
-        * [Submit MP4 on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8956645/)
-        * Don't forget to send in questions!
-* Due Thursday, 2026-11-05
-    * [Mini-project 1](../mps/mp01) second redo
-       * [Submit redo on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8882970/)
-       * When submitting a mini-project redo, please include a file
-         called `CHANGES.txt` that describes what you've changed.
 
 ### Upcoming activities
 
@@ -89,9 +97,6 @@ Wellness
 
 Misc
 
-* Fill out the College AI survey at <https://bit.ly/ACM-AI-Survey>.
-  There's no need to submit evidence; just a reflection. 
-    * Friday deadline.
 * Wednesday, 4 November 2026, 8:00--9:00 p.m., Science 3820.
   _Mentor Session_
 * Thursday, 5 November 2026, 8:00--9:00 p.m., Science 3820.
@@ -100,15 +105,6 @@ Misc
 ### Other good things
 
 _These do not earn tokens, but are worth your consideration._
-
-* Friday, 30 October 2026, 7:00--9:00 p.m. Darby Gym.
-  _Volleyball vs. Beloit_
-* Saturday, 31 October 2026, 11:00 a.m.--1:00 p.m., Springer Field.
-  _Men's Soccer vs. Cornell College_ (last home meet of the season)
-* Saturday, 31 October 2026, 1:00--3:00 p.m. Darby Gym.
-  _Volleyball vs. Lake Forest_ (senior day)
-* Saturday, 31 October 2026, 1:30--3:30 p.m., Springer Field.
-  _Women's Soccer vs. Cornell College_ (last home meet of the season)
 
 ### Check in on the "Sam talks less" experiment
 
