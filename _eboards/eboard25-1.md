@@ -25,8 +25,21 @@ Administrative stuff
 ### Introductory Notes
 
 * I had a non-productive weekend, so I'm a bit behind on grading. Stay
-  tuned!
+  tuned! I'll also be spending the first few minutes of lab getting some
+  important things updated.
+    * Tokens
+    * Lab 2
 * Thank you to all the folks who asked and answered questions on MP4.
+* We had a problem in class on Friday: A student was observed taking
+  pictures of a quiz on their phone. Hence, I am imposing stricter guidelines
+  on phone usage during quizzes.
+    * Your phone must be in your bag during quizzes.
+    * Your phone must be turned off (or at least silenced)_ during quizzes.
+    * If we see your phone out during a quiz,
+        * I will void all of your LA grades. (You can still make them up
+          in subsequent weeks.)
+        * Your final grade in the class will be reduced by one letter grade.
+        * I will report you for an academic honesty violation.
 
 ### Upcoming work
 
@@ -138,3 +151,10 @@ Pop quiz
 Lab
 ---
 
+* There are two labs today. You'll start the second one after you finish
+  the first (assuming you finish the first).
+* You will continue partners on Wednesday.
+* Exercise 1 on today's first lab should be "Tallying strings"
+* The second lab should be called `numeric-recursion.scm`.
+
+### Notes during lab
