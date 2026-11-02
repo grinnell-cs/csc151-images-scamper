@@ -24,16 +24,12 @@ Administrative stuff
 
 ### Introductory Notes
 
-* Check in on the "Sam talks less" experiment.
-* Don't forget that clocks stop for one hour at 2:00 a.m. Sunday 
-    * That is, we "fall back" to move from Daylight Savings Time to
-      Standard Time.
+* I had a non-productive weekend, so I'm a bit behind on grading. Stay
+  tuned!
+* Thank you to all the folks who asked and answered questions on MP4.
 
 ### Upcoming work
 
-* Due Sunday, 2026-11-01
-    * Lab writeup
-    * New reading
 * On Friday, 2026-11-06
     * NEW Quiz/LA on numeric recursion (Monday)
     * NEW Quiz/LA on tail recursion (today)
@@ -114,6 +110,30 @@ _These do not earn tokens, but are worth your consideration._
 * Saturday, 31 October 2026, 1:30--3:30 p.m., Springer Field.
   _Women's Soccer vs. Cornell College_ (last home meet of the season)
 
+### Check in on the "Sam talks less" experiment
+
+* Do you want me to go over the upcoming work?
+    * Yes: 
+    * No:
+    * Abstain: 
+* Do you want me to go over the token events?
+    * Yes: 
+    * No:
+    * Abstain: 
+* Do you want Q&A time?
+    * Yes: 
+    * No:
+    * Abstain: 
+* Do you want me to go over problems from the previous lab that people struggled on?
+    * Yes: 
+    * No:
+    * Abstain: 
+* Do you want me to record class?
+    * Yes: 
+    * No:
+    * Abstain: 
+* Do you want to discuss any of the issues above?
+
 Pop quiz
 --------
 
@@ -122,5 +142,3 @@ Pop quiz
 Lab
 ---
 
-Quiz
-----
