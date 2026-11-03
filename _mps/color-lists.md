@@ -228,7 +228,7 @@ d. Document, write tests for, and implement a recursive function, `(double-brigh
         (if (rgb-brighter? (car lst) (cadr lst))
             (cons (car lst)
                   (cons (car lst)
-                        (double-bright (cdr lst))))
+                        (double-brighter (cdr lst))))
             (cons (car lst)
                   (double-brighter (cdr lst)))))))
 </script>
