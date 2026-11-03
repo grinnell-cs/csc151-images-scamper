@@ -263,7 +263,7 @@ b. Document, write tests for, and implement a recursive function, `(remove-brigh
 
 c. Document, write tests for, and implement a recursive function, `(remove-similar-neighbors colors)`, that takes a potentially empty list of colors as an input and removes any color that is similar to the next color. You will use `rgb-similar?` to determine if two colors are similar.
 
-d. Document, write tests for, and implement a recursive function `(remove-similar color colors)`, that removes a colors similar to `color` from `colors`.
+d. Document, write tests for, and implement a recursive function `(remove-similar color colors)`, that removes all colors similar to `color` from `colors`.
 
 e. Document, write tests for, and implement a recursive function, `(remove-similar-colors colors)`, that removes all but the first copy of a collection of similar colors.
 
