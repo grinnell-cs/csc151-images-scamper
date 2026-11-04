@@ -1,5 +1,5 @@
 ---
-title: Mini-Project 4
+title: Mini-Project 5
 subtitle: Fractals and other self-similar images
 summary: |
   We explore fractals, images that are similar at different scales, as well
@@ -173,7 +173,7 @@ No, the limit of this is not a "Sierpinski square".  However, it is normally ref
 ;;;   size : positive real?
 ;;;   color-x : color?
 ;;;   color-y : color?
-;;;   n : non-negative integere
+;;;   n : non-negative integer?
 ;;; Create a `size`-by-`size` image of the standard fractal carpet with
 ;;; `n` levels of recursion, using `color-x` as the "primary" color and
 ;;; `color-y` as the center color.  
@@ -183,7 +183,7 @@ b. Of course, there's no reason we have to recurse on those particular eight squ
 
 ![Five red-and-black square carpets.](../images/fractals/carpet-b-examples.png)
 
-_Here and elsewhere, we are seeing some strange artifacts from how DrRacket deals with sequares that have non-integer edge lengths._
+_Here and elsewhere, we are seeing some strange artifacts from how Scamper deals with squares that have non-integer edge lengths._
 
 **Write a procedure, `(carpet-b size color-x color-y n)`, that makes images like this latest set.**
 
@@ -255,12 +255,10 @@ d. Just as we can recurse on the secondary squares, we can choose not to recurse
 ;;; and `y` means "square in `color-y`".
 ```
 
-e. At this point, you may feel like you want to experiment with different patterns of carpet recursion.  And you could do so by making slight changes to `carpet-d`.  However, it's much better to extend our procedure to take the pattern of recursion as a parameter.  For eample, the "pattern" for `carpet-d` is `"XyXxYxXyX"`.  
+e. _Optional_ At this point, you may feel like you want to experiment with different patterns of carpet recursion.  And you could do so by making slight changes to `carpet-d`.  However, it's much better to extend our procedure to take the pattern of recursion as a parameter.  For example, the "pattern" for `carpet-d` is `"XyXxYxXyX"`.  
 
 
 **Write a procedure, `(carpet pattern size color-x color-y n)`, that generalizes carpet generation using patterns.**
-
-_This procedure is only required for an E._
 
 ```
 ;;; (carpet pattern size color-x color-y n) -> drawing?
@@ -323,7 +321,7 @@ You can use `thinly-outlined-square` to make each outlined square.
              (solid-square size color))))
 ```
 
-b. Let's do something similar, changing the color a little bit each time.  Let's make it a bit darker, adding 32.
+b. Let's do something similar, changing the color a little bit each time.  Let's make it a bit darker, adding 32 to each component.
 
 ![A sequence of images of groups squares.  The first group has a single, outlined, green square.  The second group has two green squares, with the top one rotated 15 degrees clockwise from the first.  The top square in this group is slightly darker.  The third group has a third green square, with the top one rotated 30 degrees and slightly darker than the previous one.  And so on.](../images/fractals/darker-green-spiral-squares.png)
 
@@ -346,22 +344,22 @@ b. Let's do something similar, changing the color a little bit each time.  Let's
 You will likely want a copy of `darker-32`.
 
 ```
-;;; (rgb-transformer transform-component) -> color-function?
-;;;    component-transformer : function from integer to integer
+;;; (rgb-transformer transform-component) -> function?
+;;;    component-transformer : function?
 ;;; Returns a new function that takes a color as input and applies
-;;; `component-trasformer` to each, yielding a new color.
+;;; `component-transformer` to each, yielding a new color.
 (define rgb-transformer
   (lambda (transform-component)
     (lambda (color)
-      (rgb (transform-component (color-red color))
-           (transform-component (color-green color))
-           (transform-component (color-blue color))))))
+      (rgb2 (transform-component (color-red color))
+            (transform-component (color-green color))
+            (transform-component (color-blue color))))))
 
 ;;; (darker-32 color) -> color?
 ;;;   color : color?
 ;;; Create a darker version of color by attempting to subtract 32
 ;;; from each component.
-(define darker-32 (rgb-transformer (cut (- <> 32))))
+(define darker-32 (rgb-transformer (r-s - 32)))
 ```
 
 c. Let's try another version, this time changing not only the color, but also the size, scaling the size by 9/10 each time.
@@ -415,7 +413,7 @@ You will likely find the following procedure helpful.
 ;;;   color : color?
 ;;; Create a lighter version of color by attempting to add 16
 ;;; to each component.
-(define lighter-16 (rgb-transformer (cut (+ <> 16))))
+(define lighter-16 (rgb-transformer (l-s + 16)))
 ```
 
 In writing this procedure, you will likely need to employ a variant of the strategy we suggested in part a.
@@ -474,7 +472,7 @@ Please check the rubric for other expectations.
 Grading rubric
 --------------
 
-### Basics
+### The basics
 
 ```
 [ ] Includes the specified file, `fractals.scm`.
@@ -484,6 +482,7 @@ Grading rubric
 [ ] Code runs in Scamper.
 [ ] Code is well-formatted with appropriate names and indentation.
 [ ] Code has been reformatted with Ctrl-I before submitting.
+[ ] `my-fractal` creates an image when given appropriate parameters.
 [ ] Includes `my-fractal-01.png`, which seems to be generated by `my-fractal`.
 [ ] Includes `my-fractal-02.png`, which seems to be generated by `my-fractal`.
 [ ] Includes `my-fractal-03.png`, which seems to be generated by `my-fractal`.
@@ -502,10 +501,9 @@ Grading rubric
     the parameters to `my-fractal`).
 ```
 
-### Going beyonnd
+### Going beyond
 
 ```
-[ ] Passes all of the bonus autograder tests.
 [ ] Includes a working version of `carpet` (2e).
 [ ] Style is impeccable (or nearly so).
 [ ] Avoids repeated work.  In particular, avoids identical recursive calls.
