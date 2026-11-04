@@ -84,7 +84,7 @@
 - outcome: Randomness
   description: Write programs that produce predictably unpredictable output.
   example: /las/randomness
-  active: true
+  active: false
 
 - outcome: Dictionaries
   description: Design and write functions that use dictionaries.
