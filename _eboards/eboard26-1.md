@@ -31,10 +31,13 @@ Administrative stuff
 * If you want to subject yourself to more Sam teaching, I'm also running
   a guided reading on board game design Tuesday/Thursday 8:00--10:00 a.m.
   Contact me with questions.
+* I have dropped the tail recursion LA. Only one new LA this Friday!
 * MP3 did not work well, so I am cancelling it and giving those who got an
   S on it some tokens / other rewards. (Precise details to be determined.)
 * The consensus seems to be "Sam should talk a bit more." So I'll try
   to talk more, but not too much.
+* For the first time, the next MP is ready with lots of lead time! 
+  However, I have not yet tried redoing it in Scamper.
 
 ### Upcoming work
 
@@ -46,7 +49,6 @@ Administrative stuff
         * [Submit reading on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8983358)
 * On Friday, 2026-11-06
     * NEW Quiz/LA on numeric recursion (today and Wednesday)
-    * NEW Quiz/LA on tail recursion 
     * Makeup Quiz/LA on list recursion 
     * Makeup Quiz/LA on testing
     * Makeup Quiz/LA on local bindings
@@ -67,6 +69,10 @@ Administrative stuff
         * [Submit redo on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8882970/)
         * When submitting a mini-project redo, please include a file
          called `CHANGES.txt` that describes what you've changed.
+* Due Tuesday, 2026-11-17
+    * [Mini-project 5](../mps/mp05)
+        * Not yet tested in Scamper!
+        * Not yet posted to Gradescope
 
 ### Upcoming activities
 
