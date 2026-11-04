@@ -260,7 +260,7 @@
 
 ; (test-case "values-between: five to ten" 
 ;            equal? (list 5 6 7 8 9)
-;            #(values-between 5 10)
+;            #(values-between 5 10))
 ; (test-case "values-between: zero to zero" 
 ;            equal? null
 ;            #(values-between 0 0))
