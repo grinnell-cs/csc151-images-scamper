@@ -173,10 +173,6 @@ Pop quiz
 --------
 
 * What is an alternative term for "pop"?
-* Colors: What is "black" in RGB notation?
-* Strings: How do you extract the character at index 5 from a string?
-* Drawings: List three functions to make shapes.
-* Lists: How do you determine if a list is empty?
 
 Lab
 ---

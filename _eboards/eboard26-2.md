@@ -3,7 +3,7 @@ title: "EBoard 26: Numeric recursion, continued (Section 2)"
 number: 26
 section: eboards
 held: 2026-11-04
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -52,10 +52,10 @@ Administrative stuff
 
 * Due Thursday, 2026-11-05
     * Wednesday's lab: [Numeric recursion](../labs/numeric-recursion)
-        * Starts today! (Perhaps)
+        * Starts today! 
         * [Submit numeric recursion lab on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8983167)
     * Reading: [Pairs and pair structures](../readings/pairs)
-        * [Submit reading on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8983358)
+        * [Submit reading response on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8983358)
 * On Friday, 2026-11-06
     * NEW Quiz/LA on numeric recursion (Monday and today)
     * Makeup Quiz/LA on list recursion 
@@ -77,7 +77,8 @@ Administrative stuff
     * [Mini-project 1](../mps/mp01) second redo
         * [Submit redo on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8882970/)
         * When submitting a mini-project redo, please include a file
-         called `CHANGES.txt` that describes what you've changed.
+          called `CHANGES.txt` that describes what you've changed.
+        * Please make sure that your files are named correctly.
 * Due Tuesday, 2026-11-17
     * [Mini-project 5](../mps/mp05)
         * Not yet tested in Scamper!
@@ -169,6 +170,10 @@ Q&A
 
 ### Administrative
 
+I have a really small issue in MP3. Can I still get the bonus goodies?
+
+> Email me.
+
 ### Tail recursion
 
 ### Numeric recursion
@@ -177,10 +182,10 @@ Pop quiz
 --------
 
 * What is an alternative term for "pop"?
-* Colors: What is "black" in RGB notation?
-* Strings: How do you extract the character at index 5 from a string?
-* Drawings: List three functions to make shapes.
-* Lists: How do you determine if a list is empty?
+* Colors: What does `image-map` do?
+* Characters: What's the difference between `char<?` and `char-ci<?`?
+* Strings: What are the two forms of `substring` and what do they do?
+* Strings: How do you determine how many characters are in a string?
 
 Lab
 ---
@@ -188,3 +193,9 @@ Lab
 * Start/continue the numeric recursion lab
 * If you finish the numeric lab early, do the extra problems on either/both 
   of numeric recursion and tail recursion.
+* If you started the numeric recursion lab early, there are bugs in some
+  of the tests, so grab new copies if you get an error in the tests.
+
+### More notes
+
+* Think carefully about examples!

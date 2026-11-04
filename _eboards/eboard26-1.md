@@ -189,3 +189,23 @@ Lab
 
 * There's an error in the test-case for `list-drop`. I put the right
   paren in the wrong place. You should be able to fix that.
+* There's also an error in the test cases for `fractional-sum`. Sorry
+  about that.
+
+```
+(test-case "(fractional-sum 1)"
+           = 1
+           #(fractional-sum 1))
+(test-case "(fractional-sum 2)"
+            = (+ 1 (/ 1 2))
+            #(fractional-sum 2))
+(test-case "(fractional-sum 3)"
+            = (+ 1 (/ 1 2) (/ 1 3))
+            #(fractional-sum 3))
+(test-case "(fractional-sum 4)"
+           = (+ 1 (/ 1 2) (/ 1 3) (/ 1 4))
+           #(fractional-sum 4))
+(test-case "(fractional-sum 5)"
+           = (+ 1 (/ 1 2) (/ 1 3) (/ 1 4) (/ 1 5))
+           #(fractional-sum 5))
+```
