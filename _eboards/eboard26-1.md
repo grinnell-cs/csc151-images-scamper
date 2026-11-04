@@ -3,7 +3,7 @@ title: "EBoard 26: Numeric recursion, continued (Section 1)"
 number: 26
 section: eboards
 held: 2026-11-04
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -24,18 +24,25 @@ Administrative stuff
 
 ### Introductory Notes
 
+* The consensus seems to be "Sam should talk a bit more." So I'll try
+  to talk more, but not too much.
 * I have been asked to remind you that Friday is the deadline for (a)
   class withdrawals and (b) converting to/from S/D/F grading (Grinnell's
   version of Pass/Fail).
 * Don't forget to consider CSC-161 next semester.
+* We are changing the mathematics requirements for the CS major. 
+  MAT/CSC-208 will be renumbered to CSC-240 and will have a MAT-215
+  prerequisite. (You can still take MAT-218 instead of CSC-240.)
+    * If you are a second year and plan to be a CS major, please take
+      208 this spring.
+    * If you are a first year and plan to be a CS major, please continue
+      in the Math sequence.
 * If you want to subject yourself to more Sam teaching, I'm also running
-  a guided reading on board game design Tuesday/Thursday 8:00--10:00 a.m.
-  Contact me with questions.
+  a guided reading on board game design Tuesday/Thursday 8:00--9:50 a.m.
+  Contact me with questions. (I'll also send email to csstudents.)
 * I have dropped the tail recursion LA. Only one new LA this Friday!
 * MP3 did not work well, so I am cancelling it and giving those who got an
   S on it some tokens / other rewards. (Precise details to be determined.)
-* The consensus seems to be "Sam should talk a bit more." So I'll try
-  to talk more, but not too much.
 * For the first time, the next MP is ready with lots of lead time! 
   However, I have not yet tried redoing it in Scamper.
 
@@ -48,11 +55,11 @@ Administrative stuff
     * Reading: [Pairs and pair structures](../readings/pairs)
         * [Submit reading on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8983358)
 * On Friday, 2026-11-06
-    * NEW Quiz/LA on numeric recursion (today and Wednesday)
+    * NEW Quiz/LA on numeric recursion (Monday and today)
     * Makeup Quiz/LA on list recursion 
     * Makeup Quiz/LA on testing
     * Makeup Quiz/LA on local bindings
-    * Makeup Quiz/LA on collaboration 
+    * Makeup Quiz/LA on collaboration
     * Makeup Quiz/LA on lists and list operations
     * Makeup Quiz/LA on conditionals
     * Makeup Quiz/LA on compose, cut, and section
@@ -82,6 +89,9 @@ Scholarly
   _Scholars’ Convocation: Shuchi Kapila: Global Humanities: A Thought Experiment_
 * Thursday, 5 October 2026, 4:15--5:15 p.m., Noyce 3821
   _Thursday Extras_
+* Monday, 9 October 2026, Noon--1:00 p.m., JRC 209.
+  _Hana Hashimoto '27 leads a discussion of constitutions._
+    * Sign up form in campus memo.
 * Tuesday, 10 October 2026, Noon--1:00 p.m., CS Commons (I think).
   _CS Table_
 
@@ -102,6 +112,8 @@ Artistic/Cultural
   _Mainstage: Cassandra Listens_
 * Sunday, 8 November 2026, 2:00--4:00 p.m., Roberts Theatre.
   _Mainstage: Cassandra Listens_
+* Sunday, 15 November 2026, 4:99 p.m., Sebring-Lewis.
+  _Family Folk Machine: Rising Like a Flame_
 
 Multicultural
 
@@ -161,7 +173,19 @@ Pop quiz
 --------
 
 * What is an alternative term for "pop"?
+* Colors: What is "black" in RGB notation?
+* Strings: How do you extract the character at index 5 from a string?
+* Drawings: List three functions to make shapes.
+* Lists: How do you determine if a list is empty?
 
 Lab
 ---
 
+* Start/continue the numeric recursion lab
+* If you finish the numeric lab early, do the extra problems on either/both 
+  of numeric recursion and tail recursion.
+
+### Notes
+
+* There's an error in the test-case for `list-drop`. I put the right
+  paren in the wrong place. You should be able to fix that.
