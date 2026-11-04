@@ -63,9 +63,9 @@
 
 ;; The `count-down` function you just implemented is suspiciously close
 ;; to the `range` function we use to generate a sequence of numbers in
-;; the range 1 to n. For ease of implementation, we'll consider range to
-;; be *inclusive* on n rather than *exclusive*. It will be relatively
-;; easy to change our final result so that our function after the fact.
+;; the range 0 (inclusive) to n (exclusive). For ease of implementation, 
+;; we'll consider range to be *inclusive* on n rather than *exclusive*. 
+;; It will be relatively easy to change our final result after the fact.
 
 ;; Here is a bad implementation of range likely using the same technique
 ;; that you used for `count-down`:
@@ -127,7 +127,10 @@
 ;; Base value:
 
 ;; Suppose we've computed `(my-drop (cdr lst) (- n 1))`.  How does that help
-;; us compute `(my-drop lst n)`?
+;; us compute `(my-drop lst n)`? You may find it helpful to consider at
+;; concrete example, such as 
+;;    "How does computing `(my-drop (list "b" "c" "d") 1)` help us
+;;    compute `(my-drop (list "a" "b" "c" "d") 2)`?
 
 ;; Post-recursive step: 
 
@@ -142,8 +145,8 @@
     null))
 
 ; (test-case "my-drop: remove half the list"
-;            equal? (list "d" "e" "f"))
-;            #(my-drop (list "a" "b" "c" "d" "e" "f") 3)
+;            equal? (list "d" "e" "f")
+;            #(my-drop (list "a" "b" "c" "d" "e" "f") 3))
 
 ;; +-----------------------------+------------------------------------
 ;; | Exercise 4: Taking Elements |
@@ -180,7 +183,10 @@
 ;; base-case value: 
 
 ;; Suppose we've computed `(my-take (cdr lst) (- n 1))`.  How does that help
-;; us compute `(my-take lst n)`?
+;; us compute `(my-take lst n)`?  You may find it helpful to consider at
+;; concrete example, such as 
+;;    "How does computing `(my-take (list "b" "c" "d") 1)` help us
+;;    compute `(my-take (list "a" "b" "c" "d") 2)`?
 
 ;;; Post-recursive step
 
@@ -192,7 +198,7 @@
 ;;; Build a list consisting of the first n elements of lst.
 (define my-take
   (lambda (lst n)
-    (list a b c))) ; This passes all the tests, but is wrong.
+    (list "a" "b" "c"))) ; This passes all the tests, but is wrong.
 
 ; (test-case "my-take: take half the list"
 ;            equal? (list "a" "b" "c")
@@ -205,7 +211,7 @@
 ;; | Exercise 5: Counting up |
 ;; +-------------------------+
 
-;; Drivers: A
+;; Driver: A
 
 ;; Consider a procedure, `(values-between start finish)`, that takes
 ;; two exact integers as parameters produces a list of all the values
@@ -271,6 +277,8 @@
 ;; +-------------------------------+----------------------------------
 ;; | Exercise 6: Repeated division |
 ;; +-------------------------------+
+
+;; Driver: B
 
 ;; The `rhythm10` of any non-negative number is the number of times
 ;; that we must divide the number by 10 to reach a number less than
