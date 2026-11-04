@@ -75,20 +75,20 @@
 
 - date: 2026-11-04
   assigned: 
-    - MP5
+    - page: /mps/mp05.html
 
 - date: 2026-11-06
   due:
     - LA 11 (Numeric recursion)
-    - LA 12 (Tail recursion)
 
 - date: 2026-11-13
   due: 
-    - LA 13 (Diagramming structures)
-    - LA 14 (Vectors)
+    - LA 12 (Diagramming structures)
+    - LA 13 (Vectors)
 
 - date: 2026-11-17
-  due: MP5
+  due: 
+    - page: /mps/mp05.html
 
 - date: 2026-11-18
   assigned: 
@@ -96,8 +96,8 @@
 
 - date: 2026-11-20
   due:
-    - LA 15 (Dictionaries)
-    - LA 16 (Data abstraction)
+    - LA 14 (Dictionaries)
+    - LA 15 (Data abstraction)
 
 - date: 2026-12-03
   due:
@@ -105,8 +105,8 @@
 
 - date: 2026-12-04
   due: 
-    - LA 17 (Higher-order programming)
-    - LA 18 (Tree recursion)
+    - LA 16 (Higher-order programming)
+    - LA 17 (Tree recursion)
 
 - date: 2026-12-16
   due:

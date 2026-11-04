@@ -1,19 +1,15 @@
-#lang racket
-
-(require csc151)
-
-;;; fractals.rkt
-;;;   A variety of fractals and other shapes, created for MP6 in
-;;;   CSC-151 2024Sp
+;;; fractals.scm
+;;;   A variety of fractals and other shapes, created for MP5 in
+;;;   CSC-151 2026Fa
 ;;;
 ;;; Author: Your Name Here
 ;;; Date submitted: YYYY-MM-DD
 ;;;
 ;;; Acknowledgements:
 ;;; 
-;;; * Starter code provided by SamR and Leah.  That code includes this 
-;;;   header, the "provided code" section below, the documentation for
-;;;   the primary procedures in parts 1--4, and "stub definitions" for
+;;; * Starter code provided by SamR.  That code includes this header, 
+;;;   the "provided code" section below, the documentation for the 
+;;;   primary procedures in parts 1--4, and "stub definitions" for
 ;;;   each of those procedures.
 ;;; *
 
@@ -21,46 +17,47 @@
 ; | Provided code |
 ; +---------------+
 
-;;; (rgb-transformer transform-component) -> color-function?
-;;;    component-transformer : function from integer to integer
+;;; (rgb2 r g b) -> rgb?
+;;;   r : real?
+;;;   g : real?
+;;;   b : real?
+;;; Create an RGB color using the specified red, green, and blue components.
+;;; If any of these is negative, replaces it with 0. If any of these is
+;;; greater than 255, replaces it with 255. If any of these has a fractional
+;;; value, rounds it.
+(define rgb2
+  (let ([fix (o (l-s min 255) (r-s max 0) round)])
+    (lambda (r g b)
+      (rgb (fix r) (fix g) (fix b)))))
+
+;;; (rgb-transformer transform-component) -> function?
+;;;    component-transformer : function?
 ;;; Returns a new function that takes a color as input and applies
 ;;; `component-trasformer` to each, yielding a new color.
 (define rgb-transformer
   (lambda (transform-component)
     (lambda (color)
-      (rgb (transform-component (color-red color))
-           (transform-component (color-green color))
-           (transform-component (color-blue color))))))
+      (rgb2 (transform-component (color-red color))
+            (transform-component (color-green color))
+            (transform-component (color-blue color))))))
 
 ;;; (rgb-darker-32 color) -> rgb?
 ;;;   color : rgb?
 ;;; Create a darker version of color by attempting to subtract 32
 ;;; from each component.
-(define rgb-darker-32 (rgb-transformer (cut (- <> 32))))
+(define rgb-darker-32 (rgb-transformer (r-s - 32)))
 
 ;;; (rgb-lighter-16 color) -> rgb?
 ;;;   color : rgb?
 ;;; Create a lighter version of color by attempting to add 16
 ;;; to each component.
-(define rgb-lighter-16 (rgb-transformer (cut (+ <> 16))))
+(define rgb-lighter-16 (rgb-transformer (r-s + 16)))
 
 ;;; (rgb-cyclically-add-64 color) -> rgb?
 ;;;   color : rgb?
 ;;; Add 64 to each component of color, cycling when we exceed 255.
 (define cyclically-add-64
   (rgb-transformer (lambda (c) (remainder (+ c 64) 256))))
-
-;;; (solid-right-triangle width height color [description]) -> image?
-;;;   width : positive-real?
-;;;   height : positive-real?
-;;;   color : color?
-;;;   description : string?
-;;; Make a right triangle of the given width, height, and color.
-(define solid-right-triangle
-  (lambda (width height color [description #f])
-    (solid-polygon (list (pt 0 0) (pt width height) (pt 0 height))
-                   color
-                   description)))
 
 ;;; (thinly-outlined-square size color) -> image?
 ;;;   size : non-negative-integer?
@@ -71,9 +68,9 @@
     (overlay (outlined-square (- size 2) "black" 1)
              (solid-square size color))))
 
-; +---------------------------+--------------------------------------
-; | Part 1: Fractal triangles |
-; +---------------------------+
+;; +---------------------------+--------------------------------------
+;; | Part 1: Fractal triangles |
+;; +---------------------------+
 
 ;;; (fractal-triangle side color n) -> image?
 ;;;   side : positive-real?
@@ -83,7 +80,7 @@
 ;;; as the primary color.
 (define fractal-triangle
   (lambda (side color n)
-    ???)) 
+    0))
 
 ;;; (rgb-fractal-triangle side color n) -> image?
 ;;;   side : positive-real?
@@ -96,7 +93,7 @@
 ;;; color of the lower-right triangle is `(rgb-bluer color)`.  
 (define rgb-fractal-triangle
   (lambda (side color n)
-    ???))
+    0))
 
 ;;; (new-rgb-fractal-triangle side color n) -> image?
 ;;;   side : positive-real?
@@ -109,7 +106,7 @@
 ;;; color of the central triangle should be `color`.
 (define new-rgb-fractal-triangle
   (lambda (side color n)
-    ???))
+    0))
 
 ;;; (fractal-right-triangle height width color n) -> image?
 ;;;   height : positive-real?
@@ -119,11 +116,11 @@
 ;;; Make a fractal right triangle using `color` as the primary color.
 (define fractal-right-triangle
   (lambda (height width color n)
-    ???))
+    0))
 
-; +-----------------+------------------------------------------------
-; | Part 2: Carpets |
-; +-----------------+
+;; +-----------------+------------------------------------------------
+;; | Part 2: Carpets |
+;; +-----------------+
 
 ;;; (carpet-a size color-x color-y n) -> image?
 ;;;   size : positive real?
@@ -135,7 +132,7 @@
 ;;; `color-y` as the center color.
 (define carpet-a
   (lambda (size color-x color-y n)
-    ???))
+    0))
 
 ;;; (carpet-b size color-x color-y n) -> image?
 ;;;   size : positive real?
@@ -153,7 +150,7 @@
 ;;; where `X` means "recurse" and `y` means "square with `color-y`.
 (define carpet-b
   (lambda (size color-x color-y n)
-    ???))
+    0))
 
 ;;; (carpet-c size color-x color-y n) -> image?
 ;;;   size : positive real?
@@ -172,7 +169,7 @@
 ;;; "recurse swapping the two colors".
 (define carpet-c
   (lambda (size color-x color-y n)
-    ???))
+    0))
 
 ;;; (carpet-d size color-x color-y n) -> image?
 ;;;   size : positive real?
@@ -192,7 +189,7 @@
 ;;; and `y` means "square in `color-y`".
 (define carpet-d
   (lambda (size color-x color-y n)
-    ???))
+    0))
 
 ;;; (carpet pattern size color-x color-y n) -> image?
 ;;;   pattern ; string? (length 9, composed only of x, X, y, and Y)
@@ -216,11 +213,11 @@
 ;;;      6 7 8
 (define carpet
   (lambda (pattern size color-x color-y n)
-    ???))
+    0))
 
-; +------------------------+-----------------------------------------
-; | Part 3: Rotated shapes |
-; +------------------------+
+;; +------------------------+-----------------------------------------
+;; | Part 3: Rotated shapes |
+;; +------------------------+
 
 ;;; (spiral-squares-a side color angle n) -> image?
 ;;;   side : positive-real?
@@ -233,7 +230,7 @@
 ;;; rotated by an additional `angle` degrees.  And so on and so forth.
 (define spiral-squares-a
   (lambda (side color angle n)
-    ???))
+    0))
 
 ;;; (spiral-squares-b side color angle n) -> image?
 ;;;   side : positive-real?
@@ -248,7 +245,7 @@
 ;;; so forth.
 (define spiral-squares-b
   (lambda (side color angle n)
-    ???))
+    0))
 
 ;;; (spiral-squares-c side color angle ratio n) -> image?
 ;;;   side : positive-real?
@@ -265,7 +262,7 @@
 ;;; And so on and so forth.
 (define spiral-squares-c
   (lambda (side color angle ratio n)
-    ???))
+    0))
 
 ;;; (spiral-squares-d side color angle ratio) -> image?
 ;;;   side : positive-real?
@@ -282,7 +279,7 @@
 ;;; has a side length of ten or less.
 (define spiral-squares-d
   (lambda (side color angle ratio)
-    ???))
+    0))
 
 ;;; (spiral-squares-e side color angle ratio color-transform) -> image?
 ;;;   side : positive-real?
@@ -300,7 +297,7 @@
 ;;; square has a side length of ten or less.
 (define spiral-squares-e
   (lambda (side color angle ratio color-transform)
-    ???))
+    0))
 
 ; +-------------------+----------------------------------------------
 ; | Part 4: Freestyle |
@@ -313,22 +310,19 @@
 ;;; Create an image based on the parameters.
 (define my-fractal
   (lambda (size color n)
-    ???))
+    0))
 
-#|
-I created `fractal-01.png` using 
-
-    (image-save (my-fractal ___ ___ ___)
-                "fractal-01.png")
-
-I created `fractal-02.png` using 
-
-    (image-save (my-fractal ___ ___ ___)
-                "fractal-02.png")
-
-I created `fractal-03.png` using 
-
-    (image-save (my-fractal ___ ___ ___)
-                "fractal-03.png")
-
-|#
+;; I created `fractal-01.png` using 
+;; 
+;;     (image-save! (my-fractal ___ ___ ___)
+;;                  "fractal-01.png")
+;; 
+;; I created `fractal-02.png` using 
+;; 
+;;     (image-save! (my-fractal ___ ___ ___)
+;;                  "fractal-02.png")
+;; 
+;; I created `fractal-03.png` using 
+;; 
+;;     (image-save! (my-fractal ___ ___ ___)
+;;                  "fractal-03.png")

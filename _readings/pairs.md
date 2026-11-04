@@ -5,53 +5,16 @@ summary: |
   procedures. Most typically, `cons` is applied to two arguments, a value
   and a list, and we think of it as prepending the value to the front of the
   list. You also know from experimentation that `cons` can not take fewer
-  than two arguments nor more than two arguments. You have also found that
-  `cons` can still be called with a non-list as the second argument, and in
-  this case the thing built has a strange dot before that element. In this
+  than two arguments nor more than two arguments. In some versions of 
+  Scheme, `cons` can be called with a non-list as the second argument. In this
   reading, we consider what is happening behind the scenes when you call
-  `cons`. We also use `cons` to build structures other than lists.
+  `cons` and consider a related procedure, `pair`. We also use `pair` to 
+  build structures other than lists.
 ---
-**Warning! This reading has not yet been updated for Scamper!**
 
-## Detour: Symbols
-
-Before we explore pairs, we'll take a quick detour to remind you of one
-of Scheme's other key data types, the symbol. Symbols look a lot like
-words (and perhaps even strings), except that they don't have quotation
-marks around them. Internally, Scheme uses symbols for all of the names
-that you write in your program. Many Scheme programmers find them useful
-when they just need a simple, readable, value to pass around.
-
-You write symbols with a single quote mark (`'`, which we also call
-a "tick mark") and the word you want to serve as a symbol. For
-example, `'aardvark` is a symbol that corresponds to the word
-"aardvark" and `'zebra` is a symbol that corresponds to the word
-"zebra".
-
-When some versions of Scheme print out symbols, they do not give you
-the single quote symbol. Fortunately, DrRacket is a bit nicer.
-
-```
-> (quote aardvark)
-'aardvark
-> (list (quote aardvark) (quote zebra))
-'(aardvark zebra)
-> aardvark
-reference to undefined identifier: aardvark
-```
-
-Symbols are atomic. Unlike strings (which symbols seem to resemble),
-symbols do not support procedures, like `string-ref` or `substring`,
-that extract some part of the symbol.
-
-Hence, there are only a few procedures applicable to symbols:
-`symbol?` checks whether a value is a symbol and both `eq?` and `equal?`
-can be used to compare symbols.
-
-Why would we use symbols, if those are the only available procedures?
-Because they're simple and sometimes a bit more fun than numbers.
-Why do we remind you of them now? Because they're also nice to use
-in diagrams, and we have a lot of diagrams in this reading.
+_Disclaimer: We don't include quotation marks for strings in most of 
+these diagrams. We hope to find time to upgrade them sometime in the
+future._
 
 ## Box-and-pointer diagrams
 
@@ -70,49 +33,34 @@ of the list, its cdr. When the cdr is null (the empty list), we draw a
 diagonal line through the right half of the rectangle to indicate that
 the list stops at that point.
 
-For instance, the value of the expression `(cons 'a null)` would be
-represented in this notation as follows:
+For instance, the value of the expression `(cons "a" null)` would be
+represented in this notation as follows.
 
 ![A rectangle split horizontally into two squares.  The left square
 has an arrow pointing downward to the letter a.  The right square has
 a slash in it](../images/pairs-1.png)
 
-Since the value of the expression `(cons 'a null)` is the list `'(a)`,
-this diagram represents `'(a)` as well.
+Since the value of the expression `(cons "a" null)` is the list `(list "a")`,
+this diagram represents `(list "a")` as well.
 
-Now consider the value of the expression `(cons 'b (cons 'a null))`,
-or in other words, the list `(b a)`. Here, we draw another rectangle,
-where the head points to `b` and the tail points to the representation of
-`(a)` that we already have seen. The result is:
+Now consider the value of the expression `(cons "b" (cons "a" null))`,
+or in other words, the list `(list "b" "a")`. Here, we draw another rectangle,
+where the head points to `"b"` and the tail points to the representation of
+`(list "a")` that we already have seen. The result is the following.
 
-![Two rectangles, side by side.  Each is split into two squares.  The left
-square in the first rectangle has an arrow pointing down to the symbol `'a`.
-The right square in the first rectangle has an arrow to to the second
-rectangle.  The left square in the second rectangle has an arrow pointing
-downward to the symbol `'b`.  The right square in the second rectangle has
-a slash through it.](../images/pairs-2.png)
+![Two rectangles, side by side.  Each is split into two squares.  The left square in the first rectangle has an arrow pointing down to `a`.  The right square in the first rectangle has an arrow to to the second rectangle.  The left square in the second rectangle has an arrow pointing downward to `b`.  The right square in the second rectangle has a slash through it.](../images/pairs-2.png)
 
-Similarly, the list `'(d c b a)` is the value of the expression `(cons
-'d (cons 'c (cons 'b (cons 'a null))))` and would be drawn as follows:
+Similarly, the list `(list "d" "c" "b" "a")` is the value of the expression `(cons
+"d" (cons "c" (cons "b" (cons "a" null))))` and would be drawn as follows:
 
-![Four rectangles, side by side.  Each is split into two squares.  For
-the first three rectangles, the right square has an arrow pointing to
-the next rectangle.  For the last rectangle, the right square has a slash
-through it.  The left square of the first rectangle has an arrow pointing
-downward to the symbol `'d`.  The left square of the second rectangle has
-an arrow pointing downward to the symbol `'c`.  The left square of the third
-rectangle has an arrow pointing downward to the symbol `'b`.  The left
-square of the fourth rectangle has an arrow pointing downward to the
-symbol `'a`.](../images/pairs-3.png)
+![Four rectangles, side by side.  Each is split into two squares.  For the first three rectangles, the right square has an arrow pointing to the next rectangle.  For the last rectangle, the right square has a slash through it.  The left square of the first rectangle has an arrow pointing downward to `d`.  The left square of the second rectangle has an arrow pointing downward to `c`.  The left square of the third rectangle has an arrow pointing downward to `b`.  The left square of the fourth rectangle has an arrow pointing downward to `a`.](../images/pairs-3.png)
 
 A similar approach may be used for lists that have other lists as
-elements. For example, consider the list `'((a) b (c d) e)`. This
-list contains four components, so, at the top level, we will need four
-rectangles, just as in the previous example for the list `'(d c b
-a)`. Here, however, the first component designates the list `'(a)`, which
+elements. For example, consider the list `(list (list "a") "b" (list "c" "d") "e")`. This list contains four components, so, at the top level, we will need four
+rectangles, just as in the previous example for the list `(list "d" "c" "b" "a")`. Here, however, the first component designates the list `(list "a")`, which
 itself involves the box-and-pointer diagram already discussed. Similarly,
-the list `'(c d)` has two boxes for its two components (as in the diagram
-for `'(b a)` above). The resulting diagram is:
+the list `(list "c" "d")` has two boxes for its two components (as in the diagram
+for `(list "b" "a")` above). The resulting diagram is:
 
 ![Seven rectangles arranged in two rows.  The first row has four rectangles.
 The second row has three rectangles, which are below the first, third, and
@@ -122,23 +70,23 @@ have arrows to the subsequent rectangle.  The right box in the last rectangle
 on the first row has  a slash through it.  The left box of the first
 rectangle in the first row has an arrow downward to the first rectangle
 in the second row.  The left box of the second rectangle in the first row
-has an arrow pointing downward to the symbol `'b`.  The left box of the
+has an arrow pointing downward to `b`.  The left box of the
 third rectangle in the first row has an arrow pointing to the second rectangle
 in the second row.  The left box of the fourth rectangle in the first
-row has an arrow pointing downward to the symbol `'e`.  The first rectangle
-in the second row i a rectangle that represents the list `'(a)`.  The left
-box of that rectangle has an arrow pointing downward to the symbol `'a`.
+row has an arrow pointing downward to `e`.  The first rectangle
+in the second row i a rectangle that represents the list `(list "a")`.  The left
+box of that rectangle has an arrow pointing downward to `a`.
 The right box of that rectangle has a slash through it.  The left box
 of the second rectangle in the second row has an arrow pointing downward
-to the symbol `'c`.  The right box of the second rectangle in the second
+to `c`.  The right box of the second rectangle in the second
 row has an arrow pointing to the right to the third rectangle in the
 second row.  The left box of the third rectangle in the second row has
-an arrow pointing downward to the symbol`'d`.  The right box of the third
+an arrow pointing downward to `d`.  The right box of the third
 rectangle on the second row has a slash through it.](../images/pairs-4.png)
 
 Throughout these diagrams, the empty list is represented by a null
 pointer, a diagonal line. Thus, the list containing the empty list,
-`(())` -- that is, the value of the expression `(cons null null)` --
+`null` -- that is, the value of the expression `(cons null null)` --
 is represented by a rectangle with lines through both halves:
 
 ![A rectangle split into two boxes.  Each box has a slash through it.](../images/pairs-5.png)
@@ -146,41 +94,35 @@ is represented by a rectangle with lines through both halves:
 ## Pairs that are not lists
 
 While we consistently have discussed `cons` in the context of lists,
-Scheme allows `cons` to be applied even when the second argument is not
-a list. For example, `(cons   'a 'b)` is a legal expression; its value
-is represented by the following box-and-pointer diagram:
+standard implementations of Scheme permit `cons` to be applied even
+when the second argument is not a list. For example, `(cons "a"
+"b")` is a legal expression; its value is represented by the following
+box-and-pointer diagram. 
 
 ![A rectangle split into two boxes.  The left box has an arrow downward
-to the symbol `'a`.  The right box has an arrow downward to the symbol
-`'b`.](../images/pairs-6.png)
+to `a`.  The right box has an arrow downward to `b`.](../images/pairs-6.png)
 
-You may have noticed that some of your lists ended with a dot before the last character. In fact, whenever Scheme is asked to print out a sequence of linked pairs that don't end with null, it uses dot notation, as in `(a .  b)`. Here, the dot indicates that cons has been applied, but the second argument is not a list. Similarly, the value of `(cons 1 'a)` is the pair `(1 . a)`, and the value of `(cons "Steele" "Sussman")` is `("Steele"   . "Sussman")`. Using a box-and-pointer representation, this last result would be drawn as follows:
+For a variety of reasons, Scamper does not permit the second argument of `cons` to be a non-list. For situations in which you want a pair of values where the second is not necessarily a list, you can use `pair` instead of `cons`. Here's what you'd get with `(pair "Sussman" "Steele")`.
+
 
 ![A rectangle split into two boxes.  The left box has an arrow downward
 to the string "Steele".  The right box has an arrow downward to the string
 "Sussman".](../images/pairs-7.png)
 
-The `car` and `cdr` procedures can be used to recover the halves of one
-of these improper lists:
+Just as `car` and `cons` can be used to extract the two parts of a `cons` pair, they can also be used to extract the two halves from a `pair` pair.
 
-```
-> (car (cons 'a 'b))
-'a
-> (cdr (cons 'a 'b))
-'b
-```
+<pre class="scamper-transcript">
+<script type="text/scamper-preamble">
+</script>
+(car (pair "a" "b"))
+(cdr (pair "a" "b"))
+</pre>
 
 Note that the `cdr` of such a structure is not a list.
 
-When Scheme tries to print out a pair structure, it uses what we might
-call an optimistic assumption. If the next thing is null or a pair,
-it assumes that it's a list, and therefore uses a space before the next
-object. When it hits the end and finds no null, it inserts the dot there,
-but not earlier.
-
 ## A pair predicate
 
-The `pair?` predicate returns `#t` when it is given any structure that is printed as a dotted pair, or indeed any structure that `cons` can return as its value. (Basically, `pair?` determines whether the object it is given is one of those two-box rectangles.)
+The `pair?` predicate returns `#t` when it is given any structure that is created with `pair`. (In Scamper, it returns `#f` for structures created with `cons`. In other versions of Scheme, it returns `#t` for such structures.)
 
 ## Recursion with pairs
 
@@ -214,34 +156,19 @@ An arrow from the right box of the fourth rectangle in the third row leads to th
 To build this structure in Scheme, we can use repeated calls to `cons`, thus:
 
 ```
-(cons (cons (cons 0 1)
-            (cons 2 3))
-      (cons (cons 4 5)
-            (cons 6 7)))
+(pair (pair (pair 0 1)
+            (pair 2 3))
+      (pair (pair 4 5)
+            (pair 6 7)))
 ```
-
-or we can use the dotted-pair notation inside a literal constant beginning with a quote:
-
-```
-'(((0 . 1) . (2 . 3)) . ((4 . 5) . (6 . 7)))
-```
-
-or
-
-```
-'(((0 . 1) 2 . 3) (4 . 5) 6 . 7)
-```
-
-(As we've said previously, we'd prefer that you use `cons` rather than
-quote to build structures.)
 
 If we have a pair structure that is constructed by repeated invocations of
-`cons`, starting from constituents of some simple type such as numbers
+`pair`, starting from constituents of some simple type such as numbers
 or strings, we call such a structure a *tree*. (We often prefix the
-word tree with the type from which the tree is built, such as number
-tree; alternately we suffix the word tree with of and then the type,
-as in tree of numbers.) We will look at trees in some more depth in the
-reading on deep recursion. For now, let's consider a basic approach.
+word tree with the type from which the tree is built, such as "number
+tree"; alternately we suffix the word tree with of and then the type,
+as in "tree of numbers".) We will look at trees in some more depth in the
+reading on tree recursion. For now, let's consider a basic approach.
 
 In particular, when we are dealing with a tree, we can use *pair
 recursion*, which adapts the shape of the computation to the shape of
@@ -267,22 +194,30 @@ structure like the one diagrammed above.
         ntree)))
 ```
 
-```
-> (sum-of-number-tree (cons (cons (cons 0 1)
-                                  (cons 2 3))
-                            (cons (cons 4 5)
-                                  (cons 6 7))))
-28
-```
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+(define sum-of-number-tree
+  (lambda (ntree)
+    (if (pair? ntree)
+        (+ (sum-of-number-tree (car ntree))
+           (sum-of-number-tree (cdr ntree)))
+        ntree)))
+</script>
+(sum-of-number-tree (pair (pair (pair 0 1)
+                                (pair 2 3))
+                          (pair (pair 4 5)
+                                (pair 6 7))))
+</pre>
 
 When this procedure is applied to a base case -- that is, just a number
 rather than a collection of numbers fitted into a pair structure --
 it returns the number unchanged:
 
-```
-> (sum-of-number-tree 19)
-19
-```
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+</script>
+(sum-of-number-tree 19)
+</pre>
 
 There is no such thing as an empty pair analogous to an empty list. Every
 pair has exactly two components, and it is always valid to take the `car`
@@ -358,18 +293,18 @@ have arrows to the subsequent rectangle.  The right box in the last rectangle
 on the first row has  a slash through it.  The left box of the first
 rectangle in the first row has an arrow downward to the first rectangle
 in the second row.  The left box of the second rectangle in the first row
-has an arrow pointing downward to the symbol `'b`.  The left box of the
+has an arrow pointing downward to `b`.  The left box of the
 third rectangle in the first row has an arrow pointing to the second rectangle
 in the second row.  The left box of the fourth rectangle in the first
-row has an arrow pointing downward to the symbol `'e`.  The first rectangle
-in the second row i a rectangle that represents the list `'(a)`.  The left
-box of that rectangle has an arrow pointing downward to the symbol `'a`.
+row has an arrow pointing downward to `e`.  The first rectangle
+in the second row i a rectangle that represents the list `(list "a")`.  The left
+box of that rectangle has an arrow pointing downward to `a`.
 The right box of that rectangle has a slash through it.  The left box
 of the second rectangle in the second row has an arrow pointing downward
-to the symbol `'c`.  The right box of the second rectangle in the second
+to `c`.  The right box of the second rectangle in the second
 row has an arrow pointing to the right to the third rectangle in the
 second row.  The left box of the third rectangle in the second row has
-an arrow pointing downward to the symbol`'d`.  The right box of the third
+an arrow pointing downward to `d`.  The right box of the third
 rectangle on the second row has a slash through it.](../images/pairs-4.png)
 
 - `caar`
@@ -377,7 +312,7 @@ rectangle on the second row has a slash through it.](../images/pairs-4.png)
 - `caaddr`
 
 b. Using an analog of the visual strategy, what sequence of commands
-would you need to extract the `'e` and `'d`, respectively?
+would you need to extract the `"e"` and `"d"`, respectively?
 
 ### Check 2: Pair recursion
 
@@ -402,112 +337,112 @@ Here's the procedure again.
         ntree)))
 ```
 
-And here's the exprssion we promised to trace.
+And here's the expression we promised to trace.
 
 ```
-    (sum-of-number-tree (cons (cons (cons 0 1)
-                                    (cons 2 3))
-                              (cons (cons 4 5)
-                                    (cons 6 7))))
+    (sum-of-number-tree (pair (pair (pair 0 1)
+                                    (pair 2 3))
+                              (pair (pair 4 5)
+                                    (pair 6 7))))
 
     ; We have a pair, so we use the consequent
---> (+ (sum-of-number-tree (cons (cons 0 1)
-                                 (cons 2 3)))
-       (sum-of-number-tree (cons (cons 4 5)
-                                 (cons 6 7))))
+--> (+ (sum-of-number-tree (pair (pair 0 1)
+                                 (pair 2 3)))
+       (sum-of-number-tree (pair (pair 4 5)
+                                 (pair 6 7))))
 
     ; Evaluating the first recursive call.  Once again, we have a pair
---> (+ (+ (sum-of-number-tree (cons 0 1))
-          (sum-of-number-tree (cons 2 3)))
-       (sum-of-number-tree (cons (cons 4 5)
-                                 (cons 6 7))))
+--> (+ (+ (sum-of-number-tree (pair 0 1))
+          (sum-of-number-tree (pair 2 3)))
+       (sum-of-number-tree (pair (pair 4 5)
+                                 (pair 6 7))))
 
     ; Evaluating the innermost recursive call.  Still using the pair case.
 --> (+ (+ (+ (sum-of-number-tree 0)
              (sum-of-number-tree 1))
-          (sum-of-number-tree (cons 2 3)))
-       (sum-of-number-tree (cons (cons 4 5)
-                                 (cons 6 7))))
+          (sum-of-number-tree (pair 2 3)))
+       (sum-of-number-tree (pair (pair 4 5)
+                                 (pair 6 7))))
 
     ; Evaluating the innermost recursive call.  Finally, a base case!
 --> (+ (+ (+ 0
              (sum-of-number-tree 1))
-          (sum-of-number-tree (cons 2 3)))
-       (sum-of-number-tree (cons (cons 4 5)
-                                 (cons 6 7))))
+          (sum-of-number-tree (pair 2 3)))
+       (sum-of-number-tree (pair (pair 4 5)
+                                 (pair 6 7))))
 
     ; Evaluating the innermost recursive call.  Another a base case.
 --> (+ (+ (+ 0
              1)
-          (sum-of-number-tree (cons 2 3)))
-       (sum-of-number-tree (cons (cons 4 5)
-                                 (cons 6 7))))
+          (sum-of-number-tree (pair 2 3)))
+       (sum-of-number-tree (pair (pair 4 5)
+                                 (pair 6 7))))
 
     ; Something easy: Add two numbers
 --> (+ (+ 1
-          (sum-of-number-tree (cons 2 3)))
-       (sum-of-number-tree (cons (cons 4 5)
-                                 (cons 6 7))))
+          (sum-of-number-tree (pair 2 3)))
+       (sum-of-number-tree (pair (pair 4 5)
+                                 (pair 6 7))))
 
     ; Back to a recursive call.  Pair case.
 --> (+ (+ 1
           (+ (sum-of-number-tree 2)
              (sum-of-number-tree 3)))
-       (sum-of-number-tree (cons (cons 4 5)
-                                 (cons 6 7))))
+       (sum-of-number-tree (pair (pair 4 5)
+                                 (pair 6 7))))
 
     ; The innermost recursive call is the base case
 --> (+ (+ 1
           (+ 2
              (sum-of-number-tree 3)))
-       (sum-of-number-tree (cons (cons 4 5)
-                                 (cons 6 7))))
+       (sum-of-number-tree (pair (pair 4 5)
+                                 (pair 6 7))))
     ; The innermost recursive call is the base case
 --> (+ (+ 1
           (+ 2
              3))
-       (sum-of-number-tree (cons (cons 4 5)
-                                 (cons 6 7))))
+       (sum-of-number-tree (pair (pair 4 5)
+                                 (pair 6 7))))
 
     ; Addition!
 --> (+ (+ 1
           5)
-       (sum-of-number-tree (cons (cons 4 5)
-                                 (cons 6 7))))
+       (sum-of-number-tree (pair (pair 4 5)
+                                 (pair 6 7))))
 
     ; More addition!
 --> (+ 6
-       (sum-of-number-tree (cons (cons 4 5)
-                                 (cons 6 7))))
+       (sum-of-number-tree (pair (pair 4 5)
+                                 (pair 6 7))))
 
     ; We've completed the first subtree.  Now we need to handle the
     ; recursion on the second subtree.  Once again, we have the pair case.
 --> (+ 6
-       (+ (sum-of-number-tree (cons 4 5))
-          (sum-of-number-tree (cons 6 7))))
+       (+ (sum-of-number-tree (pair 4 5))
+          (sum-of-number-tree (pair 6 7))))
 
     ; Recurse on the innermost subtree.  Another pair case.
 --> (+ 6
        (+ (+ (sum-of-number-tree 4)
              (sum-of-number-tree 5))
-          (sum-of-number-tree (cons 6 7))))
+          (sum-of-number-tree (pair 6 7))))
 
     ; A base case.
 --> (+ 6
        (+ (+ 4
              (sum-of-number-tree 5))
-          (sum-of-number-tree (cons 6 7))))
+          (sum-of-number-tree (pair 6 7))))
 
     ; Another base case.
 --> (+ 6
        (+ (+ 4
              5)
-          (sum-of-number-tree (cons 6 7))))
+          (sum-of-number-tree (pair 6 7))))
 
     ; Addition
 --> (+ 6
        (+ 9
-          (sum-of-number-tree (cons 6 7))))
+          (sum-of-number-tree (pair 6 7))))
 
     ; We're getting close.  But we still have another pair case.
 --> (+ 6
@@ -545,20 +480,20 @@ Wasn't that fun?
 If we're willing to do operations in parallel, it's a bit simpler.
 
 ```
-    (sum-of-number-tree (cons (cons (cons 0 1)
-                                    (cons 2 3))
-                              (cons (cons 4 5)
-                                    (cons 6 7))))
+    (sum-of-number-tree (pair (pair (pair 0 1)
+                                    (pair 2 3))
+                              (pair (pair 4 5)
+                                    (pair 6 7))))
 
---> (+ (sum-of-number-tree (cons (cons 0 1))
-                                 (cons 2 3))
-       (sum-of-number-tree (cons (cons 4 5)
-                                 (cons 6 7))))
+--> (+ (sum-of-number-tree (pair (pair 0 1))
+                                 (pair 2 3))
+       (sum-of-number-tree (pair (pair 4 5)
+                                 (pair 6 7))))
 
---> (+ (+ (sum-of-number-tree (cons 0 1))
-          (sum-of-number-tree (cons 2 3)))
-       (+ (sum-of-number-tree (cons 4 5)
-          (sum-of-number-tree (cons 6 7))))
+--> (+ (+ (sum-of-number-tree (pair 0 1))
+          (sum-of-number-tree (pair 2 3)))
+       (+ (sum-of-number-tree (pair 4 5)
+          (sum-of-number-tree (pair 6 7))))
 
 --> (+ (+ (+ (sum-of-number-tree 0)
              (sum-of-number-tree 1))

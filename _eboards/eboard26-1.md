@@ -7,7 +7,7 @@ link: false
 ---
 # {{ page.title }}
 
-_Please follow the standard start-of-class routine._
+_Please keep your partners from Monday._
 
 **Warning! You are being recorded** (and transcribed) (provided the technology
 is working correctly).
@@ -30,6 +30,14 @@ Administrative stuff
 * Don't forget to consider CSC-161 next semester.
 * If you want to subject yourself to more Sam teaching, I'm also running
   a guided reading on board game design Tuesday/Thursday 8:00--10:00 a.m.
+  Contact me with questions.
+* I have dropped the tail recursion LA. Only one new LA this Friday!
+* MP3 did not work well, so I am cancelling it and giving those who got an
+  S on it some tokens / other rewards. (Precise details to be determined.)
+* The consensus seems to be "Sam should talk a bit more." So I'll try
+  to talk more, but not too much.
+* For the first time, the next MP is ready with lots of lead time! 
+  However, I have not yet tried redoing it in Scamper.
 
 ### Upcoming work
 
@@ -38,15 +46,9 @@ Administrative stuff
         * Starts today! (Perhaps)
         * [Submit numeric recursion lab on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8983167)
     * Reading: [Pairs and pair structures](../readings/pairs)
-        * _This reading is not yet updated for Scamper._
         * [Submit reading on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8983358)
-    * [Mini-project 1](../mps/mp01) second redo
-        * [Submit redo on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8882970/)
-        * When submitting a mini-project redo, please include a file
-         called `CHANGES.txt` that describes what you've changed.
 * On Friday, 2026-11-06
     * NEW Quiz/LA on numeric recursion (today and Wednesday)
-    * NEW Quiz/LA on tail recursion 
     * Makeup Quiz/LA on list recursion 
     * Makeup Quiz/LA on testing
     * Makeup Quiz/LA on local bindings
@@ -57,19 +59,49 @@ Administrative stuff
     * Makeup Quiz/LA on tracing
     * Makeup Quiz/LA on decomposition
     * Makeup Quiz/LA on procedures
+* Due Sunday, 2026-11-08
+    * Reading: [Vectors](../readings/vectors)
+        * This reading needs to be updated for Scamper.
+* Due Monday, 2026-11-09
+    * Friday's lab. (This lab is on paper.)
+* Due Tuesday, 2026-11-10
+    * [Mini-project 1](../mps/mp01) second redo
+        * [Submit redo on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8882970/)
+        * When submitting a mini-project redo, please include a file
+         called `CHANGES.txt` that describes what you've changed.
+* Due Tuesday, 2026-11-17
+    * [Mini-project 5](../mps/mp05)
+        * Not yet tested in Scamper!
+        * Not yet posted to Gradescope
 
 ### Upcoming activities
 
 Scholarly
 
-* Tuesday, 3 October 2026, Noon--1:00 p.m., CS Commons (I think).
-  _CS Table_
 * Thursday, 5 October 2026, 11:00 a.m.--Noon, JRC 101.
-  _Scholars’ Convocation: More Humanities_
+  _Scholars’ Convocation: Shuchi Kapila: Global Humanities: A Thought Experiment_
+* Thursday, 5 October 2026, 4:15--5:15 p.m., Noyce 3821
+  _Thursday Extras_
+* Tuesday, 10 October 2026, Noon--1:00 p.m., CS Commons (I think).
+  _CS Table_
 
 Artistic/Cultural
 
 * Any day. Visit the GCMOA for at least 30 minutes.
+* Wednesday, 4 November 2026, Herrick Chapel.
+  _Universal Life Energy An Evening of World Jazz with the Vincent Kelley Trio_
+* Thursday, 5 October 2026, 4:00--5:30 p.m., HSSC S1325.
+  _Writers@Grinnell: A Conversation with Award-Winning Author Shubha Sunder_
+* Thursday, 5 October 2026, 4:15--5:00 p.m., Burling 1st.
+  _Book Launch with Sofia Ramali '27_
+* Thursday, 5 October 2026, 8:00--9:30 p.m., JRC 101.
+  _Writers@Grinnell: Reading by Shubha Sunder_
+* Saturday, 7 November 2026, 7:00--10:00 p.m., Harris Gym.
+  _Free Sound presents: Battle of the Bands_
+* Saturday, 7 November 2026, 7:30--9:30 p.m., Roberts Theatre.
+  _Mainstage: Cassandra Listens_
+* Sunday, 8 November 2026, 2:00--4:00 p.m., Roberts Theatre.
+  _Mainstage: Cassandra Listens_
 
 Multicultural
 
@@ -83,14 +115,20 @@ section's students are welcome._
 
 Wellness
 
-* Monday, 2 November 2026, 8:00--9:00 p.m., Prayer Garage in the CRSSJ.
+* Wednesday, 3 November 2026, 11:00 a.m.--1:00 p.m. JRC 1st Floor Lobby.
+  _Free Mom Hugs_
+* Friday, 6 November 2026, 5:15--6:00 p.m., Main Hall Lounge.
+  _Yoga with Lisa_
+* Monday, 9 November 2026, 8:00--9:00 p.m., Prayer Garage in the CRSSJ.
   _Meditation Group_
-* Tuesday, 3 November 2026, 12:15--12:45 p.m., GCMoA.
+* Tuesday, 10 November 2026, 12:15--12:45 p.m., GCMoA.
   _Yoga in the Museum_
-* Tuesday, 3 November 2026, 4:30--6:00 p.m., Bear P103.
+* Tuesday, 10 November 2026, 4:30--6:00 p.m., Bear P103.
   _Wellness Yoga_
 * Tuesday, 10 November 2026, 5:00--8:00 p.m., HSSC North Auditorium.
   _Therapy Dogs_
+* Tuesday, 10 November 2026, 8:00--10:30 p.m., Harris Cinema.
+  _The Muppet Movie_
 
 Misc
 
@@ -98,119 +136,32 @@ Misc
   _Mentor Session_
 * Thursday, 5 November 2026, 8:00--9:00 p.m., Science 3820.
   _Mentor Session_
+* Tuesday, 10 November 2026, 7:00--9:00 p.m., Darby.
+  _Volleyball vs. Lake Forest, Revisited_ (Quarterfinals)
 
 ### Other good things
 
 _These do not earn tokens, but are worth your consideration._
 
-### Check in on the "Sam talks less" experiment
-
-* Do you want me to go over the upcoming work?
-    * Yes: 7
-    * No: 8
-    * Abstain: 1
-* Do you want me to go over the token events?
-    * Yes: 6
-    * No: 7
-    * Abstain: 5
-* Do you want Q&A time?
-    * Yes: 13
-    * No: 1
-    * Abstain: 5
-* Do you want me to go over problems from the previous lab that people 
-  struggled on?
-    * Yes: 16
-    * No: 1
-    * Abstain: 3
-* Would you prefer that I send out notes about problems from the previous
-  lab that people struggled on or talk about them in class or both?
-    * Email: 6
-    * In-class: 3
-    * Both: 8
-    * I don't care: 2
-* Do you want me to record class?
-    * Yes: 8
-    * No: 0
-    * Abstain: 12
-* Do you want to discuss any of the issues above?
+* Saturday, 7 November 2026, 1:00--4:00 p.m., Osgood Natatorium.
+  _Swimming and Diving vs. Luther College_
+* Wednesday, 11 November 2026, 6:00--8:00 p.m., Darby.
+  _Men's Basketball vs. Principia_
 
 Q&A
 ---
 
-### MP4
-
-Could you explain more about similar colors?
-
-> Bad decision on Sam's part?
-
-> Bad writing on Sam's part?
-
-> Go through the list. For each color, remove any remaining elements that
-  are similar to it.
-
 ### Administrative
+
+### Tail recursion
+
+### Numeric recursion
 
 Pop quiz
 --------
 
-* What is your favorite kind of (soda) pop?
-* Strings: What are the two forms of `substring` and what do they do?
-* Colors: How do you extract the blue component from an RGB color?
-* Anonymous functions: Rewrite `(l-s - 3)` with `lambda`.
-* Drawings: List three functions that make shapes.
+* What is an alternative term for "pop"?
 
 Lab
 ---
 
-* There are two labs today. You'll start the second one after you finish
-  the first (assuming you finish the first).
-* You will continue partners on Wednesday.
-* First lab: `tail-recursion.scm`.
-    * Exercise 1 on today's first lab should be "Tallying strings"
-    * Refresh if it's not
-    * Rename the previous `tail-recursion.scm` lab to `recursion-patterns.scm`
-
-### Exercise 1: Tallying strings
-
-;;         tally-so-far                    remaining
-;;         ------------                    ---------
-;;         0                               (list 5 "a" "b" 1 "c" 2 3 "b" 4)
-;;         0                               (list "a" "b" 1 "c" 2 3 "b" 4)
-;;         1                               (list "b" 1 "c" 2 3 "b" 4)
-;;         2                               (list 1 "c" 2 3 "b" 4)
-;;         2                               (list "c" 2 3 "b" 4)
-;;         3                               (list 2 3 "b" 4)
-;;         3                               (list 3 "b" 4)
-;;         3                               (list "b" 4)
-;;         4                               (list 4)
-;;         4                               null
-```
-
-* When should we stop? When we have a null list.
-* What should we return when we are done? `tally-so-far`
-* How do we "simplify" `remaining`? `(cdr remaining)`
-* What should the recursive call look like?
-    * What should we do to `tally-so-far`? If the car of remaining
-      is a string, add 1 to `tally-so-far`. If not, add 0.
-    * We already know that we take `(cdr remaining)`
-    * `(tally-strings/helper ??? (cdr remaining))`
-
-```
-(define tally-strings/helper
-  (lambda (tally-so-far remaining)
-    (if (null? remaining)
-        tally-so-far
-        (tally-strings/helper 
-          (+ (if (string? (car remaining)) 1 0) tally-so-far)
-          (cdr remaining)))))
-
-    0))
-
-(define tally-strings
-  (lambda (lst)
-    (tally-strings/helper 0 lst)))
-```
-
-* Second lab: `numeric-recursion.scm`
-
-### Notes during lab

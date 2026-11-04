@@ -7,7 +7,7 @@ summary: |
   are *mutable*.
 ---
 
-_Warning!  The code on this page is being updated for Fall 2020-02.
+_Warning!  The code on this page is being updated for Fall 2026
 It may not be perfectly clear or work perfectly._
 
 ## Introduction: Deficiencies of Lists

@@ -121,10 +121,10 @@ a. Document, write tests for, and implement a recursive function, `(insert-avera
 b. Document, write tests for, and implement a recursive function, `(split-colors colors)`, that takes a potentially empty list of RGB colors as input and returs a new list in which each color is "split" into three colors, one of the form `(rgb RED 128 128)`, one of the form `(rgb 128 GREEN 128)`, and one of the form `(RGB 128 128 BLUE)`, where `RED`, `GREEN`, and `BLUE` are the corresponding components of the original color.
 
 ```
-(test-case "(split-colors (rgb 128 192 64))"
+(test-case "(split-colors (list (rgb 128 192 64)))"
            rgb-lists-similar? 
            (list (rgb 128 128 128) (rgb 128 192 128) (rgb 128 128 64))
-           #(split-colors (rgb 128 192 64)))
+           #(split-colors (list (rgb 128 192 64))))
 ```
 
 <pre class="scamper-transcript" data-continues>
@@ -228,7 +228,7 @@ d. Document, write tests for, and implement a recursive function, `(double-brigh
         (if (rgb-brighter? (car lst) (cadr lst))
             (cons (car lst)
                   (cons (car lst)
-                        (double-bright (cdr lst))))
+                        (double-brighter (cdr lst))))
             (cons (car lst)
                   (double-brighter (cdr lst)))))))
 </script>
@@ -263,7 +263,7 @@ b. Document, write tests for, and implement a recursive function, `(remove-brigh
 
 c. Document, write tests for, and implement a recursive function, `(remove-similar-neighbors colors)`, that takes a potentially empty list of colors as an input and removes any color that is similar to the next color. You will use `rgb-similar?` to determine if two colors are similar.
 
-d. Document, write tests for, and implement a recursive function `(remove-similar color colors)`, that removes a colors similar to `color` from `colors`.
+d. Document, write tests for, and implement a recursive function `(remove-similar color colors)`, that removes all colors similar to `color` from `colors`.
 
 e. Document, write tests for, and implement a recursive function, `(remove-similar-colors colors)`, that removes all but the first copy of a collection of similar colors.
 
@@ -383,12 +383,26 @@ Are you likely to provide examples and tests for the functions that lack example
 
 > I hope so.
 
-Should we write test-cases for all questions in MP-4?
+Should we write test-cases for all questions in MP4?
 
 > Yes, you should write tests cases for all of the questions and
   you should leave them in the file.
 
+Can I use `map`, `filter`, `reduce`, or `apply`?
+
+> You may not use them on parts 1--4.
+
+> You should use them on part 5.
+
+Can I use `cons`, `car`, and `cdr`?
+
+> Certainly! You'll almost certainly need them.
+
 ### Part one
+
+Shouldn't the parameter in the `split-colors` test have been a list rather than a color?
+
+> Yes. Fixed.
 
 Were the test and examples under `double-brighter` supposed to read `double-brighter` rather than `double-bright`?
 
