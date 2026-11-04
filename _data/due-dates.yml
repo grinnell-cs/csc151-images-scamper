@@ -80,7 +80,7 @@
 
 - date: 2026-11-04
   assigned: 
-    - MP5
+    - page: /mps/mp05.html
 
 - date: 2026-11-06
   due:
@@ -93,7 +93,8 @@
     - LA 17 (Dictionaries)
 
 - date: 2026-11-17
-  due: MP5
+  due: 
+    - page: /mps/mp05.html
 
 - date: 2026-11-18
   assigned: 
