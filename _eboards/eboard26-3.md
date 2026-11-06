@@ -3,7 +3,7 @@ title: "EBoard 26: Numeric recursion, continued (Section 3)"
 number: 26
 section: eboards
 held: 2026-11-04
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -87,7 +87,7 @@ Scholarly
 
 * Thursday, 5 October 2026, 11:00 a.m.--Noon, JRC 101.
   _Scholars’ Convocation: Shuchi Kapila: Global Humanities: A Thought Experiment_
-* Thursday, 5 October 2026, 4:15--5:15 p.m., Noyce 3821
+* Thursday, 5 October 2026, 4:15--5:15 p.m., Noyce 2210 (?).
   _Thursday Extras_
 * Monday, 9 October 2026, Noon--1:00 p.m., JRC 209.
   _Hana Hashimoto '27 leads a discussion of constitutions._
@@ -117,8 +117,8 @@ Artistic/Cultural
 
 Multicultural
 
-* Friday, 6 November 2026, 4:10--5:00 p.m., HSSC N1170.
-  _Middle of Everywhere ()_
+* Friday, 13 November 2026, 4:10--5:00 p.m., HSSC N1170.
+  _Middle of Everywhere (???)_
 
 Peer
 
@@ -127,8 +127,6 @@ section's students are welcome._
 
 Wellness
 
-* Wednesday, 3 November 2026, 11:00 a.m.--1:00 p.m. JRC 1st Floor Lobby.
-  _Free Mom Hugs_
 * Friday, 6 November 2026, 5:15--6:00 p.m., Main Hall Lounge.
   _Yoga with Lisa_
 * Monday, 9 November 2026, 8:00--9:00 p.m., Prayer Garage in the CRSSJ.
@@ -165,6 +163,10 @@ Q&A
 
 ### Administrative
 
+My MP3 is "nearly correct", can I still earn the cool bonuses?
+
+> Email me.
+
 ### Tail recursion
 
 ### Numeric recursion
@@ -173,6 +175,10 @@ Pop quiz
 --------
 
 * What is an alternative term for "pop"?
+* Testing: What are the parameters to `test-case`? (You need not get them in the correct order.)
+* Numbers: What's the difference between `/` and `quotient`?
+* Drawings: List three functions to make shapes.
+* Anonymous functions: Write two versions of `add3`, one using `o` (and `add1`) and one using `l-s` or `r-s`.
 
 Lab
 ---
