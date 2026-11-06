@@ -16,7 +16,7 @@ strengths, and areas to improve.
 
 c. Grab the code for the lab.
 
-* [pairs.rkt](../code/labs/pairs.rkt)
+* [pairs.scm](../code/labs/pairs.scm)
 
 d. Review the documentation for the supplied procedures to
 ensure you understand what they are suposed to do.  If you're
@@ -26,8 +26,5 @@ not sure, feel free to experiment or to ask the staff.
 
 This lab has gone through many hands and any iterations.  It has
 been combined with other topics (vectors, hash tables, etc.) and
-then been separated out again.  In Fall 2021, Samuel A. Rebelsky
-moved the primary instructions to a separate code file, following 
-a pattern begun by Peter-Michael Osera in Fall 2020.  (Osera
-had combined pairs with another topic, so Rebelsky took a new
-stab at the lab.)
+then been separated out again.  In Fall 2026, Sam Rebelsky rewrote
+most of it from scratch.
