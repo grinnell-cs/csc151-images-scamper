@@ -102,7 +102,7 @@ box-and-pointer diagram.
 ![A rectangle split into two boxes.  The left box has an arrow downward
 to `a`.  The right box has an arrow downward to `b`.](../images/pairs-6.png)
 
-For a variety of reasons, Scamper does not permit the second argument of `cons` to be a non-list. For situations in which you want a pair of values where the second is not necessarily a list, you can use `pair` instead of `cons`. Here's what you'd get with `(pair "Sussman" "Steele")`.
+For a variety of reasons, Scamper does not permit the second argument of `cons` to be a non-list. For situations in which you want a pair of values where the second is not necessarily a list, you can use `pair` instead of `cons`. Here's what you'd get with `(pair "Steele" "Sussman")`.
 
 
 ![A rectangle split into two boxes.  The left box has an arrow downward
