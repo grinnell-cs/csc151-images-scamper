@@ -26,8 +26,8 @@
 
 ;; No driver!
 
-;; a. Draw box-and-pointer diagrams (on paper) for the following
-;; expressions.  Each student should draw their own diagrams.
+;; a. Draw box-and-pointer diagrams (on paper or whiteboard) for the 
+;; following expressions.  Each student should draw their own diagrams.
 
 ;; i. (list (list "x") "y" "z")
 ;; ii. (list "x" (list "y" "z"))
@@ -45,12 +45,18 @@
 
 ;; b. Compare your answers to reach consensus.
 
-;; c. Count the number of cons cells (pairs) in each.
+;; c. Make sure you match the following number of pairs in each.
+
+;; i: 4
+;; ii: 4
+;; iii: 6
+;; iv: 6
+;; iv: 6
+
+;; d. Please ask the lab staff to review your results.
 
 ;; There is nothing to submit for this problem, but make sure you 
 ;; understand the results.
-
-;; Please ask the lab staff to review your results.
 
 ;; +-----------------------------+------------------------------------
 ;; | Exercise 2: Pair structures |
