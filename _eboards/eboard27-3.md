@@ -1,9 +1,9 @@
 ---
-title: "EBoard 27: Pairs and pair structures (Section 2)"
+title: "EBoard 27: Pairs and pair structures (Section 3)"
 number: 27
 section: eboards
 held: 2026-11-06
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -14,11 +14,10 @@ is working correctly).
 
 _Approximate overview_
 
-* Quiz
 * Administrivia
 * Q&A
 * Lab
-* Quiz
+* Quizzes
 
 Administrative stuff
 --------------------
@@ -46,8 +45,8 @@ Administrative stuff
         * Not yet tested in Scamper!
         * Not yet posted to Gradescope
 * On Friday, 2026-11-13
-    * NEW Quiz/LA on Pairs (today)
-    * NEW Quiz/LA on Vectors (Monday)
+    * NEW Quiz/LA on pairs (today)
+    * NEW Quiz/LA on vectors (Monday)
     * Makeup Quiz/LA on numeric recursion 
     * Makeup Quiz/LA on list recursion 
     * Makeup Quiz/LA on testing
@@ -69,7 +68,7 @@ Scholarly
     * Sign up form in campus memo.
 * Tuesday, 10 October 2026, Noon--1:00 p.m., CS Commons (I think).
   _CS Table_
-* Thursday, 10 October 2026, 4:15--5:15 p.m., Noyce 2021 (?).
+* Tuesday, 10 October 2026, 4:15--5:15 p.m., Noyce 2021 (?).
   _Tuesday Extras_
 * Thursday, 12 October 2026, 11:00 a.m.--Noon, JRC 101.
   _Scholars’ Convocation_
@@ -92,7 +91,7 @@ Multicultural
 
 * _No middle of everywhere today )-:_
 * Friday, 13 2026, 4:10--5:00 p.m., HSSC N1170.
-  _Middle of Everywhere ()_
+  _Middle of Everywhere (Japan)_
 
 Peer
 
@@ -149,9 +148,37 @@ Q&A
 
 ### Tail recursion
 
+What's the diff between tail recursion and numeric recursion?
+
+> Tail recursion usually involves writing a helper procedure that includes
+  an extra "accumulator" (`so-far`) that builds up the solution as we go.
+
+> Numeric recursion involves a numeric parameter that we "simplify" at
+  every strep. For a numeric recursion, we often subtract 1 until we
+  get to 0, but we might also add 1 until we reach some upper bound,
+  or divide by some number or ...
+
+> You can use tail recursion to write numeric recursive procedures.
+
+Why do we separate the forms of recursion?
+
+> Mostly so that we can talk more specifically about the problems.
+
 ### Numeric recursion
 
 ### Pairs
+
+How do we pronounce the various cadr-like things.
+
+> "car" - like "automobile"
+
+> "cdr" - "could - er"
+
+> "cadr" - "cad - er"
+
+> "cddr" - "could did er"
+
+> "cadar" - "see eh dee eh are"
 
 Lab
 ---
@@ -161,3 +188,14 @@ Lab
 ### Notes
 
 * There are not yet test cases. Sorry.
+
+Quizzes
+-------
+
+* For the NUMERIC RECURSION quiz, you can assume there are MORE THAN
+  `n` elements in the list.
+* For the NUMERIC RECURSION quiz, there are two names for the procedure.
+  You may use either.
+* For the NUMERIC RECURSION quiz, I would recommend against tail recursion.
+  If you use tail recursion, you will probably need `reverse` somewhere,
+  which complicates things.

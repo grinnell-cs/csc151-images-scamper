@@ -3,7 +3,7 @@ title: "EBoard 27: Pairs and pair structures (Section 2)"
 number: 27
 section: eboards
 held: 2026-11-06
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -14,7 +14,6 @@ is working correctly).
 
 _Approximate overview_
 
-* Quiz
 * Administrivia
 * Q&A
 * Lab
@@ -41,10 +40,6 @@ Administrative stuff
         * [Submit redo on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8882970/)
         * When submitting a mini-project redo, please include a file
          called `CHANGES.txt` that describes what you've changed.
-* Due Tuesday, 2026-11-17
-    * [Mini-project 5](../mps/mp05)
-        * Not yet tested in Scamper!
-        * Not yet posted to Gradescope
 * On Friday, 2026-11-13
     * NEW Quiz/LA on Pairs (today)
     * NEW Quiz/LA on Vectors (Monday)
@@ -59,6 +54,10 @@ Administrative stuff
     * Makeup Quiz/LA on tracing
     * Makeup Quiz/LA on decomposition
     * Makeup Quiz/LA on procedures
+* Due Tuesday, 2026-11-17
+    * [Mini-project 5](../mps/mp05)
+        * Not yet tested in Scamper!
+        * Not yet posted to Gradescope
 
 ### Upcoming activities
 
@@ -91,7 +90,7 @@ Artistic/Cultural
 Multicultural
 
 * _No middle of everywhere today )-:_
-* Friday, 13 2026, 4:10--5:00 p.m., HSSC N1170.
+* Friday, 13 November 2026, 4:10--5:00 p.m., HSSC N1170.
   _Middle of Everywhere ()_
 
 Peer
@@ -99,6 +98,8 @@ Peer
 _Musical, theatric, sporting, academic, and similar events involving this 
 section's students are welcome._
 
+* Saturday, 7 November 2026, 1:00--4:00 p.m., Osgood Natatorium.
+  _Swimming and Diving vs. Luther College_
 * Football, 14 November 2026.
 
 Wellness
@@ -129,8 +130,6 @@ Misc
 
 _These do not earn tokens, but are worth your consideration._
 
-* Saturday, 7 November 2026, 1:00--4:00 p.m., Osgood Natatorium.
-  _Swimming and Diving vs. Luther College_
 * Wednesday, 11 November 2026, 6:00--8:00 p.m., Darby.
   _Men's Basketball vs. Principia_
 
@@ -156,8 +155,19 @@ Q&A
 Lab
 ---
 
-* Do the pairs lab.
+Do the pairs lab.
 
 ### Notes
 
-* There are not yet test cases. Sorry.
+There are not yet test cases. Sorry.
+
+We will go over the lab on Monday.
+
+Quizzes
+-------
+
+* For the NUMERIC RECURSION quiz, you can assume there are MORE THAN
+  `n` elements in the list.
+* For the NUMERIC RECURSION quiz, there are two names for the procedure.
+  You may use either.
+

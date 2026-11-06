@@ -161,3 +161,5 @@ Lab
 ### Notes
 
 * There are not yet test cases. Sorry.
+* I'll go over the lab on Monday.
+
