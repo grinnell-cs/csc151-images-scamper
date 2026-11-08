@@ -7,9 +7,6 @@ summary: |
   are *mutable*.
 ---
 
-_Warning!  The code on this page is being updated for Fall 2026
-It may not be perfectly clear or work perfectly._
-
 ## Introduction: Deficiencies of Lists
 
 As you've seen in many of the procedures and programs we've written so
@@ -83,30 +80,18 @@ not affect the underlying identity of the vector.
 
 ## A practical detail: How DrRacket displays vectors
 
-When showing a vector, DrRacket follows a format much like the list, but
-with a preceding pound sign, `#`.  That is, the elements of the vector
-are separated by spaces, enclosed in parentheses, and with an extra `#`
-in the front.  For instance, here's how Scheme shows a vector containing
-the strings `"alpha"`, `"beta"`, and `"gamma"`, in that order:
+When showing a vector, Scamper follows a format much like the list,
+using `vector` instead of `list`.  For instance, here's how Scamper
+shows a vector containing the strings `"alpha"`, `"beta"`, and
+`"gamma"`, in that order:
 
 ```
-'#("alpha" "beta" "gamma")
+(vector "alpha" "beta" "gamma")
 ```
 
-The mesh (also called pound, sharp, hash, or octothorp) character
-distinguishes the vector from the list containing the same elements.
-
-Some implementations of Scheme permit us to use *vector literals*, in
-which a programmer can use a similar syntax to specify a vector when
-writing a Scheme program or typing commands and definitions into the
-Scheme interactive interface. In some such implementations, the literal
-begins with the hash mark. In others, the programmer must place a single
-quotation mark before the mesh so that Scheme will not try to evaluate
-the vector as if it were some exotic kind of procedure call.
-
-We traditionally recommend that you avoid using this notation just as
-we recommend that you avoid the corresponding list literal notation
-for lists.
+Note that this is not the same approach that other Scheme variants
+use. The Scamper designers felt that this model was easier for students to
+read and understand.
 
 ## Vector procedures
 
@@ -119,15 +104,14 @@ of them correspond to similar list procedures.
 The constructor `vector` takes any number of arguments and assembles
 them into a vector, which it returns.
 
-```
-> (vector "alpha" "beta" "gamma")
-'#("alpha" "beta" "gamma")
-> (vector)  ; the empty vector -- no elements!
-#()
-> (define beta 2)
-> (vector "alpha" beta (list "gamma" 3) (vector "delta" 4) (vector "epsilon"))
-'#("alpha" 2 ("gamma" 3) #("delta" 4) #("epsilon"))
-```
+<pre class="scamper-transcript">
+<script type="text/scamper-preamble">
+</script>
+(vector "alpha" "beta" "gamma")
+(vector)  ; the empty vector -- no elements!
+(define beta 2)
+(vector "alpha" beta (list "gamma" 3) (vector "delta" 4) (vector "epsilon"))
+</pre>
 
 As the last example shows, Scheme vectors, like Scheme lists, can be
 *heterogeneous*, containing elements of various types.
@@ -138,34 +122,26 @@ The `make-vector` procedure takes two arguments, a natural number `k`
 and a Scheme value `obj`, and returns a `k`-element vector in which each
 position is occupied by `obj`.
 
-```
-> (make-vector 12 "foo")
-'#("foo" "foo" "foo" "foo" "foo" "foo" "foo" "foo" "foo" "foo" "foo" "foo")
-> (make-vector 4 0)
-'#(0 0 0 0)
-> (make-vector 0 4)  ; the empty vector, again
-'#()
-```
-
-The second argument is optional; if you omit it, the value that initially
-occupies each of the positions in the array is left unspecified. Various
-implementations of Scheme have different ways of filling them up, so you
-should omit the second argument of `make-vector` only when you intend
-to replace the contents of the vector right away.
+<pre class="scamper-transcript">
+<script type="text/scamper-preamble">
+</script>
+(make-vector 12 "foo")
+(make-vector 4 0)
+(make-vector 0 4)
+</pre>
 
 ### `vector?`
 
 The type predicate `vector?` takes any Scheme value as argument and
 determines whether it is a vector.
 
-```
-> (vector? (vector "alpha" "beta" "gamma"))
-#t
-> (vector? (list "alpha" "beta" "gamma"))  ; a list, not a vector
-#f
-> (vector? "alpha beta gamma")  ; a string, not a vector
-#f
-```
+<pre class="scamper-transcript">
+<script type="text/scamper-preamble">
+</script>
+(vector? (vector "alpha" "beta" "gamma"))
+(vector? (list "alpha" "beta" "gamma"))  ; a list, not a vector
+(vector? "alpha beta gamma")  ; a string, not a vector
+</pre>
 
 ### `vector-length`
 
@@ -174,31 +150,25 @@ and returns the number of elements in the vector.  Unlike the `length`
 procedure for lists, which must look through the whole list to find the
 length, `vector-length` can immediately determine the length of a vector.
 
-```
-> (vector-length (vector 3 1 4 1 5 9))
-6
-> (vector-length (vector "alpha" "beta" "gamma"))
-3
-> (vector-length (vector))
-0 
-```
+<pre class="scamper-transcript">
+<script type="text/scamper-preamble">
+</script>
+(vector-length (vector 3 1 4 1 5 9))
+(vector-length (vector "alpha" "beta" "gamma"))
+(vector-length (vector))
+</pre>
 
 ### `vector-ref`
 
-The selector `vector-ref` takes two arguments -- a vector `vec` and a
-natural number `k` (which must be less than the length of `vec`). It
-returns the element of `vec` that is preceded by exactly `k` other
-elements. In other words, if `k` is 0, you get the element that begins
-the vector; if `k` is 1, you get the element after that; and so on.
+The selector `vector-ref` is much like `list-ref` or `string-ref`. It takes two arguments -- a vector `vec` and a natural number `k` (which must be less than the length of `vec`). It returns the element of `vec` that is preceded by exactly `k` other elements. In other words, if `k` is 0, you get the element that begins the vector; if `k` is 1, you get the element after that; and so on.
 
-```
-> (vector-ref (vector 3 1 4 1 5 9) 4)
-5
-> (vector-ref (vector "alpha" "beta" "gamma") 0)
-alpha
-> (vector-ref (vector "alpha" "beta" "gamma") 3)
-vector-ref: out of bounds: 3
-```
+<pre class="scamper-transcript">
+<script type="text/scamper-preamble">
+</script>
+(vector-ref (vector 3 1 4 1 5 9) 4)
+(vector-ref (vector "alpha" "beta" "gamma") 0)
+(vector-ref (vector "alpha" "beta" "gamma") 3)
+</pre>
 
 ### `vector-set!`
 
@@ -216,33 +186,25 @@ currently in the position indicated by `k` with `obj`. This changes the
 state of the vector irreversibly; there is no way to find out what used
 to be in that position after it has been replaced.
 
-It is a Scheme convention to place an exclamation point meaning "Proceed
-with caution!" at the end of the name of any procedure that makes such
-an irreversible change in the state of an object.
+It is a Scheme convention to place an exclamation mark at the end of the name of any procedure that makes such an irreversible change in the state of an object. One of our colleagues suggests that the exclamation mark signifies "proceed with caution".
 
 The value returned by `vector-set!` is unspecified; one calls
 `vector-set!` only for its side effect on the state of its first argument.
 
-```
-> (define sample-vector (vector "alpha" "beta" "gamma" "delta" "epsilon"))
-> sample-vector 
-'#("alpha" "beta" "gamma" "delta" "epsilon")
-> (vector-set! sample-vector 2 "zeta")
-> sample-vector  ; same vector, now with changed contents
-'#("alpha" "beta" "zeta" "delta" "epsilon")
-> (vector-set! sample-vector 0 "foo")
-> sample-vector  ; changed contents again
-'#("foo" "beta" zeta "delta" "epsilon")
-> (vector-set! sample-vector 2 -38.72)
-> sample-vector  ; and again
-'#("foo" "beta" -38.72 "delta" "epsilon")
-```
+<pre class="scamper-transcript">
+<script type="text/scamper-preamble">
+</script>
+(define sample-vector (vector "alpha" "beta" "gamma" "delta" "epsilon"))
+sample-vector 
+(vector-set! sample-vector 2 "zeta")
+sample-vector 
+(vector-set! sample-vector 0 "foo")
+sample-vector 
+(vector-set! sample-vector 2 -38.72)
+sample-vector 
+</pre>
 
-Vectors introduced into a Scheme program by means of the
-mesh-and-parentheses notation are supposed to be "immutable":
-applying `vector-set!` to such a vector is an error, and the contents
-of such vectors are therefore constant. (*Warning!* Some implementations
-of Scheme, including the ones we use in some semesters, don't enforce this rule.)
+Some versions of Scheme distinguish "mutable" vectors, which you can change with `vector-set!`, from "immutable" vectors, which cannot be changed. Scamper does not appear to include immutable vectors.
 
 ### `vector->list` and `list->vector`
 
@@ -250,16 +212,14 @@ The `vector->list` procedure takes any vector as argument and returns a
 list containing the same elements in the same order; the `list->vector`
 procedure performs the converse operation.
 
-```
-> (vector->list (vector 31 27 16))
-'(31 27 16)
-> (vector->list (vector))
-'()
-> (list->vector (list #\a #\b #\c))
-'#(#\a #\b #\c)
-> (list->vector (list 31 27 16))
-'#(31 27 16)
-```
+<pre class="scamper-transcript">
+<script type="text/scamper-preamble">
+</script>
+(vector->list (vector 31 27 16))
+(vector->list (vector))
+(list->vector (list #\a #\b #\c))
+(list->vector (list 31 27 16))
+</pre>
 
 ### `vector-fill!`
 
@@ -267,22 +227,64 @@ The `vector-fill!` procedure takes two arguments, the first of which
 must be a vector. It changes the state of that vector, replacing each
 of the elements it formerly contained with the second argument.
 
-```
-> (define sample-vector (vector "rho" "sigma" "tau" "upsilon"))
-> sample-vector  ; original vector
-'#("rho" "sigma" "tau" "upsilon")
-> (vector-fill! sample-vector "kappa")
-> sample-vector  ; same vector, now with changed contents
-'#("kappa" "kappa" "kappa" "kappa")
-```
+<pre class="scamper-transcript">
+<script type="text/scamper-preamble">
+</script>
+(define sample-vector (vector "rho" "sigma" "tau" "upsilon"))
+sample-vector 
+(vector-fill! sample-vector "kappa")
+sample-vector
+</pre>
 
 The `vector-fill!` procedure is invoked only for its side effect and
 returns an unspecified value.
 
 While some older implementations of Scheme may lack the `list->vector`,
 `vector->list`, and `vector-fill!` procedures, it is straightforward to
-define them in terms of the others.
+define them in terms of the others. We may challenge you to do so at
+some point.
 
+## Detour: Sequencing operations
+
+You should have noted that procedures like `vector-set!` and `vector-fill!` create a potential problem: Since they don't return any value, if we're writing a procedure that needs to continue using the vector, we need to put more than one expression in the place we normally put the expression. Let's see what happens if we try to write a procedure that takes a vector as input, sets the first value to null, and returns the modified vector.
+
+```
+(define nullify-first!
+  (lambda (vec)
+    (vector-set! vec 0 null)
+    vec))
+Parser error [2:3-4:8]: Malformed lambda expression (a list of parameters and a body).
+```
+
+Whoops! In Scamper, a lambda expression can only have _one_ expression in its body. We've given it two. What should we do?
+
+Fortunately, Scamper provides an extra control structure for times in which we want to execute multiple expressions in sequence. `(begin exp1 exp2 ...)` evaluates each expression in turn and returns the value of the last expression.
+
+
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+</script>
+(begin 3 4 5)
+(define vec (vector 1 2 3))
+(begin (vector-set! vec 0 null) vec)
+</pre>
+
+We can take advantage of this in writing our strange `nullify-first!` procedure.
+
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+</script>
+(define nullify-first!
+  (lambda (vec)
+    (begin
+      (vector-set! vec 0 null)
+      vec)))
+(nullify-first! (vector 1 2 3 4 5))
+</pre>
+
+We will need the `begin` syntax in many of the procedures we write that process vectors.
+
+<!--
 ## Selecting random elements from vectors
 
 You may recall that we recently defined a procedure, `random-elt`,
@@ -354,6 +356,7 @@ Let's check it.
 ```
 
 We'll see in the lab just how much difference this makes.
+-->
 
 ## Implementing number vectors
 
@@ -392,40 +395,64 @@ Fortunately, indexing is fast in vectors, so we can use numeric recursion
 to iterate over all the positions in a vector, applying our increment
 function along the way. Thus, we might track *`pos`*, the current position
 to modify in the vector, starting at zero and ending when we reach the
-length of the vector. We can encapsulate this repeated mutation with a
-named `let`.
+length of the vector. We can encapsulate this repeated mutation with
+tail recursion. (We're writing a separate kernel here, rather than defining
+it with a `let` expression, to clarify how the procedure works.)
 
 ```
-;;; (number-vector-inrement-all! vec) -> void?
+;;; (number-vector-increment-all! vec) -> void?
 ;;;   vec : vectorof number?
 ;;; Increment the value at all vector positions
 (define number-vector-increment-all!
   (lambda (vec)
-    (let ([len (vector-length vec)]) ; unchanging value, tells recursion to stop
-      (number-vector-increment-all!/helper vec 0 len))))
+    (number-vector-increment-all!/kernel vec 0 (vector-length vec))))
 
-;;; (number-vector-increment-all!/helper vec pos len) -> void?
+;;; (number-vector-increment-all!/kernel vec pos len) -> void?
 ;;;   vec : vectorof? number
 ;;;   pos : integer? (index)
 ;;;   len : integer
 ;;; Increment all the elements at positions `pos` (inclusive)
 ;;; through `len` (exclusive)
-(define number-vector-increment-all!/helper
+(define number-vector-increment-all!/kernel
   (lambda (vec pos len)
-    (when (< pos len)   ; When the position is valid
-      (number-vector-increment-at! vec pos)
-      (number-vector-increment-all!/helper vec (+ pos 1) len))))
+    (if (< pos len)   ; When the position is valid
+        (begin
+          ; Increment at the current position
+          (number-vector-increment-at! vec pos)
+          ; Continue from the next position
+          (number-vector-increment-all!/kernel vec (+ pos 1) len))
+        void)))
 ```
 
-You'll note that we've used `when`.  `when` is another conditional
-structure, like `if` and `cond`.  `(when TEST EXP1 EXP2 ...)` evaluates
-the test.  If the test is truish, it then evaluates all of the expressions
-in turn, returning the value of the last one.    If the test is false,
-the `when` returns nothing.
+You'll note that we've used `void` in the consequent position of the `if`. `void` is the way we say "nothing" in Scamper. This `void` indicates that we're returning nothing.
 
-`(when TEST EXP1 EXP2 ....)` is effectively a shorthand for `(cond
-[TEST EXP1 EXP2 ...])`.  We prefer `when` because it's slightly
-easier to read and formats a bit more nicely.
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+(define number-vector-increment-at!
+  (lambda (vec index)
+    (vector-set! vec 
+                 index 
+                 (increment (vector-ref vec index)))))
+(define number-vector-increment-all!
+  (lambda (vec)
+    (number-vector-increment-all!/kernel vec 0 (vector-length vec))))
+(define number-vector-increment-all!/kernel
+  (lambda (vec pos len)
+    (if (< pos len)   ; When the position is valid
+        (begin
+          ; Increment at the current position
+          (number-vector-increment-at! vec pos)
+          ; Continue from the next position
+          (number-vector-increment-all!/kernel vec (+ pos 1) len))
+        void)))
+</script>
+(define wp (vector 6 3 4 5 7 8 9))
+wp
+(vector-increment-all! wp)
+wp
+(vector-increment-all! wp)
+wp
+</pre>
 
 There are various ways to mutate all vector elements; the lab will
 suggest some alternatives. Unfortunately, we do not always have a special
@@ -450,8 +477,7 @@ procedure.
 ;;; divisor.
 (define number-vector-scale!
   (lambda (vec divisor)
-    (let ([len (vector-length vec)]) 
-      (number-vector-scale!/helper vec divisor 0 len))))
+    (number-vector-scale!/helper vec divisor 0 (vector-length vec))))
 
 ;;; (number-vector-scale!/helper vec divisor pos len) -> void?
 ;;;   vec : vectorof number?
@@ -459,52 +485,101 @@ procedure.
 ;;;   pos : integer? (index)
 ;;;   len : integer? (length of vec)
 ;;; Scale all the elements in the vector from pos (inclusive) to
-;;; len (exclusive) by dividing by the given ;;; divisor.
+;;; len (exclusive) by dividing by the given divisor.
 (define number-vector-scale!/helper
   (lambda (vec divisor pos len)
-     (when (< pos len)       ; When the position is valid,
-       (vector-set! vec      ; Set the new value in the vector
-                    pos      ; at the current position
-                    (/ (vector-ref vec pos) divisor)) ; to the quotient
-       (number-vector-scale!/helper vec ; And process the rest
-                                    divisor
-                                    (+ pos 1)
-                                    len))))
+     (if (< pos len)         ; If the position is valid,
+       (begin
+         (vector-set! vec      ; Set the new value in the vector
+                      pos      ; at the current position
+                      (/ (vector-ref vec pos) divisor)) ; to the quotient
+           (number-vector-scale!/helper vec ; And process the rest
+                                        divisor
+                                        (+ pos 1)
+                                        len))
+       void)))
 ```
 
-Of course, we need not change the vector as we iterate over it. Perhaps
-we just want to find the largest value in a vector. We still need to
-iterate over all the positions, except we might now use the standard
-recursive pattern that requires us to use a combination step to get a
-complete answer from the partial (recursive) answer.
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+(define number-vector-scale!
+  (lambda (vec divisor)
+    (number-vector-scale!/helper vec divisor 0 (vector-length vec))))
+(define number-vector-scale!/helper
+  (lambda (vec divisor pos len)
+     (if (< pos len)
+       (begin
+         (vector-set! vec
+                      pos
+                      (/ (vector-ref vec pos) divisor))
+           (number-vector-scale!/helper vec
+                                        divisor
+                                        (+ pos 1)
+                                        len))
+       void)))
+</script>
+(define nums (vector 10 5 8 3))
+(number-vector-scale! nums 26)
+nums
+(number-vector-scale! nums (/ 1 26))
+nums
+</pre>
+
+You'll note that `number-vector-scale!`, like `number-vector-increment-all!` before it, returns nothing (void). Why return nothing, rather than the vector? Tradition. In most cases, operations that mutate their argument return nothing, rather than the mutated argument.
+
+All of these examples change the vector.  Of course, we need not change the vector as we iterate over it. Perhaps we just want to find the largest value in a vector. We still need to iterate over all the positions, except we might now use the standard recursive pattern that requires us to use a combination step to get a complete answer from the partial (recursive) answer.
 
 ```
 ;;; (number-vector-largest vec) -> real?
-;;;   vec : vectorof real?
+;;;   vec : (vector-of real?)
 ;;; Find the largest number in a vector
 (define number-vector-largest
   (lambda (vec)
-    (let ([last (- (vector-length vec) 1)]) ; last position to test
-      (number-vector-largest/helper vec 0 last))))
+    (number-vector-largest/helper vec 0 (- (vector-length vec) 1))))
 
 ;;; (number-vector-largest vec pos last) -> real?
 ;;;   vec : vectorof? real
 ;;;   pos : integer? (index)
 ;;;   last : integer? (index)
-;;; Finds the largest value in the subvector from pos to last
+;;; Finds the largest value in the subvector from pos (inclusive) to last
 ;;; (inclusive).
 (define number-vector-largest/helper
   (lambda (vec pos last)
     ; Grab the current element from the vector
     (let ([current (vector-ref vec pos)])
-      (if (= pos last)
-          ; We are at the last position, return the value at that position
+      (if (> pos last)
+          ; We have finished the vector. Return nothing.
           current
           ; Otherwise, find the largest in the remainder, and then
           ; take the largest of the current element and that element.
           (max current
                (number-vector-largest/helper vec (+ pos 1) last))))))
 ```
+
+You'll note that in this case, we stop when we hit the last index, rather than when we exceed it. Why? Because there's not a sensible base case for "largest thing in an empty subvector".
+
+Let's see how it works.
+
+
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+(define number-vector-largest
+  (lambda (vec)
+    (number-vector-largest/helper vec 0 (- (vector-length vec) 1))))
+(define number-vector-largest/helper
+  (lambda (vec pos last)
+    (let ([current (vector-ref vec pos)])
+      (if (= pos last)
+          current
+          (max current
+               (number-vector-largest/helper vec (+ pos 1) last))))))
+</script>
+(number-vector-largest (vector 10 1 2 3))
+(number-vector-largest (vector -5 -3 -1))
+(number-vector-largest (vector 82))
+(number-vector-largest (vector 10 -5 18 23 2))
+(number-vector-largest (vector))
+</pre>
 
 Some folks find it easiest to work from back to front, rather than
 front to back.  That also lets us stop when we reach (or pass) zero.
@@ -515,8 +590,7 @@ front to back.  That also lets us stop when we reach (or pass) zero.
 ;;; Find the largest number in a vector
 (define number-vector-largest
   (lambda (vec)
-    (let ([last (- (vector-length vec) 1)]) ; last position to test
-      (number-vector-largest/helper vec last))))
+    (number-vector-largest/helper vec (- (vector-length vec) 1))))
 
 ;;; (number-vector-largest vec pos) -> real?
 ;;;   vec : vectorof? real
@@ -534,6 +608,31 @@ front to back.  That also lets us stop when we reach (or pass) zero.
                (number-vector-largest/helper vec (- pos 1)))))))
 ```
 
+We get the same results.
+
+<pre class="scamper-transcript">
+<script type="text/scamper-preamble">
+(define number-vector-largest
+  (lambda (vec)
+    (number-vector-largest/helper vec (- (vector-length vec) 1))))
+(define number-vector-largest/helper
+  (lambda (vec pos)
+    ; Grab the current element from the vector
+    (let ([current (vector-ref vec pos)])
+      (if (zero? pos)
+          current
+          (max current
+               (number-vector-largest/helper vec (- pos 1)))))))
+</script>
+(number-vector-largest (vector 10 1 2 3))
+(number-vector-largest (vector -5 -3 -1))
+(number-vector-largest (vector 82))
+(number-vector-largest (vector 10 -5 18 23 2))
+(number-vector-largest (vector))
+</pre>
+
+In most cases, it doesn't matter whether we process the indices left to right or right to left.
+
 ## Patterns of recursion over vectors
 
 Each time we learn a new structure, we learn techniques for recursion
@@ -550,8 +649,7 @@ the position. As usual, the "combine" step is problem dependent.
 ```
 (define vector-proc
   (lambda (vec other)
-    (let ([len (vector-length vec)])
-      (vector-proc/helper vec other 0 len))))
+    (vector-proc/helper vec other 0 (vector-length vec))))
 
 (define vector-proc/helper 
   (lambda (vec other pos len)
@@ -590,28 +688,12 @@ Because vectors are mutable, we often use an imperative pattern with
 (define vector-proc!/helper 
   (lambda (pos)
     (cond
-      [(= pos len)
-       (base-case! vec other)
-       ...]
-      [else
-       (operation! vec pos)
-       ...
-       (vector-proc!/helper vec other (+ pos 1) len)])))
-```
-
-Note that we have to use a `cond`, rather than an `if`, because we 
-are doing multiple steps in the `else` case.  
-
-If there's nothing to do in the base case (e.g., it's just a note
-that we're done), we can use a `when`.
-
-```
-(define vector-proc!/helper 
-  (lambda (vec other pos len)
-      (when (< pos len)
-        (operation! vec pos)
-        ...
-        (vector-proc!/helper vec other (+ pos 1) len)))))
+      (if (< pos len)
+          (begin
+            (operation! vec pos)
+            ...
+            (vector-proc!/helper vec other (+ pos 1) len))
+          (base-case! vec other)))))
 ```
 
 And, as before, we can count down, rather than up.
@@ -623,10 +705,12 @@ And, as before, we can count down, rather than up.
 
 (define vector-proc!/helper 
   (lambda (vec other pos)
-      (when (>= pos 0)
-        (operation! vec pos)
-        ...
-        (vector-proc!/helper vec other (- pos 1)))))
+      (if (>= pos 0)
+          (begin
+            (operation! vec pos)
+             ...
+             (vector-proc!/helper vec other (- pos 1)))
+          void)))
 ```
 
 ## Summary of important vector procedures
@@ -654,26 +738,7 @@ And, as before, we can count down, rather than up.
 
 ## Self checks
 
-### Check 1: Creating simple vectors (‡)
-
-a. Create and define a vector literal, `tn1`, that denotes a vector
-containing just the two elements `7` and `11`. How does
-DrRacket display the value of this vector?
-
-b. Create and define a vector, `tn2,` that contains the same two
-values (that is, `7` and `11`) by using the `vector` procedure.
-How does DrRacket display the value of this vector?
-
-c. Create and define a vector, `tn3`, that contains the same two
-values (that is, 7 and 11) by using the `make-vector` and
-`vector-set!` procedures.  How does DrRacket display the value of
-this vector?
-
-Note: You cannot use `(define tn3 (vector-set! (make-vector 2 11) 0 7))` to solve this problem. (We'll let you figure out why not.)
-
-d. Determine which of those vectors you can change with `vector-set!`.
-
-### Check 2: Processing numeric vectors
+### Check 1: Processing numeric vectors
 
 a. Make a copy of `number-vector-increment-at!` from above.
 
@@ -694,14 +759,20 @@ c. Use `number-vector-increment-all!` on the vector to verify it behaves as inte
 > v2
 ```
 
-d. Checks 2.b and 2.c relied on the vectors similar to those you
-created in 1.b and 1.c, respectively. What do you suppose would
-happen if we tried these operations on the vector you created in
-check 1.a?
+### Check 2: Design choices (‡)
 
-```
-> (number-vector-increment-at! '#(7 11) 1)
-```
+As you may have noted, we have multiple design choices in writing procedures that visit all (or many) elements of a vector. Here are a few.
 
-e. Verify your prediction. Why do you think this happens?
+* Are we changing the vector or extracting data from it?
+* Do we stop when we've run out of positions or when we're at the last position?
+* Do we step through the postions starting at 0 and working our way up to the length, or do we stop at the end and work our way down to zero?
+* If we're changing the vector, what should we return when we are done?
+
+a. Stopping at the last position, rather than when we exceed the last position, corresponds to stopping when we reach a singleton list, rather than stopping when we hit the empty list. Give three examples procedures in which we wanted to stop when we were at one element in a list.
+
+b. Do you think you'll prefer working upward from 0 to the length, or downward from the length to 0? Why?
+
+### Check 3: Local helpers (‡)
+
+Rewrite the second `number-vector-largest` using a local kernel that keeps track of the largest so far. Can you write the kernel so that it does not need the vector as a parameter?
 

@@ -137,7 +137,7 @@ This syllabus, like many modern syllabi, is _long_. _**Very** long_. Hence, we b
   * [_**Final deadline for all work**_](#final-deadline-for-all-work). The College does not permit me to accept work after {{ site.all_work_deadline }}.
   * [_**Academic alerts**_](#academic-alerts). The [Academic Success Center](https://www.grinnell.edu/about/leadership/offices-services/academic-success-center) asks us to keep them informed about students who are falling behind. I do so.
   * [_**Class software**_](#class-software). It's a CS class. We use software. I assume you're not surprised. The software includes Office 365, Teams, Gradescope, and Scamper.
-  * [_**Phones**_](#phones). This class has a "no cell phones" policy. Your phones should be silenced and put away.
+  * [_**Phones**_](#phones). This class has a "no cell phones" policy. Your phones should be silenced and put away, except for appropriate tasks.
 
 * [**Academic integrity**](#academic-integrity). Don't cheat. Cite work you build upon. Cite help you get. Talk to me if stress might lead you to cheat.
   * [_**Citing**_](#citing). "NAME helped me with TOPIC." "I used URL for ACTION."
@@ -569,6 +569,8 @@ Cell phones also present a risk of apparent or real violations of our academic i
 Hence, we have a modified *no phone policy* in this class. Please silence your phone at the start of class. I'll try to remember to do the same. I would prefer that you then put your phone away (e.g., in your bag). However, I realize that some of you like taking pictures of the screen. You may use your phone for that purpose, but only that purpose.
 
 Thanks for being understanding!
+
+**Update 1 November 2026**. If your phone is out during quiz time in class, I will immediately void all of your LA grades for the semester. (You may still make them up.) If it happens a second time, you will not be permitted to make the up.
 
 ## Academic integrity 
 
