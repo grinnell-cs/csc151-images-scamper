@@ -428,7 +428,6 @@ You'll note that we've used `void` in the consequent position of the `if`. `void
 
 <pre class="scamper-transcript" data-continues>
 <script type="text/scamper-preamble">
-</script>
 (define number-vector-increment-at!
   (lambda (vec index)
     (vector-set! vec 
@@ -446,6 +445,7 @@ You'll note that we've used `void` in the consequent position of the `if`. `void
           ; Continue from the next position
           (number-vector-increment-all!/kernel vec (+ pos 1) len))
         void)))
+</script>
 (define wp (vector 6 3 4 5 7 8 9))
 wp
 (number-vector-increment-all! wp)
