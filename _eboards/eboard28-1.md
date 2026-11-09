@@ -38,7 +38,7 @@ Administrative stuff
         * [Submit lab on Gradescope](https://www.gradescope.com/courses/1370413/assignments/9023854)
     * Reading for Wednesday: [Dictionaries and such](../readings/dictionaries)
         * [Submit reading on Gradescope](https://www.gradescope.com/courses/1370413/assignments/9025693)
-        * Read by noonish.
+        * Ready by noonish.
     * [Mini-project 1](../mps/mp01) second redo
         * [Submit redo on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8882970/)
         * When submitting a mini-project redo, please include a file
@@ -71,7 +71,7 @@ Scholarly
     * Sign up form in campus memo.
 * Tuesday, 10 October 2026, Noon--1:00 p.m., CS Commons (I think).
   _CS Table_
-* Thursday, 10 October 2026, 4:15--5:15 p.m., Noyce 2021 (?).
+* Tuesday, 10 October 2026, 4:15--5:15 p.m., Noyce 2021 (?).
   _Tuesday Extras_
 * Thursday, 12 October 2026, 11:00 a.m.--Noon, JRC 101.
   _Scholars’ Convocation: Caleb Elfenbein:
@@ -373,3 +373,4 @@ Do [the vectors lab](../labs/vectors).
 
 ### Notes
 
+* Scamper seems to lack `vector-copy`. Skip problem 1. Bleh.

@@ -3,7 +3,7 @@ title: "EBoard 28: Vectors (Section 2)"
 number: 28
 section: eboards
 held: 2026-11-09
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -38,14 +38,14 @@ Administrative stuff
         * [Submit lab on Gradescope](https://www.gradescope.com/courses/1370413/assignments/9023854)
     * Reading for Wednesday: [Dictionaries and such](../readings/dictionaries)
         * [Submit reading on Gradescope](https://www.gradescope.com/courses/1370413/assignments/9025693)
-        * Read by noonish.
+        * Ready by noonish.
     * [Mini-project 1](../mps/mp01) second redo
         * [Submit redo on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8882970/)
         * When submitting a mini-project redo, please include a file
          called `CHANGES.txt` that describes what you've changed.
 * On Friday, 2026-11-13
     * NEW Quiz/LA on Pairs (Friday and today)
-    * NEW Quiz/LA on Vectors (today)
+    * NEW Quiz/LA on Vectors (today and Wednesday)
     * Makeup Quiz/LA on numeric recursion 
     * Makeup Quiz/LA on list recursion 
     * Makeup Quiz/LA on testing
@@ -71,7 +71,7 @@ Scholarly
     * Sign up form in campus memo.
 * Tuesday, 10 October 2026, Noon--1:00 p.m., CS Commons (I think).
   _CS Table_
-* Thursday, 10 October 2026, 4:15--5:15 p.m., Noyce 2021 (?).
+* Tuesday, 10 October 2026, 4:15--5:15 p.m., Noyce 2021 (?).
   _Tuesday Extras_
 * Thursday, 12 October 2026, 11:00 a.m.--Noon, JRC 101.
   _Scholars’ Convocation: Caleb Elfenbein:
@@ -153,18 +153,18 @@ Commentary?
 Survey (Sam's eyes closed, students' eyes closed). Should I resume the pop 
 quizzes?
 
-* Yes: 13
-* No: 1
-* Abstain / no strong opinion: 3
+* Yes: 7
+* No: 3
+* Abstain / no strong opinion: 5
 
 ### Email greetings
 
 Should I continue with the special greetings in my class emails?
 
-* Yes: 14
+* Yes: 4
 * No: 0
-* You use special greetings?: 4
-* Abstain / no strong opinion: 1
+* You use special greetings?: 7
+* Abstain / no strong opinion: 3
 
 Q&A
 ---
@@ -200,12 +200,11 @@ determines whether `val` is a number tree.
 
 #### Notes
 
-* This sounds recursive. We should have one or more base cases.
-    * Is the value a number? If so, it's a number tree.
-    * If the value is neither a number nor a pair, it's NOT a number tree.
-* Recursive case
-    * Recurse on the car
-    * AND recurse on cdr
+* Base case
+   * Just a number, return true
+   * Neither a number nor a pair, return false
+* Recursive case(s)
+    * `(car val)`, `(cdr val)`
 
 #### A solution
 
@@ -217,7 +216,7 @@ determines whether `val` is a number tree.
        #t]
       [(pair? val)
        (and (number-tree? (car val))
-            (number-tree? (cdr val)))
+                (number-tree? (cdr val)))]
       [else
        #f])))
 ```
@@ -233,11 +232,14 @@ determines whether `val` is a number tree.
              (number-tree? (cdr val))))))
 ```
 
-Thinking about the solution.
+#### Thinking about the solution.
 
-* If it is a number ... it returns false
-* If it's neither a number or pair ... it returns false
-* If it is a pair ... it checks both the car and the cdr
+* What should this return if given a number?
+* What should this return if given neither a pair nor a number?
+* What should this return if given a pair in which both parts are
+  number trees?
+* What should this return if given a pair in which one part is not a
+  number tree?
 
 ### Exercise 3: Pair structures, continued
 
@@ -246,41 +248,32 @@ as an input and adds up all the values in that tree.
 
 #### Notes
 
-* This one was in the reading. Still, it's good to redo
-  it ourselves.
-* We might be able to use the pattern from the prior exercise to solve
-  this one.
+* This appears in the reading.
 
 #### A solution
 
 ```
-;;; (number-tree-sum nt) -> number?
-;;;   nt : number-tree?
-;;; Add up all the numbers in `nt`.
 (define number-tree-sum
-  (lambda (val)
+  (lambda (nt)
     (cond
-      [(number? val)
-       val]
-      [(pair? val)
-       (+ (number-tree-sum (car val))
-          (number-tree-sum (cdr val)))]
+      [(number? nt)
+       nt]
+      [(pair? nt)
+       (+ (number-tree-sum (car nt))
+          (number-tree-sum (cdr nt)))]
       [else
-       0]))) ; We will never hit this case.
+       0])))
 ```
 
 #### Another solution
 
 ```
-;;; (number-tree-sum nt) -> number?
-;;;   nt : number-tree?
-;;; Add up all the numbers in `nt`.
 (define number-tree-sum
-  (lambda (val)
-    (if (number? val)
-        val
-        (+ (number-tree-sum (car val))
-           (number-tree-sum (cdr val))))))
+  (lambda (nt)
+    (if (number? nt)
+        nt
+        (+ (number-tree-sum (car nt))
+           (number-tree-sum (cdr nt))))))
 ```
 
 ### Exercise 4: Nested lists 
@@ -308,39 +301,32 @@ value is a cons cell.
 
 #### Notes
 
-* Base case!
-   * If it's empty 
-* Recursive case!
-   * If it's a list
-       * And the car is either a number or an NNL
-       * And the cdr is an NNL
+* `null` is a nested number list
+* `(cons N L)` is a nested number list if N is a number or a
+  nested number list and L is a nested number list.
 
-* `(if`, `(cond`, `(or`, `(and`
+Thinknig through it
+
+* Base case
+    * null!
+* Recursive case(s)
+    * We need to check something about the car (`N`): Is it a number or a nnl?
+    * We need to check something about the cdr (`L`): Is it a nested number list?
+
+What approach do we take?
+
+* `if` / `cond`?
+* `and` / `or`?
 
 #### A solution
 
 ```
 (define nnl?
   (lambda (val)
-    (cond
-      [(null? val)
-       #t]
-      [(list? val)
-       (if (or (number? (car val)) (nnl? (car val)))
-           (nnl? (cdr val))
-           #f)]
-      [else
-       #f])))
-```
-
-#### Another solution (perhaps)
-
-```
-(define nnl?
-  (lambda (val)
     (or (null? val)
         (and (list? val)
-             (or (number? (car val)) (nnl? (car val)))
+             (or (number? (car val))
+                 (nnl? (car val)))
              (nnl? (cdr val))))))
 ```
 
@@ -351,7 +337,7 @@ the values in a nested number list.
 
 #### Notes
 
-* Probably two cases: It's null or it's a list. (We know the list is an NNL.)
+* Probably need an if
 
 #### A solution
 
@@ -371,5 +357,8 @@ Lab
 
 Do [the vectors lab](../labs/vectors).
 
+Make sure the lab has `vector-copy` at the top. (It should.)
+
 ### Notes
+
 
