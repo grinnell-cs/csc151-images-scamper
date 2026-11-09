@@ -8,6 +8,26 @@
 (import image)
 (import test)
 
+;; +---------------+--------------------------------------------------
+;; | Provided code |
+;; +---------------+
+
+;;; (vector-copy vec) -> vector?
+;;;   vec : vector?
+;;; Make a copy of `vec`.
+(define vector-copy
+  (lambda (vec)
+    (let ([len (vector-length vec)]
+          [result (make-vector len void)]
+          [kernel
+            (lambda (pos)
+              (if (< pos 0)
+                  result
+                  (begin
+                    (vector-set! result pos (vector-ref  vec pos))
+                    (kernel (- pos 1)))))])
+      (kernel (- len 1)))))
+
 ;; +-------------------------+----------------------------------------
 ;; | Exercise 0: Preparation |
 ;; +-------------------------+
