@@ -16,7 +16,7 @@ strengths, and areas to improve.
 
 b. Grab the code for the lab.
 
-* [vectors.rkt](../code/labs/vectors.rkt)
+* [vectors.scm](../code/labs/vectors.scm)
 
 c. Review the documentation for the supplied procedures to
 ensure you understand what they are suposed to do.  If you're
