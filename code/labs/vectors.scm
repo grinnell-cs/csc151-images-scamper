@@ -78,11 +78,12 @@
 
 ;; c. What do you expect the results of the following to be?
 
-;;    > (let* ([gibbon (vector "a" "b" "c" "d")]
-;;             [hippo gibbon]
-;;             [ibex (vector-copy gibbon)])
-;;        (vector-set! gibbon 0 "Z")
-;;        (list gibbon hippo ibex))
+;;    > (let ([gibbon (vector "a" "b" "c" "d")]
+;;            [hippo gibbon]
+;;            [ibex (vector-copy gibbon)])
+;;        (begin 
+;;          (vector-set! gibbon 0 "Z")
+;;          (list gibbon hippo ibex)))
 
 ;; Expected output: 
 
