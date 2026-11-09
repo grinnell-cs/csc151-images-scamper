@@ -3,7 +3,7 @@ title: "EBoard 28: Vectors (Section 1)"
 number: 28
 section: eboards
 held: 2026-11-09
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -23,13 +23,10 @@ _Approximate overview_
 Administrative stuff
 --------------------
 
-* Monday's lab
-* Don't forget reading for Wednesday!
-
 ### Introductory Notes
 
 * Be careful! Friday the 13th falls on a Friday this month!
-* Congratulations to Men's Soccer for their victory in the MWC Tournament!
+* Congratulations to Men's Soccer for becoming Midwest Conference Champions.
 * Reminder: You can use the evening tutors to help you go through any
   of the labs, LAs, or MPs you are having difficulty with.
 * Reminder: You might consider signing up for CPUs.
@@ -41,13 +38,14 @@ Administrative stuff
         * [Submit lab on Gradescope](https://www.gradescope.com/courses/1370413/assignments/9023854)
     * Reading for Wednesday: [Dictionaries and such](../readings/dictionaries)
         * [Submit reading on Gradescope](https://www.gradescope.com/courses/1370413/assignments/9025693)
+        * Read by noonish.
     * [Mini-project 1](../mps/mp01) second redo
         * [Submit redo on Gradescope](https://www.gradescope.com/courses/1370413/assignments/8882970/)
         * When submitting a mini-project redo, please include a file
          called `CHANGES.txt` that describes what you've changed.
 * On Friday, 2026-11-13
-    * NEW Quiz/LA on Pairs (today)
-    * NEW Quiz/LA on Vectors (Monday)
+    * NEW Quiz/LA on Pairs (Friday and today)
+    * NEW Quiz/LA on Vectors (today)
     * Makeup Quiz/LA on numeric recursion 
     * Makeup Quiz/LA on list recursion 
     * Makeup Quiz/LA on testing
@@ -110,8 +108,7 @@ section's students are welcome._
 
 Wellness
 
-* Friday, 6 November 2026, 5:15--6:00 p.m., Main Hall Lounge.
-  _Yoga with Lisa_
+* Fill out the wellness survey that you received last week.
 * Monday, 9 November 2026, 8:00--9:00 p.m., Prayer Garage in the CRSSJ.
   _Meditation Group_
 * Tuesday, 10 November 2026, 12:15--12:45 p.m., GCMoA.
@@ -136,8 +133,6 @@ Misc
 
 _These do not earn tokens, but are worth your consideration._
 
-* Saturday, 7 November 2026, 1:00--4:00 p.m., Osgood Natatorium.
-  _Swimming and Diving vs. Luther College_
 * Wednesday, 11 November 2026, 6:00--8:00 p.m., Darby.
   _Men's Basketball vs. Principia_
 
@@ -158,23 +153,29 @@ Commentary?
 Survey (Sam's eyes closed, students' eyes closed). Should I resume the pop 
 quizzes?
 
-* Yes:
-* No:
-* Abstain / no strong opinion: 
+* Yes: 13
+* No: 1
+* Abstain / no strong opinion: 3
 
 ### Email greetings
 
 Should I continue with the special greetings in my class emails?
 
-* Yes:
-* No:
-* You use special greetings?:
-* Abstain / no strong opinion: 
+* Yes: 14
+* No: 0
+* You use special greetings?: 4
+* Abstain / no strong opinion: 1
 
 Q&A
 ---
 
 ### Administrative
+
+Can I ask the mentors for help on MPs?
+
+> We'd prefer not. Their work is primarily on topical matters.
+
+> The evening tutors should be helpful.
 
 ### MP4
 
@@ -186,7 +187,7 @@ Friday's lab
 ### Exercise 2: Pair structures 
 
 As you saw in the reading, we can build nested structures using the
-pair operation. One such structure is a "number tree", which we 
+`pair` operation. One such structure is a "number tree", which we 
 defined self-referentially (perhaps recursively) as follows:
 
 * any number is a number tree
@@ -199,7 +200,44 @@ determines whether `val` is a number tree.
 
 #### Notes
 
+* This sounds recursive. We should have one or more base cases.
+    * Is the value a number? If so, it's a number tree.
+    * If the value is neither a number nor a pair, it's NOT a number tree.
+* Recursive case
+    * Recurse on the car
+    * AND recurse on cdr
+
 #### A solution
+
+```
+(define number-tree?
+  (lambda (val)
+    (cond
+      [(number? val)
+       #t]
+      [(pair? val)
+       (and (number-tree? (car val))
+            (number-tree? (cdr val)))
+      [else
+       #f])))
+```
+
+#### Another solution
+
+```
+(define number-tree?
+  (lambda (val)
+    (or (number? val)
+        (and (pair? val)
+             (number-tree? (car val))
+             (number-tree? (cdr val))))))
+```
+
+Thinking about the solution.
+
+* If it is a number ... it returns false
+* If it's neither a number or pair ... it returns false
+* If it is a pair ... it checks both the car and the cdr
 
 ### Exercise 3: Pair structures, continued
 
@@ -210,8 +248,40 @@ as an input and adds up all the values in that tree.
 
 * This one was in the reading. Still, it's good to redo
   it ourselves.
-* We can probably use the pattern from the prior exercise to solve
+* We might be able to use the pattern from the prior exercise to solve
   this one.
+
+#### A solution
+
+```
+;;; (number-tree-sum nt) -> number?
+;;;   nt : number-tree?
+;;; Add up all the numbers in `nt`.
+(define number-tree-sum
+  (lambda (val)
+    (cond
+      [(number? val)
+       val]
+      [(pair? val)
+       (+ (number-tree-sum (car val))
+          (number-tree-sum (cdr val)))]
+      [else
+       0]))) ; We will never hit this case.
+```
+
+#### Another solution
+
+```
+;;; (number-tree-sum nt) -> number?
+;;;   nt : number-tree?
+;;; Add up all the numbers in `nt`.
+(define number-tree-sum
+  (lambda (val)
+    (if (number? val)
+        val
+        (+ (number-tree-sum (car val))
+           (number-tree-sum (cdr val))))))
+```
 
 ### Exercise 4: Nested lists 
 
@@ -238,7 +308,41 @@ value is a cons cell.
 
 #### Notes
 
+* Base case!
+   * If it's empty 
+* Recursive case!
+   * If it's a list
+       * And the car is either a number or an NNL
+       * And the cdr is an NNL
+
+* `(if`, `(cond`, `(or`, `(and`
+
 #### A solution
+
+```
+(define nnl?
+  (lambda (val)
+    (cond
+      [(null? val)
+       #t]
+      [(list? val)
+       (if (or (number? (car val)) (nnl? (car val)))
+           (nnl? (cdr val))
+           #f)]
+      [else
+       #f])))
+```
+
+#### Another solution (perhaps)
+
+```
+(define nnl?
+  (lambda (val)
+    (or (null? val)
+        (and (list? val)
+             (or (number? (car val)) (nnl? (car val)))
+             (nnl? (cdr val))))))
+```
 
 ### Exercise 5: Nested lists, continued
 
@@ -247,7 +351,20 @@ the values in a nested number list.
 
 #### Notes
 
+* Probably two cases: It's null or it's a list. (We know the list is an NNL.)
+
 #### A solution
+
+```
+(define nnl-sum
+  (lambda (nnl)
+    (if (null? nnl)
+        0
+        (+ (if (number? (car nnl))
+               (car nnl)
+               (nnl-sum (car nnl)))
+           (nnl-sum (cdr nnl))))))
+```
 
 Lab
 ---
