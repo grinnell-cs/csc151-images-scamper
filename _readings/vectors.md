@@ -373,8 +373,8 @@ given position. We put these steps together as follows.
 
 ```
 ;;; (number-vector-increment-at! vec index) -> void?
-;;;   vec : vectorof number?
-;;;   index : integer? (an index)
+;;;   vec : (vector-of number?)
+;;;   index : nonnegative-integer? 
 ;;; Increment the value in a vector at a particular index.
 (define number-vector-increment-at!
   (lambda (vec index)
@@ -401,14 +401,14 @@ it with a `let` expression, to clarify how the procedure works.)
 
 ```
 ;;; (number-vector-increment-all! vec) -> void?
-;;;   vec : vectorof number?
+;;;   vec : (vector-of number?)
 ;;; Increment the value at all vector positions
 (define number-vector-increment-all!
   (lambda (vec)
     (number-vector-increment-all!/kernel vec 0 (vector-length vec))))
 
 ;;; (number-vector-increment-all!/kernel vec pos len) -> void?
-;;;   vec : vectorof? number
+;;;   vec : (vector-of? number)
 ;;;   pos : integer? (index)
 ;;;   len : integer
 ;;; Increment all the elements at positions `pos` (inclusive)
@@ -471,7 +471,7 @@ procedure.
 
 ```
 ;;; (number-vector-scale! vec divisor) -> void?
-;;;   vec : vectorof number?
+;;;   vec : (vector-of number?)
 ;;;   divisor : number?
 ;;; Scale all the elements in the vector by dividing by the given
 ;;; divisor.
@@ -480,10 +480,10 @@ procedure.
     (number-vector-scale!/helper vec divisor 0 (vector-length vec))))
 
 ;;; (number-vector-scale!/helper vec divisor pos len) -> void?
-;;;   vec : vectorof number?
+;;;   vec : (vector-of number?)
 ;;;   divisor : number?
-;;;   pos : integer? (index)
-;;;   len : integer? (length of vec)
+;;;   pos : nonnegative-integer? 
+;;;   len : nonnegative-integer?
 ;;; Scale all the elements in the vector from pos (inclusive) to
 ;;; len (exclusive) by dividing by the given divisor.
 (define number-vector-scale!/helper
@@ -538,9 +538,9 @@ All of these examples change the vector.  Of course, we need not change the vect
     (number-vector-largest/helper vec 0 (- (vector-length vec) 1))))
 
 ;;; (number-vector-largest vec pos last) -> real?
-;;;   vec : vectorof? real
-;;;   pos : integer? (index)
-;;;   last : integer? (index)
+;;;   vec : (vector-of? real)
+;;;   pos : integer?
+;;;   last : integer?
 ;;; Finds the largest value in the subvector from pos (inclusive) to last
 ;;; (inclusive).
 (define number-vector-largest/helper
@@ -586,16 +586,16 @@ front to back.  That also lets us stop when we reach (or pass) zero.
 
 ```
 ;;; (number-vector-largest vec) -> real?
-;;;   vec : vectorof real?
+;;;   vec : (vector-of real?)
 ;;; Find the largest number in a vector
 (define number-vector-largest
   (lambda (vec)
     (number-vector-largest/helper vec (- (vector-length vec) 1))))
 
 ;;; (number-vector-largest vec pos) -> real?
-;;;   vec : vectorof? real
-;;;   pos : integer? (index)
-;;;   last : integer? (index)
+;;;   vec : (vector-of? real)
+;;;   pos : integer?
+;;;   last : integer?
 ;;; Finds the largest value in the subvector from 0 to pos.
 ;;; (inclusive).
 (define number-vector-largest/helper
