@@ -1,8 +1,8 @@
 ---
-title: "EBoard 29: Dictionaries (Section 1)"
-number: 29
+title: "EBoard 30: Vectors, continued (Section 1)"
+number: 30
 section: eboards
-held: 2026-11-11
+held: 2026-11-13
 link: false
 ---
 # {{ page.title }}
@@ -159,206 +159,35 @@ Q&A
 
 ### Administrative
 
-Can I ask the mentors for help on MPs?
-
-> We'd prefer not. Their work is primarily on topical matters.
-
-> The evening tutors should be helpful.
-
 ### MP4
 
 ### Vectors
 
-Friday's lab
-------------
+Can we go over check 3?
 
-### Exercise 2: Pair structures 
+> Sure! See below.
 
-As you saw in the reading, we can build nested structures using the
-`pair` operation. One such structure is a "number tree", which we 
-defined self-referentially (perhaps recursively) as follows:
+### Hashes
 
-* any number is a number tree
-* `(pair N T)` is a number tree if an only iff `N` and `T`
-  are number trees.
+Check #3 from the reading
+-------------------------
 
-Using that definition, which contains an implicit base case and
-recursive case, write a procedure, `(number-tree? val)`, that 
-determines whether `val` is a number tree.
-
-#### Notes
-
-* This sounds recursive. We should have one or more base cases.
-    * Is the value a number? If so, it's a number tree.
-    * If the value is neither a number nor a pair, it's NOT a number tree.
-* Recursive case
-    * Recurse on the car
-    * AND recurse on cdr
-
-#### A solution
+### A concern
 
 ```
-(define number-tree?
-  (lambda (val)
-    (cond
-      [(number? val)
-       #t]
-      [(pair? val)
-       (and (number-tree? (car val))
-            (number-tree? (cdr val)))
-      [else
-       #f])))
+(define number-vector-largest
+  (lambda (vec)
+    (let ([len (vector-length vec)])
+      (let kernel ([pos (- len 1)]
+                   [largest-so-far (vector-ref vec 0)])
+        (if (zero? pos)
+            largest-so-far
+            (kernel (- pos 1)
+                    (max largest-so-far (vector-ref vec (- pos 1)))))))))
 ```
 
-#### Another solution
+Wednesday's lab
+---------------
 
-```
-(define number-tree?
-  (lambda (val)
-    (or (number? val)
-        (and (pair? val)
-             (number-tree? (car val))
-             (number-tree? (cdr val))))))
-```
-
-Thinking about the solution.
-
-* If it is a number ... it returns false
-* If it's neither a number or pair ... it returns false
-* If it is a pair ... it checks both the car and the cdr
-
-### Exercise 3: Pair structures, continued
-
-Write a procedure `(number-tree-sum nt)`, that takes a number tree
-as an input and adds up all the values in that tree.
-
-#### Notes
-
-* This one was in the reading. Still, it's good to redo
-  it ourselves.
-* We might be able to use the pattern from the prior exercise to solve
-  this one.
-
-#### A solution
-
-```
-;;; (number-tree-sum nt) -> number?
-;;;   nt : number-tree?
-;;; Add up all the numbers in `nt`.
-(define number-tree-sum
-  (lambda (val)
-    (cond
-      [(number? val)
-       val]
-      [(pair? val)
-       (+ (number-tree-sum (car val))
-          (number-tree-sum (cdr val)))]
-      [else
-       0]))) ; We will never hit this case.
-```
-
-#### Another solution
-
-```
-;;; (number-tree-sum nt) -> number?
-;;;   nt : number-tree?
-;;; Add up all the numbers in `nt`.
-(define number-tree-sum
-  (lambda (val)
-    (if (number? val)
-        val
-        (+ (number-tree-sum (car val))
-           (number-tree-sum (cdr val))))))
-```
-
-### Exercise 4: Nested lists 
-
-As you may have seen in a recent assignment, it can be useful to
-work with lists that themselves contain lists.
-
-A "nested number list" can be defined similarly to a number tree.
-
-* `null` is a nested number list
-* `(cons N L)` is a nested number list if N is a number or a
-  nested number list and L is a nested number list.
-
-Note that this definition differs slightly from that of number
-trees because lists must end with null. (Also because we use
-`cons` rather than `pair`.)
-
-Write a procedure, `(nnl? val)`, that determines whether `val` is a 
-nested number list.
-
-Note that you cannot use `pair?` or `cons?` to determine whether
-a value is a cons cell. Hence, you will need to use `list?` (along
-with knowledge that something isn't null) to determine whether a
-value is a cons cell.
-
-#### Notes
-
-* Base case!
-   * If it's empty 
-* Recursive case!
-   * If it's a list
-       * And the car is either a number or an NNL
-       * And the cdr is an NNL
-
-* `(if`, `(cond`, `(or`, `(and`
-
-#### A solution
-
-```
-(define nnl?
-  (lambda (val)
-    (cond
-      [(null? val)
-       #t]
-      [(list? val)
-       (if (or (number? (car val)) (nnl? (car val)))
-           (nnl? (cdr val))
-           #f)]
-      [else
-       #f])))
-```
-
-#### Another solution (perhaps)
-
-```
-(define nnl?
-  (lambda (val)
-    (or (null? val)
-        (and (list? val)
-             (or (number? (car val)) (nnl? (car val)))
-             (nnl? (cdr val))))))
-```
-
-### Exercise 5: Nested lists, continued
-
-Write a procedure, `(nnl-sum nnl)` that computes the sum of all
-the values in a nested number list.
-
-#### Notes
-
-* Probably two cases: It's null or it's a list. (We know the list is an NNL.)
-
-#### A solution
-
-```
-(define nnl-sum
-  (lambda (nnl)
-    (if (null? nnl)
-        0
-        (+ (if (number? (car nnl))
-               (car nnl)
-               (nnl-sum (car nnl)))
-           (nnl-sum (cdr nnl))))))
-```
-
-Lab
----
-
-Do [the vectors lab](../labs/vectors).
-
-### Notes
-
-* Scamper seems to lack `vector-copy`. Skip problem 1. Bleh.
+Today's lab
+-----------
