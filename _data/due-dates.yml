@@ -96,8 +96,7 @@
 
 - date: 2026-11-20
   due:
-    - LA 14 (Dictionaries)
-    - LA 15 (Data abstraction)
+    - LA 14 (Data abstraction)
 
 - date: 2026-12-03
   due:
@@ -105,8 +104,8 @@
 
 - date: 2026-12-04
   due: 
-    - LA 16 (Higher-order programming)
-    - LA 17 (Tree recursion)
+    - LA 15 (Higher-order programming)
+    - LA 16 (Tree recursion)
 
 - date: 2026-12-16
   due:
