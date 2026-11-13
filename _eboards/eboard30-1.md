@@ -21,7 +21,7 @@ _Approximate overview_
 * Q&A (8:10)
 * Some vector review (8:15)
 * Discuss Monday's lab on Vectors (8:30)
-* More quizzes (include vectors) (8:50:
+* More quizzes, including vectors (8:50)
 
 Administrative stuff
 --------------------
@@ -30,6 +30,7 @@ Administrative stuff
 
 * As I noted in the email, I've rearranged the schedule a bit to 
   accommodate my absence.
+* The graders should finish with the remaining MP redos this weekend.
 * Reminder: You can use the evening tutors to help you go through any
   of the labs, LAs, or MPs you are having difficulty with.
     * Since there seems to be a lack of clarity: We have *two* kinds
@@ -377,3 +378,12 @@ Once again, you should not convert the vector to a list.
 
 Quizzes
 -------
+
+Note: Use `(expt x p)` for "`x` to the `p`"
+
+* Please pick up quizzes from the orange sheets on the South table. 
+  (Alphabetical order by topic.)
+* Please return quizzes face down to the purple sheets on the South table.
+  (Alphabetical order by topic.)
+* Don't forget to write your name. (You should be able to tell because
+  the sheet is face down.)
