@@ -12,66 +12,68 @@ _New places, new partners, grab whiteboards._
 **Warning! You are being recorded** (and transcribed) (provided the technology
 is working correctly).
 
+**Warning!** Friday the 13th falls on a Friday this month!
+
 _Approximate overview_
 
-* Administrivia
-* Pop quiz!
-* Discuss Wednesday's lab
-* Q&A
-* Lab
+* Quizzes, including diagramming structures (7:30)
+* Administrivia (8:00)
+* Q&A (8:10)
+* Some vector review (8:15)
+* Discuss Monday's lab on Vectors (8:30)
+* More quizzes (include vectors) (8:50:
 
 Administrative stuff
 --------------------
 
 ### Introductory Notes
 
-* Be careful! Friday the 13th falls on a Friday this month!
+* As I noted in the email, I've rearranged the schedule a bit to 
+  accommodate my absence.
 * Reminder: You can use the evening tutors to help you go through any
   of the labs, LAs, or MPs you are having difficulty with.
+    * Since there seems to be a lack of clarity: We have *two* kinds
+      of evening support.
+    * **Mentors** run review sessions on Wednesday and Thursday evenings.
+      You earn tokens for attending mentor sessions.
+    * **Tutors** are available 7-10pm Sunday through Thursday. They are
+      mostly there for homework help, but they can go over missed quizzes
+      and such with you. You do not earn tokens for meeting with tutors.
 
 ### Upcoming work
 
-* Due Thursday, 2026-11-12
-    * Today's lab: [Hash tables](../labs/hash-tables)
-        * [Submit lab on Gradescope](X)
-    * Reading for Friday:  [Dictionaries and hash-tables](../readings/hash-tables)
-        * [Submit reading on Gradescope](X)
-* On Friday, 2026-11-13
-    * NEW Quiz/LA on Pairs (Friday and today)
-    * NEW Quiz/LA on Vectors (today)
-    * Makeup Quiz/LA on numeric recursion 
-    * Makeup Quiz/LA on list recursion 
-    * Makeup Quiz/LA on testing
-    * Makeup Quiz/LA on local bindings
-    * Makeup Quiz/LA on collaboration
-    * Makeup Quiz/LA on lists and list operations
-    * Makeup Quiz/LA on conditionals
-    * Makeup Quiz/LA on compose, cut, and section
-    * Makeup Quiz/LA on tracing
-    * Makeup Quiz/LA on decomposition
-    * Makeup Quiz/LA on procedures
+* Due Sunday, 2026-11-15
+    * Reading for Monday:  [Randomness](../readings/randomness)
 * Due Tuesday, 2026-11-17
     * [Mini-project 5](../mps/mp05)
-        * Not yet tested in Scamper!
-        * Not yet posted to Gradescope
+        * [Submit MP5 on Gradescope](https://www.gradescope.com/courses/1370413/assignments/9035604)
+* On Friday, 2026-11-20
+    * NO Quiz/LA on dictionaries
+    * New Quiz/LA on randomness (Monday)
+    * Makeup Quiz/LA on pairs 
+    * Makeup Quiz/LA on vectors 
+    * Makeup Quizzes/LAs on appropriate previous topics
+* Due Tuesday, 2026-11-24
+    * [Mini-project 1](../mps/mp01) third redo
+        * [Submit MP1 redo on Gradescope](https://www.gradescope.com/courses/1370413/assignments/9046469)
+        * Please include a `CHANGES.txt` file when it's ready to be graded.
+    * [Mini-project 2](../mps/mp02) second redo
+        * [Submit MP2 redo on Gradescope](https://www.gradescope.com/courses/1370413/assignments/9043680)
+        * Please include a `CHANGES.txt` file when it's ready to be graded.
+    * [Mini-project 4](../mps/mp04) first redo
+        * [Submit MP4 redo on Gradescope](https://www.gradescope.com/courses/1370413/assignments/9043688)
+        * Please include a `CHANGES.txt` file when it's ready to be graded.
 
 ### Upcoming activities
 
 Scholarly
 
-* Thursday, 12 October 2026, 11:00 a.m.--Noon, JRC 101.
-  _Scholars’ Convocation: Caleb Elfenbein:
-   How I Went From Professional to Amateur and Learned to Love the Humanities_
-* Thursday, 12 October 2026, 4:15--5:15 p.m., Noyce 2021 (?).
-  _Thursday Extras_
-* Tuesday, 12 October 2026, Noon--1:00 p.m., CS Commons (I think).
+* Tuesday, 19 October 2026, Noon--1:00 p.m., CS Commons (I think).
   _CS Table_
 
 Artistic/Cultural
 
 * Any day. Visit the GCMOA for at least 30 minutes.
-* Thursday, 12 November 2026, 7:30--9:30, Roberts.
-  _Mainstage Performance: Cassandra Listens_
 * Friday, 13 November 2026, 7:30--9:30, Roberts.
   _Mainstage Performance: Cassandra Listens_
 * Saturday, 14 November 2026, 2:00--4:00, Roberts.
@@ -81,8 +83,10 @@ Artistic/Cultural
 
 Multicultural
 
-* Friday, 13 2026, 4:10--5:00 p.m., HSSC N1170.
+* Friday, 13 November 2026, 4:10--5:00 p.m., HSSC N1170.
   _Middle of Everywhere (Japan)_
+* Friday, 20 November 2026, 4:10--5:00 p.m., HSSC N1170.
+  _Middle of Everywhere (???)_
 
 Peer
 
@@ -97,69 +101,39 @@ section's students are welcome._
 Wellness
 
 * Fill out the wellness survey that you received last week.
-* Monday, 9 November 2026, 8:00--9:00 p.m., Prayer Garage in the CRSSJ.
+* Monday, 16 November 2026, 8:00--9:00 p.m., Prayer Garage in the CRSSJ.
   _Meditation Group_
-* Tuesday, 10 November 2026, 12:15--12:45 p.m., GCMoA.
+* Tuesday, 17 November 2026, 12:15--12:45 p.m., GCMoA.
   _Yoga in the Museum_
-* Tuesday, 10 November 2026, 4:30--6:00 p.m., Bear P103.
+* Tuesday, 17 November 2026, 4:30--6:00 p.m., Bear P103.
   _Wellness Yoga_
-* Tuesday, 10 November 2026, 5:00--8:00 p.m., HSSC North Auditorium.
+* Tuesday, 24 November 2026, 5:00--8:00 p.m., HSSC North Auditorium.
   _Therapy Dogs_
-* Tuesday, 10 November 2026, 8:00--10:30 p.m., Harris Cinema.
-  _The Muppet Movie_
 
 Misc
 
-* Tuesday, 10 November 2026, 7:00--9:00 p.m., Darby.
-  _Volleyball vs. Lake Forest, Revisited_ (Quarterfinals)
-* Wednesday, 11 November 2026, 8:00--9:00 p.m., Science 3820.
+* Wednesday, 18 November 2026, 8:00--9:00 p.m., Science 3820.
   _Mentor Session_
-* Thursday, 12 November 2026, 8:00--9:00 p.m., Science 3820.
+* Thursday, 19 November 2026, 8:00--9:00 p.m., Science 3820.
   _Mentor Session_
 
 ### Other good things
 
 _These do not earn tokens, but are worth your consideration._
 
-* Wednesday, 11 November 2026, 6:00--8:00 p.m., Darby.
-  _Men's Basketball vs. Principia_
+### Friday PSA
 
-### Pop quizzes
-
-Note
-
-* No pop quiz today to give time for this discussion.
-
-Context
-
-* Intended as an incentive to memorize vocabulary
-* Also intended to give me a check on how folks are doing
-* I'm struggling to get them graded in a timely fashion
-
-Commentary?
-
-Survey (Sam's eyes closed, students' eyes closed). Should I resume the pop 
-quizzes?
-
-* Yes: 13
-* No: 1
-* Abstain / no strong opinion: 3
-
-### Email greetings
-
-Should I continue with the special greetings in my class emails?
-
-* Yes: 14
-* No: 0
-* You use special greetings?: 4
-* Abstain / no strong opinion: 1
+* Be well
+* Take care of yourselves other others.
+* Consent is essential. Consent is insufficient. Consent is impossible 
+  when impaired.
 
 Q&A
 ---
 
 ### Administrative
 
-### MP4
+### MP5
 
 ### Vectors
 
@@ -167,10 +141,78 @@ Can we go over check 3?
 
 > Sure! See below.
 
-### Hashes
+Vector review (TPS)
+-------------------
 
-Check #3 from the reading
--------------------------
+_We'll be looking at vector problems today. It may be helpful to consider 
+some central issues._
+
+Like lists, vectors collect elements. How do vectors differ from lists?
+
+*
+*
+*
+
+What are some important vector procedures?
+
+*
+*
+*
+
+We will need to process vectors. What is the "normal" mechanism for doing so?
+(English-language answers are appropriate.)
+
+*
+*
+
+Check #3 from the vectors reading
+---------------------------------
+
+### The prompt
+
+Rewrite the second `number-vector-largest` using a local kernel that keeps track of the largest so far. Can you write the kernel so that it does not need the vector as a parameter?
+
+### The second `number-vector-largest`
+
+```
+;;; (number-vector-largest vec) -> real?
+;;;   vec : (vector-of real?)
+;;; Find the largest number in a vector
+(define number-vector-largest
+  (lambda (vec)
+    (number-vector-largest/helper vec (- (vector-length vec) 1))))
+
+;;; (number-vector-largest vec pos) -> real?
+;;;   vec : (vector-of? real)
+;;;   pos : nonnegative-integer? 
+;;;   last : nonnegative-integer? 
+;;; Finds the largest value in the subvector from 0 to pos.
+;;; (inclusive).
+(define number-vector-largest/helper
+  (lambda (vec pos)
+    ; Grab the current element from the vector
+    (let ([current (vector-ref vec pos)])
+      (if (zero? pos)
+          current
+          (max current
+               (number-vector-largest/helper vec (- pos 1)))))))
+```
+
+### Tasks
+
+* Use a local kernel.
+* Keep track of the largest so far
+* Avoid making the vector explicit
+
+We'll do these step by step.
+
+### Our solution
+
+```
+(define number-vector-largest
+  (lambda (vec)
+    (number-vector-largest/helper vec (- (vector-length vec) 1))))
+```
 
 ### A concern
 
@@ -186,8 +228,152 @@ Check #3 from the reading
                     (max largest-so-far (vector-ref vec (- pos 1)))))))))
 ```
 
-Wednesday's lab
----------------
+Notes from Monday's lab on vectors
+----------------------------------
 
-Today's lab
------------
+### Exercise 2: Vector-based palettes 
+
+It is possible to represent a collection of colors (a "palette")
+as a vector. Why would we do so? Well, once we’ve chosen a palette,
+we can represent an image as a collection of indices into that
+palette. Such a representation is typically much more compact than
+representing each color with the full RGB triplet.
+
+For example, here is a palette that represents the colors in the
+rainbow.
+
+```
+;;; rainbow-palette : (vector-of rgb?)
+;;; A vector of RGB colors.
+(define rainbow-palette
+  (list->vector
+    (map color-name->rgb
+         (list "red" "orange" "yellow" "green" "blue" "indigo" "violet"))))
+```
+
+Write a procedure, `(palette? val)`, that determines if `val` is
+a palette (a nonempty vector of RGB colors).
+
+```
+;;; (palette? val) -> boolean?
+;;;   val : any
+;;; Determine if `val` is a nonempty vector of RGB colors.
+(define palette?
+  (lambda (val)
+    #f))
+```
+
+#### Tests
+
+#### Notes
+
+#### A solution
+
+### Exercise 3: Darkening vector-based palettes
+
+Write a procedure, `(palette-darker! palette)`, that, given a vector
+of integer-encoded RGB colors, makes each color in the palette
+slightly darker (i.e., using color-darker).
+
+Note that you will not build a new vector. Rather, you will replace
+each color in the existing vector by the darker version. You may
+use the recursion pattern(s) from the reading and number-vector-scale!
+as a starting point. If you do, be sure to cite your sources
+appropriately.
+
+```
+;; (palette-darker! palette) -> void?
+;;   palette : (vector-of rgb?)
+;; Make each color in `palette` darker.
+(define palette-darker!
+  (lambda (palette)
+    void))
+```
+
+#### Tests
+
+#### Notes
+
+#### A solution
+
+#### A caution
+
+### Exercise 4: The brightest color
+
+Write a procedure, `(palette-brightest palette)`, that takes one argument,
+a vector of colors, and returns the brightest color in that vector.
+You can assume that every position in the vector contains a color.
+
+You will likely need the following definitions of `color-brightness`
+and `color-brighter-of-two`.
+
+```
+;;; (color-brightness color) -> integer?
+;;;   color : rgb?
+;;; Compute the brightness of a color on a 0 .. 100 range.
+(define color-brightness
+  (lambda (color)
+    (round (* 100 (/ (+ (* .30 (rgb-red color))
+                        (* .59 (rgb-green color))
+                        (* .11 (rgb-blue color)))
+                     255)))))
+
+;;; (color-brighter-of-two color1 color2) -> color?
+;;;    color1 : rgb?
+;;;    color2 : rgb?
+;;; Find the brighter of two colors.
+(define color-brighter-of-two
+  (lambda (color1 color2)
+    (if (>= (color-brightness color1) (color-brightness color2))
+        color1
+        color2)))
+```
+
+```
+;;; (palette-brightest palette) -> rgb?
+;;;   palette : (all-of (vector-of rgb?) nonempty?)
+;;; Find the brightest color in `palette`. If multiple colors have
+;;; the same brightness (and it's the largest brightness), can return
+;;; any of them.
+(define palette-brightest
+  (lambda (palette)
+    (rgb 0 0 0)))
+```
+
+#### Tests
+
+#### Notes
+
+#### A solution
+
+### Exercise 6: Searching in vectors
+
+Write a recursive procedure, `(vector-index-of vec elt)`, that looks
+for `elt` in vector and returns the index of the first appearance
+of `elt` if it appears in the vector and 01 otherwise.
+
+```
+;; > (vector-index-of (vector "a" "b" "c") "b")
+;; 1
+;; > (vector-index-of (vector "a" "b" "c" "c" "d" "b") "c")
+;; 2
+;; > (vector-index-of (vector "a" "b" "c") "d")
+;; -1
+```
+
+Once again, you should not convert the vector to a list.
+
+```
+(define vector-index-of
+  (lambda (vec elt)
+    -1))
+```
+
+#### Tests
+
+#### Notes
+
+#### A solution
+
+Quizzes
+-------
