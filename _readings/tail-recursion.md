@@ -216,7 +216,7 @@ In Scamper, we can use `let` for recursive helpers. In most other implementation
 <pre class="scamper-transcript">
 (define replicate
   (lambda (n x)
-    (letrec ([kernel
+    (let ([kernel
               (lambda (n x so-far)
                 (if (zero? n)
                     so-far
