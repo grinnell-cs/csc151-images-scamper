@@ -3,7 +3,7 @@ title: "EBoard 30: Vectors, continued (Section 3)"
 number: 30
 section: eboards
 held: 2026-11-13
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -149,21 +149,37 @@ some central issues._
 
 Like lists, vectors collect elements. How do vectors differ from lists?
 
-*
-*
-*
+* As we saw from our diagram of lists, finding the nth element in a list is
+  slow because we have to cdr through the list. In contrast, finding the neth
+  element in a vector is fast (because we told you it is).
+* Vectors are mutable. We can change what element is stored at a particular
+  location in a vector.
+* Because vectors a mutable, it can be harder to analyze programs that
+  use them.
+* You can't use `cons` or `cdr` on vectors.
+* Some vector procedures, like `vector-set!`, don't return anything, so when
+  we want to do things in sequence (such as a set a value and then recurse)
+  we have to use the special `begin` structure.
+* Side note: We can store vectors in lists, lists in vectors, vectors in vectors,
+  etc. (Also all of these in pairs, and vice versa.) Structures are nestable.
 
 What are some important vector procedures?
 
-*
-*
-*
+* `(vector-length vec)` - Find out how many values are in the vector.
+* `(vector-fill! vec val)` - Fill an already existing vector with `val`.
+* `(make-vector size val)` - Make a vector of the give size, filled with `val`.
+* `(vector-ref vec pos)` - Grabs a value from the vector.
+* `(vector-set! vec pos val)` - Set the value at the given place
+* `(vector a b c d)` - Make a vector.
 
 We will need to process vectors. What is the "normal" mechanism for doing so?
 (English-language answers are appropriate.)
 
-*
-*
+* We will need recursion to loop over the positions in the vector.
+* Since the position is not typically a parameter to the orgiinal procedure,
+  we will need to write a helper.
+* The helper will either start at position 0 and work its way up to the end
+  or start at the end and work its way down to 0.
 
 Check #3 from the vectors reading
 ---------------------------------
@@ -185,7 +201,6 @@ Rewrite the second `number-vector-largest` using a local kernel that keeps track
 ;;; (number-vector-largest vec pos) -> real?
 ;;;   vec : (vector-of? real)
 ;;;   pos : nonnegative-integer? 
-;;;   last : nonnegative-integer? 
 ;;; Finds the largest value in the subvector from 0 to pos.
 ;;; (inclusive).
 (define number-vector-largest/helper
@@ -201,18 +216,65 @@ Rewrite the second `number-vector-largest` using a local kernel that keeps track
 ### Tasks
 
 * Use a local kernel.
-* Keep track of the largest so far
 * Avoid making the vector explicit
+* Keep track of the largest so far
 
 We'll do these step by step.
 
 ### Our solution
 
+Step 1: Make it local
+
 ```
 (define number-vector-largest
   (lambda (vec)
-    (number-vector-largest/helper vec (- (vector-length vec) 1))))
+    (let ([helper 
+            (lambda (vec pos)
+              ; Grab the current element from the vector
+              (let ([current (vector-ref vec pos)])
+                (if (zero? pos)
+                    current
+                    (max current
+                         (helper vec (- pos 1))))))])
+      (helper vec (- (vector-length vec) 1)))))
 ```
+
+Step 2: Get rid of the vector parameter from the helper
+
+```
+(define number-vector-largest
+  (lambda (vec)
+    (let ([helper 
+            (lambda (pos)
+              ; Grab the current element from the vector
+              (let ([current (vector-ref vec pos)])
+                (if (zero? pos)
+                    current
+                    (max current
+                         (helper (- pos 1))))))])
+      (helper (- (vector-length vec) 1)))))
+```
+
+Step 3: Add a `largest-so-far` to the helper.
+
+```
+(define number-vector-largest
+  (lambda (vec)
+    (let ([helper 
+            (lambda (pos largest-so-far)
+              ; Grab the current element from the vector
+              (let ([current (vector-ref vec pos)])
+                (if (zero? pos)
+                    (max largest-so-far current)
+                    (helper (- pos 1) (max current largest-so-far)))))]) 
+      (helper (- (vector-length vec) 1)
+              (vector-ref vec 0)))))
+```
+
+* What should the new initial call look like to accommodate `largest-so-far`?
+* What should the new recursive call look like to accommodate `largest-so-far`?
+* What should the base case look like to accommodate `largest-so-far`?
+* Is there anything else we need to think about to accommodate `largest-so-far`?
 
 ### A concern
 
@@ -260,7 +322,20 @@ a palette (a nonempty vector of RGB colors).
 ;;; Determine if `val` is a nonempty vector of RGB colors.
 (define palette?
   (lambda (val)
-    #f))
+    (and (vector? val)
+         (> (vector-length val) 0)
+         (all-rgb? val 0))))
+
+;;; (all-rgb? vec pos) -> boolean?
+;;;   vec : vector?
+;;;   pos : nonnegative-integer?
+;;; Determine if all the elements in vec starting at pos are rgb colors.
+(define all-rgb?
+  (lambda (vec pos)
+    (if (>= pos (vector-length vec))
+        #t
+        (and (rgb? (vector-ref vec pos))
+             (all-rgb? vec (+ 1 pos))))))
 ```
 
 #### Tests
@@ -287,7 +362,15 @@ appropriately.
 ;; Make each color in `palette` darker.
 (define palette-darker!
   (lambda (palette)
-    void))
+    (pdhelper palette 0)))
+
+(define pdhelper
+  (lambda (palette pos)
+    (if (>= pos (vector-length palette))
+        void
+        (begin
+          (vector-set! palette pos (rgb-darker (vector-ref palette pos)))
+          (pdhelper palette (+ pos 1))))))
 ```
 
 #### Tests
@@ -386,3 +469,4 @@ Note: Use `(expt x p)` for "`x` to the `p`"
   (Alphabetical order by topic.)
 * Don't forget to write your name. (You should be able to tell because
   the sheet is face down.)
+

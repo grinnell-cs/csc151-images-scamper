@@ -3,7 +3,7 @@ title: "EBoard 30: Vectors, continued (Section 2)"
 number: 30
 section: eboards
 held: 2026-11-13
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -124,7 +124,7 @@ _These do not earn tokens, but are worth your consideration._
 ### Friday PSA
 
 * Be well
-* Take care of yourselves other others.
+* Take care of yourselves and others.
 * Consent is essential. Consent is insufficient. Consent is impossible 
   when impaired.
 
@@ -149,21 +149,35 @@ some central issues._
 
 Like lists, vectors collect elements. How do vectors differ from lists?
 
-*
-*
-*
+* Vectors are mutable; you can change what elements are stored in any
+  position of the vector.
+* Both lists and vectors are indexed, however, it's slow to get the element
+  at a particular index in the list (you have to `cdr` through the list), but
+  fast in a vector.
+* You can't easily change the length of a vector, no `cdr` nor `cons` for
+  vectors.
+* Because we can mutate vectors, analysis is a lot harder (changing a vector
+  in one place may have unexpected effects elsewhere).
+* We may need to sequence operations (e.g., change the vector and then recurse),
+  which we can't necessarily do with nesting, so we need the `begin`
+  structure to sequence operations.
 
 What are some important vector procedures?
 
-*
-*
-*
+* `(vector-ref vec pos)` - Grab the element at the given position
+* `(vector-set! vec pos val)` - Set the element at the given position
+* `(vector? val)` - Determine if something is a vector.
+* `(vector-fill! vec val)` - Replace all the elements with the same value
+* `(vector-copy vec)` - Make a copy of the vector. (May not be in Scamper.)
+* `(vector->list vec)` and `(list->vector lst)` - Convert. 
+* `(vector a b c d)` - Make a vector
+* `(make-vector size val)` - Make a vector of identical elements
 
 We will need to process vectors. What is the "normal" mechanism for doing so?
 (English-language answers are appropriate.)
 
-*
-*
+* We create a helper function
+* We keep track of the position, adding 1 or subtracting 1
 
 Check #3 from the vectors reading
 ---------------------------------
@@ -185,7 +199,6 @@ Rewrite the second `number-vector-largest` using a local kernel that keeps track
 ;;; (number-vector-largest vec pos) -> real?
 ;;;   vec : (vector-of? real)
 ;;;   pos : nonnegative-integer? 
-;;;   last : nonnegative-integer? 
 ;;; Finds the largest value in the subvector from 0 to pos.
 ;;; (inclusive).
 (define number-vector-largest/helper
@@ -201,18 +214,68 @@ Rewrite the second `number-vector-largest` using a local kernel that keeps track
 ### Tasks
 
 * Use a local kernel.
-* Keep track of the largest so far
 * Avoid making the vector explicit
+* Keep track of the largest so far
 
 We'll do these step by step.
 
 ### Our solution
 
+Step one: Make the helper local.
+
 ```
 (define number-vector-largest
   (lambda (vec)
-    (number-vector-largest/helper vec (- (vector-length vec) 1))))
+    (let ([helper 
+            (lambda (vec pos)
+              ; Grab the current element from the vector
+              (let ([current (vector-ref vec pos)])
+                (if (zero? pos)
+                    current
+                    (max current
+                         (helper vec (- pos 1))))))])
+      (helper vec (- (vector-length vec) 1)))))
 ```
+
+Step two: Can we remove `vec` from the helper?
+
+```
+(define number-vector-largest
+  (lambda (vec)
+    (let ([helper 
+            (lambda (pos)
+              ; Grab the current element from the vector
+              (let ([current (vector-ref vec pos)])
+                (if (zero? pos)
+                    current
+                    (max current
+                         (helper (- pos 1))))))])
+      (helper (- (vector-length vec) 1)))))
+```
+
+Step two: Can we remove `vec` from the helper?
+
+```
+(define number-vector-largest
+  (lambda (vec)
+    (let ([helper 
+            (lambda (pos largest-so-far)
+              ; Grab the current element from the vector
+              (let ([current (vector-ref vec pos)])
+                (if (zero? pos)
+                    largest-so-far
+                    (helper (- pos 1)
+                            (max current
+                                 largest-so-far )))))]) 
+      (helper (- (vector-length vec) 1)
+              (vector-ref vec (- (vector-length vec) 1)))))) 
+```
+
+* How does the addition of `largest-so-far` to the helper change the initial call?
+* How does the addition of `largest-so-far` to the helper change the recursive call?
+* How does the addition of `largest-so-far` to the helper change our base-case value?
+  _We might return `largest-so-far` instead of `current`._
+* Does the addition of `largest-so-far` to the helper change anything else?
 
 ### A concern
 
@@ -260,7 +323,21 @@ a palette (a nonempty vector of RGB colors).
 ;;; Determine if `val` is a nonempty vector of RGB colors.
 (define palette?
   (lambda (val)
-    #f))
+    (and (vector? val)
+         (> (vector-length val) 0)
+         (all-rgb? val 0))))
+
+;;; (all-rgb? vec pos) -> boolean?
+;;;   vec : vector?
+;;;   pos : nonnegative-integer?
+;;; Determines if all of the elements of `vec` starting at `pos` are
+;;; RGB colors.
+(define all-rgb?
+  (lambda (vec pos)
+    (if (>= pos (vector-length vec))
+        #t
+        (and (rgb? (vector-ref vec pos))
+             (all-rgb? vec (+ pos 1))))))
 ```
 
 #### Tests
@@ -290,13 +367,27 @@ appropriately.
     void))
 ```
 
-#### Tests
-
 #### Notes
+
+* We're going to need a recursive helper.
 
 #### A solution
 
-#### A caution
+```
+(define palette-darker!
+  (lambda (palette)
+    (pdhelper palette 0)))
+
+(define pdhelper
+  (lambda (palette pos)
+    (if (>= pos (vector-length palette))
+        void
+        (begin
+          ; Make the color at `pos` darker
+          (vector-set! palette pos (rgb-darker (vector-ref palette pos)))
+          ; Recurse
+          (pdhelper palette (+ 1 pos))))))
+```
 
 ### Exercise 4: The brightest color
 

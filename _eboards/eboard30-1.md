@@ -3,7 +3,7 @@ title: "EBoard 30: Vectors, continued (Section 1)"
 number: 30
 section: eboards
 held: 2026-11-13
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -21,7 +21,7 @@ _Approximate overview_
 * Q&A (8:10)
 * Some vector review (8:15)
 * Discuss Monday's lab on Vectors (8:30)
-* More quizzes, including vectors (8:50)
+* Quizzes, including vectors (8:50)
 
 Administrative stuff
 --------------------
@@ -44,7 +44,8 @@ Administrative stuff
 ### Upcoming work
 
 * Due Sunday, 2026-11-15
-    * Reading for Monday:  [Randomness](../readings/randomness)
+    * Reading for Monday: [Randomness](../readings/randomness)
+        * Sam needs to check it.
 * Due Tuesday, 2026-11-17
     * [Mini-project 5](../mps/mp05)
         * [Submit MP5 on Gradescope](https://www.gradescope.com/courses/1370413/assignments/9035604)
@@ -125,7 +126,7 @@ _These do not earn tokens, but are worth your consideration._
 ### Friday PSA
 
 * Be well
-* Take care of yourselves other others.
+* Take care of yourselves and others.
 * Consent is essential. Consent is insufficient. Consent is impossible 
   when impaired.
 
@@ -133,6 +134,13 @@ Q&A
 ---
 
 ### Administrative
+
+What's happening with MP3?
+
+> If you didn't get credit for it, or you didn't turn it in: No penalty.
+
+> If you did get credit for it, or were close, you'll get some tokens (unless
+  you want to suggest something else.)
 
 ### MP5
 
@@ -150,21 +158,33 @@ some central issues._
 
 Like lists, vectors collect elements. How do vectors differ from lists?
 
-*
-*
-*
+* Accessing the 1st element or the nth element all take the same "effort"
+  (In list, we have to `cdr` through the list.)
+* We can change elements, which adds analytical complexity.
+* We can't take the `cdr`. We can't `cons`.
+* Because of how some functions operate, we need `begin` to sequence
+  operations.
 
-What are some important vector procedures?
+What are some important vector functions?
 
-*
-*
-*
+* `(vector-ref vec pos)` - Get the value at a particular position
+* `(vector-set! vec pos val)` - Set the value at a particular position.
+  (Returns nothing.)
+* `(vector->list vec)` and `(list->vector lst)`, which are "expensive"
+* `(vector-length vec)` - determine how many values are in a vector.
+* `(vector-fill! vec val)` - fill a vector with values.
+* `(make-vector len val)` - make a vector of the specified length, with
+  all the same value.
+* `(vector a b c d e)` - make a vector
 
 We will need to process vectors. What is the "normal" mechanism for doing so?
 (English-language answers are appropriate.)
 
-*
-*
+* We usually need to write a helper function that has the position as a
+  parameter.
+    * We can count up to the length
+    * We can count down to 0
+    * ...
 
 Check #3 from the vectors reading
 ---------------------------------
@@ -186,7 +206,6 @@ Rewrite the second `number-vector-largest` using a local kernel that keeps track
 ;;; (number-vector-largest vec pos) -> real?
 ;;;   vec : (vector-of? real)
 ;;;   pos : nonnegative-integer? 
-;;;   last : nonnegative-integer? 
 ;;; Finds the largest value in the subvector from 0 to pos.
 ;;; (inclusive).
 (define number-vector-largest/helper
@@ -202,18 +221,67 @@ Rewrite the second `number-vector-largest` using a local kernel that keeps track
 ### Tasks
 
 * Use a local kernel.
-* Keep track of the largest so far
 * Avoid making the vector explicit
+* Keep track of the largest so far
 
 We'll do these step by step.
 
 ### Our solution
 
+Step 1: Make it local.
+
 ```
 (define number-vector-largest
   (lambda (vec)
-    (number-vector-largest/helper vec (- (vector-length vec) 1))))
+    (let ([helper
+            (lambda (vec pos)
+              ; Grab the current element from the vector
+              (let ([current (vector-ref vec pos)])
+                (if (zero? pos)
+                    current
+                    (max current
+                         (helper vec (- pos 1))))))])
+      (helper vec (- (vector-length vec) 1))))
 ```
+
+Question: Why make it local?
+
+> No name overlap!
+
+> We don't need to repeat the name of the vector. See version 2.
+
+> If we write a separate helper, our instructor expects us to document it.
+  If it's local, we need not document it.
+
+```
+(define number-vector-largest
+  (lambda (vec)
+    (let ([helper
+            (lambda (pos)
+              ; Grab the current element from the vector
+              (let ([current (vector-ref vec pos)])
+                (if (zero? pos)
+                    current
+                    (max current
+                         (helper (- pos 1))))))])
+      (helper (- (vector-length vec) 1))))
+```
+
+Keep track of the largest so far.
+
+```
+(define number-vector-largest
+  (lambda (vec)
+    (let ([helper
+            (lambda (pos largest-so-far)
+              ; Grab the current element from the vector
+              (let ([current (vector-ref vec pos)])
+                (if (zero? pos)
+                    current
+                    (helper (- pos 1) (max current largest-so-far)))))])
+      (helper (- (vector-length vec) 1) (vector-ref vec 0)))))
+```
+
 
 ### A concern
 
@@ -255,20 +323,30 @@ rainbow.
 Write a procedure, `(palette? val)`, that determines if `val` is
 a palette (a nonempty vector of RGB colors).
 
+#### A solution
+
 ```
 ;;; (palette? val) -> boolean?
 ;;;   val : any
 ;;; Determine if `val` is a nonempty vector of RGB colors.
 (define palette?
   (lambda (val)
-    #f))
+    (and (vector? val)
+         (> (vector-length vec) 0)
+         (all-rgb? vec 0))))
+
+(define all-rgb?
+  (lambda (vec pos)
+    (if (> pos (vector-length vec))
+        #t
+        (if (rgb? (vector-ref vec pos))
+            (all-rgb? vec (+ pos 1))
+            #f))))
 ```
 
 #### Tests
 
 #### Notes
-
-#### A solution
 
 ### Exercise 3: Darkening vector-based palettes
 
@@ -288,8 +366,30 @@ appropriately.
 ;; Make each color in `palette` darker.
 (define palette-darker!
   (lambda (palette)
-    void))
+    (pd-helper! palette 0)))
+(define pd-helper!
+  (lambda (palette pos)
+    (if (>= pos (vector-length palette))
+        void
+        (begin
+          (vector-set! palette pos
+                       (palette-darker (vector-ref palette pos)))
+          (pd-helper! palette (+ pos 1))))))
+(define palette?
+  (lambda (val)
+    (and (vector? val)
+         (> (vector-length vec) 0)
+         (all-rgb? vec 0))))
+(define all-rgb?
+  (lambda (vec pos)
+    (if (> pos (vector-length vec))
+        #t
+        (if (rgb? (vector-ref vec pos))
+            (all-rgb? vec (+ pos 1))
+            #f))))
+
 ```
+
 
 #### Tests
 
