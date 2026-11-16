@@ -329,13 +329,15 @@
 ;; eleven.  Using that list, compute the probability that you roll
 ;; seven or eleven.  (There are thirty-six different possible rolls
 ;; on two dice.) How many games would you expect to win if you played
-;; 36,000 games?
+;; 3,600 games?
 
 ;; Rolls that make 7: 1 & 6, 6 & 1, ...
 
 ;; Rolls that make 11: 5 & 6, ...
 
 ;; Probability: 
+
+;; Wins in 3600 games: 
 
 ;; c. We might also want to compute the experimental probability of
 ;; winning.  Write a recursive procedure, `(count-wins n)`, that 
