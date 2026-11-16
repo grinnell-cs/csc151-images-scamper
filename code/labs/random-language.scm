@@ -475,7 +475,8 @@
 ;;; (random-student) -> ???
 ;;; ???
 (define random-student
-  "Randy")
+  (lambda ()
+    "Randy"))
 
 ;; b. Write a zero-parameter procedure, (random-pair), that calls
 ;; (random-student) twice and puts the two students together into a
