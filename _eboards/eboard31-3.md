@@ -3,7 +3,7 @@ title: "EBoard 31: Randomness (Section 3)"
 number: 31
 section: eboards
 held: 2026-11-16
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -25,6 +25,7 @@ Administrative stuff
 ### Introductory Notes
 
 * Warning! Friday the 13th fell on a Friday this month!
+* Scamper 4.9 (I think) is live!
 * I am concerned that many of the people who are missing the early
   LAs are not attempting them. For example, only one person of five
   attempted procedural abstraction and no one attempted tracing.
@@ -41,8 +42,7 @@ Administrative stuff
       Scamper' `random` only accepts one parameter. Racket's can
       accept none---in which case it gives a number between 0
       (inclusive) and 1 (exclusive)---or two---in which case it
-      treats them as a lower and upper bound.  a different version
-      of `random`.
+      treats them as a lower and upper bound.  
 
 ### Upcoming work
 
@@ -104,7 +104,7 @@ Artistic/Cultural
 Multicultural
 
 * Friday, 20 November 2026, 4:10--5:00 p.m., HSSC N1170.
-  _Middle of Everywhere (???)_
+  _Middle of Everywhere (Ghana)_
 * Friday, 20 November 2026, 5:00--8:00 p.m., Downtown Grinnell.
   _Jingle Bell Holiday_
      * Why are we celebrating Christmas before Thanksgiving?
@@ -156,6 +156,11 @@ Q&A
 
 ### Administrative
 
+Can you send out the current grade reports more frequently so that we know
+what LAs we need to do?
+
+> I'll do my best. Email me if you want another.
+
 ### MP5
 
 ### Randomness
@@ -174,8 +179,22 @@ Pop quiz
 --------
 
 * What's the largest value that `(random 10)` can return?
+* Lists: How would you add five to each element of a list called `numbers`?
+* Characters: How do we determine the collating sequence of a character?
+  Collating sequence: "The number associated with each character".
+* Characters: How do we determine if a character is upper-case?
+* Predicates: Why would we write `(and (integer? x) (odd? x))` 
+  rather than `(and (odd? x) (integer? x))`?
 
 Lab
 ---
 
 * Newly re-written for Scamper; there may be infelicities.
+* There's one part that says "use 36,000"; please use "3,600" instead.
+  (M says "If you use tail recursion, you can still use 36,000.")
+* Note: "pair-a-dice" is supposed to invoke the word "paradise"; it appears 
+  I failed in yet another pun.
+* Note: "Rolling rolling rolling" should invoke at least two great performances,
+  but you may not know them.
+    * Tina Turner singing "Proud Mary"
+    * The Blues Brothers singing "Rawhide"
