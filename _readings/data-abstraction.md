@@ -79,12 +79,12 @@ type.  We'll want to create a variet of forms of names.
 (define qe2 (name "Queen" "Elizabeth" #f #f "II"))
 (define simon (name #f "Simon" #f #f #f))
 
-(test-true "Admiral Grace Murray Hopper" (name? hopper))
-(test-true "Charles Babbage" (name? babbage))
-(test-true "Countess Ada Augusta Byron" (name? ada))
-(test-true "QEII" (name? qe2))
-(test-true "Roy Clay Sr." (name? clay))
-(test-true "Simon" (name? simon))
+(test-case "Admiral Grace Murray Hopper" equal? #t #(name? hopper))
+(test-case "Charles Babbage" equal? #t #(name? babbage))
+(test-case "Countess Ada Augusta Byron" equal? #t #(name? ada))
+(test-case "QEII" equal? #t #(name? qe2))
+(test-case "Roy Clay Sr." equal? #t #(name? clay))
+(test-case "Simon" equal? #t #(name? simon))
 ```
 
 As long as we've referenced the `name?` predicate, we should document
@@ -130,23 +130,23 @@ extract each of the components.
 And some tests!
 
 ```
-(test-equal? "ada/prefix" (name-prefix ada) "Countess")
-(test-equal? "ada/given" (name-given ada) "Ada")
-(test-equal? "ada/middle" (name-middle ada) "Augusta")
-(test-equal? "ada/family" (name-family ada) "Byron")
-(test-false "ada/suffix" (name-suffix ada))
+(test-case "ada/prefix" equal? "Countess" #(name-prefix ada))
+(test-case "ada/given"  equal? "Ada"      #(name-given ada))
+(test-case "ada/middle" equal? "Augusta"  #(name-middle ada))
+(test-case "ada/family" equal? "Byron"    #(name-family ada))
+(test-case "ada/suffix" equal? #f         #(name-suffix ada))
 
-(test-false "babbage/prefix" (name-prefix babbage))
-(test-equal? "babbage/given" (name-given babbage) "Charles")
-(test-false "babbage/middle" (name-middle babbage))
-(test-equal? "babbage/family" (name-family babbage) "Babbage")
-(test-false "babbage/suffix" (name-suffix babbage))
+(test-case "babbage/prefix" equal? #f        #(name-prefix babbage))
+(test-case "babbage/given"  equal? "Charles" #(name-given babbage))
+(test-case "babbage/middle" equal? #f        #(name-middle babbage))
+(test-case "babbage/family" equal? "Babbage" #(name-family babbage))
+(test-case "babbage/suffix" equal? #f        #(name-suffix babbage))
 
-(test-false "clay/prefix" (name-prefix clay))
-(test-equal? "clay/given" (name-given clay) "Roy")
-(test-false "clay/middle" (name-middle clay))
-(test-equal? "clay/family" (name-family clay) "Clay")
-(test-equal? "clay/suffix" (name-suffix clay) "Sr")
+(test-case "clay/prefix" equal? #f     #(name-prefix clay))
+(test-case "clay/given"  equal? "Roy"  #(name-given clay))
+(test-case "clay/middle" equal? #f     #(name-middle clay))
+(test-case "clay/family" equal? "Clay" #(name-family clay))
+(test-case "clay/suffix" equal? "Sr"   #(name-suffix clay))
 ```
 
 You get the idea.
@@ -228,7 +228,7 @@ And it will help us move on to the `name?` predicate.
            (string-or-false? (caddddr val)))))) ; is this legal?
 ```
 
-Unfortunately, that last line isn't quite legal.  So let's use `list-ref`.
+Unfortunately, that last line isn't quite legal because Scamper doesn't include `caddddr`.  Let's use `list-ref` instead.
 
 ```racket
 (define name?
@@ -254,7 +254,7 @@ On to the other procedures.  They are comparatively easy to define.
 (define name-given cadr)
 (define name-middle caddr)
 (define name-family cadddr)
-(define name-suffix (section list-ref <> 4))
+(define name-suffix (r-s list-ref 4))
 ```
 
 These also pass our tests.
@@ -309,74 +309,15 @@ of the other procedures we expect to write.
 Those last few procedures aren't all that hard either.
 
 ```racket
-(define name-prefix (section vector-ref <> 0))
-(define name-given (section vector-ref <> 1))
-(define name-middle (section vector-ref <> 2))
-(define name-family (section vector-ref <> 3))
-(define name-suffix (section vector-ref <> 4))
+(define name-prefix (r-s vector-ref 0))
+(define name-given (r-s vector-ref 1))
+(define name-middle (r-s vector-ref 2))
+(define name-family (r-s vector-ref 3))
+(define name-suffix (r-s vector-ref 4))
 ```
 
 And yes, this implementation passes all of the tests.  At least it 
 did once I fixed some bugs.
-
-## Never satisfied: Yet another implementation
-
-Are we done yet?  No.  We might decide that we want some practice with
-some hash tables and want to implement names with hash tables.  As
-noted earlier, we can use `'prefix` and such as the keys.  Let's see
-what we might do.  I'd suggest only putting part of the name in the
-hash table if it's not false.
-
-In this case, we're not checking all of the preconditions; we'll
-just assume the person who calls our procedure meets the requirements.
-
-```racket
-(define name
-  (lambda (prefix given middle family suffix)
-    (let ([n (make-hash)])
-      (when prefix
-        (hash-set! n 'prefix prefix))
-      (hash-set! n 'given given)
-      (when middle
-        (hash-set! n 'middle middle))
-      (when family
-        (hash-set! n 'family family))
-      (when suffix
-        (hash-set! n 'suffix suffix))
-      n)))
-```
-
-When is something this kind of name?  When it's a hash table with the
-appropriate keys.
-
-```racket
-(define name?
-  (let ([ok-key?
-         (lambda (key hash)
-           (string? (hash-ref hash key "")))])
-    (lambda (val)
-      (and (hash? val)
-           (ok-key? 'prefix val)
-           (string? (hash-ref val 'given))
-           (ok-key? 'middle val)
-           (ok-key? 'family val)
-           (ok-key? 'suffix val)))))
-```
-
-Do these pass our tests?  They do.  (Well, they did once we corrected some
-errors the tests revealed.  Tests are our friends.)
-
-On to extracting the fields.  Ah, the joy of `hash-ref`.
-
-```racket
-(define name-prefix (section hash-ref <> 'prefix #f))
-(define name-given (section hash-ref <> 'given))
-(define name-middle (section hash-ref <> 'middle #f))
-(define name-family (section hash-ref <> 'family #f))
-(define name-suffix (section hash-ref <> 'suffix #f))
-```
-
-And yes, these pass all of the tests we wrote.
 
 ## What's the point?
 
@@ -411,7 +352,7 @@ representation.
 
 ## What is actually the best way to represent a name? (Social implications of storing people's names as data)
 
-You've seen that if we choose 5 parts of a name (prefix, given, middle, family, and suffix) then we could represent any name that may contain those 5 parts using various different underlying representations: list, hash table, etc.
+You've seen that if we choose 5 parts of a name (prefix, given, middle, family, and suffix) then we could represent any name that may contain those 5 parts using various different underlying representations: list, vector, hash table, etc.
 
 But, are those 5 parts -- prefix, given, middle, family, and suffix -- the best way to represent a name?
 
@@ -436,7 +377,6 @@ The take-away message here is that **almost all data is an approximation of real
 
 This discussion might have raised more questions than it answered, as is the case with most discussions about the social implications of computing. As computer scientists, it is important for us to constantly confront social issues around computing that don't have a clear answer!
 
-
 ## Self-Checks
 
 ### Self-check 1: Printing names (‡)
@@ -453,7 +393,7 @@ representation we have not yet covered.
 "Roy Clay Sr"
 ```
 
-### Self-check 2: Yet another representation (‡)
+### Self-check 2: Yet another representation 
 
 Suppose we were planning to represent names as strings with the
 components separated by vertical bars.  For example,
