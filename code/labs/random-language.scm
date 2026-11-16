@@ -180,6 +180,8 @@
 ;; | Exercise 1: Averaging dice rolls |
 ;; +----------------------------------+
 
+;; Driver: A
+
 ;; One way to explore the quality of our `roll-a-die` procedure is to
 ;; average a bunch of dice rolls. Arguably, if the dice are "fair",
 ;; we should find that the average is about 3.5.
@@ -212,6 +214,8 @@
 ;; | Exercise 2: Rolling multiple dice |
 ;; +-----------------------------------+
 
+;; Driver: B
+
 ;; Some students, when confronted with the prior problem, write the
 ;; following to find the average of ten dice rolls.  *Do not type
 ;; the expression yet!*
@@ -240,6 +244,8 @@
 ;; +----------------------------------------------+-------------------
 ;; | Exercise 3: Rolling multiple dice, revisited |
 ;; +----------------------------------------------+
+
+;; Driver: A
 
 ;; As you've likely determined, the `roll-dice` procedure from the reading
 ;; is a better way to reliably roll an arbitrary number of dice.
@@ -275,6 +281,8 @@
 ;; +-----------------------------------------+------------------------
 ;; | Exercise 4: Tallying sevens and elevens |
 ;; +-----------------------------------------+
+
+;; Driver: B
 
 ;; There are some games of chance in which the player rolls two dice
 ;; and if those two dice total seven or eleven, the player wins. It
@@ -364,6 +372,8 @@
 ;; | Exercise 5: Exploring subtle errors |
 ;; +-------------------------------------+
 
+;; Driver: A
+
 ;; You may have noted that we got fewer wins than expected. (It appears that 
 ;; the house does not play fairly.) The difference suggests that there is a 
 ;; subtle error in `play-seven-eleven`.  You may have even discovered it.  
@@ -447,6 +457,8 @@
 ;; | Exercise 6: Choosing names |
 ;; +----------------------------+
 
+;; Driver: B
+
 ;; Suppose we have a list of names, `students`, that represents all
 ;; of the students in a class. 
 
@@ -483,6 +495,8 @@
 ;; | Exercise 7: Generating sentences |
 ;; +----------------------------------+
 
+;; Driver: A
+
 ;; a. Using the `sentence` procedure from the reading, generate about
 ;; five different sentences.
 
@@ -508,6 +522,8 @@
 ;; +-------------------------+----------------------------------------
 ;; | Exercise 8: Madder libs |
 ;; +-------------------------+
+
+;; Driver: B
 
 ;; There's a famous party game called "Mad Libs" in which one player
 ;; starts with a template for a story and asks other players to supply
