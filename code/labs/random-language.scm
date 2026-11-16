@@ -425,8 +425,10 @@
 ;; ?
 
 ;; d. As your experiment likely showed, we seem to be rolling the dice
-;; more times than we expected. Determine why. Ask for help from the course
-;; staff if you can't figure it out.
+;; more times than we expected. Determine why. We'd recommend that you try
+;; tracing `play-seven-eleven` a few times to see what hapepns.
+;;
+;; Ask for help from the course staff if you can't figure it out.
 
 ;; Enter your analysis/explanation here: 
 
