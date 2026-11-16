@@ -461,7 +461,8 @@ Using variants of the fractal approaches from parts 1 and 2, along with anything
 Use your procedure to create three images that you'd like to share.  Save them as `my-fractal-01.png`, `my-fractal-02.png`, and `my-fractal-03.png`.  Your commands will look something like the following.
 
 ```
-> (image-save! (my-fractal 128 (rgb 255 0 255) 8) "my-fractal-01.png")
+> (image-save (drawing->canvas (my-fractal 128 (rgb 255 0 255) 8)) 
+              "my-fractal-01.png")
 ```
 
 Include a comment in your code file that explains how you generated
