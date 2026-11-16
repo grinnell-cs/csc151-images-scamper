@@ -146,13 +146,13 @@ We'll consider a more general approach in an upcoming assignment.
 (define sentence
   (lambda ()
     (string-append
-     (random-person) " "
-     (random-transitive-verb) " "
-     (random-object) ".")))
+      (random-person) " "
+      (random-transitive-verb) " "
+      (random-object) ".")))
 
 ;;; people -> listof string?
 ;;; A list of some of the folks who teach 151
-(define people (list "Peter-Michael" "Nicole" "Sarah" "SamR" "Barbara" "Jerod" "Priscilla"))
+(define people (list "Peter-Michael" "Nicole" "Sarah" "SamR" "Charlie" "Fernanda" "Zach" "William"))
 
 ;;; (random-person) -> string?
 ;;; Randomly select an element of the people list.
@@ -189,9 +189,9 @@ We'll consider a more general approach in an upcoming assignment.
 (define random-object
   (lambda ()
     (string-append
-     (random-elt articles) " "
-     (random-elt adjectives) " "
-     (random-elt nouns))))
+      (random-elt articles) " "
+      (random-elt adjectives) " "
+      (random-elt nouns))))
 ```
 
 Here's one example of the primary procedure in action.
@@ -215,8 +215,6 @@ Here's one example of the primary procedure in action.
 4.  What do you expect to happen if you call `random` with 0 or -1 as a parameter?  Check your hypothesis experimentally.
 
 5.  What do you expect to happen if you call `random` with non-integer parameters.  Check your hypothesis experimentally.
-
-6.  Try calling `random` with no parameters. What happens?
 
 ### Check 2: Rolling dice
 
@@ -277,14 +275,3 @@ Here's one example of the primary procedure in action.
 
 Questions and Answers
 ---------------------
-
-Is there a way to return a fraction output randomly with the random procedure?
-
-> It depends on what range you want for your fractions.  If you want 
-  fractions in the range 0 to 1, you could use `(inexact->exact (random))`.
-  You could also use something like `(/ (random 1000) (+ 1 (random 1000)))`, 
-  although that gives a very strange distribution of numbers.
-
-What if I want numbers in the range 0 to 5.5?
-
-> Use `(* 5.5 (random))`.
