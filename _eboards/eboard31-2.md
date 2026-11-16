@@ -3,7 +3,7 @@ title: "EBoard 31: Randomness (Section 2)"
 number: 31
 section: eboards
 held: 2026-11-16
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -25,6 +25,7 @@ Administrative stuff
 ### Introductory Notes
 
 * Warning! Friday the 13th fell on a Friday this month!
+* Scamper is now at version 4.9! Make sure to reload.
 * I am concerned that many of the people who are missing the early
   LAs are not attempting them. For example, only one person of five
   attempted procedural abstraction and no one attempted tracing.
@@ -80,7 +81,7 @@ Scholarly
 
 * Tuesday, 17 November 2026, Noon--1:00 p.m., Whale Room (I think).
   _CS Table: What is CS?_
-    * Watch [What is computer science, and who decides that?](https://www.youtube.com/watch?v=SPErkhKSG3g).  The talk starts at about 13:40 in the YouTube video.
+    * Watch [What is computer science, and who decides that?](https://www.youtube.com/watch?v=SPErkhKSG3g). The talk starts at about 13:40 in the YouTube video.
     * Double tokens! (provided I remember)
 * Tuesday, 17 November 2026, 4:15--5:00 p.m., Burling 1st Floor.
   _Fernanda Eliott on Cognitive Derivation – Instead of “To GenAI or Not to GenAI”: Mapping Where Cognition Came From._
@@ -145,10 +146,10 @@ _These do not earn tokens, but are worth your consideration._
 * Tuesday, 17 November 2026, 7:00--9:00 p.m., Darby Gym.
   _Men's Basketball vs. Nebraska Wesleyan_
 * Wednesday, 18 November 2026, 7:00--9:00 p.m., Darby Gym.
-  _Women's Basketball vs. Buena Vista_ 
-* Saturday, 21 November 2026, 1:00--3:00 pl.m., Darby Gym.
-  _Women's Basketball vs. Cornell College_ 
-* Saturday, 21 November 2026, 3:00--5:00 pl.m., Darby Gym.
+  _Women's Basketball vs. Buena Vista_
+* Saturday, 21 November 2026, 1:00--3:00 p.m., Darby Gym.
+  _Women's Basketball vs. Cornell College_
+* Saturday, 21 November 2026, 3:00--5:00 p.m., Darby Gym.
   _Men's Basketball vs. Cornell College_ 
 
 Q&A
@@ -164,7 +165,7 @@ Is there a limit as to what `n` can be?
 
 > Almost certainly. I'd guess around 2^31, but I'm not positive.
 
-Why can't you use negative numbers or non-integer reals in random?
+Why can't you use negative numbers or non-integer reals in `random`?
 
 > Because PM designed it that way.
 
@@ -174,8 +175,15 @@ Pop quiz
 --------
 
 * What's the largest value that `(random 10)` can return?
+* Lists: How would you add five to each element of a list called `numbers`?
+* Characters: How do we determine the collating sequence of a character?
+  Collating sequence: "The number associated with each character".
+* Characters: How do we determine if a character is upper-case?
+* Predicates: Why would we write `(and (integer? x) (odd? x))` 
+  rather than `(and (odd? x) (integer? x))`?
 
 Lab
 ---
 
 * Newly re-written for Scamper; there may be infelicities.
+* For example, I forgot to write down who should be in charge of each problem.

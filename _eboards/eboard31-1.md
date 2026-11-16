@@ -190,3 +190,4 @@ Lab
 ---
 
 * Newly re-written for Scamper; there may be infelicities.
+* One such infelicity: Line 549 or so has an extra right parenthesis.
