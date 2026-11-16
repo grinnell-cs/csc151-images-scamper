@@ -36,6 +36,14 @@ Administrative stuff
   previously scheduled meeting, please let me know that.
 * The graders did not finish with the remaining MP redos this weekend.
   I'm working on next steps.
+* I've responded to all the Scamper readings.
+    * Some of you ended up reading an old version of the randomness reading.
+      Fortunately, there aren't any major issues. One key one:
+      Scamper' `random` only accepts one parameter. Racket's can
+      accept none---in which case it gives a number between 0
+      (inclusive) and 1 (exclusive)---or two---in which case it
+      treats them as a lower and upper bound.  a different version
+      of `random`.
 
 ### Upcoming work
 
@@ -152,6 +160,16 @@ Q&A
 ### MP5
 
 ### Randomness
+
+Is there a limit as to what `n` can be?
+
+> Almost certainly. I'd guess around 2^31, but I'm not positive.
+
+Why can't you use negative numbers or non-integer in random?
+
+> Because PM designed it that way. 
+
+> Because the semantics are unclear.
 
 Pop quiz
 --------
