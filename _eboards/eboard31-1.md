@@ -3,7 +3,7 @@ title: "EBoard 31: Randomness (Section 1)"
 number: 31
 section: eboards
 held: 2026-11-16
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -11,7 +11,6 @@ _New places, new partners, grab whiteboards._
 
 **Warning! You are being recorded** (and transcribed) (provided the technology
 is working correctly).
-
 
 _Approximate overview_
 
@@ -36,7 +35,7 @@ Administrative stuff
   previously scheduled meeting, please let me know that.
 * The graders did not finish with the remaining MP redos this weekend.
   I'm working on next steps.
-* I've responded to all the Scamper readings.
+* I've responded to all the randomness reading responses.
     * Some of you ended up reading an old version of the randomness reading.
       Fortunately, there aren't any major issues. One key one:
       Scamper' `random` only accepts one parameter. Racket's can
@@ -60,6 +59,7 @@ Administrative stuff
         * No reading response!
 * On Friday, 2026-11-20
     * New Quiz/LA on randomness (Monday)
+    * New Quiz/LA on data abstraction (Wednesday)
     * Makeup Quiz/LA on pairs 
     * Makeup Quiz/LA on vectors 
     * Makeup Quizzes/LAs on appropriate previous topics
@@ -92,10 +92,8 @@ Scholarly
 Artistic/Cultural
 
 * Any day. Visit the GCMOA for at least 30 minutes.
-* Thursday, 19 November 2026, 8:00--9:30. JRC 101.
+* Thursday, 19 November 2026, 8:00--9:30 p.m. JRC 101.
   _Writers@Grinnell present Lucy Schiller_
-* Friday, 19 November 2026, 7:00--8:00 p.m., GCMoA.
-  _Grinnell Dance Ensemble: A Journey of Grief_
 * Saturday, 21 November 2026, 2:00--3:00 p.m., Flanagan Theatre.
   _Performance: She Woke At Dawn_
 * Sunday, 22 November 2026, 7:30--8:30 p.m., Flanagan Theatre.
@@ -116,9 +114,15 @@ Peer
 _Musical, theatric, sporting, academic, and similar events involving this 
 section's students are welcome._
 
+* Thursday, 19 November 2026, 7:00--8:00 p.m., GCMoA.
+  _Grinnell Dance Ensemble: A Journey of Grief_
+* Friday, 20 November 2026, 7:00--8:00 p.m., GCMoA.
+  _Grinnell Dance Ensemble: A Journey of Grief_
+
 Wellness
 
-* Fill out the wellness survey that you received last week.
+* Fill out the wellness survey that you received the week before last.
+    * SHAW is probably tabling to tell you more about it.
 * Monday, 16 November 2026, 8:00--9:00 p.m., Prayer Garage in the CRSSJ.
   _Meditation Group_
 * Tuesday, 17 November 2026, 12:15--12:45 p.m., GCMoA.
@@ -130,7 +134,7 @@ Wellness
 
 Misc
 
-* Monday, 16 November 2026, 11:00--11:45 a.m., HSSC Global Media Event Space (HSSC N1164).
+* Tuesday, 17 November 2026, 11:00--11:45 a.m., HSSC Global Media Event Space (HSSC N1164).
   _Study Away 1st Steps Information Session_.
 * Wednesday, 18 November 2026, 8:00--9:00 p.m., Science 3820.
   _Mentor Session_
@@ -165,9 +169,9 @@ Is there a limit as to what `n` can be?
 
 > Almost certainly. I'd guess around 2^31, but I'm not positive.
 
-Why can't you use negative numbers or non-integer in random?
+Why can't you use negative numbers or non-integer reals in random?
 
-> Because PM designed it that way. 
+> Because PM designed it that way.
 
 > Because the semantics are unclear.
 
@@ -175,6 +179,14 @@ Pop quiz
 --------
 
 * What's the largest value that `(random 10)` can return?
+* Lists: How would you add five to each element of a list called `numbers`?
+* Characters: How do we determine the collating sequence of a character?
+  Collating sequence: "The number associated with each character".
+* Characters: How do we determine if a character is upper-case?
+* Predicates: Why would we write `(and (integer? x) (odd? x))` 
+  rather than `(and (odd? x) (integer? x))`?
 
 Lab
 ---
+
+* Newly re-written for Scamper; there may be infelicities.
