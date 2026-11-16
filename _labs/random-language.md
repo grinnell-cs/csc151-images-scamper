@@ -1,7 +1,7 @@
 ---
 title: Random language generation
 summary: |
-  We explore Racket's `random` procedure and ways to use that procedure
+  We explore Scheme's `random` procedure and ways to use that procedure
   and a variety of associated procedures to generate language.  We 
   consider the implications of having a procedure that does not behave
   consistently.  We also simulate some games of chance.
@@ -14,8 +14,6 @@ todo:
 ## Important procedures
 
 * `(random n)`: given a positive integer, generate a difficult-to-predict integer value between 0 (inclusive) and `n` (exclusive).
-* `(random)`: generate a difficult-to-predict real value between 0 (inclusive) and 1 (exclusive).
-* `(random a b)`: Given two exact integers, the second of which is larger than the first, generate a difficult-to-predict value between `a` (inclusive) and `b` (exclusive).
 
 ## Preparation
 
@@ -33,23 +31,16 @@ a. Introduce yourself to your partner, discuss strengths and weaknesses, decide 
 
 b. Download the lab.
 
-* [random-language.rkt](../code/labs/random-language.rkt)
+* [random-language.scm](../code/labs/random-language.scm)
 
 c. Review the procedures included in the lab to make sure you
 understand what they are intended to do.
 
 ## Acknowledgements
 
-This laboratory was inspired by [an earlier lab on randomness from
-the spring 2018 version of CSC
-151](https://www.cs.grinnell.edu/~rebelsky/Courses/CSC151/2018S/readings/randomness).
-That lab was, itself, based on a sequence of earlier labs on
-randomness and simulation.
+This laboratory is closely based on [an earlier lab on randomness from Spring 2025](https://rebelsky.cs.grinnell.edu/Courses/CSC151/2026Fa/labs/random-language.html). That laboratory was inspired by [an earlier lab on randomness from the spring 2018 version of CSC 151](https://www.cs.grinnell.edu/~rebelsky/Courses/CSC151/2018S/readings/randomness).  That lab was, itself, based on a sequence of earlier labs on randomness and simulation.
 
-This version also adds some new exercises on language generation using
-new procedures in the `csc151` library.  Those exercises were inspired
-by similar exercises designed for the summer 2018 "language of code"
-camp.
+The laboratory was updated in Fall 2026 to accommodate the switch from DrRacket to Scamper, which included the need to simulate a side-effecting "print" procedure. It may still have some infelicities. 
 
 For those who care, the punny `pair-a-dice` first appeared in [an
 exercise in spring
