@@ -351,9 +351,9 @@ You will likely want a copy of `darker-32`.
 (define rgb-transformer
   (lambda (transform-component)
     (lambda (color)
-      (rgb2 (transform-component (color-red color))
-            (transform-component (color-green color))
-            (transform-component (color-blue color))))))
+      (rgb2 (transform-component (rgb-red color))
+            (transform-component (rgb-green color))
+            (transform-component (rgb-blue color))))))
 
 ;;; (darker-32 color) -> color?
 ;;;   color : color?
@@ -516,6 +516,10 @@ Grading rubric
 ## Q&A
 
 ### General
+
+You used `color-red`, `color-green`, and `color-blue` in the assignment. Those functions don't seem to exist.
+
+> Whoops! They were in the Racket library, but have not transitioned to the Scamper library.
 
 How do we do recursion without a list? What is the base case if we do not have a limit for the number of elements?
 

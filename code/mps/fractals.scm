@@ -37,9 +37,9 @@
 (define rgb-transformer
   (lambda (transform-component)
     (lambda (color)
-      (rgb2 (transform-component (color-red color))
-            (transform-component (color-green color))
-            (transform-component (color-blue color))))))
+      (rgb2 (transform-component (rgb-red color))
+            (transform-component (rgb-green color))
+            (transform-component (rgb-blue color))))))
 
 ;;; (rgb-darker-32 color) -> rgb?
 ;;;   color : rgb?
