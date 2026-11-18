@@ -93,7 +93,7 @@
 
 - outcome: Data abstraction
   description: Design data structures to separate interface from implementation.
-  example: /las/data-abstraction.
+  example: /las/data-abstraction
   active: true
 
 - outcome: Higher-order programming
