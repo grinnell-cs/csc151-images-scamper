@@ -33,14 +33,14 @@ from [the reading](../readings/data-abstraction).
 
 c. Grab the code file.
 
-* [data-abstraction.rkt](../code/labs/data-abstraction.rkt)
+* [data-abstraction.scm](../code/labs/data-abstraction.scm)
 
 d. Grab four associated library files.
 
-* [names-as-lists.rkt](../code/labs/names-as-lists.rkt)
-* [names-as-vectors.rkt](../code/labs/names-as-vectors.rkt)
-* [names-as-hash-tables.rkt](../code/labs/names-as-hash-tables.rkt)
-* [names-as-bar-strings.rkt](../code/labs/names-as-bar-strings.rkt)
+* [names-as-lists.rkt](../code/labs/names-as-lists.scm)
+* [names-as-vectors.rkt](../code/labs/names-as-vectors.scm)
+* [names-as-hash-tables.rkt](../code/labs/names-as-hash-tables.scm)
+* [names-as-bar-strings.rkt](../code/labs/names-as-bar-strings.scm)
 
 e. Review the supplied procedures, which should be similar to those
 from [the reading](../readings/data-abstraction).
@@ -48,4 +48,5 @@ from [the reading](../readings/data-abstraction).
 ## Acknowledgements
 
 This lab was (mostly) newly written in spring 2021.  In spring 2022,
-the different implementations were moved to separate files.
+the different implementations were moved to separate files. In fall 2026,
+the code was revamped for use with Scamper.
