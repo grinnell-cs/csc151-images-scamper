@@ -220,11 +220,11 @@
 ;;; 
 (define name->simple-string
   (lambda (name)
-    (string-append (if (name-prefix name)
+    (string-append (if (string? (name-prefix name))
                        (string-append (name-prefix name) " ")
                        "")
                    (name-given name)
-                   (if (name-middle name)
+                   (if (string? (name-middle name))
                        (string-append " " (name-middle name))
                        "")
                    "FINISH ME")))
