@@ -774,5 +774,5 @@ b. Do you think you'll prefer working upward from 0 to the length, or downward f
 
 ### Check 3: Local helpers (‡)
 
-Rewrite the second `number-vector-largest` using a local kernel that keeps track of the largest so far. Can you write the kernel so that it does not need the vector as a parameter?
+Rewrite the second `number-vector-largest` using a local kernel that keeps track of the largest so far. Can you write the kernel so that it does not need the vector as a parameter? (A "local kernel" is a recursive helper procedure internal to the main procedure and defined with `let`.)
 
