@@ -39,6 +39,10 @@
 
 ;; ANSWER
 
+;; How have you used vectors in this program?
+
+;; ANSWER
+
 ;; What are two instances of recursion in your program? 
 
 ;; Instance one:
