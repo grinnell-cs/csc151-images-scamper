@@ -182,7 +182,10 @@
 ;            #(name->fg simon))
 ; (test-case "(name->fg clay)"
 ;            equal? "Clay Roy"
-;            (name->fg clay))
+;            #(name->fg clay))
+; (test-case "(name->fg babbage)"
+;            equal? "Babbage Charles"
+;            #(name->fg babbage))
 
 ;; b. Try each of the completed implementation of names to ensure that 
 ;your process works correctly independently of how names are implemented.
