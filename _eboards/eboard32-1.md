@@ -3,7 +3,7 @@ title: "EBoard 32: Data abstraction (Section 1)"
 number: 32
 section: eboards
 held: 2026-11-18
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -34,7 +34,7 @@ Administrative stuff
     * We'll discuss the appropriate consequences after I've met with
       everyone.
     * These meetings leave me with little free time or energy.
-* I've learned that I need to describe my expectations Reading Responses 
+* I've learned that I need to describe my expectations for Reading Responses 
   a bit more carefully.
     * The syllabus says "Any reasonable attempt will be marked satisfactory."
     * A reasonable attept suggests that you've thought about it and tried, 
@@ -52,6 +52,7 @@ Administrative stuff
     * Read [the guidelines for the final project](../mps/final-project) and
       skim [James Clayson's "Radical Bricolage"](../files/radical-bricolage.pdf)
         * No reading response!
+        * Bring questions on Friday!
 * On Friday, 2026-11-20
     * New Quiz/LA on randomness (Monday)
     * New Quiz/LA on data abstraction (Today)
@@ -147,10 +148,15 @@ Misc
   _Mentor Session_
 * Thursday, 19 November 2026, 8:00--9:00 p.m., Science 3820.
   _Mentor Session_
-* Monday, 23 November 2026, 8:00--9:00 p.m., ???.
-  _CSC-151 Mentors Discuss CS @ Grinnell_
 * Friday, 20 November 2026, 7:30--9:30 p.m., Harris Concert Hall.
   _QPOC Drag Show_
+* Saturday, 21 November 2026, 10:00 a.m.--9:00 p.m., HSSC S1325.
+  _Prairie Hacks_
+     * <https://linktr.ee/prairie_hacks>
+     * Contact sepc-cs@grinnell.edu with questions
+     * See sign in classroom for more info
+* Monday, 23 November 2026, 8:00--9:00 p.m., ???.
+  _CSC-151 Mentors Discuss CS @ Grinnell_
 
 ### Other good things
 
@@ -173,6 +179,46 @@ Q&A
 Pop quiz
 --------
 
+_Boom! Gone!_
+
 Lab
 ---
 
+* Sam had to do a lot of rewriting to make this work with Scamper.
+
+Detour: What is data abstraction?
+---------------------------------
+
+What are the big ideas of data abstraction?
+
+* You can use functions without knowing how they work.
+* We can define our own "types" that collect data (e.g. names, points in
+  three space (x,y,z), class data, ...
+* When designing these types, we should think about multiple primary issues
+    * Why do we have the type?
+    * How do we use the type?
+    * How might we "implement" the type using extant types
+* Implementation: For "collect a bunch of data", we can use
+    * List (position tells you the kind of data)
+    * Vector (position tells you the kind of data)
+    * Hash (key tells you the kind of data)
+    * String separated by something (position tells you the kind of data)
+    * ...
+
+What are some smaller ideas?
+
+* In the name type we implemented, there were lots of Booleans.
+  The Booleans permitted us to make some characteristics optional.
+
+Here's a type
+
+* "Points in two space" (with an x and y coordinate)
+* What are some functions we'd want for "points in two space"?
+    * Given a point, return the x value: `(x-coordinate pt)`
+    * Given a point, return the y value: `(y-coordinate pt)`
+    * Make a point: `(point x y)`
+    * Is something a point? `(point? val)`
+    * Find the distance between two points `(distance-between pt1 pt2)`
+    * Cardinal points: `(cardinal-point-of pt)`
+    * Make a polygon `(polygon points)`
+    * Closer to origin `(closer-to-origin? pt1 p2)`
