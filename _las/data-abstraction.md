@@ -11,11 +11,7 @@ You may recall that we said that names are complex.  Some people have only one n
 
 Here's the start of a library that is intended to represent the various possibilities for names.
 
-```drracket
-#lang racket
-(require csc151)
-(require rackunit)
-
+```
 ;;; (make-name given middle surname suffix) -> name?
 ;;;   given : string?
 ;;;   middle : string? or #f
@@ -147,36 +143,7 @@ Here's the start of a library that is intended to represent the various possibil
                      (use suff " ")))))
 ```
 
-Here are a few tests of the various procedures working in conjunction.
-
-```
-(check-equal? (name->string (make-name "Barack" "Hussein" "Obama" "II"))
-              "Barack Hussein Obama, II")
-(check-equal? (name->dirstring (make-name "Barack" "Hussein" "Obama" "II"))
-              "Obama, Barack Hussein II")
-(check-equal? (name->string (make-name-3 "George" "Herbert Walker" "Bush"))
-              "George Herbert Walker Bush")
-(check-equal? (name->dirstring (make-name-3 "George" "Herbert Walker" "Bush"))
-              "Bush, George Herbert Walker")
-(check-equal? (name->string (make-name-3 "George" "W." "Bush"))
-              "George W. Bush")
-(check-equal? (name->dirstring (make-name-3 "George" "W." "Bush"))
-              "Bush, George W.")
-(check-equal? (name->string (make-name-2 "Kamala" "Harris"))
-              "Kamala Harris")
-(check-equal? (name->dirstring (make-name-2 "Kamala" "Harris"))
-              "Harris, Kamala")
-(check-equal? (name->string (make-name-1 "SamR"))
-              "SamR")
-(check-equal? (name->dirstring (make-name-1 "SamR"))
-              "SamR")
-(check-equal? (name->string (make-name-gs "Elizabeth" "II"))
-              "Elizabeth II")
-(check-equal? (name->dirstring (make-name-gs "Elizabeth" "II"))
-              "Elizabeth II")
-```
-
-Update the name structure (the procedures above) to use a struct rather
+Update the name structure (the procedures above) to use vectors rather
 than lists.
 
 > _Space for answer_
@@ -185,8 +152,8 @@ than lists.
 
 _Design data structures to separate interface from implementation._
 
-Variants of the name question above, using hash tables or vectors (rather
-than structs) are also possible.
+Variants of the name question above, using hash tables or bar strings
+(rather than vectors) are also possible.
 
 ## Data abstraction (extra)
 
@@ -218,7 +185,7 @@ Assume we’re storing shapes as vectors.  Write the procedure that someone woul
 (define shape vector)
 ```
 
-> If we want Racket to verify the number of parameters, we should be a bit more careful.
+> If we want Scamper to verify the number of parameters, we should be a bit more careful.
 
 >```
 (define shape
@@ -232,7 +199,9 @@ Assume we’re storing shapes as vectors.  Write the procedure that someone woul
 (define shape
   (lambda (kind size color)
     (cond
-      [(not (member? kind '("circle" "square" "triangle")))
+      [(not (or (equal? kind "circle")
+                (equal? kind "square")
+                (equal? kind "triangle")))
        (error "shape: invalid kind of shape: " kind)]
       [(not (and (integer? size) (positive? size)))
        (error "shape: requires a positive size, received: " size)]
@@ -246,5 +215,5 @@ Assume we're storing shapes as vectors and that they are created using the proce
 
 >``` 
 (define shape-size
-  (cut (vector-ref <> 1)))
+  (r-s vector-ref 1))
 ```
