@@ -24,7 +24,7 @@
   active: true
 
 - outcome: Lambda-free anonymous procedures
-  description: Use `cut` and composition to simplify computations.
+  description: Use sectioning and composition to simplify computations.
   example: /las/hop
   active: true
 
@@ -84,7 +84,7 @@
 - outcome: Randomness
   description: Write programs that produce predictably unpredictable output.
   example: /las/randomness
-  active: false
+  active: true
 
 - outcome: Dictionaries
   description: Design and write functions that use dictionaries.
