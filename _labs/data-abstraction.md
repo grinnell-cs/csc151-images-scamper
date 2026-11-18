@@ -17,15 +17,15 @@ c. Decide which partner will be Side A and which partner will be Side B.
 
 d. Grab your respective code files
 
-* [data-abstraction-a.rkt](../code/labs/data-abstraction-a.rkt)
-* [data-abstraction-b.rkt](../code/labs/data-abstraction-b.rkt)
+* [data-abstraction-a.scm](../code/labs/data-abstraction-a.scm)
+* [data-abstraction-b.scm](../code/labs/data-abstraction-b.scm)
 
 e. Grab four associated library files.
 
-* [names-as-lists.rkt](../code/labs/names-as-lists.rkt)
-* [names-as-vectors.rkt](../code/labs/names-as-vectors.rkt)
-* [names-as-hash-tables.rkt](../code/labs/names-as-hash-tables.rkt)
-* [names-as-bar-strings.rkt](../code/labs/names-as-bar-strings.rkt)
+* [names-as-lists.scm](../code/labs/names-as-lists.scm)
+* [names-as-vectors.scm](../code/labs/names-as-vectors.scm)
+* [names-as-hash-tables.scm](../code/labs/names-as-hash-tables.scm)
+* [names-as-bar-strings.scm](../code/labs/names-as-bar-strings.scm)
 
 e. Review the supplied procedures, which should be similar to those
 from [the reading](../readings/data-abstraction).
@@ -37,10 +37,10 @@ c. Grab the code file.
 
 d. Grab four associated library files.
 
-* [names-as-lists.rkt](../code/labs/names-as-lists.scm)
-* [names-as-vectors.rkt](../code/labs/names-as-vectors.scm)
-* [names-as-hash-tables.rkt](../code/labs/names-as-hash-tables.scm)
-* [names-as-bar-strings.rkt](../code/labs/names-as-bar-strings.scm)
+* [names-as-lists.scm](../code/labs/names-as-lists.scm)
+* [names-as-vectors.scm](../code/labs/names-as-vectors.scm)
+* [names-as-hash-tables.scm](../code/labs/names-as-hash-tables.scm)
+* [names-as-bar-strings.scm](../code/labs/names-as-bar-strings.scm)
 
 e. Review the supplied procedures, which should be similar to those
 from [the reading](../readings/data-abstraction).
