@@ -180,3 +180,13 @@ How will we decide who is in our group?
 
 > Class activity today!
 
+### Miscellaneous
+
+Why did you make us implement `name->sortable`?
+
+> Reading cryptic documentation is a useful skill.
+
+> To give you the experience of thinking about real-world situations.
+
+> For example, the designers of some of Grinnell's databases didn't understand
+  quite how long a student's name can be.

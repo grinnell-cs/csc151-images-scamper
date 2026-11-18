@@ -1,0 +1,5 @@
+Lists: What should you get from `(map + (list 1 2 3) (list 4 4 4))`?
+Anonymous functions: Rewrite `(lambda (x) (string-append "X" x))` with `l-s` or `r-s`.
+Strings: How do you extract the character at index 5 from a string?
+Lists: Which of the big three should you use to select some of the elements of a list, forming a new list.
+Misc: Why shouldn't you write `(5)`?

@@ -146,9 +146,9 @@ _These do not earn tokens, but are worth your consideration._
   _Men's Basketball vs. Nebraska Wesleyan_
 * Wednesday, 18 November 2026, 7:00--9:00 p.m., Darby Gym.
   _Women's Basketball vs. Buena Vista_ 
-* Saturday, 21 November 2026, 1:00--3:00 pl.m., Darby Gym.
+* Saturday, 21 November 2026, 1:00--3:00 p.m., Darby Gym.
   _Women's Basketball vs. Cornell College_ 
-* Saturday, 21 November 2026, 3:00--5:00 pl.m., Darby Gym.
+* Saturday, 21 November 2026, 3:00--5:00 p.m., Darby Gym.
   _Men's Basketball vs. Cornell College_ 
 
 Q&A

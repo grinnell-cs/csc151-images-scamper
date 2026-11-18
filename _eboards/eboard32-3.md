@@ -3,7 +3,7 @@ title: "EBoard 32: Data abstraction (Section 3)"
 number: 32
 section: eboards
 held: 2026-11-18
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -164,9 +164,9 @@ _These do not earn tokens, but are worth your consideration._
 
 * Wednesday, 18 November 2026, 7:00--9:00 p.m., Darby Gym.
   _Women's Basketball vs. Buena Vista_ 
-* Saturday, 21 November 2026, 1:00--3:00 pl.m., Darby Gym.
+* Saturday, 21 November 2026, 1:00--3:00 p.m., Darby Gym.
   _Women's Basketball vs. Cornell College_ 
-* Saturday, 21 November 2026, 3:00--5:00 pl.m., Darby Gym.
+* Saturday, 21 November 2026, 3:00--5:00 p.m., Darby Gym.
   _Men's Basketball vs. Cornell College_ 
 
 Q&A
@@ -179,7 +179,13 @@ Q&A
 Pop quiz
 --------
 
-_Boom! Gone!_
+1. Lists: What should you get from `(map + (list 1 2 3) (list 4 4 4))`?
+2. Anonymous functions: Rewrite `(lambda (x) (string-append "X" x))` 
+   with `l-s` or `r-s`.
+3. Strings: How do you extract the character at index 5 from a string?
+4. Lists: Which of the big three should you use to select some of the elements 
+   of a list, forming a new list.
+5. Misc: Why shouldn't you write `(5)`?
 
 Lab
 ---
