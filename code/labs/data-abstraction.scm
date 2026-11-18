@@ -188,10 +188,12 @@
 ;            #(name->fg babbage))
 
 ;; b. Try each of the completed implementation of names to ensure that 
-;your process works correctly independently of how names are implemented.
-;You can try each implementation by commenting out the require for
-;one version and uncommenting another.  Note that `names-as-bar-strings.rkt`
-;is not yet completed.  You'll complete that in exercise 4.
+;; your process works correctly independently of how names are implemented.
+;; You can try each implementation by commenting out the require for
+;; one version and uncommenting another.  
+
+;; NOTE THAT `names-as-bar-strings.scm` IS NOT YET COMPLETED!  
+;; You'll complete that in exercise 4.
 
 ;; You do not need to enter anything here; you may just have to fix
 ;; your code for `name->fg`.
@@ -308,7 +310,8 @@
 ;; representing names as "bar-separated values".  We've started 
 ;; that implementation in the file `names-as-bar-strings.scm`.
 
-;; a. Finish the implementation.
+;; a. Finish the implementation. Note that you may find `string-ref` or 
+;; `string-split` helpful.
 
 ;; b. Require that file (rather than any of the other implementations)
 ;; and ensure that it passes all of our tests.
