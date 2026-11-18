@@ -396,20 +396,6 @@
   lab:
     - page: /labs/searching.html
 
-- topic: Structured data
-  abbrev: structs
-  summary: |
-    We consider Racket's techniques for creating structured data types.
-  subjects:
-    - Structured data
-    - Using structs
-    - Mutable and immutable structs
-  reading:
-    - page: /readings/preconditions.html
-    - page: /readings/structs.html
-  lab:
-    - page: /labs/structs.html
-
 - topic: Project presentations
   abbrev: presentations
   summary: Students present their projects
@@ -490,4 +476,18 @@
     - page: /readings/sorting.html
   lab:
     - page: /labs/sorting.html
+
+- topic: Structured data
+  abbrev: structs
+  summary: |
+    We consider Racket's techniques for creating structured data types.
+  subjects:
+    - Structured data
+    - Using structs
+    - Mutable and immutable structs
+  reading:
+    - page: /readings/preconditions.html
+    - page: /readings/structs.html
+  lab:
+    - page: /labs/structs.html
 
