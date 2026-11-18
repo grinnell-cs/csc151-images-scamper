@@ -92,7 +92,7 @@
 
 - date: 2026-11-18
   assigned: 
-    - MP6 (final project)
+    - page: /mps/mp06.html
 
 - date: 2026-11-20
   due:
@@ -101,7 +101,7 @@
 
 - date: 2026-12-03
   due:
-    - MP6 (final project)
+    - page: /mps/mp06.html
 
 - date: 2026-12-04
   due: 
