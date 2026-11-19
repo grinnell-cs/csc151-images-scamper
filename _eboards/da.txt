@@ -1,0 +1,35 @@
+Data Abstraction
+
+What are the big ideas of data abstraction?
+
+* You can use functions without knowing how they work.
+* We can define our own "types" that collect data (e.g. names, points in
+  three space (x,y,z), class data, ...
+* When designing these types, we should think about multiple primary issues
+    * Why do we have the type?
+    * How do we use the type?
+    * How might we "implement" the type using extant types
+* Implementation: For "collect a bunch of data", we can use
+    * List (position tells you the kind of data)
+    * Vector (position tells you the kind of data)
+    * Hash (key tells you the kind of data)
+    * String separated by something (position tells you the kind of data)
+    * ...
+
+What are some smaller ideas?
+
+* In the name type we implemented, there were lots of Booleans.
+  The Booleans permitted us to make some characteristics optional.
+
+Here's a type
+
+* "Points in two space" (with an x and y coordinate)
+* What are some functions we'd want for "points in two space"?
+    * Given a point, return the x value: `(x-coordinate pt)`
+    * Given a point, return the y value: `(y-coordinate pt)`
+    * Make a point: `(point x y)`
+    * Is something a point? `(point? val)`
+    * Find the distance between two points `(distance-between pt1 pt2)`
+    * Cardinal points: `(cardinal-point-of pt)`
+    * Make a polygon `(polygon points)`
+    * Closer to origin `(closer-to-origin? pt1 p2)`

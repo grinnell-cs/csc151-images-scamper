@@ -178,13 +178,13 @@ Why can't you use negative numbers or non-integer reals in random?
 Pop quiz
 --------
 
-* What's the largest value that `(random 10)` can return?
-* Lists: How would you add five to each element of a list called `numbers`?
-* Characters: How do we determine the collating sequence of a character?
-  Collating sequence: "The number associated with each character".
-* Characters: How do we determine if a character is upper-case?
-* Predicates: Why would we write `(and (integer? x) (odd? x))` 
-  rather than `(and (odd? x) (integer? x))`?
+1. What's the largest value that `(random 10)` can return?
+2. Lists: How would you add five to each element of a list called `numbers`?
+3. Characters: How do we determine the collating sequence of a character?
+   Collating sequence: "The number associated with each character".
+4. Characters: How do we determine if a character is upper-case?
+5. Predicates: Why would we write `(and (integer? x) (odd? x))` 
+   rather than `(and (odd? x) (integer? x))`?
 
 Lab
 ---
