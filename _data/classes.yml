@@ -342,7 +342,9 @@
   summary: |
     We introduce the final project for the semester.
   reading:
-    - page: /mps/mp09.html
+    - page: /mps/mp06.html
+    - title: Radical Bricolage (Clayson)
+      resource: /files/radical-bricolage.pdf
 
 - topic: Higher-order recursive design
   abbrev: higher-order-recursive-design
