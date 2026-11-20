@@ -3,7 +3,7 @@ title: "EBoard 33: Project kickoff (Section 1)"
 number: 33
 section: eboards
 held: 2026-11-20
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -37,19 +37,18 @@ Administrative stuff
            didn't understand quite how long a student's name can be or
            that some students might use letters outside the English
            alphabet.
-* I've rearranged the project slightly so that you'll have an extra day
+* I've rearranged the project/schedule slightly so that you'll have an extra day
   to work on presentation prep. (The presentation will be due separately
   on Sunday, 7 December.)
+* We will have project work time on Monday.
+* We have four quiz days after today
+    * Friday the 4th (2 new quizzes)
+    * Friday the 11th (no new quizzes)
+    * Wednesday the 16th (2--5 pm Exam Time for Section 1)
+    * Friday the 18th (9am--noon or 2--5 pm Exam Times)
 
 ### Upcoming work
 
-* Due Thursday, 2026-11-19
-    * [Today's lab](../labs/data-abstraction)
-        * [Submit lab writeup on Gradescope](https://www.gradescope.com/courses/1370413/assignments/9080169)
-    * Read [the guidelines for the final project](../mps/final-project) and
-      skim [James Clayson's "Radical Bricolage"](../files/radical-bricolage.pdf)
-        * No reading response!
-        * Bring questions on Friday!
 * On Friday, 2026-11-20
     * New Quiz/LA on randomness (Monday)
     * New Quiz/LA on data abstraction (Today)
@@ -164,6 +163,13 @@ _These do not earn tokens, but are worth your consideration._
 
 ### Friday PSA
 
+* Take away from schoolwork, if possible.
+* Enjoy the outdoors, even though it's chilly.
+* Take care of yourselves and others.
+* Be moderate.
+* Consent is essential. Consent is insufficient. Consent is impossible when
+  inebriated.
+
 Recent pop quizzes
 ------------------
 
@@ -171,29 +177,66 @@ Recent pop quizzes
 
 What's the largest value that `(random 10)` can return?
 
+> 9.
+
 Lists: How would you add five to each element of a list called `numbers`?
+
+> `(map (l-s + 5) numbers)`
+
+> `(map (lambda (n) (+ n 5)) numbers)`
+
+> `(map (o add1 add1 add1 add1 add1) numbers)`
 
 Characters: How do we determine the collating sequence of a character?
 Collating sequence: "The number associated with each character".
 
+> `char->integer`
+
 Characters: How do we determine if a character is upper-case?
+
+> `char-upper-case?`
 
 Predicates: Why would we write `(and (integer? x) (odd? x))`
 rather than `(and (odd? x) (integer? x))`?
+
+> It's illegal to call `odd?` on a non-integer.
+
+> The first one safely checks if it's odd. The second one crashes if it's odd.
 
 ### Wednesday
 
 Lists: What should you get from `(map + (list 1 2 3) (list 4 4 4))`?
 
+> `(list 5 6 7)`
+
 Anonymous functions: Rewrite `(lambda (x) (string-append "X" x))`
 with `l-s` or `r-s`.
 
+> `(l-s string-append "X")`
+
 Strings: How do you extract the character at index 5 from a string?
+
+> `(string-ref str 5)`
 
 Lists: Which of the big three should you use to select some of the elements
 of a list, forming a new list.
 
+> The big three are `map`, `filter`, and `reduce`.
+
+> `map` applies a function to each element, thereby creating a new list of 
+  the same length.
+
+> `filter` steps through the list, applying a predicate. If the predicate holds
+  it adds the element to a new list. If the predicate doesn't hold, it skips
+  the element. (**This is the answer.**)
+
+> `reduce` repeatedly combines neighboring pairs, reducing the list to a single
+  value. (We sometimes count `apply` as a variant of `reduce`.)
+
 Misc: Why shouldn't you write `(5)`?
+
+> `5` is not a function. If you put parenthesis around someting, Scamper
+  generally thinks it's a function call.
 
 Q&A
 ---
@@ -206,7 +249,45 @@ How will we decide who is in our group?
 
 > Class activity today!
 
+Can we work with students in other classes?
+
+> No. We want you to have class time to work together. We want you to present
+  together.
+
+How big can a group be?
+
+> Four students.
+
+How small can a group be?
+
+> One student.
+
 ### Miscellaneous
+
+How should we have done the double dagger problem on data abstraction?
+
+Write a procedure, `(name->string name)`, that takes a name and converts
+it to the appropriate string. name->string should work no matter what
+representation we use, even if we use a representation we have not
+yet covered.
+
+```
+(define name->string
+  (lambda (name)
+    (string-append (if (string? (name-prefix name))
+                       (string-append (name-prefix name) " ")
+                       "")
+                   (name-given name)
+                   (if (string? (name-middle name))
+                       (string-append " " (name-middle name))
+                       "")
+                   (if (string? (name-family name))
+                       (string-append " " (name-family name))
+                       "")
+                   (if (string? (name-suffix name))
+                       (string-append " " (name-suffix name))
+                       ""))))
+```
 
 Project skills
 --------------
@@ -215,10 +296,32 @@ _TPS: What are characteristics you'd like at least one team member to have?_
 
 ### Some group members (at least one)
 
+* YELLOW: A crack coder
+* GREEN: A manager
+* RED: Wants to write the kinds of things we need for this project (short report,
+  documention, etc.)
+* PURPLE: Presentation skills - Someone who can give the presentation so I 
+  don't have to
+* BLUE: Idea generators - People who can think of something
+
+* Uses math well
+* Time management (and can help others manage time)
+* Energy generator
+
 ### All group members
+
+* Can code
+* Can write
+* Good listeners
+* Willing to share ideas
+* Collaborative
+* Dedicated; won't let group memebers down.
+* Explains thought processes
 
 Group Formation
 ---------------
+
+* Try to form a complete set of colors.
 
 Work time
 ---------
@@ -238,5 +341,5 @@ Quizzes
 * New quizzes on east end of South Island
 * Redos on East end of South Wall
 * Submit on West end of South wall
-
+* Optional: On your way out, grab cash for drag from Sam
 
