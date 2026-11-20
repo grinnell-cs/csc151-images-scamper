@@ -14,35 +14,29 @@ is working correctly).
 
 _Approximate overview_
 
-* Quizzes
-* Administrivia
-* Q&A
-* Quizes
+* Quizzes (7:30)
+* Administrivia (8:00)
+* Recent pop quizzes (8:10)
+* Questions (8:20)
+* Group formation (8:30)
+* Work time (8:40)
+* Quizes (8:50)
 
 Administrative stuff
 --------------------
 
 ### Introductory Notes
 
-* Warning! Friday the 13th fell on a Friday this month!
-* Happy first-year registration day!
-    * I hope that many of you will consider going to CSC-161.
-    * My department chair says "If CSC-161 fills, please put your name
-      on the wait list so that we can gauge the level of interest."
-* I am continuing discussions with the too-many people who used AI directly
-  or indirectly on recent reading responses.
-    * We'll discuss the appropriate consequences after I've met with
-      everyone.
-    * These meetings leave me with little free time or energy.
-* I've learned that I need to describe my expectations for Reading Responses 
-  a bit more carefully.
-    * The syllabus says "Any reasonable attempt will be marked satisfactory."
-    * A reasonable attept suggests that you've thought about it and tried, 
-      not that you succeeded. (The mentors say "I don't know" is not 
-      enough evidence, please try for a few minutes.)
-    * I use these to gauge where people are struggling; entering an AI
-      answer is counter-productive.
-    * You can miss up to six readings/labs before it affects your grade.
+* I apologize for not getting to the reading responses on data abstraction.
+  A lot of people wanted to go through the double dagger problem. Please
+  let me know if you still want to do so.
+* In case you couldn't tell, I had you do `name->sortable?` because ...
+     * Reading cryptic documentation is a useful skill.
+     * You should have the experience of thinking about real-world situations.
+         * For example, the designers of some of Grinnell's databases 
+           didn't understand quite how long a student's name can be or
+           that some students might use letters outside the English
+           alphabet.
 
 ### Upcoming work
 
@@ -92,18 +86,12 @@ Administrative stuff
 
 Scholarly
 
-* Thursday, 19 November 2026, 11 a.m.--Noon, JRC 101.
-  _Scholars’ Convocation: Angela Onwuachi on Up From a Past That’s Rooted in Pain: Rising to the Moment_
-* Thursday, 19 November 2026, 7:00--8:30 p.m., HSSC Auditorium.
-  _Humanities Center Speaker: Vance Byrd on Sonic Warfare, Contemporary Art, and the Humanities in Public Life_
 * Tuesday, 24 November 2026, Noon--1:00 p.m., Unknown location.
   _CS Table_
 
 Artistic/Cultural
 
 * Any day. Visit the GCMOA for at least 30 minutes.
-* Thursday, 19 November 2026, 8:00--9:30 p.m. JRC 101.
-  _Writers@Grinnell present Lucy Schiller_
 * Saturday, 21 November 2026, 2:00--3:00 p.m., Flanagan Theatre.
   _Performance: She Woke At Dawn_
 * Sunday, 22 November 2026, 7:30--8:30 p.m., Flanagan Theatre.
@@ -124,8 +112,6 @@ Peer
 _Musical, theatric, sporting, academic, and similar events involving this 
 section's students are welcome._
 
-* Thursday, 19 November 2026, 7:00--8:00 p.m., GCMoA.
-  _Grinnell Dance Ensemble: A Journey of Grief_
 * Friday, 20 November 2026, 7:00--8:00 p.m., GCMoA.
   _Grinnell Dance Ensemble: A Journey of Grief_
 
@@ -133,6 +119,7 @@ Wellness
 
 * Fill out the wellness survey that you received the week before last.
     * SHAW is probably tabling to tell you more about it.
+    * Today is the last day that I'll give you credit.
 * Monday, 23 November 2026, 8:00--9:00 p.m., Prayer Garage in the CRSSJ.
   _Meditation Group_
 * Tuesday, 24 November 2026, 12:15--12:45 p.m., GCMoA.
@@ -144,10 +131,6 @@ Wellness
 
 Misc
 
-* Wednesday, 18 November 2026, 8:00--9:00 p.m., Science 3820.
-  _Mentor Session_
-* Thursday, 19 November 2026, 8:00--9:00 p.m., Science 3820.
-  _Mentor Session_
 * Friday, 20 November 2026, 7:30--9:30 p.m., Harris Concert Hall.
   _QPOC Drag Show_
 * Saturday, 21 November 2026, 10:00 a.m.--9:00 p.m., HSSC S1325.
@@ -157,17 +140,52 @@ Misc
      * See sign in classroom for more info
 * Monday, 23 November 2026, 8:00--9:00 p.m., ???.
   _CSC-151 Mentors Discuss CS @ Grinnell_
+* Wednesday, 2 December 2026, 8:00--9:00 p.m., Science 3820.
+  _Mentor Session_
+* Thursday, 3 December 2026, 8:00--9:00 p.m., Science 3820.
+  _Mentor Session_
 
 ### Other good things
 
 _These do not earn tokens, but are worth your consideration._
 
-* Wednesday, 18 November 2026, 7:00--9:00 p.m., Darby Gym.
-  _Women's Basketball vs. Buena Vista_ 
 * Saturday, 21 November 2026, 1:00--3:00 pl.m., Darby Gym.
   _Women's Basketball vs. Cornell College_ 
 * Saturday, 21 November 2026, 3:00--5:00 pl.m., Darby Gym.
   _Men's Basketball vs. Cornell College_ 
+
+### Friday PSA
+
+Recent pop quizzes
+------------------
+
+### Monday
+
+What's the largest value that `(random 10)` can return?
+
+Lists: How would you add five to each element of a list called `numbers`?
+
+Characters: How do we determine the collating sequence of a character?
+Collating sequence: "The number associated with each character".
+
+Characters: How do we determine if a character is upper-case?
+
+Predicates: Why would we write `(and (integer? x) (odd? x))`
+rather than `(and (odd? x) (integer? x))`?
+
+### Wednesday
+
+Lists: What should you get from `(map + (list 1 2 3) (list 4 4 4))`?
+
+Anonymous functions: Rewrite `(lambda (x) (string-append "X" x))`
+with `l-s` or `r-s`.
+
+Strings: How do you extract the character at index 5 from a string?
+
+Lists: Which of the big three should you use to select some of the elements
+of a list, forming a new list.
+
+Misc: Why shouldn't you write `(5)`?
 
 Q&A
 ---
@@ -182,11 +200,30 @@ How will we decide who is in our group?
 
 ### Miscellaneous
 
-Why did you make us implement `name->sortable`?
+Project skills
+--------------
 
-> Reading cryptic documentation is a useful skill.
+_TPS: What are characteristics you'd like at least one team member to have?_
 
-> To give you the experience of thinking about real-world situations.
+### Some group members (at least one)
 
-> For example, the designers of some of Grinnell's databases didn't understand
-  quite how long a student's name can be.
+### All group members
+
+Group Formation
+---------------
+
+Work time
+---------
+
+Initial tasks:
+
+* Make sure you have each others' contact info.
+* Set up meeting times.
+* Pick a team name.
+* Start considering what you might want to do.
+* Start considering variations you might make.
+* Start considering how you might achieve different parts of the image.
+
+Quizzes
+-------
+
