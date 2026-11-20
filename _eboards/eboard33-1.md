@@ -1,5 +1,5 @@
 ---
-title: "EBoard 33: Data abstraction (Section 1)"
+title: "EBoard 33: Project kickoff (Section 1)"
 number: 33
 section: eboards
 held: 2026-11-20
@@ -37,6 +37,9 @@ Administrative stuff
            didn't understand quite how long a student's name can be or
            that some students might use letters outside the English
            alphabet.
+* I've rearranged the project slightly so that you'll have an extra day
+  to work on presentation prep. (The presentation will be due separately
+  on Sunday, 7 December.)
 
 ### Upcoming work
 
@@ -66,10 +69,13 @@ Administrative stuff
     * [Final project](../mps/final-project)
         * [Submit final project on Gradescope](https://www.gradescope.com/courses/1370413/assignments/9080373)
         * No late final projects accepted!
+        * Presentation submitted separately
 * Friday, 2026-12-04
-    * Last quiz day!
+    * Last new quiz day!
         * New topic: Tree recursion
         * New topic: Higher-order programming
+* Due Sunday, 2026-12-07
+    * Project presentation decks
 * Due Tuesday, 2026-12-08
     * Mini-Project redos
         * Please include a `CHANGES.txt` file with each redo
@@ -102,10 +108,11 @@ Artistic/Cultural
 Multicultural
 
 * Friday, 20 November 2026, 4:10--5:00 p.m., HSSC N1170.
-  _Middle of Everywhere (???)_
+  _Middle of Everywhere (Ghana)_
+      * The list MoE of the semester )-:
 * Friday, 20 November 2026, 5:00--8:00 p.m., Downtown Grinnell.
   _Jingle Bell Holiday_
-     * Why are we celebrating Christmas before Thanksgiving?
+      * Why are we celebrating Christmas before Thanksgiving?
 
 Peer
 
@@ -133,6 +140,7 @@ Misc
 
 * Friday, 20 November 2026, 7:30--9:30 p.m., Harris Concert Hall.
   _QPOC Drag Show_
+     * Singles available
 * Saturday, 21 November 2026, 10:00 a.m.--9:00 p.m., HSSC S1325.
   _Prairie Hacks_
      * <https://linktr.ee/prairie_hacks>
@@ -226,4 +234,9 @@ Initial tasks:
 
 Quizzes
 -------
+
+* New quizzes on east end of South Island
+* Redos on East end of South Wall
+* Submit on West end of South wall
+
 
