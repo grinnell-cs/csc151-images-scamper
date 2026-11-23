@@ -3,7 +3,7 @@ title: (Mini-)Project 6
 subtitle: Radical bricolage
 summary: |
   At this point in your career, you've learned a variety of techniques
-  for writing algorithms and for working with text images. This project
+  for writing algorithms and for working with images and text. This project
   provides an opportunity for you to push yourself in new directions.
 collaboration: |
   Each group should submit their responses to this project together. You may
@@ -59,7 +59,7 @@ Rather than just building whatever comes to mind, you should begin by coming up 
 
 ### Presentation
 
-Your group will give a 5-minute presentation to the class on your project on Mondy, 7 December 2026. In your presentation, you should plan to discuss the original work, your design plans, show some images you geneated, and highlight one or more pieces of code you are most proud of. You should also be prepared to answer questions.
+Your group will give a 5-minute presentation to the class on your project on Monday, 7 December 2026. In your presentation, you should plan to discuss the original work, your design plans, show some images you geneated, and highlight one or more pieces of code you are most proud of. You should also be prepared to answer questions.
 
 You must submit the slide deck for your presentation (PDF or Powerpoint) along with your project file.
 
