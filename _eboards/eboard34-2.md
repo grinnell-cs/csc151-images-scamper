@@ -28,14 +28,12 @@ Administrative stuff
 * If you do not plan to be here on Wednesday, please let me know in advance.
 * If your group wants an account on Scamper, please send me an email address,
   a group name, and a password. 
-    * Note that **Scamper does not permit siultaneous editing.**
+    * Note that **Scamper does not permit simultaneous editing.**
 * We have four remaining quiz days
     * Friday the 4th (2 new quizzes)
     * Friday the 11th (no new quizzes)
     * Wednesday the 16th (2--5 pm Exam Time for Section 1)
     * Friday the 18th (9am--noon or 2--5 pm Exam Times)
-* I will wander around and take group pictures today. Please grab a whiteboard
-  from the corner and write your group name on it.
 * When you get the grade reports this evening, you'll find that they have
   a slightly new format. Stay tuned!
 
@@ -80,7 +78,7 @@ Administrative stuff
 
 Scholarly
 
-* Tuesday, 24 November 2026, Noon--1:00 p.m., JRC
+* Tuesday, 24 November 2026, Noon--1:00 p.m., JRC White Room
   _CS Table_
 
 Artistic/Cultural
@@ -186,6 +184,12 @@ Q&A
 
 ### Administrative
 
+What will the final be like?
+
+> There is no final.
+
+> I am using final time for additional LA/quiz makeups/redos.
+
 ### Project
 
 ### Miscellaneous
@@ -193,6 +197,11 @@ Q&A
 Pop Quiz
 --------
 
+1. Why do we need to add a helper procedure when doing vector recursion?
+2. What should we get if we call `(cdr (vector 1 2 3))`?
+3. Colors: List three procedures that you can use with colors.
+4. Lists: What function do you use to remove the first `n` elements of a list?
+5. Strings: What are two functions that make strings?
 
 Work Time
 ---------

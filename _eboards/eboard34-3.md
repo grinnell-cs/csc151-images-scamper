@@ -3,7 +3,7 @@ title: "EBoard 34: Project work time (Section 3)"
 number: 34
 section: eboards
 held: 2026-11-23
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -34,8 +34,6 @@ Administrative stuff
     * Friday the 11th (no new quizzes)
     * Wednesday the 16th (2--5 pm Exam Time for Section 1)
     * Friday the 18th (9am--noon or 2--5 pm Exam Times)
-* I will wander around and take group pictures today. Please grab a whiteboard
-  from the corner and write your group name on it.
 * When you get the grade reports this evening, you'll find that they have
   a slightly new format. Stay tuned!
 
@@ -43,7 +41,6 @@ Administrative stuff
 
 * Due Tuesday, 2026-11-24
     * Reading: [Trees](../trees)
-        * Sam needs to make some updates.
         * [Submit reading on Gradescope](https://www.gradescope.com/courses/1370413/assignments/9107441)
     * Mini-Project redos
         * Please include a `CHANGES.txt` file with each redo
@@ -80,7 +77,7 @@ Administrative stuff
 
 Scholarly
 
-* Tuesday, 24 November 2026, Noon--1:00 p.m., JRC
+* Tuesday, 24 November 2026, Noon--1:00 p.m., JRC White Room.
   _CS Table_
 
 Artistic/Cultural
@@ -132,7 +129,7 @@ reading response. They were mixed on whether the results should go beyond
 that. I had already promised not to report the issue, treating it as a
 misunderstanding of course policies. It appears that my decision was 
 particularly important for at least one student who was already on academic
-probation.
+integrity probation.
 
 Many indicated that they thought they had to get the correct answer in 
 order to receive credit. I believe I had indicated that all I cared about
@@ -159,7 +156,7 @@ I don't know how many of these there are. I've reported the ones I
 noticed. Having noticed some, I find myself wondering how many people
 are doing this. I expect most of you aren't; I see lots of you trying
 hard each week. In any case, the loss of faith in my students is one of
-the major effect of this cheating.
+the major effects of this cheating.
 
 More significantly, it makes me question whether I can continue my
 student-friendly practices, including permitting cheat sheets, allowing
@@ -193,6 +190,12 @@ Q&A
 Pop Quiz
 --------
 
+1. Vectors: Why must we add a helper procedure when doing vector recursion?
+2. Vectors: What should we get if we call `(cadr (vector 1 2 3))`?
+3. Strings: List three procedures that you can use with/on strings.
+4. Lists: What function do you use to get element `n` of a list?
+5. Colors: How do you make purple using `rgb`? Your answer should have
+   the form `(rgb A B C)`. You can choose the shade of purple.
 
 Work Time
 ---------
