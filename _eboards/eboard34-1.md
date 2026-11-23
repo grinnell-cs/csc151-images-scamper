@@ -1,13 +1,13 @@
 ---
-title: "EBoard 34: Project kickoff (Section 1)"
+title: "EBoard 34: Project work time (Section 1)"
 number: 34
 section: eboards
 held: 2026-11-23
-link: false
+link: true
 ---
 # {{ page.title }}
 
-_New places, new partners, grab whiteboards._
+_Sit with your group._
 
 **Warning! You are being recorded** (and transcribed) (provided the technology
 is working correctly).
@@ -108,7 +108,7 @@ Wellness
 
 Misc
 
-* Monday, 23 November 2026, 8:00--9:00 p.m., ???.
+* Monday, 23 November 2026, 8:00--9:00 p.m., Science 3820.
   _CSC-151 Mentors Discuss CS @ Grinnell_
 * Wednesday, 2 December 2026, 8:00--9:00 p.m., Science 3820.
   _Mentor Session_
@@ -136,7 +136,7 @@ probation.
 
 Many indicated that they thought they had to get the correct answer in 
 order to receive credit. I believe I had indicated that all I cared about
-was the attmept. It seems like everyone understands that now.
+was the attmept. Everyone should understand that now.
 
 Although I had many ideas about appropriate reactions, including capping
 final grades at B+ and going back and looking for AI usage in past submissions,
@@ -152,13 +152,14 @@ extra LAs during the afternoon section).
 I don't know whether it's that people read the earlier LAs and then
 prepared an answer for when they showed up later in the day, or
 whether a friend wrote an answer on their cheat sheet and someone
-else copied fro the cheat sheet, or what. What I do know is that
+else copied from the cheat sheet, or what. What I do know is that
 the "solution" did not match the question.
 
-I've reported the ones I noticed. Having noticed some, I find myself
-wondering how many people are doing this. I expect most of you aren't;
-I see lots of you trying hard each week. In any case, the loss of faith
-in my students is one of the major effect of this cheating.
+I don't know how many of these there are. I've reported the ones I
+noticed. Having noticed some, I find myself wondering how many people
+are doing this. I expect most of you aren't; I see lots of you trying
+hard each week. In any case, the loss of faith in my students is one of
+the major effect of this cheating.
 
 More significantly, it makes me question whether I can continue my
 student-friendly practices, including permitting cheat sheets, allowing
@@ -174,6 +175,12 @@ I do not yet know how I'm going to change my quiz procedures.
 Fortunately, we don't have quizzes this week, so I'm going to use
 Turkey Break to figure it out.
 
+### Another note
+
+I'm sorry that the rest of you have to suffer through the academic
+integrity statements. However, given that some students violate standards,
+I feel an obligation to make those statements.
+
 Q&A
 ---
 
@@ -185,6 +192,15 @@ Q&A
 
 Pop Quiz
 --------
+
+1. Why do we need to add a helper procedure when doing vector recursion?
+2. What should we get if we call `(car (vector 1 2 3))`?
+3. Lists: List four procedures (other than the big three) that you can 
+   use with lists.
+4. Lists: What function do you use to get the first `n` elements of a list?
+5. Testing: What are the parameters to `test-case`? (You need not get them 
+   in the correct order.)
+
 
 Work Time
 ---------
