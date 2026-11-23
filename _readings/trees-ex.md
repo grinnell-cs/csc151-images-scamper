@@ -2,8 +2,11 @@
 title: Trees
 summary: |
   Trees are a class of data structures that organizes data in a hierarchical fashion.
-  We explore trees briefly because they beautifully generalize the recursive definition of lists we have used extensively so far and as a functional language, Racket is particular adapt at handling this common form of data.
+  We explore trees briefly because they beautifully generalize the recursive definition of lists we have used extensively so far and as a functional language, Scheme is particular adapt at handling this common form of data.
 ---
+
+_Warning! This reading was updated for Scamper in Fall 2026. It may still
+contain some infelicities._
 
 ## Lists as sequential structures
 
@@ -12,7 +15,7 @@ Recall that a list is defined recursively as a finite set of cases:
 * The list is empty, or
 * The list is non-empty and consists of a head element and the rest of the list, its tail.
 
-In Scheme and Racket, you build lists with `null` (empty list) and
+In Scheme and Scamper, you build lists with `null` (empty list) and
 `cons` (add a value to the front of a list).
 You deconstruct lists with `null?` (check for empty list), `car` (grab the first element), and `cdr` (grab everything but the first element).
 Every other list operation we use can be built from those basics.
@@ -22,7 +25,7 @@ That is there is an *ordering* imposed by the list structure.
 For example, consider the following list of strings:
 
 ~~~racket
-(define favorite-fruit '("pear" "apple" "peach" "grape" "olive"))
+(define favorite-fruit (list "pear" "apple" "peach" "grape" "olive"))
 ~~~
 
 The recursive definition of a list implies that we will walk through the elements of the list in *left-to-right* order.
@@ -31,12 +34,11 @@ For example, the following recursive function returns the first occurrence of a 
 ~~~racket
 (define find-first-p
   (lambda (l)
-    (match l
-      ['() (error "(find-first-p) not found!")]
-      [(cons head tail)
-       (if (string-prefix? head "p")
-           head
-           (find-first-p tail))])))
+    (if (null? l)
+        #f
+        (if (string-prefix? (car l) "p")
+            (car l)
+            (find-first-p (cdr l))]))))
 
 > (find-first-p favorite-fruit)
 "pear"
@@ -81,15 +83,15 @@ The manner in which employees report to each other seems sequential in nature, b
 We might try to do so with the board at the head of the list---since they're the "top" of the management structure---and then work our way downwards.
 
 ~~~racket
-'("Board"
-  "CEO"
-  "Head of Engineering"
-  "Head of Marketing"
-  "Head of Legal"
-  "Software Developer"
-  "Tester"
-  "Data Analyst"
-  "Lawyer")
+(list "Board"
+      "CEO"
+      "Head of Engineering"
+      "Head of Marketing"
+      "Head of Legal"
+      "Software Developer"
+      "Tester"
+      "Data Analyst"
+      "Lawyer")
 ~~~
 
 The sequential nature of the list implies that the `"CEO"` reports to the `"Board"` which is correct.
@@ -109,30 +111,30 @@ In the above example, an example of a parent would be the `"CEO"` and its childr
 Of course, we could use nested lists (much like SXML) to better represent the hierarchy.  Each list contains the role (a string) and then any direct reports.  If a direct report has its own reports, we represent it as a list.  If not, it's just the string.
 
 ```racket
-'("Board"
-  ("CEO"
-   ("Head of Engineering"
-    "Software Developer"
-    "Tester"
-    "Data Analyst")
-   "Head of Marketing"
-   ("Head of Legal"
-    "Lawyer")))
+(list "Board"
+      ("CEO"
+        (list "Head of Engineering"
+              "Software Developer"
+              "Tester"
+              "Data Analyst")
+        "Head of Marketing"
+        (list "Head of Legal"
+              "Lawyer")))
 ```
 
 If we added a "Lead Tester" role, we might rewrite this as
 
 ```racket
-'("Board"
-  ("CEO"
-   ("Head of Engineering"
-    "Software Developer"
-    ("Lead Tester"
-     "Tester")
-    "Data Analyst")
-   "Head of Marketing"
-   ("Head of Legal"
-    "Lawyer")))
+(list "Board"
+      ("CEO"
+        (list "Head of Engineering"
+              "Software Developer"
+              (list "Lead Tester"
+                    "Tester")
+              "Data Analyst")
+        "Head of Marketing"
+        (list "Head of Legal"
+              "Lawyer")))
 ```
 
 ### Representing hierarchies with trees
@@ -164,6 +166,8 @@ It turns out that the way computer scientists think of trees are upside-down:
 
 ![An upside-down tree with the structure of the management tree embedded inside]({{ "/images/upside-down-tree.png" | relative_url }})
 
+Perhaps they are reflecting on tree roots.
+
 ## A recursive interpretation of trees
 
 Recall that the key insight behind performing recursive operations over lists was decomposing its structure in a way that we could identify a *smaller sub-list* inside of a larger list.
@@ -183,7 +187,7 @@ In our example above, the maximum number of children any one of the nodes has is
 However, for the purposes of our first exploration into trees, we'll first look at trees that have at most *two* children, the so-called *binary trees*.
 When we work with binary trees, we refer to the first child as the "left child" or the "left subtree" and the second child as the "right child" or the right subtree.
 
-How might we represent a tree using the Racket programming constructs we've seen so far?
+How might we represent a tree using the Scheme programming constructs we've seen so far?
 Note that the only difference between a list and a tree is that a list can only have *one sublist* whereas a binary tree can have up to *two subtrees*.
 This implies we can use all of our list constructs---`null` and `cons` for construction and `car` and `cdr` to decomposition.
 To represent *multiple* subtrees, we can use the pair construct we learned about previously: the "tail" of a tree will be a pair of subtrees instead of a single subtree!
@@ -191,9 +195,9 @@ To represent *multiple* subtrees, we can use the pair construct we learned about
 Putting all of this together, we can represent a tree using lists as follows:
 
 + The empty tree is `null`.
-+ The non-empty tree (a node) is a list of three values, `(v l r)`: `v`, the value at the node, `l`, the left subtree, and `r`, the right subtree.
++ The non-empty tree (a node) is a list of three values, `(list v l r)`: `v`, the value at the node, `l`, the left subtree, and `r`, the right subtree.
 
-Note that some perfer to represent the node as `(cons v children)` or `(cons v (cons l r))`, which saves a little space but at the cost of readability.  
+Note that some prefer to represent the node as `(pair v children)` or `(pair v (pair l r))`, which saves a little space but at the cost of readability.  
 
 What do we do if a node has only one child?  We use `null` for the first child.
 What do we do if a node has no children?  (That is, if it's a leaf?)  We use `null` for both children.
@@ -219,16 +223,29 @@ For example, if we restrict our management hierarchy example to just its enginee
                           null)))))
 ```
 
-While we've structured the tree nicely, DrRacket is not so clear in printing it out.
+While we've structured the tree nicely, Scmaper is not so clear in printing it out. If we're lucky, we'll get something like the structure above. Unfortunately, that doesn't seem to be the case.
 
-```drracket
-> management-tree
-'("Board"
-  ()
-  ("CEO"
-   ("Head of Engineering" ("Software Developer" () ()) ("Tester" () ()))
-   ("Head of Legal" () ("Lawyer" () ()))))
-```
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+(define management-tree
+  (list "Board"
+        null
+        (list "CEO"
+              (list "Head of Engineering"
+                    (list "Software Developer"
+                          null
+                          null)
+                    (list "Tester"
+                          null
+                          null))
+              (list "Head of Legal"
+                    null
+                    (list "Lawyer"
+                          null
+                          null)))))
+</script>
+management-tree
+</pre>
 
 Note that each node of the tree has the following skeleton:
 
@@ -250,7 +267,6 @@ First, let's write a predicate that tests whether a value is a binary tree.
 This predicate is a direct translation of the recursive definition of a tree into code.
 We can use the list and pair predicates from the standard library to directly capture our implementation strategy of encoding a tree as a list of three items, the first of which is a value and the remaining two of which are trees.
 
-{% capture code %}
 ~~~racket
 ;;; (binary-tree? t) -> boolean?
 ;;;   t : any
@@ -258,24 +274,13 @@ We can use the list and pair predicates from the standard library to directly ca
 (define binary-tree?
   (let ([three-element-list?
          (lambda (val)
-           (and (pair? val)
-                (pair? (cdr val))
-                (pair? (cddr val))
-                (null? (cdddr val))))])
+           (and (list? val) (= 3 (length val)))))
     (lambda (t)
       (or (empty-tree? t)
           (and (three-element-list? t)
                (binary-tree? (cadr t))
                (binary-tree? (caddr t)))))))
 ~~~
-{% endcapture %}
-
-{% capture caption %}
-Recall that `(cadr t)` is shorthand for `(car (cdr t))`, *i.e.*, the head of the tail of `t`.
-Likewise `(cddr t)` is shorthand for `(cdr (cdr t))`, *i.e.*, the tail of the tail of `t`.
-{% endcapture %}
-
-{% include toggle-field.html id="toggle-tree" button="binary-tree?" text=code caption=caption %}
 
 ### Empty trees
 
@@ -285,8 +290,7 @@ So it is tempting to use `null` and `null?` as our empty tree value and test for
 However, even though a tree is really a list behind the scenes, we want to avoid thinking about these implementation details when writing tree code.
 Therefore, we'll define `empty-tree` to be an alias for a procedure that creates `null` and `empty-tree?` as `null?` which hides the fact that we implement trees as lists.
 
-{% capture code %}
-~~~racket
+```racket
 ;;; (empty-tree) : tree?
 ;;; Create the empty binary tree.
 (define empty-tree 
@@ -297,37 +301,30 @@ Therefore, we'll define `empty-tree` to be an alias for a procedure that creates
 ;;;   t : value
 ;;; Returns true iff is t is an empty binary tree.
 (define empty-tree? null?)
-~~~
-{% endcapture %}
-
-{% include toggle-field.html id="toggle-empty-tree" button="Empty Trees" text=code %}
+```
 
 #### Alternates for empty trees
 
 Currently, we use `null` for empty trees.
-Suppose we wanted to use a special value, such as `'empty` or `'O` or `'_` or even `(string->symbol "\u25EC")` for our empty trees.
+Suppose we wanted to use a special value, such as `"empty"` or `"O"` or `"_" for our empty trees.
 If we rely on `empty-tree` and `empty-tree?` in building our trees, we can easily make that change.
 
-Consider how the definitions `empty-tree` and `empty-tree?` definitions above might change if we wanted to use `'O` to represent the empty binary tree.
+Consider how the definitions `empty-tree` and `empty-tree?` definitions above might change if we wanted to use `"O"` to represent the empty binary tree.
 
-{% capture code %}
-~~~racket
+```racket
 ;;; (empty-tree) -> tree?
 ;;; Create the empty binary tree.
 (define empty-tree 
   (lambda ()
-    'O))
+    "O"))
 
 ;;; (empty-tree? val) -> boolean?
 ;;;   val : value?
 ;;; Returns true iff is t is an empty binary tree.
 (define empty-tree? 
   (lambda (val)
-    (eq? val (empty-tree))))
-~~~
-{% endcapture %}
-
-{% include toggle-field.html id="toggle-empty-tree-alt" button="Alternate Empty Trees" text=code %}
+    (equal? val (empty-tree))))
+```
 
 ### Creating binary trees
 
@@ -336,7 +333,6 @@ Now, we'll write functions to create non-empty trees.
 Note that if a tree does not have either a left or right subtree, we can pass in the `empty-tree` for that respective argument.
 In addition to `tree`, we'll also define a short-hand for the case where the tree has a value but no children, `leaf`.
 
-{% capture code %}
 ~~~racket
 ;;; (binary-tree value left right) -> tree?
 ;;;   value : any
@@ -351,16 +347,9 @@ In addition to `tree`, we'll also define a short-hand for the case where the tre
 ;;; Returns a non-empty tree with no children (i.e., a leaf)
 ;;; with value at the root.
 (define leaf
-  (section binary-tree <> (empty-tree) (empty-tree)))
+  (lambda (val)
+    (binary-tree val (empty-tree) (empty-tree))))
 ~~~
-{% endcapture %}
-
-{% capture caption %}
-Note that `leaf` is concisely described in terms of `binary-tree`.
-It is common to have a "primary" creation function like `tree` that is used by "shorthand" creation functions like `leaf`.
-{% endcapture %}
-
-{% include toggle-field.html id="toggle-tree-creation" button="Tree Creation" text=code caption=caption %}
 
 ### Our example, revisited
 
@@ -404,7 +393,6 @@ Keeping in mind the non-empty tree is really a *pair of a value and a pair of su
 
 in terms of our pair projection functions `car` and `cdr`?
 
-{% capture code %}
 ~~~racket
 ;;; (binary-tree-top t) -> any
 ;;;   t : tree?, (not (empty-tree? t))
@@ -421,26 +409,21 @@ in terms of our pair projection functions `car` and `cdr`?
 ;;; Returns the right child of this tree.
 (define binary-tree-right caddr)
 ~~~
-{% endcapture %}
 
-{% capture caption %}
 Again note that all of these functions are merely aliases for the underlying list functions that we would otherwise have to call.
 We do this because it is much more easier and readable, for example, to call `binary-tree-right` than `caddr`.
-{% endcapture %}
-
-{% include toggle-field.html id="toggle-tree-access" button="Tree Access" text=code caption=caption %}
 
 For example, we can use these tree projection functions to get at arbitrary parts of the tree:
 
-~~~racket
-> (binary-tree-top (binary-tree-right management-tree))
-"CEO"
-> (binary-tree-top 
-   (binary-tree-left
-    (binary-tree-right
-     management-tree)))
-"Head of Engineering"
-~~~
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+(define binary-tree-top car)
+(define binary-tree-left cadr)
+(define binary-tree-right caddr)
+</script>
+(binary-tree-top (binary-tree-right management-tree))
+(binary-tree-top (binary-tree-left (binary-tree-right management-tree)))
+</pre>
 
 ### Shorthands
 
@@ -458,12 +441,35 @@ Let's start with shorthands for the three main procedures.
 
 Think about how you might do a few more, such as the top of the left subtree, the top of the right subtree, or even the top of the left subtree of the right subtree, as in the example above.
 
-```
-> (bt/tlr management-tree)
-"Head of Engineering"
-```
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+(define bt/t binary-tree-top)
+(define bt/l binary-tree-left)
+(define bt/r binary-tree-right)
+(define bt/tl (o bt/t bt/l))
+(define bt/ll (o bt/l bt/l))
+(define bt/rl (o bt/r bt/l))
+(define bt/tr (o bt/t bt/r))
+(define bt/lr (o bt/l bt/r))
+(define bt/rr (o bt/r bt/r))
+(define bt/tll (o bt/tl bt/l)) ; Or with three, e.g., (o bt/t bt/l bt/l)
+(define bt/lll (o bt/ll bt/l))
+(define bt/rll (o bt/rl bt/l))
+(define bt/trl (o bt/tr bt/l))
+(define bt/lrl (o bt/lr bt/l))
+(define bt/rrl (o bt/rr bt/l))
+(define bt/tlr (o bt/tl bt/r))
+(define bt/llr (o bt/ll bt/r))
+(define bt/rlr (o bt/rl bt/r))
+(define bt/trr (o bt/tr bt/r))
+(define bt/lrr (o bt/lr bt/r))
+(define bt/rrr (o bt/rr bt/r))
+</script>
+(bt/tlr management-tree)
+</pre>
 
-{% capture code %}
+Here we go!
+
 ~~~racket
 (define bt/tl (o bt/t bt/l))
 (define bt/ll (o bt/l bt/l))
@@ -489,17 +495,14 @@ Think about how you might do a few more, such as the top of the left subtree, th
 (define bt/lrr (o bt/lr bt/r))
 (define bt/rrr (o bt/rr bt/r))
 ~~~
-{% endcapture %}
 
-{% capture caption %}
 Aren't you happy that we've achieved the wonderful semi-readability of the `caddar` procedures?
 Enjoy inventing pronunciations.
 And isn't that use of composition beautiful?
-{% endcapture %}
 
-{% include toggle-field.html id="toggle-shorthands" button="Shorthands" text=code caption=caption %}
+### Printing trees
 
-### Displaying trees
+_Warning! Scamper no longer supports inline `display` commands. We're working on a fix._
 
 We can write a more elegant definition of our management tree using our tree creation functions:
 
@@ -520,29 +523,27 @@ We can write a more elegant definition of our management tree using our tree cre
         (leaf "Lawyer")))))
 ~~~
 
-Unfortunately our output is similarly unreadable.
+<pre class="scamper-transcript" data-continues>
+<script type="text/scamper-preamble">
+(define management-tree
+  (binary-tree
+    "Board"
+    (empty-tree)
+    (binary-tree
+      "CEO"
+      (binary-tree
+        "Head of Engineering"
+        (leaf "Software Developer")
+        (leaf "Tester"))
+      (binary-tree
+        "Head of Legal"
+        (empty-tree)
+        (leaf "Lawyer")))))
+</script>
+management-tree
+</pre>
 
-```drracket
-'("Board"
-  ()
-  ("CEO"
-   ("Head of Engineering" ("Software Developer" () ()) ("Tester" () ()))
-   ("Head of Legal" () ("Lawyer" () ()))))
-```
-
-What if we use an alternate form of empty trees?
-It eliminates a few parentheses but otherwise it remains somewhat hard to read.
-
-~~~racket
-'("Board"
-  ◬
-  ("CEO"
-   ("Head of Engineering" ("Software Developer" ◬ ◬) ("Tester" ◬ ◬))
-   ("Head of Legal" ◬ ("Lawyer" ◬ ◬))))
-~~~
-
-Rather than relying on Racket's default output, let's write a function, `(display-binary-tree t)`, which displays the tree in a more digestible format.
-This function is inherently recursive:
+Perhaps we need to write our own function. This function is inherently recursive:
 
 +   In the base case, we have an empty tree, so we display nothing.
 +   In the recursive case, we have a non-empty tree, so we display the current value and then recursively display the left-hand and right-hand trees.
@@ -550,18 +551,20 @@ This function is inherently recursive:
 We can translate this design directly into a recursive function.
 
 ~~~racket
-(define display-binary-tree
+(define print-binary-tree
    (lambda (tree)
-     (when (not (empty-tree? tree))
-       (displayln (bt/t tree))
-       (display-binary-tree (bt/l tree))
-       (display-binary-tree (bt/r tree)))))
+     (if (empty-tree? tree)
+         void
+         (begin
+           (println (bt/t tree))
+           (print-binary-tree (bt/l tree))
+           (print-binary-tree (bt/r tree))))))
 ~~~
 
 However, we encounter a problem immediately: all the values are printed, one-per line, in a list!
 
 ~~~racket
-> (display-binary-tree management-tree)
+> (print-binary-tree management-tree)
 Board
 CEO
 Head of Engineering
@@ -594,46 +597,42 @@ We'll explore recursive tree programming more in the next reading.
 For now, you can try designing and implementing this function, but don't worry if it isn't entirely clear how to proceed.
 We will discuss how to tackle recursive tree programming in the next reading!
 
-{% capture code %}
 ~~~racket
-;;; (display-binary-tree t) -> void?
+;;; (print-binary-tree t) -> void?
 ;;;   t : tree?
 ;;; Prints tree t to the console in a well-formatted manner.
-(define display-binary-tree
+(define print-binary-tree
   (lambda (t)
-    (let* (; The different levels of bullets
-           [bullets (vector "* " "+ " "- " ". ")]
-           ; The index of the last bullet
-           [last-bullet (- (vector-length bullets) 1)]
-           ; Choose the appropriate bullet for a level.
-           [bullet
-            (lambda (level)
-              (vector-ref bullets (min level last-bullet)))])
-      (letrec (; Display a binary tree at the appropriate indentation
-               [helper
-                (lambda (t indent)
-                  (when (not (empty-tree? t))
-                    (display (make-string (* indent 2) #\space))
-                    (display (bullet indent))
-                    (display (bt/t t))
+    (let (; The different levels of bullets
+          [bullets (vector "* " "+ " "- " ". ")]
+          ; The index of the last bullet
+          [last-bullet (- (vector-length bullets) 1)]
+          ; Choose the appropriate bullet for a level.
+          [bullet
+           (lambda (level)
+             (vector-ref bullets (min level last-bullet)))]
+          ; Display a binary tree at the appropriate indentation
+          [helper
+            (lambda (t indent)
+              (if (empty-tree? t)
+                  null
+                  (begin
+                    (print (make-string (* indent 2) #\space))
+                    (print (bullet indent))
+                    (print (bt/t t))
                     (newline)
                     (helper (bt/l t) (+ indent 1))
-                    (helper (btr t) (+ indent 1))))])
-        (helper t 0)))))
+                    (helper (btr t) (+ indent 1)))))])
+       (helper t 0)))))
 ~~~
-{% endcapture %}
 
-{% capture caption %}
 The current level is tracked by the `indent` parameter to our recursive helper function.
 The `bullet` helper allows us vary the bullets of each level to make it more clear what level we are currently on per line.
-{% endcapture %}
 
-{% include toggle-field.html id="toggle-tree-display" button="Displaying Trees" text=code caption=caption %}
-
-Finally, let's see how `display-binary-tree` works on our `management-tree` example:
+Finally, let's see how `print-binary-tree` works on our `management-tree` example:
 
 ~~~racket
-> (display-binary-tree management-tree)
+> (print-binary-tree management-tree)
 * Board
   + CEO
     - Head of Engineering
@@ -645,20 +644,10 @@ Finally, let's see how `display-binary-tree` works on our `management-tree` exam
 
 Much nicer!
 
-## Trees and the CSC 151 Library
-
-All of these definitions for manipulating binary trees can be found in the `csc151/binary-trees-from-lists` module.  You may need to update your copy of the `csc151` package to get the latest version of that module.
-
-You can also find the code for trees built from listsat
-<https://github.com/grinnell-cs/csc151/blob/main/binary-trees-from-lists.rkt>
-and
-<https://github.com/grinnell-cs/csc151/blob/main/includes/binary-trees-common.inc>.
-
 ## Conclusion
 
 In this reading, we've introduced the recursive definition of a binary tree as well as associated functions for creating, manipulating, and displaying binary trees.
-These functions are all included in the `csc151` package, so moving forward, you don't need to re-implement them yourselves.
-However, you should study these implementations because they are excellent examples of advanced applications of lists and pairs!
+You should study these implementations because they are good examples of advanced applications of lists.
 
 ## Self Checks
 
