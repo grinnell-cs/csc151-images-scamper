@@ -40,7 +40,7 @@ Administrative stuff
 ### Upcoming work
 
 * Due Tuesday, 2026-11-24
-    * Reading: [Trees](../trees)
+    * Reading: [Trees](../trees-ex)
         * [Submit reading on Gradescope](https://www.gradescope.com/courses/1370413/assignments/9107441)
     * Mini-Project redos
         * Please include a `CHANGES.txt` file with each redo
