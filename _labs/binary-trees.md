@@ -15,7 +15,7 @@ b. Grab a whiteboard from the back of the classroom.
 c. Grab the following code files.
 
 * [binary-trees.scm](../code/labs/binary-trees.scm)
-* [output.scm](../code/labs/trees.scm)
+* [output.scm](../code/labs/output.scm)
 * [trees.scm](../code/labs/trees.scm)
 
 d. Upload all of othe files to Scamper.
