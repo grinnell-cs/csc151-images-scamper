@@ -7,7 +7,7 @@ link: true
 ---
 # {{ page.title }}
 
-_Sit with your group._
+_Standard start-of-class procedure_
 
 **Warning! You are being recorded** (and transcribed) (provided the technology
 is working correctly).
@@ -17,7 +17,7 @@ _Approximate overview_
 * Administrivia
 * Q&A
 * Pop Quiz
-* Work time
+* Lab
 
 Administrative stuff
 --------------------
@@ -43,14 +43,16 @@ Administrative stuff
     * Readings
         * [Tree recursion](../tree-recursion)
         * [Binary search trees](../binary-search-trees)
-        * [Submit reading on Gradescope]()
+        * [Submit reading response on Gradescope](https://www.gradescope.com/courses/1370413/assignments/9107442)
     * Lab: [Binary trees](../labs/binary-trees)
-        * [Submit lab on Gradescope]()
+        * [Submit lab on Gradescope](https://www.gradescope.com/courses/1370413/assignments/9118214)
+        * Submit today (if you're in class)
 * Due Thursday, 2026-12-03
     * [Final project](../mps/final-project)
         * [Submit final project on Gradescope](https://www.gradescope.com/courses/1370413/assignments/9080373)
         * No late final projects accepted!
-        * Presentation submitted separately
+        * Presentation submitted separately.
+        * Grading is effort-based.
 * Friday, 2026-12-04
     * Last new quiz day!
         * New topic: Tree recursion
@@ -74,7 +76,7 @@ Administrative stuff
 Scholarly
 
 * Tuesday, 1 Decemmer 2026, Noon--1:00 p.m., JRC
-  _CS Table_
+  _CS Table: Yash Gupta '20_
 
 Artistic/Cultural
 
@@ -117,16 +119,49 @@ Q&A
 Pop Quiz Answers
 ----------------
 
-1. Why do we need to add a helper procedure when doing vector recursion?
-2. What should we get if we call `(car (vector 1 2 3))`?
-3. Lists: List four procedures (other than the big three) that you can 
-   use with lists.
-4. Lists: What function do you use to get the first `n` elements of a list?
-5. Testing: What are the parameters to `test-case`? (You need not get them 
-   in the correct order.)
+Why do we need to add a helper procedure when doing vector recursion?
+
+> We need to recurse over the position in the vector. Most typically,
+  the primary procedure does not take the position as a parameter. We
+  need a helper to make the position a parameter.
+
+What should we get if we call `(car (vector 1 2 3))`?
+
+> `car` does not work on vectors. `car` only works on lists and pairs.
+
+Lists: List four procedures (other than the big three) that you can 
+use with lists.
+
+> `list-ref`, `list-take`, `list-drop`, `car`, `cdr`, `cons`, ...
+
+Lists: What function do you use to get the first `n` elements of a list?
+
+> `list-take`
+
+Testing: What are the parameters to `test-case`? (You need not get them 
+the correct order.)
+
+> `(test-case DESCRIPTION EQUALS? EXPECTED THUNK-TO-EXECUTE)`
+
+> A thunk is a zero-parameter procedure.
 
 Pop Quiz
 --------
 
+1. Lists: How do you determine if a list contains only one element without
+using `length`?
+
+2. Strings: What function groups a bunch of strings together?
+
+3. Lists: How would you find the largest number in a list called `numbers`
+without using explicit recursion?
+
+4. Types: What are four types we've learned?
+
+5. What does `bt/l` stand for?
+
 Lab
 ---
+
+Note: If the link to `output.scm` gives you `trees.scm`, change the URL 
+manually.
