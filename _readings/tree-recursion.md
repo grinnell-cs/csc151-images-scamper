@@ -4,6 +4,9 @@ summary: |
   Since trees are recursive structure, we define operations over them recursively, leading to a *recursive pattern for trees* that we can use to design code that involves tree manipulation.
 ---
 
+_This reading was updated in Fall 2026 to better match Scamper. There may
+still be some infelicities._
+
 So far, we have developed the data structure of a *binary tree* as a hierarchical structure recursively defined as follows: a binary tree is either
 
 + Empty or
@@ -64,8 +67,6 @@ Note: We're using the list-based representation of trees.
 ~~~
 
 ~~~racket
-> example-tree
-'(5 (3 (1 ◬ ◬) (4 ◬ ◬)) (7 ◬ (9 (8 ◬ ◬) ◬)))
 > (binary-tree-size example-tree)
 7
 ~~~
@@ -78,42 +79,43 @@ And we've underlined the part of the expression we're evaluating with x's.
 ~~~
     (size example-tree) 
           xxxxxxxxxxxx
---> (size '(5 (3 ...) (7 ...)))
-    xxxxxxxxxxxxxxxxxxxxxxxxxxx 
---> (+ 1 (size '(3 ...)) (size '(7 ...)))
-         xxxxxxxxxxxxxxx
---> (+ 1 (+ 1 (size '(1 ◬ ◬)) (size '(4 ◬ ◬))) (size '(7 ...)))
-              xxxxxxxxxxxxxxx
---> (+ 1 (+ 1 (+ 1 (size '◬) (size '◬)) (size '(4 ◬ ◬))) (size '(7 ...)))
-                   xxxxxxxxx
---> (+ 1 (+ 1 (+ 1 0 (size '◬)) (size '(4 ◬ ◬))) (size '(7 ...)))
-                     xxxxxxxxx
---> (+ 1 (+ 1 (+ 1 0 0) (size '(4 ◬ ◬))) (size '(7 ...)))
-              xxxxxxxxx
---> (+ 1 (+ 1 1 (size '(4 ◬ ◬))) (size '(7 ...)))
-                xxxxxxxxxxxxxxx
---> (+ 1 (+ 1 1 (+ 1 (size '◬) (size '◬))) (size '(7 ...)))
-                     xxxxxxxxx xxxxxxxxx
---> (+ 1 (+ 1 1 (+ 1 0 0)) (size '(7 ...)))
-                xxxxxxxxx
---> (+ 1 (+ 1 1 1) (size '(7 ...)))
-         xxxxxxxxx
---> (+ 1 3 (size '(7 ◬ (9 ...))))
-           xxxxxxxxxxxxxxxxxxx
---> (+ 1 3 (+ 1 (size ' ◬) (size '(9 ...))))
-                xxxxxxxxxx
---> (+ 1 3 (+ 1 0 (size '(9 (8 ...) ◬))))
-                  xxxxxxxxxxxxxxxxxxxx
---> (+ 1 3 (+ 1 0 (+ 1 (size '(8 ◬ ◬)) (size '◬))))
-                       xxxxxxxxxxxxxx  ; Skipping a few steps
---> (+ 1 3 (+ 1 0 (+ 1 1 (size '◬))))
-                         xxxxxxxxx
+--> (size (bt 5 (bt 3 ...) (bt 7 ...)))
+    ----------------------------------- 
+--> (+ 1 (size (bt 3 ...)) (size (bt 7 ...)))
+         -----------------
+--> (+ 1 (+ 1 (size (bt 1 ◬ ◬)) (size (bt 4 ◬ ◬))) (size (bt 7 ...)))
+              -----------------
+--> (+ 1 (+ 1 (+ 1 (size ◬) (size ◬)) (size (bt 4 ◬ ◬))) (size (bt 7 ...)))
+                   --------
+--> (+ 1 (+ 1 (+ 1 0 (size ◬)) (size (bt 4 ◬ ◬))) (size (bt 7 ...)))
+                     --------
+--> (+ 1 (+ 1 (+ 1 0 0) (size (bt 4 ◬ ◬))) (size (bt 7 ...)))
+              ---------
+--> (+ 1 (+ 1 1 (size (bt 4 ◬ ◬))) (size (bt 7 ...)))
+                ---------------#
+--> (+ 1 (+ 1 1 (+ 1 (size ◬) (size ◬))) (size (bt 7 ...)))
+                     -------- --------
+; We're lazy, so we're doing two steps at once.
+--> (+ 1 (+ 1 1 (+ 1 0 0)) (size (bt 7 ...)))
+                ---------
+--> (+ 1 (+ 1 1 1) (size (bt 7 ...)))
+         ---------
+--> (+ 1 3 (size (bt 7 ◬ (bt 9 ...))))
+           -----------------------
+--> (+ 1 3 (+ 1 (size  ◬) (size (bt 9 ...))))
+                ---------
+--> (+ 1 3 (+ 1 0 (size (bt 9 (bt 8 ...) ◬))))
+                  -------------------------
+--> (+ 1 3 (+ 1 0 (+ 1 (size (bt 8 ◬ ◬)) (size ◬))))
+                       ------------------ ; Skipping a few steps
+--> (+ 1 3 (+ 1 0 (+ 1 1 (size ◬))))
+                         --------
 --> (+ 1 3 (+ 1 0 (+ 1 1 0)))
-                  xxxxxxxxx
+                  ---------
 --> (+ 1 3 (+ 1 0 2))
-           xxxxxxxxx
+           ---------
 --> (+ 1 3 3)
-    xxxxxxxxx
+    ---------
 --> 7
 ~~~
 
@@ -180,7 +182,7 @@ The `combine` here is slightly more subtle.  We have to find a max and then add
 1, rather than combining the values directly.  And we throw away the top value,
 since it has no relevance.
 
-### Summing the value sin trees
+### Summing the values in trees
 
 If we have a tree of numbers, we can sum them using a similar pattern.
 
