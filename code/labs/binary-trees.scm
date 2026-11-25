@@ -254,20 +254,20 @@
 ;; `(empty-tree)`.
 ;; 
 ;; Make sure to check that each thing you enter is a binary tree with
-;; `binary-tree?` and that it has the right form with `display-binary-tree!`.
+;; `binary-tree?` and that it has the right form with `print-binary-tree!`.
 ;;
 ;;   > (binary-tree? tree-i)
 ;;   #t
 ;;   > (screen 40 20) ; makes a screen of approximately 40 columns and 20 lines
 ;;   > (screen-text! "black") ; Use "white" if you're in dark mode
-;;   > (display-binary-tree! tree-i)
+;;   > (print-binary-tree! tree-i)
 ;;   * b
 ;;     + a
 ;;     + c
 ;;   > (binary-tree? tree-ii)
 ;;   #t
 ;;   > (reset!)
-;;   > (display-binary-tree! tree-ii)
+;;   > (print-binary-tree! tree-ii)
 ;;   * 5
 ;;     + 2
 ;;       - 1
@@ -278,7 +278,7 @@
 ;;   > (binary-tree? tree-iii)
 ;;   #t
 ;;   > (reset!)
-;;   > (display-binary-tree tree-iii)
+;;   > (print-binary-tree tree-iii)
 ;;   * 5
 ;;     + 4
 ;;       - 3
@@ -314,7 +314,7 @@
 ;; 
 ;;     > (binary-tree? tree-iv)
 ;;     #t
-;;     > (display-binary-tree tree-iv)
+;;     > (print-binary-tree tree-iv)
 ;;     * 5
 ;;       + 4
 ;;         - 3
@@ -361,12 +361,12 @@
 ;;    > (screen 40 20)
 ;;    > (screen-text! "black") ; Use "white" if you're in dark mode
 ;;    > (reset!)
-;;    > (display-binary-tree! (leaf 1))
+;;    > (print-binary-tree! (leaf 1))
 ;;    * 1
 ;;    > (binary-tree? (binary-tree 1 (leaf 2) (leaf 3)))
 ;;    #t
 ;;    > (reset!)
-;;    > (display-binary-tree (binary-tree 1 (leaf 2) (leaf 3)))
+;;    > (print-binary-tree (binary-tree 1 (leaf 2) (leaf 3)))
 ;;    * 1
 ;;      + 2
 ;;      + 3
@@ -398,7 +398,7 @@
 
 ;; Driver: A
 
-;; You may have noticed that the `display-binary-tree!` procedure has a
+;; You may have noticed that the `print-binary-tree!` procedure has a
 ;; helper procedure, `bullet`, that selects an appropriate bullet.  
 
 ;; Here's a tree with more than four levels.
@@ -444,9 +444,9 @@
 
 ;; Enter your new definition here:
 
-;; Also update the code in `display-binary-tree!`
+;; Also update the code in `print-binary-tree!`
 
-;; d. In your own words, explain how `display-binary-tree!` seems to work.
+;; d. In your own words, explain how `print-binary-tree!` seems to work.
 
 ;; Your answer:
 
@@ -583,7 +583,7 @@
 ;; You've now seen or written four procedures that recurse over binary trees:
 
 ;; * `binary-tree?`, which checks if something is a binary tree.
-;; * `display-binary-tree!`, which prints out a binary tree
+;; * `print-binary-tree!`, which prints out a binary tree
 ;; * `traverse`, which traverses a binary tree
 ;; * `binary-tree-size`, which finds the number of values in the tree
 
