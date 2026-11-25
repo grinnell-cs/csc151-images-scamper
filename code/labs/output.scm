@@ -2,7 +2,7 @@
 ;; Some simple output functions
 ;;
 ;; Samuel A. Rebelsky
-;; Version of 24 November 2026
+;; Version of 25 November 2026
 
 (import canvas)
 (import reactive)
@@ -29,7 +29,7 @@
   (vector (list "")))
 
 (define _text-color_
-  (vector (list "black")))
+  (vector "black"))
 
 ;;; (reset!) -> void?
 ;;; Reset the output.
