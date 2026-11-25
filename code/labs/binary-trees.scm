@@ -259,6 +259,7 @@
 ;;   > (binary-tree? tree-i)
 ;;   #t
 ;;   > (screen 40 20) ; makes a screen of approximately 40 columns and 20 lines
+;;   > (screen-text! "black") ; Use "white" if you're in dark mode
 ;;   > (display-binary-tree! tree-i)
 ;;   * b
 ;;     + a
@@ -358,6 +359,7 @@
 ;;    > (binary-tree? (leaf 1))
 ;;    #t
 ;;    > (screen 40 20)
+;;    > (screen-text! "black") ; Use "white" if you're in dark mode
 ;;    > (reset!)
 ;;    > (display-binary-tree! (leaf 1))
 ;;    * 1
@@ -422,6 +424,7 @@
 ;; Check your answer experimentally.
 
 ;; > (screen 40 20)
+;; > (screen-text! "black") ; Use "white" if you're in dark mode
 ;; > (reset!)
 ;; > (display-tree! taller-tree)
 

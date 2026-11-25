@@ -7,7 +7,7 @@
 (import canvas)
 (import reactive)
 
-(export _output_ screen reset! print! newline!)
+(export _output_ screen reset! print! newline! screen-text!)
 
 ;;; (stringify val) -> (any-of string? boolean?)
 ;;;   val : any
@@ -27,6 +27,9 @@
 ;;; of strings. 
 (define _output_
   (vector (list "")))
+
+(define _text-color_
+  (vector (list "black")))
 
 ;;; (reset!) -> void?
 ;;; Reset the output.
@@ -52,6 +55,15 @@
 (define newline!
   (lambda ()
     (vector-set! _output_ 0 (cons "" (vector-ref _output_ 0)))))
+
+;;; (screen-text! color) -> void?
+;;;   color : color?
+;;; Set the screen text color
+(define screen-text!
+  (lambda (color)
+    (if (color? color)
+        (vector-set! _text-color_ color)
+        (error "Not a valid color"))))
 
 ;;; (screen cols rows) -> canvas?
 ;;;   cols : integer?
