@@ -43,6 +43,34 @@
                     (helper (bt/r t) (+ indent 1)))))])
       (helper t 0))))
 
+;; +---------------------------------------+--------------------------
+;; | Provided code: The hideous shorthands |
+;; +---------------------------------------+
+
+(define bt/tl (o bt/t bt/l))
+(define bt/ll (o bt/l bt/l))
+(define bt/rl (o bt/r bt/l))
+
+(define bt/tr (o bt/t bt/r))
+(define bt/lr (o bt/l bt/r))
+(define bt/rr (o bt/r bt/r))
+
+(define bt/tll (o bt/tl bt/l))
+(define bt/lll (o bt/ll bt/l))
+(define bt/rll (o bt/rl bt/l))
+
+(define bt/trl (o bt/tr bt/l))
+(define bt/lrl (o bt/lr bt/l))
+(define bt/rrl (o bt/rr bt/l))
+
+(define bt/tlr (o bt/tl bt/r))
+(define bt/llr (o bt/ll bt/r))
+(define bt/rlr (o bt/rl bt/r))
+
+(define bt/trr (o bt/tr bt/r))
+(define bt/lrr (o bt/lr bt/r))
+(define bt/rrr (o bt/rr bt/r))
+
 ;; +-----------------------------+------------------------------------
 ;; | Provided code: Sample trees |
 ;; +-----------------------------+
@@ -71,14 +99,14 @@
 ;;;          8
 (define digits-tree
   (binary-tree 5
-      (binary-tree 2
-          (leaf 1)
-          (leaf 4))
-      (binary-tree 7
-           (empty-tree)
-           (binary-tree  9
-               (leaf 8)
-               (empty-tree)))))
+               (binary-tree 2
+                            (leaf 1)
+                            (leaf 4))
+               (binary-tree 7
+                            (empty-tree)
+                            (binary-tree 9
+                                         (leaf 8)
+                                         (empty-tree)))))
 
 ;; +-------------+----------------------------------------------------
 ;; | Preparation |
@@ -93,8 +121,97 @@
 ;; d. Download and upload `output.scm`, which provides some simple output
 ;;    functions, and `trees.scm`, which provides the basic tree library.
 
+;; e. Grab a whiteboard and a marker.
+
+;; +------------------------------+-----------------------------------
+;; | Exercise 1: Traversing trees |
+;; +------------------------------+
+
+;; Driver: A
+
+;; In the code above, you'll see a binary tree of digits and a 
+;; "management tree".
+
+;; a. Write instructions to extract the value 4 from `digits-tree`.
+
+(define one-a (bt/t digits-tree)) ; incorrect/fix
+
+;; b. Write instructions to extract the value 9 from `digits-tree`.
+
+(define one-b (bt/t digits-tree)) ; incorrect/fix
+
+;; c. Write instructions to extract the value "CEO" from `management-tree`.
+
+(define one-c (bt/t management-tree)) ; incorrect/fix
+
+;; d. Write instructions to extract the value "Tester" from `management-tree`.
+
+(define one-d (bt/t management-tree)) ; incorrect/fix
+
+;; e. In the REPL, conduct an experiment to see what happens if you
+;; "fall off of" the tree by going beyond an empty portion.
+
+;; What happens? Enter your answer: 
+
+;; Copy, paste, and comment-out your experiment.
+
+;; +----------------------------+-------------------------------------
+;; | Exercise 2: Building trees |
+;; +----------------------------+
+
+;; Driver: B
+
+;; a. `(empty-tree)` is supposed to make an empty tree and 
+;; `(empty-tree? val)` is supposed to check if a value is an empty 
+;; tree. 
+
+;; Run some quick experiments in the REPL to see if they behave 
+;; as expected. 
+
+;; Copy, paste, and comment-out your experiments.
+
+;; b. `(binary-tree top left right)` is supposed to make a tree
+;; with the given components and `(binary-tree? val)` is supposed to
+;; check if a value is a binary tree.
+
+;; Conduct a few experiments to determine if they behave as expected.
+
+;; Copy, paste, and comment-out your experiments.
+
+;; c. What do you expect to have happen if you call `empty-tree?`
+;; on a value created by `binary-tree`.
+
+;; Your answer:
+
+;; Check the question experimentally and report the results.
+
+;; Your answer: 
+
+;; d. What do you expect to have happen if you call `binary-tree?`
+;; on a value created by `empty-tree`.
+
+;; Your answer:
+
+;; Check the question experimentally and report the results.
+
+;; Your answer: 
+
+;; Reflect back on lists to explain why `binary-tree?` behaves this
+;; way.
+
+;; Your reflection:
+
+;; e. What do you expect to have happen if you try to create a binary
+;; tree in which one of the subtrees is not itself a binary tree?
+
+;; Your answer:
+
+;; Check the question experimentally and report your results.
+
+;; Your comment:
+
 ;; +--------------------------+---------------------------------------
-;; | Exercise 1: Making trees |
+;; | Exercise 3: Making trees |
 ;; +--------------------------+
 
 ;; Driver: A
@@ -224,10 +341,10 @@
 ;;
 
 ;; +--------------------+---------------------------------------------
-;; | Exercise 2: Leaves |
+;; | Exercise 4: Leaves |
 ;; +--------------------+
 
-;; Driver:: B
+;; Driver: B
 
 ;; a. As you may have noted, in the sample code, we create leaves (the
 ;; values at the ends of trees) with the very verbose.
@@ -274,9 +391,10 @@
 ;; Enter your anwer: 
 
 ;; +------------------------------+-----------------------------------
-;; | Exercise 3: Exploring output |
+;; | Exercise 5: Exploring output |
 ;; +------------------------------+
-;; +---------------------------+
+
+;; Driver: A
 
 ;; You may have noticed that the `display-binary-tree!` procedure has a
 ;; helper procedure, `bullet`, that selects an appropriate bullet.  
@@ -330,7 +448,7 @@
 ;; Your answer:
 
 ;; +------------------------------+-----------------------------------
-;; | Exercise 4: Traversing trees |
+;; | Exercise 6: Traversing trees |
 ;; +------------------------------+
 
 ;; Driver: B
