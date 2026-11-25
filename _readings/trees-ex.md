@@ -551,20 +551,21 @@ Perhaps we need to write our own function. This function is inherently recursive
 We can translate this design directly into a recursive function.
 
 ~~~racket
-(define print-binary-tree
+(define print-binary-tree!
    (lambda (tree)
      (if (empty-tree? tree)
          void
          (begin
-           (println (bt/t tree))
-           (print-binary-tree (bt/l tree))
-           (print-binary-tree (bt/r tree))))))
+           (print! (bt/t tree))
+           (newline!)
+           (print-binary-tree! (bt/l tree))
+           (print-binary-tree! (bt/r tree))))))
 ~~~
 
 However, we encounter a problem immediately: all the values are printed, one-per line, in a list!
 
 ~~~racket
-> (print-binary-tree management-tree)
+> (print-binary-tree! management-tree)
 Board
 CEO
 Head of Engineering
@@ -601,7 +602,7 @@ We will discuss how to tackle recursive tree programming in the next reading!
 ;;; (print-binary-tree t) -> void?
 ;;;   t : tree?
 ;;; Prints tree t to the console in a well-formatted manner.
-(define print-binary-tree
+(define print-binary-tree!
   (lambda (t)
     (let (; The different levels of bullets
           [bullets (vector "* " "+ " "- " ". ")]
@@ -615,12 +616,12 @@ We will discuss how to tackle recursive tree programming in the next reading!
           [helper
             (lambda (t indent)
               (if (empty-tree? t)
-                  null
+                  void
                   (begin
-                    (print (make-string (* indent 2) #\space))
-                    (print (bullet indent))
-                    (print (bt/t t))
-                    (newline)
+                    (print! (make-string (* indent 2) #\space))
+                    (print! (bullet indent))
+                    (print! (bt/t t))
+                    (newline!)
                     (helper (bt/l t) (+ indent 1))
                     (helper (btr t) (+ indent 1)))))])
        (helper t 0)))))
