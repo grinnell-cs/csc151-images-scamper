@@ -62,7 +62,7 @@
 (define screen-text!
   (lambda (color)
     (if (color? color)
-        (vector-set! _text-color_ color)
+        (vector-set! _text-color_ 0 color)
         (error "Not a valid color"))))
 
 ;;; (screen cols rows) -> canvas?
@@ -88,10 +88,11 @@
                            canv
                            10 (+ 5 (* 10 row))
                            (car remaining)
-                           11 "solid" "black")
+                           11 "solid" (vector-ref _text-color_ 0))
                          (kernel (+ 1 row) (cdr remaining)))))])
             (begin
-              (canvas-rectangle! canv 0 0 width height "outline" "black")
+              (canvas-rectangle! canv 0 0 width height "outline" 
+                                 (vector-ref _text-color_ 0))
               (kernel 1 (reverse (vector-ref _output_ 0))))))
         ; update
         (lambda (msg tmp)
